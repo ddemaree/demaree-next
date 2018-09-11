@@ -1,3 +1,9 @@
+@import './assets/source-serif-pro/source-serif-pro.css';
+
+html {
+    font-size: 125%;
+}
+
 body {
     background-color: snow;
     font-family: system-font;
@@ -6,4 +12,10 @@ body {
 .container {
     max-width: 38rem;
     margin: 0 auto;
+}
+
+.medium-post {
+    * {
+        margin: 0;
+    }
 }

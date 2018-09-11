@@ -4,17 +4,14 @@ import "../styles.scss"
 import axios from 'axios'
 import RSSParser from 'rss-parser'
 const parser = new RSSParser()
+import moment from 'moment'
 
 const MEDIUM_RSS_URL = 'https://words.demaree.me/feed'
 
-function getMediumPosts() {
-    
-}
-
 export default class extends React.Component {
     static async getInitialProps({ req }) {
-        let postsResponse = await axios.get("https://marsh-appliance.glitch.me/posts.json")
-        let posts = postsResponse.data.map(({ title, link, pubDate, ...item}) => {
+        let postsResponse = await axios.get("https://us-central1-dd-ftw.cloudfunctions.net/rss-unfurler-20180911")
+        let allPosts = postsResponse.data.map(({ title, link, pubDate, ...item}) => {
             return {
                 title,
                 link,
@@ -23,7 +20,8 @@ export default class extends React.Component {
                 description: item.twitter.twitterDescription
             }   
         })
-        console.log(posts)
+        
+        let posts = allPosts.filter(post => moment(post.pubDate).isAfter("2018-01-01"))
         return { posts }
     }
     
@@ -34,9 +32,11 @@ export default class extends React.Component {
             <div className="container">
                 <h1>Hi everyone</h1>
                 <p>This is my new homepage, I guess?</p>
+
+                <h2>Writing on Medium</h2>
                 {posts.map( post => (
-                <article key={post.link}>
-                    <h2><a href={post.link}>{post.title}</a></h2>
+                <article className="medium-post" key={post.link}>
+                    <h3><a href={post.link}>{post.title}</a></h3>
                     <p>{post.description}</p>
                     <p>{post.pubDate}</p>
                 </article>
