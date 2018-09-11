@@ -13,8 +13,13 @@
   "dependencies": {
     "@zeit/next-css": "^0.2.0",
     "@zeit/next-sass": "^0.2.0",
+    "axios": "^0.18.0",
+    "feedparser": "^2.2.9",
     "next": "^6.1.2",
+    "node-sass": "^4.9.3",
     "react": "^16.5.0",
-    "react-dom": "^16.5.0"
+    "react-dom": "^16.5.0",
+    "rss-parser": "^3.4.3",
+    "unfurl.js": "^1.1.6"
   }
 }
