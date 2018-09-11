@@ -1,6 +1,8 @@
 import React from 'react'
 import "../styles.scss"
 
+import heroImg from '../assets/romain-vignes-53940-unsplash.jpg'
+
 import axios from 'axios'
 import RSSParser from 'rss-parser'
 const parser = new RSSParser()
@@ -32,6 +34,7 @@ export default class extends React.Component {
             <div className="container">
                 <h1>Hi everyone</h1>
                 <p>This is my new homepage, I guess?</p>
+                <img src={heroImg} />
 
                 <h2>Writing on Medium</h2>
                 {posts.map( post => (

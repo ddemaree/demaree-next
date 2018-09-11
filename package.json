@@ -16,12 +16,15 @@
     "axios": "^0.18.0",
     "express": "^4.16.3",
     "feedparser": "^2.2.9",
+    "file-loader": "^2.0.0",
     "moment": "^2.22.2",
     "next": "^6.1.2",
     "node-sass": "^4.9.3",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
+    "resolve-url-loader": "^2.3.1",
     "rss-parser": "^3.4.3",
-    "unfurl.js": "^1.1.6"
+    "unfurl.js": "^1.1.6",
+    "url-loader": "^1.1.1"
   }
 }
