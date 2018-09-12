@@ -5,9 +5,23 @@ import heroImg from '../assets/romain-vignes-53940-unsplash.jpg'
 
 import getMediumPosts from '../src/getMediumPosts'
 
-const HeroImage = ({ src }) => (
-  <div className="hero-image" style={{ backgroundImage: `url(${src})`, backgroundPosition: "45% 55%" }} />
-)
+const HeroImage = ({ src, overlayColor, textColor, ...props }) => {
+  let cssBgs = [`url(${src})`]
+  let styles = {
+    backgroundPosition: "45% 55%"
+  }
+  
+  if(overlayColor) {
+    cssBgs.unshift(`linear-gradient(to bottom, #0006, #0006)`)
+  }
+
+  if(textColor) styles.color = textColor;
+  styles.backgroundImage = cssBgs.join(', ')
+
+  return (
+    <div className="hero-image" style={styles} {...props} />
+  )
+}
 
 import Link from 'next/link'
 import DDIcon from '../src/DDIcon'
@@ -33,10 +47,11 @@ export default class extends React.Component {
         </header>
 
         <main id="site-content">
-          <h1>Hi everyone</h1>
-          <p>This is my new homepage, I guess?</p>
 
-          <HeroImage src={heroImg} />
+          <HeroImage textColor="white" overlayColor="black" src={heroImg}>
+            <h1>Hi everyone</h1>
+            <p>This is my new homepage, I guess?</p>
+          </HeroImage>
 
           <h2>Writing on Medium</h2>
           {posts.map( post => (
