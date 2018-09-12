@@ -5,6 +5,8 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
+          <link rel="stylesheet" href="https://use.typekit.net/hpk3qlq.css" />
           <link rel="stylesheet" href="/_next/static/style.css" />
         </Head>
         <body>

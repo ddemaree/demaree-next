@@ -1,0 +1,47 @@
+@font-face {
+    src: url('fonts/Rhody-Light.woff2') format("woff2"),
+         url('fonts/Rhody-Light.woff') format("woff");
+    font-family: 'RhodyWeb';
+    font-style: normal;
+    font-weight: 300;
+    }
+
+@font-face {
+    src: url('fonts/Rhody-Regular.woff2') format("woff2"),
+         url('fonts/Rhody-Regular.woff') format("woff");
+    font-family: 'RhodyWeb';
+    font-style: normal;
+    font-weight: 400;
+    }
+    
+@font-face {
+    src: url('fonts/Rhody-Medium.woff2') format("woff2"),
+         url('fonts/Rhody-Medium.woff') format("woff");
+    font-family: 'RhodyWeb';
+    font-style: normal;
+    font-weight: 500;
+    }
+    
+@font-face {
+    src: url('fonts/Rhody-Bold.woff2') format("woff2"),
+         url('fonts/Rhody-Bold.woff') format("woff");
+    font-family: 'RhodyWeb';
+    font-style: normal;
+    font-weight: 700;
+    }
+    
+@font-face {
+    src: url('fonts/Rhody-Black.woff2') format("woff2"),
+         url('fonts/Rhody-Black.woff') format("woff");
+    font-family: 'RhodyWeb';
+    font-style: normal;
+    font-weight: 800;
+    }
+    
+@font-face {
+    src: url('fonts/RhodyVariable-VF.woff2') format("woff2"),
+         url('fonts/RhodyVariable-VF.woff') format("woff");
+    font-family: 'RhodyVariableWeb';
+    font-style: normal;
+    font-weight: 300 800;
+    }
