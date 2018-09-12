@@ -45,9 +45,12 @@ export default class extends React.Component {
         </header>
 
         <HeroImage textColor="white" overlayColor="black" src={heroImg}>
+        </HeroImage>
+
+        <div className="hero-section-content">
           <h1>Hi everyone</h1>
           <p>This is my new homepage, I guess?</p>
-        </HeroImage>
+        </div>
 
         <h2 class="section-hed">Writing</h2>
         {posts.map( post => (
@@ -57,6 +60,8 @@ export default class extends React.Component {
             <p className="pubdate">{post.pubDate}</p>
         </article>
         ))}
+
+        <hr />
 
         <section className="dd-section medium-posts">
         <p>Have courage, and be kind</p>
