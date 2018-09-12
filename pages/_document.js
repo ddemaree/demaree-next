@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
           <link rel="stylesheet" href="https://use.typekit.net/hpk3qlq.css" />
           <link rel="stylesheet" href="/_next/static/style.css" />
         </Head>
-        <body>
+        <body className="gridster">
           <Main />
           <NextScript />
         </body>

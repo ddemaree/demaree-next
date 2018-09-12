@@ -1,9 +1,7 @@
 import React from 'react'
-
-import "../styles.scss"
-import heroImg from '../assets/romain-vignes-53940-unsplash.jpg'
-
 import getMediumPosts from '../src/getMediumPosts'
+import heroImg from '../assets/romain-vignes-53940-unsplash.jpg'
+import "../styles.scss"
 
 const HeroImage = ({ src, overlayColor, textColor, ...props }) => {
   let cssBgs = [`url(${src})`]
@@ -36,7 +34,7 @@ export default class extends React.Component {
     const { posts } = this.props
 
     return (
-      <>
+      <div id="dd-main">
         <header class="site-header">
           <Link href="/">
             <a className="header-logo">
@@ -46,23 +44,24 @@ export default class extends React.Component {
           </Link>
         </header>
 
-        <main id="site-content">
+        <HeroImage textColor="white" overlayColor="black" src={heroImg}>
+          <h1>Hi everyone</h1>
+          <p>This is my new homepage, I guess?</p>
+        </HeroImage>
 
-          <HeroImage textColor="white" overlayColor="black" src={heroImg}>
-            <h1>Hi everyone</h1>
-            <p>This is my new homepage, I guess?</p>
-          </HeroImage>
+        <h2 class="section-hed">Writing</h2>
+        {posts.map( post => (
+        <article className="medium-post" key={post.link}>
+            <h3 className="title"><a href={post.link}>{post.title}</a></h3>
+            <p className="description">{post.description}</p>
+            <p className="pubdate">{post.pubDate}</p>
+        </article>
+        ))}
 
-          <h2>Writing on Medium</h2>
-          {posts.map( post => (
-          <article className="medium-post" key={post.link}>
-              <h3><a href={post.link}>{post.title}</a></h3>
-              <p>{post.description}</p>
-              <p>{post.pubDate}</p>
-          </article>
-          ))}
-        </main>
-      </>
+        <section className="dd-section medium-posts">
+        <p>Have courage, and be kind</p>
+        </section>
+      </div>
     )
   }
 } 
