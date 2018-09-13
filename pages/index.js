@@ -35,7 +35,7 @@ export default class extends React.Component {
 
     return (
       <div id="dd-main">
-        <header class="site-header">
+        <header id="site-header" className="site-header">
           <Link href="/">
             <a className="header-logo">
               <DDIcon />
@@ -44,28 +44,38 @@ export default class extends React.Component {
           </Link>
         </header>
 
-        <HeroImage textColor="white" overlayColor="black" src={heroImg}>
-        </HeroImage>
+        <main id="site-main">
 
-        <div className="hero-section-content">
-          <h1>Hi everyone</h1>
-          <p>This is my new homepage, I guess?</p>
-        </div>
+          <HeroImage textColor="white" overlayColor="black" src={heroImg}>
+          </HeroImage>
 
-        <h2 className="section-hed">Writing</h2>
-        {posts.map( post => (
-        <article className="medium-post" key={post.link}>
-            <h3 className="title"><a href={post.link}>{post.title}</a></h3>
-            <p className="description">{post.description}</p>
-            <p className="pubdate">{post.pubDate}</p>
-        </article>
-        ))}
+          <div className="hero-section-content">
+            <h1>Hi everyone</h1>
+            <p>This is my new homepage, I guess?</p>
+          </div>
 
-        <hr />
+          <hr />
 
-        <section className="dd-section medium-posts">
-        <p>Have courage, and be kind</p>
-        </section>
+          <h2 className="section-hed">Writing</h2>
+          {posts.map( post => (
+          <article className="medium-post" key={post.link}>
+              <h3 className="title"><a href={post.link}>{post.title}</a></h3>
+              <p className="description">{post.description}</p>
+              <p className="pubdate">{post.pubDate}</p>
+          </article>
+          ))}
+
+          <hr />
+
+          <section className="dd-section medium-posts">
+          <p>This section intentionally left blank</p>
+          </section>
+        </main>
+
+        <footer id="site-footer">
+          <p>Have courage, and be kind</p>
+        </footer>
+
       </div>
     )
   }
