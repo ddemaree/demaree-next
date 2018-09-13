@@ -52,7 +52,7 @@ export default class extends React.Component {
           <p>This is my new homepage, I guess?</p>
         </div>
 
-        <h2 class="section-hed">Writing</h2>
+        <h2 className="section-hed">Writing</h2>
         {posts.map( post => (
         <article className="medium-post" key={post.link}>
             <h3 className="title"><a href={post.link}>{post.title}</a></h3>
