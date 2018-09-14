@@ -50,7 +50,7 @@ export default class extends React.Component {
           </HeroImage>
 
           <div className="hero-section-content">
-            <h1>Hi everyone</h1>
+            <h1>Hi, I'm David</h1>
             <p>This is my new homepage, I guess?</p>
           </div>
 
