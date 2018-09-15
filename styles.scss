@@ -36,19 +36,6 @@ body {
   margin: 0 auto;
 }
 
-.hero-image {
-  min-height: 6rem;
-  background-size: cover;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  * {
-    line-height: 1;
-    margin: 0.3em 0;
-  }
-}
 
 img {
   max-width: 100%;
@@ -78,7 +65,7 @@ a {
 
   display: grid;
   min-height: 100vh;
-  grid-template-rows: [all-start sb-start] minmax(4rem, auto) [sb-end main-start] 1fr [main-end] minmax(4rem, auto) [all-end];
+  grid-template-rows: [all-start sb-start] auto [sb-end main-start] 1fr [main-end] minmax(4rem, auto) [all-end];
   grid-template-columns: [all-start main-start sb-start] 1fr [all-end main-end sb-end];
 
   & > * {
@@ -90,47 +77,47 @@ a {
     grid-row: sb-start / sb-end;
   }
 
-  @include widescreen {
-    grid-template-columns: [all-start sb-start] $sidebar-width [sb-end main-start] minmax(760px, 1fr) [all-end main-end];
-    grid-template-rows: [all-start sb-start main-start] 1fr [main-end] minmax(4rem, auto) [sb-end all-end];
+  // @include widescreen {
+  //   grid-template-columns: [all-start sb-start] $sidebar-width [sb-end main-start] minmax(760px, 1fr) [all-end main-end];
+  //   grid-template-rows: [all-start sb-start main-start] 1fr [main-end] minmax(4rem, auto) [sb-end all-end];
 
-    & > .site-header {
-      position: fixed;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: $sidebar-width;
-    }
-  }
+  //   & > .site-header {
+  //     position: fixed;
+  //     left: 0;
+  //     top: 0;
+  //     bottom: 0;
+  //     width: $sidebar-width;
+  //   }
+  // }
 
   .site-main {
     display: grid;
-    grid-template-columns: [all-start] 1fr [main-start] repeat(4, minmax(2rem, 8rem)) [main-end] 1fr [all-end];
+    grid-template-columns: [all-start] 1fr [main-start] repeat(6, [main-col] minmax(2rem, 5rem)) [main-end] 1fr [all-end];
     grid-auto-flow: row;
     grid-auto-rows: auto;
-    grid-gap: 1.5rem;
-    align-items: start;
+    grid-gap: 1rem 1rem;
 
     & > * {
       grid-column: main-start / main-end;
     }
-
-    & > .hero-image {
-      grid-column: 1 / -1;
-    }
   }
-
 }
 
 .page--index {
-  .site-main {
-    align-items: center;
+  
+  .hero-image {
+    grid-column: 1 / - 1;
+    padding-top: 30%;
   }
+
   .hero-section-content {
-    padding: 1rem 0;
     line-height: 1.34;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 300;
+    
+    *:first-child {
+      margin-top: 0;
+    }
 
     b {
       white-space: nowrap;
@@ -147,35 +134,42 @@ a {
     p {
       margin: 0.5em 0;
     }
+  }
+  
+  @media (min-width: 600px) {
+    .site-main {
+      align-items: center;
+      grid-template-rows: minmax(2rem, 1fr) [main-start] auto minmax(2rem, 1fr);
+    }
     
-    @media (max-width: 540px) {
-      font-size: 1.5rem;
+    .site-main > * {
+      grid-row-start: main-start;
+    }
+
+    .hero-image {
+      grid-column: main-col 1 / main-col 3;
+      align-self: center;
+      padding-top: 100%;
+      border-radius: 100%;
+    }
+    .hero-section-content {
+      grid-column: main-col 3 / main-end;
     }
   }
 }
 
 
 .site-header, .site-footer {
-  padding: 1em 1.5rem;
+  padding: 1em;
 }
 
 .site-header {
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
-  // background-color: lightsalmon;
-  // color: darkblue;
-  border-bottom: 1px solid #e5e5e5;
   
   display: grid;
-  grid-row-gap: 0.8rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: auto 1fr auto;
   grid-template-rows: auto 1fr;
   justify-items: center;
   align-items: stretch;
-  background-color: black;
-  color: white;
 
   * {
     margin: 0;
@@ -209,8 +203,7 @@ a {
 }
 
 .site-footer {
-  border-top: 1px solid #e5e5e5;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   font-family: 'halyard-micro', 'halyard-text', sans-serif;
   color: #888;
 }
@@ -224,11 +217,11 @@ a {
   align-items: center;
 
   h1 {
-    font-size: 1.25rem;
-    font-family: 'conductor-narrow';
     line-height: 1;
+    font-size: 1.4rem;
+    letter-spacing: 0.06em;
+    font-family: 'conductor';
     text-transform: uppercase;
-    letter-spacing: 0.12em;
   }
 
   .dd-icon {
