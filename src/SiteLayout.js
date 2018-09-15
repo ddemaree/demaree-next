@@ -10,8 +10,14 @@ const SiteHeader = (props) => (
       </a>
     </Link>
     <nav className="site-nav">
+      <Link href="/">
+        <a>Home</a>
+      </Link>
       <Link href="/writing">
         <a>Writing</a>
+      </Link>
+      <Link href="/photography">
+        <a>Photography</a>
       </Link>
     </nav>
   </header>

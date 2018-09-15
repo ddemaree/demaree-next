@@ -5,6 +5,7 @@ import "../styles.scss"
 
 export default class MyApp extends App {
   static async getInitialProps ({ Component, router, ctx }) {
+    console.log("Getting initial props for ctx ", ctx)
     let pageProps = {}
     let layoutProps = {}
 
@@ -13,7 +14,6 @@ export default class MyApp extends App {
     if(topLevelPaths.length === 0 || topLevelPaths[0] === '') {
       topLevelPaths.splice(0, 1, 'index')
     }
-    console.log(topLevelPaths)
     layoutProps.pageName = topLevelPaths[0]
 
     if (Component.getInitialProps) {
@@ -24,7 +24,6 @@ export default class MyApp extends App {
       }
     }
 
-    console.log(layoutProps)
     return { pageProps, layoutProps }
   }
 
