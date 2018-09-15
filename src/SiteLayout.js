@@ -9,7 +9,7 @@ const SiteHeader = (props) => (
         <h1>David Demaree</h1>
       </a>
     </Link>
-    <nav className="site-nav">
+    {false && (<nav className="site-nav">
       <Link href="/">
         <a>Home</a>
       </Link>
@@ -19,7 +19,7 @@ const SiteHeader = (props) => (
       <Link href="/photography">
         <a>Photography</a>
       </Link>
-    </nav>
+    </nav>)}
   </header>
 )
 

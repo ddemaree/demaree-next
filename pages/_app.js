@@ -5,7 +5,6 @@ import "../styles.scss"
 
 export default class MyApp extends App {
   static async getInitialProps ({ Component, router, ctx }) {
-    console.log("Getting initial props for ctx ", ctx)
     let pageProps = {}
     let layoutProps = {}
 
