@@ -1,29 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
-// import DDIcon from '../src/DDIcon'
-
-const SiteHeader = (props) => (
-  <header id="site-header" className="site-header">
-    <Link href="/">
-      <a className="header-logo">
-        <h1>David Demaree</h1>
-      </a>
-    </Link>
-    {false && (<nav className="site-nav">
-      <Link href="/">
-        <a>Home</a>
-      </Link>
-      <Link href="/writing">
-        <a>Writing</a>
-      </Link>
-      <Link href="/photography">
-        <a>Photography</a>
-      </Link>
-    </nav>)}
-  </header>
-)
-
-import Router from 'next/router'
+import SiteHeader from './SiteHeader'
 
 export default class SiteLayout extends React.Component {
   constructor(props) {

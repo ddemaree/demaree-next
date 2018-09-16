@@ -26,11 +26,11 @@ const HeroImage = ({ src, overlayColor, textColor, className, backgroundPosition
 }
 
 export default class extends React.Component {
-  render() {
+ render() {
     return (<Fragment>
       <HeroImage
         className="hero-photo" 
-        backgroundPosition="55% 35%"
+        backgroundPosition="65% 25%"
         src="https://res.cloudinary.com/demaree/image/fetch/http://images.demaree.me/imgix/dd-photo.jpg" />
       <div className="hero-section-content">
         <p><b>Hi, I'm David. <em>👋</em></b></p>
