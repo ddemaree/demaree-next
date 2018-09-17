@@ -1,9 +1,13 @@
 import React from 'react'
 import getMediumPosts from '../src/getMediumPosts'
+import { getPosts } from '../src/WordPress';
 
 export default class extends React.Component {
   static async getInitialProps({ req }) {
-    let posts = await getMediumPosts()
+    let posts = await getPosts()
+    // console.log(posts)
+
+    // let posts = await getMediumPosts()
     return { posts }
   }
 
@@ -13,10 +17,8 @@ export default class extends React.Component {
     <>
       <h2 className="section-hed">Writing</h2>
       {posts.map( post => (
-      <article className="medium-post" key={post.link}>
-          <h3 className="title"><a href={post.link}>{post.title}</a></h3>
-          <p className="description">{post.description}</p>
-          <p className="pubdate">{post.pubDate}</p>
+      <article className="medium-post" key={post.guid.rendered}>
+        <h3>{post.title.rendered}</h3>
       </article>
       ))}
 

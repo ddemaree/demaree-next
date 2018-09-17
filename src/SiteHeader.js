@@ -1,12 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
 import './SiteHeader.scss'
-// import DDIcon from './src/DDIcon'
+import DDIcon from './DDIcon'
 
 export const SiteHeader = (props) => (
   <header id="site-header" className="site-header">
     <Link href="/">
       <a className="header-logo">
+        <DDIcon />
         <h1>David Demaree</h1>
       </a>
     </Link>
