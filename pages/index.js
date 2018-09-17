@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import Head from 'next/head'
 import heroImg from '../assets/romain-vignes-53940-unsplash.jpg'
 
 const HeroImage = ({ src, overlayColor, textColor, className, backgroundPosition, ...props }) => {
@@ -28,6 +29,9 @@ const HeroImage = ({ src, overlayColor, textColor, className, backgroundPosition
 export default class extends React.Component {
  render() {
     return (<Fragment>
+      <Head>
+        <title>David Demaree's web site</title>
+      </Head>
       <HeroImage
         className="hero-photo" 
         backgroundPosition="65% 25%"

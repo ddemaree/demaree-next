@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import getMediumPosts from '../src/getMediumPosts'
 
 export default class extends React.Component {
@@ -10,7 +10,7 @@ export default class extends React.Component {
   render() {
     const { posts } = this.props
     return (
-    <>
+    <Fragment>
       <h2 className="section-hed">Writing</h2>
       {posts.map( post => (
       <article className="medium-post" key={post.link}>
@@ -20,12 +20,8 @@ export default class extends React.Component {
       </article>
       ))}
 
-      <hr />
-
-      <section className="dd-section medium-posts">
-      <p>This section intentionally left blank</p>
-      </section>
-    </>)
+      <hr className="dd-divider" />
+    </Fragment>)
   }
 
 }

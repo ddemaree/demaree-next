@@ -1,7 +1,7 @@
 // @import './assets/source-serif-pro/source-serif-pro.css';
+// @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700,700i');
 @import './assets/rhody/fonts.css';
 @import './assets/conductor/fonts.css';
-// @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700,700i');
 
 $sidebar-width: 280px;
 $bp-widescreen: 1140px;
@@ -62,7 +62,7 @@ a {
 .site-layout {
   display: grid;
   min-height: 100vh;
-  grid-template-rows: minmax(4rem, auto) 1fr minmax(4rem, auto);
+  grid-template-rows: minmax(56px, auto) 1fr minmax(56px, auto);
 }
 
 .site-main {
@@ -70,7 +70,9 @@ a {
   grid-template-columns: [all-start] 1fr [main-start] repeat(6, [main-col] minmax(2rem, 5rem)) [main-end] 1fr [all-end];
   grid-auto-flow: row;
   grid-auto-rows: auto;
-  grid-gap: 1.25rem 1.25rem;
+  grid-gap: 1.25rem;
+  align-items: start;
+  align-content: start;
 
   & > * {
     grid-column: main-start / main-end;
@@ -134,8 +136,8 @@ a {
 
 
 .site-header, .site-footer {
-  // background-color: aquamarine;
-  padding: 1em;
+  background-color: white;
+  // padding: 1em;
   & > * {
     // background-color: lightsalmon;
     margin: 0;
@@ -143,7 +145,30 @@ a {
 }
 
 .site-footer {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   font-family: 'halyard-micro', 'halyard-text', sans-serif;
   color: #888;
+  line-height: 1;
+  
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.medium-post {
+  & > * {
+    margin: 0;
+  }
+}
+
+.dd-divider {
+  display: block;
+  border: 0;
+  height: 1rem;
+  
+  &:before {
+    content: '•••';
+    letter-spacing: 1rem;
+    transform: translateY(-0.2em);
+  }
 }
