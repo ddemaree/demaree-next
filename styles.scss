@@ -172,3 +172,26 @@ a {
     transform: translateY(-0.2em);
   }
 }
+
+.book-section {
+  // border-radius: 4px;
+  // background-color: white;
+  // box-shadow: 0 3px 3px #0003;
+  display: grid;
+  // grid-template-columns: minmax(80px, 200px) minmax(400px, 1fr);
+  grid-template-rows: 10rem auto;
+
+  &__hero {
+    grid-column: 1 / -1;
+    padding: 0;
+    margin: 0;
+    background-size: cover;
+    background-position: 50% 60%;
+    background-image: url('//cdn.shopify.com/s/files/1/0051/7692/products/aba-000017-pp-3_660x@2x.progressive.jpg?v=1482334015');
+    padding-top: 30%;
+
+    img {
+      display: none;
+    }
+  }
+}
