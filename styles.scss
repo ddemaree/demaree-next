@@ -219,8 +219,6 @@ a {
     &__hero {
       grid-column: main-col 5 / main-end;
       grid-row: content-start / end;
-      border-radius: 1rem;
-      padding-top: 120%;
     }
     &__content {
       grid-column: main-start / main-col 5;

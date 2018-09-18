@@ -42,7 +42,12 @@ export default class extends React.Component {
               <cite>Paul Ford</cite>
           </blockquote>
 
-          <a>Get it at A Book Apart</a>
+          <ul>
+            <li><a href="https://alistapart.com/article/the-art-of-the-commit" className="dd-button">Read an excerpt</a></li>
+            <li><a href="https://www.goodreads.com/book/show/28801648-git-for-humans" className="dd-button">Reviews on Goodreads</a></li>
+            <li><a href="https://abookapart.com/products/git-for-humans" className="dd-button">Get it at A Book Apart</a></li>
+          </ul>
+          
         </div>
       </section>
 
