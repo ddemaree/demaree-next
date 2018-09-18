@@ -167,6 +167,7 @@ a {
 
 .dd-section {
   grid-column: all-start / all-end;
+  font-weight: 300;
   
   display: grid;
   grid-gap: 1.25rem;
@@ -202,7 +203,11 @@ a {
       margin: 1em 0;
       padding-left: 1.25em;
       padding-right: 1.25em;
-      font-size: 0.8em;
+      // font-family: 'source-serif-pro';
+      font-size: 0.78em;
+      line-height: 1.4;
+      font-weight: 400;
+      // font-style: italic;
       font-family: 'halyard-micro';
     }
     
@@ -223,6 +228,7 @@ a {
     &__hero {
       grid-column: main-col 5 / main-end;
       grid-row: content-start / end;
+      max-height: 19rem;
     }
     &__content {
       grid-column: main-start / main-col 5;
