@@ -76,6 +76,10 @@ a {
 
   & > * {
     grid-column: main-start / main-end;
+    
+    @media (min-width: 860px) {
+      grid-column: main-col 1 / main-col 7;
+    }
   }
 }
 
