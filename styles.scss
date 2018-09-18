@@ -161,37 +161,70 @@ a {
   }
 }
 
-.dd-divider {
-  display: block;
-  border: 0;
-  height: 1rem;
+.dd-section {
+  grid-column: all-start / all-end;
   
-  &:before {
-    content: '•••';
-    letter-spacing: 1rem;
-    transform: translateY(-0.2em);
-  }
-}
-
-.book-section {
-  // border-radius: 4px;
-  // background-color: white;
-  // box-shadow: 0 3px 3px #0003;
   display: grid;
-  // grid-template-columns: minmax(80px, 200px) minmax(400px, 1fr);
-  grid-template-rows: 10rem auto;
+  grid-gap: 1.25rem;
+  grid-template-columns: [all-start] 1fr [main-start] repeat(6, [main-col] minmax(2rem, 5rem)) [main-end] 1fr [all-end];
 
-  &__hero {
-    grid-column: 1 / -1;
-    padding: 0;
+  & > * {
+    grid-column: main-start / main-end;
     margin: 0;
-    background-size: cover;
-    background-position: 50% 60%;
-    background-image: url('//cdn.shopify.com/s/files/1/0051/7692/products/aba-000017-pp-3_660x@2x.progressive.jpg?v=1482334015');
-    padding-top: 30%;
-
-    img {
-      display: none;
+    padding: 0;
+  }
+  
+  &__hero {
+    grid-column: all-start / all-end;
+    padding-top: 50%;
+    
+    @media (min-width: 500px) {
+      padding-top: 40%;
+    }
+  }
+  
+  &__header {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+  
+  &__content {
+    *:first-child {
+      margin-top: 0;
+    }
+    
+    blockquote {
+      border-left: 2px solid mediumseagreen;
+      margin: 1em 0;
+      padding-left: 1.25em;
+      padding-right: 1.25em;
+      font-size: 0.8em;
+      font-family: 'halyard-micro';
+    }
+    
+    cite {
+      text-transform: uppercase;
+      font-style: normal;
+      &:before {
+        content: '—';
+      }
+    }
+  }
+  
+  @media (min-width: 600px) {
+    grid-template-rows: [start] auto [content-start] 1fr [end];
+    &__header {
+      grid-row: 1 / 2;
+    }
+    &__hero {
+      grid-column: main-col 5 / main-end;
+      grid-row: content-start / end;
+      border-radius: 1rem;
+      padding-top: 120%;
+    }
+    &__content {
+      grid-column: main-start / main-col 5;
+      grid-row: content-start / end;
     }
   }
 }
