@@ -76,10 +76,6 @@ a {
 
   & > * {
     grid-column: main-start / main-end;
-    
-    @media (min-width: 860px) {
-      grid-column: main-col 1 / main-col 7;
-    }
   }
 }
 
@@ -88,6 +84,7 @@ a {
   .hero-image {
     grid-column: 1 / - 1;
     padding-top: 30%;
+    min-height: 50vh;
   }
 
   .hero-section-content {
@@ -141,9 +138,8 @@ a {
 
 .site-header, .site-footer {
   background-color: white;
-  // padding: 1em;
+
   & > * {
-    // background-color: lightsalmon;
     margin: 0;
   }
 }

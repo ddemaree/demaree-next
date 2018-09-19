@@ -36,7 +36,7 @@ export const SiteHeader = (props) => (
     <nav className="site-nav">
       <NavLink href="/">Home</NavLink>
       <NavLink href="/writing">Writing</NavLink>
-      <NavLink href="/photography">Photography</NavLink>
+      <NavLink href="/photography">Photos</NavLink>
     </nav>
   </header>
 )
