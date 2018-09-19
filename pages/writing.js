@@ -28,10 +28,10 @@ export default class extends React.Component {
     const { posts } = this.props
     return (
     <Fragment>
-      <h2 className="section-hed">Writing</h2>
+      <h2 className="section-hed dd-header-1">Writing</h2>
       
-      <section className="dd-section dd-section--fullbleed">
-        <h3 className="dd-section__header">Git for Humans</h3>
+      <section className="dd-section book-section">
+        <h3 className="dd-section__header dd-header-2">Git for Humans</h3>
 
         <ResponsiveImg className="dd-section__hero" src="//cdn.shopify.com/s/files/1/0051/7692/products/aba-000017-pp-3_660x@2x.progressive.jpg?v=1482334015" />
         
@@ -53,7 +53,7 @@ export default class extends React.Component {
 
       <hr className="dd-divider" />
       
-      <h3>Articles on Medium</h3>
+      <h3 className="dd-header-2">Articles on Medium</h3>
       {posts.map( post => (
       <article className="medium-post" key={post.link}>
           <h3 className="title"><a href={post.link}>{post.title}</a></h3>

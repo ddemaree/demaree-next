@@ -31,10 +31,6 @@ export default class extends React.Component {
       <Head>
         <title>David Demaree's web site</title>
       </Head>
-      <HeroImage
-        className="hero-photo" 
-        backgroundPosition="65% 25%"
-        src="https://res.cloudinary.com/demaree/image/fetch/http://images.demaree.me/imgix/dd-photo.jpg" />
       <div className="hero-section-content">
         <p><b>Hi, I'm David. <em>👋</em></b></p>
         <p>I lead product teams that build amazing things. Sometimes I also build things. But mostly I <a className="activity">write</a>, <a className="activity">take pictures <em>📸</em></a>, and drink coffee.</p>

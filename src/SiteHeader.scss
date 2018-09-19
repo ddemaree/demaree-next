@@ -32,10 +32,6 @@
   }
   
   // Visual styles
-  font-family: 'halyard-micro', 'halyard-text', sans-serif;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  line-height: 1;
   
   * {
     margin: 0;
@@ -51,6 +47,8 @@
 .header-logo {
   justify-self: center;
   align-self: end;
+  font-family: 'Sentinel A', 'Sentinel B', 'Comic Sans MS';
+  font-weight: 700;
 
   color: inherit;
   text-decoration: none;
@@ -71,6 +69,10 @@
 }
 
 .site-nav {
+  font-family: 'halyard-micro', 'halyard-text', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 1;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
