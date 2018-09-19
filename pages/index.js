@@ -8,7 +8,6 @@ const HeroImage = ({ src, overlayColor, textColor, className, backgroundPosition
   let styles = {
     backgroundPosition,
     backgroundSize: 'cover',
-    minHeight: '10em'
   }
   
   if(overlayColor) {

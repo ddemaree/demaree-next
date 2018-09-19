@@ -1,13 +1,12 @@
 .site-header {
   // Grid
   display: grid;
-  // grid-template-columns: [header-start] 1fr [main-start] repeat(6, [header-col] minmax(2rem, 5rem)) [main-end] 1fr [header-end];
   grid-template-columns: [header-start] 0.75rem [main-start] repeat(2, [header-col] 1fr) [main-end] 0.75rem [header-end];
   grid-auto-rows: minmax(48px, auto);
   border-bottom: 1px solid currentColor;
   
   .header-logo, .site-nav {
-    grid-column: header-start / header-end;
+    grid-column: main-start / main-end;
   }
   
   .header-logo {
@@ -28,8 +27,7 @@
     .site-nav {
       grid-column: header-col 2 / main-end;
       grid-row: 1 / 2;
-      justify-self: end;
-      min-width: 300px;
+      // justify-self: end;
     }
   }
   
@@ -46,6 +44,7 @@
   
   a {
     text-decoration: none;
+    transition: all 0.4s ease;
   }
 }
 
@@ -73,35 +72,40 @@
 
 .site-nav {
   display: grid;
-  // grid-template-rows: minmax(48px, auto);
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
-  grid-row-gap: 0.5em;
+  grid-gap: 0.25em;
   text-align: center;
+  min-width: 300px;
   
   &__link {
-    // background: salmon;
-    min-height: 48px;
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
-    border-bottom: 4px solid transparent;
+    min-height: 48px;
+    position: relative;
     
     &.active {
       border-bottom-color: currentColor;
     }
     
-    span {
-      // background: mediumspringgreen;
-      padding: 0.5em 0 calc(0.5em - 2px) 0;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background-color: transparent;
+      transition: all 0.5s ease;
+      transform: scaleX(0);
     }
     
-    &:hover span {
-      border-bottom-color: mediumseagreen;
-    }
-    
-    &.active span {
-      border-bottom-color: currentColor;
+    &.active, &:hover {
+      &:after {
+        transform: scaleX(1);
+        background-color: currentColor;
+      }
     }
   }
 }
