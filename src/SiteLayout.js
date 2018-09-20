@@ -1,21 +1,47 @@
 import React from 'react'
 import SiteHeader from './SiteHeader'
+import { withRouter } from 'next/router'
 
-export default class SiteLayout extends React.Component {
+import Router from 'next/router'
+const { router } = Router
+
+class SiteLayout extends React.Component {
   constructor(props) {
     super(props)
+    
+    this.startLoading = this.startLoading.bind(this)
+    this.stopLoading  = this.stopLoading.bind(this)
+
     this.state = {
       loading: false,
       nightMode: (props.nightMode || false)
     }
   }
 
-  componentDidMount() {
-    console.log("SiteLayout did mount")
-    // console.log(Router)
-    // Router.events.on('routeChangeStart', (url) => this.setState({loading: true}))
-    // Router.events.on('routeChangeComplete', (url) => this.setState({loading: false}))
-    // Router.events.on('routeChangeError', (url) => this.setState({loading: false}))
+  componentDidMount(){
+    if(router) {
+      console.log("Adding route observers")
+      router.events.on('routeChangeStart', this.startLoading)
+      router.events.on('routeChangeComplete', this.stopLoading)
+    }
+  }
+  
+  componentWillUnmount() {
+    if(router) {
+      console.log("Removing route observers")
+      router.events.off('routeChangeStart', this.startLoading)
+      router.events.off('routeChangeComplete', this.stopLoading)
+    }
+  }
+  
+  startLoading(url) {
+    console.log("Starting to navigate to ", url)
+    this.setState({ loading: true })
+  }
+  
+  stopLoading(url) {
+    console.log("Done navigating to ", url)
+    this.setState({ loading: false })
   }
 
   getClassNames() {
@@ -23,6 +49,9 @@ export default class SiteLayout extends React.Component {
 
     if( this.props.pageName )
       classNames.push(`page--${this.props.pageName}`)
+    
+    if( this.state.loading )
+      classNames.push(`route-loading`)
 
     return classNames.join(' ')
   }
@@ -42,3 +71,5 @@ export default class SiteLayout extends React.Component {
     </div>
   }
 }
+
+export default withRouter(SiteLayout)
