@@ -52,6 +52,9 @@ class SiteLayout extends React.Component {
     
     if( this.state.loading )
       classNames.push(`route-loading`)
+    
+    if( this.state.nightMode )
+      classNames.push('dark-mode')
 
     return classNames.join(' ')
   }

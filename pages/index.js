@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import Head from 'next/head'
-import heroImg from '../assets/romain-vignes-53940-unsplash.jpg'
+// import heroImg from '../assets/romain-vignes-53940-unsplash.jpg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const HeroImage = ({ src, overlayColor, textColor, className, backgroundPosition, ...props }) => {
   let classNames = ['hero-image', className]
@@ -25,6 +26,16 @@ const HeroImage = ({ src, overlayColor, textColor, className, backgroundPosition
   )
 }
 
+const SocialLink = ({ label, icon, href, title, children }) =>
+  <li className="dd-social-link">
+    <a target="_blank" href={href} title={title} rel="me">
+      {icon && <FontAwesomeIcon icon={['fab', icon]} />}
+      {children && <span>{children}</span>}
+      {!children && label && <span>{label}</span>}
+      {!children && !label && title && <span>{title}</span>}
+    </a>
+  </li>
+
 export default class extends React.Component {
  render() {
     return (<Fragment>
@@ -35,6 +46,15 @@ export default class extends React.Component {
         <p className="hero-section__hed"><b>Hi, I'm David. <span>👋</span></b></p>
         <p>I lead product teams that build amazing things on the internet.</p><p>This is my web&nbsp;site.&nbsp;<span>💥</span></p>
       </div>
+      <nav className="socials">
+        <ul>
+          <SocialLink title="@ddemaree on Twitter" icon="twitter" href="https://twitter.com/ddemaree" label="Twitter" />
+          <SocialLink title="@ddemaree on Instagram" icon="instagram" href="https://instagram.com/ddemaree" label="Instagram" />
+          <SocialLink title="@ddemaree on Medium" icon="medium" href="https://medium.com/@ddemaree" label="Medium" />
+          <SocialLink title="@ddemaree on GitHub" icon="github" href="https://github.com/ddemaree" label="GitHub" />
+          <SocialLink title="@ddemaree on LinkedIn" icon="linkedin" href="https://linkedin.com/in/ddemaree" label="LinkedIn" />
+        </ul>
+      </nav>
   </Fragment>)
   }
 }
