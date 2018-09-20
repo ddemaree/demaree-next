@@ -31,10 +31,9 @@ export default class extends React.Component {
       <Head>
         <title>David Demaree's web site</title>
       </Head>
-      <div className="hero-section-content">
-        <p><b>Hi, I'm David. <em>👋</em></b></p>
-        <p>I lead product teams that build amazing things. Sometimes I also build things. But mostly I <a className="activity">write</a>, <a className="activity">take pictures <em>📸</em></a>, and drink coffee.</p>
-        <p>This is my web site. <em>💥</em></p>
+      <div className="hero-section">
+        <p className="hero-section__hed"><b>Hi, I'm David. <span>👋</span></b></p>
+        <p>I lead product teams that build amazing things on the internet.</p><p>This is my web&nbsp;site.&nbsp;<span>💥</span></p>
       </div>
   </Fragment>)
   }

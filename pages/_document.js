@@ -6,7 +6,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
-          <link rel="stylesheet" href="https://cloud.typography.com/68698/6932392/css/fonts.css" />
+          <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/68698/6863392/css/fonts.css" />
           <link rel="stylesheet" href="https://use.typekit.net/hpk3qlq.css" />
           <link rel="stylesheet" href="/_next/static/style.css" />
         </Head>
