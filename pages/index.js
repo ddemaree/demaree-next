@@ -1,30 +1,5 @@
 import React, { Fragment } from 'react'
-import Head from 'next/head'
-import Helmet from 'react-helmet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-const HeroImage = ({ src, overlayColor, textColor, className, backgroundPosition, ...props }) => {
-  let classNames = ['hero-image', className]
-  let cssBgs = [`url(${src})`]
-  let styles = {
-    backgroundPosition,
-    backgroundSize: 'cover',
-  }
-  
-  if(overlayColor) {
-    cssBgs.unshift(`linear-gradient(to bottom, #0006, #0006)`)
-  }
-
-  if(textColor) styles.color = textColor;
-  styles.backgroundImage = cssBgs.join(', ')
-
-  return (
-    <div 
-      className={classNames.join(' ')} 
-      style={styles}
-      {...props} />
-  )
-}
 
 function getIconName(icon) {
   if (typeof icon === 'string') {

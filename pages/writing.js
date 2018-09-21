@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
-import getMediumPosts from '../src/getMediumPosts'
 import { getPosts } from '../src/WordPress'
 
 import { faGoodreads } from '@fortawesome/free-brands-svg-icons'
 import { faShoppingBag, faBookReader } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+// import getMediumPosts from '../src/getMediumPosts'
 const ResponsiveImg = ({ src, className }) => {
   let classNames = ['dd-responsive-img', className]
   
