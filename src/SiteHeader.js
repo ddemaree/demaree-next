@@ -48,9 +48,9 @@ const SiteHeader = ({ showThemeSwitch, nightMode, toggleTheme }) =>
     <nav className="site-nav">
       <NavLink href="/">Home</NavLink>
       <NavLink href="/writing">Writing</NavLink>
-      <NavLink href="/photography">Photos</NavLink>
+      {/* <NavLink href="/photography">Photos</NavLink> */}
     </nav>
-    {showThemeSwitch && 
+    {false && showThemeSwitch && 
       <button onClick={e => toggleTheme()} type="button" className="theme-toggle">
         <FontAwesomeIcon icon={nightMode ? faSun : faMoon} />
       </button>}

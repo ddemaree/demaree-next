@@ -170,7 +170,7 @@ a {
   
   .hero-section {
     color: hsl(10deg, 80%, 85%);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 1.3;
     letter-spacing: 0.45px;
     font-weight: 300;
@@ -214,7 +214,6 @@ a {
     align-self: center;
     align-items: center;
     border-radius: 8px;
-    box-shadow: 3px 3px 3px #0002;
 
     &:hover {
       background-color: #eb6250;
@@ -246,8 +245,16 @@ a {
     }
   }
   @media (max-width: 380px) {
+    a {
+      justify-items: center;
+      grid-template-columns: [icon-st] 48px;
+    }
+    a span {
+      display: none;
+    }
     ul {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-flow: dense;
     }
   }
 }
