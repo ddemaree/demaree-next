@@ -28,6 +28,7 @@
     "node-sass": "^4.9.3",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
+    "react-helmet": "^5.2.0",
     "react-media": "^1.8.0",
     "resolve-url-loader": "^2.3.1",
     "rss-parser": "^3.4.3",

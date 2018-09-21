@@ -1,5 +1,6 @@
 import React from 'react'
 import App, {Container} from 'next/app'
+import Helmet from 'react-helmet'
 import SiteLayout from '../src/SiteLayout'
 import "../styles.scss"
 
@@ -35,6 +36,9 @@ export default class MyApp extends App {
     const { Component, pageProps, layoutProps } = this.props
 
     return <Container>
+      <Helmet
+        defaultTitle="David Demaree‘s web site"
+        titleTemplate="%s • David Demaree‘s web site" />
       <SiteLayout {...layoutProps}>
         <Component {...pageProps} />
       </SiteLayout>

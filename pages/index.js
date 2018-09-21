@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import Head from 'next/head'
+import Helmet from 'react-helmet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const HeroImage = ({ src, overlayColor, textColor, className, backgroundPosition, ...props }) => {
@@ -46,9 +47,6 @@ const SocialLink = ({ label, icon, href, title, children }) =>
 export default class extends React.Component {
  render() {
     return (<Fragment>
-      <Head>
-        <title>David Demaree's web site</title>
-      </Head>
       <div className="hero-section">
         <p className="hero-section__hed"><b>Hi, I'm David. <span>👋</span></b></p>
         <p>I lead product teams that build amazing things on the internet.</p><p>This is my web&nbsp;site.&nbsp;<span>💥</span></p>

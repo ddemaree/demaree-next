@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import Helmet from 'react-helmet'
 import getMediumPosts from '../src/getMediumPosts'
 import { getPosts } from '../src/WordPress'
 
@@ -36,6 +37,7 @@ export default class extends React.Component {
     const { posts } = this.props
     return (
     <Fragment>
+      <Helmet title="Writing" />
       <h2 className="section-hed dd-header-1">Writing</h2>
       
       <section className="dd-section book-section">
