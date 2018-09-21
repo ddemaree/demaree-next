@@ -1,6 +1,10 @@
 import React, { Fragment } from 'react'
 import getMediumPosts from '../src/getMediumPosts'
-import { getPosts } from '../src/WordPress';
+import { getPosts } from '../src/WordPress'
+
+import { faGoodreads } from '@fortawesome/free-brands-svg-icons'
+import { faShoppingBag, faBookReader } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const ResponsiveImg = ({ src, className }) => {
   let classNames = ['dd-responsive-img', className]
@@ -47,9 +51,18 @@ export default class extends React.Component {
           </blockquote>
 
           <ul>
-            <li><a href="https://alistapart.com/article/the-art-of-the-commit" className="dd-button">Read an excerpt</a></li>
-            <li><a href="https://www.goodreads.com/book/show/28801648-git-for-humans" className="dd-button">Reviews on Goodreads</a></li>
-            <li><a href="https://abookapart.com/products/git-for-humans" className="dd-button">Get it at A Book Apart</a></li>
+            <li><a href="https://alistapart.com/article/the-art-of-the-commit" className="dd-button">
+              <FontAwesomeIcon icon={faBookReader} />
+              <span>Read an excerpt</span>
+            </a></li>
+            <li><a href="https://www.goodreads.com/book/show/28801648-git-for-humans" className="dd-button">
+              <FontAwesomeIcon icon={faGoodreads} />
+              <span>Reviews on Goodreads</span>
+            </a></li>
+            <li><a href="https://abookapart.com/products/git-for-humans" className="dd-button">
+              <FontAwesomeIcon icon={faShoppingBag} />
+              <span>Get it at A Book Apart</span>
+            </a></li>
           </ul>
           
         </div>

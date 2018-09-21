@@ -58,6 +58,13 @@ app.prepare()
       throw err
     }
     console.log('> Ready on http://localhost:' + process.env.PORT + ' [' + process.env.NODE_ENV + ']')
+    
+    const ngrok = require('ngrok')
+    ngrok.connect({
+      subdomain: 'dd-next-dev',
+      port: process.env.PORT
+    })
+    .then(url => console.log("Ngrok listening on ", url))
   })
 })
 .catch(err => {

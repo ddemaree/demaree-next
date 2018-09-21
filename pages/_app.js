@@ -7,10 +7,10 @@ import Router from 'next/router'
 import getNamespaceFromPath from '../src/getNamespaceFromPath'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
+import { faStroopwafel, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faInstagram, faMedium, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faStroopwafel)
+library.add(faStroopwafel, faPaperPlane)
 library.add(faTwitter, faInstagram, faMedium, faGithub, faLinkedin)
 
 export default class MyApp extends App {

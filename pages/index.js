@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import Head from 'next/head'
-// import heroImg from '../assets/romain-vignes-53940-unsplash.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const HeroImage = ({ src, overlayColor, textColor, className, backgroundPosition, ...props }) => {
@@ -26,10 +25,18 @@ const HeroImage = ({ src, overlayColor, textColor, className, backgroundPosition
   )
 }
 
+function getIconName(icon) {
+  if (typeof icon === 'string') {
+    return ['fab', icon]
+  } else {
+    return icon
+  }
+}
+
 const SocialLink = ({ label, icon, href, title, children }) =>
   <li className="dd-social-link">
     <a target="_blank" href={href} title={title} rel="me">
-      {icon && <FontAwesomeIcon icon={['fab', icon]} />}
+      {icon && <FontAwesomeIcon icon={getIconName(icon)} />}
       {children && <span>{children}</span>}
       {!children && label && <span>{label}</span>}
       {!children && !label && title && <span>{title}</span>}
@@ -53,6 +60,7 @@ export default class extends React.Component {
           <SocialLink title="@ddemaree on Medium" icon="medium" href="https://medium.com/@ddemaree" label="Medium" />
           <SocialLink title="@ddemaree on GitHub" icon="github" href="https://github.com/ddemaree" label="GitHub" />
           <SocialLink title="@ddemaree on LinkedIn" icon="linkedin" href="https://linkedin.com/in/ddemaree" label="LinkedIn" />
+          <SocialLink title="Send email to David" icon={['fas', 'paper-plane']} href="mailto:david@demaree.me" label="Email" />
         </ul>
       </nav>
   </Fragment>)
