@@ -6,6 +6,9 @@ import DDIcon from './DDIcon'
 import getNamespaceFromPath from './getNamespaceFromPath'
 import './SiteHeader.scss'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
+
 const NavLink = withRouter(({ href, children, className, router }) => {
   let classNames = ['site-nav__link', className]
   let active = false
@@ -25,8 +28,17 @@ const NavLink = withRouter(({ href, children, className, router }) => {
   )
 })
 
-export const SiteHeader = (props) => (
-  <header id="site-header" className="site-header">
+const getSiteHeaderClasses = (showThemeSwitch) => {
+  let classes = ['site-header']
+
+  if(showThemeSwitch)
+    classes.push('with-theme-switcher')
+
+  return classes.join(' ')
+}
+
+const SiteHeader = ({ showThemeSwitch, nightMode, toggleTheme }) => 
+  <header id="site-header" className={ getSiteHeaderClasses(showThemeSwitch) }>
     <Link href="/">
       <a className="header-logo">
         <DDIcon />
@@ -38,7 +50,10 @@ export const SiteHeader = (props) => (
       <NavLink href="/writing">Writing</NavLink>
       <NavLink href="/photography">Photos</NavLink>
     </nav>
+    {showThemeSwitch && 
+      <button onClick={e => toggleTheme()} type="button" className="theme-toggle">
+        <FontAwesomeIcon icon={nightMode ? faSun : faMoon} />
+      </button>}
   </header>
-)
 
 export default SiteHeader

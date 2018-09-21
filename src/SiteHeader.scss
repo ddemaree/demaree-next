@@ -1,7 +1,7 @@
 .site-header {
   // Grid
   display: grid;
-  grid-template-columns: [header-start] 0.75rem [main-start] repeat(2, [header-col] 1fr) [main-end] 0.75rem [header-end];
+  grid-template-columns: [header-start] 0.75rem [main-start] repeat(2, [header-col] 1fr) [main-end theme-toggle] 48px [header-end];
   grid-auto-rows: minmax(48px, auto);
   
   .header-logo, .site-nav {
@@ -14,6 +14,14 @@
 
   .site-nav {
     grid-row: 2 / 3;
+  }
+
+  .theme-toggle {
+    grid-column: theme-toggle;
+    color: inherit;
+    background: transparent;
+    border: 0;
+    outline: none;
   }
   
   @media (min-width: 540px) {

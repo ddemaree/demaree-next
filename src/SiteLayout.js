@@ -11,14 +11,18 @@ class SiteLayout extends React.Component {
     
     this.startLoading = this.startLoading.bind(this)
     this.stopLoading  = this.stopLoading.bind(this)
+    this.toggleTheme = this.toggleTheme.bind(this)
 
     this.state = {
       loading: false,
-      nightMode: (props.nightMode || false)
+      showThemeSwitch: false,
+      nightMode: (props.nightMode || true)
     }
   }
 
   componentDidMount(){
+    this.setState({showThemeSwitch: true})
+
     if(router) {
       console.log("Adding route observers")
       router.events.on('routeChangeStart', this.startLoading)
@@ -44,6 +48,11 @@ class SiteLayout extends React.Component {
     this.setState({ loading: false })
   }
 
+  toggleTheme() {
+    const { nightMode } = this.state
+    this.setState({ nightMode: !nightMode })
+  }
+
   getClassNames() {
     let classNames = ['site-layout']
 
@@ -61,8 +70,13 @@ class SiteLayout extends React.Component {
 
   render () {
     const { children } = this.props
+    const { showThemeSwitch, nightMode } = this.state
+
     return <div id="dd-main" className={this.getClassNames()}>
-      <SiteHeader />
+      <SiteHeader 
+        toggleTheme={this.toggleTheme}
+        showThemeSwitch={showThemeSwitch}
+        nightMode={nightMode} />
       
       <main id="site-main" className="site-main">
         {children}

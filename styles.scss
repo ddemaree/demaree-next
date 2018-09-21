@@ -57,12 +57,14 @@ a {
 .site-layout {
   --background-color: white;
   --text-color: black;
+  --light-text-color: #999;
   --link-color: black;
   --accent-color: mediumseagreen;
 
   &.dark-mode {
     --background-color: black;
     --text-color: snow;
+    --light-text-color: #999;
     --link-color: white;
     --accent-color: salmon;
   }
@@ -119,7 +121,7 @@ a {
 
 .dd-divider {
   border: 0;
-  height: 1.5rem;
+  height: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -261,6 +263,7 @@ a {
   font-size: 0.7rem;
   font-family: 'halyard-micro', 'halyard-text', sans-serif;
   line-height: 1;
+  color: var(--light-text-color);
   
   display: grid;
   align-items: center;
