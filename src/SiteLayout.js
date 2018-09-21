@@ -12,11 +12,13 @@ class SiteLayout extends React.Component {
     this.startLoading = this.startLoading.bind(this)
     this.stopLoading  = this.stopLoading.bind(this)
     this.toggleTheme = this.toggleTheme.bind(this)
+    this.toggleMenu = this.toggleMenu.bind(this)
 
     this.state = {
       loading: false,
       showThemeSwitch: false,
-      nightMode: (props.nightMode || true)
+      nightMode: (props.nightMode || true),
+      mobileMenuOpen: false
     }
   }
 
@@ -53,6 +55,11 @@ class SiteLayout extends React.Component {
     this.setState({ nightMode: !nightMode })
   }
 
+  toggleMenu() {
+    const { mobileMenuOpen } = this.state
+    this.setState({ mobileMenuOpen: !mobileMenuOpen })
+  }
+
   getClassNames() {
     let classNames = ['site-layout']
 
@@ -70,13 +77,15 @@ class SiteLayout extends React.Component {
 
   render () {
     const { children } = this.props
-    const { showThemeSwitch, nightMode } = this.state
+    const { showThemeSwitch, nightMode, mobileMenuOpen } = this.state
 
     return <div id="dd-main" className={this.getClassNames()}>
       <SiteHeader 
         toggleTheme={this.toggleTheme}
         showThemeSwitch={showThemeSwitch}
-        nightMode={nightMode} />
+        nightMode={nightMode}
+        mobileMenuOpen={mobileMenuOpen}
+        toggleMenu={this.toggleMenu} />
       
       <main id="site-main" className="site-main">
         {children}

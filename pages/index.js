@@ -60,7 +60,7 @@ export default class extends React.Component {
           <SocialLink title="@ddemaree on Medium" icon="medium" href="https://medium.com/@ddemaree" label="Medium" />
           <SocialLink title="@ddemaree on GitHub" icon="github" href="https://github.com/ddemaree" label="GitHub" />
           <SocialLink title="@ddemaree on LinkedIn" icon="linkedin" href="https://linkedin.com/in/ddemaree" label="LinkedIn" />
-          <SocialLink title="Send email to David" icon={['fas', 'paper-plane']} href="mailto:david@demaree.me" label="Email" />
+          <SocialLink title="Send email to David" icon={['fas', 'paper-plane']} href="mailto:david@demaree.me" label="Email me" />
         </ul>
       </nav>
   </Fragment>)
