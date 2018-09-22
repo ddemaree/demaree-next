@@ -38,7 +38,9 @@ export default class MyApp extends App {
     return <Container>
       <Helmet
         defaultTitle="David Demaree‘s web site"
-        titleTemplate="%s • David Demaree‘s web site" />
+        titleTemplate="%s • David Demaree‘s web site">
+        <meta name="viewport" content="initial-scale=1, width=device-width"  />
+      </Helmet>
       <SiteLayout {...layoutProps}>
         <Component {...pageProps} />
       </SiteLayout>

@@ -22,27 +22,13 @@ export default class extends Document {
       .map(el => this.props.helmet[el].toComponent())
   }
 
-  get helmetJsx () {
-    return (<Helmet
-      htmlAttributes={{lang: 'en'}}
-      defaultTitle="David Demaree's web site"
-      titleTemplate="%s | David Demaree's web site"
-      meta={[
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { property: 'og:title', content: 'Hello next.js!' }
-      ]}
-    />)
-  }
-
   render() {
     return (
       <html>
         <Head>
-          {/* { this.helmetJsx } */}
           { this.helmetHeadComponents }
           <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/68698/6863392/css/fonts.css" />
           <link rel="stylesheet" href="https://use.typekit.net/hpk3qlq.css" />
-          {/* <link rel="stylesheet" href="/_next/static/style.css" /> */}
         </Head>
         <body className="gridster">
           <Main />
