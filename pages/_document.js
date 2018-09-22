@@ -42,7 +42,7 @@ export default class extends Document {
           { this.helmetHeadComponents }
           <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/68698/6863392/css/fonts.css" />
           <link rel="stylesheet" href="https://use.typekit.net/hpk3qlq.css" />
-          <link rel="stylesheet" href="/_next/static/style.css" />
+          {/* <link rel="stylesheet" href="/_next/static/style.css" /> */}
         </Head>
         <body className="gridster">
           <Main />
