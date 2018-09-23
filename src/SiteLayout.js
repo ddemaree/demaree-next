@@ -17,7 +17,7 @@ class SiteLayout extends React.Component {
     this.state = {
       loading: false,
       showThemeSwitch: false,
-      nightMode: (props.nightMode || true),
+      nightMode: (props.nightMode || false),
       mobileMenuOpen: false
     }
   }

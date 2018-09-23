@@ -33,6 +33,7 @@ export default class extends Document {
         <body className="gridster">
           <Main />
           <NextScript />
+          <script id="twtr-js" async="true" src="https://platform.twitter.com/widgets.js" />
         </body>
       </html>
     )

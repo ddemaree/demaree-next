@@ -325,3 +325,147 @@ nav {
     }
   }
 }
+
+.entry-title {
+  font-weight: 300;
+  letter-spacing: -0.5px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.entry-meta {
+  font-family: 'source-serif-pro', Georgia, serif;
+  font-style: italic;
+  margin-top: 0.8em;
+  font-size: 0.9rem;
+}
+
+.entry-content {
+  font-family: 'source-serif-pro', Georgia, serif;
+  line-height: 1.58;
+
+  a {
+    color: inherit;
+    background-image: linear-gradient(to bottom, #848484, #848484);
+    background-position: 0 1.21em;
+    background-repeat: repeat-x;
+    background-size: 2px 1px;
+    text-decoration: none;
+  }
+  
+  h2, h3 {
+    font-family: var(--ff-display);
+    font-size: 1rem; 
+    line-height: 1.22;
+  }
+  
+  blockquote {
+    margin: 1rem 0;
+    letter-spacing: -0.003em;
+
+    & > *:first-child {
+      margin-top: 0;
+    }
+  
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.entry-content > hr {
+  // @include centered-divider;
+}
+
+// Top level quote, incl. Gutenberg block quotes
+.entry-content > blockquote {
+  --bq-inset: 1rem;
+  --bq-border-width: 4px;
+  border-left: var(--bq-border-width) solid currentColor;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  margin-left: calc(0rem - var(--size-horiz-inset));
+  margin-top: 1.5rem;
+  padding: 0 var(--bq-inset) 0 calc(var(--size-horiz-inset) - var(--bq-border-width));
+}
+
+// Blockquote Citation
+.entry-content > blockquote > cite {
+  // @include caption;
+  display: block;
+  font-size: 0.7rem;
+  text-transform: none;
+  color: var(--col-bodytext-light);
+  
+  a {
+    background-position: 0 1.28em;
+  }
+  
+  &:before {
+    content: '—';
+    display: inline;
+  }
+}
+
+.entry-content > blockquote > p + cite {
+  margin-top: -0.5rem;
+}
+
+
+.entry-content > figure {
+  margin: 2em auto;
+    
+  &.wp-block-embed-twitter {
+    margin: 1.5em auto;
+  }
+
+  &[class^=pull-] {
+    margin: 1rem 2rem;
+    margin-top: 0.5rem;
+    width: 50%;
+    max-width: 500px;
+
+    @media (max-width: 700px) {
+      width: auto;
+      float: none !important;
+      margin: 2rem auto !important;
+    }
+  }
+
+    &.pull-left {
+        float: left;
+        margin-left: -2rem;
+    }
+    &.pull-right {
+        float: right;
+        margin-right: -2rem;
+    }
+
+  figcaption {
+    color: #848484;
+    font-family: var(--ff-caption);
+    font-size: 0.625em;
+    line-height: 1.2em;
+    padding-top: 0.5rem;
+    text-align: center;
+  }
+}
+
+.entry-content .twitter-tweet {
+    margin: 0 auto;
+    font-size: 1em;
+}
+
+.entry-content ul,
+.entry-content ol {
+  padding-left: 2rem;
+
+  li {
+    margin: 1em 0;
+  }
+}
+
+.entry-content > pre[class*="language-"] {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}

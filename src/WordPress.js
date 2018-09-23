@@ -15,8 +15,16 @@ export function transformPost(postData, includeContent = false) {
     if(key === 'guid') {
       coll.guid = value.rendered
     }
+    if(key === 'content') {
+      postData.content.rendered = stripTwitterWidgetTags(postData.content.rendered)
+    }
   })
+  console.log(postData)
   return _pick(postData, pickFields)
+}
+
+function stripTwitterWidgetTags(content) {
+  return content.replace(/<script .+platform\.twitter\.com\/widgets.js"[^>]*><\/script>/, '<!-- removed twitter js here -->')
 }
 
 export const getPosts = (args = {}) => {
