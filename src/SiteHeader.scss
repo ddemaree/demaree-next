@@ -34,7 +34,8 @@
   }
   
   // Visual styles
-  background: black;
+  background: var(--navbar-color);
+  color: var(--navbar-text-color);
   
   * {
     margin: 0;

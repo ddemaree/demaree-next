@@ -59,24 +59,25 @@ nav {
 
 .site-layout {
   --background-color: white;
+  --navbar-color: black;
+  --navbar-text-color: white;
   --text-color: black;
   --light-text-color: #999;
   --link-color: black;
   --accent-color: mediumseagreen;
 
   &.dark-mode {
-    --background-color: black;
+    --background-color: #18334b;
+    --navbar-color: black;
+    --navbar-text-color: white;
     --text-color: snow;
     --light-text-color: #999;
     --link-color: white;
     --accent-color: salmon;
-    
-    --background-color: #18334b;
   }
 
   background-color: var(--background-color);
   color: var(--text-color);
-
   display: grid;
   min-height: 100vh;
   grid-template-rows: minmax(56px, auto) 1fr minmax(56px, auto);
@@ -384,9 +385,9 @@ nav {
   border-left: var(--bq-border-width) solid currentColor;
   font-style: italic;
   margin-bottom: 1.5rem;
-  margin-left: calc(0rem - var(--size-horiz-inset));
+  margin-left: -1.5rem;
   margin-top: 1.5rem;
-  padding: 0 var(--bq-inset) 0 calc(var(--size-horiz-inset) - var(--bq-border-width));
+  padding: 0 var(--bq-inset) 0 calc(1.5rem - var(--bq-border-width));
 }
 
 // Blockquote Citation
