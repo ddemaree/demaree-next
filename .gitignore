@@ -9,3 +9,4 @@ yarn-error.log
 .env
 .vscode
 .next
+_site
