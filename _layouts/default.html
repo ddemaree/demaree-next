@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, width=device-width"  />
+
+  {% if page.title %}
+  <title>{{ page.title }} | {{ site.title }}</title>
+  {% else %}
+  <title>{{ site.title }}</title>
+  {% endif %}
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  {% include twitter_card.html %}
+  {% include opengraph.html %}
+  
+  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/68698/6863392/css/fonts.css" />
+  <link rel="stylesheet" href="https://use.typekit.net/hpk3qlq.css" />
+</head>
+
+<body>
+  {{ content }}
+</body>
+
+</html>

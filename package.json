@@ -37,7 +37,11 @@
     "url-loader": "^1.1.1"
   },
   "devDependencies": {
+    "browser-sync": "^2.24.7",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "concurrently": "^4.0.1",
     "express": "^4.16.3",
-    "ngrok": "^3.0.1"
+    "ngrok": "^3.0.1",
+    "webpack-dev-server": "^3.1.9"
   }
 }

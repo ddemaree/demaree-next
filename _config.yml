@@ -1,0 +1,47 @@
+---
+title: David Demaree
+timezone: America/New_York
+collections:
+  posts:
+    title: Posts
+    output: true
+  publications:
+    title: Publications
+    output: false
+  talks:
+    title: Talks
+    output: false
+  uploads:
+    title: Uploads
+    output: true
+destination: _site
+email: david@demaree.me
+description: David Demaree's web site
+baseurl: 
+url: https://demaree.me
+domain: demaree.me
+twitter_username: ddemaree
+github_username: ddemaree
+markdown: kramdown
+defaults:
+- scope:
+    path: ''
+  values:
+    show_header: true
+    blah: blah
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+    permalink: "/posts/:year/:title/"
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: page
+- scope:
+    path: ''
+    type: talks
+  values:
+    layout: talk
