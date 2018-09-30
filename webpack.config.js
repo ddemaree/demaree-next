@@ -2,6 +2,8 @@ const webpack = require('webpack')
 const path = require('path')
 const dev = (process.env.NODE_ENV !== 'production')
 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
 const merge = require('webpack-merge').smartStrategy(
   {
     entry: 'prepend', // or 'replace'
@@ -22,6 +24,8 @@ const babelLoader = function(dev = false) {
 
 const makeSassLoaderRule = (testRegexp, dev = false, enableModules = false) => {
   let loaders = [
+    (dev && 'extracted-loader'),
+    MiniCssExtractPlugin.loader,
     {
       loader: 'css-loader',
       options: {
@@ -34,7 +38,7 @@ const makeSassLoaderRule = (testRegexp, dev = false, enableModules = false) => {
         sourceMap: dev
       }
     }
-  ]
+  ].filter(Boolean)
 
   // TODO: Only prepend this in dev, and add MiniCssExtract in prod
   loaders.unshift({
@@ -57,7 +61,10 @@ const sassLoader = makeSassLoaderRule(/\.s?css$/, dev, false)
 const baseConfig = {
   mode: (dev ? 'development' : 'production'),
   entry: {
-    main: ['./_assets/index.js']
+    main: [
+      './_assets/main.js',
+      './_assets/main.scss'
+    ]
   },
   output: {
     path: path.resolve('_site/assets', __dirname),
@@ -71,7 +78,19 @@ const baseConfig = {
         sassLoader,
       ]
     }]
-  }
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: dev
+        ? 'static/css/[name].css'
+        : 'static/css/[name].[contenthash:8].css',
+      chunkFilename: dev
+        ? 'static/css/[name].chunk.css'
+        : 'static/css/[name].[contenthash:8].chunk.css'
+    })
+  ]
 }
 
 const devServer = {
@@ -80,7 +99,7 @@ const devServer = {
   hot: true,
   inline: true,
   historyApiFallback: true,
-  publicPath: '/build/',
+  publicPath: '/assets/',
   disableHostCheck: true,
   watchOptions: {
     poll: 1000,

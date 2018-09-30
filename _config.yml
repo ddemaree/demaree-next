@@ -36,20 +36,19 @@ defaults:
     path: ''
   values:
     show_header: true
-    blah: blah
 - scope:
     path: ''
     type: posts
   values:
-    layout: post
+    layout: default
     permalink: "/posts/:year/:title/"
 - scope:
     path: ''
     type: pages
   values:
-    layout: page
+    layout: default
 - scope:
     path: ''
     type: talks
   values:
-    layout: talk
+    layout: default
