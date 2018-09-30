@@ -3,6 +3,7 @@ const path = require('path')
 const dev = (process.env.NODE_ENV !== 'production')
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ManifestPlugin = require('webpack-manifest-plugin')
 
 const merge = require('webpack-merge').smartStrategy(
   {
@@ -67,8 +68,11 @@ const baseConfig = {
     ]
   },
   output: {
-    path: path.resolve('_site/assets', __dirname),
-    publicPath: '/assets' 
+    filename: dev
+        ? '[name].js'
+        : '[name].[contenthash:8].js',
+    path: path.resolve(__dirname, 'assets'),
+    publicPath: '/assets/' 
   },
   module: {
     rules: [{
@@ -80,15 +84,14 @@ const baseConfig = {
     }]
   },
   plugins: [
+    new ManifestPlugin(),
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: dev
-        ? 'static/css/[name].css'
-        : 'static/css/[name].[contenthash:8].css',
+        ? '[name].css'
+        : '[name].[contenthash:8].css',
       chunkFilename: dev
-        ? 'static/css/[name].chunk.css'
-        : 'static/css/[name].[contenthash:8].chunk.css'
+        ? '[name].chunk.css'
+        : '[name].[contenthash:8].chunk.css'
     })
   ]
 }

@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "__dev": "concurrently -n jekyll,webpack \"jekyll build -w\" \"webpack-dev-server --hot --inline\"",
-    "dev": "concurrently npm:jekyll-dev npm:webpack-dev",
-    "build": "NODE_ENV=production JEKYLL_ENV=production jekyll build && webpack",
-    "start": "node index.js",
+    "start": "concurrently npm:jekyll-dev npm:webpack-dev",
+    "build": "npm run clean && npm run webpack-build && npm run jekyll-build",
     "jekyll-dev": "jekyll serve --livereload",
+    "jekyll-build": "JEKYLL_ENV=production bundle exec jekyll build",
     "webpack-dev": "webpack-dev-server --hot",
-    "start:ngrok": "ngrok http -subdomain=dd-next-dev 8080"
+    "webpack-build": "NODE_ENV=production webpack",
+    "clean": "rimraf ./_site ./assets",
+    "ngrok": "ngrok http -subdomain=dd-next-dev 8080"
   },
   "author": "",
   "license": "ISC",
@@ -36,6 +37,7 @@
     "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
+    "webpack-manifest-plugin": "^2.0.4",
     "webpack-merge": "^4.1.4"
   },
   "devDependencies": {
@@ -43,6 +45,7 @@
     "browser-sync-webpack-plugin": "^2.2.2",
     "concurrently": "^4.0.1",
     "ngrok": "^3.0.1",
+    "rimraf": "^2.6.2",
     "webpack-dev-server": "^3.1.9"
   }
 }

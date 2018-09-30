@@ -22,7 +22,7 @@
 <body class="{{ page.body_classes | join: ' ' }}">
 {{ content }}
 
-<script src="/assets/main.js"></script>
+<script src="{% webpack_asset_url 'main.js' %}"></script>
 {% if jekyll.env != "production" %}
 <!-- <script src="http://localhost:35729/livereload.js"></script> -->
 {% endif %}
