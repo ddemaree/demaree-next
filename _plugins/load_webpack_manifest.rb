@@ -1,5 +1,3 @@
-require 'awesome_print'
-
 Jekyll::Hooks.register :site, :post_read do |site|
   site.data["assets"] = {}
   site.config["assets"] = {}
