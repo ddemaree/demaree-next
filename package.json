@@ -6,7 +6,7 @@
   "scripts": {
     "__dev": "concurrently -n jekyll,webpack \"jekyll build -w\" \"webpack-dev-server --hot --inline\"",
     "dev": "concurrently npm:jekyll-dev npm:webpack-dev",
-    "build": "next build && next export",
+    "build": "NODE_ENV=production JEKYLL_ENV=production jekyll build && webpack",
     "start": "node index.js",
     "jekyll-dev": "jekyll serve --livereload",
     "webpack-dev": "webpack-dev-server --hot",
