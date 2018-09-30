@@ -3,4 +3,21 @@ layout: default
 title: Hello World
 ---
 
-# Hi I'm David
+<div class="hero-section" markdown="1">
+## Hi, I'm David. 👋
+
+I lead product teams that build amazing things on the internet.
+
+This is my web&nbsp;site.&nbsp;💥 
+</div>
+
+<ul class="social-group">
+{% for social in site.data.socials %}
+<li class="social social--{{ social.text | downcase }}">
+  <a class="social__link" rel="me" href="{{social.url}}">
+    <i class="{{ social.iconset | default: 'fab' }} fa-{{ social.icon }} social__icon"></i>
+    <span class="social__text">{{ social.text }}</span>
+  </a>
+</li>
+{% endfor %}
+</ul>

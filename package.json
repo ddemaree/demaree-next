@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "devleventy": "eleventy --serve",
-    "dev": "concurrently -n jekyll,webpack \"jekyll build -w\" \"webpack-dev-server --hot --inline\"",
+    "__dev": "concurrently -n jekyll,webpack \"jekyll build -w\" \"webpack-dev-server --hot --inline\"",
+    "dev": "concurrently npm:jekyll-dev npm:webpack-dev",
     "build": "next build && next export",
     "start": "node index.js",
+    "jekyll-dev": "jekyll serve --livereload",
+    "webpack-dev": "webpack-dev-server --hot",
     "start:ngrok": "ngrok http -subdomain=dd-next-dev 8080"
   },
   "author": "",
@@ -15,6 +17,7 @@
   "dependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
+    "@fortawesome/fontawesome-free": "^5.3.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.4",
     "@fortawesome/free-brands-svg-icons": "^5.3.1",
     "@fortawesome/free-solid-svg-icons": "^5.3.1",

@@ -105,7 +105,12 @@ const devServer = {
     poll: 1000,
     aggregateTimeout: 300,
     ignored: /node_modules/
-  }
+  },
+  proxy: {
+    context: () => true,
+    target: 'http://localhost:4000'
+  },
+  index: ''
 }
 
 const devConfig = merge(baseConfig, {
