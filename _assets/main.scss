@@ -26,7 +26,7 @@ html {
 
   font-size: 112.5%;
 
-  @media (min-width: 600px) {
+  @media (min-width: 540px) {
     font-size: 125%;
   }
 }
@@ -92,9 +92,11 @@ nav {
     margin: 0;
     padding: 0;
   }
+  
+  @media (min-width: 640px) {
+    grid-template-columns: [all-start] 1fr [main-start] repeat(6, [main-col] minmax(dd-column-width(6, 580px), dd-column-width(6, 800px))) [main-end] 1fr [all-end];
+  }
 }
-
-
 
 @import './site-header.scss';
 @import './page-index.scss';

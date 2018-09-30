@@ -12,7 +12,7 @@ layout: base
       <h1 class="header-logo__text">David Demaree</h1>
     </a>
   </header>
-  <main id="site-main" class="site-main content-grid">
+  <main id="site-main" class="site-main content-grid{% if page.centered %} content-grid--centered{% endif %}">
     {{ content }}
   </main>
   <!-- Footer -->

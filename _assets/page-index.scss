@@ -7,50 +7,23 @@ body.page--index {
     background-size: cover;
     background-position: 50% 84%;
   }
+
+  .site-main {
+    justify-items: center;
+
+    @media (min-width: 540px) {
+      align-items: center;
+      align-content: center;
+    }
+  }
 }
 
 .social-group {
   justify-self: start;
 
-  &, ul, li {
+  &, ul, li, a {
     @include reset-insets();
-  }
-
-  ul, li, a {
     display: grid;
-  }
-
-  a {
-    font-family: var(--small-text-font);
-    font-weight: var(--small-text-weight);
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    text-decoration: none;
-    background-color: salmon;
-    grid-template-columns: 2px [icon-st] 40px [label-st] 1fr 10px;
-    min-height: 48px;
-    align-self: center;
-    align-items: center;
-    border-radius: 8px;
-
-    &:hover {
-      background-color: #eb6250;
-    }
-    
-    svg {
-      grid-column: icon-st / label-st;
-      font-size: 1.35rem;
-      justify-self: center;
-      
-      &.fa-paper-plane {
-        font-size: 1rem;
-      }
-    }
-
-    span {
-      grid-column: label-st / span 1;
-    }
   }
 
   ul {
@@ -67,17 +40,56 @@ body.page--index {
       grid-template-columns: 1fr 1fr;
     }
   }
+
   @media (max-width: 380px) {
-    a {
-      justify-items: center;
-      grid-template-columns: [icon-st] 48px;
-    }
-    a span {
-      display: none;
-    }
     ul {
       grid-template-columns: repeat(3, 1fr);
       grid-auto-flow: dense;
+    }
+  }
+}
+
+.social {
+  &__link {
+    font-family: var(--small-text-font);
+    font-weight: var(--small-text-weight);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    background-color: salmon;
+    grid-template-columns: 2px [icon-st] 40px [label-st] 1fr 10px;
+    min-height: 48px;
+    align-self: center;
+    align-items: center;
+    border-radius: 8px;
+
+    &:hover {
+      background-color: #eb6250;
+    }
+
+    span {
+      grid-column: label-st / span 1;
+    }
+  }
+
+  &__icon {
+    grid-column: icon-st / label-st;
+    font-size: 1.35rem;
+    justify-self: center;
+    
+    &.fa-paper-plane {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    &__link {
+      justify-items: center;
+      grid-template-columns: [icon-st] 48px;
+    }
+    &__text {
+      display: none;
     }
   }
 }
@@ -98,23 +110,29 @@ body.page--index {
     }
   }
   
-  .hero-section {
-    color: hsl(10deg, 80%, 85%);
-    font-size: 1.4rem;
-    line-height: 1.3;
-    letter-spacing: 0.45px;
-    font-weight: 300;
-    
-    b {
-      color: white;
-    }
-    
-    @media (min-width: 640px) {
-      font-size: 2rem;
-    }
-  }
   
   .hero-section p {
     margin: 0 0 0.35em;
+  }
+}
+
+
+.hero-section {
+  color: hsl(10deg, 80%, 85%);
+  font-size: 1.4rem;
+  line-height: 1.3;
+  letter-spacing: 0.45px;
+  
+  h1, h2, p {
+    font-size: inherit;
+    margin: 0 0 0.35em;
+  }
+
+  h1, h2 {
+    color: white;
+  }
+  
+  @media (min-width: 640px) {
+    font-size: 2rem;
   }
 }

@@ -2,6 +2,7 @@
 layout: default
 title: Hello World
 body_classes: [page--index]
+centered: true
 ---
 
 <div class="hero-section" markdown="1">
@@ -12,7 +13,8 @@ I lead product teams that build amazing things on the internet.
 This is my web&nbsp;site.&nbsp;💥 
 </div>
 
-<ul class="social-group">
+<nav class="social-group">
+<ul>
 {% for social in site.data.socials %}
 <li class="social social--{{ social.text | downcase }}">
   <a class="social__link" rel="me" href="{{social.url}}">
@@ -22,3 +24,4 @@ This is my web&nbsp;site.&nbsp;💥
 </li>
 {% endfor %}
 </ul>
+</nav>

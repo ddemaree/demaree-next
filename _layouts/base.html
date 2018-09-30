@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="/assets/static/css/main.css" />
 </head>
 
-<body class="{{ page.body_classes | default: [] | join: ' ' }}">
+<body class="{{ page.body_classes | join: ' ' }}">
 {{ content }}
 
 <script src="/assets/main.js"></script>
