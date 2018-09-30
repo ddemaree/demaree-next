@@ -57,11 +57,11 @@ const sassLoader = makeSassLoaderRule(/\.s?css$/, dev, false)
 const baseConfig = {
   mode: (dev ? 'development' : 'production'),
   entry: {
-    main: ['./src/index.js']
+    main: ['./_assets/index.js']
   },
   output: {
-    path: path.resolve('build', __dirname),
-    publicPath: '/' 
+    path: path.resolve('_site/assets', __dirname),
+    publicPath: '/assets' 
   },
   module: {
     rules: [{
@@ -76,7 +76,7 @@ const baseConfig = {
 
 const devServer = {
   port: 8080,
-  contentBase: './public',
+  contentBase: './_site',
   hot: true,
   inline: true,
   historyApiFallback: true,

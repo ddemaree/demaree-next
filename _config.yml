@@ -23,6 +23,14 @@ domain: demaree.me
 twitter_username: ddemaree
 github_username: ddemaree
 markdown: kramdown
+exclude:
+- Gemfile
+- Gemfile.lock
+- netlify.toml
+- package.json
+- package-lock.json
+- webpack.config.js
+- node_modules
 defaults:
 - scope:
     path: ''
