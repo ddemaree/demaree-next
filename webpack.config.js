@@ -80,6 +80,42 @@ const baseConfig = {
         babelLoader(dev),
         sassModuleLoader,
         sassLoader,
+        {
+          test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|otf)$/i,
+          use: {
+            loader: "file-loader",
+            options: {
+              name: dev
+                ? '[name].[ext]'
+                : '[name].[contenthash:8].[ext]',
+              outputPath: "static/assets/images/",
+              publicPath: "/assets/images/"
+            }
+          }
+        },
+        {
+          test: /\.svg$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: dev
+                  ? '[name].[ext]'
+                  : '[name].[hash:8].[ext]'
+              }
+            },
+            {
+              loader: 'svgo-loader',
+              options: {
+                plugins: [
+                  {removeTitle: true},
+                  {convertColors: {shorthex: false}},
+                  {convertPathData: false}
+                ]
+              }
+            }
+          ]
+        }
       ]
     }]
   },
