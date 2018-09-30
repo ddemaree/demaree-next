@@ -6,11 +6,16 @@ module Demaree
     end
 
     def render(ctx)
+      # In dev mode, always return the path (which will
+      # probably be served by WDS)
+      if Jekyll.env == "development"
+        return "/assets/#{@path}" 
+      end
+      
       site = ctx.registers[:site]
       assets = site.config["assets"]
 
       # If asset manifest isn't available, just return the path itself
-      # It'll probably work in dev mode!
       assets[@path] || "/assets/#{@path}"
     end
   end
