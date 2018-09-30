@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Hello World
+body_classes: [page--index]
 ---
 
 <div class="hero-section" markdown="1">
