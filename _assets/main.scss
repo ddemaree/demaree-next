@@ -86,6 +86,12 @@ nav {
   align-items: start;
   align-content: start;
   padding: 1.5rem 0;
+
+  & > * {
+    grid-column: main-start / main-end;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 
