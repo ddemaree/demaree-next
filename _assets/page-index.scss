@@ -1,6 +1,7 @@
 body.page--index {
   --text-color: white;
   --background-color: #18334b;
+  --light-text-color: #fffc;
 
   .site-layout {
     background-image: url(//res.cloudinary.com/demaree/image/upload/c_scale,q_60,w_2000/v1517329858/diego-ph-222506_tsy59g.jpg), linear-gradient(195deg, #18334b 40%, #3f3b57 55%, #c8514b 90%);
@@ -57,7 +58,7 @@ body.page--index {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     text-decoration: none;
-    background-color: salmon;
+    background-color: #fa8072;
     grid-template-columns: 2px [icon-st] 40px [label-st] 1fr 10px;
     min-height: 48px;
     align-self: center;
@@ -93,29 +94,6 @@ body.page--index {
     }
   }
 }
-
-
-.nonexistent {
-
-  
-  @media (min-width: 800px) {
-  }
-  
-  .site-main {
-    justify-items: center;
-
-    @media (min-width: 540px) {
-      align-items: center;
-      align-content: center;
-    }
-  }
-  
-  
-  .hero-section p {
-    margin: 0 0 0.35em;
-  }
-}
-
 
 .hero-section {
   color: hsl(10deg, 80%, 85%);

@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, width=device-width"  />
+
+{% if page.title %}
+<title>{{ page.title }} | {{ site.title }}</title>
+{% else %}
+<title>{{ site.title }}</title>
+{% endif %}
+<meta name="description" content="{{ page.description | default: site.description }}">
+{% include twitter_card.html %}
+{% include opengraph.html %}
+
+<link rel="stylesheet" href="https://use.typekit.net/hpk3qlq.css" />
+<!-- <script defer src="https://pro.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-eAVkiER0fL/ySiqS7dXu8TLpoR8d9KRzIYtG0Tz7pi24qgQIIupp0fn2XA1H90fP" crossorigin="anonymous"></script> -->
+<link rel="stylesheet" href="{% webpack_asset_url 'main.css' %}" />

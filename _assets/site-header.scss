@@ -2,40 +2,17 @@
   // Grid
   display: grid;
   grid-auto-rows: minmax(48px, auto);
-  grid-template-columns: [header-start] 10px [logo] 1fr [button] 48px 10px [header-end];
-  
-  @media (min-width: 600px) {
-    grid-template-columns: [header-start] 10px [logo] 1fr [nav] 1fr 10px [header-end];
-  }
-  
-  .header-logo {
-    grid-column: logo / span 1;
-    justify-self: start;
-    grid-row: 1 / span 1;
-  }
-  
-  .site-nav__toggle {
-    grid-column: button / span 1;
-    grid-row: 1 / span 1;
-  }
+  grid-template-columns: [left-btn] 48px [logo-s] 1fr [logo-e right-btn] 48px;
 
-  .site-nav {
-    grid-column: nav / span 1;
-    grid-row: 1 / span 1;
-    justify-self: end;
-  }
-
-  .theme-toggle {
-    grid-column: theme-toggle;
-    color: inherit;
-    background: transparent;
-    border: 0;
-    outline: none;
-  }
-  
   // Visual styles
   background: var(--navbar-color);
   color: var(--navbar-text-color);
+
+  .header-logo {
+    justify-self: center;
+    grid-row: 1 / span 1;
+    grid-column: logo-s / logo-e;
+  }
   
   * {
     margin: 0;
@@ -45,22 +22,32 @@
 
 .header-logo {
   font-weight: 700;
-
   color: inherit;
   text-decoration: none;
+
   display: inline-grid;
   grid-template-columns: 48px auto 0.7rem;
   grid-template-rows: minmax(36px, auto);
   align-items: center;
   justify-items: center;
 
+  & > * {
+    margin: 0;
+  }
+
   h1 {
     white-space: nowrap;
     font-size: 1rem;
+    text-transform: uppercase;
+    font-family: var(--small-text-font);
+    font-size: 0.8em;
+    line-height: 1;
+    letter-spacing: 1px;
   }
 
   .dd-icon {
     font-size: 24px;
+    color: #fff8;
   }
 }
 
