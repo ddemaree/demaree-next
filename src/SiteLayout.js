@@ -1,9 +1,8 @@
 import React from 'react'
-import SiteHeader from './SiteHeader'
-import { withRouter } from 'next/router'
-
-import Router from 'next/router'
+import Router, { withRouter } from 'next/router'
 const { router } = Router
+
+import SiteHeader from './SiteHeader'
 
 class SiteLayout extends React.Component {
   constructor(props) {
@@ -61,7 +60,8 @@ class SiteLayout extends React.Component {
   }
 
   getClassNames() {
-    let classNames = ['site-layout']
+    let classNames = ['site-layout', 'content-grid']
+    // TODO: Provide mechanism for pages to enable content-grid--centered or --aligned-center
 
     if( this.props.pageName )
       classNames.push(`page--${this.props.pageName}`)

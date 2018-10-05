@@ -65,7 +65,6 @@ export default class extends React.Component {
     return (
     <Fragment>
       <Helmet title="Writing" />
-      {/* <h2 className="section-hed dd-header-1">Writing</h2> */}
       
       <h3 className="dd-header-2">Blog Posts</h3>
 

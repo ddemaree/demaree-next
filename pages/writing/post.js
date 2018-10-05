@@ -29,7 +29,7 @@ export default class extends React.Component {
 
   componentDidMount() {
     if(window.twttr) {
-      twttr.widgets.load()
+      window.twttr.widgets.load()
     }
   }
 
