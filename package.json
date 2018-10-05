@@ -45,7 +45,15 @@
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
     "webpack-manifest-plugin": "^2.0.4",
-    "webpack-merge": "^4.1.4"
+    "webpack-merge": "^4.1.4",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.18.0",
+    "feedparser": "^2.2.9",
+    "moment": "^2.22.2",
+    "next": "^7.0.0",
+    "react-helmet": "^5.2.0",
+    "react-media": "^1.8.0"
   },
   "devDependencies": {
     "browser-sync": "^2.24.7",
@@ -53,6 +61,7 @@
     "concurrently": "^4.0.1",
     "ngrok": "^3.0.1",
     "rimraf": "^2.6.2",
-    "webpack-dev-server": "^3.1.9"
+    "webpack-dev-server": "^3.1.9",
+    "express": "^4.16.3"
   }
 }
