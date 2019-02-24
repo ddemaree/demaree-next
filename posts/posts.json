@@ -1,0 +1,5 @@
+{
+    "layout": "default.liquid",
+    "permalink": "posts/{{ title | slug }}/index.html",
+    "body_classes": []
+}

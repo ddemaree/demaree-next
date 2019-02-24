@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@11ty/eleventy": "^0.7.1",
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
@@ -48,11 +49,11 @@
     "webpack-merge": "^4.1.4"
   },
   "devDependencies": {
-    "browser-sync": "^2.24.7",
+    "browser-sync": "^2.26.3",
     "browser-sync-webpack-plugin": "^2.2.2",
     "concurrently": "^4.0.1",
     "ngrok": "^3.0.1",
     "rimraf": "^2.6.2",
-    "webpack-dev-server": "^3.1.9"
+    "webpack-dev-server": "^3.2.0"
   }
 }
