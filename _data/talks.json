@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Designing the Hi-DPI Web",
+        "date": "2012-10-06T04:00:00.000Z",
+        "slides_url": "https://speakerdeck.com/ddemaree/designing-the-hi-dpi-web",
+        "venue": "ChicagoWebConf"
+    },
+    {
+        "title": "Fonts on the web: Threat or Menace?",
+        "date": "2011-10-07T04:00:00.000Z",
+        "venue": "AIGA Chicago",
+        "slides_url": "https://speakerdeck.com/ddemaree/fonts-on-the-web-threat-or-menace"
+    },
+    {
+        "title": "Naming Things",
+        "date": "2012-01-25T05:00:00.000Z",
+        "slides_url": "https://speakerdeck.com/ddemaree/naming-things",
+        "venue": "Refresh Chicago"
+    },
+    {
+        "title": "Real Typography for the Web",
+        "date": "2011-09-03T04:00:00.000Z",
+        "slides_url": "https://speakerdeck.com/ddemaree/real-typography-for-the-web",
+        "venue": "ChicagoWebConf 2011"
+    },
+    {
+        "title": "The Great Migration",
+        "date": "2011-10-04T04:00:00.000Z",
+        "venue": "ChicagoRuby",
+        "slides_url": "https://speakerdeck.com/ddemaree/the-great-migration-from-merb-to-rails-3-at-typekit"
+    }
+]
