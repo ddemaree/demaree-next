@@ -160,4 +160,4 @@ const devConfig = merge(baseConfig, {
   ]
 })
 
-module.exports = (dev ? devConfig : baseConfig)
+module.exports = baseConfig // (dev ? devConfig : baseConfig)
