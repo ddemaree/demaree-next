@@ -1,5 +1,6 @@
 ---
 title: Good PMs Don't Dictate Solutions
+slug: no-more-handoffs
 date: 2019-02-20
 ---
 
