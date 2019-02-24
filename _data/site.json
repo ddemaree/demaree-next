@@ -1,3 +1,10 @@
 {
-    "twitter_username": "ddemaree"
+    "twitter_username": "ddemaree",
+    "github_username": "ddemaree",
+    "email": "david@demaree.me",
+    "description": "David Demaree's web site",
+    "url": "https://demaree.me",
+    "domain": "demaree.me",
+    "title": "David Demaree",
+    "timezone": "America/New_York"
 }
