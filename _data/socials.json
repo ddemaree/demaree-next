@@ -1,0 +1,34 @@
+[
+    {
+      "url": "https://twitter.com/ddemaree",
+      "text": "Twitter",
+      "icon": "twitter"
+    },
+    {
+      "url": "https://instagram.com/ddemaree",
+      "text": "Instagram",
+      "icon": "instagram"
+    },
+    {
+      "url": "https://medium.com/@ddemaree",
+      "text": "Medium",
+      "icon": "medium"
+    },
+    {
+      "url": "https://github.com/ddemaree",
+      "text": "GitHub",
+      "icon": "github"
+    },
+    {
+      "url": "https://linkedin.com/in/ddemaree",
+      "text": "LinkedIn",
+      "icon": "linkedin"
+    },
+    {
+      "url": "mailto:david@demaree.me?subject=Howdy",
+      "text": "Email",
+      "icon": "paper-plane",
+      "iconset": "fas"
+    }
+  ]
+  
