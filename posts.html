@@ -1,0 +1,20 @@
+---
+layout: default
+title: Hello World
+body_classes: [page--index]
+centered: true
+---
+<ul>
+{% for post in site.posts %}
+    <li>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+{% endfor %}
+</ul>
+<ul>
+{% for publication in site.publications %}
+    <li>
+    <a href="{{ publication.url }}">{{ publication.title }}</a>
+    </li>
+{% endfor %}
+</ul>
