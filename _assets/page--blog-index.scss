@@ -1,0 +1,19 @@
+$mdc-typography-font-family: "'Comic Sans MS', Arial, Helvetica, sans-serif";
+@import '@material/typography/mdc-typography';
+
+.page--blog-index {
+  --background-color: rebeccapurple;
+  --text-color: snow;
+}
+
+.blog-index-post {
+  * {
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  h2 {
+    @include mdc-typography(body2);
+  }
+}

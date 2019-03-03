@@ -132,22 +132,22 @@ const baseConfig = {
   ]
 }
 
+// proxy: {
+//   context: () => true,
+//   target: 'http://localhost:4000'
+// },
+
 const devServer = {
   port: 8080,
   contentBase: './_site',
   hot: true,
   inline: true,
-  historyApiFallback: true,
   publicPath: '/assets/',
   disableHostCheck: true,
   watchOptions: {
     poll: 1000,
     aggregateTimeout: 300,
     ignored: /node_modules/
-  },
-  proxy: {
-    context: () => true,
-    target: 'http://localhost:4000'
   },
   index: ''
 }
@@ -160,4 +160,4 @@ const devConfig = merge(baseConfig, {
   ]
 })
 
-module.exports = baseConfig // (dev ? devConfig : baseConfig)
+module.exports = (dev ? devConfig : baseConfig)

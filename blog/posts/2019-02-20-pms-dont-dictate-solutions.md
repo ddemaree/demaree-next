@@ -12,6 +12,11 @@ I'm a product manager, and I often think about how on earth to explain my job. P
 
 This tweet exchange between Brad and Mike got me thinking about one of the most pernicious myths about my job—the "mini-CEO" myth:
 
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">I can&#39;t tell you how many teams I&#39;ve worked with where designers shovel work onto devs with the expectation devs will just build things as-is (nevermind if styles are inconsistent with existing work). Tools like Zeplin exacerbate this problem. It&#39;s critical for devs to be equals.</p>&mdash; Brad Frost (@brad_frost) <a href="https://twitter.com/brad_frost/status/1027931365940097024?ref_src=twsrc%5Etfw">August 10, 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">In some places *ahem* PMs dictate solutions to designers with the expectation designers will design them as-is, and only when the design is “finished” does engineering get involved. 🤦‍♂️</p>&mdash; Mike Aparicio (@peruvianidol) <a href="https://twitter.com/peruvianidol/status/1028005104153178113?ref_src=twsrc%5Etfw">August 10, 2018</a></blockquote>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 This definitely happens, sadly. And not only is it a poor way for PMs to do their jobs, IMHO, part of a good PM's job should be to ensure that dead hand-offs (a.k.a. "throwing things over the wall") never happen at any point in your team's process.
 
 ---

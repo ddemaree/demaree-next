@@ -133,7 +133,7 @@ nav {
   @return ( ( $total-width - ($gutter-width * ($num-cols + 1)) ) / $num-cols );
 }
 
-.content-grid {
+@mixin dd-content-grid() {
   display: grid;
   grid-template-columns: [all-start] 1fr [main-start] repeat(4, [main-col] minmax(dd-column-width(4, 320px), dd-column-width(4, 600px))) [main-end] 1fr [all-end];
   grid-auto-flow: row;
@@ -154,8 +154,13 @@ nav {
   }
 }
 
+body.use-content-grid .site-main {
+  @include dd-content-grid();
+}
+
 @import './site-header.scss';
 @import './page-index.scss';
+@import './page--blog-index.scss';
 
 .site-footer {
   color: var(--light-text-color);
@@ -167,4 +172,8 @@ nav {
   display: grid;
   align-items: center;
   justify-content: center;
+}
+
+.twitter-tweet {
+  margin: 0 auto;
 }

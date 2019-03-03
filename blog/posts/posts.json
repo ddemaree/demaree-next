@@ -1,0 +1,6 @@
+{
+    "layout": "default.liquid",
+    "permalink": "blog/{% if slug %}{{ slug }}{% else %}{{ title | slug }}{% endif %}/index.html",
+    "body_classes": [],
+    "tags": "post"
+}
