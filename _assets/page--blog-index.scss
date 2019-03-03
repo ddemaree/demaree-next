@@ -1,5 +1,5 @@
 $mdc-typography-font-family: "'Comic Sans MS', Arial, Helvetica, sans-serif";
-@import '@material/typography/mdc-typography';
+// @import '@material/typography/mdc-typography';
 
 .page--blog-index {
   --background-color: rebeccapurple;
@@ -14,6 +14,6 @@ $mdc-typography-font-family: "'Comic Sans MS', Arial, Helvetica, sans-serif";
     text-decoration: none;
   }
   h2 {
-    @include mdc-typography(body2);
+    // @include mdc-typography(body2);
   }
 }

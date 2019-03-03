@@ -37,6 +37,7 @@ const makeSassLoaderRule = (testRegexp, dev = false, enableModules = false) => {
       loader: 'sass-loader',
       options: {
         sourceMap: dev
+        // , includePaths: ['node_modules']
       }
     }
   ].filter(Boolean)
