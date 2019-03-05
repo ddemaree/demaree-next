@@ -2,19 +2,18 @@
 title: Good PMs Don't Dictate Solutions
 slug: no-more-handoffs
 date: 2019-02-20
+description: Product managers are not mini-CEOs, and we aren't designers either — so stop throwing things over the wall
 ---
 
-# Good PMs Don't Dictate Solutions
-
+<h1 class="title">Good PMs Don't Dictate Solutions</h1>
 <p class="subtitle">Product managers are not mini-CEOs, and we aren't designers either — so stop throwing things over the wall</p>
 
 I'm a product manager, and I often think about how on earth to explain my job. PM-ing defies simple explanation, because it's the union of a mixed bag of concerns and skills, and because there are a number of pernicious myths surrounding the job that confuse (or worse) more than clarify. [PMs who are much more experienced and accomplished than I am have this same problem.](https://qz.com/work/1346948/what-is-a-product-manager-job/)
 
 This tweet exchange between Brad and Mike got me thinking about one of the most pernicious myths about my job—the "mini-CEO" myth:
 
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">I can&#39;t tell you how many teams I&#39;ve worked with where designers shovel work onto devs with the expectation devs will just build things as-is (nevermind if styles are inconsistent with existing work). Tools like Zeplin exacerbate this problem. It&#39;s critical for devs to be equals.</p>&mdash; Brad Frost (@brad_frost) <a href="https://twitter.com/brad_frost/status/1027931365940097024?ref_src=twsrc%5Etfw">August 10, 2018</a></blockquote>
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">In some places *ahem* PMs dictate solutions to designers with the expectation designers will design them as-is, and only when the design is “finished” does engineering get involved. 🤦‍♂️</p>&mdash; Mike Aparicio (@peruvianidol) <a href="https://twitter.com/peruvianidol/status/1028005104153178113?ref_src=twsrc%5Etfw">August 10, 2018</a></blockquote>
-
+<blockquote class="twitter-tweet" data-align="center" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">I can&#39;t tell you how many teams I&#39;ve worked with where designers shovel work onto devs with the expectation devs will just build things as-is (nevermind if styles are inconsistent with existing work). Tools like Zeplin exacerbate this problem. It&#39;s critical for devs to be equals.</p>&mdash; Brad Frost (@brad_frost) <a href="https://twitter.com/brad_frost/status/1027931365940097024?ref_src=twsrc%5Etfw">August 10, 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-align="center" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">In some places *ahem* PMs dictate solutions to designers with the expectation designers will design them as-is, and only when the design is “finished” does engineering get involved. 🤦‍♂️</p>&mdash; Mike Aparicio (@peruvianidol) <a href="https://twitter.com/peruvianidol/status/1028005104153178113?ref_src=twsrc%5Etfw">August 10, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 This definitely happens, sadly. And not only is it a poor way for PMs to do their jobs, IMHO, part of a good PM's job should be to ensure that dead hand-offs (a.k.a. "throwing things over the wall") never happen at any point in your team's process.
@@ -23,13 +22,17 @@ This definitely happens, sadly. And not only is it a poor way for PMs to do thei
 
 Product management is a funny job in that you're responsible for good outcomes, but usually not in charge of the people and systems that will create those outcomes. The phrase one hears a lot is "influence without authority"; I've personally never found that description entirely satisfying, because it doesn't tackle _responsibility_ which is the real thorny area.
 
-PMs, designers, and engineers are _all_ responsible for the development of a product, but PMs are responsible for its _success_, whatever that means in context. A PM is measured by the things they make happen, however, they almost always lack the authority to make those things happen, or even to define specifically how they should happen.
+<blockquote class="pullquote">
+PMs, designers, and engineers are all responsible for the development of a product, but PMs are responsible for its <em>success</em>, whatever that means in context.
+</blockquote>
+
+A PM is measured by the things they make happen, however, they almost always lack the authority to make those things happen, or even to define specifically how they should happen.
 
 There's one notable exception to all this in many product organizations: UX design.
 
 While it would be unwelcome and probably inappropriate for a PM to (say) write a design document for how to code a feature, a lot of the time it's totally expected for them to produce wireframes, if not full mockups, as part of describing what the feature is and how it should work.
 
-To be sure: on teams that don't have dedicated UXers, and/or where engineers can _mostly_ get things done without design guidance, having the PM explain a thing visually can be an important stopgap.
+On teams that don't have dedicated UXers, and/or where engineers can _mostly_ get things done without design guidance, having the PM explain a thing visually can be an important stopgap.
 
 However, this expectation that wireframes and other visual artifacts are within the scope of a PM's job, combined with the PM's role as definer-of-the-problem-space, is just a few feet up a slippery slope that leads to PMs expecting—or being expected—to direct UX, undermining the agency and expertise of any design/UX professionals they may be working with.
 
@@ -45,7 +48,7 @@ Prototypes (she argues) are great for testing and validating UX ideas before the
 
 Unfortunately, Boris, the lead PM, insists on approving static mockups of Meredith's completed design before any code will be written, including prototypes, so that he can know what the team will build before any time is spent building it. In Boris's world, the design is not "done" until it's been delivered as a Photoshop file for his approval, after which point the "design" should not be changed without going _back_ to him for approval of the changes.
 
-To be fair, Boris is aware that sometimes one throws away old code in favor of something better, that sometimes a problem is hard enough that it's worth investing in a prototype or proof of concept, and that it's important for the people who will do the work to have a say in the process for doing it. The problem is that while Boris grants those premises when it comes to the _engineering _team, he has a fixed notion of how design process should work.
+To be fair, Boris is aware that sometimes one throws away old code in favor of something better, that sometimes a problem is hard enough that it's worth investing in a prototype or proof of concept, and that it's important for the people who will do the work to have a say in the process for doing it. The problem is that while Boris grants those premises when it comes to the _engineering_ team, he has a fixed notion of how design process should work.
 
 A prototype strikes Boris as interesting, but risky, and probably unnecessary--after all, he's also writing a requirements doc, and aside from that, doesn't the engineering team just need a visual spec? Aren't the designs just illustrating the requirements in his doc?
 

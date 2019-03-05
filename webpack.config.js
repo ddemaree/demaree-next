@@ -24,6 +24,9 @@ const babelLoader = function(dev = false) {
 }
 
 const makeSassLoaderRule = (testRegexp, dev = false, enableModules = false) => {
+  let nodeModulesPath = path.join(__dirname, 'node_modules')
+  console.log(nodeModulesPath)
+  
   let loaders = [
     (dev && 'extracted-loader'),
     MiniCssExtractPlugin.loader,
@@ -36,8 +39,9 @@ const makeSassLoaderRule = (testRegexp, dev = false, enableModules = false) => {
     {
       loader: 'sass-loader',
       options: {
-        sourceMap: dev
-        // , includePaths: ['node_modules']
+        sourceMap: dev,
+        implementation: require("sass")
+        // , includePaths: [ nodeModulesPath ]
       }
     }
   ].filter(Boolean)

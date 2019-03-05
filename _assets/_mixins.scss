@@ -1,0 +1,59 @@
+$dd-gutter-width: 28px;
+
+@mixin reset-insets {
+  margin: 0;
+  padding: 0;
+}
+
+@function dd-column-width($num-cols, $total-width, $gutter-width: $dd-gutter-width) {
+  @return ( ( $total-width - ($gutter-width * ($num-cols + 1)) ) / $num-cols );
+}
+
+@mixin dd-content-grid() {
+  display: grid;
+  grid-template-columns: [all-start] 1fr [main-start] repeat(4, [main-col] minmax(dd-column-width(4, 320px), dd-column-width(4, 600px))) [main-end] 1fr [all-end];
+  grid-auto-flow: row;
+  grid-auto-rows: auto;
+  grid-gap: var(--grid-column-gap, 1.25rem) $dd-gutter-width;
+  align-items: start;
+  align-content: start;
+  padding: 1.5rem 0;
+
+  & > * {
+    grid-column: main-start / main-end;
+    margin: 0;
+    padding: 0;
+  }
+  
+  @media (min-width: 640px) {
+    grid-template-columns: [all-start] 1fr [main-start] repeat(6, [main-col] minmax(dd-column-width(6, 580px), dd-column-width(6, 800px))) [main-end] 1fr [all-end];
+  }
+}
+
+@mixin fancy-underlines($strokeWidth: 1px) {
+  text-decoration: none;
+  background-image: linear-gradient(0deg, currentColor 0%, currentColor 100%);
+  background-size: 1px $strokeWidth;
+  background-repeat: repeat-x;
+  background-position: left 94%;
+}
+
+@mixin fancy-divider() {
+  $divider-row-height: (20/16)*1rem;
+
+  border: 0;
+  height: $divider-row-height;
+  justify-self: center;
+
+  &:before {
+    content: '...';
+    position: relative;
+    top: -0.5rem;
+    font-size: 2rem;
+    display: block;
+    letter-spacing: 0.8rem;
+    text-align: center;
+    line-height: 0.5;
+    margin-left: 0.8rem;
+  }
+}

@@ -1,8 +1,4 @@
-
-@mixin reset-insets {
-  margin: 0;
-  padding: 0;
-}
+@import './mixins';
 
 * {
   box-sizing: border-box;
@@ -129,30 +125,33 @@ nav {
 }
 
 
-@function dd-column-width($num-cols, $total-width, $gutter-width: 30px) {
-  @return ( ( $total-width - ($gutter-width * ($num-cols + 1)) ) / $num-cols );
-}
 
-@mixin dd-content-grid() {
-  display: grid;
-  grid-template-columns: [all-start] 1fr [main-start] repeat(4, [main-col] minmax(dd-column-width(4, 320px), dd-column-width(4, 600px))) [main-end] 1fr [all-end];
-  grid-auto-flow: row;
-  grid-auto-rows: auto;
-  grid-gap: 1.5rem 30px;
-  align-items: start;
-  align-content: start;
-  padding: 1.5rem 0;
+// $dd-gutter-width: 28px;
 
-  & > * {
-    grid-column: main-start / main-end;
-    margin: 0;
-    padding: 0;
-  }
+// @function dd-column-width($num-cols, $total-width, $gutter-width: $dd-gutter-width) {
+//   @return ( ( $total-width - ($gutter-width * ($num-cols + 1)) ) / $num-cols );
+// }
+
+// @mixin dd-content-grid() {
+//   display: grid;
+//   grid-template-columns: [all-start] 1fr [main-start] repeat(4, [main-col] minmax(dd-column-width(4, 320px), dd-column-width(4, 600px))) [main-end] 1fr [all-end];
+//   grid-auto-flow: row;
+//   grid-auto-rows: auto;
+//   grid-gap: var(--grid-column-gap, 1.25rem) $dd-gutter-width;
+//   align-items: start;
+//   align-content: start;
+//   padding: 1.5rem 0;
+
+//   & > * {
+//     grid-column: main-start / main-end;
+//     margin: 0;
+//     padding: 0;
+//   }
   
-  @media (min-width: 640px) {
-    grid-template-columns: [all-start] 1fr [main-start] repeat(6, [main-col] minmax(dd-column-width(6, 580px), dd-column-width(6, 800px))) [main-end] 1fr [all-end];
-  }
-}
+//   @media (min-width: 640px) {
+//     grid-template-columns: [all-start] 1fr [main-start] repeat(6, [main-col] minmax(dd-column-width(6, 580px), dd-column-width(6, 800px))) [main-end] 1fr [all-end];
+//   }
+// }
 
 body.use-content-grid .site-main {
   @include dd-content-grid();
