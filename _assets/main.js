@@ -74,5 +74,5 @@ class NavDrawer extends React.Component {
 
 const el = document.createElement('nav')
 el.classList.add('nav-drawer')
-parent.prepend(el)
-ReactDOM.render(<NavDrawer />, el);
+// parent.prepend(el)
+// ReactDOM.render(<NavDrawer />, el);

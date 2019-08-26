@@ -3,23 +3,16 @@ layout: default
 title: Hello World
 body_classes: [page--index, use-content-grid]
 centered: true
+is_homepage: true
 ---
 
 <div class="hero-section" markdown="1">
-  <h2>Hi, I'm David. 👋</h2>
-  <p>I lead product teams that build amazing things on the internet.</p>
-  <p>This is my web&nbsp;site.&nbsp;💥 </p>
+  <h1 class="f2 mv0">
+    <strong data-rolemoji="👋">David Demaree</strong> is a <span class="hero__role hero__role--technologist" data-rolemoji="👨🏻‍💻">technologist</span>, <span class="hero__role hero__role--designer" data-rolemoji="👨🏻‍🎨">designer</span><!--, <span class="hero__role hero__role--photographer" data-rolemoji="📸">photographer</span>-->, and <span class="hero__role hero__role--product" data-rolemoji="🕴">product leader</span>, currently working on the <a href="https://material.io/">Material</a> design system at Google.
+  </h1>
+  <ul class="list mt4 f3">
+    <li><a href="#">Writing</a></li>
+    <li><a href="#">Speaking</a></li>
+    <li><a href="#">Photography</a></li>
+  </ul>
 </div>
-
-<nav class="social-group">
-<ul>
-{% for social in socials %}
-<li class="social social--{{ social.text | downcase }}">
-  <a class="social__link" rel="me" href="{{social.url}}">
-    <i class="{{ social.iconset | default: 'fab' }} fa-{{ social.icon }} social__icon"></i>
-    <span class="social__text">{{ social.text }}</span>
-  </a>
-</li>
-{% endfor %}
-</ul>
-</nav>
