@@ -12,30 +12,29 @@
 }
 
 @mixin light-theme-colors {
-  --color-primary: var(--green);
-  --color-primary-hover: var(--purple);
-  --color-on-primary: var(--white);
   --color-background: var(--white);
   --color-on-background: var(--near-black);
   --color-on-background--mid-emphasis: var(--gray);
   --color-on-background--low-emphasis: var(--light-gray);
+  --color-link: var(--white);
+  --color-link-hover: var(--red);
   --color-hairline: var(--silver);
+  --color-primary: var(--red);
+  --color-primary-hover: var(--purple);
+  --color-on-primary: var(--white);
 }
 
 @mixin dark-theme-colors {
-  --color-primary: var(--green);
-  --color-primary-hover: var(--light-purple);
-  --color-on-primary: var(--white);
-  --color-background: var(--white);
-  --color-on-background: var(--near-black);
-  --color-on-background--mid-emphasis: var(--gray);
-  --color-on-background--low-emphasis: var(--light-gray);
-
   --color-background: var(--near-black);
   --color-on-background: var(--white);
   --color-on-background--mid-emphasis: var(--silver);
   --color-on-background--low-emphasis: var(--gray);
+  --color-link: var(--white);
+  --color-link-hover: var(--light-red);
   --color-hairline: var(--dark-gray);
+  --color-primary: var(--red);
+  --color-primary-hover: var(--light-red);
+  --color-on-primary: var(--white);
 }
 
 * {
@@ -69,12 +68,12 @@ body {
 }
 
 a[href] {
-  color: var(--color-primary);
+  color: var(--color-link);
   text-decoration: none;
-  border-bottom: 0.1em solid var(--color-primary);
+  border-bottom: 0.1em solid var(--color-link);
   &:hover {
-    color: var(--color-primary-hover);
-    border-color: var(--color-primary-hover);
+    color: var(--color-link-hover);
+    border-color: var(--color-link-hover);
   }
 }
 
@@ -167,9 +166,13 @@ a[href] {
     font-family: 'halyard-display';
     font-weight: 500;
     font-size: 3rem;
-    color: var(--color-on-background--mid-emphasis);
-    max-width: 27ch;
+    color: var(--red);
+    max-width: 24ch;
     line-height: 1.2;
+
+    @include dark-mode {
+      color: var(--light-red);
+    }
 
     strong {
       font-weight: 500;
