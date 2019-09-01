@@ -78,11 +78,15 @@ module.exports = config => {
   });
 
   return {
-      passthroughFileCopy: true,
-      
-      // Files read by Eleventy, add as needed
-      templateFormats: ["css", "njk", "md", "txt", "liquid"],
-      htmlTemplateEngine: "njk",
-      markdownTemplateEngine: "njk"
+    dir: {
+      input: "src",
+      output: "dist"
+    },
+    passthroughFileCopy: true,
+    
+    // Files read by Eleventy, add as needed
+    templateFormats: ["css", "njk", "md", "txt", "liquid"],
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk"
   };
 }

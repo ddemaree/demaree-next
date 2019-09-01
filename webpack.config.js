@@ -13,21 +13,18 @@ const merge = require('webpack-merge').smartStrategy(
   }
 )
 
-const babelLoader = function(dev = false) {
-  let loaders = ['babel-loader']
-
-  return {
-    test: /\.(js|jsx)$/,
-    exclude: /node_modules/,
-    loader: loaders,
-  }
-}
+const oneOf = content => [{oneOf: content}]
 
 const makeSassLoaderRule = (testRegexp, dev = false, enableModules = false) => {
   let nodeModulesPath = path.join(__dirname, 'node_modules')
-  console.log(nodeModulesPath)
   
   let loaders = [
+    (dev && {
+      loader: 'style-loader',
+      options: {
+        hmr: (dev)
+      }
+    }),
     (dev && 'extracted-loader'),
     MiniCssExtractPlugin.loader,
     {
@@ -41,18 +38,9 @@ const makeSassLoaderRule = (testRegexp, dev = false, enableModules = false) => {
       options: {
         sourceMap: dev,
         implementation: require("sass")
-        // , includePaths: [ nodeModulesPath ]
       }
     }
   ].filter(Boolean)
-
-  // TODO: Only prepend this in dev, and add MiniCssExtract in prod
-  loaders.unshift({
-    loader: 'style-loader',
-    options: {
-      hmr: (dev)
-    }
-  })
 
   return {
     test: testRegexp,
@@ -60,69 +48,41 @@ const makeSassLoaderRule = (testRegexp, dev = false, enableModules = false) => {
   }
 }
 
-// TODO: Refactor these loaders to a shared factory of some kind
-const sassModuleLoader = makeSassLoaderRule(/\.mod.s?css$/, dev, true) 
-const sassLoader = makeSassLoaderRule(/\.s?css$/, dev, false) 
-
 const baseConfig = {
   mode: (dev ? 'development' : 'production'),
-  entry: {
-    main: [
-      './_assets/main.js',
-      './_assets/main.scss'
-    ]
-  },
+  entry: [
+    './_assets/main.js',
+    './_assets/main.scss'
+  ],
   output: {
     filename: dev
         ? '[name].js'
         : '[name].[contenthash:8].js',
-    path: path.resolve(__dirname, 'assets'),
+    path: path.resolve(__dirname, 'dist/assets'),
     publicPath: '/assets/' 
   },
   module: {
-    rules: [{
-      oneOf: [
-        babelLoader(dev),
-        sassModuleLoader,
-        sassLoader,
-        {
-          test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|otf)$/i,
-          use: {
-            loader: "file-loader",
-            options: {
-              name: dev
-                ? '[name].[ext]'
-                : '[name].[contenthash:8].[ext]',
-              outputPath: "static/assets/images/",
-              publicPath: "/assets/images/"
-            }
+    rules: oneOf([
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+      makeSassLoaderRule(/\.s?css$/, dev, false),
+      {
+        test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|otf)$/i,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: dev
+              ? '[name].[ext]'
+              : '[name].[contenthash:8].[ext]',
+            outputPath: "dist/assets/images/",
+            publicPath: "/assets/images/"
           }
-        },
-        {
-          test: /\.svg$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: dev
-                  ? '[name].[ext]'
-                  : '[name].[hash:8].[ext]'
-              }
-            },
-            {
-              loader: 'svgo-loader',
-              options: {
-                plugins: [
-                  {removeTitle: true},
-                  {convertColors: {shorthex: false}},
-                  {convertPathData: false}
-                ]
-              }
-            }
-          ]
         }
-      ]
-    }]
+      },
+    ]) 
   },
   plugins: [
     new ManifestPlugin(),
@@ -137,14 +97,9 @@ const baseConfig = {
   ]
 }
 
-// proxy: {
-//   context: () => true,
-//   target: 'http://localhost:4000'
-// },
-
 const devServer = {
   port: 8080,
-  contentBase: './_site',
+  contentBase: './dist',
   hot: true,
   inline: true,
   publicPath: '/assets/',
