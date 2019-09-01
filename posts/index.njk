@@ -1,0 +1,11 @@
+---
+layout: layouts/default.njk
+title: Writing
+---
+
+{% for post in collections.posts %}
+<article>
+<h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
+<p>{{ post.excerpt }}</p>
+</article>
+{% endfor %}

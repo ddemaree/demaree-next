@@ -1,18 +1,20 @@
 ---
-layout: default
+layout: layouts/default.njk
 title: Hello World
 body_classes: [page--index, use-content-grid]
 centered: true
 is_homepage: true
 ---
 
+{% block content %}
 <div class="hero-section" markdown="1">
   <h1 class="f2 mv0">
     <strong data-rolemoji="👋">David Demaree</strong> is a <span class="hero__role hero__role--technologist" data-rolemoji="👨🏻‍💻">technologist</span>, <span class="hero__role hero__role--designer" data-rolemoji="👨🏻‍🎨">designer</span><!--, <span class="hero__role hero__role--photographer" data-rolemoji="📸">photographer</span>-->, and <span class="hero__role hero__role--product" data-rolemoji="🕴">product leader</span> based in NYC.
   </h1>
   <ul class="list mt4 f3">
-    <li><a href="#">Writing</a></li>
+    <li><a href="/posts">Writing</a></li>
     <li><a href="#">Speaking</a></li>
     <li><a href="#">Photography</a></li>
   </ul>
 </div>
+{% endblock content %}

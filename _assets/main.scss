@@ -55,13 +55,13 @@ body {
 
   @include light-theme-colors();
 
-  @include dark-mode() {
-    @include dark-theme-colors();
-  }
+  // @include dark-mode() {
+  //   @include dark-theme-colors();
+  // }
 
-  .prefers-light-theme & {
-    @include light-theme-colors();
-  }
+  // .prefers-light-theme & {
+  //   @include light-theme-colors();
+  // }
 
   background-color: var(--color-background);
   color: var(--color-on-background);
