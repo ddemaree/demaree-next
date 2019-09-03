@@ -1,5 +1,8 @@
 require("dotenv").config();
 
+const fs = require('fs')
+const path = require('path')
+
 // Init Ghost API
 const GhostAPI = require("@tryghost/content-api");
 const api = new GhostAPI({
@@ -14,14 +17,44 @@ const stripGhostDomain = url => {
 };
 
 module.exports = config => {
-  config.addPassthroughCopy("assets");
+  // config.addPassthroughCopy("assets");
 
   // Don't ignore the same files ignored in the git repo
   // config.setUseGitIgnore(false);
   
-  config.addFilter("downcase", function(value) { return String(value).toLowerCase() });
+  config.addFilter("downcase", function(value) { 
+    return String(value).toLowerCase()
+  });
+
+  config.addFilter("unorphan", value => {
+    const words = value.split(' ')
+    if(words.length <= 2) return value;
+
+    let firstSet = words.slice(0, words.length - 2)
+    let endWords = words.slice(words.length - 2).join('&nbsp;')
+    firstSet.push(endWords)
+    
+    return firstSet.join(' ')
+  })
 
   config.addFilter("classnames", value => require('classnames')(value) )
+
+  const manifestPath = path.join(__dirname, 'dist/assets/manifest.json')
+  const manifestPresent = fs.existsSync(manifestPath)
+  let manifest = {}
+  
+  if(manifestPresent) {
+    const manifestData = fs.readFileSync(manifestPath)
+    manifest = JSON.parse(manifestData)
+  }
+
+  config.addShortcode("asset", function(assetName) {
+    if(process.env.NODE_ENV === 'production' && manifest[assetName]) {
+      return manifest[assetName];
+    } else {
+      return "/assets/" + assetName;
+    }
+  });
 
   // Get all pages, called 'docs' to prevent
   // conflicting the eleventy page object

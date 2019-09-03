@@ -1,18 +1,22 @@
-<footer id="site-footer" class="site-footer f3 pt4">
-  <div>
-    <p class="i ma0">&ldquo;Have courage, and be kind&rdquo;</p>
-    <p class="copyright f4 ma0 mv2">&copy;2019 David Demaree</p>
-  </div>
+<footer id="site-footer" class="site-footer">
+  <div class="site-footer-content">
 
-  <nav class="socials">
-  <ul>
-  {%- for social in socials -%}
-  <li class="social social--{{ social.text | downcase }}">
-    <a class="social__link" rel="me" href="{{social.url}}">
-      <span class="social__text">{{ social.text }}</span>
-    </a>
-  </li>
-  {%- endfor -%}
-  </ul>
-  </nav>
+    <nav class="socials">
+    <h3>Elsewhere</h3>
+    <ul>
+    {%- for social in socials -%}
+    <li class="social social--{{ social.text | downcase }}">
+      <a class="social__link" rel="me" href="{{social.url}}">
+        <span class="social__text">{{ social.text }}</span>
+      </a>
+    </li>
+    {%- endfor -%}
+    </ul>
+    </nav>
+
+    <div>
+      <p class="i ma0">&ldquo;Have courage, and be kind&rdquo;</p>
+      <p class="copyright ma0 mv1">&copy;2019 David Demaree</p>
+    </div>
+  </div>
 </footer>

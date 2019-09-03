@@ -46,23 +46,22 @@
 
   <script>document.documentElement.classList.remove('no-js');</script>
   <link rel="stylesheet" href="https://use.typekit.net/yax1qaz.css">
-  <link rel="stylesheet" href="/assets/main.css" />
-  <!-- <script defer src="https://pro.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-eAVkiER0fL/ySiqS7dXu8TLpoR8d9KRzIYtG0Tz7pi24qgQIIupp0fn2XA1H90fP" crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="{% asset "main.css" %}" />
 
   {{ site.codeinjection_head | safe if site.codeinjection_head }}
   {{ codeinjection_head | safe if codeinjection_head }}
 </head>
 
-<body class="{{ body_classes | classnames }}">
+<body class="{{ body_classes | classnames }} {% if feature_image %}has-feature-image {% endif %}{% if post %}post-detail {% endif %}">
   <div class="site-container">
   <div class="site-layout">
     {% include "partials/header.njk" %}
 
-    <div class="site-main">
-      <main id="site-main" class="site-content">
-        {{ content | safe }}
-      </main>
-    </div>
+    <main id="site-main" class="site-content site-main">
+      {% block content %}
+      {{ content | safe }}
+      {% endblock %}
+    </main>
 
     {% include "partials/footer.njk" %}
 
@@ -71,6 +70,6 @@
   </div>
   </div>
   
-  <script src="/assets/main.js"></script>
+  <script src="{% asset 'main.js' %}"></script>
 </body>
 </html>

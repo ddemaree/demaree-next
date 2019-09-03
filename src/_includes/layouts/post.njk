@@ -3,21 +3,29 @@
 {% set title = post.title %}
 {% set codeinjection_head = post.codeinjection_head %}
 {% set codeinjection_foot = post.codeinjection_foot %}
+{% set feature_image = post.feature_image %}
 
 {% block content %}
-    <article class="content">
-        {% if post.feature_image %}
-            <figure class="post-feature-image">
-                <img src="{{ post.feature_image }}" alt="{{ title }}">
-            </figure>
-        {% endif %}
-        <section class="post-full-content">
-            <h1 class="content-title">{{ title }}</h1>
-            <section class="content-body load-external-scripts">
-                {{ content | safe }}
-            </section>
-        </section>
-    </article>
+<article class="entry post content">
+  <header class="post-header{% if post.feature_image %} has-feature-image{% endif %}">
+    <div class="post-header-content">
+      <h1 class="post-title content-title">{{ title | unorphan | safe }}</h1>
+      <p class="post-date">September 2, 2019</p>
+    </div>
+    {% if post.feature_image %}
+      {% set has_feature_image = 1 %}
+      <figure class="post-feature-image post-full-image">
+        <img src="{{ post.feature_image }}" alt="{{ title }}">
+      </figure>
+    {% else %}
+  {% endif %}
+  </header>
+  <section class="post-full-content">
+    <div class="content-body load-external-scripts">
+    {{ content | safe }}
+    </div>
+  </section>
+</article>
 {% endblock %}
 
 {%- block seo -%}
