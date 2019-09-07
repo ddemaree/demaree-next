@@ -1,35 +1,47 @@
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+import c from 'classnames'
+import styles from './header.module.scss'
+
+const Header = ({ siteTitle }) => {
+  const data = useStaticQuery(graphql`
+    query HeaderQuery {
+      ghostSettings {
+        title
+        description
+        navigation {
+          label
+          url
+        }
+      }
+    }
+  `)
+
+  const { title, description, navigation } = data.ghostSettings
+
+  return (
+    <header className={styles.header}>
+      <div
+        className={c(styles.headerInner)}
+      >
+        <div className={styles.logo}>
+          <Link to="/">{title}</Link>
+        </div>
+        <nav className={c(styles.navigation)}>
+          <ul>
+            {navigation.map(navEntry => (
+              <li key={navEntry.url}>
+                <Link to={navEntry.url}>{navEntry.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+  )
+} 
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

@@ -1,0 +1,9 @@
+.gridWrap {
+  display: grid;
+  grid-template-columns: [all-start] minmax(0, 1fr) [main-start] repeat(6, [col-start] minmax(50px, 1fr)) [main-end] minmax(0, 1fr) [all-end];
+  grid-gap: 2rem;
+
+  & > * {
+    grid-column: main-start / main-end;
+  }
+}
