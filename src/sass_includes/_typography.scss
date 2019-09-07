@@ -14,8 +14,17 @@ $font-sizes: (
 
 $line-heights: (
   heading: 1,
+  lede: 1.25,
   body: 1.56
 );
+
+@mixin font-size($size: 400) {
+  font-size: map-get($font-sizes, $size);
+}
+
+@mixin line-height($category: body) {
+  line-height: map-get($line-heights, $category);
+}
 
 @mixin font-style-micro {
   font-family: 'halyard-micro', $font-system-sans;

@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import styles from "./index.module.scss"
 
 import Layout from "../components/layout"
+import PageContent from "../components/page-content"
 // import Image from "../components/image"
 // import SEO from "../components/seo"
 
@@ -10,7 +11,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <div className={styles.gridWrap}>
-        <div dangerouslySetInnerHTML={{__html: data.homePage.html}} />
+        <PageContent content={data.homePage.html} />
       </div>
     </Layout>
   )

@@ -1,0 +1,13 @@
+@import 'typography';
+
+.pageContent {
+  & > * {
+    max-width: 30rem;
+    @include line-height(body);
+  }
+
+  :global(.lede) {
+    @include font-size(500);
+    line-height: 1.56rem; // Static line height to match rest of copy
+  }
+}
