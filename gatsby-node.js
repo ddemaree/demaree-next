@@ -37,5 +37,4 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  console.log(result.data)
 }
