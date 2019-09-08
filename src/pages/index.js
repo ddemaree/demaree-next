@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <div className={styles.gridWrap}>
-        <PageContent content={data.homePage.html} />
+        <PageContent className={styles.pageContent} content={data.homePage.html} />
       </div>
     </Layout>
   )

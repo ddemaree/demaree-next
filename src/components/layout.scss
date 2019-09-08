@@ -1,4 +1,11 @@
 @import '../sass_includes/typography';
+@import '../sass_includes/grid-layout';
+
+:root {
+  --color-text: var(--near-black);
+  --color-background: var(--white);
+  --color-accent: var(--red);
+}
 
 * {
   box-sizing: border-box;
@@ -7,13 +14,33 @@
 html {
   font-size: 22px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 960px) {
     font-size: 18px;
+  }
+
+  @media (max-width: 525px) {
+    font-size: 16px;
   }
 }
 
 body {
-  font-family: 'freight-text-pro', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  @include font-style-body();
+}
+
+a[href] {
+  color: var(--color-text);
+  text-decoration-color: var(--blue);
+  text-decoration-style: dotted;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 2px;
+
+  &:hover, &:active {
+    text-decoration-style: solid;
+  }
+}
+
+main {
+  @include grid-container;
 }
 
 // html {

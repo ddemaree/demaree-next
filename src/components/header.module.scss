@@ -1,58 +1,53 @@
 @import 'typography';
+@import 'grid-layout';
 
 .header {
   @include font-style-micro();
+  @include grid-container();
+  grid-template-rows: 3rem;
+  align-items: center;
+  margin: 4vh 0 8vh 0;
 
   a[href] {
     color: inherit;
     text-decoration: none;
     display: inline-block;
     padding: 0.5rem;
-    // background-color: #0001;
-    border-radius: 0.2em;
 
     &:hover {
       text-decoration: underline;
       text-decoration-color: rgba(black, 0.4);
     }
   }
-}
 
-.headerInner {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1fr));
-  grid-template-rows: 3rem;
-  align-items: center;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  .logo {
+    float: left;
+    margin-right: 1rem;
+  }
 }
 
 .logo {
   background-color: var(--red);
   color: white;
   font-weight: bold;
-  justify-self: flex-start;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .navigation {
-  justify-self: flex-end;
-
+  
   &, ul, li {
     list-style-type: none;
     padding: 0;
     margin: 0;
   }
-
+  
   ul {
-    display: grid;
-    grid-auto-columns: auto;
-    grid-auto-flow: column;
-    justify-items: flex-end;
-    grid-gap: 0.5rem;
+    display: flex;
   }
 
-  a[href] {
+  li {
     display: inline-block;
-    padding: 0.5rem;
+    margin-right: 0.4em;
   }
 }

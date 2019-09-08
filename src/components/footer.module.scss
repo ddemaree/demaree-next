@@ -1,0 +1,54 @@
+@import '../sass_includes/typography';
+@import '../sass_includes/grid-layout';
+
+.footer {
+  @include grid-container;
+  margin: 8vh 0 8vh 0;
+
+  @media (min-width: 960px) {
+    .footerContent {
+      grid-column: 10 / 16;
+      // grid-row: 1;
+    }
+    
+    .elsewhere {
+      grid-column: 2 / 7;
+    }
+  }
+}
+
+.elsewhere {
+  margin-bottom: 1em;
+
+  h3 {
+    @include font-style-micro--bold();
+    margin: 0 0 0.6em;
+  }
+
+  ul, li {
+    margin: 0; padding: 0;
+    list-style-type: none;
+  }
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    margin-right: 0.6em;
+  }
+}
+
+.footerContent {
+  & > * {
+    margin: 0;
+  }
+
+  .saying {
+    font-style: italic;
+  }
+
+  .copyright {
+    @include font-size(300);
+  }
+}

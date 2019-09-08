@@ -1,13 +1,23 @@
 @import 'typography';
 
 .pageContent {
+  font-size: 1.25em;
+
   & > * {
-    max-width: 30rem;
-    @include line-height(body);
+    margin-top: 1.56rem;
+    margin-bottom: 1.56rem;
+    max-width: 32rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   :global(.lede) {
-    @include font-size(500);
-    line-height: 1.56rem; // Static line height to match rest of copy
+    @include font-style-lede();
   }
 }
