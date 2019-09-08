@@ -1,0 +1,34 @@
+@import '../sass_includes/typography';
+
+.pageTitle {
+  @include font-style-title();
+  margin: 0 0 4vw;
+}
+
+.postsIndex {
+}
+
+.monthHeader {
+  @include font-style-micro();
+  color: var(--color-accent);
+  margin: 4vw 0 1rem;
+}
+
+.blogPostItem {
+  margin: 0 0 1rem;
+
+  & > * {
+    margin: 0;
+  }
+
+  h4 {
+    @include font-style-heading-2();
+    margin: 0 0 0.2em;
+  }
+}
+
+.excerpt {
+  @include font-size(300);
+  font-style: italic;
+  color: var(--color-light-text);
+}

@@ -15,7 +15,7 @@ import Footer from "./footer"
 import "./layout.scss"
 import "../sass_includes/tachyons.scss"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, mainClassName }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -39,7 +39,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div className="main-layout">
       <Helmet 
         titleTemplate={`%s – ${data.ghostSettings.title}`} 
         defaultTitle={data.ghostSettings.title}>
@@ -48,15 +48,16 @@ const Layout = ({ children }) => {
 
       <Header siteTitle={data.ghostSettings.title} />
 
-      <main>{children}</main>
+      <main className={mainClassName}>{children}</main>
 
       <Footer />
-    </>
+    </div>
   )
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  mainClassName: PropTypes.string
 }
 
 export default Layout

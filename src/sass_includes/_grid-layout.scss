@@ -1,74 +1,21 @@
 :root {
-  --large: 1100px;
+  --large: 960px;
 }
 
-@mixin grid-container {
-  $desktop-max-width: 1100px;
+// This is only used once in the .main-layout div, but it's included here just for reference so I can see it when writing the other mixins
+@mixin grid-base-container {
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: [full-start] minmax(calc(calc(100vw - 1100px) / 2), 1fr) [main-start] repeat(14, [col-start] 1fr) [main-end] minmax(calc(calc(100vw - 1100px) / 2), 1fr) [full-end];
-  
-  @media (max-width: 960px) {
-    grid-template-columns: [full-start] minmax(calc((100vw - 960px) / 2), 1fr) [main-start] repeat(8, [col-start] 1fr) [main-end] minmax(calc((100vw - 960px) / 2), 1fr) [full-end]; 
-  }
+  grid-template-rows: auto 1fr auto;
+  grid-auto-flow: column;
 
-  @media (max-width: 520px) {
-    grid-template-columns: [full-start] minmax(calc((100vw - 520px) / 2), .3fr) [main-start] repeat(5, [col-start] 1fr) [main-end] minmax(calc((100vw - 520px) / 2), .3fr) [full-end]; 
-  }
-
-  // If this is not inside a grid context, should be a no-op
-  grid-column: full;
+  grid-template-columns: [full-start] minmax(4vw, calc((100vw - 960px) / 2)) [main-start] 1fr [main-end] minmax(4vw, calc((100vw - 960px) / 2)) [full-end];
+  align-items: center;
 
   & > * {
     grid-column: main;
   }
 }
 
-/*
-
-grid-template-columns:
-  [full-start]
-  minmax(calc(calc(100% - var(--large))/ 2),1fr) // var(--large) is the max width of the main area at full width, around 1080px; this ensures a maximum width of 1080px, centered
-  [main-start]
-  repeat(14,[col-start] 1fr) // 14 equal columns
-  [main-end]
-  minmax(calc(calc(100% - var(--large))/ 2),1fr)
-  [full-end];
-
-*/
-
-
-// Mark Boulton's grid
-
-.mb-page-container {
-  display:grid;
-  grid-template-columns:[full-start] minmax(calc(calc(100% - var(--large))/ 2),1fr) [main-start] repeat(14,[col-start] 1fr) [main-end] minmax(calc(calc(100% - var(--large))/ 2),1fr) [full-end];
- }
- .mb-main {
-  display:grid;
-  grid-template-columns:[full-start] minmax(calc(calc(100% - var(--large))/ 2),1fr) [main-start] repeat(14,[col-start] 1fr) [main-end] minmax(calc(calc(100% - var(--large))/ 2),1fr) [full-end];
-  grid-column:full
- }
-
- @media only screen and (max-width:960px) {
- .mb-page-container {
-  display:grid;
-  grid-template-columns:[full-start] minmax(calc(calc(100% - 960px)/ 2),1fr) [main-start] repeat(8,[col-start] 1fr) [main-end] minmax(calc(calc(100% - 960px)/ 2),1fr) [full-end]
- }
- .mb-main {
-  display:grid;
-  grid-template-columns:[full-start] minmax(calc(calc(100% - 960px)/ 2),1fr) [main-start] repeat(8,[col-start] 1fr) [main-end] minmax(calc(calc(100% - 960px)/ 2),1fr) [full-end];
-  grid-column:full
- }
-}
-
-@media only screen and (max-width:515px) {
- .mb-page-container {
-  display:grid;
-  grid-template-columns:[full-start] minmax(calc(calc(100% - 515px)/ 2),.3fr) [main-start] repeat(5,[col-start] 1fr) [main-end] minmax(calc(calc(100% - 515px)/ 2),.3fr) [full-end]
- }
- .mb-main {
-  display:grid;
-  grid-template-columns:[full-start] minmax(calc(calc(100% - 515px)/ 2),.3fr) [main-start] repeat(5,[col-start] 1fr) [main-end] minmax(calc(calc(100% - 515px)/ 2),.3fr) [full-end];
-  grid-column:full
- }
+@mixin grid-container {
 }

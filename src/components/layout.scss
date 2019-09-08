@@ -5,6 +5,8 @@
   --color-text: var(--near-black);
   --color-background: var(--white);
   --color-accent: var(--red);
+  --color-light-text: var(--gray);
+  --color-link: var(--blue);
 }
 
 * {
@@ -29,7 +31,7 @@ body {
 
 a[href] {
   color: var(--color-text);
-  text-decoration-color: var(--blue);
+  text-decoration-color: var(--color-link);
   text-decoration-style: dotted;
   text-underline-offset: 0.2em;
   text-decoration-thickness: 2px;
@@ -37,6 +39,10 @@ a[href] {
   &:hover, &:active {
     text-decoration-style: solid;
   }
+}
+
+.main-layout {
+  @include grid-base-container();
 }
 
 main {

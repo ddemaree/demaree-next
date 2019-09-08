@@ -3,12 +3,11 @@
 
 .footer {
   @include grid-container;
-  margin: 8vh 0 8vh 0;
+  margin: 8vh 0 4vh 0;
 
   @media (min-width: 960px) {
     .footerContent {
       grid-column: 10 / 16;
-      // grid-row: 1;
     }
     
     .elsewhere {
@@ -22,6 +21,7 @@
 
   h3 {
     @include font-style-micro--bold();
+    color: var(--color-accent);
     margin: 0 0 0.6em;
   }
 
