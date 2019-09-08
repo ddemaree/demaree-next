@@ -5,5 +5,6 @@
   publish = "_site"
   command = "npm run build"
 
-[context.remake-2018]
-  publish = "_site"
+[context.gatsby-2019-fml]
+  command = "gatsby build"
+  publish = "public"
