@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const path = require('path')
 
 module.exports = {
@@ -43,8 +45,8 @@ module.exports = {
     {
       resolve: `gatsby-source-ghost`,
       options: {
-        apiUrl: `https://ghost.demaree.net`,
-        contentApiKey: `72ac154622bf203ccdcb434513`
+        apiUrl: process.env.GHOST_API_URL,
+        contentApiKey: process.env.GHOST_CONTENT_API_KEY
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
