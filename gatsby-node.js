@@ -8,23 +8,22 @@
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
+
   let result = await graphql(`
     query MyQuery {
-      allGhostPost {
+      posts: allGhostPost {
         edges {
           node {
-            id
-            html
-          }
-          next {
-            id
-            title
             slug
+            published_at
           }
           previous {
-            id
-            title
             slug
+            published_at
+          }
+          next {
+            slug
+            published_at
           }
         }
       }
@@ -36,5 +35,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
+
+  const edges = result.data.posts.edges
+
+  edges.forEach(edge => {
+    const { slug } = edge.node
+
+    createPage({
+      path: `/posts/${slug}`,
+      component: require.resolve(`./src/templates/blog-post.js`),
+      context: { slug },
+    })
+  })
 
 }
