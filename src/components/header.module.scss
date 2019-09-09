@@ -3,10 +3,11 @@
 
 .header {
   @include font-style-micro();
-  @include grid-container();
-  grid-template-rows: 3rem;
+  // @include grid-container();
+  // grid-template-rows: 3rem;
   align-items: center;
   margin: 4vh 0 8vh 0;
+  padding: 0 4vw;
 
   a[href] {
     color: inherit;

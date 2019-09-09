@@ -4,17 +4,17 @@
 
 // This is only used once in the .main-layout div, but it's included here just for reference so I can see it when writing the other mixins
 @mixin grid-base-container {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-auto-flow: column;
+  // min-height: 100vh;
+  // display: grid;
+  // grid-template-rows: auto 1fr auto;
+  // grid-auto-flow: column;
 
-  grid-template-columns: [full-start] minmax(4vw, calc((100vw - 960px) / 2)) [main-start] 1fr [main-end] minmax(4vw, calc((100vw - 960px) / 2)) [full-end];
-  align-items: center;
+  // grid-template-columns: [full-start] minmax(4vw, calc((100vw - 960px) / 2)) [main-start] 1fr [main-end] minmax(4vw, calc((100vw - 960px) / 2)) [full-end];
+  // align-items: center;
 
-  & > * {
-    grid-column: main;
-  }
+  // & > * {
+  //   grid-column: main;
+  // }
 }
 
 @mixin grid-container {
