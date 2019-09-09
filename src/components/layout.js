@@ -13,9 +13,10 @@ import { Helmet } from 'react-helmet'
 import Header from "./header"
 import Footer from "./footer"
 
+import "../sass_includes/global.scss"
+
 import c from 'classnames'
-import "../sass_includes/tachyons.scss"
-import "./layout.scss"
+import layoutStyles from "./layout.module.scss"
 
 const Layout = ({ children, mainClassName, hasFeatureImage }) => {
   const data = useStaticQuery(graphql`
@@ -42,7 +43,7 @@ const Layout = ({ children, mainClassName, hasFeatureImage }) => {
 
   return (
     <div className={c([
-      'main-layout',
+      layoutStyles.mainLayout,
     ])}>
       <Helmet 
         titleTemplate={`%s – ${data.ghostSettings.title}`} 
@@ -52,7 +53,9 @@ const Layout = ({ children, mainClassName, hasFeatureImage }) => {
 
       <Header siteTitle={data.ghostSettings.title} hasFeatureImage={hasFeatureImage} />
 
-      <main className={mainClassName}>{children}</main>
+      <main className={c([mainClassName, layoutStyles.mainContent])}>
+        {children}
+      </main>
 
       <Footer />
     </div>
