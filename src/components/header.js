@@ -5,12 +5,11 @@ import React from "react"
 import c from 'classnames'
 import styles from './header.module.scss'
 
-const Header = ({ siteTitle, hasFeatureImage }) => {
+const Header = ({ hasFancyHeader }) => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       ghostSettings {
         title
-        description
         navigation {
           label
           url
@@ -19,12 +18,12 @@ const Header = ({ siteTitle, hasFeatureImage }) => {
     }
   `)
 
-  const { title, description, navigation } = data.ghostSettings
+  const { title, navigation } = data.ghostSettings
 
   return (
     <header className={c([
       styles.header,
-      (hasFeatureImage && styles.hasFeatureImage)
+      (hasFancyHeader && styles.hasFeatureImage)
     ])}>
       <div
         className={c(styles.headerInner)}
@@ -47,12 +46,11 @@ const Header = ({ siteTitle, hasFeatureImage }) => {
 } 
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-  hasFeatureImage: PropTypes.bool
+  hasFancyHeader: PropTypes.bool
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  hasFancyHeader: false
 }
 
 export default Header

@@ -18,7 +18,7 @@ import "../sass_includes/global.scss"
 import c from 'classnames'
 import layoutStyles from "./layout.module.scss"
 
-const Layout = ({ children, mainClassName, hasFeatureImage }) => {
+const Layout = ({ children, mainClassName, hasFancyHeader }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -51,7 +51,7 @@ const Layout = ({ children, mainClassName, hasFeatureImage }) => {
         <link rel="stylesheet" href="https://use.typekit.net/yax1qaz.css" />
       </Helmet>
 
-      <Header siteTitle={data.ghostSettings.title} hasFeatureImage={hasFeatureImage} />
+      <Header hasFancyHeader={hasFancyHeader} />
 
       <main className={c([mainClassName, layoutStyles.mainContent])}>
         {children}

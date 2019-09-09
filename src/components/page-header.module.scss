@@ -5,9 +5,14 @@
   margin-right: -4vw;
   margin-bottom: 1.5em;
 
-  &.hasFeatureImage {
+  &.hasFeatureImage, &.fancyHeader {
     position: relative;
     color: white;
+  }
+
+  &.fancyHeader {
+    background-color: var(--blue);
+    height: 14rem;
   }
 
   figure {
@@ -29,11 +34,12 @@
     margin: 0;
   }
 
-  .hasFeatureImage & {
+  .hasFeatureImage &,
+  .fancyHeader & {
     background-color: #0002;
     bottom: 0;
     color: white;
-    padding-top: 4vh;
+    padding-top: calc(4vh + 2rem);
     position: absolute;
     top: 0;
     width: 100%;
@@ -48,7 +54,7 @@
     width: 100%;
     object-fit: cover;
     vertical-align: middle;
-    height: 16rem;
+    height: 12rem;
     filter: contrast(80%) saturate(120%);
   }
 }

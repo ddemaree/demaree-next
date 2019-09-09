@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import { DateTime } from 'luxon'
 
 import Layout from "../components/layout"
+import PageHeader from '../components/page-header'
 
 import styles from './posts.module.scss'
 
@@ -28,8 +29,11 @@ const BlogPostsIndex = ({ data }) => {
   const groupedPosts = groupPostsByMonth(data.posts.edges.map(e => e.node))
 
   return (
-    <Layout mainClassName={styles.postsIndex}>
-      <h2 className={styles.pageTitle}>Blog posts</h2>
+    <Layout mainClassName={styles.postsIndex} hasFancyHeader>
+      <PageHeader title="Blog posts" fancyHeaderStyle="gradient" />
+
+      {/* <h2 className={styles.pageTitle}>Blog posts</h2> */}
+
       {Object.keys(groupedPosts).map(monthKey => {
         const monthDate = DateTime.fromISO(monthKey)
         const { posts } = groupedPosts[monthKey]
