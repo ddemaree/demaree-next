@@ -41,14 +41,15 @@ $line-heights: (
 
 @mixin font-style-micro {
   @include font-family(micro-sans);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-size: map-get($font-sizes, 300);
-  line-height: map-get($line-heights, heading); 
-  font-variant-numeric: lining-nums;
   -moz-font-feature-settings: "lnum";
   -webkit-font-feature-settings: "lnum";
   font-feature-settings: "lnum"; 
+  font-size: map-get($font-sizes, 300);
+  font-variant-numeric: lining-nums;
+  font-weight: normal;
+  letter-spacing: 1px;
+  line-height: map-get($line-heights, heading); 
+  text-transform: uppercase;
 }
 
 @mixin font-style-micro--bold {

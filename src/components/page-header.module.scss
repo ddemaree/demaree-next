@@ -1,5 +1,9 @@
 @import "../sass_includes/typography";
 
+:root {
+  --fancy-header-height: 12rem;
+}
+
 .header {
   margin-left: -4vw;
   margin-right: -4vw;
@@ -12,7 +16,7 @@
 
   &.fancyHeader {
     background-color: var(--blue);
-    height: 14rem;
+    height: var(--fancy-header-height);
   }
 
   figure {
@@ -54,7 +58,7 @@
     width: 100%;
     object-fit: cover;
     vertical-align: middle;
-    height: 12rem;
+    height: var(--fancy-header-height);
     filter: contrast(80%) saturate(120%);
   }
 }
