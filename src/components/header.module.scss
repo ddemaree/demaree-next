@@ -3,11 +3,22 @@
 
 .header {
   @include font-style-micro();
-  // @include grid-container();
-  // grid-template-rows: 3rem;
+  @include horizontal-inset();
+
   align-items: center;
+  display: flex;
+  flex-direction: row;
   margin: 4vh 0 8vh 0;
-  padding: 0 4vw;
+  min-height: 2rem;
+
+  &.hasFeatureImage {
+    color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 66;
+  }
 
   a[href] {
     color: inherit;

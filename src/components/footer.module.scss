@@ -2,18 +2,9 @@
 @import '../sass_includes/grid-layout';
 
 .footer {
-  @include grid-container;
-  margin: 8vh 0 4vh 0;
+  @include horizontal-inset;
 
-  @media (min-width: 960px) {
-    .footerContent {
-      grid-column: 10 / 16;
-    }
-    
-    .elsewhere {
-      grid-column: 2 / 7;
-    }
-  }
+  margin: 8vh 0 4vh 0;
 }
 
 .elsewhere {

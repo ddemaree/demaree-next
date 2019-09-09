@@ -12,10 +12,12 @@ import { Helmet } from 'react-helmet'
 
 import Header from "./header"
 import Footer from "./footer"
-import "./layout.scss"
-import "../sass_includes/tachyons.scss"
 
-const Layout = ({ children, mainClassName }) => {
+import c from 'classnames'
+import "../sass_includes/tachyons.scss"
+import "./layout.scss"
+
+const Layout = ({ children, mainClassName, hasFeatureImage }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -39,14 +41,16 @@ const Layout = ({ children, mainClassName }) => {
   `)
 
   return (
-    <div className="main-layout">
+    <div className={c([
+      'main-layout',
+    ])}>
       <Helmet 
         titleTemplate={`%s – ${data.ghostSettings.title}`} 
         defaultTitle={data.ghostSettings.title}>
         <link rel="stylesheet" href="https://use.typekit.net/yax1qaz.css" />
       </Helmet>
 
-      <Header siteTitle={data.ghostSettings.title} />
+      <Header siteTitle={data.ghostSettings.title} hasFeatureImage={hasFeatureImage} />
 
       <main className={mainClassName}>{children}</main>
 

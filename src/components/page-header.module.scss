@@ -1,0 +1,63 @@
+@import "../sass_includes/typography";
+
+.header {
+  margin-left: -4vw;
+  margin-right: -4vw;
+  margin-bottom: 1.5em;
+
+  &.hasFeatureImage {
+    position: relative;
+    color: white;
+  }
+
+  figure {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.headerContent {
+  padding: 0 4vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+
+  * {
+    margin: 0;
+  }
+
+  .hasFeatureImage & {
+    background-color: #0002;
+    bottom: 0;
+    color: white;
+    padding-top: 4vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+  }
+}
+
+.featureImage {
+  width: 100vw;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+    height: 16rem;
+    filter: contrast(80%) saturate(120%);
+  }
+}
+
+.title {
+  @include font-style-title();
+}
+
+.date {
+  @include font-style-micro();
+  margin-top: 2vw;
+}
