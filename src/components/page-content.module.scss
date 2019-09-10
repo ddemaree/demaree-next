@@ -6,11 +6,15 @@
 }
 
 .wrapper {
-  padding: 0 7vw;
+  padding: 6vh 7vw;
 
   @media screen and (max-width: 805px) {
-    padding: 0 3vw;
+    padding: 1.5rem 3vw;
   }
+
+  background-color: var(--color-background);
+  position: relative;
+  z-index: 66;
 }
 
 .pageContent {

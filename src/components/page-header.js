@@ -3,7 +3,7 @@ import React from "react"
 import PropTypes from 'prop-types'
 
 import c from "classnames"
-import headerStyles from "../components/page-header.module.scss"
+import styles from "../components/page-header.module.scss"
 
 const PageHeader = ({ title, date, featureImage, fancyHeaderStyle }) => {
   // const hasFeatureImage = !!featureImage
@@ -11,15 +11,15 @@ const PageHeader = ({ title, date, featureImage, fancyHeaderStyle }) => {
 
   return (
     <header className={c([
-      headerStyles.header,
-      (featureImage && headerStyles.hasFeatureImage),
-      (fancyHeaderStyle && headerStyles.fancyHeader)
+      styles.header,
+      (featureImage && styles.hasFeatureImage),
+      (fancyHeaderStyle && styles.fancyHeader)
     ])}>
-      <div className={headerStyles.headerContent}>
-        <h1 className={headerStyles.title}>{title}</h1>
-        {date && <p className={headerStyles.date}>September 9, 2019</p>}
+      <div className={styles.headerContent}>
+        <h1 className={styles.title}>{title}</h1>
+        {date && <p className={styles.date}>September 9, 2019</p>}
       </div>
-      {featureImage && <figure className={headerStyles.featureImage}>
+      {featureImage && <figure className={styles.featureImage}>
         <img src={featureImage} />
       </figure>}
     </header>

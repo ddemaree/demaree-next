@@ -2,13 +2,10 @@
 
 @import '../sass_includes/typography';
 @import '../sass_includes/grid-layout';
+@import '../sass_includes/theming';
 
 :root {
-  --color-text: var(--near-black);
-  --color-background: var(--white);
-  --color-accent: var(--red);
-  --color-light-text: var(--gray);
-  --color-link: var(--blue);
+  @include light-theme-colors();
 }
 
 * {
@@ -29,6 +26,18 @@ html {
 
 body {
   @include font-style-body();
+  background-color: var(--color-background);
+  color: var(--color-text);
+
+  &.theme-system {
+    @media (prefers-color-scheme: dark) {
+      @include dark-theme-colors();
+    }
+  }
+
+  &.theme-dark {
+    @include dark-theme-colors();
+  }
 }
 
 a[href] {
@@ -40,5 +49,18 @@ a[href] {
 
   &:hover, &:active {
     text-decoration-style: solid;
+  }
+}
+
+// Misc styles, to likely be moved into modules someday
+
+.dd-icon {
+  height: 1em;
+  display: inline-block;
+
+  svg {
+    height: 100%;
+    margin: 0;
+    display: block;
   }
 }

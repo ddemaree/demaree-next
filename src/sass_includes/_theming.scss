@@ -1,0 +1,26 @@
+@mixin dark-theme-colors {
+  --color-text: white;
+  --color-background: var(--near-black);
+  --color-accent: var(--light-purple);
+  --color-light-text: var(--gray);
+  --color-link: var(--blue);
+}
+
+@mixin light-theme-colors {
+  --color-text: var(--near-black);
+  --color-background: var(--white);
+  --color-accent: var(--red);
+  --color-light-text: var(--gray);
+  --color-link: var(--blue);
+}
+
+@mixin dark-theme {
+  :global(body.theme-dark) & {
+    @content;
+  }
+  :global(body.theme-system) & {
+    @media (prefers-color-scheme: dark) {
+      @content;
+    }
+  }
+}

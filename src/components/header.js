@@ -2,10 +2,12 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
+import Icon from './dd-icon'
+
 import c from 'classnames'
 import styles from './header.module.scss'
 
-const Header = ({ hasFancyHeader }) => {
+const Header = ({ hasFancyHeader, menuContent }) => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       ghostSettings {
@@ -29,7 +31,10 @@ const Header = ({ hasFancyHeader }) => {
         className={c(styles.headerInner)}
       >
         <div className={styles.logo}>
-          <Link to="/">{title}</Link>
+          <Link to="/">
+            <Icon className={styles.logoIcon} />
+            <span className={styles.logoText}>{title}</span>
+          </Link>
         </div>
         <nav className={c(styles.navigation)}>
           <ul>
@@ -40,13 +45,16 @@ const Header = ({ hasFancyHeader }) => {
             ))}
           </ul>
         </nav>
+        
+        {menuContent}
       </div>
     </header>
   )
 } 
 
 Header.propTypes = {
-  hasFancyHeader: PropTypes.bool
+  hasFancyHeader: PropTypes.bool,
+  menuContent: PropTypes.node
 }
 
 Header.defaultProps = {

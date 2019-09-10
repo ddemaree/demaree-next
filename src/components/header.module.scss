@@ -5,11 +5,7 @@
   @include font-style-micro();
   @include horizontal-inset();
 
-  align-items: center;
-  display: flex;
-  flex-direction: row;
   margin: 4vh 0 8vh 0;
-  min-height: 2rem;
 
   &.hasFeatureImage {
     color: white;
@@ -31,19 +27,37 @@
       text-decoration-color: rgba(black, 0.4);
     }
   }
+}
 
-  .logo {
-    float: left;
-    margin-right: 1rem;
-  }
+.header, .headerInner {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  min-height: 2rem;
+}
+
+.headerInner {
+  flex: 1;
 }
 
 .logo {
-  background-color: var(--red);
-  color: white;
+  color: inherit;
   font-weight: bold;
   text-align: center;
   white-space: nowrap;
+  margin-right: 2vw;
+
+  a[href] {
+    padding: 0;
+  }
+}
+
+.logoText {
+  display: none;
+}
+
+.logoIcon {
+  font-size: 1.25rem;
 }
 
 .navigation {
