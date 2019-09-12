@@ -16,11 +16,11 @@ import Footer from "./footer"
 import "../sass_includes/global.scss"
 
 import c from 'classnames'
-import styles from "./layout.module.scss"
 
 import favicon16 from '../images/dd-favicon-16.png'
 import favicon32 from '../images/dd-favicon-32.png'
 import favicon64 from '../images/dd-favicon-64.png'
+import favicon128 from '../images/dd-favicon-128.png'
 
 const Layout = ({ children, pageTitle, mainClassName, hasFancyHeader }) => {
   const [theme, setTheme] = useState('system')
@@ -49,9 +49,7 @@ const Layout = ({ children, pageTitle, mainClassName, hasFancyHeader }) => {
   `)
 
   return (
-    <div className={c([
-      styles.mainLayout,
-    ])}>
+    <div className={`flex flex-column min-vh-100`}>
       <Helmet 
         titleTemplate={`%s – ${data.ghostSettings.title}`} 
         defaultTitle={data.ghostSettings.title}>
@@ -61,12 +59,13 @@ const Layout = ({ children, pageTitle, mainClassName, hasFancyHeader }) => {
         <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
         <link rel="icon" type="image/png" sizes="64x64" href={favicon64} />
         <link rel="shortcut icon" type="image/png" href={favicon64} />
+        <link rel="apple-touch-icon" type="image/png" href={favicon128} />
         <body className={`theme-${theme}`} />
       </Helmet>
 
       <Header hasFancyHeader={hasFancyHeader} />
 
-      <main className={c([mainClassName, styles.mainContent])}>
+      <main className={c(['ph4 flex-auto', mainClassName])}>
         {children}
       </main>
 

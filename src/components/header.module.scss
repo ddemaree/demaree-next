@@ -3,9 +3,8 @@
 
 .header {
   @include font-style-micro();
-  @include horizontal-inset();
 
-  margin: 4vh 0 8vh 0;
+  // margin: 4vh 0 8vh 0;
   // position: relative;
 
   &.hasFeatureImage {
