@@ -6,35 +6,14 @@
 }
 
 .header {
-  margin-left: -4vw;
-  margin-right: -4vw;
-  margin-bottom: 1.5em;
-
-  &.hasFeatureImage, &.fancyHeader {
-    position: relative;
-    color: white;
-    margin-bottom: -1rem;
-  }
-
-  &.fancyHeader {
-    background-color: var(--blue);
-    height: var(--fancy-header-height);
-  }
-
-  figure {
-    padding: 0;
-    margin: 0;
+  // TODO: Extract this into a class
+  :global(.ph4) & {
+    margin-left: calc(-1 * var(--spacing-large));
+    margin-right: calc(-1 * var(--spacing-large));
   }
 }
 
 .headerContent {
-  padding: 0 4vw;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
 
   * {
     margin: 0;
@@ -42,13 +21,7 @@
 
   .hasFeatureImage &,
   .fancyHeader & {
-    background-color: #0002;
-    bottom: 1rem;
-    color: white;
     padding-top: calc(4vh + 2rem);
-    position: absolute;
-    top: 0;
-    width: 100%;
     z-index: 20;
   }
 }

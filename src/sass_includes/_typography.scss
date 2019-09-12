@@ -52,6 +52,7 @@ $line-heights: (
   text-transform: uppercase;
 }
 
+
 @mixin font-style-micro--bold {
   @include font-style-micro();
   font-weight: bold;
@@ -109,3 +110,27 @@ $line-heights: (
   font-family: 'Source Code Pro', Consolas, monaco, monospace;
   font-size: 0.9em;
 }
+
+
+.dd-fs-micro, .dd-f-micro {
+  @include font-style-micro();
+}
+
+.dd-fs-micro--bold, .dd-f-micro--bold {
+  @include font-style-micro--bold();
+}
+
+.dd-f-heading-1 {
+  @include font-style-heading-1();
+}
+
+.dd-f-heading-2 {
+  @include font-style-heading-2();
+}
+
+// Make tachyon classes for each font size grade
+@each $grade, $value in $font-sizes {
+  .dd-fs-#{$grade} {
+    @include font-size($grade);
+  }
+} 

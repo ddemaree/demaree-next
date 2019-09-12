@@ -6,20 +6,25 @@ import c from "classnames"
 import styles from "../components/page-header.module.scss"
 
 const PageHeader = ({ title, date, featureImage, fancyHeaderStyle }) => {
-  // const hasFeatureImage = !!featureImage
-  // const isFancyHeader = (!!featureImage || !!fancyHeaderStyle)
-
+  const isFancy = !!(featureImage || fancyHeaderStyle)
+  
   return (
     <header className={c([
+      `mb4 relative`,
       styles.header,
+      (isFancy && `white mb3 h4`),
       (featureImage && styles.hasFeatureImage),
-      (fancyHeaderStyle && styles.fancyHeader)
+      (fancyHeaderStyle && [`bg-blue`, styles.fancyHeader])
     ])}>
-      <div className={styles.headerContent}>
-        <h1 className={styles.title}>{title}</h1>
-        {date && <p className={styles.date}>September 9, 2019</p>}
+      <div className={c([
+        styles.headerContent,
+        `ph4 flex flex-column items-center justify-center w-100`, 
+        (isFancy && `absolute white top-0 bottom-1`)
+      ])}>
+        <h1 className={`ma0 ` + styles.title}>{title}</h1>
+        {date && <p className={`mt3 dd-f-micro`}>September 9, 2019</p>}
       </div>
-      {featureImage && <figure className={styles.featureImage}>
+      {featureImage && <figure className={c(styles.featureImage, `pa0 ma0`)}>
         <img src={featureImage} />
       </figure>}
     </header>

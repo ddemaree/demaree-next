@@ -3,25 +3,24 @@ import React from "react"
 import { Link } from "gatsby"
 
 import socials from '../data/socials.json'
-import styles from './footer.module.scss'
 
 const Footer = ({}) => {
 
   return (
-    <footer className={styles.footer}>
-      <nav className={styles.elsewhere}>
-        <h3>Elsewhere</h3>
-        <ul>
+    <footer className={`mt5 mb3 ph4`}>
+      <nav className={`mb3`}>
+        <h3 className={`ma0 mb2 dd-fs-micro--bold dd-accent`}>Elsewhere</h3>
+        <ul className={`flex list pa0 ma0`}>
           {socials.map(social => 
-            <li key={social.text}>
+            <li className="mr3" key={social.text}>
               <a href={social.url}>{social.text}</a>
             </li>
           )}
         </ul>
       </nav>
-      <div className={styles.footerContent}>
-        <p className={styles.saying}>&ldquo;Have courage, and be kind&rdquo;</p>
-        <p className={styles.copyright}>
+      <div>
+        <p className={`i ma0`}>&ldquo;Have courage, and be kind&rdquo;</p>
+        <p className={`ma0 dd-fs-300`}>
         © {new Date().getFullYear()}— David Demaree
         {' • '}
         <Link to="/style-guide">Style guide</Link>
