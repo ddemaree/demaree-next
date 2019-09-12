@@ -1,6 +1,6 @@
-import { Link, useStaticQuery, graphql } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import PropTypes from "prop-types"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
 import Icon from './dd-icon'
 

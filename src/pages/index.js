@@ -3,16 +3,12 @@ import { graphql } from "gatsby"
 import styles from "./index.module.scss"
 
 import Layout from "../components/layout"
-import PageContent from "../components/page-content"
-// import Image from "../components/image"
-// import SEO from "../components/seo"
+import PageContent, { PageWrapper } from "../components/page-content"
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <div className={styles.gridWrap}>
-        <PageContent className={styles.pageContent} content={data.homePage.html} />
-      </div>
+      <PageContent className={styles.pageContent} content={data.homePage.html} />
     </Layout>
   )
 }

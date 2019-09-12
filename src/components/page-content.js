@@ -6,6 +6,12 @@ import styles from './page-content.module.scss'
 
 import Helmet from 'react-helmet'
 
+export const PageWrapper = ({ children, className }) => (
+  <div className={c(styles.wrapper, className)}>
+    {children}
+  </div>
+)
+
 const PageContent = ({ content, className }) => {
 
   let sanitizedContent = content.replace(/(<script.+\/script>)/g, '<!-- $1 -->');

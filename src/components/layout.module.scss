@@ -1,3 +1,5 @@
+@import '../sass_includes/grid-layout';
+
 .mainLayout {
   display: flex;
   flex-direction: column;
@@ -5,5 +7,6 @@
 }
 
 .mainContent {
+  @include horizontal-inset();
   flex: 1;
 }

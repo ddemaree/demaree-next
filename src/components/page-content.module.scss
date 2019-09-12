@@ -1,8 +1,9 @@
 @import 'typography';
+@import 'grid-layout';
+
 
 .main {
-  padding-left: 4vw;
-  padding-right: 4vw;
+  @include horizontal-inset();
 }
 
 .wrapper {
