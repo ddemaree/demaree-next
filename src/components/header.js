@@ -36,7 +36,7 @@ const Header = ({ hasFancyHeader, menuContent }) => {
             <span className={styles.logoText}>{title}</span>
           </Link>
         </div>
-        {/* <nav className={c(styles.navigation)}>
+        <nav className={c(styles.navigation)}>
           <ul>
             {navigation.map(navEntry => (
               <li key={navEntry.url}>
@@ -44,7 +44,7 @@ const Header = ({ hasFancyHeader, menuContent }) => {
               </li>
             ))}
           </ul>
-        </nav> */}
+        </nav>
         
         {menuContent}
       </div>
