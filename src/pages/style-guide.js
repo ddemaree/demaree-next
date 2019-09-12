@@ -12,6 +12,7 @@ const StyleGuidePage = ({ data }) => {
 
   return (
     <Layout 
+      pageTitle="Style Guide"
       hasFancyHeader={!!page.feature_image} 
       mainClassName={pageStyles.main}>
       <PageHeader title={data.page.title} featureImage={data.page.feature_image} />

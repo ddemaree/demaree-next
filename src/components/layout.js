@@ -16,9 +16,13 @@ import Footer from "./footer"
 import "../sass_includes/global.scss"
 
 import c from 'classnames'
-import layoutStyles from "./layout.module.scss"
+import styles from "./layout.module.scss"
 
-const Layout = ({ children, mainClassName, hasFancyHeader }) => {
+import favicon16 from '../images/dd-favicon-16.png'
+import favicon32 from '../images/dd-favicon-32.png'
+import favicon64 from '../images/dd-favicon-64.png'
+
+const Layout = ({ children, pageTitle, mainClassName, hasFancyHeader }) => {
   const [theme, setTheme] = useState('system')
   // const [themeMenuOpen, setThemeMenuOpen] = useState(false)
 
@@ -44,21 +48,25 @@ const Layout = ({ children, mainClassName, hasFancyHeader }) => {
     }
   `)
 
-
   return (
     <div className={c([
-      layoutStyles.mainLayout,
+      styles.mainLayout,
     ])}>
       <Helmet 
         titleTemplate={`%s – ${data.ghostSettings.title}`} 
         defaultTitle={data.ghostSettings.title}>
+        {pageTitle && <title>{pageTitle}</title>}
         <link rel="stylesheet" href="https://use.typekit.net/yax1qaz.css" />
+        <link rel="icon" type="image/png" sizes="16x16" href={favicon16} />
+        <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
+        <link rel="icon" type="image/png" sizes="64x64" href={favicon64} />
+        <link rel="shortcut icon" type="image/png" href={favicon64} />
         <body className={`theme-${theme}`} />
       </Helmet>
 
       <Header hasFancyHeader={hasFancyHeader} />
 
-      <main className={c([mainClassName, layoutStyles.mainContent])}>
+      <main className={c([mainClassName, styles.mainContent])}>
         {children}
       </main>
 
@@ -68,6 +76,7 @@ const Layout = ({ children, mainClassName, hasFancyHeader }) => {
 }
 
 Layout.propTypes = {
+  pageTitle: PropTypes.string,
   children: PropTypes.node.isRequired,
   mainClassName: PropTypes.string
 }
