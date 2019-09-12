@@ -2,8 +2,8 @@
   ID = "demaree-next"
 
 [build]
-  publish = "_site"
-  command = "npm run build"
+  command = "gatsby build"
+  publish = "public"
 
 [context.gatsby-2019-fml]
   command = "gatsby build"
