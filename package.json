@@ -1,21 +1,19 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "demaree-next",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "David's web site",
+  "version": "19.9.1",
+  "author": "David Demaree <david@demaree.me>",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.3.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.4",
     "@fortawesome/free-brands-svg-icons": "^5.3.1",
     "@fortawesome/free-solid-svg-icons": "^5.3.1",
-    "@fortawesome/pro-regular-svg-icons": "^5.10.2",
     "@fortawesome/react-fontawesome": "^0.1.3",
     "classnames": "^2.2.6",
     "dotenv": "^8.1.0",
     "gatsby": "^2.15.9",
     "gatsby-image": "^2.2.17",
-    "gatsby-plugin-emotion": "^4.1.5",
     "gatsby-plugin-manifest": "^2.2.14",
     "gatsby-plugin-offline": "^2.2.10",
     "gatsby-plugin-react-helmet": "^3.1.6",
@@ -30,8 +28,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-helmet": "^5.2.1",
-    "sass": "^1.23.0-module.beta.1"
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
@@ -50,9 +47,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/ddemaree/demaree-next"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/ddemaree/demaree-next/issues"
   }
 }
