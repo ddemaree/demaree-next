@@ -18,13 +18,13 @@ const PageHeader = ({ title, date, featureImage, fancyHeaderStyle }) => {
     ])}>
       <div className={c([
         styles.headerContent,
-        `ph4 flex flex-column items-center justify-center w-100`, 
-        (isFancy && `absolute white top-0 bottom-1`)
+        `ph4 flex flex-column items-center justify-center w-100 z-2`, 
+        (isFancy && `absolute white top-0 bottom-1 pt5`)
       ])}>
-        <h1 className={`ma0 ` + styles.title}>{title}</h1>
-        {date && <p className={`mt3 dd-f-micro`}>September 9, 2019</p>}
+        <h1 className="ma0 dd-f-title">{title}</h1>
+        {date && <p className="mt3 dd-f-micro">September 9, 2019</p>}
       </div>
-      {featureImage && <figure className={c(styles.featureImage, `pa0 ma0`)}>
+      {featureImage && <figure className={c(styles.featureImage, `pa0 ma0 z-0`)}>
         <img src={featureImage} />
       </figure>}
     </header>

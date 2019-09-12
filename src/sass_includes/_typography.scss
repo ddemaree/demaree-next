@@ -120,6 +120,10 @@ $line-heights: (
   @include font-style-micro--bold();
 }
 
+.dd-f-title {
+  @include font-style-title();
+}
+
 .dd-f-heading-1 {
   @include font-style-heading-1();
 }
