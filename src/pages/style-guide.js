@@ -5,8 +5,6 @@ import Layout from "../components/layout"
 import PageContent from "../components/page-content"
 import PageHeader from "../components/page-header"
 
-import pageStyles from "../components/page-content.module.scss"
-
 const StyleGuidePage = ({ data }) => {
   const { page } = data
 
@@ -14,9 +12,9 @@ const StyleGuidePage = ({ data }) => {
     <Layout 
       pageTitle="Style Guide"
       hasFancyHeader={!!page.feature_image} 
-      mainClassName={pageStyles.main}>
+      mainClassName={`ph4 relative`}>
       <PageHeader title={data.page.title} featureImage={data.page.feature_image} />
-      <div className={pageStyles.wrapper}>
+      <div className="pa5 relative z-4 dd-bg-background">
         <PageContent content={data.page.html} />
       </div>
     </Layout>

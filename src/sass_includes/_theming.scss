@@ -25,6 +25,14 @@
   }
 }
 
+.dd-background, .dd-surface {
+  color: var(--color-background);
+}
+
+.dd-bg-background, .dd-bg-surface {
+  background-color: var(--color-background);
+}
+
 .dd-accent {
   color: var(--color-accent);
 }
