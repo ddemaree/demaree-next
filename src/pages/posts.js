@@ -44,7 +44,7 @@ const BlogPostsIndex = ({ data }) => {
         
         return (
           <section key={monthKey} className={c(`center mw7 dd-ph-inset`, styles.postsSection)}>
-            <h3 className={`dd-fs-micro dd-accent mt5 mb3`}>{monthDate.toFormat('MMMM yyyy')}</h3>
+            <h3 className={`dd-f-micro dd-accent mt5 mb3`}>{monthDate.toFormat('MMMM yyyy')}</h3>
             {posts.map(post => (
               <BlogPostItem key={post.slug} post={post} />
               ))}

@@ -1,9 +1,5 @@
 @import "../sass_includes/theming";
 
-:root {
-  --fancy-header-height: 14rem;
-}
-
 .header {
   &.isFancy {
     height: var(--fancy-header-height);

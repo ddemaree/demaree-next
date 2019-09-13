@@ -1,8 +1,4 @@
 
-:root {
-  --wrapper-max-width: 48rem;
-  --content-max-width: 58ch;
-}
 
 @mixin wrapper-max-width {
   max-width: var(--wrapper-max-width);
@@ -36,13 +32,5 @@
   @media (min-width: 30em) {
     margin-left: calc(-1 * var(--spacing-large));
     margin-right: calc(-1 * var(--spacing-large));
-  }
-}
-
-.dd-ph-inset {
-  @include horizontal-inset();
-
-  .dd-neg-inset {
-    @include horizontal-inset--negative();
   }
 }

@@ -98,46 +98,13 @@ $line-heights: (
 }
 
 @mixin font-style-quotation {
-  // @include font-size(500);
-  // line-height: 1.25;
-  // font-family: 'freight-display-pro', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-style: italic;
 }
-
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 
 @mixin font-style-code {
   font-family: 'Source Code Pro', Consolas, monaco, monospace;
   font-size: 0.9em;
 }
-
-
-.dd-fs-micro, .dd-f-micro {
-  @include font-style-micro();
-}
-
-.dd-fs-micro--bold, .dd-f-micro--bold {
-  @include font-style-micro--bold();
-}
-
-.dd-f-title {
-  @include font-style-title();
-}
-
-.dd-f-heading-1 {
-  @include font-style-heading-1();
-}
-
-.dd-f-heading-2 {
-  @include font-style-heading-2();
-}
-
-// Make tachyon classes for each font size grade
-@each $grade, $value in $font-sizes {
-  .dd-fs-#{$grade} {
-    @include font-size($grade);
-  }
-} 
 
 @mixin link-style {
   color: var(--color-text);
