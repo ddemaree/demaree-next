@@ -20,11 +20,11 @@ const groupPostsByMonth = posts =>
   }, {})
 
 const BlogPostItem = ({ post }) => (
-  <article className={`ma0 mv4`}>
-    <Link to={`/posts/${post.slug}`}>
-      <figure><img src={post.feature_image} /></figure>
-      <div className="">
-        <h4 className="ma0 mb2 dd-f-heading-2">{post.title}</h4>
+  <article className={`ma0 mv4 ${styles.article}`}>
+    <Link to={`/posts/${post.slug}`} className={styles.articleInner}>
+      <figure className={styles.articleImage}><img src={post.feature_image} /></figure>
+      <div className={`${styles.articleContent} ph2 pv2`}>
+        <h4 className="ma0 mb1 dd-f-heading-2">{post.title}</h4>
         {post.excerpt && (<p className={`dd-fs-300 dd-light-text ma0 mt1 i`}>{ post.excerpt }</p>)}
       </div>
     </Link>

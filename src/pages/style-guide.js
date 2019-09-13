@@ -11,8 +11,7 @@ const StyleGuidePage = ({ data }) => {
   return (
     <Layout 
       pageTitle="Style Guide"
-      hasFancyHeader={!!page.feature_image} 
-      mainClassName={`dd-bg-fade`}>
+      hasFancyHeader={!!page.feature_image}>
       <PageHeader title={data.page.title} featureImage={data.page.feature_image} />
       <PageWrapper>
         <PageContent content={data.page.html} />
