@@ -41,15 +41,7 @@ body {
 }
 
 a[href] {
-  color: var(--color-text);
-  text-decoration-color: var(--color-link);
-  text-decoration-style: dotted;
-  text-underline-offset: 0.2em;
-  text-decoration-thickness: 2px;
-
-  &:hover, &:active {
-    text-decoration-style: solid;
-  }
+  @include link-style();
 }
 
 // Misc styles, to likely be moved into modules someday

@@ -23,9 +23,11 @@ const BlogPostItem = ({ post }) => (
   <article className={`ma0 mv4`}>
     <Link to={`/posts/${post.slug}`}>
       <figure><img src={post.feature_image} /></figure>
+      <div className="">
+        <h4 className="ma0 mb2 dd-f-heading-2">{post.title}</h4>
+        {post.excerpt && (<p className={`dd-fs-300 dd-light-text ma0 mt1 i`}>{ post.excerpt }</p>)}
+      </div>
     </Link>
-    <h4 className="ma0 mb2 dd-f-heading-2"><Link to={`/posts/${post.slug}`}>{post.title}</Link></h4>
-    {post.excerpt && (<p className={`dd-fs-300 dd-light-text ma0 mt1 i`}>{ post.excerpt }</p>)}
   </article>
 )
 
