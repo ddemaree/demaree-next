@@ -7,7 +7,7 @@ import styles from './page-content.module.scss'
 import Helmet from 'react-helmet'
 
 export const PageWrapper = ({ children, className }) => (
-  <div className={c(styles.wrapper, className)}>
+  <div className={c("center mw7 pa0 ph4-l pt4-l pb5-l relative br3", className, styles.pageWrapper)}>
     {children}
   </div>
 )

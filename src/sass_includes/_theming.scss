@@ -1,6 +1,7 @@
 @mixin dark-theme-colors {
   --color-text: white;
   --color-background: var(--near-black);
+  --color-surface: #141414;
   --color-accent: var(--light-purple);
   --color-light-text: var(--gray);
   --color-link: var(--blue);
@@ -8,7 +9,8 @@
 
 @mixin light-theme-colors {
   --color-text: var(--near-black);
-  --color-background: var(--white);
+  --color-background: white;
+  --color-surface: white;
   --color-accent: var(--red);
   --color-light-text: var(--gray);
   --color-link: var(--blue);
@@ -25,12 +27,20 @@
   }
 }
 
-.dd-background, .dd-surface {
+.dd-background {
   color: var(--color-background);
 }
 
-.dd-bg-background, .dd-bg-surface {
+.dd-surface {
+  color: var(--color-surface);
+}
+
+.dd-bg-background {
   background-color: var(--color-background);
+}
+
+.dd-bg-surface {
+  background-color: var(--color-surface);
 }
 
 .dd-accent {
@@ -43,4 +53,11 @@
 
 .dd-light-text {
   color: var(--color-light-text);
+}
+
+.dd-bg-fade {
+  background-color: var(--color-background);
+  background-image: linear-gradient(var(--color-surface), var(--color-background));
+  background-size: 40vh;
+  background-repeat: repeat-x;
 }

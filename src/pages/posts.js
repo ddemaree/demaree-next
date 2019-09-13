@@ -5,6 +5,9 @@ import { DateTime } from 'luxon'
 import Layout from "../components/layout"
 import PageHeader from '../components/page-header'
 
+import c from 'classnames'
+import styles from './posts.module.scss'
+
 const groupPostsByMonth = posts =>
   posts.reduce((groupedPosts, post) => {
     const postDate = DateTime.fromISO(post.published_at)
@@ -18,6 +21,9 @@ const groupPostsByMonth = posts =>
 
 const BlogPostItem = ({ post }) => (
   <article className={`ma0 mv4`}>
+    <Link to={`/posts/${post.slug}`}>
+      <figure><img src={post.feature_image} /></figure>
+    </Link>
     <h4 className="ma0 mb2 dd-f-heading-2"><Link to={`/posts/${post.slug}`}>{post.title}</Link></h4>
     {post.excerpt && (<p className={`dd-fs-300 dd-light-text ma0 mt1 i`}>{ post.excerpt }</p>)}
   </article>
@@ -27,21 +33,19 @@ const BlogPostsIndex = ({ data }) => {
   const groupedPosts = groupPostsByMonth(data.posts.edges.map(e => e.node))
 
   return (
-    <Layout hasFancyHeader>
-      <PageHeader title="Blog posts" fancyHeaderStyle="gradient" />
+    <Layout noMainInset>
+      <PageHeader title="Blog posts" />
 
       {Object.keys(groupedPosts).map(monthKey => {
         const monthDate = DateTime.fromISO(monthKey)
         const { posts } = groupedPosts[monthKey]
         
         return (
-          <section key={monthKey}>
+          <section key={monthKey} className={c(`center mw7 dd-ph-inset`, styles.postsSection)}>
             <h3 className={`dd-fs-micro dd-accent mt5 mb3`}>{monthDate.toFormat('MMMM yyyy')}</h3>
-            <div>
             {posts.map(post => (
               <BlogPostItem key={post.slug} post={post} />
               ))}
-            </div>
           </section>
         )
       })}

@@ -22,7 +22,7 @@ import favicon32 from '../images/dd-favicon-32.png'
 import favicon64 from '../images/dd-favicon-64.png'
 import favicon128 from '../images/dd-favicon-128.png'
 
-const Layout = ({ children, pageTitle, mainClassName, hasFancyHeader }) => {
+const Layout = ({ children, pageTitle, mainClassName, hasFancyHeader, noMainInset }) => {
   const [theme, setTheme] = useState('system')
   // const [themeMenuOpen, setThemeMenuOpen] = useState(false)
 
@@ -65,7 +65,7 @@ const Layout = ({ children, pageTitle, mainClassName, hasFancyHeader }) => {
 
       <Header hasFancyHeader={hasFancyHeader} />
 
-      <main className={c(['ph4 flex-auto', mainClassName])}>
+      <main className={c(['flex-auto relative', mainClassName, (!noMainInset && 'dd-ph-inset')])}>
         {children}
       </main>
 

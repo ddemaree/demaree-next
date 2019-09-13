@@ -10,16 +10,15 @@ const PageHeader = ({ title, date, featureImage, fancyHeaderStyle }) => {
   
   return (
     <header className={c([
-      `mb4 relative`,
+      `mb3 mb4-ns tc relative`,
       styles.header,
-      (isFancy && `white mb3 h4`),
+      (isFancy && [`white mb3 dd-neg-inset nb3-l`, styles.isFancy]),
       (featureImage && styles.hasFeatureImage),
       (fancyHeaderStyle && [`bg-blue`, styles.fancyHeader])
     ])}>
       <div className={c([
-        styles.headerContent,
-        `ph4 flex flex-column items-center justify-center w-100 z-2`, 
-        (isFancy && `absolute white top-0 bottom-1 pt5`)
+        `dd-ph-inset flex flex-column items-center justify-center w-100 z-2`, 
+        (isFancy && `absolute white top-1 bottom-2 pt5`)
       ])}>
         <h1 className="ma0 dd-f-title">{title}</h1>
         {date && <p className="mt3 dd-f-micro">September 9, 2019</p>}

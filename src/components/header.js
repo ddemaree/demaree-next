@@ -24,7 +24,7 @@ const Header = ({ hasFancyHeader, menuContent }) => {
 
   return (
     <header className={c([
-      'ph4 mt3 mb5',
+      'dd-ph-inset mt3 mb5',
       styles.header,
       (hasFancyHeader && styles.hasFeatureImage)
     ])}>

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import PageContent from "../components/page-content"
+import PageContent, { PageWrapper } from "../components/page-content"
 import PageHeader from "../components/page-header"
 
 const StyleGuidePage = ({ data }) => {
@@ -12,11 +12,11 @@ const StyleGuidePage = ({ data }) => {
     <Layout 
       pageTitle="Style Guide"
       hasFancyHeader={!!page.feature_image} 
-      mainClassName={`ph4 relative`}>
+      mainClassName={`dd-bg-fade`}>
       <PageHeader title={data.page.title} featureImage={data.page.feature_image} />
-      <div className="pa5 relative z-4 dd-bg-background">
+      <PageWrapper>
         <PageContent content={data.page.html} />
-      </div>
+      </PageWrapper>
     </Layout>
   )
 }

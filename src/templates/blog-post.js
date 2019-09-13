@@ -11,7 +11,8 @@ const BlogPostTemplate = ({ data }) => {
 
   return (
     <Layout
-      hasFancyHeader={!!feature_image}>
+      hasFancyHeader={!!feature_image}
+      mainClassName="dd-bg-fade">
       <PageHeader
         title={title} 
         featureImage={feature_image}
