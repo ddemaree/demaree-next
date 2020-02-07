@@ -6,7 +6,8 @@ import Layout from "../components/layout"
 import PageHeader from '../components/page-header'
 
 import c from 'classnames'
-import styles from './posts.module.scss'
+// import styles from './posts.module.scss'
+const styles = {}
 
 const groupPostsByMonth = posts =>
   posts.reduce((groupedPosts, post) => {
@@ -35,22 +36,26 @@ const BlogPostsIndex = ({ data }) => {
   const groupedPosts = groupPostsByMonth(data.posts.edges.map(e => e.node))
 
   return (
-    <Layout noMainInset>
-      <PageHeader title="Blog posts" />
+    <Layout>
+      <div className="container mx-auto px-6 my-8">
+        <div className="max-w-xl mx-auto box-content">
+          <PageHeader title="Blog posts" />
 
-      {Object.keys(groupedPosts).map(monthKey => {
-        const monthDate = DateTime.fromISO(monthKey)
-        const { posts } = groupedPosts[monthKey]
-        
-        return (
-          <section key={monthKey} className={c(`center mw7 dd-ph-inset`, styles.postsSection)}>
-            <h3 className={`dd-f-micro dd-accent mt5 mb3`}>{monthDate.toFormat('MMMM yyyy')}</h3>
-            {posts.map(post => (
-              <BlogPostItem key={post.slug} post={post} />
-              ))}
-          </section>
-        )
-      })}
+          {Object.keys(groupedPosts).map(monthKey => {
+            const monthDate = DateTime.fromISO(monthKey)
+            const { posts } = groupedPosts[monthKey]
+            
+            return (
+              <section key={monthKey} className={c(`center mw7 dd-ph-inset`, styles.postsSection)}>
+                <h3 className={`dd-f-micro dd-accent mt5 mb3`}>{monthDate.toFormat('MMMM yyyy')}</h3>
+                {posts.map(post => (
+                  <BlogPostItem key={post.slug} post={post} />
+                  ))}
+              </section>
+            )
+          })}
+        </div>
+      </div>
     </Layout>
   )
 }

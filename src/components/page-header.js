@@ -3,19 +3,14 @@ import React from "react"
 import PropTypes from 'prop-types'
 
 import c from "classnames"
-import styles from "../components/page-header.module.scss"
+// import styles from "../components/page-header.module.scss"
+const styles = {}
 
 const PageHeader = ({ title, date, featureImage, fancyHeaderStyle }) => {
   const isFancy = !!(featureImage || fancyHeaderStyle)
   
   return (
-    <header className={c([
-      `mb3 mb4-ns tc relative`,
-      styles.header,
-      (isFancy && [`white mb3 dd-neg-inset nb3-l`, styles.isFancy]),
-      (featureImage && styles.hasFeatureImage),
-      (fancyHeaderStyle && [`bg-blue`, styles.fancyHeader])
-    ])}>
+    <header className={`mb-8`}>
       <div className={c([
         `dd-ph-inset flex flex-column items-center justify-center w-100 z-2`, 
         (isFancy && `absolute white top-1 bottom-2 pt5`)

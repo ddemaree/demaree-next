@@ -13,7 +13,8 @@ import { Helmet } from 'react-helmet'
 import Header from "./header"
 import Footer from "./footer"
 
-import "../sass_includes/global.scss"
+// import "../sass_includes/global.scss"
+import "./global.css"
 
 import c from 'classnames'
 
@@ -24,7 +25,6 @@ import favicon128 from '../images/dd-favicon-128.png'
 
 const Layout = ({ children, pageTitle, mainClassName, hasFancyHeader, noMainInset }) => {
   const [theme, setTheme] = useState('system')
-  // const [themeMenuOpen, setThemeMenuOpen] = useState(false)
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -49,7 +49,7 @@ const Layout = ({ children, pageTitle, mainClassName, hasFancyHeader, noMainInse
   `)
 
   return (
-    <div className={`flex flex-column min-vh-100`}>
+    <div>
       <Helmet 
         titleTemplate={`%s – ${data.ghostSettings.title}`} 
         defaultTitle={data.ghostSettings.title}>
@@ -65,7 +65,7 @@ const Layout = ({ children, pageTitle, mainClassName, hasFancyHeader, noMainInse
 
       <Header hasFancyHeader={hasFancyHeader} />
 
-      <main className={c(['flex-auto relative', mainClassName, (!noMainInset && 'dd-ph-inset')])}>
+      <main className={c([mainClassName, (!noMainInset && 'dd-ph-inset')])}>
         {children}
       </main>
 

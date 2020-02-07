@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import styles from "./index.module.scss"
 
 import Layout from "../components/layout"
 import PageContent, { PageWrapper } from "../components/page-content"
@@ -8,7 +7,11 @@ import PageContent, { PageWrapper } from "../components/page-content"
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <PageContent className={styles.pageContent} content={data.homePage.html} />
+      <div className="container mx-auto px-6 my-8">
+        <div className="max-w-xl mx-auto box-content">
+          <PageContent content={data.homePage.html} />
+        </div>
+      </div>
     </Layout>
   )
 }

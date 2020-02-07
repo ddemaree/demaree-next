@@ -9,6 +9,7 @@ module.exports = {
     author: `@ddemaree`,
   },
   plugins: [
+    'gatsby-plugin-postcss',
     {
       resolve: `gatsby-plugin-sass`,
       options: {

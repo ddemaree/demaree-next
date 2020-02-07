@@ -1,0 +1,23 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.justify-self-start {
+  justify-self: start;
+}
+.justify-self-end {
+  justify-self: end;
+}
+
+@import '../fonts/private/soehne/soehne-web.css';
+@import '../fonts/private/ivar-text/ivar-text.css';
+
+:root {
+  font-size: 20px;
+}
+
+body {
+  font-family: 'soehne-web';
+}

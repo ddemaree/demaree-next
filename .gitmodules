@@ -1,0 +1,3 @@
+[submodule "src/fonts/private"]
+	path = src/fonts/private
+	url = git@github.com:ddemaree/demaree-site-fonts.git

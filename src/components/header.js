@@ -5,9 +5,9 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import Icon from './dd-icon'
 
 import c from 'classnames'
-import styles from './header.module.scss'
+// import styles from './header.module.scss'
 
-const Header = ({ hasFancyHeader, menuContent }) => {
+const Header = ({ hasFancyHeader }) => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       ghostSettings {
@@ -23,39 +23,28 @@ const Header = ({ hasFancyHeader, menuContent }) => {
   const { title, navigation } = data.ghostSettings
 
   return (
-    <header className={c([
-      'dd-ph-inset mt3 mb5',
-      styles.header,
-      (hasFancyHeader && styles.hasFeatureImage)
-    ])}>
-      <div
-        className={c(styles.headerInner)}
-      >
-        <div className={styles.logo}>
-          <Link to="/">
-            <Icon className={styles.logoIcon} />
-            <span className={styles.logoText}>{title}</span>
-          </Link>
-        </div>
-        <nav className={c(styles.navigation)}>
-          <ul>
-            {navigation.map(navEntry => (
-              <li key={navEntry.url}>
-                <Link to={navEntry.url}>{navEntry.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        
-        {menuContent}
+    <header className="grid grid-cols-2 gap-4 p-4">
+      <div className={'justify-self-start'}>
+        <Link to="/">
+          {/* <Icon className={''} /> */}
+          <span className={''}>{title}</span>
+        </Link>
       </div>
+      <nav className={c('justify-self-end')}>
+        <ul className="flex">
+          {navigation.map(navEntry => (
+            <li key={navEntry.url}>
+              <Link to={navEntry.url}>{navEntry.label}</Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </header>
   )
 } 
 
 Header.propTypes = {
   hasFancyHeader: PropTypes.bool,
-  menuContent: PropTypes.node
 }
 
 Header.defaultProps = {
