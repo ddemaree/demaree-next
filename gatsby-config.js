@@ -35,6 +35,28 @@ module.exports = {
         apiUrl: process.env.GHOST_API_URL,
         contentApiKey: process.env.GHOST_CONTENT_API_KEY
       }
+    },
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        baseUrl: "bitsandletters.club",
+        protocol: "https",
+        hostingWPCOM: false,
+        useACF: false,
+        auth: {
+          jwt_user: process.env.WP_JWT_USER,
+          jwt_pass: process.env.WP_JWT_PASSWORD,
+        },
+        includedRoutes: [
+          "**/categories",
+          "**/posts",
+          "**/pages",
+          "**/media",
+          "**/tags",
+          "**/taxonomies",
+          "**/users",
+        ],
+      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

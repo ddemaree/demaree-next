@@ -11,7 +11,7 @@ const styles = {}
 
 const groupPostsByMonth = posts =>
   posts.reduce((groupedPosts, post) => {
-    const postDate = DateTime.fromISO(post.published_at)
+    const postDate = DateTime.fromISO(post.published_at || post.date)
     const postMonthKey = postDate.toFormat('yyyy-MM-01')
 
     let postSet = groupedPosts[postMonthKey] || { posts: [] }
@@ -27,13 +27,15 @@ const BlogPostItem = ({ post }) => (
       <div className={`${styles.articleContent} ph2 pv2`}>
         <h4 className="ma0 mb1 dd-f-heading-2">{post.title}</h4>
         {post.excerpt && (<p className={`dd-fs-300 dd-light-text ma0 mt1 i`}>{ post.excerpt }</p>)}
+        {post.excerpt_raw && (<p className={`dd-fs-300 dd-light-text ma0 mt1 i`}>{ post.excerpt_raw }</p>)}
       </div>
     </Link>
   </article>
 )
 
 const BlogPostsIndex = ({ data }) => {
-  const groupedPosts = groupPostsByMonth(data.posts.edges.map(e => e.node))
+  const groupedGhostPosts = groupPostsByMonth(data.ghostPosts.edges.map(e => e.node))
+  const groupedWpPosts = groupPostsByMonth(data.wpPosts.edges.map(e => e.node))
 
   return (
     <Layout>
@@ -41,9 +43,9 @@ const BlogPostsIndex = ({ data }) => {
         <div className="max-w-xl mx-auto box-content">
           <PageHeader title="Blog posts" />
 
-          {Object.keys(groupedPosts).map(monthKey => {
+          {Object.keys(groupedWpPosts).map(monthKey => {
             const monthDate = DateTime.fromISO(monthKey)
-            const { posts } = groupedPosts[monthKey]
+            const { posts } = groupedWpPosts[monthKey]
             
             return (
               <section key={monthKey} className={c(`center mw7 dd-ph-inset`, styles.postsSection)}>
@@ -62,7 +64,22 @@ const BlogPostsIndex = ({ data }) => {
 
 export const query = graphql`
   query PostsIndexQuery {
-    posts: allGhostPost {
+    wpPosts: allWordpressPost {
+      edges {
+        node {
+          status
+          title
+          excerpt_raw
+          date
+          format
+          featured_media {
+            id
+            source_url
+          }
+        }
+      }
+    }
+    ghostPosts: allGhostPost {
       edges {
         node {
           slug
