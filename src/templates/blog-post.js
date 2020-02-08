@@ -12,7 +12,7 @@ const BlogPostTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <div className="container mx-auto my-8 px-6">
+      <div className="max-w-screen-lg mx-auto my-8 px-6">
         <PageHeader
           title={title_raw}
           renderedTitle={title}
