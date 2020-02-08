@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import PageContent, { PageWrapper } from "../components/page-content"
+import PageContent from "../components/page-content"
 
 const IndexPage = ({ data }) => {
   return (

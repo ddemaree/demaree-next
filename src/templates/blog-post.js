@@ -1,53 +1,60 @@
 
 import React from "react"
 import Layout from "../components/layout"
-import PageContent, { PageWrapper } from "../components/page-content"
+import PageContent from "../components/page-content"
 import PageHeader from "../components/page-header"
+import PageWrapper from "../components/page-wrapper"
 
 import { graphql } from "gatsby"
 
 const BlogPostTemplate = ({ data }) => {
-  const { html, title, feature_image, published_at } = data.post
+  const { content, title, title_raw, date, word_count, featured_media } = data.post
 
   return (
-    <Layout
-      hasFancyHeader={!!feature_image}
-      mainClassName="dd-bg-fade">
-      <PageHeader
-        title={title} 
-        featureImage={feature_image}
-        date={published_at} />
-      <PageWrapper>
-        <PageContent content={html} />
-      </PageWrapper>
+    <Layout>
+      <div className="container mx-auto my-8 px-6">
+        <PageHeader
+          title={title_raw}
+          renderedTitle={title}
+          date={date}
+          words={word_count}
+          featureImage={featured_media} />
+        <PageWrapper className="font-serif">
+          <PageContent
+            content={content}
+            className="content flex flex-col items-center"
+            />
+        </PageWrapper>
+      </div>
     </Layout>
   )
 }
 
 export const query = graphql`
   query($slug: String, $previousSlug: String, $nextSlug: String) {
-    post: ghostPost(slug: {eq: $slug}) {
+    post: wordpressPost(slug: {eq: $slug}) {
+      title_raw
       title
-      html
-      published_at
-      feature_image
-      tags {
-        slug
-        name
-        url
+      slug
+      word_count
+      excerpt_raw
+      content
+      date
+      featured_media {
+        source_url
+        alt_text
+        caption
       }
     }
-    nextPost: ghostPost(slug: {eq: $nextSlug}) {
-      title
-      published_at
+    nextPost: wordpressPost(slug: {eq: $nextSlug}) {
+      title_raw
+      date
       slug
-      url
     }
-    previousPost: ghostPost(slug: {eq: $previousSlug}) {
-      title
-      published_at
+    previousPost: wordpressPost(slug: {eq: $previousSlug}) {
+      title_raw
+      date
       slug
-      url
     }
   }
 

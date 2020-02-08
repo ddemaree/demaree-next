@@ -6,11 +6,13 @@ import Layout from "../components/layout"
 import PageHeader from '../components/page-header'
 
 import c from 'classnames'
+import PostInfo from "../components/post-info"
 // import styles from './posts.module.scss'
 const styles = {}
 
 const groupPostsByMonth = posts =>
   posts.reduce((groupedPosts, post) => {
+    // TODO: Remove published_at option once fully switched over from Ghost
     const postDate = DateTime.fromISO(post.published_at || post.date)
     const postMonthKey = postDate.toFormat('yyyy-MM-01')
 
@@ -20,21 +22,33 @@ const groupPostsByMonth = posts =>
     return Object.assign({}, groupedPosts, {[postMonthKey]: postSet})
   }, {})
 
+function postDisplayDate(date) {
+  return DateTime.fromISO(date).toFormat('MMMM dd, yyyy')
+}
+
 const BlogPostItem = ({ post }) => (
-  <article className={`ma0 mv4 ${styles.article}`}>
-    <Link to={`/posts/${post.slug}`} className={styles.articleInner}>
+  <>
+  <article className={`mb-5`}>
+    <Link to={`/posts/${post.slug}`}>
       <figure className={styles.articleImage}><img src={post.feature_image} /></figure>
       <div className={`${styles.articleContent} ph2 pv2`}>
-        <h4 className="ma0 mb1 dd-f-heading-2">{post.title}</h4>
-        {post.excerpt && (<p className={`dd-fs-300 dd-light-text ma0 mt1 i`}>{ post.excerpt }</p>)}
-        {post.excerpt_raw && (<p className={`dd-fs-300 dd-light-text ma0 mt1 i`}>{ post.excerpt_raw }</p>)}
+        <h4 className="text-xl font-serif font-semibold">{post.title_raw}</h4>
+        {post.excerpt_raw && (<p className={``}>{ post.excerpt_raw }</p>)}
       </div>
     </Link>
+    <p className="text-sm text-gray-600 mt-1">
+      <PostInfo date={post.date} words={post.word_count} />
+      {/* <time>{ postDisplayDate(post.date) }</time>
+      <span className="mx-2">•</span>
+      <span>{(Math.ceil(post.word_count / 200))} min read</span> */}
+    </p>
   </article>
+  <hr className="mb-5" />
+  </>
 )
 
 const BlogPostsIndex = ({ data }) => {
-  const groupedGhostPosts = groupPostsByMonth(data.ghostPosts.edges.map(e => e.node))
+  // const groupedGhostPosts = groupPostsByMonth(data.ghostPosts.edges.map(e => e.node))
   const groupedWpPosts = groupPostsByMonth(data.wpPosts.edges.map(e => e.node))
 
   return (
@@ -43,13 +57,14 @@ const BlogPostsIndex = ({ data }) => {
         <div className="max-w-xl mx-auto box-content">
           <PageHeader title="Blog posts" />
 
+          <h2>All posts by date</h2>
           {Object.keys(groupedWpPosts).map(monthKey => {
             const monthDate = DateTime.fromISO(monthKey)
             const { posts } = groupedWpPosts[monthKey]
             
             return (
               <section key={monthKey} className={c(`center mw7 dd-ph-inset`, styles.postsSection)}>
-                <h3 className={`dd-f-micro dd-accent mt5 mb3`}>{monthDate.toFormat('MMMM yyyy')}</h3>
+                <h3 className={`font-bold text-sm mt-10 mb-6 uppercase tracking-wider`}>{monthDate.toFormat('MMMM yyyy')}</h3>
                 {posts.map(post => (
                   <BlogPostItem key={post.slug} post={post} />
                   ))}
@@ -68,7 +83,7 @@ export const query = graphql`
       edges {
         node {
           status
-          title
+          title_raw
           excerpt_raw
           date
           format
@@ -76,6 +91,8 @@ export const query = graphql`
             id
             source_url
           }
+          word_count
+          slug
         }
       }
     }

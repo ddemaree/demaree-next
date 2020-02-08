@@ -11,19 +11,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   let result = await graphql(`
     query MyQuery {
-      posts: allGhostPost {
+      posts: allWordpressPost {
         edges {
           node {
             slug
-            published_at
+            title_raw
+            date
           }
           previous {
             slug
-            published_at
+            title_raw
+            date
           }
           next {
             slug
-            published_at
+            title_raw
+            date
           }
         }
       }

@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from 'react-helmet'
@@ -24,8 +24,6 @@ import favicon64 from '../images/dd-favicon-64.png'
 import favicon128 from '../images/dd-favicon-128.png'
 
 const Layout = ({ children, pageTitle, mainClassName, hasFancyHeader, noMainInset }) => {
-  const [theme, setTheme] = useState('system')
-
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -60,7 +58,6 @@ const Layout = ({ children, pageTitle, mainClassName, hasFancyHeader, noMainInse
         <link rel="icon" type="image/png" sizes="64x64" href={favicon64} />
         <link rel="shortcut icon" type="image/png" href={favicon64} />
         <link rel="apple-touch-icon" type="image/png" href={favicon128} />
-        <body className={`theme-${theme}`} />
       </Helmet>
 
       <Header hasFancyHeader={hasFancyHeader} />

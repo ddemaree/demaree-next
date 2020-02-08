@@ -1,7 +1,5 @@
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
 
 .justify-self-start {
@@ -20,4 +18,32 @@
 
 body {
   font-family: 'soehne-web';
+}
+
+.debug-measure {
+  background-color: #f0f1;
+}
+
+.debug-measure:before {
+  color: white;
+  background-color: red;
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  content: 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklm';
+}
+
+.content {
+  & > *:first-child {
+    margin-top: 0 !important;
+  }
+
+  blockquote, dl, h1, h2, h3, h4, h5, h6, ol, p, pre, ul, hr,
+  .wp-block-quote, .wp-block-code, .wp-block-image, .wp-block-embed, .wp-block-gallery, .wp-block-pullquote, .wp-block-separator {
+    margin: 0;
+    margin-bottom: 1.6rem;
+    min-width: 100%;
+    padding: 0;
+  }
 }

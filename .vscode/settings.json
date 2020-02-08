@@ -3,5 +3,8 @@
     "**/.cache": true,
     "**/public": true,
     "**/node_modules*": true
+  },
+  "files.associations": {
+    "*.css": "postcss"
   }
 }

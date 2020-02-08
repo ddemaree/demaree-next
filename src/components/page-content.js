@@ -1,16 +1,8 @@
 import PropTypes from "prop-types"
 import React, { useEffect } from "react"
-
-import c from 'classnames'
-import styles from './page-content.module.scss'
-
 import Helmet from 'react-helmet'
 
-export const PageWrapper = ({ children, className }) => (
-  <div className={c("center mw7 pa0 ph4-l pt4-l pb5-l relative br3", className, styles.pageWrapper)}>
-    {children}
-  </div>
-)
+import c from 'classnames'
 
 const PageContent = ({ content, className }) => {
 
@@ -73,7 +65,7 @@ const PageContent = ({ content, className }) => {
         <script async="" src="//www.instagram.com/embed.js"></script>
       </Helmet>
       <div 
-        className={c(styles.pageContent, className)}
+        className={c(className)}
         dangerouslySetInnerHTML={{__html: sanitizedContent}}
         ref={pageContentRef}
         />
