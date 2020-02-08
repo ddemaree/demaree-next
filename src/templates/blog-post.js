@@ -20,10 +20,7 @@ const BlogPostTemplate = ({ data }) => {
           words={word_count}
           featureImage={featured_media} />
         <PageWrapper className="font-serif">
-          <PageContent
-            content={content}
-            className="content flex flex-col items-center"
-            />
+          <PageContent content={content} />
         </PageWrapper>
       </div>
     </Layout>

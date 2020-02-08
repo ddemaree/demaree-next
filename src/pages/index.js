@@ -3,15 +3,16 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import PageContent from "../components/page-content"
+import PageWrapper from "../components/page-wrapper"
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <div className="container mx-auto px-6 my-8">
+      <PageWrapper>
         <div className="max-w-xl mx-auto box-content">
-          <PageContent content={data.homePage.html} />
+          <PageContent content={data.homePage.content} />
         </div>
-      </div>
+      </PageWrapper>
     </Layout>
   )
 }
@@ -20,11 +21,10 @@ export default IndexPage
 
 export const query = graphql`
   query MyQuery {
-    homePage: ghostPage(slug: {eq: "home-page"}) {
+    homePage: wordpressPage(slug: {eq: "home-page"}) {
       id
       title
-      html
-      mobiledoc
+      content
     }
   }
 `
