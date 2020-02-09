@@ -36,6 +36,11 @@ module.exports = {
       maxWidth: {
         content: '34rem',
         wide: '52rem'
+      },
+      screens: {
+        'xsm': { 'max': '480px' },
+        'portrait': {'raw': '(orientation: portrait)'},
+        'dark': {'raw': '(prefers-color-scheme: dark)'},
       }
     },
   },

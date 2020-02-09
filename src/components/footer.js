@@ -7,7 +7,7 @@ import socials from '../data/socials.json'
 const Footer = () => {
 
   return (
-    <footer className={`bg-container mt-6 p-5 pb-10`}>
+    <footer className={`bg-container mt-6 p-6 pb-10`}>
       <div className="max-w-content box-content mx-auto">
         <nav className={`mb-3`}>
           <h3 className={`mb-2 font-semibold font-serif`}>Elsewhere</h3>
@@ -24,7 +24,7 @@ const Footer = () => {
           <p className={`ma0 dd-f-300`}>
           © {new Date().getFullYear()}— David Demaree
           {' • '}
-          <Link to="/style-guide">Style guide</Link>
+          <Link to="/__style-guide">Style guide</Link>
           </p>
         </div>
       </div>

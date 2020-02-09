@@ -12,13 +12,13 @@ const BlogPostTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <div className="max-w-screen-lg mx-auto my-8 px-6">
+      <div className="mx-auto my-8">
         <PageHeader
           title={title}
           date={published_at}
           words={getWordCount(plaintext)}
           />
-        <PageContent content={html} className="font-serif" />
+        <PageContent className="font-serif" content={html} />
       </div>
     </Layout>
   )
