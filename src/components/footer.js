@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 import socials from '../data/socials.json'
 
-const Footer = ({}) => {
+const Footer = () => {
 
   return (
     <footer className={`mt-5 p-4 pb-8`}>

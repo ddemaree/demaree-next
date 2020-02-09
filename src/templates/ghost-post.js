@@ -5,6 +5,7 @@ import PageContent from "../components/page-content"
 import PageHeader from "../components/page-header"
 
 import { graphql } from "gatsby"
+import getWordCount from "../utils/get-word-count"
 
 const BlogPostTemplate = ({ data }) => {
   const { html, title, published_at, plaintext } = data.post
@@ -15,6 +16,7 @@ const BlogPostTemplate = ({ data }) => {
         <PageHeader
           title={title}
           date={published_at}
+          words={getWordCount(plaintext)}
           />
         <PageContent content={html} className="font-serif" />
       </div>

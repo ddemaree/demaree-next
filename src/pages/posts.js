@@ -1,21 +1,16 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { DateTime } from 'luxon'
-
 import Layout from "../components/layout"
 import PageHeader from '../components/page-header'
 import PostInfo from "../components/post-info"
+import getWordCount from "../utils/get-word-count"
 
-import c from 'classnames'
-const styles = {}
-
-const getWordCount = str => str.split(" ").length
 const isManualExcerpt = (plaintext, excerpt) => {
   if(!plaintext || !excerpt) return null;
-  let isFakeExcerpt = plaintext.startsWith(excerpt) && excerpt.length == 500;
+  let isFakeExcerpt = plaintext.startsWith(excerpt) && excerpt.length === 500;
   return !isFakeExcerpt;
 }
-
 
 const groupPostsByMonth = posts =>
   posts.reduce((groupedPosts, post) => {
@@ -63,7 +58,7 @@ const BlogPostsIndex = ({ data }) => {
             const { posts } = groupedPosts[monthKey]
             
             return (
-              <section key={monthKey} className={c(`center mw7 dd-ph-inset`, styles.postsSection)}>
+              <section key={monthKey} className={`center mw7 dd-ph-inset`}>
                 <h3 className={`font-bold text-sm mt-10 mb-6 uppercase tracking-wider`}>{monthDate.toFormat('MMMM yyyy')}</h3>
                 {posts.map(post => (
                   <BlogPostItem key={post.slug} post={post} />

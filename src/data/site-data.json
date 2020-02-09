@@ -10,11 +10,6 @@
       "label": "Blog",
       "url": "/posts",
       "slugs": ["posts", "blog"]
-    },
-    {
-      "label": "About",
-      "url": "/about",
-      "slugs": ["about"]
     }
   ]
 }

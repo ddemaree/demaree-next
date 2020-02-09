@@ -1,19 +1,11 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from 'react-helmet'
+// import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
 
-// import "../sass_includes/global.scss"
 import "./global.css"
 
 import c from 'classnames'
@@ -23,7 +15,7 @@ import favicon32 from '../images/dd-favicon-32.png'
 import favicon64 from '../images/dd-favicon-64.png'
 import favicon128 from '../images/dd-favicon-128.png'
 
-const Layout = ({ children, pageTitle, mainClassName, hasFancyHeader, noMainInset }) => {
+const Layout = ({ children, pageTitle, mainClassName }) => {
 
   return (
     <div>
@@ -38,7 +30,7 @@ const Layout = ({ children, pageTitle, mainClassName, hasFancyHeader, noMainInse
         <link rel="apple-touch-icon" type="image/png" href={favicon128} />
       </Helmet>
 
-      <Header hasFancyHeader={hasFancyHeader} />
+      <Header />
 
       <main className={c([mainClassName])}>
         {children}

@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../components/layout"
 import PageContent from "../components/page-content"
 import PageHeader from "../components/page-header"
-import PageWrapper from "../components/page-wrapper"
 
 import { graphql } from "gatsby"
 

@@ -1,18 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 
-// import Icon from './dd-icon'
 import siteData from '../data/site-data.json'
 
-const Header = ({ hasFancyHeader }) => {
+const Header = () => {
   const { title, headerNav } = siteData
 
   return (
     <header className="grid grid-cols-2 gap-4 p-4 text-ink-medium">
       <div className={'justify-self-start'}>
         <Link to="/">
-          {/* <Icon className={''} /> */}
           <span className={''}>{title}</span>
         </Link>
       </div>
@@ -31,10 +29,6 @@ const Header = ({ hasFancyHeader }) => {
 
 Header.propTypes = {
   hasFancyHeader: PropTypes.bool,
-}
-
-Header.defaultProps = {
-  hasFancyHeader: false
 }
 
 export default Header
