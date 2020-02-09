@@ -7,13 +7,17 @@ import Header from "./header"
 import Footer from "./footer"
 
 import "./global.css"
-
 import c from 'classnames'
 
 import favicon16 from '../images/dd-favicon-16.png'
 import favicon32 from '../images/dd-favicon-32.png'
 import favicon64 from '../images/dd-favicon-64.png'
 import favicon128 from '../images/dd-favicon-128.png'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab, faTwitter, faInstagram, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faCoffee, faCocktail, faArrowCircleUp, faHome, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+library.add(fab, faTwitter, faInstagram, faGithub, faLinkedin, faCoffee, faCocktail, faArrowCircleUp, faHome, faPaperPlane)
 
 const Layout = ({ children, pageTitle, mainClassName }) => {
 
