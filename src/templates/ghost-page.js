@@ -6,7 +6,7 @@ import PageWrapper from "../components/page-wrapper"
 
 import { graphql } from "gatsby"
 
-const WordpressPageTemplate = ({ data }) => {
+const GhostPageTemplate = ({ data }) => {
   const { html, title } = data.page
 
   return (
@@ -31,4 +31,4 @@ export const query = graphql`
   }
 `
 
-export default WordpressPageTemplate
+export default GhostPageTemplate
