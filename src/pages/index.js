@@ -5,10 +5,12 @@ import Layout from "../components/layout"
 import PageContent from "../components/page-content"
 
 const IndexPage = ({ data }) => {
+  const { html } = data.ghostHomePage
+
   return (
     <Layout>
       <div>
-        <PageContent content={data.ghostHomePage.html} />
+        <PageContent content={html} />
       </div>
     </Layout>
   )
@@ -18,11 +20,6 @@ export default IndexPage
 
 export const query = graphql`
   query MyQuery {
-    homePage: wordpressPage(slug: {eq: "home-page"}) {
-      id
-      title
-      content
-    }
     ghostHomePage: ghostPage(slug: {eq: "home-page"}) {
       id
       title

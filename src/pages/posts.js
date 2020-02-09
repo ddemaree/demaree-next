@@ -91,24 +91,6 @@ export const query = graphql`
         }
       }
     }
-    wpPosts: allWordpressPost {
-      edges {
-        node {
-          __typename
-          status
-          title_raw
-          excerpt_raw
-          date
-          format
-          featured_media {
-            id
-            source_url
-          }
-          word_count
-          slug
-        }
-      }
-    }
   }
 `
 

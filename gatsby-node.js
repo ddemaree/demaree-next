@@ -10,33 +10,6 @@
 const createWpPosts = async (graphql, createPage, reporter) => {
   let result = await graphql(`
     query MyQuery {
-      pages: allWordpressPage {
-        edges {
-          node {
-            title
-            slug
-          }
-        }
-      }
-      posts: allWordpressPost {
-        edges {
-          node {
-            slug
-            title_raw
-            date
-          }
-          previous {
-            slug
-            title_raw
-            date
-          }
-          next {
-            slug
-            title_raw
-            date
-          }
-        }
-      }
       ghostPosts: allGhostPost {
         edges {
           node {
@@ -61,17 +34,6 @@ const createWpPosts = async (graphql, createPage, reporter) => {
     return
   }
 
-  const edges = result.data.posts.edges
-  edges.forEach(edge => {
-    const { slug } = edge.node
-
-    createPage({
-      path: `/wp-posts/${slug}`,
-      component: require.resolve(`./src/templates/blog-post.js`),
-      context: { slug },
-    })
-  })
-
   const ghostEdges = result.data.ghostPosts.edges
   ghostEdges.forEach(edge => {
     const { slug } = edge.node
@@ -81,17 +43,6 @@ const createWpPosts = async (graphql, createPage, reporter) => {
       component: require.resolve(`./src/templates/ghost-post.js`),
       context: { slug },
     }) 
-  })
-
-  const pageEdges = result.data.pages.edges
-  pageEdges.forEach(edge => {
-    const { slug } = edge.node
-
-    createPage({
-      path: `/wp-pages/${slug}`,
-      component: require.resolve(`./src/templates/wordpress-page.js`),
-      context: { slug },
-    })
   })
 
   const ghostPageEdges = result.data.ghostPages.edges
