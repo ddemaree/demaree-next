@@ -24,6 +24,7 @@ module.exports = {
       fontFamily: {
         sans: ['soehne-web', ...defaultTheme.fontFamily.sans],
         serif: ['ivar-text', ...defaultTheme.fontFamily.serif],
+        'display-serif': ['freight-display-pro', ...defaultTheme.fontFamily.serif],
         mono: ['IBM Plex Mono', ...defaultTheme.fontFamily.mono]
       },
       spacing: {
