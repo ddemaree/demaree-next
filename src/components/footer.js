@@ -7,7 +7,7 @@ import socials from '../data/socials.json'
 const Footer = () => {
 
   return (
-    <footer className={`mt-5 p-4 pb-8`}>
+    <footer className={`bg-container mt-6 p-5 pb-10`}>
       <div className="max-w-content box-content mx-auto">
         <nav className={`mb-3`}>
           <h3 className={`mb-2 font-semibold font-serif`}>Elsewhere</h3>

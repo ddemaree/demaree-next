@@ -485,3 +485,14 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+
+.dd-posts-grid {
+  display: grid;
+  grid-template-columns: [start] repeat(auto-fit, minmax(17rem, 1fr)) [end];
+  grid-gap: theme('spacing.8');
+
+  h3 {
+    grid-column: start / end;
+    text-align: center;
+  }
+}

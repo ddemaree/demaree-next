@@ -31,6 +31,9 @@ const BlogPostItem = ({ post }) => {
     <article className={`mb-5`}>
       <div>
         <Link to={`/${post.slug}`} className="no-underline">
+          {post.feature_image && <div className="mb-3 h-40">
+            <img src={post.feature_image} alt="Feature image for post" className="object-cover h-full w-full" />
+          </div>}
           <h4 className="text-xl font-serif font-semibold">{post.title}</h4>
           {isManualExcerpt(post.plaintext, post.excerpt) && (<p>{ post.excerpt }</p>)}
         </Link>
@@ -39,7 +42,6 @@ const BlogPostItem = ({ post }) => {
         <PostInfo date={post.published_at} words={getWordCount(post.plaintext)} />
       </p>
     </article>
-    <hr className="mb-5 border-ink-extralow" />
   </>
 }
 
@@ -49,23 +51,22 @@ const BlogPostsIndex = ({ data }) => {
   return (
     <Layout>
       <div className="container mx-auto px-6 my-8">
-        <div className="max-w-content mx-auto box-content">
+        <div className="max-w-wide mx-auto box-content">
           <PageHeader title="Blog posts" />
 
-          <h2>All posts by date</h2>
-          {Object.keys(groupedPosts).map(monthKey => {
-            const monthDate = DateTime.fromISO(monthKey)
-            const { posts } = groupedPosts[monthKey]
-            
-            return (
-              <section key={monthKey} className={`center mw7 dd-ph-inset`}>
+          <div className="dd-posts-grid">
+            {Object.keys(groupedPosts).map(monthKey => {
+              const monthDate = DateTime.fromISO(monthKey)
+              const { posts } = groupedPosts[monthKey]
+              
+              return <>
                 <h3 className={`font-bold text-sm mt-10 mb-6 uppercase tracking-wider`}>{monthDate.toFormat('MMMM yyyy')}</h3>
                 {posts.map(post => (
                   <BlogPostItem key={post.slug} post={post} />
                   ))}
-              </section>
-            )
-          })}
+              </>
+            })}
+          </div>
         </div>
       </div>
     </Layout>
@@ -83,6 +84,7 @@ export const query = graphql`
           published_at
           excerpt
           slug
+          feature_image
         }
       }
     }
