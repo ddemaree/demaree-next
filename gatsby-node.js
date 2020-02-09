@@ -6,11 +6,18 @@
 
 // You can delete this file if you're not using it
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
 
+const createWpPosts = async (graphql, createPage, reporter) => {
   let result = await graphql(`
     query MyQuery {
+      pages: allWordpressPage {
+        edges {
+          node {
+            title
+            slug
+          }
+        }
+      }
       posts: allWordpressPost {
         edges {
           node {
@@ -30,6 +37,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
+      ghostPosts: allGhostPost {
+        edges {
+          node {
+            title
+            slug
+          }
+        }
+      }
+      ghostPages: allGhostPage {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
     }
   `)
 
@@ -40,15 +62,51 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const edges = result.data.posts.edges
-
   edges.forEach(edge => {
     const { slug } = edge.node
 
     createPage({
-      path: `/posts/${slug}`,
+      path: `/wp-posts/${slug}`,
       component: require.resolve(`./src/templates/blog-post.js`),
       context: { slug },
     })
   })
 
+  const ghostEdges = result.data.ghostPosts.edges
+  ghostEdges.forEach(edge => {
+    const { slug } = edge.node
+
+    createPage({
+      path: `/${slug}`,
+      component: require.resolve(`./src/templates/ghost-post.js`),
+      context: { slug },
+    }) 
+  })
+
+  const pageEdges = result.data.pages.edges
+  pageEdges.forEach(edge => {
+    const { slug } = edge.node
+
+    createPage({
+      path: `/wp-pages/${slug}`,
+      component: require.resolve(`./src/templates/wordpress-page.js`),
+      context: { slug },
+    })
+  })
+
+  const ghostPageEdges = result.data.ghostPages.edges
+  ghostPageEdges.forEach(edge => {
+    const { slug } = edge.node
+
+    createPage({
+      path: `/${slug}`,
+      component: require.resolve(`./src/templates/ghost-page.js`),
+      context: { slug },
+    })
+  })
+}
+
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createPage } = actions
+  createWpPosts(graphql, createPage, reporter);
 }

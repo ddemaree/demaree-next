@@ -39,8 +39,8 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        baseUrl: "bitsandletters.club",
-        protocol: "https",
+        baseUrl: process.env.WP_SITE_DOMAIN,
+        protocol: (process.env.WP_SITE_PROTOCOL || "https"),
         hostingWPCOM: false,
         useACF: false,
         auth: {

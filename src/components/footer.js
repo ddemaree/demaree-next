@@ -7,13 +7,13 @@ import socials from '../data/socials.json'
 const Footer = ({}) => {
 
   return (
-    <footer className={`mt5 mb3`}>
-      <div className="mw7 center dd-ph-inset pb3">
-        <nav className={`mb3`}>
-          <h3 className={`ma0 mb2 dd-f-micro--bold dd-accent`}>Elsewhere</h3>
-          <ul className={`flex flex-wrap list pa0 ma0`}>
+    <footer className={`mt-5 p-4 pb-8`}>
+      <div className="max-w-content box-content mx-auto">
+        <nav className={`mb-3`}>
+          <h3 className={`mb-2 font-semibold font-serif`}>Elsewhere</h3>
+          <ul className={`flex flex-wrap list p-0 m-0`}>
             {socials.map(social => 
-              <li className="mr3" key={social.text}>
+              <li className="mr-2" key={social.text}>
                 <a href={social.url}>{social.text}</a>
               </li>
             )}

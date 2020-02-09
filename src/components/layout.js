@@ -24,35 +24,13 @@ import favicon64 from '../images/dd-favicon-64.png'
 import favicon128 from '../images/dd-favicon-128.png'
 
 const Layout = ({ children, pageTitle, mainClassName, hasFancyHeader, noMainInset }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-      ghostSettings {
-        title
-        description
-        codeinjection_head
-        codeinjection_foot
-        codeinjection_styles
-        icon
-        navigation {
-          label
-          url
-        }
-      }
-    }
-  `)
 
   return (
     <div>
       <Helmet 
-        titleTemplate={`%s – ${data.ghostSettings.title}`} 
-        defaultTitle={data.ghostSettings.title}>
+        titleTemplate={`%s – David Demaree`} 
+        defaultTitle={`David Demaree`}>
         {pageTitle && <title>{pageTitle}</title>}
-        {/* <link rel="stylesheet" href="https://use.typekit.net/yax1qaz.css" /> */}
         <link rel="icon" type="image/png" sizes="16x16" href={favicon16} />
         <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
         <link rel="icon" type="image/png" sizes="64x64" href={favicon64} />
@@ -62,7 +40,7 @@ const Layout = ({ children, pageTitle, mainClassName, hasFancyHeader, noMainInse
 
       <Header hasFancyHeader={hasFancyHeader} />
 
-      <main className={c([mainClassName, (!noMainInset && 'dd-ph-inset')])}>
+      <main className={c([mainClassName])}>
         {children}
       </main>
 

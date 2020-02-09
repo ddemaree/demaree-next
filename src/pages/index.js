@@ -3,16 +3,13 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import PageContent from "../components/page-content"
-import PageWrapper from "../components/page-wrapper"
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <PageWrapper>
-        <div className="max-w-xl mx-auto box-content">
-          <PageContent content={data.homePage.content} />
-        </div>
-      </PageWrapper>
+      <div>
+        <PageContent content={data.ghostHomePage.html} />
+      </div>
     </Layout>
   )
 }
@@ -25,6 +22,11 @@ export const query = graphql`
       id
       title
       content
+    }
+    ghostHomePage: ghostPage(slug: {eq: "home-page"}) {
+      id
+      title
+      html
     }
   }
 `

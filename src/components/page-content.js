@@ -65,7 +65,7 @@ const PageContent = ({ content, className }) => {
         <script async="" src="//www.instagram.com/embed.js"></script>
       </Helmet>
       <div 
-        className={c(className, 'wp-content flex flex-col items-center')}
+        className={c(className, 'wp-content')}
         dangerouslySetInnerHTML={{__html: sanitizedContent}}
         ref={pageContentRef}
         />

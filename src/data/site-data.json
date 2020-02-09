@@ -1,0 +1,20 @@
+{
+  "title": "David Demaree",
+  "headerNav": [
+    {
+      "label": "Home",
+      "url": "/",
+      "slugs": ["home"]
+    },
+    {
+      "label": "Blog",
+      "url": "/posts",
+      "slugs": ["posts", "blog"]
+    },
+    {
+      "label": "About",
+      "url": "/about",
+      "slugs": ["about"]
+    }
+  ]
+}
