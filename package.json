@@ -23,7 +23,6 @@
     "gatsby-plugin-sharp": "^2.2.20",
     "gatsby-source-filesystem": "^2.1.21",
     "gatsby-source-ghost": "^3.4.5",
-    "gatsby-source-wordpress": "^3.1.60",
     "gatsby-transformer-sharp": "^2.2.13",
     "luxon": "^1.17.2",
     "node-sass": "^4.12.0",
