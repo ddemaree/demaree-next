@@ -32,6 +32,7 @@ const Layout = ({ children, pageTitle, mainClassName }) => {
         <link rel="icon" type="image/png" sizes="64x64" href={favicon64} />
         <link rel="shortcut icon" type="image/png" href={favicon64} />
         <link rel="apple-touch-icon" type="image/png" href={favicon128} />
+        <link rel="stylesheet" href="https://use.typekit.net/yax1qaz.css" type="text/css" media="screen" />
       </Helmet>
 
       <Header />
