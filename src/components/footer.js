@@ -9,14 +9,21 @@ const scrollToTop = e => {
   window.scrollTo(0,0);
 }
 
-const FooterItem = ({ icon, children, href, onClick }) => (
-  <li className="mr-3 mb-1">
-    <Link to={href} onClick={onClick}>
-      {icon && <FontAwesomeIcon icon={icon} className="text-ink-low mr-1 text-sm" />}
-      { children }
-    </Link>
-  </li>
-)
+const FooterItem = ({ icon, children, href, linkTo, onClick }) => {
+
+  return (
+    <li className="mr-3 mb-1">
+      {linkTo && <Link to={linkTo}>
+        {icon && <FontAwesomeIcon icon={icon} className="text-ink-low mr-1 text-sm" />}
+        {children}
+      </Link>}
+      {!linkTo && <a href={href} onClick={onClick}>
+        {icon && <FontAwesomeIcon icon={icon} className="text-ink-low mr-1 text-sm" />}
+        {children}
+      </a>}
+    </li>
+  )
+}
 
 FooterItem.defaultProps = {
   href: '#'
@@ -25,7 +32,7 @@ FooterItem.defaultProps = {
 const Footer = () => {
 
   return (
-    <footer className={`bg-container mt-6 p-6 pb-10`}>
+    <footer className={`bg-container text-ink-bold mt-6 p-6 pb-10`}>
       <div className="max-w-content box-content mx-auto">
         <nav>
           
@@ -34,7 +41,7 @@ const Footer = () => {
             <FooterItem onClick={scrollToTop} icon="arrow-circle-up">
               Back to top
             </FooterItem>
-            <FooterItem icon="home" href="/">
+            <FooterItem icon="home" linkTo="/">
               Home
             </FooterItem>
           </ul>
