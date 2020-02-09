@@ -32,7 +32,7 @@ const BlogPostItem = ({ post }) => {
       <div>
         <Link to={`/${post.slug}`} className="no-underline">
           {post.feature_image && <div className="mb-3 h-40">
-            <img src={post.feature_image} alt="Feature image for post" className="object-cover h-full w-full" />
+            <img src={post.feature_image} className="object-cover h-full w-full" />
           </div>}
           <h4 className="text-xl font-serif font-semibold">{post.title}</h4>
           {isManualExcerpt(post.plaintext, post.excerpt) && (<p>{ post.excerpt }</p>)}
