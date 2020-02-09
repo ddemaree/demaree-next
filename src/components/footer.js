@@ -3,16 +3,17 @@ import { Link } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import socials from '../data/socials.json'
+import c from 'classnames'
 
 const scrollToTop = e => {
   e.preventDefault();
   window.scrollTo(0,0);
 }
 
-const FooterItem = ({ icon, children, href, linkTo, onClick }) => {
+const FooterItem = ({ icon, children, href, linkTo, onClick, className }) => {
 
   return (
-    <li className="mr-3 mb-1">
+    <li className={c(['mr-3 mb-1 xxs:w-1/2 xxs:mx-0 xxs:my-1', className])}>
       {linkTo && <Link to={linkTo}>
         {icon && <FontAwesomeIcon icon={icon} className="text-ink-low mr-1 text-sm" />}
         {children}
@@ -46,10 +47,12 @@ const Footer = () => {
             </FooterItem>
           </ul>
 
-          <h3 className={`mt-2 mb-1 font-semibold font-serif`}>Elsewhere</h3>
+          <h3 className={`mt-2 xs:mt-5 mb-1 font-semibold font-serif`}>Elsewhere</h3>
           <ul className={`flex flex-wrap list p-0 m-0`}>
             {socials.map(social => 
-              <FooterItem key={social.text} href={social.url} icon={[(social.iconset || 'fab'), social.icon]}>
+              <FooterItem key={social.text} 
+                href={social.url}
+                icon={[(social.iconset || 'fab'), social.icon]}>
                 { social.text }
               </FooterItem>
             )}
@@ -59,8 +62,8 @@ const Footer = () => {
           <p className={`i ma0`}>&ldquo;Have courage, and be kind&rdquo;</p>
           <p className={`ma0 dd-f-300`}>
           © {new Date().getFullYear()}— David Demaree
-          <span className="mx-2">{'•'}</span>
-          <Link to="/__style-guide">Style guide</Link>
+          <span className="mx-2 xs:hidden">{'•'}</span>
+          <Link to="/__style-guide" className="xs:block">Style guide</Link>
           </p>
         </div>
       </div>

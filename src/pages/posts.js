@@ -30,13 +30,13 @@ const BlogPostItem = ({ post }) => {
       <div>
         <Link to={`/${post.slug}`} className="no-underline">
           {post.feature_image && <div className="mb-3 h-40">
-            <img src={post.feature_image} className="object-cover h-full w-full" />
+            <img src={post.feature_image} className="object-cover h-full w-full rounded" />
           </div>}
-          <h4 className="text-xl font-serif font-semibold">{post.title}</h4>
-          {isManualExcerpt(post.plaintext, post.excerpt) && (<p>{ post.excerpt }</p>)}
+          <h4 className="text-xl xs:text-base leading-tight font-serif font-semibold mb-1">{post.title}</h4>
+          {isManualExcerpt(post.plaintext, post.excerpt) && (<p class="xs:text-sm leading-snug mb-2">{ post.excerpt }</p>)}
         </Link>
       </div>
-      <p className="text-sm text-ink-medium mt-1">
+      <p className="text-sm text-ink-medium">
         <PostInfo date={post.published_at} words={getWordCount(post.plaintext)} />
       </p>
     </article>
@@ -48,23 +48,21 @@ const BlogPostsIndex = ({ data }) => {
 
   return (
     <Layout>
-      <div className="container mx-auto px-6 my-8">
-        <div className="max-w-wide mx-auto box-content">
-          <PageHeader title="Blog posts" />
+      <div className="max-w-wide mx-auto my-8 px-6 box-content">
+        <PageHeader title="Blog posts" />
 
-          <div className="grid gap-8 dd-posts-grid">
-            {Object.keys(groupedPosts).map(monthKey => {
-              const monthDate = DateTime.fromISO(monthKey)
-              const { posts } = groupedPosts[monthKey]
-              
-              return <>
-                <h3 className={`font-bold text-sm mt-6 first:mt-0 uppercase tracking-wider dd-grid-full-width text-center`}>{monthDate.toFormat('MMMM yyyy')}</h3>
-                {posts.map(post => (
-                  <BlogPostItem key={post.slug} post={post} />
-                  ))}
-              </>
-            })}
-          </div>
+        <div className="dd-posts-grid">
+          {Object.keys(groupedPosts).map(monthKey => {
+            const monthDate = DateTime.fromISO(monthKey)
+            const { posts } = groupedPosts[monthKey]
+            
+            return <>
+              <h3 className={`font-bold text-sm mt-6 first:mt-0 uppercase tracking-wider dd-grid-full-width text-center`}>{monthDate.toFormat('MMMM yyyy')}</h3>
+              {posts.map(post => (
+                <BlogPostItem key={post.slug} post={post} />
+                ))}
+            </>
+          })}
         </div>
       </div>
     </Layout>

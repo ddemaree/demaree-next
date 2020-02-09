@@ -38,7 +38,9 @@ module.exports = {
         wide: '52rem'
       },
       screens: {
-        'xsm': { 'max': '480px' },
+        'xxs': { 'max': '410px' },
+        'xsm': { 'max': '512px' },
+        'xs':  { 'max': '512px' },
         'portrait': {'raw': '(orientation: portrait)'},
         'dark': {'raw': '(prefers-color-scheme: dark)'},
       }

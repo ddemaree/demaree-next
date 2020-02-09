@@ -515,7 +515,8 @@ blockquote.instagram-media, iframe.instagram-media {
 }
 
 .dd-posts-grid {
-  grid-template-columns: [pg-start] repeat(auto-fit, minmax(16rem, 1fr)) [pg-end];
+  @apply grid gap-8;
+  grid-template-columns: [pg-start] repeat(auto-fit, minmax(14rem, 1fr)) [pg-end];
 }
 
 .dd-grid-full-width {
