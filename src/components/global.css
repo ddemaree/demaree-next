@@ -1,5 +1,5 @@
-@import '../fonts/private/soehne';
-@import '../fonts/private/ivar-text';
+@import '../fonts/soehne';
+@import '../fonts/ivar-text';
 
 @tailwind base;
 @tailwind components;
@@ -488,7 +488,7 @@ a {
 
 .dd-posts-grid {
   display: grid;
-  grid-template-columns: [start] repeat(auto-fit, minmax(17rem, 1fr)) [end];
+  grid-template-columns: [start] repeat(auto-fit, minmax(16rem, 1fr)) [end];
   grid-gap: theme('spacing.8');
 
   h3 {
