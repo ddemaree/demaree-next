@@ -52,13 +52,13 @@ const BlogPostsIndex = ({ data }) => {
         <div className="max-w-wide mx-auto box-content">
           <PageHeader title="Blog posts" />
 
-          <div className="dd-posts-grid">
+          <div className="grid gap-8 dd-posts-grid">
             {Object.keys(groupedPosts).map(monthKey => {
               const monthDate = DateTime.fromISO(monthKey)
               const { posts } = groupedPosts[monthKey]
               
               return <>
-                <h3 className={`font-bold text-sm mt-10 mb-6 uppercase tracking-wider`}>{monthDate.toFormat('MMMM yyyy')}</h3>
+                <h3 className={`font-bold text-sm mt-6 first:mt-0 uppercase tracking-wider dd-grid-full-width text-center`}>{monthDate.toFormat('MMMM yyyy')}</h3>
                 {posts.map(post => (
                   <BlogPostItem key={post.slug} post={post} />
                   ))}

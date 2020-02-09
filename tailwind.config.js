@@ -2,6 +2,8 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  // TODO: Reduce number of variants
+  variants: ['responsive', 'first', 'last', 'odd', 'even', 'hover', 'focus', 'active', 'visited', 'disabled'],
   theme: {
     colors: {
       background: {
@@ -37,6 +39,4 @@ module.exports = {
       }
     },
   },
-  variants: {},
-  plugins: [],
 }
