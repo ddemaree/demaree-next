@@ -32,7 +32,7 @@ const Layout = ({ children, pageTitle, mainClassName }) => {
 
       <Header />
 
-      <main className={c([mainClassName])}>
+      <main className={c(['overflow-hidden', mainClassName])}>
         {children}
       </main>
 

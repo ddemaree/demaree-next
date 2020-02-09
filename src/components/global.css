@@ -45,6 +45,12 @@
   } */
 }
 
+*, ::before, ::after {
+  box-sizing: inherit;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-ink);
@@ -87,7 +93,7 @@ a {
 
   & > :not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.kg-width-wide):not(.kg-width-full) {
     max-width: theme('width.content');
-    width: calc(100% - 3rem);
+    width: calc(100% - theme('spacing.12'));
   } 
 
   h1, h2, h3, h4, h5, h6 {
@@ -210,6 +216,10 @@ a {
   }
 }
 
+blockquote.instagram-media, iframe.instagram-media {
+  margin: auto !important;
+}
+
 
 .wp-block-pullquote {
 
@@ -279,9 +289,9 @@ a {
 
 .wp-content > blockquote,
 .wp-block-quote {
-  box-shadow: inset 3px 0 0 0 currentColor;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  box-shadow: inset 4px 0 0 0 var(--color-ink-low, currentColor);
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
 
   & > p {
     min-width: 100%;
@@ -383,7 +393,6 @@ a {
 .alignwide,
 .kg-width-wide {
   max-width: theme('width.wide');
-  /* width: calc(100% - 3rem); */
 }
 
 .wp-content > figure, .wp-content > hr, .wp-block-code, .wp-block-image,
@@ -433,9 +442,13 @@ a {
   border: 1px solid theme('colors.ink.low');
 }
 
-.kg-bookmark-container {
+.kg-bookmark-container--grid {
   display: grid;
   grid-template-columns: 1fr minmax(6rem, 10rem);
+}
+
+.kg-bookmark-container {
+  @apply flex;
   text-decoration-line: none;
 }
 
@@ -445,6 +458,10 @@ a {
 }
 
 .kg-bookmark-thumbnail {
+  @apply flex-grow;
+  min-width: 33%;
+  max-height: 100%;
+
   img {
     object-fit: cover;
     height: 100%;
@@ -464,8 +481,6 @@ a {
     height: 1.2em;
     margin-right: theme('spacing.2');
   }
-  .kg-bookmark-publisher {
-  }
 }
 
 .kg-bookmark-title {
@@ -479,6 +494,19 @@ a {
 
 .kg-bookmark-description {
   margin-bottom: theme('spacing.3');
+}
+
+@screen xsm {
+  .kg-bookmark-container {
+    @apply flex-col;
+  }
+  .kg-bookmark-thumbnail {
+    @apply h-40;
+    order: 1;
+  }
+  .kg-bookmark-content {
+    order: 2;
+  }
 }
 
 .kg-image-card .kg-image {

@@ -9,7 +9,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <div>
+      <div className="my-8 mx-auto">
         <PageContent content={html} />
       </div>
     </Layout>
