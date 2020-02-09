@@ -25,8 +25,6 @@ const groupPostsByMonth = posts =>
   }, {})
 
 const BlogPostItem = ({ post }) => {
-  console.log(post)
-
   return <>
     <article className={`mb-5`}>
       <div>

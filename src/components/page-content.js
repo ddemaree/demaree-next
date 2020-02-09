@@ -36,7 +36,6 @@ const PageContent = ({ content, className }) => {
     ];
 
     let videoElems = pageContentElem.querySelectorAll(videoSelectors.join(', '))
-    console.log(videoElems)
     videoElems.forEach(video => {
       let wrapper = video.closest('.video-container')
       if(!wrapper) {
