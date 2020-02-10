@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => {
           <img className="h-full w-full object-cover object-center" src="//res.cloudinary.com/demaree/image/upload/v1581295512/L2090706-2.jpg" />
         </figure>
       </div>
-      <div className="my-8 mx-auto">
+      <div className="my-8 mx-auto text-lg">
         <PageContent content={html} />
       </div>
     </Layout>
