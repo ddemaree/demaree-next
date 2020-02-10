@@ -496,7 +496,7 @@ blockquote.instagram-media, iframe.instagram-media {
   margin-bottom: theme('spacing.3');
 }
 
-@screen xsm {
+@screen xs {
   .kg-bookmark-container {
     @apply flex-col;
   }
