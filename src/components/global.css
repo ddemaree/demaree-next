@@ -215,6 +215,12 @@ a {
     text-align: center;
     max-width: 60ch;
   }
+
+  .lede {
+    @apply font-serif;
+    font-size: theme('fontSize.2xl');
+    line-height: theme('lineHeight.snug');
+  }
 }
 
 blockquote.instagram-media, iframe.instagram-media {

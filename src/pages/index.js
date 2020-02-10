@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
         </div>
 
         <figure className="z-0 h-64 lg:h-verytall">
-          <img className="h-full w-full object-cover object-center" src="//res.cloudinary.com/demaree/image/upload/v1581295512/L2090706-2.jpg" />
+          <img className="h-full w-full object-cover object-center" src="//res.cloudinary.com/demaree/image/upload/c_scale,q_55,w_1600/v1581295512/L2090706-2.jpg" alt="Photograph of a delicious espresso drink in a teal blue mug" />
         </figure>
       </div>
       <div className="my-8 mx-auto text-lg">
