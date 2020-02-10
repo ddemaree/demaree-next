@@ -8,7 +8,7 @@ const PageHeader = ({ title, date, words, featureImage }) => {
   return (
     <header>
       <div className={`text-center mb-10 px-6`}>
-        <h1 className="text-4xl leading-none font-display-serif font-medium mb-3">{title}</h1>
+        <h1 className="text-4xl leading-none font-display-serif font-semibold mb-3">{title}</h1>
         {date && <p className="text-sm text-ink-medium">
           <PostInfo date={date} words={words} />
         </p>}
