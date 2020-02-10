@@ -522,3 +522,22 @@ blockquote.instagram-media, iframe.instagram-media {
 .dd-grid-full-width {
   grid-column: 1 / -1;
 }
+
+.dark-overlay {
+  &:before {
+    background: #0002;
+    background: radial-gradient(#0003, #0006);
+    bottom: 0;
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    mix-blend-mode: multiply;
+  }
+}
+
+.home-header {
+  text-shadow: 2px 2px 8px #0009;
+}
