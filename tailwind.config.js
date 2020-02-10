@@ -2,8 +2,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  // TODO: Reduce number of variants
-  variants: ['responsive', 'first', 'last', 'odd', 'even', 'hover', 'focus', 'active', 'visited', 'disabled'],
+  variants: ['responsive', 'first', 'last'],
   theme: {
     extend: {
       colors: {
@@ -44,7 +43,6 @@ module.exports = {
       },
       screens: {
         'xxs': { 'max': '410px' },
-        'xsm': { 'max': '512px' },
         'xs':  { 'max': '512px' },
         'portrait': {'raw': '(orientation: portrait)'},
         'dark': {'raw': '(prefers-color-scheme: dark)'},
