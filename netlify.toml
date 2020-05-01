@@ -8,3 +8,7 @@
 [context.gatsby-2019-fml]
   command = "gatsby build"
   publish = "public"
+
+[context.eleventy-2020]
+  command = "npm run build"
+  publish = "_site"
