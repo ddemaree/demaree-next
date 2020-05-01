@@ -10,6 +10,13 @@ body {
 }
 
 .container { 
-  max-width: 50ch;
-  margin: 0 auto;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr [content-start] repeat(4, minmax(54px, 156px)) [content-end] 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+
+  & > * {
+    grid-column: content;
+  }
 }
