@@ -1,0 +1,13 @@
+{
+  "actions" : {
+    "clean" : {
+      "enabled" : true,
+      "script" : "npm run clean"
+    },
+    "run" : {
+      "enabled" : true,
+      "script" : "npm start"
+    }
+  },
+  "identifier" : "4BA9B1DB-225F-43C6-9327-E436476B3090"
+}
