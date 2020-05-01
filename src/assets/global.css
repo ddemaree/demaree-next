@@ -1,6 +1,15 @@
+@import './fonts/soehne';
+@import './fonts/ivar-text';
+@import './fonts/freight-display';
+
 @tailwind base;
 @tailwind utilities;
 
 body {
   background-color: aliceblue;
+}
+
+.container { 
+  max-width: 50ch;
+  margin: 0 auto;
 }
