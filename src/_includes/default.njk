@@ -6,7 +6,12 @@
 	</head>
 	<body>
 		<div class="container">
-			{{ content | safe }}
+			<div class="global-nav">
+				David's web site
+			</div>
+			<main>
+				{{ content | safe }}
+			</main>
 		</div>
 		<script src="/bundle.js"></script>
 	</body>
