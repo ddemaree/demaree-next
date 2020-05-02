@@ -5,18 +5,46 @@
 @tailwind base;
 @tailwind utilities;
 
+:root {
+  @media screen and (prefers-color-scheme: dark) {
+    --color-background: theme('colors.gray.800');
+  }
+}
+
 body {
-  background-color: aliceblue;
+  background-color: theme('colors.background.default');
+  color: theme('colors.ink.default');
+
+  &.dark-mode {
+    --color-background: theme('colors.gray.900');
+    --color-ink: theme('colors.gray.100');
+    --color-ink-medium: theme('colors.gray.500');
+    --color-container: theme('colors.black');
+  }
 }
 
 .container { 
   display: grid;
-  grid-gap: 2rem;
-  grid-template-columns: 1fr [content-start] repeat(4, minmax(54px, 156px)) [content-end] 1fr;
+  grid-gap: theme('spacing.8');
+  grid-template-columns: [full-start] 1fr [content-start] repeat(4, minmax(54px, 156px)) [content-end] 1fr [full-end];
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 
-  & > * {
+  & > *,
+  & .grid-content {
     grid-column: content;
   }
+
+  & .grid-full {
+    grid-column: full;
+  }
+}
+
+.global-nav {
+  @apply px-8 py-4;
+  background-color: theme('colors.container.default');
+}
+
+.global-footer {
+  @apply px-8 py-4;
 }

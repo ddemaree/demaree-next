@@ -58,12 +58,10 @@
   "license": "MIT",
   "scripts": {
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-
     "clean": "rm -rf _site",
     "start": "npm-run-all clean --parallel dev:*",
     "dev:eleventy": "ELEVENTY_ENV=development eleventy --watch --quiet",
     "dev:modewebpack": "webpack --mode development --watch",
-    
     "build": "npm-run-all clean --parallel prod:*",
     "prod:eleventy": "ELEVENTY_ENV=production eleventy --output=./_site",
     "prod:webpack": "NODE_ENV=production webpack -p"

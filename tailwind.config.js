@@ -8,13 +8,13 @@ module.exports = {
       colors: {
         white: '#fff',
         background: {
-          default: 'var(--color-background, #fff)'
+          default: `var(--color-background, ${defaultTheme.colors.white})`
         },
         container: {
-          default: 'var(--color-container, rgba(0,0,0,0.12))'
+          default: `var(--color-container, ${defaultTheme.colors.teal[300]})`
         },
         ink: {
-          default: 'var(--color-ink, #000c)',
+          default: `var(--color-ink, ${defaultTheme.colors.gray[900]})`,
           medium: 'var(--color-ink-medium, #0009)',
           low: 'var(--color-ink-low, #0004)',
           extralow: 'var(--color-ink-extralow, #0002)',
@@ -38,7 +38,7 @@ module.exports = {
         verytall: '20rem'
       },
       maxWidth: {
-        content: '34rem',
+        content: '40rem',
         wide: '52rem'
       },
       screens: {
