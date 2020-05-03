@@ -6,9 +6,9 @@
 @tailwind utilities;
 
 :root {
-  @media screen and (prefers-color-scheme: dark) {
+  /* @media screen and (prefers-color-scheme: dark) {
     --color-background: theme('colors.gray.800');
-  }
+  } */
 }
 
 body {
@@ -23,25 +23,32 @@ body {
   }
 }
 
+.dd-grid-rows {
+  @apply .row-gap-8;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.dd-grid-columns,
+.dd-grid-container {
+  @apply .gap-6;
+  display: grid;
+  grid-template-columns: [full-start] minmax(0, 1fr) [content-start] repeat(8, minmax(auto, 5rem)) [content-end] minmax(0, 1fr) [full-end];
+  grid-auto-rows: auto;
+}
+
+.dd-col-content {
+  grid-column: content;
+}
+
 .container { 
   display: grid;
   grid-gap: theme('spacing.8');
-  grid-template-columns: [full-start] 1fr [content-start] repeat(4, minmax(54px, 156px)) [content-end] 1fr [full-end];
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
-
-  & > *,
-  & .grid-content {
-    grid-column: content;
-  }
-
-  & .grid-full {
-    grid-column: full;
-  }
+  grid-template-columns: [full-start] 1fr [content-start] minmax(240px, 1080px) [content-end] 1fr [full-end];
 }
 
 .global-nav {
-  @apply px-8 py-4;
   background-color: theme('colors.container.default');
 }
 

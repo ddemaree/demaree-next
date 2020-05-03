@@ -38,7 +38,7 @@ module.exports = {
         verytall: '20rem'
       },
       maxWidth: {
-        content: '40rem',
+        content: '36rem',
         wide: '52rem'
       },
       screens: {
