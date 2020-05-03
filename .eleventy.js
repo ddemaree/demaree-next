@@ -10,6 +10,8 @@ module.exports = function(eleventyConfig) {
 		.use(markdownItContainer);
 	eleventyConfig.setLibrary('md', markdownLib);
 
+	eleventyConfig.addPassthroughCopy("src/images");
+
 	return {
 		dir: {
 			input: 'src',
