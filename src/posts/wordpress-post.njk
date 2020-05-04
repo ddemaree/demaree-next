@@ -1,0 +1,12 @@
+---
+layout: default
+pagination:
+  data: wordpressPosts
+  size: 1
+  alias: post
+permalink: "posts/{{ post.slug }}/index.html"
+tags: post
+---
+<article class="post">
+{{ post.content.rendered | safe }}
+</article>
