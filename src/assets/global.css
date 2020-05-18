@@ -1,6 +1,7 @@
 @import './fonts/soehne';
 @import './fonts/ivar-text';
 @import './fonts/freight-display';
+@import './fonts/gimlet-sans';
 
 @tailwind base;
 @tailwind utilities;
@@ -21,6 +22,11 @@ body {
     --color-ink-medium: theme('colors.gray.500');
     --color-container: theme('colors.black');
   }
+}
+
+a {
+  text-decoration: underline;
+  text-decoration-color: theme('colors.blue.400');
 }
 
 .dd-grid-rows {
@@ -54,4 +60,21 @@ body {
 
 .global-footer {
   @apply px-8 py-4;
+}
+
+.dd-content {
+  p {
+    @apply .mb-4;
+  }
+}
+
+.dd-hed {
+  @apply .text-5xl .leading-none .font-display-serif;
+}
+
+.dd-wrap {
+  @apply .max-w-4xl .mx-auto .px-8;
+  @screen lg {
+    @apply .px-12;
+  }
 }

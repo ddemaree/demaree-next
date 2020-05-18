@@ -1,0 +1,36 @@
+---
+layout: default.njk
+title: David's home page
+slug: home
+---
+
+<section class="mb-12 text-xl sm:text-2xl font-serif">
+  <div class="py-6 relative">
+    <figure class="w-32 lg:w-40 mx-auto mb-6 md:ml-0 md:mr-4 md:absolute right-0">
+      <img src="./images/memoji.png" class="max-w-full">
+    </figure>
+    <p class="text-4xl sm:text-5xl leading-none font-display-serif max-w-content md:mr-48">Hi, I'm David. I love code, cameras, coffee, and cocktails. <span class="whitespace-no-wrap">(Also alliteration.)</span></p>
+  </div>
+
+  <p class="mb-8 max-w-content">I live in the NYC suburbs with <a href="https://instagram.com/jdweinmann">my wife</a>, our 5-year-old daughter, and <a href="https://instagram.com/johnny.cash.frenchie">a cute French bulldog</a>. I've been making web sites and web software for 25 years, most recently leading design and typography teams at big companies. I'm also a published author and speak at conferences worldwide.</p>
+
+  <p><a class="uppercase no-underline font-sans text-base bg-blue-700 p-3 rounded block text-center font-semibold w-full max-w-md hover:bg-blue-500" href="/about">More about me</a></p>
+</section>
+
+<section class="">
+<h2 class="uppercase text-md font-semibold mb-4 text-blue-300">Follow me on social media</h2>
+<ul class="dd-socials text-xl">
+  {%- for social in socials -%}
+  {% if not social.hideOnHomepage %}
+  <li class="flex flex-wrap">
+    <a href="{{ social.url }}" class="flex items-center mb-4 mr-4">
+      <svg class="text-green-500 fill-current h-6 w-6 mr-2">
+        <use xlink:href="/icons/fa-brands.svg#{{ social.icon }}"></use>
+      </svg>
+      <span class="">{{ social.text }}</span>
+    </a>
+  </li>
+  {% endif %}
+  {%- endfor -%}
+</ul>
+</section>
