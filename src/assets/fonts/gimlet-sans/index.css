@@ -1,0 +1,7 @@
+@font-face {
+    src: url('./GimletSans-Black.woff2') format("woff2"),
+         url('./GimletSans-Black.woff') format("woff");
+    font-family: 'gimlet-sans';
+    font-style: normal;
+    font-weight: 400;
+    }

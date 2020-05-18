@@ -7,33 +7,16 @@
 		<link href="/css/main.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body class="dark-mode{% if slug %} page--{{slug}}{% endif %}">
-		<div class="dd-grid-rows">
-			<header role="banner" class="global-nav p-4">
-				<div class="mx-auto max-w-4xl">
-					<nav>
-						<h1 class="title font-semibold">
-							<a href="/">David Demaree</a>
-						</h1>
-						<ul class="flex">
-							<li class="mr-2"><a href="/posts">Blog</a></li>
-							<li class="mr-2"><a href="/speaking">Speaking</a></li>
-							<li class="mr-2"><a href="/about">About</a></li>
-						</ul>
-					</nav>
-				</div>
-			</header>
+		<div class="dd-container">
+			{% include 'header.njk' %}
 
-			<main class="dd-main p-4{% if main_classes %} {{ main_classes }}{% endif %}">
-				<div class="max-w-4xl mx-auto">
+			<main class="dd-main py-8 {% if main_classes %} {{ main_classes }}{% endif %}">
+				<div class="dd-wrap">
 				{{ content | safe }}
 				</div>
 			</main>
 
-			<footer class="global-footer p-4">
-				<div class="mx-auto max-w-4xl">
-					<p class="text-ink-medium">&copy; 2020 David Demaree</p>
-				</div>
-			</footer>
+			{% include "footer.njk" %}
 		</div>
 		<script src="/bundle.js"></script>
 	</body>

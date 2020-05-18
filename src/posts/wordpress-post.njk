@@ -6,7 +6,8 @@ pagination:
   alias: post
 permalink: "posts/{{ post.slug }}/index.html"
 tags: post
+title: {{ post.title }}
 ---
 <article class="post">
-{{ post.content.rendered | safe }}
+{{ post.html | safe }}
 </article>
