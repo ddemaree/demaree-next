@@ -13,5 +13,9 @@
   command = "npm run build"
   publish = "_site"
 
+[context.eleventy-compare]
+  command = "npm run build"
+  publish = "public
+
 [[plugins]]
   package = "netlify-plugin-gatsby-cache"
