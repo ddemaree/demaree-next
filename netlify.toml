@@ -12,3 +12,6 @@
 [context.eleventy-2020]
   command = "npm run build"
   publish = "_site"
+
+[[plugins]]
+  package = "netlify-plugin-gatsby-cache"
