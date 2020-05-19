@@ -26,6 +26,7 @@ const Layout = ({ children, pageTitle, mainClassName }) => {
       <Helmet 
         titleTemplate={`%s – David Demaree`} 
         defaultTitle={`David Demaree`}>
+        <body className="dd-dark-mode" />
         {pageTitle && <title>{pageTitle}</title>}
         <link rel="icon" type="image/png" sizes="16x16" href={favicon16} />
         <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
