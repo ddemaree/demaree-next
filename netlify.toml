@@ -16,6 +16,7 @@
 [context.eleventy-compare]
   command = "npm run build"
   publish = "public"
+  environment = { NODE_ENV = "production", NODE_VERSION = "12" }
 
 [[plugins]]
   package = "netlify-plugin-gatsby-cache"
