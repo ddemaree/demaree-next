@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from 'react-helmet'
-// import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
@@ -14,11 +13,6 @@ import favicon32 from '../images/dd-favicon-32.png'
 import favicon64 from '../images/dd-favicon-64.png'
 import favicon128 from '../images/dd-favicon-128.png'
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab, faTwitter, faInstagram, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faCoffee, faCocktail, faArrowCircleUp, faHome, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
-library.add(fab, faTwitter, faInstagram, faGithub, faLinkedin, faCoffee, faCocktail, faArrowCircleUp, faHome, faPaperPlane)
-
 const Layout = ({ children, pageTitle, mainClassName }) => {
 
   return (
@@ -26,6 +20,7 @@ const Layout = ({ children, pageTitle, mainClassName }) => {
       <Helmet 
         titleTemplate={`%s – David Demaree`} 
         defaultTitle={`David Demaree`}>
+        <html lang="en-US" />
         <body className="dd-dark-mode" />
         {pageTitle && <title>{pageTitle}</title>}
         <link rel="icon" type="image/png" sizes="16x16" href={favicon16} />

@@ -15,11 +15,11 @@ const FooterItem = ({ icon, children, href, linkTo, onClick, className }) => {
   return (
     <li className={c(['mr-3 mb-1 xxs:w-1/2 xxs:mx-0 xxs:my-1 xs:text-xl', className])}>
       {linkTo && <Link to={linkTo}>
-        {icon && <FontAwesomeIcon icon={icon} className="text-ink-low mr-1 text-sm" />}
+        {/* {icon && <FontAwesomeIcon icon={icon} className="text-ink-low mr-1 text-sm" />} */}
         {children}
       </Link>}
       {!linkTo && <a href={href} onClick={onClick}>
-        {icon && <FontAwesomeIcon icon={icon} className="text-ink-low mr-1 text-sm" />}
+        {/* {icon && <FontAwesomeIcon icon={icon} className="text-ink-low mr-1 text-sm" />} */}
         {children}
       </a>}
     </li>

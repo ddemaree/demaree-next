@@ -1,8 +1,13 @@
-@import '../fonts/soehne';
+@import '../fonts/soehne/core-fonts';
 @import '../fonts/ivar-text';
 @import '../fonts/freight-display';
 
 @tailwind base;
+
+html {
+  font-family: theme('fontFamily.serif');
+}
+
 @tailwind components;
 @tailwind utilities;
 
