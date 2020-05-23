@@ -69,6 +69,7 @@
     "__build": "npm-run-all clean --parallel prod:*",
     "start": "npm run gatsby:dev",
     "build": "npm run gatsby:build",
+    "serve": "gatsby serve",
     "dev:eleventy": "ELEVENTY_ENV=development eleventy --watch --quiet",
     "dev:modewebpack": "webpack --mode development --watch",
     "prod:eleventy": "ELEVENTY_ENV=production eleventy --output=./_site",
