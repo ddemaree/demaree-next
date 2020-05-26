@@ -23,6 +23,7 @@ const Layout = ({ children, pageTitle, mainClassName, headerClassName, omitHeade
         <html lang="en-US" />
         <body className="dd-dark-mode" />
         {pageTitle && <title>{pageTitle}</title>}
+        <link rel="stylesheet" type="text/css" href="/fa/css/all.min.css" />
         <link rel="icon" type="image/png" sizes="16x16" href={favicon16} />
         <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
         <link rel="icon" type="image/png" sizes="64x64" href={favicon64} />
