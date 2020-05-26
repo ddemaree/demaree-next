@@ -1,6 +1,6 @@
 import React from "react"
 
-import Layout from '../components/new-layout'
+import Layout from '../components/layout'
 import { graphql } from "gatsby"
 import _ from 'lodash'
 import moment from 'moment'
