@@ -1,7 +1,7 @@
 @import '../fonts/soehne/core-fonts';
 @import '../fonts/ivar-text';
-@import '../fonts/freight-display';
-@import '../fonts/font-awesome';
+/* @import '../fonts/freight-display'; */
+/* @import '../fonts/font-awesome'; */
 
 @tailwind base;
 @tailwind components;

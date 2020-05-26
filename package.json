@@ -69,7 +69,7 @@
     "gatsby:build": "NODE_ENV=production GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "gatsby:serve": "gatsby serve",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "clean": "rm -rf _site",
+    "clean": "rm -rf _site .cache public",
     "__start": "npm-run-all clean --parallel dev:*",
     "__build": "npm-run-all clean --parallel prod:*",
     "start": "npm run gatsby:dev",
@@ -78,7 +78,8 @@
     "dev:eleventy": "ELEVENTY_ENV=development eleventy --watch --quiet",
     "dev:modewebpack": "webpack --mode development --watch",
     "prod:eleventy": "ELEVENTY_ENV=production eleventy --output=./_site",
-    "prod:webpack": "NODE_ENV=production webpack -p"
+    "prod:webpack": "NODE_ENV=production webpack -p",
+    "prod-test": "npm run clean && npm run build && npm run serve"
   },
   "repository": {
     "type": "git",

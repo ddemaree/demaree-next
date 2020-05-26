@@ -23,15 +23,13 @@ const IndexPage = ({ data }) => {
 
   const sortedPostItems = _.sortBy(allPostItems, 'date').reverse()
 
-  console.log(sortedPostItems)
-
   return (
     <Layout headerClassName="bg-container">
       <section className="bg-container">
         <div className={c(["dd-wrap relative", styles.gridContainer])}>
 
           <figure className="w-24 mb-4">
-            <img src={memoji.img.fixed.src} className="max-w-full" />
+            {memoji && <img src={memoji.img.fixed.src} className="max-w-full" />}
           </figure>
           
           <div className="text-2xl font-semibold leading-tight max-w-lg">
