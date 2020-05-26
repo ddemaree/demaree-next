@@ -1,6 +1,11 @@
 .gridContainer {
-  padding-top: calc(12vh - 2rem);
-  padding-bottom: 12vh;
+  padding-top: 10vh;
+  padding-bottom: 14vh;
+
+  display: grid;
+  grid-template-rows: minmax(theme('spacing.10'), 1fr) auto minmax(theme('spacing.10'), 1fr);
+  grid-template-columns: minmax(theme('spacing.6'), 1fr) minmax(0, 960px) minmax(theme('spacing.6'), 1fr);  
+  /* min-height: 60vh; */
 
   /* @screen md {
     display: grid;
@@ -10,4 +15,9 @@
     padding-top: 4rem;
     align-items: center;
   } */
+
+  @screen sm {
+    padding-top: 14vh;
+    padding-bottom: 14vh;
+  }
 }

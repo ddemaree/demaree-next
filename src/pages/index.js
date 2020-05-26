@@ -27,10 +27,10 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout headerClassName="bg-container">
-      <section className="bg-container box-border relative">
-        <div className={c(["dd-wrap", styles.gridContainer])}>
+      <section className="bg-container">
+        <div className={c(["dd-wrap relative", styles.gridContainer])}>
 
-          <figure className="w-24 mb-6">
+          <figure className="w-24 mb-4">
             <img src={memoji.img.fixed.src} className="max-w-full" />
           </figure>
           
