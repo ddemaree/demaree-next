@@ -1,13 +1,9 @@
 @import '../fonts/soehne/core-fonts';
 @import '../fonts/ivar-text';
 @import '../fonts/freight-display';
+@import '../fonts/font-awesome';
 
 @tailwind base;
-
-html {
-  font-family: theme('fontFamily.serif');
-}
-
 @tailwind components;
 @tailwind utilities;
 
@@ -24,7 +20,7 @@ html {
   --serif-fonts: theme('fontFamily.serif');
 
   --color-background: #fff;
-  --color-container: rgba(0,0,0,0.08); 
+  /* --color-container: theme('color.red.500');  */
   
   --color-ink: rgba(0,0,0,0.88);
   --color-ink-medium: rgba(0,0,0,0.64);
@@ -38,9 +34,9 @@ html {
 
   font-size: 20px;
 
-  @media screen and (max-width: 640px) {
+  /* @media screen and (max-width: 640px) {
     font-size: 18px;
-  }
+  } */
 
   /* @media screen and (prefers-color-scheme: dark) {
     --color-background: #111;
@@ -70,6 +66,10 @@ a {
   text-decoration-style: solid;
   text-decoration-line: underline;
   text-underline-offset: from-font;
+}
+
+.dd-wrap {
+  @apply .max-w-3xl .mx-auto .px-6;
 }
 
 .debug-measure {
@@ -508,7 +508,7 @@ blockquote.instagram-media, iframe.instagram-media {
   margin-bottom: theme('spacing.3');
 }
 
-@screen xs {
+/* @screen xs {
   .kg-bookmark-container {
     @apply flex-col;
   }
@@ -519,7 +519,7 @@ blockquote.instagram-media, iframe.instagram-media {
   .kg-bookmark-content {
     order: 2;
   }
-}
+} */
 
 .kg-image-card .kg-image {
   margin-left: auto;

@@ -1,8 +1,8 @@
 [
   {
-    "url": "mailto:david@demaree.me?subject=Howdy",
-    "text": "Email",
-    "icon": "paper-plane",
+    "url": "https://demaree.substack.com/",
+    "text": "Newsletter",
+    "icon": "newspaper",
     "iconset": "fas"
   },
   {
@@ -24,5 +24,11 @@
     "url": "https://linkedin.com/in/ddemaree",
     "text": "LinkedIn",
     "icon": "linkedin"
+  },
+  {
+    "url": "mailto:david@demaree.me?subject=Howdy",
+    "text": "Email",
+    "icon": "paper-plane",
+    "iconset": "fas"
   }
 ]

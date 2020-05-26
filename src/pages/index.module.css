@@ -1,0 +1,13 @@
+.gridContainer {
+  padding-top: calc(12vh - 2rem);
+  padding-bottom: 12vh;
+
+  /* @screen md {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    min-height: 95vh;
+    padding-top: 4rem;
+    align-items: center;
+  } */
+}

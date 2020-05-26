@@ -1,28 +1,22 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import c from "classnames"
 
 import siteData from '../data/site-data.json'
 
-const Header = () => {
+const Header = ({className}) => {
   const { title, headerNav } = siteData
 
   return (
-    <header className="grid grid-cols-2 gap-4 p-4 text-ink-medium">
-      <div className={'justify-self-start'}>
-        <Link to="/">
-          <span className={''}>{title}</span>
-        </Link>
+    <header className={c(["h-10 text-ink-medium", className])}>
+      <div className="dd-wrap">
+        <div>
+          <Link to="/">
+            <span className={'font-semibold no-underline'}>DD</span>
+          </Link>
+        </div>
       </div>
-      <nav className={'justify-self-end'}>
-        <ul className="flex">
-          {headerNav.map(navEntry => (
-            <li key={navEntry.url} className="mx-2">
-              <Link to={navEntry.url}>{navEntry.label}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
     </header>
   )
 } 
