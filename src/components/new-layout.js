@@ -13,7 +13,7 @@ import favicon32 from '../images/dd-favicon-32.png'
 import favicon64 from '../images/dd-favicon-64.png'
 import favicon128 from '../images/dd-favicon-128.png'
 
-const Layout = ({ children, pageTitle, mainClassName }) => {
+const Layout = ({ children, pageTitle, mainClassName, headerClassName, omitHeader }) => {
 
   return (
     <div className="dd-container">
@@ -30,7 +30,7 @@ const Layout = ({ children, pageTitle, mainClassName }) => {
         <link rel="apple-touch-icon" type="image/png" href={favicon128} />
       </Helmet>
 
-      <Header />
+      {!omitHeader && <Header className={headerClassName} />}
 
       <main className={c(['overflow-hidden', mainClassName])}>
         {children}

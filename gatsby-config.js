@@ -53,6 +53,20 @@ module.exports = {
         contentApiKey: process.env.GHOST_CONTENT_API_KEY
       }
     },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://demaree.substack.com/feed`,
+        name: `SubstackFeed`
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://words.demaree.me/feed`,
+        name: `MediumFeed`
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

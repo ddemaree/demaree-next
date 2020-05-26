@@ -6,7 +6,10 @@ module.exports = {
     './11ty-src/**/*.html',
 		'./11ty-src/**/*.njk',
 		'./src/**/*.js'
-  ],
+	],
+	variants: {
+		margin: ['responsive', 'last']
+	},
 	theme: {
 		extend: {
 			colors: {
@@ -24,6 +27,9 @@ module.exports = {
 					extralow: 'var(--color-ink-extralow, #0002)',
 					bold: 'var(--color-ink-strong, #000)',
 				},
+				minHeight: {
+					'95': '95vh'
+				}
 			},
 			fontFamily: {
 				sans: ['soehne-web', ...defaultTheme.fontFamily.sans],
@@ -47,11 +53,16 @@ module.exports = {
 				wide: '52rem',
 			},
 			screens: {
-				xxs: { max: '410px' },
-				xs: { max: '512px' },
-				portrait: { raw: '(orientation: portrait)' },
+				'lt-sm': { max: '640px' },
+				'lt-md': { max: '768px' },
 				dark: { raw: '(prefers-color-scheme: dark)' },
 			},
 		},
 	},
 };
+
+// portrait: { raw: '(orientation: portrait)' },
+// sm: '640px',
+// md: '768px',
+// lg: '1024px',
+// xl: '1280px',
