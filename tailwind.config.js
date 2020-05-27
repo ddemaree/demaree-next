@@ -48,6 +48,10 @@ module.exports = {
 			height: {
 				verytall: '20rem',
 			},
+			minHeight: {
+				'95v': '95vh',
+				'75v': '75vh'
+			},
 			maxWidth: {
 				content: '36rem',
 				wide: '52rem',
@@ -55,6 +59,7 @@ module.exports = {
 			screens: {
 				'lt-sm': { max: '640px' },
 				'lt-md': { max: '768px' },
+				'xs': { min: '480px' },
 				dark: { raw: '(prefers-color-scheme: dark)' },
 			},
 		},
