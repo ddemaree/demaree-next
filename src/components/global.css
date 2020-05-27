@@ -69,7 +69,11 @@ a {
 }
 
 .dd-wrap {
-  @apply .max-w-2xl .mx-auto .px-6;
+  @apply .max-w-2xl .mx-auto .px-4;
+
+  @screen sm {
+    @apply .px-6;
+  }
 }
 
 .debug-measure {

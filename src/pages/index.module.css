@@ -1,23 +1,41 @@
 .gridContainer {
-  padding-top: 10vh;
-  padding-bottom: 14vh;
+  /* display: grid;
+  grid-template-rows: theme('spacing.6') [content-start] 1fr [content-end bottom-start] theme('spacing.8') [bottom-end];
+  grid-template-columns: minmax(theme('spacing.6'), 1fr) [content-start] minmax(calc(320px - (theme('spacing.6') * 2)), 34rem) [content-end] minmax(theme('spacing.6'), 1fr);
+  align-items: center;
+  row-gap: theme('spacing.4');
 
-  display: grid;
-  grid-template-rows: minmax(theme('spacing.10'), 1fr) auto minmax(theme('spacing.10'), 1fr);
-  grid-template-columns: minmax(theme('spacing.6'), 1fr) minmax(0, 960px) minmax(theme('spacing.6'), 1fr);  
-  /* min-height: 60vh; */
-
-  /* @screen md {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 2rem;
-    min-height: 95vh;
-    padding-top: 4rem;
-    align-items: center;
-  } */
-
-  @screen sm {
-    padding-top: 14vh;
-    padding-bottom: 14vh;
+  & > * {
+    grid-column: content;
   }
+
+  @screen md {
+    min-height: 70vh;
+  } */
+}
+
+.contentBox {
+  /* grid-row: content;
+
+  @screen xs {
+    display: grid;
+    grid-template-columns: theme('width.24') 1fr;
+    grid-template-rows: 1fr;
+    gap: theme('spacing.4');
+  }
+
+  @screen md {
+    grid-template-columns: theme('width.32') 1fr;
+  } */
+}
+
+.chevron {
+  grid-row: bottom;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonBox {
+  grid-column: 1 / -1;
 }
