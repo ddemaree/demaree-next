@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet'
 import Header from "./header"
 import Footer from "./footer"
 
-import "./global.css"
+import "../css/global.css"
 import c from 'classnames'
 
 import favicon16 from '../images/dd-favicon-16.png'
@@ -20,7 +20,7 @@ const Layout = ({ children, pageTitle, mainClassName, headerClassName, omitHeade
       <Helmet 
         titleTemplate={`%s – David Demaree`} 
         defaultTitle={`David Demaree`}>
-        <html lang="en-US" />
+        <html lang="en-US" className="text-ink font-serif text-base md:text-xl" />
         <body className="dd-dark-mode" />
         {pageTitle && <title>{pageTitle}</title>}
         <link rel="stylesheet" type="text/css" href="/fa/css/all.min.css" />
