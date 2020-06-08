@@ -1,5 +1,6 @@
 @import '../fonts/soehne/core-fonts';
 @import '../fonts/ivar-text';
+@import '../fonts/name-sans';
 /* @import '../fonts/freight-display'; */
 /* @import '../fonts/font-awesome'; */
 
@@ -18,33 +19,18 @@
 :root {
   --sans-fonts: theme('fontFamily.sans');
   --serif-fonts: theme('fontFamily.serif');
-
   --color-background: #fff;
-  /* --color-container: theme('color.red.500');  */
-  
   --color-ink: rgba(0,0,0,0.88);
   --color-ink-medium: rgba(0,0,0,0.64);
   --color-ink-low: rgba(0,0,0,0.32);
   --color-ink-bold: rgba(0,0,0,1.0);
-
   --width-content: theme('width.content');
   --width-wide: theme('width.wide');
-
   --spacing-line: theme('spacing.line');
 
+  color: theme('colors.ink.default');
   font-size: 20px;
-
-  /* @media screen and (max-width: 640px) {
-    font-size: 18px;
-  } */
-
-  /* @media screen and (prefers-color-scheme: dark) {
-    --color-background: #111;
-    --color-ink: rgba(255,255,255,0.85);
-    --color-ink-medium: rgba(255,255,255,0.65);
-    --color-ink-low: rgba(255,255,255,0.48);
-    --color-ink-bold: rgba(255,255,255,1.0);
-  } */
+  font-family: theme('fontFamily.serif');
 }
 
 *, ::before, ::after {
@@ -55,8 +41,6 @@
 
 body {
   background-color: var(--color-background);
-  color: var(--color-ink);
-  font-family: var(--sans-fonts);
 }
 
 a {

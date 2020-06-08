@@ -1,6 +1,30 @@
 import React from 'react'
 import c from 'classnames'
 
+export const DDOriginalIcon = ({ className }) => (
+  <div className={c(`dd-icon`, className)}>
+    <svg className="h-12" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="170 170 60 60" enable-background="new 170 170 60 60">
+      <g class="dd-seal">
+        <g class="circle" style={{fill: 'red'}}>
+          <path d="M200,170c-16.5,0-30,13.5-30,30s13.5,30,30,30c16.5,0,30-13.5,30-30S216.5,170,200,170z"></path>
+        </g>
+        <g class="lines fill-current stroke-current">
+          <line stroke-width="2" stroke-miterlimit="10" x1="205.2" y1="190.6" x2="215.6" y2="180.3"></line>
+          <line stroke-width="2" stroke-miterlimit="10" x1="208.3" y1="193.7" x2="218.7" y2="183.4"></line>
+          <line stroke-width="2" stroke-miterlimit="10" x1="180.9" y1="215" x2="191.2" y2="204.7"></line>
+          <line stroke-width="2" stroke-miterlimit="10" x1="184" y1="218.1" x2="194.3" y2="207.8"></line>
+        </g>
+        <g class="letters fill-current">
+          <path d="M200.7,214.5h2.6v-12.1h-2.6v-1.5h6.5c5.7,0,8.6,3,8.6,7.3c0,4.2-2.6,7.8-8.3,7.8h-6.7V214.5z
+            M207.4,214.5c3.9,0,5.6-1.7,5.6-6.3c0-4-1.7-5.8-5.8-5.8h-1.6v12.1H207.4z"></path>
+          <path d="M184.7,198.5h2.6v-12.1h-2.6v-1.5h6.5c5.7,0,8.6,3,8.6,7.3c0,4.2-2.6,7.8-8.3,7.8h-6.7V198.5z
+            M191.4,198.5c3.9,0,5.6-1.7,5.6-6.3c0-4-1.7-5.8-5.8-5.8h-1.6v12.1H191.4z"></path>
+        </g>
+      </g>
+      </svg>
+    </div>
+)
+
 export const DDNewIcon = ({ className }) => (
   <div className={c(`dd-icon`, className)}>
     <svg viewBox="0 0 99 96" xmlns="http://www.w3.org/2000/svg">
