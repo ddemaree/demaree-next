@@ -1,7 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import c from "classnames"
-// import { Link } from "gatsby"
+import { DDOriginalIcon } from './dd-icon'
+import { Link } from "gatsby"
 
 // import siteData from '../data/site-data.json'
 
@@ -11,6 +12,10 @@ const Header = ({className}) => {
   return (
     <header className={c([className])}>
       <div>
+        <div className="" style={{height:'2rem'}}>
+          <Link to="/"><DDOriginalIcon /></Link>
+        </div>
+
         {/* <div>
           <Link to="/">
             <span className={'font-semibold no-underline'}>DD</span>

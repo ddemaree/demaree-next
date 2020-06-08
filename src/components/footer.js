@@ -33,7 +33,7 @@ FooterItem.defaultProps = {
 const Footer = () => {
 
   return (
-    <footer className={`bg-container text-ink-bold mt-6 pt-6 pb-10`}>
+    <footer className={`text-ink-bold mt-6 pt-4 pb-6`}>
       <div className="dd-wrap text-center">
         <nav>
           <ul className={`justify-center list p-0 m-0 flex flex-wrap`}>

@@ -9,23 +9,6 @@ module.exports = {
     author: `@ddemaree`,
   },
   plugins: [
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     // The property ID; the tracking code won't be generated without it
-    //     trackingId: "UA-556801-2",
-    //     // Defines where to place the tracking script - `true` in the head and `false` in the body
-    //     head: false,
-    //     // Setting this parameter is optional
-    //     anonymize: true,
-    //     // Setting this parameter is also optional
-    //     respectDNT: true,
-    //     // Avoids sending pageview hits from custom paths
-    //     // exclude: ["/preview/**", "/do-not-track/me/too/"],
-    //     // Delays sending pageview hits on route update (in milliseconds)
-    //     pageTransitionDelay: 100,
-    //   },
-    // },
     'gatsby-plugin-postcss',
     {
       resolve: `gatsby-plugin-sass`,
@@ -54,19 +37,60 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        baseUrl: "bitsandletters.club",
+        protocol: "https",
+        hostingWPCOM: false,
+        useACF: true,
+        excludedRoutes: [
+          "**/jetpack/**",
+          "**/redirection/**",
+          "**/akismet/**",
+          "**/wpcom/**",
+          "**/feedback/**",
+          "**/settings/**`",
+        ]
+      }
+    },
+    {
       resolve: `gatsby-source-rss-feed`,
       options: {
         url: `https://demaree.substack.com/feed`,
         name: `SubstackFeed`
       }
     },
-    {
-      resolve: `gatsby-source-rss-feed`,
-      options: {
-        url: `https://words.demaree.me/feed`,
-        name: `MediumFeed`
-      }
-    }
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     // The property ID; the tracking code won't be generated without it
+    //     trackingId: "UA-556801-2",
+    //     // Defines where to place the tracking script - `true` in the head and `false` in the body
+    //     head: false,
+    //     // Setting this parameter is optional
+    //     anonymize: true,
+    //     // Setting this parameter is also optional
+    //     respectDNT: true,
+    //     // Avoids sending pageview hits from custom paths
+    //     // exclude: ["/preview/**", "/do-not-track/me/too/"],
+    //     // Delays sending pageview hits on route update (in milliseconds)
+    //     pageTransitionDelay: 100,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-rss-feed`,
+    //   options: {
+    //     url: `https://medium.com/feed/@ddemaree`,
+    //     name: `MediumFeed`
+    //   }
+    // }
+    // {
+    //   resolve: `gatsby-source-tumblr`,
+    //   options: {
+    //     blogIdentifier: `ddemaree`,
+    //     consumerKey: `QPuKF2pR1MHhU75b7MK1QFSsJMdQcxvHL4ZO3sAfKUSmVCe2fw`
+    //   }
+    // },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

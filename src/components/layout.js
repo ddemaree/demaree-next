@@ -16,7 +16,7 @@ import favicon128 from '../images/dd-favicon-128.png'
 const Layout = ({ children, pageTitle, mainClassName, headerClassName, omitHeader }) => {
 
   return (
-    <div className="dd-container">
+    <div className="dd-container flex flex-col min-h-screen">
       <Helmet 
         titleTemplate={`%s – David Demaree`} 
         defaultTitle={`David Demaree`}>
@@ -33,7 +33,7 @@ const Layout = ({ children, pageTitle, mainClassName, headerClassName, omitHeade
 
       {!omitHeader && <Header className={headerClassName} />}
 
-      <main className={c(['overflow-hidden', mainClassName])}>
+      <main className={c(['overflow-hidden flex-1', mainClassName])}>
         {children}
       </main>
 

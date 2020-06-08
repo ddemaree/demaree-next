@@ -32,10 +32,10 @@ module.exports = {
 				}
 			},
 			fontFamily: {
-				sans: ['soehne-web', ...defaultTheme.fontFamily.sans],
+				soehne: ['soehne-web', ...defaultTheme.fontFamily.sans],
 				serif: ['ivar-text', ...defaultTheme.fontFamily.serif],
 				'display-serif': ['FreightDisplayPro', ...defaultTheme.fontFamily.serif],
-				'gimlet-sans': ['gimlet-sans', ...defaultTheme.fontFamily.sans],
+				'name-sans': ['NameSans', ...defaultTheme.fontFamily.sans],
 				mono: ['IBM Plex Mono', ...defaultTheme.fontFamily.mono],
 			},
 			spacing: {
