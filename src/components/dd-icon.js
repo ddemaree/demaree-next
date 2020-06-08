@@ -3,7 +3,7 @@ import c from 'classnames'
 
 export const DDOriginalIcon = ({ className }) => (
   <div className={c(`dd-icon`, className)}>
-    <svg className="h-12" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="170 170 60 60" enable-background="new 170 170 60 60">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="170 170 60 60" enable-background="new 170 170 60 60">
       <g class="dd-seal">
         <g class="circle" style={{fill: 'red'}}>
           <path d="M200,170c-16.5,0-30,13.5-30,30s13.5,30,30,30c16.5,0,30-13.5,30-30S216.5,170,200,170z"></path>

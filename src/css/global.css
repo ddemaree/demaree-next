@@ -34,15 +34,10 @@ body {
 }
 
 a {
-  color: var(--color-ink-bold);
-  text-decoration-color: var(--color-ink-low);
-  text-decoration-thickness: 1px;
-  text-decoration-style: solid;
-  text-decoration-line: underline;
-  text-underline-offset: from-font;
+  @apply text-ink-bold dd-link-underline;
 }
 
-p, blockquote, figure {
+p, blockquote, figure, hr {
   @apply mb-5;
 
   &:last-child {
@@ -51,7 +46,7 @@ p, blockquote, figure {
 }
 
 blockquote {
-  @apply px-6;
+  @apply px-4 border-0 border-l-2 border-ink-low text-ink-medium;
 }
 
 h1, h2, h3, h4 {
@@ -74,9 +69,21 @@ h3 {
   @apply text-lg;
 }
 
+hr {
+  @apply h-auto my-6 border-0 block text-center;
+
+  &:before {
+    content: "•••";
+    letter-spacing: 1rem;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
 
+.text-inherit {
+  color: inherit;
+}
 
 .justify-self-start {
   justify-self: start;
@@ -84,7 +91,6 @@ h3 {
 .justify-self-end {
   justify-self: end;
 }
-
 
 .dd-wrap {
   @apply .max-w-2xl .mx-auto .px-4;
@@ -94,7 +100,16 @@ h3 {
   }
 }
 
-.debug-measure {
+.dd-icon {
+  @apply inline-block;
+  height: 1em;
+
+  svg {
+    @apply m-0 block h-full;
+  }
+}
+
+/* .debug-measure {
   background-color: rgba(255,0,255,0.1);
 }
 
@@ -106,17 +121,7 @@ h3 {
   display: block;
   overflow: hidden;
   content: 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklm';
-}
-
-
-.dd-posts-grid {
-  @apply grid gap-8;
-  grid-template-columns: [pg-start] repeat(auto-fit, minmax(14rem, 1fr)) [pg-end];
-}
-
-.dd-grid-full-width {
-  grid-column: 1 / -1;
-}
+} */
 
 .dark-overlay {
   &:before {
@@ -135,4 +140,12 @@ h3 {
 
 .home-header {
   text-shadow: 2px 2px 8px #0009;
+}
+
+.dd-link-underline {
+  text-decoration-color: var(--color-ink-low);
+  text-decoration-thickness: 1px;
+  text-decoration-style: solid;
+  text-decoration-line: underline;
+  text-underline-offset: from-font;
 }

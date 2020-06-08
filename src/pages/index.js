@@ -25,7 +25,7 @@ const LatestPostsItem = ({ post }) => {
       <span className="w-8 text-ink-medium text-lg inline-block left-0 md:left-auto absolute md:static text-center">
         <i className={c(sourceClasses[post.source])}></i>
       </span>
-      <h3 className="underline flex-1 md:ml-4">{post.title || `${shortExcerpt}…`}</h3>
+      <h3 className="dd-link-underline font-normal text-base flex-1 md:ml-4 my-0">{post.title || `${shortExcerpt}…`}</h3>
       <div className="text-sm text-ink-medium no-underline">
         <time>{post.date.format('MMM D, YYYY')}</time>
       </div>
@@ -74,7 +74,7 @@ const IndexPage = ({ data }) => {
 
       <section className="py-8">
         <div className="dd-wrap">
-          <h2 className="text-2xl mb-4">Latest</h2>
+          <h2 className="text-2xl mb-4">Latest posts</h2>
           {sortedPostItems.map(post => <LatestPostsItem key={post.link} post={post} />)}
         </div>
       </section>
