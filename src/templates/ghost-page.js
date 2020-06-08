@@ -10,11 +10,11 @@ const GhostPageTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <div className="mx-auto my-8">
+      <div className="mx-auto max-w-lg my-8">
         <PageHeader
           title={title}
           />
-        <PageContent className="font-serif" content={html} />
+        <PageContent content={html} />
       </div>
     </Layout>
   )
