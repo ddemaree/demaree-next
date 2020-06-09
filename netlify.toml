@@ -2,8 +2,9 @@
   ID = "demaree-next"
 
 [build]
-  command = "gatsby build"
+  command = "npm run build"
   publish = "public"
+  environment = { NODE_ENV = "production", NODE_VERSION = "12" }
 
 [context.gatsby-2019-fml]
   command = "gatsby build"
