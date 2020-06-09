@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet'
 
 import Header from "./header"
 import Footer from "./footer"
+import Hero from './hero'
 
 import "../css/global.css"
 import c from 'classnames'
@@ -13,7 +14,7 @@ import favicon32 from '../images/dd-favicon-32.png'
 import favicon64 from '../images/dd-favicon-64.png'
 import favicon128 from '../images/dd-favicon-128.png'
 
-const Layout = ({ children, pageTitle, mainClassName, headerClassName, omitHeader }) => {
+const Layout = ({ children, pageTitle, mainClassName, headerClassName, omitHeader, showHeroFooter }) => {
 
   return (
     <div className="dd-container flex flex-col min-h-screen">
@@ -37,15 +38,21 @@ const Layout = ({ children, pageTitle, mainClassName, headerClassName, omitHeade
         {children}
       </main>
 
+      {showHeroFooter && <Hero />}
       <Footer />
     </div>
   )
 }
 
+Layout.defaultProps = {
+  showHeroFooter: true
+}
+
 Layout.propTypes = {
   pageTitle: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  mainClassName: PropTypes.string
+  children: PropTypes.element.isRequired,
+  mainClassName: PropTypes.string,
+  showHeroFooter: PropTypes.bool
 }
 
 export default Layout
