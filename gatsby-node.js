@@ -33,6 +33,14 @@ const createWpPosts = async (graphql, createPage, reporter) => {
           }
         }
       }
+      wpPages: allWordpressPage {
+        edges {
+          node {
+            title
+            slug
+          }
+        }
+      }
     }
   `)
 
@@ -41,17 +49,6 @@ const createWpPosts = async (graphql, createPage, reporter) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
-
-  const ghostEdges = result.data.ghostPosts.edges
-  ghostEdges.forEach(edge => {
-    const { slug } = edge.node
-
-    createPage({
-      path: `/g/${slug}`,
-      component: require.resolve(`./src/templates/ghost-post.js`),
-      context: { slug },
-    }) 
-  })
 
   const wpPostEdges = result.data.wpPosts.edges
   wpPostEdges.forEach(edge => {
@@ -64,15 +61,15 @@ const createWpPosts = async (graphql, createPage, reporter) => {
     }) 
   })
 
-  const ghostPageEdges = result.data.ghostPages.edges
-  ghostPageEdges.forEach(edge => {
+  const wpPageEdges = result.data.wpPages.edges
+  wpPageEdges.forEach(edge => {
     const { slug } = edge.node
 
     createPage({
-      path: `/g/${slug}`,
-      component: require.resolve(`./src/templates/ghost-page.js`),
+      path: `/${slug}`,
+      component: require.resolve(`./src/templates/wordpress-page.js`),
       context: { slug },
-    })
+    }) 
   })
 }
 

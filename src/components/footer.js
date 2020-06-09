@@ -49,7 +49,9 @@ const Footer = () => {
           <p className="font-serif mb-0">&ldquo;Have courage, and be kind&rdquo;</p>
           <p className="text-xs mt-2 mb-0">© {new Date().getFullYear()}— David Demaree
           </p>
-          <p className="text-ink-low text-xs"><Link to="/__style-guide" className="xs:block text-ink-low">Style guide</Link></p>
+          <p className="text-ink-low text-xs">
+            <Link to="/typography-test" className="xs:block text-ink-low">Style guide</Link>
+          </p>
         </div>
       </div>
     </footer>
