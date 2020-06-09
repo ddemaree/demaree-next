@@ -20,7 +20,7 @@ const Layout = ({ children, pageTitle, mainClassName, headerClassName, omitHeade
       <Helmet 
         titleTemplate={`%s – David Demaree`} 
         defaultTitle={`David Demaree`}>
-        <html lang="en-US" className="text-ink font-serif text-base md:text-xl" />
+        <html lang="en-US" className="text-ink font-serif text-lg md:text-xl " />
         <body className="dd-dark-mode" />
         {pageTitle && <title>{pageTitle}</title>}
         <link rel="stylesheet" type="text/css" href="/fa/css/all.min.css" />

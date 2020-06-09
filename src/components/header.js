@@ -4,8 +4,6 @@ import c from "classnames"
 import { DDIcon } from './dd-icon'
 import { Link } from "gatsby"
 
-// import siteData from '../data/site-data.json'
-
 const Header = ({className}) => {
   return (
     <header className={c(className, '')}>
