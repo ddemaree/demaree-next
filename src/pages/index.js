@@ -13,7 +13,7 @@ const IndexPage = () => (
 
     <section className="py-8">
       <div className="dd-wrap">
-        <h2 className="text-2xl mb-4">Latest posts</h2>
+        <h2 className="text-sm uppercase tracking-widest mb-4">Latest posts</h2>
         <PostsList />
       </div>
     </section>
