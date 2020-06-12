@@ -41,6 +41,17 @@ const createWpPosts = async (graphql, createPage, reporter) => {
           }
         }
       }
+      mdPages: allMarkdownRemark {
+        edges {
+          node {
+            fileAbsolutePath
+            frontmatter {
+              slug
+              date
+            }
+          }
+        }
+      }
     }
   `)
 
@@ -69,7 +80,17 @@ const createWpPosts = async (graphql, createPage, reporter) => {
       path: `/${slug}`,
       component: require.resolve(`./src/templates/wordpress-page.js`),
       context: { slug },
-    }) 
+    })
+  })
+
+  const mdPageEdges = result.data.mdPages.edges
+  mdPageEdges.forEach(edge => {
+    const { slug } = edge.node.frontmatter
+    createPage({
+      path: `/${slug}`,
+      component: require.resolve(`./src/templates/markdown-page.js`),
+      context: { slug },
+    })
   })
 }
 
