@@ -37,9 +37,16 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
+        "excerpt_separator": `<!-- end -->`,
         plugins: [
           {
             resolve: `gatsby-remark-embedder`
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800
+            }
           }
         ]
       }

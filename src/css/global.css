@@ -1,7 +1,7 @@
 @import '../fonts/soehne/core-fonts';
 @import '../fonts/ivar-text';
-@import '../fonts/name-sans';
-/* @import '../fonts/freight-display'; */
+/* @import '../fonts/name-sans'; */
+@import '../fonts/freight-display';
 /* @import './text-content.css'; */
 
 @tailwind base;
@@ -11,8 +11,8 @@
   --serif-fonts: theme('fontFamily.serif');
   --color-background: #fff;
   --color-ink: rgba(0,0,0,0.88);
-  --color-ink-medium: rgba(0,0,0,0.64);
-  --color-ink-low: rgba(0,0,0,0.32);
+  --color-ink-medium: rgba(0,0,0,0.45);
+  --color-ink-low: rgba(0,0,0,0.27);
   --color-ink-bold: rgba(0,0,0,1.0);
   --width-content: theme('width.content');
   --width-wide: theme('width.wide');
@@ -37,7 +37,7 @@ a {
   @apply text-ink-bold dd-link-underline;
 }
 
-p, blockquote, figure, hr {
+p, blockquote, figure, hr, pre {
   @apply mb-5;
 
   &:last-child {
@@ -47,6 +47,14 @@ p, blockquote, figure, hr {
 
 blockquote {
   @apply px-4 border-0 border-l-2 border-ink-low text-ink-medium;
+}
+
+figure {
+  @apply mx-auto my-6;
+}
+
+figcaption {
+  @apply text-center mt-3 text-sm text-ink-medium;
 }
 
 h1, h2, h3, h4 {
@@ -76,6 +84,15 @@ hr {
     content: "•••";
     letter-spacing: 1rem;
   }
+}
+
+pre {
+  @apply text-sm bg-ink-low p-3;
+  overflow: auto;
+}
+
+.twitter-tweet {
+  @apply mx-auto;
 }
 
 @tailwind components;

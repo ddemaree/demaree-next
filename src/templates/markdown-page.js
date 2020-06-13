@@ -2,19 +2,53 @@ import React from "react"
 import Layout from "../components/layout"
 import PageContent from "../components/page-content"
 import { graphql } from "gatsby"
+import moment from 'moment'
+
+const formattedDate = (date) => {
+  const thisYear = moment().year()
+  const dateMoment = moment(date)
+  const dateIsNotThisYear = (thisYear !== dateMoment.year())
+  return dateMoment.format(`MMM d${dateIsNotThisYear ? ", YYYY" : ""}`)
+}
+
+const MediumStyleHeader = ({title, dek, date, timeToRead}) =>
+  <header className="max-w-lg pt-12 px-6 mx-auto pb-2">
+    <h1 className="text-3xl md:text-4xl font-display-serif leading-none mt-2 mb-2" dangerouslySetInnerHTML={{__html: title}} />
+    {dek && <p className="text-ink-medium font-soehne text-lg leading-snug">{dek}</p>}
+    <MediumStyleMeta date={date} timeToRead={timeToRead} />
+  </header>
+
+const MediumStyleMeta = ({ date, timeToRead }) =>
+  <div className="flex items-center my-4 font-soehne text-sm mb-8">
+    <div>
+      <span className="bg-container rounded-full h-10 w-10 inline-block">{` `}</span>
+    </div>
+    <div className="ml-3 leading-tight">
+      <div className="font-medium">David Demaree</div>
+      <span className="text-xs text-ink-medium">
+        {date && formattedDate(date)}
+        {date && timeToRead && ` • `}
+        {timeToRead && `${timeToRead} min read`}
+      </span>
+    </div>
+  </div>
 
 const BlogPostTemplate = ({ data: { post } }) => {
-  const { html, timeToRead, frontmatter } = post
-  const { title, date } = frontmatter
+  const { html, timeToRead, featuredImage, frontmatter } = post
+  const { title, dek, date } = frontmatter
+  const featuredImageURL = (featuredImage && featuredImage.img.fluid.src)
 
   return (
     <Layout>
-      <div className="max-w-lg mx-auto px-6 py-8">
-        <h1 className="text-3xl mt-0" dangerouslySetInnerHTML={{__html: title}} />
-        <p className="mb-8 text-ink-medium">{timeToRead} min read</p>
+      <article>
+        <MediumStyleHeader {...{title, dek, timeToRead, date}} />
+        
+        {featuredImageURL && <figure className="w-full bg-red-300 mt-0 mb-8">
+          <img src={featuredImageURL} />
+        </figure>}
         
         <PageContent content={html} />
-      </div>
+      </article>
     </Layout>
   )
 }
@@ -25,9 +59,18 @@ export const query = graphql`
       frontmatter {
         title
         date
+        dek
+        featuredImageAlt
       }
       html
       timeToRead
+      featuredImage {
+        img: childImageSharp {
+          fluid(maxWidth: 2000) {
+            src
+          }
+        }
+      }
     }
   }
 `
