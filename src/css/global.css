@@ -1,7 +1,7 @@
 @import '../fonts/soehne/core-fonts';
 @import '../fonts/ivar-text';
-/* @import '../fonts/name-sans'; */
 @import '../fonts/freight-display';
+/* @import '../fonts/name-sans'; */
 /* @import './text-content.css'; */
 
 @tailwind base;
@@ -58,7 +58,7 @@ figcaption {
 }
 
 h1, h2, h3, h4 {
-  @apply leading-snug font-semibold font-soehne mb-1 mt-8;
+  @apply leading-tight font-semibold font-soehne mb-1 mt-8;
 
   &:first-child {
     @apply mt-0;

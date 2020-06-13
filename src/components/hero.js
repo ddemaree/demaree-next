@@ -2,23 +2,43 @@ import React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import c from 'classnames'
 
-import socials from '../data/socials.json'
+const socialData = [
+  {
+    "url": "/about-me",
+    "text": "About Me",
+    "alt": "Bio for David Demaree",
+    "iconset": "fas",
+    "icon": "user"
+  },
+  {
+    "url": "https://twitter.com/ddemaree",
+    "text": "Twitter",
+    "alt": "@ddemaree on Twitter",
+    "icon": "twitter"
+  },
+  {
+    "url": "https://instagram.com/ddemaree",
+    "text": "Instagram",
+    "alt": "@ddemaree on Instagram",
+    "icon": "instagram"
+  }
+]
 
-const SocialItem = ({ icon, text, href, linkTo, onClick, className }) => {
+const SocialItem = ({ icon, text, altText, href, linkTo, onClick, className }) => {
   const [ iconSetName, iconName ] = icon
 
   const linkChildren = <>
     {(icon && 
     <i className={c(['text-ink-low md:text-sm', iconSetName, `fa-${iconName}`])}></i>)}
-    <span className="hidden ml-2">{text}</span>  
+    <span className="ml-1">{text}</span>
   </>
 
   return (
     <li className={c(['mr-3 last:mr-0 mb-1', className])}>
-      {linkTo && <Link to={linkTo}>
+      {linkTo && <Link title={altText} to={linkTo}>
         {linkChildren}
       </Link>}
-      {!linkTo && <a href={href} onClick={onClick}>
+      {!linkTo && <a href={href} title={altText} onClick={onClick}>
         {linkChildren}
       </a>}
     </li>
@@ -27,14 +47,11 @@ const SocialItem = ({ icon, text, href, linkTo, onClick, className }) => {
 
 SocialItem.defaultProps = {
   href: '#'
-} 
+}
 
-const Hero = ({ className }) => {
-  const { memoji, shortBio } = useStaticQuery(graphql`
+const Memoji = ({ className }) => {
+  const { memoji } = useStaticQuery(graphql`
     query HeroQuery {
-      shortBio: wordpressWpFragments(slug: {eq: "short-bio"}) {
-        content
-      }
       memoji: file(relativePath: {regex: "/memoji.png/"}) {
         img: childImageSharp {
           fixed(width: 200, pngQuality: 10, webpQuality: 10, base64Width: 10) {
@@ -48,17 +65,26 @@ const Hero = ({ className }) => {
       }
     }
   `)
+  
+  return <figure className={className}>
+    {memoji && <img alt="Cartoon portrait of David Demaree" src={memoji.img.fixed.src} className="max-w-full" />}
+  </figure>
+}
 
-  return <div>
-    <div className={c(["flex flex-wrap items-center", className])}>
-      <figure className="w-16 m-0 mr-4 col-span-3">
-      {memoji && <img alt="Cartoon portrait of David Demaree" src={memoji.img.fixed.src} className="max-w-full" />}
-      </figure>
-      <div className="my-4 max-w-md text-2xl leading-tight font-normal col-span-9" dangerouslySetInnerHTML={{__html: shortBio.content}} />
-    </div>
-    <nav>
-      <ul className={`justify-center list p-0 m-0 flex flex-wrap`}>
-        {socials.map(social => 
+const Hero = ({ className }) => {
+  return <div className="dd-hero">
+
+    <div className={c(["flex flex-wrap", className])}>
+      <div className="w-24 md:w-32 flex my-2 justify-center">
+        <Memoji className="w-16 m-0" />
+      </div>
+      <div className="max-w-md my-2">
+        <div className="text-xl leading-tight font-normal">
+          <b>David Demaree</b> is a product manager, designer, and writer based in New Jersey.
+        </div>
+    <nav className="mt-3">
+      <ul className={`list p-0 m-0 flex flex-wrap font-soehne`}>
+        {socialData.map(social => 
           <SocialItem key={social.text} 
             href={social.url}
             icon={[(social.iconset || 'fab'), social.icon]}
@@ -66,6 +92,9 @@ const Hero = ({ className }) => {
         )}
       </ul>
     </nav>
+      </div>
+    </div>
+
   </div>
 }
 
