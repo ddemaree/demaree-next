@@ -1,34 +1,14 @@
 [
   {
-    "url": "https://demaree.substack.com/",
-    "text": "Newsletter",
-    "icon": "newspaper",
-    "iconset": "fas"
-  },
-  {
     "url": "https://twitter.com/ddemaree",
     "text": "Twitter",
+    "alt": "@ddemaree on Twitter",
     "icon": "twitter"
   },
   {
     "url": "https://instagram.com/ddemaree",
     "text": "Instagram",
+    "alt": "@ddemaree on Instagram",
     "icon": "instagram"
-  },
-  {
-    "url": "https://github.com/ddemaree",
-    "text": "GitHub",
-    "icon": "github"
-  },
-  {
-    "url": "https://linkedin.com/in/ddemaree",
-    "text": "LinkedIn",
-    "icon": "linkedin"
-  },
-  {
-    "url": "mailto:david@demaree.me?subject=Howdy",
-    "text": "Email",
-    "icon": "paper-plane",
-    "iconset": "fas"
   }
 ]

@@ -1,19 +1,21 @@
 import React from "react"
-import { Link } from "gatsby"
 import Hero from './hero'
+import _c from 'classnames'
 
-const Footer = ({showHeroFooter}) => {
+const Footer = ({ showHeroFooter }) => {
   return (
-    <footer className={`text-ink-bold mt-6 pt-4 pb-6`}>
+    <footer className={_c(
+      `text-ink-bold mt-6 pb-10`,
+      (showHeroFooter && `bg-container-footer pt-6`)
+    )}>
       <div className="dd-wrap">
         {showHeroFooter && <Hero />}
-        <div className="text-center text-ink-medium mt-4">
-          <p className="font-serif mb-0">&ldquo;Have courage, and be kind&rdquo;</p>
-          <p className="text-xs mt-2 mb-0">© {new Date().getFullYear()}— David Demaree
+
+        <div className="text-center text-sm text-ink-medium mt-4">
+          <p className="mb-0">&ldquo;Have courage, and be kind&rdquo;</p>
+          <p className="mb-0">© {new Date().getFullYear()} David Demaree, all rights reserved.
           </p>
-          <p className="text-ink-low text-xs">
-            <Link to="/typography-test" className="xs:block text-ink-low">Style guide</Link>
-          </p>
+          {/* <div><a href="#">&uarr; Back to top</a></div> */}
         </div>
       </div>
     </footer>

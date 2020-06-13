@@ -19,10 +19,10 @@ module.exports = {
 				},
 				container: {
 					default: `var(--color-container, ${defaultTheme.colors.teal[300]})`,
+					footer: `var(--color-container-footer, ${defaultTheme.colors.gray[200]})`,
 				},
 				ink: {
 					default: `var(--color-ink, ${defaultTheme.colors.gray[900]})`,
-					// medium-hi: 'var(--color-ink-medium, #0009)',
 					medium: 'var(--color-ink-medium, #0007)',
 					low: 'var(--color-ink-low, #0004)',
 					extralow: 'var(--color-ink-extralow, #0002)',

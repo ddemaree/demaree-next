@@ -51,7 +51,7 @@ const LatestPostsItem = ({ post }) => {
           {post.excerpt && `${excerptify(post.excerpt, 20)}`}
         </div>
       </div>
-      <p className="font-soehne text-sm text-ink-medium mt-1 md:mt-0 sm:order-first w-32">
+      <p className="font-soehne text-sm text-ink-medium mt-1 md:mt-0 sm:order-first w-24 md:w-32">
         <time>{post.date.format('MMM D, YYYY')}</time>
       </p>
     </a>

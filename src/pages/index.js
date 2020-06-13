@@ -4,7 +4,7 @@ import PostsList from "../components/posts-list"
 import Hero from '../components/hero'
 
 const IndexPage = () => (
-  <Layout>
+  <Layout showHeroFooter={false}>
     <section className="bg-container pb-4 pt-6">
       <div className="dd-wrap">
         <Hero />
