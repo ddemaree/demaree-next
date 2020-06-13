@@ -1,8 +1,6 @@
 @import '../fonts/soehne/core-fonts';
 @import '../fonts/ivar-text';
 @import '../fonts/freight-display';
-/* @import '../fonts/name-sans'; */
-/* @import './text-content.css'; */
 
 @tailwind base;
 
@@ -17,10 +15,6 @@
   --width-content: theme('width.content');
   --width-wide: theme('width.wide');
   --spacing-line: theme('spacing.line');
-
-  /* color: theme('colors.ink.default'); */
-  /* font-size: 20px; */
-  /* font-family: theme('fontFamily.serif'); */
 }
 
 *, ::before, ::after {
