@@ -54,13 +54,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-source-ghost`,
-      options: {
-        apiUrl: process.env.GHOST_API_URL,
-        contentApiKey: process.env.GHOST_CONTENT_API_KEY
-      }
-    },
-    {
       resolve: `gatsby-source-wordpress`,
       options: {
         baseUrl: "bitsandletters.club",

@@ -1,8 +1,0 @@
-
-.dd-ph-inset {
-  @include horizontal-inset();
-
-  .dd-neg-inset {
-    @include horizontal-inset--negative();
-  }
-}

@@ -5,13 +5,13 @@ import { Helmet } from 'react-helmet'
 import Header from "./header"
 import Footer from "./footer"
 
-import "../css/global.css"
+import "../assets/css/global.css"
 import c from 'classnames'
 
-import favicon16 from '../images/dd-favicon-16.png'
-import favicon32 from '../images/dd-favicon-32.png'
-import favicon64 from '../images/dd-favicon-64.png'
-import favicon128 from '../images/dd-favicon-128.png'
+import favicon16 from '../assets/images/dd-favicon-16.png'
+import favicon32 from '../assets/images/dd-favicon-32.png'
+import favicon64 from '../assets/images/dd-favicon-64.png'
+import favicon128 from '../assets/images/dd-favicon-128.png'
 
 const Layout = ({ children, pageTitle, mainClassName, headerClassName, omitHeader, showHeroFooter }) => {
 
