@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet'
 
 import Header from "./header"
 import Footer from "./footer"
-import Hero from './hero'
 
 import "../css/global.css"
 import c from 'classnames'
@@ -38,8 +37,7 @@ const Layout = ({ children, pageTitle, mainClassName, headerClassName, omitHeade
         {children}
       </main>
 
-      {showHeroFooter && <Hero />}
-      <Footer />
+      <Footer showHeroFooter={showHeroFooter} />
     </div>
   )
 }

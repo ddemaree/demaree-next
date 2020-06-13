@@ -22,7 +22,8 @@ module.exports = {
 				},
 				ink: {
 					default: `var(--color-ink, ${defaultTheme.colors.gray[900]})`,
-					medium: 'var(--color-ink-medium, #0009)',
+					// medium-hi: 'var(--color-ink-medium, #0009)',
+					medium: 'var(--color-ink-medium, #0007)',
 					low: 'var(--color-ink-low, #0004)',
 					extralow: 'var(--color-ink-extralow, #0002)',
 					bold: 'var(--color-ink-strong, #000)',
