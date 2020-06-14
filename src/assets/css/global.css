@@ -8,13 +8,13 @@
   --sans-fonts: theme('fontFamily.sans');
   --serif-fonts: theme('fontFamily.serif');
   --color-background: #fff;
-  --color-ink: rgba(0,0,0,0.88);
+  /* --color-ink: rgba(0,0,0,0.88);
   --color-ink-medium: rgba(0,0,0,0.45);
   --color-ink-low: rgba(0,0,0,0.27);
-  --color-ink-bold: rgba(0,0,0,1.0);
-  --width-content: theme('width.content');
+  --color-ink-bold: rgba(0,0,0,1.0); */
+  /* --width-content: theme('width.content');
   --width-wide: theme('width.wide');
-  --spacing-line: theme('spacing.line');
+  --spacing-line: theme('spacing.line'); */
 }
 
 *, ::before, ::after {

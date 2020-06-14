@@ -29,18 +29,16 @@ const SocialItem = ({ icon, text, altText, href, linkTo, onClick, className }) =
 
   const linkChildren = <>
     {(icon && 
-    <i className={c(['text-ink-low md:text-sm', iconSetName, `fa-${iconName}`])}></i>)}
-    <span className="ml-1">{text}</span>
+    <i className={c(['text-ink-medium', iconSetName, `fa-${iconName}`])}></i>)}
+    <span className="ml-2 font-semibold">{text}</span>
   </>
 
+  const linkClassName = `rounded py-2 px-2 inline-block bg-ink-extralow no-underline leading-none`
+
   return (
-    <li className={c(['mr-3 last:mr-0 mb-1', className])}>
-      {linkTo && <Link title={altText} to={linkTo}>
-        {linkChildren}
-      </Link>}
-      {!linkTo && <a href={href} title={altText} onClick={onClick}>
-        {linkChildren}
-      </a>}
+    <li className={c(['mr-3 last:mr-0 mb-1 text-sm', className])}>
+      {linkTo && <Link title={altText} to={linkTo} className={linkClassName} children={linkChildren} />}
+      {!linkTo && <a href={href} title={altText} onClick={onClick} className={linkClassName} children={linkChildren} />}
     </li>
   )
 }

@@ -27,7 +27,7 @@ https://www.instagram.com/p/CBQvFtupIZR/
 
 A big question for tomorrow: how do images work?
 
-![An image](../images/posts/markdown-test/IMG_3479.jpeg)
+![An image](../assets/images/posts/markdown-test/IMG_3479.jpeg)
 
 ![Another fine image](./cookie-break.jpg)
 
