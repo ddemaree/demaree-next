@@ -34,18 +34,18 @@ const MediumStyleMeta = ({ date, timeToRead }) =>
   </div>
 
 const BlogPostTemplate = ({ data: { post } }) => {
-  const { html, timeToRead, featuredImage, frontmatter } = post
+  const { html, timeToRead, frontmatter } = post
   const { title, dek, date, hideHeader } = frontmatter
-  const featuredImageURL = (featuredImage && featuredImage.img.fluid.src)
+  // const featuredImageURL = (featuredImage && featuredImage.img.fluid.src)
 
   return (
     <Layout>
       <article className="py-8">
         {!hideHeader && <MediumStyleHeader {...{title, dek, timeToRead, date}} />}
         
-        {featuredImageURL && <figure className="w-full bg-red-300 mt-0 mb-8">
+        {/* {featuredImageURL && <figure className="w-full bg-red-300 mt-0 mb-8">
           <img src={featuredImageURL} />
-        </figure>}
+        </figure>} */}
         
         <PageContent content={html} />
       </article>
@@ -65,13 +65,6 @@ export const query = graphql`
       }
       html
       timeToRead
-      featuredImage {
-        img: childImageSharp {
-          fluid(maxWidth: 2000) {
-            src
-          }
-        }
-      }
     }
   }
 `
