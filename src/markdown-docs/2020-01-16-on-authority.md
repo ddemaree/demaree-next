@@ -3,6 +3,7 @@ slug: on-authority
 title: On "authority"
 date: 2020-01-16
 collection: Product
+description: Some thoughts about a long-standing cliche about product leadership.
 ---
 
 One of the long-standing cliches about product leadership — and all leadership, really — is that PMs must exercise <strong><em>“influence without authority”</em></strong>. That is: we are expected to guide teams toward successful outcomes, but are almost never empowered to make those outcomes happen using the tools and kinds of authority invested in managers, e.g. “do this or you’re fired” or “do this and you’ll get promoted.”

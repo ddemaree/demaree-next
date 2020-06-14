@@ -53,25 +53,9 @@
 //   }
 // }
 
-const createWpPosts = async (graphql, createPage, reporter) => {
+const createPosts = async (graphql, createPage, reporter) => {
   let result = await graphql(`
-    query MyQuery {
-      wpPosts: allWordpressPost {
-        edges {
-          node {
-            title
-            slug
-          }
-        }
-      }
-      wpPages: allWordpressPage {
-        edges {
-          node {
-            title
-            slug
-          }
-        }
-      }
+    query CreatePagesQuery {
       mdPages: allMarkdownRemark {
         edges {
           node {
@@ -92,28 +76,6 @@ const createWpPosts = async (graphql, createPage, reporter) => {
     return
   }
 
-  const wpPostEdges = result.data.wpPosts.edges
-  wpPostEdges.forEach(edge => {
-    const { slug } = edge.node
-
-    createPage({
-      path: `/wp/${slug}`,
-      component: require.resolve(`./src/templates/wordpress-post.js`),
-      context: { slug },
-    }) 
-  })
-
-  const wpPageEdges = result.data.wpPages.edges
-  wpPageEdges.forEach(edge => {
-    const { slug } = edge.node
-
-    createPage({
-      path: `/wp/${slug}`,
-      component: require.resolve(`./src/templates/wordpress-page.js`),
-      context: { slug },
-    })
-  })
-
   const mdPageEdges = result.data.mdPages.edges
   mdPageEdges.forEach(edge => {
     const { slug } = edge.node.frontmatter
@@ -127,5 +89,5 @@ const createWpPosts = async (graphql, createPage, reporter) => {
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
-  createWpPosts(graphql, createPage, reporter);
+  createPosts(graphql, createPage, reporter);
 }

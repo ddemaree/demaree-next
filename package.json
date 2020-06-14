@@ -5,7 +5,6 @@
   "version": "20.4.1",
   "author": "David Demaree <david@demaree.me>",
   "dependencies": {
-    "@11ty/eleventy": "^0.10.0",
     "@fortawesome/fontawesome-free": "^5.3.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.4",
     "@fortawesome/free-brands-svg-icons": "^5.3.1",
@@ -25,29 +24,18 @@
     "gatsby-plugin-postcss": "^2.1.20",
     "gatsby-plugin-react-helmet": "^3.1.6",
     "gatsby-plugin-react-svg": "^2.1.2",
-    "gatsby-plugin-sass": "^2.1.28",
     "gatsby-plugin-sharp": "^2.2.20",
     "gatsby-plugin-twitter": "^2.3.4",
     "gatsby-remark-embedder": "^2.1.1",
     "gatsby-remark-images": "^3.3.10",
     "gatsby-source-filesystem": "^2.1.21",
-    "gatsby-source-ghost": "^3.4.5",
-    "gatsby-source-medium": "^2.3.2",
-    "gatsby-source-rss": "^1.0.0",
     "gatsby-source-rss-feed": "^1.2.0",
-    "gatsby-source-tumblr": "^0.1.2",
-    "gatsby-source-wordpress": "^3.3.10",
     "gatsby-transformer-remark": "^2.8.15",
     "gatsby-transformer-sharp": "^2.2.13",
     "imagemin-webp-webpack-plugin": "^3.3.1",
     "lodash": "^4.17.15",
-    "luxon": "^1.17.2",
-    "markdown-it-attrs": "^3.0.2",
-    "markdown-it-container": "^2.0.0",
     "mini-css-extract-plugin": "^0.9.0",
     "moment": "^2.26.0",
-    "node-sass": "^4.12.0",
-    "npm-run-all": "^4.1.5",
     "postcss-custom-properties": "^9.0.2",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.2.1",
@@ -58,13 +46,10 @@
     "react-helmet": "^5.2.1",
     "resolve-url-loader": "^3.1.1",
     "responsive-loader": "^1.2.0",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
     "tailwindcss": "^1.4.6"
   },
   "devDependencies": {
-    "prettier": "^1.18.2",
-    "webpack-cli": "^3.3.11"
+    "prettier": "^1.18.2"
   },
   "keywords": [
     "gatsby"
@@ -76,15 +61,9 @@
     "gatsby:serve": "gatsby serve",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "clean": "rm -rf _site .cache public",
-    "__start": "npm-run-all clean --parallel dev:*",
-    "__build": "npm-run-all clean --parallel prod:*",
     "start": "npm run gatsby:dev",
     "build": "npm run gatsby:build",
     "serve": "gatsby serve",
-    "dev:eleventy": "ELEVENTY_ENV=development eleventy --watch --quiet",
-    "dev:modewebpack": "webpack --mode development --watch",
-    "prod:eleventy": "ELEVENTY_ENV=production eleventy --output=./_site",
-    "prod:webpack": "NODE_ENV=production webpack -p",
     "prod-test": "npm run clean && npm run build && npm run serve"
   },
   "repository": {

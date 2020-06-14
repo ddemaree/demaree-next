@@ -1,25 +1,39 @@
 
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import _ from 'lodash'
 import moment from 'moment'
-import c from 'classnames'
 
 const processPostsData = data => {
-  const { substackItems, wpPosts } = data
-  
+  const { substackItems, posts } = data
+
+  const itemNormalizers = {
+    substack: e => ({ source: 'substack', excerpt: e.node.contentSnippet, ...e.node }),
+    wordpress: e => ({ source: 'blog', isoDate: e.node.date, link: `/wp/${e.node.slug}`, ...e.node, excerpt: e.node.excerpt_raw, title: e.node.title_raw }),
+    markdown: ({ node: { excerpt, frontmatter, ...node } }) => {
+      const { date, slug, title, description, ..._frontmatter } = frontmatter
+
+      return {
+        source: 'blog',
+        isoDate: date,
+        link: `/${slug}`,
+        title, 
+        excerpt: (description || excerpt),
+        ...node,
+        ..._frontmatter
+      }
+    }
+  }
+
   const allPostItems = _.concat(
-    substackItems.edges.map(e => ({ source: 'substack', excerpt: e.node.contentSnippet, ...e.node })),
-    wpPosts.edges.map(e => ({ source: 'blog', isoDate: e.node.date, link: `/${e.node.slug}`, ...e.node, excerpt: e.node.excerpt_raw, title: e.node.title_raw })),
+    substackItems.edges.map(itemNormalizers.substack),
+    posts.edges.map(itemNormalizers.markdown)
   ).map(p => {
-    const { isoDate, timestamp, ...postData } = p
+    const { isoDate, ...postData } = p
     let sortTimestamp;
     let date;
     
-    if(timestamp) {
-      sortTimestamp = timestamp * 1000
-      date = moment.unix(timestamp)
-    } else if(isoDate) {
+    if(isoDate) {
       sortTimestamp = Date.parse(isoDate)
       date = moment(sortTimestamp)
     } else {
@@ -44,9 +58,9 @@ const excerptify = (str, len = 12) => str.replace(/(<([^>]+)>)/ig,"").split(" ")
 const LatestPostsItem = ({ post }) => {
 
   return <article key={post.link}>
-    <a href={post.link} className="mb-6 relative block no-underline sm:flex">
+    <div className="mb-6 relative block no-underline sm:flex">
       <div className="flex-1 text-base">
-        <h3 className="dd-link-underline font-normal my-0">{post.title}</h3>
+        <h3 className="dd-link-underline font-normal my-0"><Link to={post.link}>{post.title}</Link></h3>
         <div className="max-w-md text-sm text-ink leading-snug no-underline">
           {post.excerpt && `${excerptify(post.excerpt, 20)}`}
         </div>
@@ -54,7 +68,7 @@ const LatestPostsItem = ({ post }) => {
       <p className="font-soehne text-sm text-ink-medium mt-1 md:mt-0 sm:order-first w-24 md:w-32">
         <time>{post.date.format('MMM D, YYYY')}</time>
       </p>
-    </a>
+    </div>
   </article>
 }
 
@@ -71,18 +85,20 @@ const PostsList = () => {
         }
       }
     }
-    wpPosts: allWordpressPost {
+    posts: allMarkdownRemark(filter: {
+      frontmatter: {date: {gt: "0"}, private: {ne: true}}}) {
       edges {
         node {
-          title_raw
-          excerpt_raw
-          date
-          id
-          slug
-          word_count
+          excerpt
+          frontmatter {
+            slug
+            title
+            date
+            description
+          }
         }
       }
-    }  
+    }
   }
   `)
 

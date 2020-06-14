@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAdjust } from '@fortawesome/free-solid-svg-icons'
 
 import c from 'classnames'
-import menuStyles from './theme-menu.module.scss'
+// import menuStyles from './theme-menu.module.scss'
+const menuStyles = {}
 
 const handleMenuChange = e => {
   setTheme(e.target.value)
