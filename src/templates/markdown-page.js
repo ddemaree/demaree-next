@@ -61,7 +61,6 @@ export const query = graphql`
         date
         dek
         hideHeader
-        featuredImageAlt
       }
       html
       timeToRead
