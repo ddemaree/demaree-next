@@ -97,7 +97,7 @@ const createWpPosts = async (graphql, createPage, reporter) => {
     const { slug } = edge.node
 
     createPage({
-      path: `/${slug}`,
+      path: `/wp/${slug}`,
       component: require.resolve(`./src/templates/wordpress-post.js`),
       context: { slug },
     }) 
@@ -108,7 +108,7 @@ const createWpPosts = async (graphql, createPage, reporter) => {
     const { slug } = edge.node
 
     createPage({
-      path: `/${slug}`,
+      path: `/wp/${slug}`,
       component: require.resolve(`./src/templates/wordpress-page.js`),
       context: { slug },
     })
