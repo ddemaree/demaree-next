@@ -1,6 +1,0 @@
-{
-  "index.ignored_file_patterns" : [
-    "_site",
-    "node_modules"
-  ]
-}
