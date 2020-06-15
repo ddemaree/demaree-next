@@ -4,12 +4,25 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import _ from 'lodash'
 import moment from 'moment'
 
+const excerptify = (str, len = 12) => {
+  const allWords = str.replace(/(<([^>]+)>)/ig,"").split(" ")
+  const nWords   = allWords.slice(0,len)
+  const excerpt  = nWords.join(' ')
+
+  if(excerpt !== str) {
+    return `${excerpt}…`
+  } else {
+    return str
+  }
+}
 const processPostsData = data => {
   const { substackItems, posts } = data
 
   const itemNormalizers = {
-    substack: e => ({ source: 'substack', excerpt: e.node.contentSnippet, ...e.node }),
-    wordpress: e => ({ source: 'blog', isoDate: e.node.date, link: `/wp/${e.node.slug}`, ...e.node, excerpt: e.node.excerpt_raw, title: e.node.title_raw }),
+    substack: e => ({ 
+      source: 'newsletter',
+      excerpt: excerptify(e.node.contentSnippet, 24),
+      ...e.node }),
     markdown: ({ node: { excerpt, frontmatter, ...node } }) => {
       const { date, slug, title, description, ..._frontmatter } = frontmatter
 
@@ -46,20 +59,25 @@ const processPostsData = data => {
   return _.sortBy(allPostItems, 'sortTimestamp').reverse()
 }
 
-const LatestPostsItem = ({ post }) => {
+const LatestPostsItem = ({ post: { title, link, source, excerpt, date, ...post } }) => {
+  const linkIsRemote = link.match(/^http/i)
 
-  return <article key={post.link}>
+  const linkElement = linkIsRemote 
+    ? <a href={link} rel="external">{title}</a>
+    : <Link to={link}>{title}</Link>
+
+  return <article key={link}>
     <div className="mb-6 relative block no-underline sm:flex">
       <div className="flex-1 text-base">
         <h3 className="dd-link-underline font-normal my-0">
-          <Link to={post.link}>{post.title}</Link>
+          {linkElement}
         </h3>
         <div className="max-w-md text-sm text-ink leading-snug no-underline">
-          {post.excerpt}
+          {excerpt}
         </div>
       </div>
       <p className="font-soehne text-sm text-ink-medium mt-1 md:mt-0 sm:order-first w-24 md:w-32">
-        <time>{post.date.format('MMM D, YYYY')}</time>
+        <time>{date.format('MMM D, YYYY')}</time>
       </p>
     </div>
   </article>

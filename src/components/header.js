@@ -12,10 +12,10 @@ const Header = ({className}) => {
           <DDIcon className="p-1 rounded border border-current h-10" />
         </Link>
         <div className="text-sm absolute h-12 flex items-center pr-6 right-0 top-0 z-10">
-          <a href="#" className="text-inherit">
+          {/* <a href="#" className="text-inherit">
             <i className="fas fa-bars"></i>
             <span className="hidden">Menu</span>
-          </a>
+          </a> */}
         </div>
       </div>
     </header>
