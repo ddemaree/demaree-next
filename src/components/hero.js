@@ -4,7 +4,7 @@ import c from 'classnames'
 
 const socialData = [
   {
-    "url": "/about-me",
+    "linkTo": "/about-me",
     "text": "About Me",
     "alt": "Bio for David Demaree",
     "iconset": "fas",
@@ -38,7 +38,7 @@ const SocialItem = ({ icon, text, altText, href, linkTo, onClick, className }) =
   return (
     <li className={c(['mr-3 last:mr-0 mb-1 text-sm', className])}>
       {linkTo && <Link title={altText} to={linkTo} className={linkClassName} children={linkChildren} />}
-      {!linkTo && <a href={href} title={altText} onClick={onClick} className={linkClassName} children={linkChildren} />}
+      {!linkTo && <a href={href} rel="me" title={altText} onClick={onClick} className={linkClassName} children={linkChildren} />}
     </li>
   )
 }
@@ -85,6 +85,7 @@ const Hero = ({ className }) => {
         {socialData.map(social => 
           <SocialItem key={social.text} 
             href={social.url}
+            linkTo={social.linkTo}
             icon={[(social.iconset || 'fab'), social.icon]}
             text={social.text} />
         )}
