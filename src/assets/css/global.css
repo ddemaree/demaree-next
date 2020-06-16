@@ -7,14 +7,16 @@
 :root {
   --sans-fonts: theme('fontFamily.sans');
   --serif-fonts: theme('fontFamily.serif');
-  --color-background: #fff;
-  /* --color-ink: rgba(0,0,0,0.88);
-  --color-ink-medium: rgba(0,0,0,0.45);
-  --color-ink-low: rgba(0,0,0,0.27);
-  --color-ink-bold: rgba(0,0,0,1.0); */
-  /* --width-content: theme('width.content');
-  --width-wide: theme('width.wide');
-  --spacing-line: theme('spacing.line'); */
+
+  @screen dark {
+    --color-background: theme('colors.gray.900');
+    --color-container: black;
+    --color-container-footer: black;
+    --color-ink-strong: white;
+    --color-ink: #fffe;
+    --color-ink-medium: #fff8;
+    --color-ink-low: #fff5;
+  }
 }
 
 *, ::before, ::after {
@@ -104,7 +106,7 @@ pre {
 }
 
 .dd-wrap {
-  @apply .max-w-2xl .mx-auto .px-4;
+  @apply .max-w-2xl .mx-auto .px-6;
 
   @screen sm {
     @apply .px-6;
@@ -119,20 +121,6 @@ pre {
     @apply m-0 block h-full;
   }
 }
-
-/* .debug-measure {
-  background-color: rgba(255,0,255,0.1);
-}
-
-.debug-measure:before {
-  color: white;
-  background-color: red;
-  max-width: 100%;
-  width: 100%;
-  display: block;
-  overflow: hidden;
-  content: 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklm';
-} */
 
 .dark-overlay {
   &:before {
