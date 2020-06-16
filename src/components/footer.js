@@ -5,7 +5,7 @@ import _c from 'classnames'
 const Footer = ({ showHeroFooter }) => {
   return (
     <footer className={_c(
-      `text-ink-bold mt-6 pb-10`,
+      `mt-6 pb-10`,
       (showHeroFooter && `bg-container-footer pt-6`)
     )}>
       <div className="dd-wrap">

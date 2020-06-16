@@ -12,7 +12,7 @@ const formattedDate = (date) => {
 }
 
 const MediumStyleHeader = ({title, dek, date, timeToRead}) =>
-  <header className="max-w-lg pt-12 px-6 mx-auto pb-2">
+  <header className="max-w-lg pt-8 px-6 mx-auto pb-2">
     <h1 className="text-3xl md:text-4xl font-display-serif leading-none mt-2 mb-2" dangerouslySetInnerHTML={{__html: title}} />
     {dek && <p className="text-ink-medium font-soehne text-lg leading-snug">{dek}</p>}
     <MediumStyleMeta date={date} timeToRead={timeToRead} />
@@ -36,17 +36,11 @@ const MediumStyleMeta = ({ date, timeToRead }) =>
 const BlogPostTemplate = ({ data: { post } }) => {
   const { html, timeToRead, frontmatter } = post
   const { title, dek, date, hideHeader } = frontmatter
-  // const featuredImageURL = (featuredImage && featuredImage.img.fluid.src)
 
   return (
     <Layout>
       <article className="py-8">
         {!hideHeader && <MediumStyleHeader {...{title, dek, timeToRead, date}} />}
-        
-        {/* {featuredImageURL && <figure className="w-full bg-red-300 mt-0 mb-8">
-          <img src={featuredImageURL} />
-        </figure>} */}
-        
         <PageContent content={html} />
       </article>
     </Layout>
