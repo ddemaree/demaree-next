@@ -7,7 +7,7 @@ const IndexPage = () => (
   <Layout showHeroFooter={false}>
     <section className="bg-container pb-4 pt-6">
       <div className="dd-wrap">
-        <Hero />
+        <Hero homepage />
       </div>
     </section>
 
