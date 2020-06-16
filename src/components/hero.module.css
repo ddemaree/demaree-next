@@ -17,9 +17,6 @@
     @apply text-lg leading-tight;
   }
 
-  .navGroup {
-  }
-
   .navGroupInner {
     @apply p-0 m-0 flex flex-wrap justify-center;
   }
@@ -70,6 +67,10 @@
 
       .memojiFigure {
         @apply w-20;
+      }
+
+      .miniBio {
+        order: 100;
       }
     }
   }

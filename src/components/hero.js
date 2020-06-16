@@ -35,7 +35,7 @@ const SocialItem = ({ icon, text, altText, href, linkTo, onClick, className }) =
   const linkChildren = <>
     {(icon && 
     <i className={c(['text-ink-medium', iconSetName, `fa-${iconName}`])}></i>)}
-    <span className="ml-1 font-semibold">{text}</span>
+    <span className="ml-1 font-semibold dark:font-regular">{text}</span>
   </>
 
   return (
