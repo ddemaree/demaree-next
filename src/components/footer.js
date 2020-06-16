@@ -13,7 +13,7 @@ const Footer = ({ showHeroFooter }) => {
 
         <div className="text-center text-sm text-ink-medium mt-4">
           <p className="mb-0">&ldquo;Have courage, and be kind&rdquo;</p>
-          <p className="mb-0">© {new Date().getFullYear()} David Demaree, all rights reserved.
+          <p className="mb-0">© {new Date().getFullYear()} David Demaree, <span className="block xs:inline">all rights reserved.</span>
           </p>
           {/* <div><a href="#">&uarr; Back to top</a></div> */}
         </div>

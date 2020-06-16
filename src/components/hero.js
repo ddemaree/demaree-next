@@ -1,6 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { graphql, useStaticQuery, Link } from 'gatsby'
+
+import Memoji from './memoji'
+
 import c from 'classnames'
+import styles from './hero.module.css'
 
 const socialData = [
   {
@@ -30,15 +35,13 @@ const SocialItem = ({ icon, text, altText, href, linkTo, onClick, className }) =
   const linkChildren = <>
     {(icon && 
     <i className={c(['text-ink-medium', iconSetName, `fa-${iconName}`])}></i>)}
-    <span className="ml-2 font-semibold">{text}</span>
+    <span className="ml-1 font-semibold">{text}</span>
   </>
 
-  const linkClassName = `rounded py-2 px-2 inline-block bg-ink-extralow no-underline leading-none`
-
   return (
-    <li className={c(['mr-3 last:mr-0 mb-1 text-sm', className])}>
-      {linkTo && <Link title={altText} to={linkTo} className={linkClassName} children={linkChildren} />}
-      {!linkTo && <a href={href} rel="me" title={altText} onClick={onClick} className={linkClassName} children={linkChildren} />}
+    <li className={c(['mr-3 last:mr-0 mb-1', styles.navLink, className])}>
+      {linkTo && <Link title={altText} to={linkTo} children={linkChildren} />}
+      {!linkTo && <a href={href} rel="me" title={altText} children={linkChildren} />}
     </li>
   )
 }
@@ -47,41 +50,16 @@ SocialItem.defaultProps = {
   href: '#'
 }
 
-const Memoji = ({ className }) => {
-  const { memoji } = useStaticQuery(graphql`
-    query HeroQuery {
-      memoji: file(relativePath: {regex: "/memoji.png/"}) {
-        img: childImageSharp {
-          fixed(width: 200, pngQuality: 10, webpQuality: 10, base64Width: 10) {
-            srcWebp
-            src
-            base64
-            aspectRatio
-            srcSet
-          }
-        }
-      }
-    }
-  `)
-  
-  return <figure className={className}>
-    {memoji && <img alt="Cartoon portrait of David Demaree" src={memoji.img.fixed.src} className="max-w-full" />}
-  </figure>
-}
-
-const Hero = ({ className }) => {
-  return <div className="dd-hero">
-
-    <div className={c(["flex flex-wrap", className])}>
-      <div className="w-24 md:w-32 flex my-2 justify-center">
-        <Memoji className="w-16 m-0" />
-      </div>
-      <div className="max-w-md my-2">
-        <div className="text-xl leading-tight font-normal">
-          <b>David Demaree</b> is a product manager, designer, and writer based in New Jersey.
-        </div>
-    <nav className="mt-3">
-      <ul className={`list p-0 m-0 flex flex-wrap font-soehne`}>
+const Hero = ({ homepage }) => {
+  return <div className={c(styles.heroUnit, (homepage && styles.onHomepage))}>
+    <div className={c(styles.memoji)}>
+      <Memoji className={c(`m-0`, styles.memojiFigure)} />
+    </div>
+    <div className={c(styles.miniBio)}>
+      <b>David Demaree</b> is a product manager, designer, and writer based in New Jersey.
+    </div>
+    <nav className={styles.navGroup}>
+      <ul className={styles.navGroupInner}>
         {socialData.map(social => 
           <SocialItem key={social.text} 
             href={social.url}
@@ -91,10 +69,16 @@ const Hero = ({ className }) => {
         )}
       </ul>
     </nav>
-      </div>
-    </div>
 
   </div>
+}
+
+Hero.defaultProps = {
+  homepage: false
+}
+
+Hero.propTypes = {
+  homepage: PropTypes.bool
 }
 
 export default Hero
