@@ -8,7 +8,7 @@
   --sans-fonts: theme('fontFamily.sans');
   --serif-fonts: theme('fontFamily.serif');
 
-  @screen dark {
+  /* @screen dark {
     --color-background: theme('colors.gray.900');
     --color-container: black;
     --color-container-footer: black;
@@ -16,7 +16,7 @@
     --color-ink: #fffe;
     --color-ink-medium: #fff8;
     --color-ink-low: #fff5;
-  }
+  } */
 }
 
 *, ::before, ::after {
