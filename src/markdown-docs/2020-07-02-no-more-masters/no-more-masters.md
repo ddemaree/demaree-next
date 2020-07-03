@@ -21,17 +21,17 @@ If we're being honest, folks in tech have known that "master" and "slave" are pr
 
 But you can't separate the word "master" from its real-world connotation — in fact, it's the connotation that gives it meaning. And before you argue that Git refers here to “master copy”, and not “master/slave”, [it turns out that Git inherited its use of “master” from a prior SCM tool, BitKeeper—which did use “master” and “slave” in its lexicon](https://mail.gnome.org/archives/desktop-devel-list/2019-May/msg00066.html).
 
-Now it’s 2020, and here in the United States, we’re in the middle of a national reckoning with our long history of racism and injustice, prompted by the police murder of George Floyd, the last of too many straws, which happened against the backdrop of the COVID–19 pandemic which, here in the U.S., has disproportionately affected non-white communities.
+Now it’s 2020, and here in the United States, we’re having a national reckoning with our long history of racism and injustice. I believe we have a moral imperative to make a more inclusive world, and to take whatever opportunities we find to progress toward that.
 
-Of all the things that we in the tech industry can do to fight racism and support the Black community, changing our Git branch names is very, very far down the list of priorities, to the point that us having an industry-wide conversation about finally changing the default is actively frustrating to some Black technologists.
+That means it’s high time for `master` to go.
 
-https://twitter.com/techgirl1908/status/1272683477620502531?s=20
+I'm writing this post for the same reason why I wrote _Git for Humans_: people have to live in a Git-based world, and Git does not make that easy. Regardless of whether changing a branch name makes a difference in the lived experience of our Black neighbors and colleagues, the community has begun moving to `main` in earnest.
 
-https://twitter.com/bryanl/status/1278343673672011776?s=20
+In a few years, the ecosystem will have evolved to a point where this simply is how it is, and Git and related tools will Just Work (well, as well as they ever do) with less racist names.
 
-These are fair points! For the first time in forever, it feels like progress is possible in the fight against racism, and software terms like this are low-hanging fruit compared to more important goals like ending police violence or at-work discrimination. Changing a software term at best cleans up a microaggression when there are many, many _macro_aggressions to deal with, and at worst distracts people from actions that will help more.
+As I said, my book (which most people have read in ePub format, but also tragically exists in print) was written with many references to `master`. I am talking to the awesome team at A Book Apart about updating Git for Humans to remove most references to `master`. They’re pretty busy, and there’s still a pandemic happening, so no ETA on when a book update might ship, but I’m working on it!
 
-Having said all that, I believe we have a moral imperative to make a more inclusive world, and to take whatever opportunities we find to progress toward that. That means it’s time for `master` to go. Changing branch names should not be the only thing any of us do to fight racism. But it is still the right thing to do, even if you choose to protest today and change your primary branch name later.
+In the meantime, here is some _Git for Humans_ bonus content: how to rename your primary branch, in both new and existing repos, and set different defaults in your favorite Git-based tools.
 
 ## Why rename `master`? (And why _not_?)
 
@@ -41,17 +41,21 @@ https://twitter.com/Una/status/1271181775130279936?s=20
 
 To [Bryan Liles’ point](https://twitter.com/bryanl/status/1278343673672011776?s=20), there are also reasons _not_ to do this right now.
 
-*   It really is a cosmetic change, and as his and Angie Jones’s tweets illustrate, seeing white tech folk spend time on cosmetic changes while injustice rages on can actually feel worse than seeing us do nothing.
-*   Unlike YouTubers doing blackface, the `master` branch name is what I call a “load-bearing” technical design decision, in that many other systems and workflows depend on it, and changing it can break things, such as Git-based package managers like Homebrew that haven’t fully updated to new terminology.
+https://twitter.com/bryanl/status/1278343673672011776?s=20
 
-My point is: you definitely should stop using `master` and start using `main`… eventually. On new projects, you should make the switch right now. [GitHub has even announced they’re gonna help with this by changing the default for everyone](https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/) for newly created projects (though AFAIK this hasn’t shipped yet).
+Moving _to_ `main` signals a desire for inclusion, a nice signpost for any underrepresented folks who we may collaborate with now or in the future.
 
-On existing projects, you should approach changing names thoughtfully, with an eye to harm reduction. Depending on your project and how it’s used by humans and integrated into other systems, you may need to make a detailed migration plan, and transition over to a new name over a period of time. Or you may be able to start using `main` (or whatever name you prefer) right now, but keep `master` around for a bit for backward compatibility.
+But moving away _from_ `master` breaks things. The `master` branch name is what I call a “load-bearing” technical design decision. Many other systems and workflows depend on it, and changing it can break things, such as Git-based package managers like Homebrew that haven’t fully updated to new terminology.
 
-Beyond writing this post—in which I will explain how to migrate from `master` to `main` on simple projects in human language—and adopting new branch names on my personal projects, I am talking to the awesome team at A Book Apart about updating Git for Humans to remove most references to `master`. They’re pretty busy, and there’s still a pandemic happening, so no ETA on when a book update might ship, but I’m working on it!
+For many Black technologists, seeing white tech folks spend time on cosmetic stuff while injustice rages on can actually feel worse than seeing us do nothing, especially if our cosmetic changes have unintended consequences for the communities we say we're trying to help.
 
-In the meantime, as promised, here is some information on how to rename your primary branch and set different defaults in your favorite Git-based tools.
+I have some more thoughts on this, but I'll save them for the end. For now, I'll just say this is a more than fair point, and if you're considering making this change on an existing project, you should be thoughtful about who you're making it for and how it will affect them.
 
+From my perspective, while changing branch names in an existing project can be fraught with peril, adopting better names for any new repos you create going forward should be a no-brainer. It's a small thing, long overdue, but there's no time like the present to start doing it.
+
+In fact, [GitHub has even announced they’re gonna help with this by changing the default for everyone](https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/) for newly created projects (though AFAIK this hasn’t shipped yet).
+
+Until that's done, however, you'll need to do some legwork to adopt different names.
 
 ## The easy part: creating your new primary branch
 
@@ -76,11 +80,9 @@ Either way, your `master` branch will be left intact, and a new `main` branch is
 
 Before you forget, make sure to push `stable` to GitHub (or whatever remote server you use):
 
-
 ```
 git push -u origin main
 ```
-
 
 At this point, a new `main` branch exists, but no one is using it yet. Next, we need to work on the hard part: switching all the people and things over to the new branch.
 
@@ -88,7 +90,6 @@ At this point, a new `main` branch exists, but no one is using it yet. Next, we 
 ## Updating your primary branch in GitHub and other tools
 
 Naming the primary branch ``master`` is a convention, not a rule. But because it's a strong, long-lived convention, a lot of your Git tools probably assume that you're following it. Fortunately, this can also be easy to change.
-
 
 ### GitHub
 
@@ -109,13 +110,14 @@ A whole lot of people use Netlify to publish and host static web sites, and a lo
 
 If you (like me) are one of those folks, you'll need to go into your Netlify site settings to select a new production branch. This is under _Build & deploy > Deploy contexts_.
 
-![Netlify Build & Deploy settings page showing default production branch setting](images/image1.png "image_tooltip")
+![Netlify Build & Deploy settings page showing default production branch setting](images/image1.png)
 
 ### Other integrations
 
 If you have complex integrations with your Git projects, such as continuous integration or deployment systems, before making these changes — and certainly before you delete or disable the old `master` branch — you should talk with your team and make a plan for how to update everything to use a new name.
 
 Depending on the size and scale of your project, this may require changing some files in your repo or some settings in your hosting or other service providers, but may also require some dev-ops type work to plan and roll out a change. In my opinion, this work is worth doing, and the sooner the better, but you should balance the urgency of adopting more inclusive terminology with ensuring a stable experience for your users.
+
 
 ## The hard part: getting rid of the old branch
 
@@ -216,4 +218,20 @@ fatal: refusing to merge unrelated histories
 
 If only it was this easy to break free from history in real life.
 
-_Sincere thanks to Paul Hammond, Ryan Carver, Stephen Nixon, and Mat Marquis for reading drafts of this post prior to publishing_.
+## Speaking of history
+
+Sadly, it's not that easy.
+
+Black Americans have lived with small and big reminders of slavery for their whole lives. In Birmingham, Alabama, where I grew up, activists recently succeeded at [having a Confederate monument removed that had been there for 115 years](https://www.nytimes.com/2020/06/02/us/george-floyd-birmingham-confederate-statue.html).
+
+Birmingham is a largely Black city, that has had Black city leadership since I was a toddler. And folks there have lived with that monument, and the culture that created and protected it, for generations. They've walked past it to go to the library or the art museum.
+
+A racist statue is no less racist because people are able to walk past it on their way to work or school. But racism encoded into a monument isn't nearly as harmful as the racism that prevents people from walking around in public spaces safely, or that makes it so that the jobs they're walking to are unsafe and never pay enough. A movement against racism that takes down statues but leaves behind injustice isn't worth a damn.
+
+Git's `master` branches, and other similar language we use in our working life, are echoes of racism. It's important to reject them and actively choose to do better. It's also a small gesture, and it's only as strong as one's deeper rejection of — and commitment to fight — racism and inequality however you can, whenever you can.
+
+By all means, we should (thoughtfully, carefully) change `master` to `main` (or really _anything_ else). But there's a non-trivial chance that many of us are working to change branch names for organizations that have zero Black members. _That_ is the real problem that needs solving, and sadly Git commands are not enough.
+
+If you're unclear on what those other things are, start by following some Black tech voices — [Tiffani Ashley Bell](https://twitter.com/tiffani), [Del Johnson](https://twitter.com/DelJohnsonVC), [Mekka Okereke](https://twitter.com/mekkaokereke), [Michael Harriot](https://twitter.com/michaelharriot) to name just a few great ones  — and listen to what they say. Follow some more folks; boost their signal.
+
+Some of the things 
