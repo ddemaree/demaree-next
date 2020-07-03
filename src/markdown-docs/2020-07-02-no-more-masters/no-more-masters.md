@@ -13,31 +13,27 @@ description: Why and how to change your Git repo's default branch.
   </figcaption>
 </figure>
 
-In my book [Git for Humans](https://abookapart.com/products/git-for-humans), published in 2016, I made copious references to `master` as the primary branch name used in Git repositories. `master` is the longtime default branch name in Git—when you create a new repository, its first branch will be called `master`, and (at the time I’m writing this in July 2020) you actually have to go out of your way to name your primary branch anything else.
+In my book [Git for Humans](https://abookapart.com/products/git-for-humans), published in 2016, I made copious references to `master` — naturally, as it's the longtime default branch name in Git. In computer contexts, the word “master” can refer to a "master copy," meaning the original or canonical version of something, from which other copies are made. Like many people, I  simply accepted that meaning and didn't look at it too closely.
 
-In computer contexts, the word “master” can refer to a "master copy," meaning the original or canonical version of something, from which other copies are made. But [its primary meaning in the English language](https://www.vocabulary.com/dictionary/master) is "a person who has general authority over others." And, especially in American and British English, it's hard to separate the word "master," and that meaning of it, from another related word: "slave."
+But now it's 2020, and things are changing. If we're being honest, folks in tech have known that "master" is a problematic term for a while. Even in the "master copy" sense, it's hard to have something be a master without at least implying the existence of a slave, and there are other, better names for what we mean. Besides, [it turns out that Git inherited its use of “master” from a prior SCM tool, BitKeeper—which did use “master” and “slave” in its lexicon](https://mail.gnome.org/archives/desktop-devel-list/2019-May/msg00066.html), which for me means it’s high time for `master` to go.
 
-If we're being honest, folks in tech have known that "master" and "slave" are problematic terms for a while, even if they haven't felt motivated to change them. Some would argue that if these words refer to objects or systems, rather than people, then they can't be offensive, just as people argue that tech is a meritocracy and algorithms can't be biased.
+My colleague Una Kravets summarized the practical argument for renaming to `main` (which the community seems to have rallied around) in [a tweet](https://twitter.com/Una/status/1271181775130279936?s=20):
 
-But you can't separate the word "master" from its real-world connotation — in fact, it's the connotation that gives it meaning. And before you argue that Git refers here to “master copy”, and not “master/slave”, [it turns out that Git inherited its use of “master” from a prior SCM tool, BitKeeper—which did use “master” and “slave” in its lexicon](https://mail.gnome.org/archives/desktop-devel-list/2019-May/msg00066.html).
+https://twitter.com/Una/status/1271181775130279936?s=20
 
-Now it’s 2020, and here in the United States, we’re having a national reckoning with our long history of racism and injustice. I believe we have a moral imperative to make a more inclusive world, and to take whatever opportunities we find to progress toward that.
+I should acknowledge here that there are reasons *not* to do this right now. Here in the U.S. we're at a turning point in our history, where for the first time in forever real progress against racism feels possible. Changing a computer term is a small, cosmetic thing, and it can be upsetting for Black Americans to see White Americans spend time on superficial stuff  — and make no mistake, even if changing your branch name is a pain in the ass, it's still a superficial change — when the big problems still need attention.
 
-That means it’s high time for `master` to go.
+TKTK
 
 I'm writing this post for the same reason why I wrote _Git for Humans_: people have to live in a Git-based world, and Git does not make that easy. Regardless of whether changing a branch name makes a difference in the lived experience of our Black neighbors and colleagues, the community has begun moving to `main` in earnest.
 
 In a few years, the ecosystem will have evolved to a point where this simply is how it is, and Git and related tools will Just Work (well, as well as they ever do) with less racist names.
 
-As I said, my book (which most people have read in ePub format, but also tragically exists in print) was written with many references to `master`. I am talking to the awesome team at A Book Apart about updating Git for Humans to remove most references to `master`. They’re pretty busy, and there’s still a pandemic happening, so no ETA on when a book update might ship, but I’m working on it!
+As I said, my book (which most people have read in ePub format, but also tragically exists in print) was written with many references to `master`. I am talking to the awesome team at A Book Apart about updating <cite>Git for Humans</cite> to remove most references to `master`. They’re pretty busy, and there’s still a pandemic happening, so no ETA on when a book update might ship, but I’m working on it!
 
 In the meantime, here is some _Git for Humans_ bonus content: how to rename your primary branch, in both new and existing repos, and set different defaults in your favorite Git-based tools.
 
 ## Why rename `master`? (And why _not_?)
-
-My colleague Una Kravets summarized the argument for renaming to `main` super well in [a tweet](https://twitter.com/Una/status/1271181775130279936?s=20):
-
-https://twitter.com/Una/status/1271181775130279936?s=20
 
 To [Bryan Liles’ point](https://twitter.com/bryanl/status/1278343673672011776?s=20), there are also reasons _not_ to do this right now.
 
@@ -78,7 +74,7 @@ git branch main master
 
 Either way, your `master` branch will be left intact, and a new `main` branch is created that's an identical copy of `master`, which you can use instead for all the things you used to do with `master`.
 
-Before you forget, make sure to push `stable` to GitHub (or whatever remote server you use):
+Before you forget, make sure to push `main` to GitHub (or whatever remote server you use):
 
 ```
 git push -u origin main
@@ -147,7 +143,7 @@ git rm -fr .
 Depending on the technology stack you use, this may leave behind some content that had previously been hidden by `.gitignore`, which will now show up when you run `git status`. You can restore the `gitignore` file to make sure these files are not committed or deleted:
 
 ```
-git checkout stable .gitignore
+git checkout main .gitignore
 ```
 
 Lastly, you may want to leave a note explaining why this branch is empty. We'll add and commit a `README.md` Markdown file with the following text:
@@ -204,7 +200,7 @@ git push -f origin master
 
 Ahhhhhhhhh, so nice to have that done. Here's the deprecation message as shown on one of my GitHub repos:
 
-![alt_text](images/image5.png "image_tooltip")
+![Screenshot of master branch deprecation message on GitHub web interface](images/image5.png)
 
 Because `master` now points to this orphaned commit, whenever you or someone on your team tries to pull from it Git will raise an error:
 
@@ -217,21 +213,3 @@ fatal: refusing to merge unrelated histories
 ```
 
 If only it was this easy to break free from history in real life.
-
-## Speaking of history
-
-Sadly, it's not that easy.
-
-Black Americans have lived with small and big reminders of slavery for their whole lives. In Birmingham, Alabama, where I grew up, activists recently succeeded at [having a Confederate monument removed that had been there for 115 years](https://www.nytimes.com/2020/06/02/us/george-floyd-birmingham-confederate-statue.html).
-
-Birmingham is a largely Black city, that has had Black city leadership since I was a toddler. And folks there have lived with that monument, and the culture that created and protected it, for generations. They've walked past it to go to the library or the art museum.
-
-A racist statue is no less racist because people are able to walk past it on their way to work or school. But racism encoded into a monument isn't nearly as harmful as the racism that prevents people from walking around in public spaces safely, or that makes it so that the jobs they're walking to are unsafe and never pay enough. A movement against racism that takes down statues but leaves behind injustice isn't worth a damn.
-
-Git's `master` branches, and other similar language we use in our working life, are echoes of racism. It's important to reject them and actively choose to do better. It's also a small gesture, and it's only as strong as one's deeper rejection of — and commitment to fight — racism and inequality however you can, whenever you can.
-
-By all means, we should (thoughtfully, carefully) change `master` to `main` (or really _anything_ else). But there's a non-trivial chance that many of us are working to change branch names for organizations that have zero Black members. _That_ is the real problem that needs solving, and sadly Git commands are not enough.
-
-If you're unclear on what those other things are, start by following some Black tech voices — [Tiffani Ashley Bell](https://twitter.com/tiffani), [Del Johnson](https://twitter.com/DelJohnsonVC), [Mekka Okereke](https://twitter.com/mekkaokereke), [Michael Harriot](https://twitter.com/michaelharriot) to name just a few great ones  — and listen to what they say. Follow some more folks; boost their signal.
-
-Some of the things 
