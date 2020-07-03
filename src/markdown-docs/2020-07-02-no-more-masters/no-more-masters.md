@@ -15,77 +15,79 @@ description: Why and how to change your Git repo's default branch.
 
 In my book [Git for Humans](https://abookapart.com/products/git-for-humans), published in 2016, I made copious references to `master` — naturally, as it's the longtime default branch name in Git. In computer contexts, the word “master” can refer to a "master copy," meaning the original or canonical version of something, from which other copies are made. Like many people, I  simply accepted that meaning and didn't look at it too closely.
 
-But now it's 2020, and things are changing. If we're being honest, folks in tech have known that "master" is a problematic term for a while. Even in the "master copy" sense, it's hard to have something be a master without at least implying the existence of a slave, and there are other, better names for what we mean. Besides, [it turns out that Git inherited its use of “master” from a prior SCM tool, BitKeeper—which did use “master” and “slave” in its lexicon](https://mail.gnome.org/archives/desktop-devel-list/2019-May/msg00066.html), which for me means it’s high time for `master` to go.
+But now it's 2020, things are changing, and there are other, better names for our primary Git branches that don't invoke slavery.
 
 My colleague Una Kravets summarized the practical argument for renaming to `main` (which the community seems to have rallied around) in [a tweet](https://twitter.com/Una/status/1271181775130279936?s=20):
 
 https://twitter.com/Una/status/1271181775130279936?s=20
 
-I should acknowledge here that there are reasons *not* to do this right now. Here in the U.S. we're at a turning point in our history, where for the first time in forever real progress against racism feels possible. Changing a computer term is a small, cosmetic thing, and it can be upsetting for Black Americans to see White Americans spend time on superficial stuff  — and make no mistake, even if changing your branch name is a pain in the ass, it's still a superficial change — when the big problems still need attention.
+For me, having a branch named `master` is like realizing a cute geometric pattern on some old wallpaper in my house has actually been swastikas all these years, or that the old statue outside the main library in my hometown is actually [a Confederate monument that had stood there for 115 years](https://www.nytimes.com/2020/06/02/us/george-floyd-birmingham-confederate-statue.html). Removing symbols of racism isn't nearly enough, but that doesn't mean don't remove them.
 
-TKTK
+I'm writing this post for the same reason why I wrote _Git for Humans_: people have to live in a Git-based world, and Git does not make that easy. Folks are talking about renaming branches like there's just a box you can check. For new projects, it's almost that easy — in fact, [GitHub has announced they will change the default for everyone later this year](https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/). But existing projects need a bit more work, as I'll explain further on.
 
-I'm writing this post for the same reason why I wrote _Git for Humans_: people have to live in a Git-based world, and Git does not make that easy. Regardless of whether changing a branch name makes a difference in the lived experience of our Black neighbors and colleagues, the community has begun moving to `main` in earnest.
+For now let's start with what you need to do to start new projects out on a `main` branch if your tools don't yet treat that as a default.
 
-In a few years, the ecosystem will have evolved to a point where this simply is how it is, and Git and related tools will Just Work (well, as well as they ever do) with less racist names.
-
-As I said, my book (which most people have read in ePub format, but also tragically exists in print) was written with many references to `master`. I am talking to the awesome team at A Book Apart about updating <cite>Git for Humans</cite> to remove most references to `master`. They’re pretty busy, and there’s still a pandemic happening, so no ETA on when a book update might ship, but I’m working on it!
-
-In the meantime, here is some _Git for Humans_ bonus content: how to rename your primary branch, in both new and existing repos, and set different defaults in your favorite Git-based tools.
-
-## Why rename `master`? (And why _not_?)
-
-To [Bryan Liles’ point](https://twitter.com/bryanl/status/1278343673672011776?s=20), there are also reasons _not_ to do this right now.
-
-https://twitter.com/bryanl/status/1278343673672011776?s=20
-
-Moving _to_ `main` signals a desire for inclusion, a nice signpost for any underrepresented folks who we may collaborate with now or in the future.
-
-But moving away _from_ `master` breaks things. The `master` branch name is what I call a “load-bearing” technical design decision. Many other systems and workflows depend on it, and changing it can break things, such as Git-based package managers like Homebrew that haven’t fully updated to new terminology.
-
-For many Black technologists, seeing white tech folks spend time on cosmetic stuff while injustice rages on can actually feel worse than seeing us do nothing, especially if our cosmetic changes have unintended consequences for the communities we say we're trying to help.
-
-I have some more thoughts on this, but I'll save them for the end. For now, I'll just say this is a more than fair point, and if you're considering making this change on an existing project, you should be thoughtful about who you're making it for and how it will affect them.
-
-From my perspective, while changing branch names in an existing project can be fraught with peril, adopting better names for any new repos you create going forward should be a no-brainer. It's a small thing, long overdue, but there's no time like the present to start doing it.
-
-In fact, [GitHub has even announced they’re gonna help with this by changing the default for everyone](https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/) for newly created projects (though AFAIK this hasn’t shipped yet).
-
-Until that's done, however, you'll need to do some legwork to adopt different names.
-
-## The easy part: creating your new primary branch
+## Naming your first branch `main` instead of `master`
 
 While `master` is a long-standing convention, one of the great things about Git is that it doesn't really require your main branch to be named `master` (or anything else). You can choose any name you want, and you can change names at any time, so long as you're willing to do some work.
 
-I chose to rename my personal site's main branch to `main`, to align with what’s emerging as the new standard nomenclature. I also considered naming it `stable`, as a subtle reminder that stuff in that branch is meant to be, well, stable (whereas breaking changes can and should live in other branches). One side benefit of us grappling with this issue right now is that, going forward, the Git ecosystem is likely to be a lot more tolerant of non-standard branch names, so either of these should work, as would `primary`, `production`, `fhqwhgads`, or anything else that makes sense for your project.
+When you start a new Git repo (with `git init`), as of July 2020 Git is hard-coded to set the initial branch name to `master`. But until you make your first commit, that branch doesn't technically exist. So here's what you do to set your preferred name on a new repo—make sure you do this _before_ your first commit. (If you forget and commit something first, that's fine, you'll just need to follow the "renaming" process described below.)
 
-In an existing Git repo, the simplest way to switch names away from `master` is to just create a new branch and start using that one instead:
+```
+git init
+git checkout -b main
+```
+
+To make your initial push to GitHub, make sure you pass in the `-u` argument (which is short for "set upstream"), which tells Git what remote branch should receive pushes from this local branch.
+
+```
+git push -u origin main
+```
+
+Until GitHub finishes changing the default primary branch name, you'll need to go into your repo settings there to tell it that `main` is your primary branch; you'll find instructions later in the post for how to do this.
+
+## "Renaming" an existing branch
+
+The most important thing to know about how Git works under the hood is that everything in a Git repo is immutable. When you make commits, it only _looks_ like you're changing files and directories in your project — really, you're just adding new versions of things on top of the old ones, which is one way Git keeps your data safe.
+
+I mention this to let you in on a secret: you can't actually rename a branch in Git. But you can create a new one, and get rid of the old one, which is basically the same thing.
+
+Here we'll replace a `master` branch with a new one called `main`, pointing to the current head commit:
 
 ```
 git checkout master # if you're not already there
 git checkout -b main
 ```
 
-Alternatively, if checking out `master` is not convenient, you can use `git branch` to create a new branch based on its current commit:
+Alternatively, you can use `git branch` to ask Git to create a new branch pointing at the same commit `master` is on:
 
 ```
 git branch main master
 ```
 
-Either way, your `master` branch will be left intact, and a new `main` branch is created that's an identical copy of `master`, which you can use instead for all the things you used to do with `master`.
+Whichever way you do it, your `master` branch will be left intact, you'll have a new `main` branch that's identical to `master`.
 
-Before you forget, make sure to push `main` to GitHub (or whatever remote server you use):
+To make this new main branch available to your collaborators, push it to GitHub or whatever remote server you use (and don't forget the `-u`):
 
 ```
 git push -u origin main
 ```
 
-At this point, a new `main` branch exists, but no one is using it yet. Next, we need to work on the hard part: switching all the people and things over to the new branch.
-
+Next, let's tell GitHub and your other tools that there's a new primary branch in town.
 
 ## Updating your primary branch in GitHub and other tools
 
-Naming the primary branch ``master`` is a convention, not a rule. But because it's a strong, long-lived convention, a lot of your Git tools probably assume that you're following it. Fortunately, this can also be easy to change.
+Before we go on, this is a good place to ask you to consider your team and infrastructure needs before diving blindly into changing the name of your primary branch.
+
+Moving _to_ `main` signals a desire for inclusion, a nice signpost for any underrepresented folks who we may collaborate with now or in the future. But moving away _from_ `master` can break things, as illustrated in this tweet by Bryan Liles:
+
+https://twitter.com/bryanl/status/1278343673672011776?s=20
+
+The `master` branch name is what I call a “load-bearing” technical design decision. Many other systems and workflows depend on it, and the more things like build tools, package managers, or deployment pipelines you have hooked into your repo, the more work you can expect to do to switch over to new nomenclature without ruining someone's day.
+
+This isn't to say you should keep calling it `master` just because changing it is hard. But you should change it _thoughtfully_, and if necessary, make a plan to adopt a new name eventually or gradually, as opposed to right now.
+
+For now, let's assume you've done the work to make sure you're ready to change to `main`, and update the primary/production branch in some popular tools.
 
 ### GitHub
 
@@ -213,3 +215,9 @@ fatal: refusing to merge unrelated histories
 ```
 
 If only it was this easy to break free from history in real life.
+
+## One more thing…
+
+Like I said, I wrote a book about Git, which mentions `master` a lot. (Like, *a lot* a lot.) I am talking to the awesome team at A Book Apart about updating <cite>Git for Humans</cite>' text and examples to favor `main` as the default branch name. They’re pretty busy, and there’s still a pandemic happening, so no ETA on when a book update might ship.
+
+I am also going to donate all of my proceeds from the book through summer 2021 to organizations fighting racism in the tech industry, and will get my employer to match those donations.
