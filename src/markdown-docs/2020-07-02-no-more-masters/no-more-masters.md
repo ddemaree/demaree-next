@@ -13,44 +13,42 @@ description: Why and how to change your Git repo's default branch.
   </figcaption>
 </figure>
 
-In my book [Git for Humans](https://abookapart.com/products/git-for-humans), published in 2016, I made copious references to `master` — naturally, as it's the longtime default branch name in Git. In computer contexts, the word “master” can refer to a "master copy," meaning the original or canonical version of something, from which other copies are made. Like many people, I  simply accepted that meaning and didn't look at it too closely.
+In my book [Git for Humans](https://abookapart.com/products/git-for-humans), published in 2016, I made a lot of references to `master` — naturally, as it's been the default branch name in Git for a long time. Like many people, I simply accepted that `master` meant "master copy" and didn't look at it too closely.
 
 But now it's 2020, things are changing, and there are other, better names for our primary Git branches that don't invoke slavery.
 
-My colleague Una Kravets summarized the practical argument for renaming to `main` (which the community seems to have rallied around) in [a tweet](https://twitter.com/Una/status/1271181775130279936?s=20):
+My work friend Una made the practical argument for renaming (to `main`, which the community seems to have adopted as the new standard):
 
 https://twitter.com/Una/status/1271181775130279936?s=20
 
-For me, having a branch named `master` is like realizing a cute geometric pattern on some old wallpaper in my house has actually been swastikas all these years, or that the old statue outside the main library in my hometown is actually [a Confederate monument that had stood there for 115 years](https://www.nytimes.com/2020/06/02/us/george-floyd-birmingham-confederate-statue.html). Removing symbols of racism isn't nearly enough, but that doesn't mean don't remove them.
+For me, having a master branch is like realizing a cute geometric pattern on some old part of my house is made of swastikas, or that the old statue outside the main library in my hometown is actually [a Confederate monument that had stood there for 115 years](https://www.nytimes.com/2020/06/02/us/george-floyd-birmingham-confederate-statue.html). Removing symbols of racism isn't nearly enough, but that doesn't mean don't remove them.
 
-I'm writing this post for the same reason why I wrote _Git for Humans_: people have to live in a Git-based world, and Git does not make that easy. Folks are talking about renaming branches like there's just a box you can check. For new projects, it's almost that easy — in fact, [GitHub has announced they will change the default for everyone later this year](https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/). But existing projects need a bit more work, as I'll explain further on.
+People have to live in a Git-based world, and Git does not make that easy. Folks are talking about renaming branches like there's just a box you can check. For new projects, it's almost that easy — in fact, [GitHub has announced they will change the default for everyone later this year](https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/). But existing projects need a bit more work, as I'll explain.
+
+Like I said, my book mentions `master` a lot. (Like, *a lot* a lot.) It seems likely that within the next few years this will seem like a really stale choice, so I am talking to the awesome team at A Book Apart about updating <cite>Git for Humans</cite>' text and examples to favor `main` as the default branch name. 
+
+They’re pretty busy, and there’s still a pandemic happening, so no ETA on when a book update might ship. But it's in the works!
 
 For now let's start with what you need to do to start new projects out on a `main` branch if your tools don't yet treat that as a default.
 
 ## Naming your first branch `main` instead of `master`
 
-While `master` is a long-standing convention, one of the great things about Git is that it doesn't really require your main branch to be named `master` (or anything else). You can choose any name you want, and you can change names at any time, so long as you're willing to do some work.
+One of the great things about Git is that it doesn't really require your main branch to be named `master` (or anything else). You can choose any name you want, and you can change names at any time as long as you're willing to do some work.
 
-When you start a new Git repo (with `git init`), as of July 2020 Git is hard-coded to set the initial branch name to `master`. But until you make your first commit, that branch doesn't technically exist. So here's what you do to set your preferred name on a new repo—make sure you do this _before_ your first commit. (If you forget and commit something first, that's fine, you'll just need to follow the "renaming" process described below.)
+When you start a new repo, Git is hard-coded to set the first branch's name to `master`. But that branch doesn't technically exist until you make your first commit. So here's what you do to set your preferred name on a brand-new repo:
 
 ```
-git init
+git init # if you hadn't done this yet
 git checkout -b main
 ```
 
-To make your initial push to GitHub, make sure you pass in the `-u` argument (which is short for "set upstream"), which tells Git what remote branch should receive pushes from this local branch.
-
-```
-git push -u origin main
-```
-
-Until GitHub finishes changing the default primary branch name, you'll need to go into your repo settings there to tell it that `main` is your primary branch; you'll find instructions later in the post for how to do this.
+Until GitHub finishes changing the default primary branch name, you'll need to go into your repo settings there to tell it that `main` is your primary branch; you'll find instructions for how to do this later in this post.
 
 ## "Renaming" an existing branch
 
-The most important thing to know about how Git works under the hood is that everything in a Git repo is immutable. When you make commits, it only _looks_ like you're changing files and directories in your project — really, you're just adding new versions of things on top of the old ones, which is one way Git keeps your data safe.
+Behind the scenes, everything in a Git repo is immutable. When you make commits, it only _looks_ like you're changing files and directories in your project — really, you're just adding new versions of things on top of the old ones.
 
-I mention this to let you in on a secret: you can't actually rename a branch in Git. But you can create a new one, and get rid of the old one, which is basically the same thing.
+In other words, you can't actually rename a branch in Git, because renaming would be mutating data, which Git tries to never do. But you *can* create a new one and (optionally) get rid of the old one, which is basically the same thing.
 
 Here we'll replace a `master` branch with a new one called `main`, pointing to the current head commit:
 
@@ -67,96 +65,81 @@ git branch main master
 
 Whichever way you do it, your `master` branch will be left intact, you'll have a new `main` branch that's identical to `master`.
 
-To make this new main branch available to your collaborators, push it to GitHub or whatever remote server you use (and don't forget the `-u`):
+To make this new main branch available to your collaborators, push it to GitHub:
 
 ```
 git push -u origin main
 ```
 
-Next, let's tell GitHub and your other tools that there's a new primary branch in town.
-
 ## Updating your primary branch in GitHub and other tools
 
-Before we go on, this is a good place to ask you to consider your team and infrastructure needs before diving blindly into changing the name of your primary branch.
-
-Moving _to_ `main` signals a desire for inclusion, a nice signpost for any underrepresented folks who we may collaborate with now or in the future. But moving away _from_ `master` can break things, as illustrated in this tweet by Bryan Liles:
-
-https://twitter.com/bryanl/status/1278343673672011776?s=20
-
-The `master` branch name is what I call a “load-bearing” technical design decision. Many other systems and workflows depend on it, and the more things like build tools, package managers, or deployment pipelines you have hooked into your repo, the more work you can expect to do to switch over to new nomenclature without ruining someone's day.
-
-This isn't to say you should keep calling it `master` just because changing it is hard. But you should change it _thoughtfully_, and if necessary, make a plan to adopt a new name eventually or gradually, as opposed to right now.
-
-For now, let's assume you've done the work to make sure you're ready to change to `main`, and update the primary/production branch in some popular tools.
+Next, let's tell your tools that there's a new primary branch in town.
 
 ### GitHub
 
-Open your repo page on GitHub while signed in, and click on the Settings tab.
-
-![GitHub repo header navigation, showing 'Settings' option last](images/image4.png)
-
-In the Settings page, click Branches in the left-hand navigation. Then, on the right-hand side, you'll see a drop-down that lets you change the name of your default branch. (Remember, though here you see me changing it to `main`, you could set it to `stable` or whatever name you chose.)
+Open your repo page on GitHub while signed in, and click on the Settings tab, then click Branches in the left-hand navigation. Once you're there, on the right-hand side you'll see a drop-down that lets you change the name of your default branch.
 
 ![GitHub repo settings page, showing default branch option](images/image2.png)
 
-Once this is done, new pull requests will automatically be set up to merge into `main`, and `git clone`s from GitHub will also check out `main` by default.
-
+Once this is set, new pull requests will automatically be set up to merge into `main`, and `git clone`s from GitHub will also check out `main` by default.
 
 ### Netlify
 
-A whole lot of people use Netlify to publish and host static web sites, and a lot of those people use Netlify's Git/GitHub integration to automatically publish changes when you push to your default branch.
-
-If you (like me) are one of those folks, you'll need to go into your Netlify site settings to select a new production branch. This is under _Build & deploy > Deploy contexts_.
+If you (like me) use Netlify to host your websites and JAMstack apps, and use their GitHub integration to automatically publish changes after you push them, you'll need to go into your Netlify site settings to select a new production branch. This is under _Build & deploy > Deploy contexts_.
 
 ![Netlify Build & Deploy settings page showing default production branch setting](images/image1.png)
 
-### Other integrations
+### What about other integrations?
 
-If you have complex integrations with your Git projects, such as continuous integration or deployment systems, before making these changes — and certainly before you delete or disable the old `master` branch — you should talk with your team and make a plan for how to update everything to use a new name.
+The value of changing your primary branch name right now is inversely proportional to the amount of time and effort you have to put into it. Eventually, we want a name like `main` to be the new default for every project, no marginal effort required. For small or relatively simple projects, it's low-cost enough to do now, or soon, while it's front of mind.
 
-Depending on the size and scale of your project, this may require changing some files in your repo or some settings in your hosting or other service providers, but may also require some dev-ops type work to plan and roll out a change. In my opinion, this work is worth doing, and the sooner the better, but you should balance the urgency of adopting more inclusive terminology with ensuring a stable experience for your users.
+The `master` branch is a load-bearing element. Many systems and workflows depend on it, and the more tools you have hooked into your repo, the more work it will take to change names without ruining someone's day. If you have complex integrations tied into Git, you should approach this with the same care you'd approach any other infrastructure change.
 
+What you want to avoid is a situation like the one in this tweet by Bryan Liles:
 
-## The hard part: getting rid of the old branch
+https://twitter.com/bryanl/status/1278343673672011776?s=20
 
-Sadly, Git doesn't have any such thing as "branch redirects." If all you do is create a new branch named `main`, your teammates may keep pushing changes into `master`, and systems that hook into your repo will keep treating `master` as the main branch.
+Moving _to_ `main` signals that we want to be inclusive. It's meant as a welcome mat for underrepresented folks who may collaborate with us, now or in the future. But moving _away from_ `master` breaks things *now*. Adopting a new branch name really is a cosmetic change, and though I think it's ultimately the right thing to do, as long as you ultimately will do it, it's OK to take your time and get it right.
 
-Hopefully getting collaborators to change names should be as simple as talking to them, telling them you think `main` (or whatever) should be the main branch name going forward, and that they should treat it as such.
+## Deprecating your `master` branch
 
-Of course, muscle memory can be very strong. Even on a team that agrees to use `main` instead of `master`, someone might push changes to `master` out of habit. If you want to make pushes to `master` trigger an error, one simple thing you can do is to replace the content on your `master` branch with a commit that's disconnected from the rest of your repo. 
+This last section, and I cannot stress this enough, is for people who have carefully considered the impact of changing from `master` to `main`, and are ready to burn their ships and never look back.
 
-Not to be a broken record on this, but before you follow any of the instructions below, make sure you’ve taken a thoughtful look at all the ways people interact with your repo. If you have CI systems or build rules that expect your primary branch to be called `master` — or, for that matter, expect that all your branches contain runnable code — you may need to do extra work to create a placeholder branch like the one I describe here without breaking things. (Otherwise, you’ll end up doing extra work to fix things, which is less fun.)
+Sadly, Git doesn't have any such thing as "branch redirects," and though GitHub has some special features to "protect" branches from receiving pushes, vanilla Git does not. Once you've decided to get rid of `master`, you may want to make it so that syncing with it fails, with a note explaining what to do instead. 
 
-First, you'll want to create an "orphan" branch, which (as the name implies) is a branch/commit with no parent. Ultimately, this will be a mostly-empty branch that will replace the current `master` branch. We’ll name this new orphan branch no-masters.
+So you may want to replace your old `master` with an "orphan" branch, which (as the name implies) is a branch/commit with no parent, completely detached from the rest of your Git repo's history. 
 
+We’ll name this new orphan branch `no-masters`. To start, we call on `git checkout --orphan`, which asks Git to start a new branch but intentionally forget anything about your former head commit. This is similar to if you were starting over with a brand-new repo.
 
 ```
 git checkout --orphan no-masters
 ```
 
+You'll end up with a branch that contains all the files and folders from your project, but staged as if they were new additions.
 
-Then remove all the content from the repo while in this branch. Using `git rm` (as opposed to regular 'ol `rm`) will only delete files and folders that are checked into Git, leaving behind ignored content.
-
+Next, we'll remove all the content from this branch. Using `git rm` (as opposed to regular 'ol `rm`) will only delete files and folders that are checked into Git, leaving behind ignored content.
 
 ```
 git rm -fr .
 ```
 
-Depending on the technology stack you use, this may leave behind some content that had previously been hidden by `.gitignore`, which will now show up when you run `git status`. You can restore the `gitignore` file to make sure these files are not committed or deleted:
+Depending on your tech stack, this may leave behind some stuff that had previously been hidden by `.gitignore`, all of which will now show up when you run `git status`. So we'll restore the old `gitignore` file from `main` to make sure these files are not committed or deleted:
 
 ```
 git checkout main .gitignore
 ```
 
-Lastly, you may want to leave a note explaining why this branch is empty. We'll add and commit a `README.md` Markdown file with the following text:
+Finally, let's leave a note explaining why this branch is empty. We'll add and commit a `README.md` Markdown file with the following text:
 
 ```
 # This branch is deprecated
+
 This project's primary branch is now called `main`.
+
 You should `git checkout main` and `git pull origin main` from now on.
 ```
 
-Then you can commit these changes:
+Then commit these changes:
 
 ```
 git add .gitignore README.md
@@ -164,15 +147,12 @@ git add .gitignore README.md
 git commit -m "Deprecation message for `master` branch"
 ```
 
-
 Because this is an orphaned branch, if you run `git log` you'll only see this commit, none of the history before it:
-
 
 ```
 git log --oneline
 > cd2b2c2 (HEAD -> no-masters) Deprecation message for `master` branch
 ```
-
 
 OK, now for the scary part — replacing `master` with this content. Which means deleting your old `master` branch:
 
@@ -204,8 +184,7 @@ Ahhhhhhhhh, so nice to have that done. Here's the deprecation message as shown o
 
 ![Screenshot of master branch deprecation message on GitHub web interface](images/image5.png)
 
-Because `master` now points to this orphaned commit, whenever you or someone on your team tries to pull from it Git will raise an error:
-
+Because the server's `master` now points to this orphaned commit, Git will raise an error whenever you or someone on your team tries to pull from it:
 
 ```
 git pull origin master
@@ -215,9 +194,3 @@ fatal: refusing to merge unrelated histories
 ```
 
 If only it was this easy to break free from history in real life.
-
-## One more thing…
-
-Like I said, I wrote a book about Git, which mentions `master` a lot. (Like, *a lot* a lot.) I am talking to the awesome team at A Book Apart about updating <cite>Git for Humans</cite>' text and examples to favor `main` as the default branch name. They’re pretty busy, and there’s still a pandemic happening, so no ETA on when a book update might ship.
-
-I am also going to donate all of my proceeds from the book through summer 2021 to organizations fighting racism in the tech industry, and will get my employer to match those donations.
