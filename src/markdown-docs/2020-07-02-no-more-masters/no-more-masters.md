@@ -1,9 +1,10 @@
 ---
 title: No More Masters
-date: 2020-07-02
+date: 2020-07-04
 slug: no-more-git-masters
 collection: Git for Humans
-description: Why and how to change your Git repo's default branch.
+description: "It's time to change your Git repo's default branch."
+dek: "Why and how to change your Git repo's default branch."
 ---
 
 <figure>
@@ -15,7 +16,7 @@ description: Why and how to change your Git repo's default branch.
 
 In my book [Git for Humans](https://abookapart.com/products/git-for-humans), published in 2016, I made a lot of references to `master` — naturally, as it's been the default branch name in Git for a long time. Like many people, I simply accepted that `master` meant "master copy" and didn't look at it too closely.
 
-But now it's 2020, things are changing, and there are other, better names for our primary Git branches that don't invoke slavery.
+But now it's 2020, things are changing, and there are other, better names for our primary Git branches that don't indirectly invoke slavery.
 
 My work friend Una made the practical argument for renaming (to `main`, which the community seems to have adopted as the new standard):
 

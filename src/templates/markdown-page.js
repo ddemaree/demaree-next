@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import PageContent from "../components/page-content"
+import AvatarImage from '../components/avatar'
 import { graphql } from "gatsby"
 import moment from 'moment'
 
@@ -18,10 +19,12 @@ const MediumStyleHeader = ({title, dek, date, timeToRead}) =>
     <MediumStyleMeta date={date} timeToRead={timeToRead} />
   </header>
 
-const MediumStyleMeta = ({ date, timeToRead }) =>
-  <div className="flex items-center my-4 font-soehne text-sm mb-8">
+const MediumStyleMeta = ({ date, timeToRead }) => {
+  return <div className="flex items-center my-4 font-soehne text-sm mb-8">
     <div>
-      <span className="bg-container rounded-full h-10 w-10 inline-block">{` `}</span>
+      <span className="bg-container rounded-full h-10 w-10 inline-block overflow-hidden">
+        <AvatarImage className="block m-0" />
+      </span>
     </div>
     <div className="ml-3 leading-tight">
       <div className="font-medium">David Demaree</div>
@@ -32,6 +35,8 @@ const MediumStyleMeta = ({ date, timeToRead }) =>
       </span>
     </div>
   </div>
+}
+  
 
 const BlogPostTemplate = ({ data: { post } }) => {
   const { html, timeToRead, frontmatter } = post
