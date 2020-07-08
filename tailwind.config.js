@@ -20,6 +20,7 @@ module.exports = {
 				container: {
 					default: `var(--color-container, ${defaultTheme.colors.teal[300]})`,
 					footer: `var(--color-container-footer, ${defaultTheme.colors.gray[200]})`,
+					code: `var(--color-container-code, ${defaultTheme.colors.gray[100]})` 
 				},
 				ink: {
 					default: `var(--color-ink, ${defaultTheme.colors.gray[900]})`,
@@ -27,6 +28,7 @@ module.exports = {
 					low: 'var(--color-ink-low, #0004)',
 					extralow: 'var(--color-ink-extralow, #0002)',
 					bold: 'var(--color-ink-strong, #000)',
+					accent: `var(--color-ink-accent, ${defaultTheme.colors.teal[700]})`
 				},
 				minHeight: {
 					'95': '95vh'
@@ -35,8 +37,6 @@ module.exports = {
 			fontFamily: {
 				soehne: ['soehne-web', ...defaultTheme.fontFamily.sans],
 				serif: ['ivar-text', ...defaultTheme.fontFamily.serif],
-				'display-serif': ['FreightDisplayPro', ...defaultTheme.fontFamily.serif],
-				'name-sans': ['NameSans', ...defaultTheme.fontFamily.sans],
 				mono: ['IBM Plex Mono', ...defaultTheme.fontFamily.mono],
 			},
 			fontSize: {
