@@ -5,6 +5,10 @@ import Helmet from 'react-helmet'
 import c from 'classnames'
 
 const PageContent = ({ content, className }) => {
+  console.log(content)
+
+  const containsTweets = !!content.match(/twitter-tweet/)
+  const constainsInsta = !!content.match(/data-instgrm/)
 
   let sanitizedContent = content.replace(/(<script.+\/script>)/g, '<!-- $1 -->');
   let pageContentRef = React.createRef()
@@ -59,9 +63,8 @@ const PageContent = ({ content, className }) => {
   return  (
     <>
       <Helmet>
-        {/* TODO: Only load these when content requires them */}
-        <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        <script async="" src="//www.instagram.com/embed.js"></script>
+        {containsTweets && <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>}
+        {constainsInsta && <script async="" src="//www.instagram.com/embed.js"></script>}
       </Helmet>
       <div 
         className={c(className, 'wp-content max-w-lg px-6 mx-auto')}
