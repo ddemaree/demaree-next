@@ -1,4 +1,5 @@
 import React from "react"
+import Helmet from "react-helmet"
 import Layout from "../components/layout"
 import PageContent from "../components/page-content"
 import AvatarImage from '../components/avatar'
@@ -39,11 +40,47 @@ const MediumStyleMeta = ({ date, timeToRead }) => {
   
 
 const BlogPostTemplate = ({ data: { post } }) => {
-  const { html, timeToRead, frontmatter } = post
-  const { title, dek, date, hideHeader } = frontmatter
+  const { html, excerpt, timeToRead, frontmatter } = post
+  const { title, dek, description, date, hideHeader, slug } = frontmatter
+
+  const smartDescription = (description || dek || excerpt || `A blog post from ${formattedDate(date)} by David Demaree`)
 
   return (
-    <Layout>
+    <Layout pageTitle={title}>
+      <Helmet>
+        {/* Site meta */}
+        <meta property="og:site_name" content="David Demaree's web site" />
+        <meta name="twitter:site" content="@ddemaree" />
+
+        {/* Title meta */}
+        <meta name="title" content={`${title} - David Demaree's blog`} />
+        <meta property="og:title" content={title} />
+        <meta property="twitter:title" content={title} />
+
+        {/* Description meta */}
+        <meta name="description" content={excerpt} />
+        <meta property="og:description" content={smartDescription} />
+        <meta property="twitter:description" content={smartDescription} />
+
+        {/* Author meta */}
+        <meta name="author" content="David Demaree" />
+        <link rel="author" href="https://demaree.me" />
+        <meta property="article:author" content="https://demaree.me" />
+        <meta name="twitter:creator" content="@ddemaree" />
+
+        {/* Image meta */}
+        <meta name="twitter:card" content="summary" />
+        {/* <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:image" content="https://miro.medium.com/max/1200/1*kmNiM3agTOB5WdjRyQo_1A.png" />
+        <meta name="twitter:image:src" content="https://miro.medium.com/max/1200/1*kmNiM3agTOB5WdjRyQo_1A.png" /> */}
+
+        {/* Article meta */}
+        <link rel="canonical" href={`https://demaree.me/${slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="article:published_time" content={date} />
+        <meta name="twitter:label1" value="Reading time" />
+        <meta name="twitter:data1" value={`${timeToRead} min read`} />
+      </Helmet>
       <article className="py-8">
         {!hideHeader && <MediumStyleHeader {...{title, dek, timeToRead, date}} />}
         <PageContent content={html} />
@@ -59,9 +96,12 @@ export const query = graphql`
         title
         date
         dek
+        description
         hideHeader
+        slug
       }
       html
+      excerpt
       timeToRead
     }
   }
