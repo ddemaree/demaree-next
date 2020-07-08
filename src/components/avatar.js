@@ -6,7 +6,7 @@ const AvatarImage = ({ className }) => {
     query AvatarQuery {
       avatar: file(relativePath: {regex: "/david-avatar-2020.jpg/"}) {
         img: childImageSharp {
-          fixed(width: 200, pngQuality: 10, webpQuality: 10, base64Width: 10) {
+          fixed(width: 100, pngQuality: 10, webpQuality: 10, base64Width: 10) {
             srcWebp
             src
             base64
@@ -18,7 +18,7 @@ const AvatarImage = ({ className }) => {
     }
     `)
   
-  return <img src={avatar.img.fixed.src} className={className} />
+  return <img alt="Avatar image of David Demaree" src={avatar.img.fixed.src} className={className} />
 }
 
 export default AvatarImage

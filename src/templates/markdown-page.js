@@ -14,7 +14,7 @@ const formattedDate = (date) => {
 
 const MediumStyleHeader = ({title, dek, date, timeToRead}) =>
   <header className="max-w-lg pt-8 px-6 mx-auto pb-2">
-    <h1 className="text-3xl md:text-4xl font-display-serif leading-none mt-2 mb-2" dangerouslySetInnerHTML={{__html: title}} />
+    <h1 className="text-3xl md:text-4xl font-soehne font-semibold leading-none mt-2 mb-2" dangerouslySetInnerHTML={{__html: title}} />
     {dek && <p className="text-ink-medium font-soehne text-lg leading-snug">{dek}</p>}
     <MediumStyleMeta date={date} timeToRead={timeToRead} />
   </header>
