@@ -1,6 +1,7 @@
 @import '../fonts/soehne/core-fonts';
 @import '../fonts/ivar-text';
 @import '../fonts/freight-display';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
 
 @tailwind base;
 
@@ -50,7 +51,7 @@ figure {
 }
 
 figcaption {
-  @apply text-center mt-3 text-sm text-ink-medium;
+  @apply font-soehne text-center mt-3 text-sm text-ink-medium;
 }
 
 h1, h2, h3, h4 {
@@ -82,8 +83,16 @@ hr {
   }
 }
 
+code {
+  @apply text-ink-accent font-medium;
+
+  pre > & {
+    @apply font-normal not-italic;
+  }
+}
+
 pre {
-  @apply text-sm bg-ink-low p-3;
+  @apply text-sm p-3 bg-container-code;
   overflow: auto;
 }
 

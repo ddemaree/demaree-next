@@ -10,7 +10,7 @@ const formattedDate = (date) => {
   const thisYear = moment().year()
   const dateMoment = moment(date)
   const dateIsNotThisYear = (thisYear !== dateMoment.year())
-  return dateMoment.format(`MMM d${dateIsNotThisYear ? ", YYYY" : ""}`)
+  return dateMoment.format(`MMM D${dateIsNotThisYear ? ", YYYY" : ""}`)
 }
 
 const MediumStyleHeader = ({title, dek, date, timeToRead}) =>
@@ -81,9 +81,10 @@ const BlogPostTemplate = ({ data: { post } }) => {
         <meta name="twitter:label1" value="Reading time" />
         <meta name="twitter:data1" value={`${timeToRead} min read`} />
       </Helmet>
-      <article className="py-8">
+      <article className="py-8 pb-16">
         {!hideHeader && <MediumStyleHeader {...{title, dek, timeToRead, date}} />}
         <PageContent content={html} />
+        <hr />
       </article>
     </Layout>
   )

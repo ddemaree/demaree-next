@@ -1,6 +1,6 @@
 ---
 title: No More Masters
-date: 2020-07-04
+date: 2020-07-08T13:00:00-04:00
 slug: no-more-git-masters
 collection: Git for Humans
 description: "It's time to change your Git repo's default branch."
