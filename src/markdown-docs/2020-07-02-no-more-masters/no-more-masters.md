@@ -5,6 +5,7 @@ slug: no-more-git-masters
 collection: Git for Humans
 description: "It's time to change your Git repo's default branch."
 dek: "Why and how to change your Git repo's default branch."
+featuredImage: images/image3.jpg
 ---
 
 <figure>
