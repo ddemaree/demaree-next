@@ -6,7 +6,8 @@ module.exports = {
   siteMetadata: {
     title: `demaree.me`,
     description: `David's web site`,
-    author: `@ddemaree`
+    author: `@ddemaree`,
+    buildUrl: (process.env.BUILD_PRIME_URL || "")
   },
   plugins: [
     'gatsby-plugin-postcss',
