@@ -41,9 +41,11 @@ const MediumStyleMeta = ({ date, timeToRead }) => {
 
 const BlogPostTemplate = ({ data: { post } }) => {
   const { html, excerpt, timeToRead, frontmatter } = post
-  const { title, dek, description, date, hideHeader, slug } = frontmatter
+  const { title, dek, description, date, hideHeader, slug, featuredImage } = frontmatter
 
   const smartDescription = (description || dek || excerpt || `A blog post from ${formattedDate(date)} by David Demaree`)
+
+  const baseURL = (process.env.DEPLOY_PRIME_URL || "http://localhost:8000")
 
   return (
     <Layout pageTitle={title}>
@@ -69,10 +71,7 @@ const BlogPostTemplate = ({ data: { post } }) => {
         <meta name="twitter:creator" content="@ddemaree" />
 
         {/* Image meta */}
-        <meta name="twitter:card" content="summary" />
-        {/* <meta name="twitter:card" content="summary_large_image" />
-        <meta property="og:image" content="https://miro.medium.com/max/1200/1*kmNiM3agTOB5WdjRyQo_1A.png" />
-        <meta name="twitter:image:src" content="https://miro.medium.com/max/1200/1*kmNiM3agTOB5WdjRyQo_1A.png" /> */}
+        {!featuredImage && <meta name="twitter:card" content="summary" />}
 
         {/* Article meta */}
         <link rel="canonical" href={`https://demaree.me/${slug}`} />
@@ -81,6 +80,11 @@ const BlogPostTemplate = ({ data: { post } }) => {
         <meta name="twitter:label1" value="Reading time" />
         <meta name="twitter:data1" value={`${timeToRead} min read`} />
       </Helmet>
+      {featuredImage && <Helmet>
+        <meta name="twitter:card" content="summary_large_image" /> 
+        <meta property="og:image" content={`${baseURL}${featuredImage.img.fixed.src}`} />
+        <meta name="twitter:image:src" content={`${baseURL}${featuredImage.img.fixed.src}`} />
+      </Helmet>}
       <article className="py-8 pb-16">
         {!hideHeader && <MediumStyleHeader {...{title, dek, timeToRead, date}} />}
         <PageContent content={html} />
@@ -100,6 +104,16 @@ export const query = graphql`
         description
         hideHeader
         slug
+        featuredImage {
+          img:childImageSharp {
+            fixed(width: 500) {
+              src
+            }
+            fluid(maxWidth: 2000) {
+              src
+            }
+          }
+        }
       }
       html
       excerpt
