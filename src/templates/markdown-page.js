@@ -39,18 +39,11 @@ const MediumStyleMeta = ({ date, timeToRead }) => {
 }
   
 
-const BlogPostTemplate = ({ data: { post, site } }) => {
+const BlogPostTemplate = ({ data: { post } }) => {
   const { html, excerpt, timeToRead, frontmatter } = post
-  const { siteMetadata } = site
-  const { title, dek, description, date, hideHeader, slug, featuredImage } = frontmatter
+  const { title, dek, description, date, hideHeader, socialImageUrl } = frontmatter
 
   const smartDescription = (description || dek || excerpt || `A blog post from ${formattedDate(date)} by David Demaree`)
-
-  const image =
-    featuredImage && featuredImage.img.fixed.src
-    ? `${siteMetadata.buildUrl}${featuredImage.img.fixed.src}`
-    : null
-
 
   return (
     <Layout pageTitle={title}>
@@ -117,17 +110,17 @@ const BlogPostTemplate = ({ data: { post, site } }) => {
             value: `${timeToRead} min read` 
           }
         ].concat(
-          image 
+          socialImageUrl 
             ? [
               { name: "twitter:card", content: "summary_large_image" },
-              { property: "og:image", content: image },
-              { name: "twitter:image:src", content: image }
+              { property: "og:image", content: socialImageUrl },
+              { name: "twitter:image:src", content: socialImageUrl }
             ]
             : [
               { name: "twitter:card", content: "summary" }
             ]
         )}>
-        <link rel="canonical" href={`${siteMetadata.buildUrl}${slug}`} />
+        {/* <link rel="canonical" href={`${siteMetadata.buildUrl}${slug}`} /> */}
       </Helmet>
       <article className="py-8 pb-16">
         {!hideHeader && <MediumStyleHeader {...{title, dek, timeToRead, date}} />}
@@ -153,16 +146,7 @@ export const query = graphql`
         description
         hideHeader
         slug
-        featuredImage {
-          img:childImageSharp {
-            fixed(width: 500) {
-              src
-            }
-            fluid(maxWidth: 2000) {
-              src
-            }
-          }
-        }
+        socialImageUrl
       }
       html
       excerpt

@@ -29,7 +29,7 @@ const socialData = [
   }
 ]
 
-const SocialItem = ({ icon, text, altText, href, linkTo, onClick, className }) => {
+const SocialItem = ({ icon, text, altText, href, linkTo, className }) => {
   const [ iconSetName, iconName ] = icon
 
   const linkChildren = <>
