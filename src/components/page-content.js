@@ -5,8 +5,6 @@ import Helmet from 'react-helmet'
 import c from 'classnames'
 
 const PageContent = ({ content, className }) => {
-  console.log(content)
-
   const containsTweets = !!content.match(/twitter-tweet/)
   const constainsInsta = !!content.match(/data-instgrm/)
 

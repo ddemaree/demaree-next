@@ -36,8 +36,9 @@ module.exports = {
 			},
 			fontFamily: {
 				soehne: ['soehne-web', ...defaultTheme.fontFamily.sans],
+				'soehne-var': ['soehne-var', ...defaultTheme.fontFamily.sans],
 				serif: ['ivar-text', ...defaultTheme.fontFamily.serif],
-				mono: ['IBM Plex Mono', ...defaultTheme.fontFamily.mono],
+				mono: ['Source Code Pro', ...defaultTheme.fontFamily.mono],
 			},
 			fontSize: {
 				'xs-r': '0.75em',
