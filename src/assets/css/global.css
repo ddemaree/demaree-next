@@ -1,7 +1,8 @@
 @import '../fonts/soehne/core-fonts';
+@import '../fonts/soehne-var';
 @import '../fonts/ivar-text';
-@import '../fonts/freight-display';
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
 
 @tailwind base;
 
