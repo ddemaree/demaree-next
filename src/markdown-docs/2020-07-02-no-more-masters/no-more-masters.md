@@ -6,6 +6,8 @@ collection: Git for Humans
 description: "It's time to change your Git repo's default branch."
 dek: "Why and how to change your Git repo's default branch."
 featuredImage: images/image3.jpg
+featuredImageUrl: https://images.unsplash.com/photo-1519852476561-ec618b0183ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2676&q=80
+socialImageUrl: https://res.cloudinary.com/demaree/image/upload/c_thumb,w_600,g_face/v1594342085/demaree-dot-me/blog-images/2020-07-02-no-more-masters/Unsplash-river-img.jpg
 ---
 
 <figure>
