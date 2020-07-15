@@ -7,7 +7,7 @@ module.exports = {
     title: `demaree.me`,
     description: `David's web site`,
     author: `@ddemaree`,
-    buildUrl: (process.env.BUILD_PRIME_URL || "")
+    buildUrl: (process.env.BASE_URL || "")
   },
   plugins: [
     'gatsby-plugin-postcss',
