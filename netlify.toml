@@ -2,7 +2,7 @@
   ID = "demaree-next"
 
 [build]
-  command = "npm run build"
+  command = "BASE_URL=$DEPLOY_PRIME_URL npm run build"
   publish = "public"
   environment = { NODE_ENV = "production", NODE_VERSION = "12" }
 
