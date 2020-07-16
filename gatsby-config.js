@@ -2,9 +2,6 @@ require('dotenv').config();
 
 const path = require('path')
 
-console.log(process.env.DEPLOY_PRIME_URL)
-console.log(process.env.URL)
-
 const siteURL = (process.env.CONTEXT === "production" 
   ? process.env.URL
   : process.env.DEPLOY_PRIME_URL);

@@ -2,22 +2,13 @@
   ID = "demaree-next"
 
 [build]
-  command = "BASE_URL=$DEPLOY_PRIME_URL npm run build"
+  command = "npm run build"
   publish = "public"
   environment = { NODE_ENV = "production", NODE_VERSION = "12" }
-
-[context.gatsby-2019-fml]
-  command = "gatsby build"
-  publish = "public"
 
 [context.eleventy-2020]
   command = "npm run build"
   publish = "_site"
-
-[context.eleventy-compare]
-  command = "npm run build"
-  publish = "public"
-  environment = { NODE_ENV = "production", NODE_VERSION = "12" }
 
 [[plugins]]
   package = "netlify-plugin-gatsby-cache"
