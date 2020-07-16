@@ -2,6 +2,9 @@ require('dotenv').config();
 
 const path = require('path')
 
+console.log(process.env.BUILD_PRIME_URL)
+console.log(process.env.URL)
+
 module.exports = {
   siteMetadata: {
     title: `demaree.me`,
