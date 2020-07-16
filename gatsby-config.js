@@ -2,15 +2,21 @@ require('dotenv').config();
 
 const path = require('path')
 
-console.log(process.env.BUILD_PRIME_URL)
+console.log(process.env.DEPLOY_PRIME_URL)
 console.log(process.env.URL)
+
+const siteURL = (process.env.CONTEXT === "production" 
+  ? process.env.URL
+  : process.env.DEPLOY_PRIME_URL);
+
+console.log(`Site URL is ${siteURL}`)
 
 module.exports = {
   siteMetadata: {
     title: `demaree.me`,
     description: `David's web site`,
     author: `@ddemaree`,
-    buildUrl: (process.env.BASE_URL || "")
+    buildUrl: (siteURL || "")
   },
   plugins: [
     'gatsby-plugin-postcss',
