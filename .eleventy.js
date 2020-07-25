@@ -32,7 +32,6 @@ module.exports = function (eleventyConfig) {
       return p
     }).sort((a, b) => (a.date - b.date))
     
-    console.log(datedPosts.map(p => [p.data.title, p.date]))
     return datedPosts
   })
 
@@ -48,6 +47,14 @@ module.exports = function (eleventyConfig) {
     dt.setZone('America/New_York');
     return dt.toLocaleString(DateTime.DATE_MED)
   })
+
+  // Add Cloudinary transformations if a value is a Cloudinary URL
+  // If there are already transformations in place, leave them
+  // TODO: Append or override existing transforms, if any
+  eleventyConfig.addNunjucksFilter("transformAsset", function(url, transforms) {
+    if(!url.match(/res\.cloudinary\.com/)) return url
+    return url.replace('/image/upload/v', `/image/upload/${transforms}/v`)
+  });
 
   eleventyConfig.addShortcode("version", function () {
     return String(Date.now());
