@@ -1,0 +1,5 @@
+{
+  "fork": "spoon",
+  "layout": "post.njk",
+  "permalink": "/md/{{ slug }}/"
+}

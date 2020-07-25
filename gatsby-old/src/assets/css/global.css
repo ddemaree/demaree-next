@@ -1,0 +1,160 @@
+@import '../fonts/soehne/core-fonts';
+@import '../fonts/soehne-var';
+@import '../fonts/ivar-text';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+@tailwind base;
+
+:root {
+  --sans-fonts: theme('fontFamily.sans');
+  --serif-fonts: theme('fontFamily.serif');
+
+  /* @screen dark {
+    --color-background: theme('colors.gray.900');
+    --color-container: black;
+    --color-container-footer: black;
+    --color-ink-strong: white;
+    --color-ink: #fffe;
+    --color-ink-medium: #fff8;
+    --color-ink-low: #fff5;
+  } */
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+body {
+  background-color: var(--color-background);
+}
+
+a {
+  @apply text-ink-bold dd-link-underline;
+}
+
+p, blockquote, figure, hr, pre {
+  @apply mb-5;
+
+  &:last-child {
+    @apply mb-0;
+  }
+}
+
+blockquote {
+  @apply px-4 border-0 border-l-2 border-ink-low text-ink-medium;
+}
+
+figure {
+  @apply mx-auto my-6;
+}
+
+figcaption {
+  @apply font-soehne text-center mt-3 text-sm text-ink-medium;
+}
+
+h1, h2, h3, h4 {
+  @apply leading-tight font-semibold font-soehne mb-1 mt-8;
+
+  &:first-child {
+    @apply mt-0;
+  }
+}
+
+h1 {
+  @apply text-2xl;
+}
+
+h2 {
+  @apply text-xl;
+}
+
+h3 {
+  @apply text-lg;
+}
+
+hr {
+  @apply h-auto my-6 border-0 block text-center;
+
+  &:before {
+    content: "•••";
+    letter-spacing: 1rem;
+  }
+}
+
+code {
+  @apply text-ink-accent font-medium;
+
+  pre > & {
+    @apply font-normal not-italic;
+  }
+}
+
+pre {
+  @apply text-sm p-3 bg-container-code;
+  overflow: auto;
+}
+
+.twitter-tweet {
+  @apply mx-auto;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+.text-inherit {
+  color: inherit;
+}
+
+.justify-self-start {
+  justify-self: start;
+}
+.justify-self-end {
+  justify-self: end;
+}
+
+.dd-wrap {
+  @apply .max-w-2xl .mx-auto .px-6;
+
+  @screen sm {
+    @apply .px-6;
+  }
+}
+
+.dd-icon {
+  @apply inline-block;
+  height: 1em;
+
+  svg {
+    @apply m-0 block h-full;
+  }
+}
+
+.dark-overlay {
+  &:before {
+    background: #0002;
+    background: radial-gradient(#0003, #0006);
+    bottom: 0;
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    mix-blend-mode: multiply;
+  }
+}
+
+.home-header {
+  text-shadow: 2px 2px 8px #0009;
+}
+
+.dd-link-underline {
+  text-decoration-color: var(--color-ink-low);
+  text-decoration-thickness: 1px;
+  text-decoration-style: solid;
+  text-decoration-line: underline;
+  text-underline-offset: from-font;
+}

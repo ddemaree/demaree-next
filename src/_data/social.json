@@ -1,0 +1,21 @@
+[
+  {
+    "url": "/about-me",
+    "text": "About Me",
+    "alt": "Bio for David Demaree",
+    "iconset": "fas",
+    "icon": "user"
+  },
+  {
+    "url": "https://twitter.com/ddemaree",
+    "text": "Twitter",
+    "alt": "@ddemaree on Twitter",
+    "icon": "twitter"
+  },
+  {
+    "url": "https://instagram.com/ddemaree",
+    "text": "Instagram",
+    "alt": "@ddemaree on Instagram",
+    "icon": "instagram"
+  }
+]

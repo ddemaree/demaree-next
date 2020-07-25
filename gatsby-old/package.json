@@ -1,0 +1,75 @@
+{
+  "name": "demaree-next",
+  "private": true,
+  "description": "David's web site",
+  "version": "20.4.1",
+  "author": "David Demaree <david@demaree.me>",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.3.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.4",
+    "@fortawesome/free-brands-svg-icons": "^5.3.1",
+    "@fortawesome/free-solid-svg-icons": "^5.3.1",
+    "@fortawesome/react-fontawesome": "^0.1.3",
+    "@fullhuman/postcss-purgecss": "^2.2.0",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "classnames": "^2.2.6",
+    "dotenv": "^8.1.0",
+    "gatsby": "^2.23.22",
+    "gatsby-image": "^2.2.17",
+    "gatsby-plugin-google-analytics": "^2.1.35",
+    "gatsby-plugin-instagram-embed": "^2.0.1",
+    "gatsby-plugin-manifest": "^2.2.14",
+    "gatsby-plugin-offline": "^2.2.10",
+    "gatsby-plugin-postcss": "^2.1.20",
+    "gatsby-plugin-react-helmet": "^3.1.6",
+    "gatsby-plugin-react-svg": "^2.1.2",
+    "gatsby-plugin-sharp": "^2.2.20",
+    "gatsby-plugin-twitter": "^2.3.4",
+    "gatsby-remark-embedder": "^2.1.1",
+    "gatsby-remark-images": "^3.3.10",
+    "gatsby-source-filesystem": "^2.1.21",
+    "gatsby-source-rss-feed": "^1.2.0",
+    "gatsby-transformer-remark": "^2.8.15",
+    "gatsby-transformer-sharp": "^2.2.13",
+    "imagemin-webp-webpack-plugin": "^3.3.1",
+    "lodash": "^4.17.15",
+    "mini-css-extract-plugin": "^0.9.0",
+    "moment": "^2.26.0",
+    "postcss-custom-properties": "^9.0.2",
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^4.2.1",
+    "postcss-url": "^8.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1",
+    "resolve-url-loader": "^3.1.1",
+    "responsive-loader": "^1.2.0",
+    "tailwindcss": "^1.4.6"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "gatsby:dev": "gatsby develop",
+    "gatsby:build": "NODE_ENV=production GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "gatsby:serve": "gatsby serve",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "clean": "rm -rf _site .cache public",
+    "start": "npm run gatsby:dev",
+    "build": "npm run gatsby:build",
+    "serve": "gatsby serve",
+    "prod-test": "npm run clean && npm run build && npm run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ddemaree/demaree-next"
+  },
+  "bugs": {
+    "url": "https://github.com/ddemaree/demaree-next/issues"
+  }
+}

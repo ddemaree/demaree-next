@@ -1,0 +1,15 @@
+{% import './svg_macros.njk' as macros %}
+
+<header id="main-header">
+  <div class="bg-container h-12 flex justify-between px-4">
+    <a href="/" class="h-full flex items-center text-inherit">
+      {{ macros.DDIcon("p-1 rounded border border-current h-10") }}
+    </a>
+    <div class="text-sm absolute h-12 flex items-center pr-6 right-0 top-0 z-10">
+      <a href="#" class="text-inherit">
+        <i class="fas fa-bars"></i>
+        <span class="hidden">Menu</span>
+      </a>
+    </div>
+  </div>
+</header>

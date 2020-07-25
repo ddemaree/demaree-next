@@ -1,0 +1,25 @@
+{% macro socialItem(item) %}
+<li class="mr-3 last:mr-0 mb-1 social-item">
+  <a href="{{ item.url }}" rel="me" title="{{ item.alt }}">
+    <i class="{{ item.iconset | default('fab') }} fa-{{ item.icon }}"></i><span class="ml-1 font-semibold">{{ item.text }}</span>
+  </a>
+</li>
+{% endmacro %}
+
+<div class="hero hero--homepage">
+  <div class="hero__memoji-wrap">
+    <figure class="m-0 hero__memoji">
+      <img alt="Cartoon portrait of David Demaree" src="/images/memoji.png" class="max-w-full" />
+    </figure>
+  </div>
+  <div class="hero__mini-bio">
+    <b>David Demaree</b> is a product manager, designer, and writer based in New Jersey.
+  </div>
+  <nav class="hero__social-nav">
+    <ul>
+      {%- for item in social -%}
+        {{ socialItem(item) }}
+      {%- endfor -%}
+    </ul>
+  </nav>
+</div>

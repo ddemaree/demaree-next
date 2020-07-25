@@ -1,0 +1,39 @@
+---
+---
+{% extends "default.njk" %}
+
+{% block title %}Welcome to David Demaree's web site{% endblock %}
+
+{% block content %}
+<main class="overflow-hidden flex-1">
+  <div class="bg-container pb-4 pt-6">
+    <div class="dd-wrap">
+      {% include 'hero.njk' %}
+    </div>
+  </div>
+
+  <section class="py-8">
+    <div class="dd-wrap">
+      <h2 class="text-sm uppercase tracking-widest mb-4">Latest posts</h2>
+
+      {% for p in collections.smartPosts | reverse %}
+      <article class="mb-6 relative block no-underline sm:flex">
+        <div class="flex-1 text-base">
+          <h3 class="dd-link-underline font-normal my-0">
+            <a href="{{ p.url }}">{{ p.data.title | safe }}</a>
+          </h3>
+          <div class="max-w-md text-sm text-ink leading-snug no-underline">
+            EXCERPT
+            {{ p.data.date }}
+          </div>
+        </div>
+        <p class="text-sm text-ink-medium mt-1 md:mt-0 sm:order-first w-24 md:w-32">
+          <time>{{ p.date }}</time>
+        </p>
+      </article>
+      {% endfor %}
+
+    </div>
+  </section>
+</main>
+{% endblock %}

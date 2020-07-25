@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="text-ink font-soehne text-lg md:text-xl">
+  <head>
+    <title>
+      {% block title %}{% if pageTitle %}{{ pageTitle }} — David Demaree{% else %}David Demaree's web site{% endif %}{% endblock %}
+    </title>
+    <meta charset="UTF-8"/>
+    {% if description %}
+    <meta name="description" content="{{description}}"/>
+    {% endif %}
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+    <link rel="stylesheet" href="/css/main.css?v={% version %}"/>
+    <link rel="stylesheet" type="text/css" href="/fa/css/all.min.css" />
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/dd-favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/dd-favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/images/dd-favicon-64.png" />
+    <link rel="shortcut icon" type="image/png" href="/images/dd-favicon-64.png" />
+    <link rel="apple-touch-icon" sizes="128x128" type="image/png" href="/images/dd-favicon-128.png" />
+    
+    <meta property="og:site" content="David Demaree’s web site" />
+    <meta name="twitter:site" content="@ddemaree" />
+    <meta name="twitter:creator" content="@ddemaree" />
+    <meta name="author" content="David Demaree"/>
+    <meta property="article:author" content="https://demaree.me"/>
+    {% block seo %}
+    <meta name="title" content="{% if pageTitle %}{{ pageTitle }} • {% endif %}David Demaree‘s web site" />
+    <meta property="og:title" content="{% if pageTitle %}{{ pageTitle }} • {% endif %}David Demaree‘s web site" />
+    <meta property="twitter:title" content="{% if pageTitle %}{{ pageTitle }} • {% endif %}David Demaree‘s web site" />
+    {% endblock %}
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <div className="dd-container flex flex-col min-h-screen">
+      {% include 'header.njk' %}
+
+      {% block content %}
+      <main class="overflow-hidden flex-1">
+        {{ content | safe }}
+      </main>
+      {% endblock %}
+  
+      <footer class="mt-6 pb-10">
+        <div class="dd-wrap">
+          <div class="text-center text-sm text-ink-medium mt-4">
+            <p class="mb-0">&ldquo;Have courage, and be kind&rdquo;</p>
+            <p class="mb-0">© 2020 David Demaree, <span class="block xs:inline">all rights reserved.</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  <script src="/bundle.js?v={% version %}"></script>
+  </body>
+</html>

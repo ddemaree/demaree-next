@@ -1,0 +1,51 @@
+---
+pagination:
+  data: wp.posts
+  size: 1
+  alias: post
+  addAllPagesToCollections: true
+permalink: '/wp/{{ post.slug }}/index.html'
+tags: ['posts', 'wordpress']
+eleventyComputed:
+  title: '{{ post.title_raw }}'
+  date: '{{ post.date_gmt }}'
+---
+{% extends "default.njk" %}
+
+{% block content %}
+<main class="overflow-hidden flex-1">
+  <article class="py-8 pb-16">
+
+    <header class="max-w-lg pt-8 px-6 mx-auto pb-2">
+      <h1 class="text-3xl md:text-4xl font-semibold leading-none mt-2 mb-2">{{ post.title_raw }}</h1>
+
+      {% if dek %}
+      <p class="text-ink-medium text-lg leading-snug">{{ dek }}</p> 
+      {% endif %}
+
+      <div class="flex items-center my-4 font-soehne text-sm mb-8">
+        <div>
+          <span class="bg-container rounded-full h-10 w-10 inline-block overflow-hidden">
+            <img src="/images/david-avatar-2020.jpg" class="block m-0" />
+          </span>
+        </div>
+        <div class="ml-3 leading-tight">
+          <div class="font-medium">David Demaree</div>
+          <span class="text-xs text-ink-medium">
+            {{ post.date_gmt | formattedDate }}
+            {# {{ post.date_gmt }} #}
+            •
+            {{ post.content.rendered | readingTime }} read
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <div class="wp-content max-w-lg px-6 mx-auto">
+      {{ post.content.rendered | safe }}
+    </div>
+    <hr />
+  </article>
+</main>
+{% endblock %}
+
