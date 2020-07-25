@@ -6,9 +6,6 @@
   publish = "public"
   environment = { NODE_ENV = "production", NODE_VERSION = "12" }
 
-[context.eleventy-2020]
+[context.eleventy-2007]
   command = "npm run build"
   publish = "_site"
-
-[[plugins]]
-  package = "netlify-plugin-gatsby-cache"
