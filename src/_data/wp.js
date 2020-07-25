@@ -28,8 +28,6 @@ module.exports = async () => {
         return allFragments
       }, {})
     })
-  
-  console.log(fragments)
 
   return {
     posts,
