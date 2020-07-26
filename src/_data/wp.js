@@ -1,14 +1,14 @@
 const axios = require('axios')
 
 module.exports = async () => {
-  const posts = await axios.get('https://bitsandletters.club/wp-json/wp/v2/posts')
+  const posts = await axios.get('https://bitsandletters.club/wp-json/wp/v2/posts', { params: { per_page: 100 }})
     .then(r => r.data)
     .then(d => d.map(post => ({ 
       ...post,
       eleventyComputed: { date: post.date_gmt }
     })))
 
-  const fragments = await axios.get('https://bitsandletters.club/wp-json/wp/v2/fragments')
+  const fragments = await axios.get('https://bitsandletters.club/wp-json/wp/v2/fragments', { params: { per_page: 100 }})
     .then(r => r.data)
     .then(data => {
       return data.reduce((allFragments, currentFragment) => {
