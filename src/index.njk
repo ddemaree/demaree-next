@@ -1,39 +1,36 @@
----
----
-{% extends "default.njk" %}
+<!DOCTYPE html>
+<html class="text-2xl sm:text-3xl lg:text-4xl text-white">
+<head>
+  <title>⚡️ DAVID DEMAREE ⚡️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+  <link rel="stylesheet" href="/css/main.css?v={% version %}"/>
+  <link rel="stylesheet" type="text/css" href="/fa/css/all.min.css" />
+</head>
+<body class="dd-bg-airport p-3 border-4 xxs:p-4 xxs:border-8 border-white border-solid">
+  <div class="homepage-grid max-w-xl mx-auto grid grid-cols-8 row-gap-4 sm:row-gap-10 col-gap-4">
 
-{% block title %}Welcome to David Demaree's web site{% endblock %}
-
-{% block content %}
-<main class="overflow-hidden flex-1">
-  <div class="bg-container pb-4 pt-6">
-    <div class="dd-wrap">
-      {% include 'hero.njk' %}
+    <div class="homepage-title">
+      <h1 class="text-xl sm:text-2xl font-semibold m-0">David Demaree</h1>
+      <h2 class="text-xl sm:text-2xl font-normal m-0 max-w-lg">Product, writing, web design, <br class="hidden sm:inline" />photography, cocktails, stuff.</h2>
     </div>
+
+    <nav class="homepage-links font-semibold text-black sm:order-first">
+      <ul class="flex flex-col sm:flex-row flex-wrap">
+        <li><a href="mailto:demaree@hey.com?subject=Hey"><i class="fas fa-paper-plane"></i> <span class="label">demaree@hey.com</span></a></li>
+        <li><a href="https://twitter.com/ddemaree"><i class="fab fa-twitter"></i> <span class="label">Tweets</span></a></li>
+        <li><a href="https://instagram.com/ddemaree"><i class="fab fa-instagram"></i> <span class="label">Insta</span></a></li>
+        <li><a href="https://words.demaree.me/"><i class="fab fa-medium"></i> <span class="label">Writings</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="hp-text space-y-4 md:space-y-4">
+      <p><i class="fas fa-alicorn"></i> I'm baby gastropub mlkshk bitters disrupt, etsy neutra shoreditch activated charcoal lyft. Shabby chic 90's woke kickstarter small batch, hashtag shoreditch copper mug bespoke. Before they sold out selvage schlitz church-key irony cold-pressed man braid umami snackwave hammock.</p>
+      <p><i class="fas fa-book mr-1"></i> Prism hammock tbh man bun enamel pin swag typewriter next level kale chips snackwave freegan meh adaptogen chambray banjo. Direct trade jianbing brooklyn, drinking vinegar meditation intelligentsia polaroid enamel pin activated charcoal.</p>
+      <p> Enamel pin pork belly heirloom art party humblebrag lo-fi gentrify ramps PBR&B quinoa woke etsy. Asymmetrical microdosing freegan raw denim typewriter live-edge readymade you probably haven't heard of them fingerstache stumptown celiac pop-up beard shaman.</p>
+    </div>
+
+    <hr class="col-span-8" />
+
   </div>
-
-  <section class="py-8">
-    <div class="dd-wrap">
-      <h2 class="text-sm uppercase tracking-widest mb-4">Latest posts</h2>
-
-      {% for p in collections.smartPosts | reverse %}
-      <article class="mb-6 relative block no-underline sm:flex">
-        <div class="flex-1 text-base">
-          <h3 class="dd-link-underline font-normal my-0">
-            <a href="{{ p.url }}">{{ p.data.title | safe }}</a>
-          </h3>
-          <div class="max-w-md text-sm text-ink leading-snug no-underline">
-            EXCERPT
-            {{ p.data.date }}
-          </div>
-        </div>
-        <p class="text-sm text-ink-medium mt-1 md:mt-0 sm:order-first w-24 md:w-32">
-          <time>{{ p.date }}</time>
-        </p>
-      </article>
-      {% endfor %}
-
-    </div>
-  </section>
-</main>
-{% endblock %}
+</body>
+</html>

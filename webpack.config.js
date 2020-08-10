@@ -79,6 +79,18 @@ const baseConfig = {
 					},
 				],
 			},
+			{
+				test: /\.(png|jpe?g)(\?v=\d+\.\d+\.\d+)?$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[ext]',
+							outputPath: 'images/',
+						},
+					},
+				],
+			},
 		],
 	},
 };

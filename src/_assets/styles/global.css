@@ -101,6 +101,73 @@ pre {
 @tailwind components;
 @tailwind utilities;
 
+.dd-bg-airport {
+  background-image: linear-gradient(0deg, #F6064577, #F6064599), url(../../images/airport-trans.png);
+  background-attachment: fixed;
+  background-color: #F60645;
+  background-size: 1200px 1200px;
+  background-position: 68% 48%;
+  min-height: calc(100vh - theme('spacing.8') - theme('spacing.2'));
+
+  @screen md {
+    background-position: 50% 25%;
+  }
+  @screen lg {
+    background-position: 50% 20%;
+    background-size: cover;
+  }
+}
+
+.homepage-grid {
+  @apply;
+}
+
+.homepage-grid > *,
+.homepage-links, .hp-links, .hp-text {
+  @apply col-span-8 col-start-1;
+}
+
+.homepage-links {
+  @apply -mx-2;
+}
+
+.homepage-links li {
+  @apply mb-1 whitespace-no-wrap;
+
+  @screen sm {
+    @apply mr-2;
+  }
+}
+
+.homepage-links a {
+  @apply text-yellow-300 px-2 rounded-sm;
+
+  align-items: center;
+  display: flex;
+  text-decoration: none;
+
+  i, .fas, .fab {
+    width: theme('spacing.5');
+  }
+
+  .label {
+    overflow: hidden;
+  }
+
+  &:hover {
+    @apply bg-black;
+  }
+}
+
+.hp-text {
+  @apply leading-snug font-semibold col-span-8;
+}
+
+.dd-container {
+  display: grid;
+  background-color: #f0f;
+}
+
 .twitter-tweet {
   @apply mx-auto;
 }

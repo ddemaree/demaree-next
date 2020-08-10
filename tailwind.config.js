@@ -83,10 +83,8 @@ module.exports = {
 				wide: '52rem',
 			},
 			screens: {
-				'lt-sm': { max: '640px' },
-				'lt-md': { max: '768px' },
+				'xxs': { min: '360px' },
 				'xs': { min: '480px' },
-				// dark: { raw: '(prefers-color-scheme: dark)' },
 			},
 		},
 	},
