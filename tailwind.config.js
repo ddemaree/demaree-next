@@ -17,9 +17,12 @@ spacingKeys.forEach(key => {
 
 module.exports = {
 	darkMode: 'media',
-	purge: [
-		'./**/*.js'
-	],
+	purge: {
+		layers: ['utilities'],
+		content: [
+			'./**/*.js'
+		]
+	},
 	variants: {
 		margin: ['responsive', 'last']
 	},
