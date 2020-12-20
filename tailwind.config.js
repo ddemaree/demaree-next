@@ -21,6 +21,7 @@ module.exports = {
     './**/*.md',
     './**/*.html',
 		'./**/*.njk',
+		'./**/*.js'
 	],
 	variants: {
 		margin: ['responsive', 'last']
