@@ -4,11 +4,11 @@
     line-height: 1.6;
     max-width: 60ch;
 
-    *:first-child {
+    > *:first-child {
       margin-top: 0;
     }
 
-    *:last-child {
+    > *:last-child {
       margin-bottom: 0;
     }
 
