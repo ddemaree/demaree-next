@@ -1,5 +1,3 @@
-import Link from 'next/link'
-import Image from 'next/image'
 import RSSParser from 'rss-parser'
 import { DateTime } from 'luxon'
 
@@ -18,7 +16,7 @@ function HomePage({ posts, latestSubstack }) {
     <div className="font-serif max-w-2xl mx-auto p-8 pt-2">
       <header className="flex flex-col items-center mb-16 text-center">
         <figure className="w-full max-w-lg mb-4">
-          <Image src="/images/david-acnh-xmas.jpeg" alt="The author wearing Christmas sweater in Animal Crossing New Horizons" width={836} height={538} className="w-full rounded" />
+          <img src="/images/david-acnh-xmas.jpeg" alt="The author wearing Christmas sweater in Animal Crossing New Horizons" width={836} height={538} className="w-full rounded" />
           {/* <Image src="/images/memoji.png" alt="Emoji-style portrait of the author" width={228} height={254} /> */}
         </figure>
         <h1 className="font-sans-display font-semibold text-4xl xs:text-5xl my-2 text-inkBold">David Demaree</h1>
