@@ -1,0 +1,55 @@
+@layer components {
+  .dd-button {
+    @apply px-6 py-3 font-sans-display uppercase tracking-wider font-medium;
+  }
+
+  .dd-icon {
+    width: 1em;
+    height: 1em;
+  }
+
+  .twitter-tweet {
+    @apply my-8 mx-auto !important;
+
+    & + .twitter-tweet {
+      margin-top: -1.25rem;
+    }
+
+    iframe {
+      @apply mx-auto my-0;
+    }
+  }
+
+  .kg-embed-card > iframe {
+    @apply mx-auto !important;
+  }
+
+  .kg-gallery-container {
+    display: flex;
+    flex-direction: column;
+    /* max-width: 1040px;
+    width: 100vw; */
+  }
+
+  .kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    &:not(:first-of-type) {
+      margin-top: 1em;
+    }
+  }
+
+  .kg-gallery-image {
+    &:not(:first-of-type) {
+      margin-left: 1em;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      display: block;
+      max-width: 1040px;
+    }
+  }
+}

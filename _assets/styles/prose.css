@@ -1,0 +1,76 @@
+@layer components {
+  .dd-prose {
+    @apply font-serif text-ink text-xl;
+    line-height: 1.6;
+    max-width: 60ch;
+
+    *:first-child {
+      margin-top: 0;
+    }
+
+    *:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      @apply text-inkBold;
+      text-decoration: underline;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      @apply font-sans font-semibold text-inkBold leading-tight;
+    }
+
+    h1 {
+      @apply mt-0 mb-3 text-3xl;
+    }
+
+    h2 {
+      @apply text-2xl;
+    }
+
+    h3 {
+      @apply text-xl;
+    }
+
+    h2, h3, h4, h5, h6 {
+      @apply mt-8--e mb-2--e;
+
+      & + * {
+        margin-top: 0 !important;
+      }
+    }
+
+    p, ul, ol, blockquote {
+      @apply my-5--e;
+    }
+
+    strong {
+      @apply text-inkBold font-semibold;
+    }
+
+    > hr {
+      @apply my-16;
+    }
+
+    > img, > video, > figure {
+      @apply my-12;
+
+      + img, + video, + figure {
+        @apply -mt-4;
+      }
+    }
+
+    figure {
+      & > * {
+        @apply my-0;
+      }
+
+      figcaption {
+        @apply text-sm text-inkMedium mt-3 font-sans;
+        text-align: center;
+      }
+    }
+
+  }
+}
