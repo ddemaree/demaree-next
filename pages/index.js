@@ -5,7 +5,7 @@ import { getPosts } from '../lib/data/ghostApi'
 import { formatDate } from '../lib/utils/date'
 import Layout from '../components/Layout'
 import BlogPostCard from '../components/BlogPostCard'
-
+// import Image from '../components/Image'
 
 function HomePage({ posts, latestSubstack }) {
 
@@ -16,8 +16,7 @@ function HomePage({ posts, latestSubstack }) {
     <div className="font-serif max-w-2xl mx-auto p-8 pt-2">
       <header className="flex flex-col items-center mb-16 text-center">
         <figure className="w-full max-w-lg mb-4">
-          <img src="/images/david-acnh-xmas.jpeg" alt="The author wearing Christmas sweater in Animal Crossing New Horizons" width={836} height={538} className="w-full rounded" />
-          {/* <Image src="/images/memoji.png" alt="Emoji-style portrait of the author" width={228} height={254} /> */}
+          <img src="//res.cloudinary.com/demaree/image/upload/w_800,q_auto/demaree-dot-me/images/david-acnh-xmas.jpg" alt="The author wearing Christmas sweater in Animal Crossing New Horizons" width={836} height={538} className="w-full rounded-2xl" />
         </figure>
         <h1 className="font-sans-display font-semibold text-4xl xs:text-5xl my-2 text-inkBold">David Demaree</h1>
         <h2 className="font-sans text-xl xs:text-2xl text-inkMedium max-w-lg">NYC-based product person, writer, photographer, and coder</h2>

@@ -1,6 +1,7 @@
 import c from 'classnames'
 import Link from 'next/link'
 import { formatDate } from '../lib/utils/date'
+import OptimizedImage from './Image'
 
 function BlogPostCard({ title, link, pubDate, readingTime, excerpt, className, featuredImage }) {
   const linkIsRemote = link.match(/^https?/)
@@ -12,7 +13,7 @@ function BlogPostCard({ title, link, pubDate, readingTime, excerpt, className, f
 
   const cardImageContent = <>
     {featuredImage && <figure className="w-36">
-      <img src={featuredImage} className="w-full block" />
+      <OptimizedImage desiredWidth={400} src={featuredImage} className="w-full block" />
     </figure>}
   </>
 
