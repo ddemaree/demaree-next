@@ -68,6 +68,9 @@ module.exports = {
 				inkUtils[`.bg-${propKey}`] = {
 					backgroundColor: `var(${customProperty})`
 				}
+				inkUtils[`.border-${propKey}`] = {
+					borderColor: `var(${customProperty})`
+				}
 			})
 
 			addUtilities(inkUtils, ['dark'])

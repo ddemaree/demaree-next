@@ -1,28 +1,9 @@
-import { useEffect, useRef } from "react"
 import c from 'classnames'
 
 import { getPosts, getSinglePost } from "../../lib/data/ghostApi"
 import { formatDate } from "../../lib/utils/date"
 import Layout from "../../components/Layout"
-
-function PostContent({ html }) {
-  const containerRef = useRef(null)
-
-  useEffect(() => {
-    // Fix image aspect ratios in gallery cards
-    const container = containerRef.current
-    var images = document.querySelectorAll('.kg-gallery-image img');
-    images.forEach(function (image) {
-        var container = image.closest('.kg-gallery-image');
-        var width = image.attributes.width.value;
-        var height = image.attributes.height.value;
-        var ratio = width / height;
-        container.style.flex = ratio + ' 1 0%';
-    });
-  })
-
-  return <div ref={containerRef} className="dd-prose" dangerouslySetInnerHTML={{__html: html}} />
-}
+import PostContent from "../../components/PostContent"
 
 function PostMeta({ date, readingTime, className }) {
   return <div className={c(className, 'flex')}>

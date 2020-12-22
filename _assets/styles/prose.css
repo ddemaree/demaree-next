@@ -1,8 +1,36 @@
+@layer utilities {
+  .dd-w-inset {
+    width: calc(100% - theme('spacing.16'));
+  }
+}
+
 @layer components {
   .dd-prose {
-    @apply font-serif text-ink text-xl;
-    line-height: 1.6;
-    max-width: 60ch;
+
+    /* SPACING */
+
+    /* All block elements should have auto centered spacing and bottom margin */
+    & > *, > blockquote > * {
+      @apply mb-6 mx-auto p-0;
+    }
+
+    /* Additionally, all blocks that are **NOT** wide or full width should be capped at 2xl width (roughly 700px) */
+    & > :not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.kg-width-wide):not(.kg-width-full):not(hr) {
+      @apply max-w-2xl dd-w-inset;
+    }
+
+    > blockquote {
+      @apply px-6;
+    }
+
+    .alignwide,
+    .kg-width-wide {
+      @apply max-w-5xl;
+
+      figcaption {
+        @apply max-w-2xl dd-w-inset mx-auto;
+      }
+    }
 
     > *:first-child {
       margin-top: 0;
@@ -12,65 +40,208 @@
       margin-bottom: 0;
     }
 
-    a {
-      @apply text-inkBold;
-      text-decoration: underline;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      @apply font-sans font-semibold text-inkBold leading-tight;
-    }
-
-    h1 {
-      @apply mt-0 mb-3 text-3xl;
-    }
-
-    h2 {
-      @apply text-2xl;
-    }
-
-    h3 {
-      @apply text-xl;
-    }
-
-    h2, h3, h4, h5, h6 {
-      @apply mt-8--e mb-2--e;
-
-      & + * {
-        margin-top: 0 !important;
-      }
-    }
-
-    p, ul, ol, blockquote {
-      @apply my-5--e;
-    }
-
-    strong {
-      @apply text-inkBold font-semibold;
-    }
-
-    > hr {
-      @apply my-16;
-    }
-
     > img, > video, > figure {
       @apply my-12;
 
       + img, + video, + figure {
         @apply -mt-4;
       }
-    }
 
-    figure {
-      & > * {
+      > * {
         @apply my-0;
       }
+    }
 
-      figcaption {
-        @apply text-sm text-inkMedium mt-3 font-sans;
-        text-align: center;
+    figcaption {
+      @apply mt-3;
+    }
+
+    > h1, > h2, > h3, > h4, > h5, > h6, > .heading {
+      @apply mb-3 mt-8;
+    }
+
+    > h1, > h2 {
+      @apply mt-16;
+    }
+
+
+    /* STYLING */
+
+    @apply font-serif text-ink text-xl;
+    line-height: 1.6;
+
+    figcaption {
+      @apply text-base text-inkMedium font-sans text-center;
+
+      a {
+        color: inherit;
       }
     }
 
+    a {
+      @apply text-inkBold;
+      text-decoration: underline;
+
+      code {
+        color: inherit;
+      }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      @apply font-sans text-inkBold leading-tight;
+    }
+
+    h1 {
+      @apply mt-0 mb-3 text-3xl font-semibold;
+    }
+
+    h2 {
+      @apply text-3xl font-semibold;
+    }
+
+    h3, h4, h5, h6 {
+      @apply text-2xl font-medium;
+    }
+
+    strong {
+      @apply text-inkBold font-semibold;
+    }
+
+    ul, ol {
+      list-style: none;
+      counter-reset: my-awesome-counter;
+
+      ul, ol {
+        margin-bottom: 0;
+        margin-top: 0.6em;
+      }
+
+      & > li {
+        @apply mb-3 ml-8;
+        /* margin-left: 1.5em; */
+
+        &:before {
+          display: inline-block;
+          width: 3em;
+          margin-left: -3em;
+          box-sizing: border-box;
+          text-align: right;
+          position: absolute;
+        }
+      }
+    }
+
+    ul > li {
+      &:before {
+        padding-top: 4px;
+        padding-right: 15px;
+        content: '\2022';
+        margin-top: -0.15em;
+      }
+    }
+
+    ol > li {
+      counter-increment: my-awesome-counter;
+
+      &:before {
+        content: counter(my-awesome-counter) ".";
+        font-weight: bold;
+        padding-right: 0.5em;
+      }
+    }
+
+    > blockquote {
+      box-shadow: inset 4px 0 0 0 var(--color-ink-light, currentColor);
+
+      > * {
+        @apply min-w-full mb-8;
+
+        &:last-child {
+          @apply mb-0;
+        }
+      }
+    }
+
+    > hr {
+      @apply my-12 h-8 flex items-center justify-center border-0;
+
+      &:before {
+        @apply text-inkLight inline-block text-lg;
+        content: '•••';
+        letter-spacing: 1em;
+      }
+
+      + h1, + h2 {
+        @apply mt-0;
+      }
+    }
+  }
+
+  
+
+
+  .kg-bookmark-card {
+    @apply border-inkLight rounded-xl;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  .kg-bookmark-container--grid {
+    display: grid;
+    grid-template-columns: 1fr minmax(6rem, 10rem);
+  }
+
+  .kg-bookmark-card .kg-bookmark-container {
+    @apply flex;
+    text-decoration-line: none !important;
+    text-decoration: none !important;
+  }
+
+  .kg-bookmark-content {
+    @apply text-sm p-5;
+  }
+
+  .kg-bookmark-thumbnail {
+    @apply flex-grow;
+    min-width: 33%;
+    max-height: 100%;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .kg-bookmark-metadata {
+    @apply text-inkMedium font-mono text-base mt-3 items-center flex;
+
+    .kg-bookmark-icon {
+      @apply mr-2;
+      height: 1.2em;
+    }
+  }
+
+  .kg-bookmark-title {
+    @apply font-sans font-medium text-lg leading-tight mb-2;
+    text-decoration-line: underline;
+  }
+
+  .kg-bookmark-description {
+    @apply mb-4;
+  }
+
+  .dd-video-container {
+    padding: 0;
+    padding-top: 56.25%;
+    position: relative;
+
+    & > iframe, & > object, & > embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
