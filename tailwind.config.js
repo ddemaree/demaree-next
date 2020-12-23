@@ -107,7 +107,7 @@ module.exports = {
 				sans: ['soehne-web', ...defaultTheme.fontFamily.sans],
 				'sans-display': ['soehne-breit-web', 'soehne-web', ...defaultTheme.fontFamily.sans],
 				serif: ['ivar-text', ...defaultTheme.fontFamily.serif],
-				mono: ['Source Code Pro', ...defaultTheme.fontFamily.mono],
+				mono: ['JetBrains Mono', 'Source Code Pro', ...defaultTheme.fontFamily.mono],
 			},
 			spacing: Object.assign({},
 				emSpacing

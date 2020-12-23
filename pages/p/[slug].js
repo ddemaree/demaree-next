@@ -15,16 +15,16 @@ function PostMeta({ date, readingTime, className }) {
 
 function PostDetailPage({ post }) {
   return <Layout>
-    <article className="max-w-3xl mx-auto p-8">
-      <header>
-        <h1 className="text-4xl font-semibold leading-snug">{post.title}</h1>
+    <article className="py-12">
+      <header className="dd-w-inset mx-auto max-w-2xl mb-16">
+        <h1 className="text-4xl font-semibold leading-snug text-inkBold">{post.title}</h1>
         {post.excerpt && <h2 className="text-inkMedium text-2xl leading-snug">{post.excerpt}</h2>}
         <PostMeta 
           className="text-inkMedium my-4"
           date={post.published_at}
           readingTime={post.reading_time} />
-        <PostContent html={post.html} />
       </header>
+      <PostContent html={post.html} />
     </article>
   </Layout>
 }
