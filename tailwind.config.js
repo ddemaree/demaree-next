@@ -73,7 +73,7 @@ module.exports = {
 				}
 			})
 
-			addUtilities(inkUtils, ['dark'])
+			addUtilities(inkUtils, ['dark', 'hover'])
 
 			addBase({
 				'body': {

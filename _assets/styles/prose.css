@@ -7,6 +7,10 @@
 @layer components {
   .dd-prose {
 
+    .lede {
+      @apply font-sans text-3xl;
+    }
+
     /* SPACING */
 
     /* All block elements should have auto centered spacing and bottom margin */

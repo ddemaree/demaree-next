@@ -4,7 +4,23 @@ import Link from "next/link";
 import NewIcon from "./Icons";
 import c from 'classnames';
 
-function Layout({ children, wrapperClassName, mainClassName }) {
+function NavItem({ active, href, label }) {
+  const wrapperClasses = c([
+    'mx-3 first:ml-0'
+  ])
+
+  const linkClasses = c([
+    'py-1 px-1 border-b-2 hover:text-inkBold',
+    (active && 'font-semibold text-inkBold border-inkBold'),
+    (!active && 'border-transparent text-ink')
+  ])
+
+  return <li className={wrapperClasses}>
+    <Link href={href}><a className={linkClasses}>{label}</a></Link>
+  </li>
+}
+
+function Layout({ children, wrapperClassName, mainClassName, activeNav }) {
   const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
@@ -19,7 +35,7 @@ function Layout({ children, wrapperClassName, mainClassName }) {
       {darkMode && <meta name="twitter:widgets:theme" content="dark" />}
     </Head>
     <div className={c(wrapperClassName, "text-ink bg-surface flex flex-col min-h-screen")}>
-      <header className="p-8 flex justify-between">
+      <header className="px-8 py-6 flex justify-between">
         <Link href="/">
           <a>
             <NewIcon className="w-8 h-8 text-inkBold" />
@@ -27,8 +43,9 @@ function Layout({ children, wrapperClassName, mainClassName }) {
         </Link>
         <nav>
           <ul className="flex">
-            <li className="mx-4 first:ml-0"><Link href="/about-me">About</Link></li>
-            <li className="mx-4 first:ml-0"><Link href="/archives">Archives</Link></li>
+            <NavItem label="Home" href="/" active={(activeNav === "home")} />
+            <NavItem label="About" href="/about-me" active={(activeNav === "about-me")} />
+            {/* <NavItem label="Archives" href="/archives" active={(activeNav === "archives")} /> */}
           </ul>
         </nav>
       </header>

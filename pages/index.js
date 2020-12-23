@@ -5,14 +5,13 @@ import { getPosts } from '../lib/data/ghostApi'
 import { formatDate } from '../lib/utils/date'
 import Layout from '../components/Layout'
 import BlogPostCard from '../components/BlogPostCard'
-// import Image from '../components/Image'
 
 function HomePage({ posts, latestSubstack }) {
 
   const Section = ({ children }) => <div className="my-16">{children}</div>
   const Headline = ({ children }) => <h2 className="uppercase font-sans-display font-semibold tracking-wider text-center text-lg text-accent mb-4">{ children }</h2> 
 
-  return <Layout wrapperClassName="dd-surface-green-900 dd-inkMedium-green-300 dd-ink-green-100 dd-accent-red-400 dd-inkBold-white dd-inkLight-green-600">
+  return <Layout activeNav="home" wrapperClassName="dd-surface-green-900 dd-inkMedium-green-300 dd-ink-green-100 dd-accent-red-400 dd-inkBold-white dd-inkLight-green-600">
     <div className="font-serif max-w-2xl mx-auto p-8 pt-2">
       <header className="flex flex-col items-center mb-16 text-center">
         <figure className="w-full max-w-lg mb-4">

@@ -1,3 +1,4 @@
+import { includes } from 'lodash';
 import Layout from '../components/Layout';
 import PostContent from '../components/PostContent';
 import { getPages, getSinglePage } from '../lib/data/ghostApi';
@@ -26,6 +27,12 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const pages = await getPages()
+  const visiblePages = pages.filter(p => {
+    const tagNames = p.tags.map(t => t.name)
+    const pageIsHidden = includes(tagNames, '#hidden')
+    return !pageIsHidden
+  })
+
   const paths = pages.map(page => ({params: { pageSlug: page.slug }}))
 
   return {
