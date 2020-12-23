@@ -4,6 +4,7 @@ import Link from "next/link";
 import NewIcon from "./Icons";
 import c from 'classnames';
 import SocialLinks from "./SocialLinks";
+import { TitleMetaTags } from "./MetaTags";
 
 function NavItem({ active, href, label }) {
   const wrapperClasses = c([
@@ -21,7 +22,7 @@ function NavItem({ active, href, label }) {
   </li>
 }
 
-function Layout({ children, wrapperClassName, mainClassName, activeNav, hideFooterSocials }) {
+function Layout({ children, wrapperClassName, mainClassName, activeNav, hideFooterSocials, pageTitle, pageDescription }) {
   const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
@@ -30,8 +31,22 @@ function Layout({ children, wrapperClassName, mainClassName, activeNav, hideFoot
     }
   })
 
+  const baseTitle = "David Demaree's site"
+
   return <div className="dark:dd-inkMedium-gray-400 dark:dd-ink-gray-300 dark:dd-inkLight-gray-700 dark:dd-surface-black dark:dd-inkBold-white dark:dd-accent-red-400">
     <Head>
+      <title>{pageTitle ? `${pageTitle} • ${baseTitle}` : baseTitle}</title>
+      {pageTitle && <>
+        <meta property="og:title" content={pageTitle} />
+        <meta name="twitter:title" content={pageTitle} /> 
+      </>}
+
+    {pageDescription && <>
+      <meta name="description" content={pageDescription} />
+      <meta property="og:description" content={pageDescription} />
+      <meta name="twitter:description" content={pageDescription} />
+    </>}
+      
       {/* seems like twitter should do this for you automatically but whatever */}
       {darkMode && <meta name="twitter:widgets:theme" content="dark" />}
     </Head>

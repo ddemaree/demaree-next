@@ -4,7 +4,7 @@ import c from 'classnames'
 export const NewIcon = ({ className }) => (
   <div className={c(`dd-icon`, className)}>
     <svg viewBox="0 0 99 96" xmlns="http://www.w3.org/2000/svg">
-      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g fill="currentColor">
           <path d="M56.2222222,0 L56.2232667,0.308190068 C80.2959651,3.02293882 99,23.3397565 99,48 C99,72.6602435 80.2959651,92.9770612 56.2232667,95.6918099 L56.2222222,96 L0,96 L0,0 L56.2222222,0 Z M49,24 C35.745166,24 25,34.745166 25,48 C25,61.254834 35.745166,72 49,72 C62.254834,72 73,61.254834 73,48 C73,34.745166 62.254834,24 49,24 Z" id="Shape"></path>
         </g>
