@@ -5,36 +5,7 @@ import { getPosts } from '../lib/data/ghostApi'
 import { formatDate } from '../lib/utils/date'
 import Layout from '../components/Layout'
 import BlogPostCard from '../components/BlogPostCard'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
-
-function SocialLinks() {
-  const socials = Object.entries({
-    twitter: {
-      url: "https://twitter.com/ddemaree",
-      icon: faTwitter
-    },
-    instagram: {
-      url: "https://instagram.com/ddemaree",
-      icon: faInstagram
-    },
-    linkedin: {
-      url: "https://linkedin.com/in/ddemaree",
-      icon: faLinkedin
-    },
-    email: {
-      url: "mailto:demaree@hey.com?subject=Holla",
-      icon: faPaperPlane
-    }
-  })
-
-  return <div className="flex items-center justify-center">
-    {socials.map(([key, social]) => 
-      <a key={key} href={social.url} className="transition-all mr-3 last:mr-0 inline-block h-12 w-12 rounded-full text-inkMedium border border-inkLight hover:border-inkBold hover:text-inkBold flex items-center justify-center">
-        <FontAwesomeIcon icon={social.icon} className="w-6" /></a>)}
-  </div>
-}
+import SocialLinks from '../components/SocialLinks'
 
 function HomePage({ posts, latestSubstack }) {
 
@@ -44,7 +15,7 @@ function HomePage({ posts, latestSubstack }) {
   return <Layout activeNav="home" wrapperClassName="dd-surface-green-900 dd-inkMedium-green-300 dd-ink-green-100 dd-accent-red-400 dd-inkBold-white dd-inkLight-green-600">
     <div className="font-serif max-w-2xl mx-auto p-8 pt-2">
       <header className="flex flex-col items-center text-center mb-12 sm:mb-16">
-        <figure className="w-full max-w-lg mb-4">
+        <figure className="w-full max-w-xl mb-4">
           <img src="//res.cloudinary.com/demaree/image/upload/w_800,q_auto/demaree-dot-me/images/david-acnh-xmas.jpg" alt="The author wearing Christmas sweater in Animal Crossing New Horizons" width={836} height={538} className="w-full rounded-2xl" />
         </figure>
         <h1 className="font-sans-display font-semibold text-4xl xs:text-5xl my-2 text-inkBold">David Demaree</h1>

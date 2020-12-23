@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from "next/link";
 import NewIcon from "./Icons";
 import c from 'classnames';
+import SocialLinks from "./SocialLinks";
 
 function NavItem({ active, href, label }) {
   const wrapperClasses = c([
@@ -20,7 +21,7 @@ function NavItem({ active, href, label }) {
   </li>
 }
 
-function Layout({ children, wrapperClassName, mainClassName, activeNav }) {
+function Layout({ children, wrapperClassName, mainClassName, activeNav, hideFooterSocials }) {
   const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
@@ -53,6 +54,7 @@ function Layout({ children, wrapperClassName, mainClassName, activeNav }) {
         {children}
       </main>
       <footer className="p-8 pb-24 text-center">
+        {!hideFooterSocials && <div className="mb-8"><SocialLinks /></div>}
         <div>"Have courage, and be kind"</div>
         <div>&copy; 2020 David Demaree</div>
         <div className="mt-4"><Link href="/__style-guide"><a className="text-sm text-inkLight">View Style Guide</a></Link></div>
