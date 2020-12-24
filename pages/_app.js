@@ -1,8 +1,36 @@
 import Head from 'next/head'
+import { useEffect } from 'react';
+import { useRouter } from 'next/router'
+import * as Fathom from 'fathom-client'
+
 import { DefaultMetaTags } from '../components/MetaTags';
+
 import '../_assets/styles/global.css';
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter()
+  const isProd = (process.env.NODE_ENV === 'production')
+
+  if(isProd) {
+    useEffect(() => {
+      // Initialize Fathom when the app loads
+      Fathom.load('TOFIAIKB', {
+        includedDomains: ['demaree.me'],
+      })
+
+      function onRouteChangeComplete() {
+        Fathom.trackPageview()
+      }
+      // Record a pageview when route changes
+      router.events.on('routeChangeComplete', onRouteChangeComplete)
+
+      // Unassign event listener
+      return () => {
+        router.events.off('routeChangeComplete', onRouteChangeComplete)
+      }
+    }, [])
+  }
+
   return <>
     <Head>
       <title>David Demaree's site</title>
