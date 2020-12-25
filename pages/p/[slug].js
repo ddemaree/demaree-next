@@ -1,11 +1,12 @@
-import Head from 'next/head'
+// import Head from 'next/head'
+import { Helmet } from 'react-helmet'
 import c from 'classnames'
 
 import { getPosts, getSinglePost } from "../../lib/data/ghostApi"
 import { formatDate } from "../../lib/utils/date"
 import Layout from "../../components/Layout"
 import PostContent from "../../components/PostContent"
-import { ArticleMetaTags } from '../../components/MetaTags'
+// import { ArticleMetaTags } from '../../components/MetaTags'
 
 function PostMeta({ date, readingTime, className }) {
   return <div className={c(className, 'flex')}>
@@ -17,12 +18,13 @@ function PostMeta({ date, readingTime, className }) {
 
 function PostDetailPage({ post }) {
   return <Layout pageTitle={post.title} pageDescription={post.excerpt}>
-    <Head>
+    <Helmet>
+      <title>{post.title}</title>
       <meta property="og:type" value="article" />
       <meta property="article:published_time" value={post.published_at} />
       <meta name="twitter:label1" value="Reading time" />
       <meta name="twitter:label2" value={`${post.reading_time} min read`} />
-    </Head>
+    </Helmet>
     <article className="py-12">
       <header className="dd-w-inset mx-auto max-w-2xl mb-16">
         <h1 className="text-4xl font-semibold leading-snug text-inkBold">{post.title}</h1>
