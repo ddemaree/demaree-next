@@ -1,4 +1,3 @@
-// import Head from 'next/head'
 import { Helmet } from 'react-helmet'
 import c from 'classnames'
 
@@ -6,7 +5,6 @@ import { getPosts, getSinglePost } from "../../lib/data/ghostApi"
 import { formatDate } from "../../lib/utils/date"
 import Layout from "../../components/Layout"
 import PostContent from "../../components/PostContent"
-// import { ArticleMetaTags } from '../../components/MetaTags'
 
 function PostMeta({ date, readingTime, className }) {
   return <div className={c(className, 'flex')}>
@@ -17,9 +15,21 @@ function PostMeta({ date, readingTime, className }) {
 }
 
 function PostDetailPage({ post }) {
+  const postDescription = post.excerpt || "A blog post by David Demaree"
+
   return <Layout pageTitle={post.title} pageDescription={post.excerpt}>
     <Helmet>
       <title>{post.title}</title>
+      <meta property="og:title" content={post.og_title || post.title} />
+      <meta name="twitter:title" content={post.twitter_title || post.title} />
+      
+      <meta name="description" content={post.meta_description || postDescription} />
+      <meta property="og:description" content={post.og_description || postDescription} />
+      <meta name="twitter:description" content={post.twitter_description || postDescription} />
+
+      {post.feature_image && <meta name="twitter:image" value={post.feature_image} />}
+      {post.feature_image && <meta name="twitter:card" value="summary_large_image" />}
+
       <meta property="og:type" value="article" />
       <meta property="article:published_time" value={post.published_at} />
       <meta name="twitter:label1" value="Reading time" />
