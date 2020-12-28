@@ -1,23 +1,15 @@
 import { Helmet } from 'react-helmet'
-import c from 'classnames'
 
 import { getPosts, getSinglePost } from "../../lib/data/ghostApi"
-import { formatDate } from "../../lib/utils/date"
 import Layout from "../../components/Layout"
 import PostContent from "../../components/PostContent"
+import PostMeta from "../../components/PostMeta"
 
-function PostMeta({ date, readingTime, className }) {
-  return <div className={c(className, 'flex')}>
-    <time dateTime={date}>{formatDate(date)}</time>
-    <span className="mx-2">•</span>
-    <span className="reading-time">{readingTime} min read</span>
-  </div>
-}
 
 function PostDetailPage({ post }) {
   const postDescription = post.excerpt || "A blog post by David Demaree"
 
-  return <Layout pageTitle={post.title} pageDescription={post.excerpt}>
+  return <Layout>
     <Helmet>
       <title>{post.title}</title>
       <meta property="og:title" content={post.og_title || post.title} />
