@@ -53,7 +53,7 @@ export async function getStaticProps({ params }) {
   const categories = catTerms.map(termMapper)
   const tags = tagTerms.map(termMapper)
 
-  const featuredImage = (post._embedded['wp:featuredmedia'] || [])[0]
+  const featuredImage = ((post._embedded['wp:featuredmedia'] || [])[0] || null)
 
   return {
     props: {
