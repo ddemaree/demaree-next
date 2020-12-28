@@ -7,7 +7,7 @@ function BlogPostCard({ title, link, pubDate, readingTime, excerpt, className, f
   const linkIsRemote = link.match(/^https?/)
 
   const cardTitleContent = <>
-    <h2 className="text-2xl font-sans font-medium mb-1 text-inkBold">{title}</h2>
+    <h2 className="text-2xl font-sans font-medium mb-1 text-inkBold" dangerouslySetInnerHTML={{__html: title}} />
     {excerpt && <h3 className="font-sans text-inkMedium">{excerpt}</h3>}
   </>
 

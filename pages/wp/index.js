@@ -1,28 +1,28 @@
-import axios from 'axios'
-
-const wpComAPI = axios.create({
-  baseURL: "https://public-api.wordpress.com/rest/v1.1/sites/ddemaree.wordpress.com" 
-})
-
-const wpAPI = axios.create({
-  baseURL: "https://wp.demaree.space/wp-json/wp/v2"
-})
+import { getWpPostsForIndex } from '../../lib/data/wordpressApi'
+import BlogPostCard from '../../components/BlogPostCard'
+import Layout from '../../components/Layout'
 
 function WordPressPosts({ posts }) {
-  return <h1>Hello</h1>
+  return <Layout>
+    <div className="max-w-2xl p-8 mx-auto">
+    {posts.map(({ title, date, slug, reading_time, excerpt, featuredImage }) => 
+      <BlogPostCard
+      key={slug}
+      title={title}
+      pubDate={date}
+      link={`/wp/${slug}`}
+      readingTime={reading_time}
+      excerpt={excerpt}
+      featuredImage={featuredImage}
+      className="mb-8" />)}
+    </div>
+  </Layout>
 }
 
 export default WordPressPosts
 
 export async function getStaticProps({ params }) {
-  const posts = await wpAPI.get("/posts", {
-    params: {
-      per_page: 100,
-      '_embed': 1
-    }
-  }).then(res => res.data)
-  console.log(posts)
-
+  const posts = await getWpPostsForIndex()
   return {
     props: { posts }
   }
