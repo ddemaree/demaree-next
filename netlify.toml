@@ -4,7 +4,15 @@
 [build]
   command = "hugo"
   publish = "public"
-  environment = { NODE_ENV = "production", NODE_VERSION = "12" }
+
+[build.environment]
+  NODE_ENV = "production"
+  NODE_VERSION = "12"
+  HUGO_VERSION = "0.80.0"
+  HUGO_ENABLEGITINFO = "true"
+
+[context.branch-deploy]
+  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
 
 [context.eleventy-2007]
   command = "npm run build"
