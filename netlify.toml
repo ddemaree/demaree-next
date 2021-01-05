@@ -1,0 +1,11 @@
+[Settings]
+  ID = "demaree-next"
+
+[build]
+  command = "hugo"
+  publish = "public"
+  environment = { NODE_ENV = "production", NODE_VERSION = "12" }
+
+[context.eleventy-2007]
+  command = "npm run build"
+  publish = "_site"
