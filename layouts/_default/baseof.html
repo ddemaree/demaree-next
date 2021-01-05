@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>{{ block "title" . }}
+      {{ .Site.Title }}
+    {{ end }}</title>
+    <link rel="stylesheet" href="/fonts/soehne/index.css" type="text/css" />
+    <link rel="stylesheet" href="/fonts/soehne-breit/index.css" type="text/css" />
+    <link rel="stylesheet" href="/fonts/ivar-text/index.css" type="text/css" />
+    <link rel="stylesheet" href="/fonts/roslindale/index.css" type="text/css" />
+    <link rel="stylesheet" href="/fa/css/all.min.css" type="text/css" />
+    {{ $style := resources.Get "css/main.css" | resources.PostCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" type="text/css" />
+  </head>
+  <body class="">
+    {{ partial "header.html" }}
+
+    {{ block "main" . }}{{ end }}
+
+    {{ block "footer" . }}
+    <footer class="pt-8 text-center pb-16 text-inkMedium">
+      <p class="text-lg font-serif mb-1">&ldquo;Have courage, and be kind.&rdquo;</p>
+      <p>&copy;2021— David Demaree</p>
+    </footer>
+    {{ end }}
+    {{ $js := resources.Get "js/main.js" | js.Build }}
+    <script async src="{{ $js.Permalink }}"></script>
+  </body>
+</html>

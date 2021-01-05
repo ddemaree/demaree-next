@@ -1,0 +1,6 @@
+{{ $img := .Page.Resources.GetMatch .Destination }}
+{{ $imgLite := $img.Resize "100x" | images.Filter (images.GaussianBlur 6) }}
+
+<figure>
+  <img src="{{ $img.Permalink }}" />
+</figure>

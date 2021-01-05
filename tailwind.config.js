@@ -1,0 +1,93 @@
+const _ = require('lodash')
+const defaultTheme = require('tailwindcss/defaultTheme');
+const plugin = require('tailwindcss/plugin')
+
+module.exports = {
+	darkMode: 'media',
+	purge: {
+		layers: ['utilities'],
+		content: [
+			'./**/*.js',
+			"./**/*.html"
+		]
+	},
+	variants: {
+		margin: ['responsive', 'last']
+	},
+	plugins: [
+		// Add support for utility-based theming
+		plugin(({ addUtilities, addBase, theme }) => {
+			const propKeys = {
+				'surface': '--color-background',
+				'ink': '--color-ink',
+				'inkBold': '--color-ink-strong',
+				'inkMedium': '--color-ink-medium',
+				'inkLight': '--color-ink-light',
+				'accent': '--color-accent'
+			}
+
+			const themeColors = theme('colors')
+
+			const getInkUtils = (colors, utilsObj = {}, prefix = '') => {
+				const colorPairs = Object.entries(colors)
+
+				colorPairs.forEach(([key, values]) => {
+					if(typeof values === 'string') {
+						_.forIn(propKeys, (customProperty, propKey) => {
+							utilsObj[`.dd-${propKey}${prefix}-${key}`] = {
+								[customProperty]: values
+							}
+						})
+					} else if(typeof values === 'object') {
+						getInkUtils(values, utilsObj, `-${key}`)
+					}
+				})
+
+				return utilsObj
+			}
+
+			const inkUtils = getInkUtils(themeColors)
+			
+			// Now add the text and background utilities for each color
+			_.forIn(propKeys, (customProperty, propKey) => {
+				inkUtils[`.text-${propKey}`] = {
+					color: `var(${customProperty})`
+				}
+				inkUtils[`.bg-${propKey}`] = {
+					backgroundColor: `var(${customProperty})`
+				}
+				inkUtils[`.border-${propKey}`] = {
+					borderColor: `var(${customProperty})`
+				}
+			})
+
+			addUtilities(inkUtils, ['dark', 'hover'])
+
+			addBase({
+				'body': {
+					'--color-ink': theme('colors.gray.800'),
+					'--color-ink-strong': theme('colors.black'),
+					'--color-ink-medium': theme('colors.gray.500'),
+					'--color-ink-light': theme('colors.gray.100'),
+					'--color-surface': theme('colors.white'),
+					'--color-accent': theme('colors.red.600')
+				}
+			})
+		})
+	],
+	theme: {
+		extend: {
+			fontFamily: {
+				sans: ['soehne-web', ...defaultTheme.fontFamily.sans],
+				'sans-display': ['soehne-breit-web', 'soehne-web', ...defaultTheme.fontFamily.sans],
+				serif: ['ivar-text', ...defaultTheme.fontFamily.serif],
+				'serif-display': ['FreightDisplayPro', 'ivar-text', ...defaultTheme.fontFamily.serif],
+				'roslindale': ['RoslindaleDisplay', 'ivar-text', ...defaultTheme.fontFamily.serif],
+				mono: ['JetBrains Mono', 'Source Code Pro', ...defaultTheme.fontFamily.mono],
+			},
+			screens: {
+				'xs': '460px'
+			}
+		},
+	},
+};

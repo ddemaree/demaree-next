@@ -1,0 +1,14 @@
+{{ define "main" }}
+<main aria-role="main">
+  <header class="homepage-header bg-green-100 py-10 grid dd-layout-cols text-2xl sm:text-3xl gap-x-6 font-medium">
+    {{.Content}}
+  </header>
+
+  <div class="grid dd-layout-cols grid-flow-row gap-x-6 my-16">
+    <h2 class="text-center mb-8 uppercase tracking-widest font-sans-display font-semibold text-lg col-start-2 col-span-8">Latest blog posts</h2>
+    {{ range first 5 (where .Site.RegularPages "Type" "blog") }}
+      {{ .Render "li"}}
+    {{ end }}
+  </div>
+</main>
+{{ end }}

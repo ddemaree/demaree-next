@@ -1,0 +1,8 @@
+@font-face {
+  src: url('FreightDisplayPro-Semibold.woff2') format("woff2"),
+    url('FreightDisplayPro-Semibold.woff') format("woff");
+  font-family: 'FreightDisplayPro';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}

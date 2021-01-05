@@ -1,0 +1,7 @@
+@font-face {
+  src: url('./RoslindaleVariableDisplay-VF.woff2') format("woff2");
+  font-family: 'RoslindaleDisplay';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: swap;
+}

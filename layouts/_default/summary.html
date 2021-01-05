@@ -1,0 +1,13 @@
+{{ $permalink := .Permalink }}
+<div class="flex-1">
+  <a href="{{ $permalink }}">
+    <h2 class="text-xl font-semibold">{{ .Title }}</h2>
+    {{ with .Params.excerpt }}<div>{{ . }}</div>{{ end }}
+    <div class="post-meta text-inkMedium text-sm">{{ .Date.Format "Jan 2 2006" }} - {{ .ReadingTime }} min read</div>
+  </a>
+</div>
+{{ with .Params.featured_image }}
+<a href="{{ $permalink }}" class="w-24 ml-3">
+  <img src="//res.cloudinary.com/demaree/image/fetch/w_600,h_600,q_auto/{{ . }}" alt="" />
+</a>
+{{ end }}

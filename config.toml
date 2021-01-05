@@ -1,0 +1,10 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "David Demaree"
+
+[permalinks]
+posts = "/p/:title"
+blog = "/p/:slug"
+
+[markup.goldmark.renderer]
+unsafe = true

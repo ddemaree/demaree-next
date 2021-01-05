@@ -1,0 +1,7 @@
+{{ $instaId := .Get 0 }}
+{{ $accessToken := "168636849931146|be6d5aa05878fe740bc69fd9cb159c12" }}
+{{ $instaURL := (printf "https://instagram.com/p/%s" $instaId) }}
+{{ $oembedURL := (printf "https://graph.facebook.com/v9.0/instagram_oembed/?url=%s/&hidecaption=0&access_token=%s" $instaURL $accessToken) }}
+{{ $insta := getJSON $oembedURL }}
+<blockquote class="instagram-media w-full" data-instgrm-captioned data-instgrm-permalink="{{ $instaURL }}" data-instgrm-version="13"><img src={{ $insta.thumbnail_url }} /></blockquote>
+<script async src="//platform.instagram.com/en_US/embeds.js"></script>
