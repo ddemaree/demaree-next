@@ -1,0 +1,16 @@
+{{ $width  := 0 }}
+{{ $height := 0 }}
+{{ $targetWidth := false }}
+
+<li>
+  <figure>
+    {{ .Site.Params.cloudinaryBase }}
+    {{ .Get "dimensions" }}
+    GALLERY IMG
+
+    {{ with (.Get "dimensions") }}
+      {{ $dimensions := partial "utils/dimensions.html" . }}
+      {{ $dimensions }}
+    {{ end }}
+  </figure>
+</li>

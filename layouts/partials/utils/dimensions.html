@@ -1,0 +1,6 @@
+{{ $dimensions := split . "x" }}
+{{ $width  := int (index $dimensions 0) }}
+{{ $height := int (index $dimensions 1 | default $width) }}
+{{ $ratio  := div (float $height) (float $width) }}
+{{ $padding := mul $ratio 100 }}
+{{ return dict "width" $width "height" $height "ratio" $ratio "padding" $padding }}

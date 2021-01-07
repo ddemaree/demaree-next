@@ -1,49 +1,7 @@
-
-{{ define "title" }}
-  {{ .Title }} &ndash; {{ .Site.Title }}
-{{ end }}
 {{ define "main" }}
-<header class="grid dd-layout-cols py-12">
-  <h1 class="text-center col-start-3 col-span-6 font-medium text-5xl font-roslindale mb-1">{{ .Title }}</h1>
-
-  {{ with .Params.excerpt }}<h2 class="text-center col-start-2 col-span-8 text-inkMedium text-xl mb-4">{{ . }}</h2>{{ end }}
-
-  <div class="post-meta text-inkMedium text-base text-center col-start-2 col-span-8 text-inkMedium">{{ .Date.Format "Jan 2 2006" }} - {{ .ReadingTime }} min read</div>
-</header>
-
-{{ $dimensions := split "400" "x" }}
-{{ $width := (index $dimensions 0 | default 1200) }}
-{{ $height := (index $dimensions 1 | default $width) }}
-{{ slice $width $height }}
-
-
 <main class="grid dd-layout-cols">
   <div class="dd-prose dd-layout-cols gap-x-6 grid text-lg font-serif col-span-full">
     {{ .Content }}
   </div>
-
-  {{ if or .NextInSection .PrevInSection }}
-  <div class="post-navigation py-12 content-width flex">
-    {{ with .NextInSection }}
-    <a href="{{ .Permalink }}" rel="next" class="flex-1 flex items-center">
-      <i class="fas fa-chevron-left text-accent text-3xl mr-3"></i>
-      <div class="flex-1">
-        <div class="text-base uppercase tracking-widest text-inkMedium">Next post</div>
-        <div class="text-lg font-semibold">{{ .Title }}</div>
-      </div>
-    </a>
-    {{ end }}
-    {{ with .PrevInSection }}
-    <a href="{{ .Permalink }}" rel="prev" class="flex-1 flex items-center text-right">
-      <div class="flex-1">
-        <div class="text-base uppercase tracking-widest text-inkMedium">Previous post</div>
-        <div class="text-lg font-semibold">{{ .Title }}</div>
-      </div>
-      <i class="fas fa-chevron-right text-accent text-3xl ml-3"></i>
-    </a>
-    {{ end }}
-  </div>
-  {{ end }}
-
 </main>
 {{ end }}

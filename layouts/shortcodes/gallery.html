@@ -1,5 +1,8 @@
-{{ $width := false }}
-<!-- TODO: Support width and columns params -->
-<figure class="wp-block-gallery dd-gallery">
+{{- $classes := (slice "gallery-grid") -}}
+{{- if (.Get "cols") -}}
+{{- $classes = $classes | append (add "columns-" (string (.Get "cols"))) -}}
+{{- end -}}
+
+<ul class="{{ delimit $classes " " | safeHTMLAttr }}">
   {{ .Inner }}
-</figure>
+</ul>

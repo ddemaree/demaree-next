@@ -1,0 +1,68 @@
+{{- $path := .Get "src" -}}
+{{- $method := "/image/upload" -}}
+{{- $pathPrefix := (.Page.Params.cloudinary_base | default "") -}}
+
+{{- $transforms := (slice "w_%s" "c_lfill")  -}}
+{{- with .Get "transforms" -}}
+{{- $transforms = $transforms | append (slice .) -}}
+{{- end -}}
+
+{{- $format := printf "//res.cloudinary.com/demaree%%s/%s/%%s" (delimit $transforms ",") -}}
+{{- $srcsetFormat := add $format " %sw" -}}
+{{- $alt := .Get "alt" -}}
+{{- $class := .Get "class" -}}
+{{- $dimensions := .Get "dimensions" -}}
+{{- $attrs := dict -}}
+{{- $attrsString := slice -}}
+
+{{- if $class -}}
+{{- $attrs = merge $attrs (dict "class" $class) -}}
+{{- end -}}
+
+{{- if $alt -}}
+{{- $attrs = merge $attrs (dict "alt" $alt) -}}
+{{- end -}}
+
+{{- if or (hasPrefix $path "http:") (hasPrefix $path "https:") -}}
+  {{- $method = "/image/fetch" -}}
+{{- else if (hasPrefix $path "twitter_name:") -}}
+  {{- $method = "/image/twitter_name" -}}
+  {{- $path = replace $path "twitter_name:" "" -}}
+{{- else if $pathPrefix -}}
+  {{- $path = path.Join $pathPrefix $path -}}
+{{- end -}}
+
+{{- $sizes := (slice "480" "720" "1080" "1440" "1920") -}}
+{{- $srcset := slice -}}
+
+{{- range $sizes -}}
+  {{- $srcset = $srcset | append (printf $srcsetFormat $method . $path .) -}}
+{{- end -}}
+
+{{- $srcset = delimit $srcset ", " -}}
+{{- $attrs = merge $attrs (dict "data-srcset" $srcset ) -}}
+
+{{- $previewSrc := printf $format $method "200" $path -}}
+{{- $defaultSrc := printf $format $method "720" $path -}}
+{{- $attrs = merge $attrs (dict "src" $previewSrc "data-src" $defaultSrc) -}}
+
+{{- if .Get "dimensions" -}}
+{{- $dimensions = partial "utils/dimensions.html" $dimensions -}}
+{{- $attrs = merge $attrs (dict "height" $dimensions.height "width" $dimensions.width "data-ratio" $dimensions.ratio "data-padding" $dimensions.padding) -}}
+{{- end -}}
+
+{{- range $attrName, $attrVal := $attrs -}}
+  {{- $attrsString = $attrsString | append (printf "%s=\"%s\"" $attrName (string $attrVal)) -}}
+{{- end -}}
+
+{{- with .Parent -}}
+  {{- if eq .Name "gallery" -}}
+  <li class="gallery-item">
+    <figure class="overflow-hidden lazy-img-container">
+      <img {{ delimit $attrsString " " | safeHTMLAttr  }} />
+    </figure>
+  </li>
+  {{- end -}}
+{{- else -}}
+<img {{ delimit $attrsString " " | safeHTMLAttr  }} />
+{{- end -}}

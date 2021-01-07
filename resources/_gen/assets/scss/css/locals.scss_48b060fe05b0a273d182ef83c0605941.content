@@ -1,1 +1,0 @@
-.dd-local{background-color:pink}.dd-layout-cols{grid-template-columns:calc(50vw - (var(--layout-wide-width)/2)) repeat(8,1fr) calc(50vw - (var(--layout-wide-width)/2))}.dd-prose h1,.dd-prose h2{margin-top:var(--spacing-big);margin-bottom:1rem}.dd-prose>figure,.dd-prose>.twitter-tweet{margin-left:auto;margin-right:auto}

@@ -1,6 +1,9 @@
-baseURL = "http://example.org/"
+baseURL = "http://demaree.me/"
 languageCode = "en-us"
 title = "David Demaree"
+
+[params]
+cloudinaryBase = "res.cloudinary.com/demaree/image"
 
 [permalinks]
 posts = "/p/:title"

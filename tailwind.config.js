@@ -82,7 +82,8 @@ module.exports = {
 				'sans-display': ['soehne-breit-web', 'soehne-web', ...defaultTheme.fontFamily.sans],
 				serif: ['ivar-text', ...defaultTheme.fontFamily.serif],
 				'serif-display': ['FreightDisplayPro', 'ivar-text', ...defaultTheme.fontFamily.serif],
-				'roslindale': ['RoslindaleDisplay', 'ivar-text', ...defaultTheme.fontFamily.serif],
+				'roslindale': ['Roslindale Variable', 'ivar-text', ...defaultTheme.fontFamily.serif],
+				'roslindale-2': ['"Roslindale Variable 2"', 'ivar-text', ...defaultTheme.fontFamily.serif],
 				mono: ['JetBrains Mono', 'Source Code Pro', ...defaultTheme.fontFamily.mono],
 			},
 			screens: {
