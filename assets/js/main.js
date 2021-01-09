@@ -19,7 +19,7 @@ function loadImage(img) {
 
   fullImg.height = img.attributes['height'] ? img.attributes['height'].value : img.height
   if(img.alt) fullImg.alt = img.alt || ""
-  fullImg.srcset = img.dataset.srcset
+  if(img.dataset.srcset) fullImg.srcset = img.dataset.srcset
 
   const addImage = () => {
     wrapper.appendChild(fullImg).addEventListener('animationend', e => {

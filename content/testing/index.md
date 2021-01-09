@@ -1,6 +1,7 @@
 ---
-title: About Me
+title: Testing Page
 ---
+{{< page-img src="spikes.jpg" >}}
 
 {{< better-cloudinary src="bitsandletters-assets/IMG_1505.jpg" dimensions="1636x2048" class="rounded" >}}
 

@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="/fa/css/all.min.css" type="text/css" />
     {{ $style := resources.Get "css/main.css" | resources.PostCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" type="text/css" />
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
   </head>
   <body class="">
     {{ partial "header.html" }}
