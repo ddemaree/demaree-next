@@ -4,12 +4,16 @@ tags: ['posts', 'Git for Humans']
 date: 2020-07-08T13:00:00-04:00
 slug: no-more-git-masters
 excerpt: "It's time to change your Git repo's default branch."
-dek: "Why and how to change your Git repo's default branch."
+description: "Why and how to change your Git repo's default branch."
 permalink: "/no-more-git-masters/"
 featuredImage: images/image3.jpg
 featured_image: https://images.unsplash.com/photo-1519852476561-ec618b0183ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2676&q=80
 socialImageUrl: https://res.cloudinary.com/demaree/image/upload/c_thumb,w_600,g_face/demaree-dot-me/blog-images/2020-07-02-no-more-masters/Unsplash-river-img.jpg
 cloudinary_base: demaree-dot-me/blog-images/2020-07-02-no-more-masters/
+aliases:
+- /no-more-masters
+- /no-more-git-masters
+- /p/no-more-masters
 ---
 
 >

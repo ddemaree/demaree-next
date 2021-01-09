@@ -1,0 +1,8 @@
+# Range through the site's pages and output the links of any aliases set.
+{{- range $p := .Site.Pages -}}
+{{- range .Aliases }}
+{{ . }} {{ $p.RelPermalink -}}
+{{- end }}
+{{- end }}
+
+/:slug /p/:slug 302
