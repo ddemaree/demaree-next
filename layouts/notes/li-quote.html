@@ -1,0 +1,17 @@
+{{- $wordcount := (.Params.text | countwords) -}}
+{{- $textclass := "text-xl" }}
+{{- if lt $wordcount 200 -}}
+{{ $textclass = "text-2xl" }}
+{{- else if lt $wordcount 100 -}}
+{{ $textclass = "text-3xl" }}
+{{- end -}}
+<div class="max-w-2xl">
+  {{ with .Params.text }}
+  <blockquote class="dd-prose {{ $textclass }} font-sans mb-4">{{ . | markdownify }}</blockquote>
+  {{ end }}
+  {{ with .Params.source }}
+  <div class="dd-prose font-serif max-w-2xl">
+    {{ . | markdownify }}
+  </div>
+  {{ end }}
+</div>

@@ -76,6 +76,12 @@ module.exports = {
 		})
 	],
 	theme: {
+		screens: {
+			'xs': '440px',
+			'sm': '660px',
+			'md': '880px',
+			'lg': '1020px'
+		},
 		extend: {
 			fontFamily: {
 				sans: ['soehne-web', ...defaultTheme.fontFamily.sans],
@@ -84,11 +90,8 @@ module.exports = {
 				'serif-display': ['FreightDisplayPro', 'ivar-text', ...defaultTheme.fontFamily.serif],
 				'roslindale': ['Roslindale Variable', 'ivar-text', ...defaultTheme.fontFamily.serif],
 				'roslindale-2': ['"Roslindale Variable 2"', 'ivar-text', ...defaultTheme.fontFamily.serif],
-				mono: ['JetBrains Mono', 'Source Code Pro', ...defaultTheme.fontFamily.mono],
+				mono: ['JetBrains Mono', 'Source Code Pro', ...defaultTheme.fontFamily.mono]
 			},
-			screens: {
-				'xs': '460px'
-			}
 		},
 	},
 };

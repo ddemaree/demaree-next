@@ -25,12 +25,12 @@ delimiter = ""
 suffixes = [""]
 
 # configure output formats: https://gohugo.io/templates/output-formats#configure-output-formats
-[outputFormats]
-[outputFormats.HEADERS]
-baseName = "_headers"
-isPlainText = true
-mediatype = "text/netlify"
-notAlternative = true
+# [outputFormats]
+# [outputFormats.HEADERS]
+# baseName = "_headers"
+# isPlainText = true
+# mediatype = "text/netlify"
+# notAlternative = true
 
 [outputFormats.REDIR]
 baseName = "_redirects"
@@ -42,6 +42,5 @@ notAlternative = true
 [outputs]
 home = [
 "HTML",
-"HEADERS",
 "REDIR"
 ]

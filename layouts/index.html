@@ -1,13 +1,19 @@
 {{ define "main" }}
 <main aria-role="main">
-  <header class="homepage-header bg-green-100 py-10 text-4xl leading-tight gap-x-6 font-light font-roslindale-2" style="font-variation-settings: 'wdth' 91; font-feature-settings: 'ss03' on, 'ss05' on; font-weight: 350; line-height: 1.35; letter-spacing: 0.3px">
-    <div class="max-w-3xl mx-auto">
+  <header class="homepage-header leading-tight gap-x-6 grid dd-layout-cols">
+    <figure class="overflow-hidden col-span-full bg-red-200 justify-self-center w-48 rounded-full sm:justify-self-stretch sm:rounded-none sm:w-auto sm:col-span-4">
+      <picture class="contents">
+        <source media="(min-width: 640px)" srcset="//res.cloudinary.com/demaree/image/twitter_name/w_600,ar_1,c_fill/ddemaree.jpg 600w, //res.cloudinary.com/demaree/image/twitter_name/w_1200,ar_1,c_fill/ddemaree.jpg 1200w" />
+        <img src="//res.cloudinary.com/demaree/image/twitter_name/w_600,c_fill/ddemaree.jpg" class="object-fill object-center w-full h-full" />
+      </picture>
+    </figure>
+    <div class="text-center sm:text-left font-roslindale-2 text-2xl py-8 col-start-2 col-span-8 xs:text-3xl sm:py-12 justify-self-center max-w-md md:max-w-lg sm:col-start-5 sm:col-span-7 sm:row-start-1 md:text-4xl" style="font-variation-settings: 'wdth' 96; font-feature-settings: 'ss05' on;">
       {{.Content}}
     </div>
   </header>
 
-  <div class="grid dd-layout-cols grid-flow-row gap-x-6 my-16">
-    <h2 class="text-center mb-8 uppercase tracking-widest font-sans-display font-semibold text-lg col-start-2 col-span-8">Latest blog posts</h2>
+  <div class="grid dd-layout-cols grid-flow-row gap-x-6 my-12">
+    <h2 class="text-center mb-8 uppercase tracking-widest font-sans-display font-bold text-accent text-xl col-start-2 col-span-8">Latest blog posts</h2>
     {{ range first 20 (where .Site.RegularPages "Type" "blog") }}
       {{ .Render "li"}}
     {{ end }}

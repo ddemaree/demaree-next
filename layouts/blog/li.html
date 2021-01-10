@@ -1,16 +1,16 @@
 {{ $permalink := .Permalink }}
 
-<article class="mb-6 last:mb-0 col-start-2 md:col-start-3 col-span-8 md:col-span-6 flex items-center">
+<article class="mb-6 last:mb-0 flex items-center col-start-2 col-span-8 md:col-start-3 md:col-span-6">
   <div class="flex-1">
     <a href="{{ $permalink }}">
-      <h2 class="text-xl font-semibold">{{ .Title }}</h2>
+      <h2 class="text-xl md:text-2xl font-semibold">{{ .Title }}</h2>
       {{ with .Params.excerpt }}<div>{{ . }}</div>{{ end }}
       <div class="post-meta text-inkMedium text-sm">{{ .Date.Format "Jan 2 2006" }} - {{ .ReadingTime }} min read</div>
     </a>
   </div>
   {{ with .Params.featured_image }}
-  <a href="{{ $permalink }}" class="w-24 ml-3">
-    <img src="//res.cloudinary.com/demaree/image/fetch/w_600,h_600,q_auto/{{ . }}" alt="" />
+  <a href="{{ $permalink }}" class="w-24 md:w-32 ml-3 overflow-hidden rounded-md">
+    <img width="200" height="200" src="//res.cloudinary.com/demaree/image/fetch/w_100,h_100,c_fill,q_auto/{{ . }}" data-src="//res.cloudinary.com/demaree/image/fetch/w_300,h_300,c_fill,q_auto/{{ . }}" data-srcset="//res.cloudinary.com/demaree/image/fetch/w_300,h_300,c_fill,q_auto/{{ . }} 300w, //res.cloudinary.com/demaree/image/fetch/w_600,h_600,c_fill,q_auto/{{ . }} 600w, //res.cloudinary.com/demaree/image/fetch/w_1200,h_1200,c_fill,q_auto/{{ . }} 1200w" alt="" />
   </a>
   {{ end }}
 </article>

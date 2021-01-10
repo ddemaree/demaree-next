@@ -19,6 +19,26 @@
   grid-template-columns: calc(50vw - (var(--layout-wide-width) / 2)) repeat(8, 1fr) calc(50vw - (var(--layout-wide-width) / 2));
 }
 
+.dd-grid-cols-2 {
+  --layout-gutter: calc(50vw - (var(--layout-wide-width) / 2));
+
+  grid-template-columns: [full-start] minmax(theme('spacing.6'), var(--layout-gutter)) [wide-start] 1fr [content-start] repeat(6, 1fr) [content-end] 1fr [wide-end] minmax(theme('spacing.6'), var(--layout-gutter)) [full-end];
+  
+  .dd-col-full {
+    grid-column: full;
+  }
+
+  .dd-col-wide {
+    grid-column: wide;
+  }
+
+  .dd-col-content {
+    grid-column: content;
+  }
+}
+
+
+
 .fullwidth {
   grid-column: 1 / -1;
 }
@@ -74,6 +94,10 @@
     text-decoration: underline;
   }
 
+  strong {
+    @apply text-inkBold font-semibold;
+  }
+
   h1, h2 {
     @apply text-2xl font-medium font-sans mt-12 mb-2;
 
@@ -90,8 +114,12 @@
     @apply font-bold font-serif mt-2 mb-2;
   }
 
-  > figure {
+  > figure, > hr {
     @apply mt-6 mb-12;
+
+    + figure, + hr {
+      @apply mt-0;
+    }
   }
 
   > .twitter-tweet {
@@ -115,6 +143,76 @@
     text-align: center;
     > * {
       color: inherit;
+    }
+  }
+
+  ul, ol {
+    list-style: none;
+    counter-reset: my-awesome-counter;
+
+    ul, ol {
+      margin-bottom: 0;
+      margin-top: 0.6em;
+    }
+
+    & > li {
+      @apply mb-3 ml-8;
+      /* margin-left: 1.5em; */
+
+      &:before {
+        display: inline-block;
+        width: 3em;
+        margin-left: -3em;
+        box-sizing: border-box;
+        text-align: right;
+        position: absolute;
+      }
+    }
+  }
+
+  ul > li {
+    &:before {
+      padding-top: 4px;
+      padding-right: 15px;
+      content: '\2022';
+      margin-top: -0.15em;
+    }
+  }
+
+  ol > li {
+    counter-increment: my-awesome-counter;
+
+    &:before {
+      content: counter(my-awesome-counter) ".";
+      font-weight: bold;
+      padding-right: 0.5em;
+    }
+  }
+
+  > blockquote {
+    @apply px-6 text-inkMedium;
+    box-shadow: inset 4px 0 0 0 var(--color-ink-light, currentColor);
+
+    > * {
+      @apply min-w-full mb-8;
+
+      &:last-child {
+        @apply mb-0;
+      }
+    }
+  }
+
+  > hr {
+    @apply h-8 flex items-center justify-center border-0;
+
+    &:before {
+      @apply text-inkLight inline-block text-lg;
+      content: '•••';
+      letter-spacing: 1em;
+    }
+
+    + h1, + h2 {
+      @apply mt-0;
     }
   }
 }

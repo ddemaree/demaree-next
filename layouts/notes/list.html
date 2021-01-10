@@ -1,0 +1,39 @@
+{{ define "main" }}
+{{ $paginator := .Paginate (.Pages.GroupByDate "Jan 2006") }}
+<div class="max-w-3xl mx-auto px-8">
+  <h1 class="text-center text-2xl font-semibold">Notes</h1>
+
+  {{ range $paginator.PageGroups  }}
+  <h2 class="font-semibold mt-16 mb-8 first:mt-0">{{ .Key }}</h2>
+  {{ range .Pages }}
+    <article class="my-16">
+      <header class="mb-2">
+        <a href="{{ .RelPermalink }}" class="text-inkMedium"># {{ .Date.Format "Mon, Jan 2, 2006" }}</a>
+      </header>
+      {{- $type := index .Params "tumblr_type" -}}
+      {{ .Render (printf "li-%s" $type) }}
+    </article>
+    {{ end }}
+  <hr>
+  {{ end }}
+
+  {{ with $paginator }}
+  {{ if (or .HasPrev .HasNext) }}
+  <div>
+    {{ with .Prev }}
+    <a href="{{ .URL }}">&larr; Page {{ .PageNumber }}</a>
+    {{ end }}
+
+    <div>
+      Page {{ .PageNumber }} of {{ .TotalPages }}
+    </div>
+
+    {{ with .Next }}
+    <a href="{{ .URL }}">Page {{ .PageNumber }} &rarr;</a>
+    {{ end }}
+  </div>
+  {{ end }}
+  {{ end }}
+</div>
+
+{{ end }}

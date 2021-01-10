@@ -1,6 +1,37 @@
 ---
 title: Testing Page
+url: /__style-guide
 ---
+
+In 1945 New Mexico, [the first atomic bomb is detonated](https://en.wikipedia.org/wiki/Trinity_(nuclear_test)):
+
+* Around and inside a _building_ labelled "**convenience store**" which appears burnt out, a procession of circulating woodsmen takes place.
+* Floating in a void, the **Experiment** a white humanoid form spews a stream of primordial/ectoplasmic fluid
+* Amongst various ova oozing in said fluid one darker globule manifests BOB's visage.
+
+Red and gold imagery follows like burning embers, a fireworks radiation of atomic energy.
+
+> This is the water and this is the well. Drink full and descend. The horse is the white of the eyes and dark within.
+
+In an imposing windowless building atop a staggering craggy outcrop amidst an endless purple sea, Señorita Dido sits next to a imposing metallic bell shaped form/machine, listening to the music of a phonograph.
+
+**Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.** Vestibulum tortor quam,  feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero  sit amet quam egestas semper. Aenean ultricies mi vitae est.
+
+<figure>
+  {{< better-cloudinary src="tiny-mandolin-production/aaron-burson-YihQdPSK9jI-unsplash.jpg" dimensions="2000x1333" >}}
+  <figcaption>New York, New York, a helluva town</figcaption>
+</figure>
+
+----
+
+## Body copy
+
+Adapted from some notes I sent to [Tim Brown](https://medium.com/u/451a777d0bab) via a Slack DM:
+
+### Always think about the story of what you’re working on.
+
+How would you explain your work — and the context around it — to someone who knows way less than you do. The story is key.
+
 {{< page-img src="spikes.jpg" >}}
 
 {{< better-cloudinary src="bitsandletters-assets/IMG_1505.jpg" dimensions="1636x2048" class="rounded" >}}
