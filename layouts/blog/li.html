@@ -10,7 +10,11 @@
   </div>
   {{ with .Params.featured_image }}
   <a href="{{ $permalink }}" class="w-24 md:w-32 ml-3 overflow-hidden rounded-md">
+    {{ if (hasPrefix . "http") }}
     <img width="200" height="200" src="//res.cloudinary.com/demaree/image/fetch/w_100,h_100,c_fill,q_auto/{{ . }}" data-src="//res.cloudinary.com/demaree/image/fetch/w_300,h_300,c_fill,q_auto/{{ . }}" data-srcset="//res.cloudinary.com/demaree/image/fetch/w_300,h_300,c_fill,q_auto/{{ . }} 300w, //res.cloudinary.com/demaree/image/fetch/w_600,h_600,c_fill,q_auto/{{ . }} 600w, //res.cloudinary.com/demaree/image/fetch/w_1200,h_1200,c_fill,q_auto/{{ . }} 1200w" alt="" />
+    {{ else }}
+    <img width="200" height="200" src="//res.cloudinary.com/demaree/image/upload/w_100,h_100,c_fill,q_auto/{{ . }}" data-src="//res.cloudinary.com/demaree/image/upload/w_300,h_300,c_fill,q_auto/{{ . }}" data-srcset="//res.cloudinary.com/demaree/image/upload/w_300,h_300,c_fill,q_auto/{{ . }} 300w, //res.cloudinary.com/demaree/image/upload/w_600,h_600,c_fill,q_auto/{{ . }} 600w, //res.cloudinary.com/demaree/image/upload/w_1200,h_1200,c_fill,q_auto/{{ . }} 1200w" alt="" />
+    {{ end }}
   </a>
   {{ end }}
 </article>

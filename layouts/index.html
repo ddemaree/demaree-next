@@ -12,11 +12,51 @@
     </div>
   </header>
 
-  <div class="grid dd-layout-cols grid-flow-row gap-x-6 my-12">
+  <div class="grid dd-grid-cols-2 grid-flow-row gap-x-6 my-12">
     <h2 class="text-center mb-8 uppercase tracking-widest font-sans-display font-bold text-accent text-xl col-start-2 col-span-8">Latest blog posts</h2>
-    {{ range first 20 (where .Site.RegularPages "Type" "blog") }}
-      {{ .Render "li"}}
+
+{{ $__substacks := getJSON "https://demaree.substack.com/api/v1/posts?limit=100&offset=0" }}
+{{ $substacks := slice }}
+{{ range $__substacks }}
+  {{ $substacks = $substacks | append (. | merge (dict "Date" (.post_date | time))) }}
+{{ end }}
+{{ $__posts := (where .Site.RegularPages "Type" "blog") }}
+{{ $__all := $__posts | append $substacks }}
+{{ range first 15 (sort $__all "Date" "desc") }}
+<article class="my-8 flex max-w-2xl items-center dd-col-wide ">
+  {{ if .Type }}
+    {{ $permalink := .RelPermalink }}
+    <div class="flex-1">
+      <a href="{{ $permalink }}" class="block">
+        <h2 class="font-semibold text-2xl">{{ .Title }}</h2>
+        {{ with .Params.description }}<div>{{ . }}</div>{{ end }}
+        <div class="text-inkMedium text-sm">{{ .Date.Format "Jan 2, 2006" }}</div>
+      </a>
+    </div>
+    {{ with .Params.featured_image }}
+    <a href="{{ $permalink }}" class="w-24 md:w-32 h-32 ml-3 overflow-hidden rounded-md">
+      {{ if (hasPrefix . "http") }}
+      <img width="200" height="200" src="//res.cloudinary.com/demaree/image/fetch/w_100,h_100,c_fill,q_auto/{{ . }}" data-src="//res.cloudinary.com/demaree/image/fetch/w_300,h_300,c_fill,q_auto/{{ . }}" data-srcset="//res.cloudinary.com/demaree/image/fetch/w_300,h_300,c_fill,q_auto/{{ . }} 300w, //res.cloudinary.com/demaree/image/fetch/w_600,h_600,c_fill,q_auto/{{ . }} 600w, //res.cloudinary.com/demaree/image/fetch/w_1200,h_1200,c_fill,q_auto/{{ . }} 1200w" alt="" class="object-center object-cover h-full w-full"/>
+      {{ else }}
+      <img width="200" height="200" src="//res.cloudinary.com/demaree/image/upload/w_100,h_100,c_fill,q_auto/{{ . }}" data-src="//res.cloudinary.com/demaree/image/upload/w_300,h_300,c_fill,q_auto/{{ . }}" data-srcset="//res.cloudinary.com/demaree/image/upload/w_300,h_300,c_fill,q_auto/{{ . }} 300w, //res.cloudinary.com/demaree/image/upload/w_600,h_600,c_fill,q_auto/{{ . }} 600w, //res.cloudinary.com/demaree/image/upload/w_1200,h_1200,c_fill,q_auto/{{ . }} 1200w" alt="" class="object-center object-cover h-full w-full" />
+      {{ end }}
+    </a>
     {{ end }}
+  {{ else }}
+    <div class="flex-1">
+      <a href="{{ .canonical_url }}" class="block">
+        <h2 class="font-semibold text-2xl">{{ .title }}</h2>
+        <div>{{ .subtitle }}</div>
+        <div class="text-inkMedium text-sm">{{ .Date.Format "Jan 2, 2006" }}</div>
+      </a>
+    </div>
+    <a href="{{ .canonical_url }}" class="w-24 md:w-32 h-32 ml-3 overflow-hidden rounded-md">
+      <img src="{{ .cover_image }}" class="object-cover object-center h-full w-full" />
+    </a>  
+    {{ end }}
+</article>
+{{ end }}
   </div>
+
 </main>
 {{ end }}

@@ -5,6 +5,8 @@ title = "David Demaree"
 # Disable Hugo's built-in Alias feature, to utilize Netlify Redirects instead:
 disableAliases = true
 
+# sectionPagesMenu = "main"
+
 [params]
 cloudinaryBase = "res.cloudinary.com/demaree/image"
 
@@ -14,6 +16,26 @@ blog = "/p/:slug"
 
 [markup.goldmark.renderer]
 unsafe = true
+
+[menu]
+[[menu.social]]
+  identifier = "twitter"
+  name = "Twitter"
+  pre = "<i class='fab fa-twitter'></i>"
+  url = "https://twitter.com/ddemaree"
+  weight = -100
+
+[[menu.social]]
+  identifier = "instagram"
+  name = "Instagram"
+  pre = "<i class='fab fa-instagram'></i>"
+  url = "https://instagram.com/ddemaree"
+
+[[menu.social]]
+  identifier = "linkedin"
+  name = "LinkedIn"
+  pre = "<i class='fab fa-linkedin'></i>"
+  url = "https://linkedin.com/in/ddemaree"
 
 
 # Custom Output formats are outlined here: https://gohugo.io/templates/output-formats. See also: https://gohugo.io/news/http2-server-push-in-hugo/

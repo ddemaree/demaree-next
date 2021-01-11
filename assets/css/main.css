@@ -310,3 +310,7 @@
     display: block;
   }
 }
+
+.fancy-blur {
+  backdrop-filter: blur(12px);
+}
