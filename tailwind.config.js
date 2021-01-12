@@ -12,7 +12,12 @@ module.exports = {
 		]
 	},
 	variants: {
-		margin: ['responsive', 'last']
+		extend: {
+			gridColumn: ['responsive', 'even', 'odd'],
+			gridColumnStart: ['responsive', 'even', 'odd'],
+			gridColumnEnd: ['responsive', 'even', 'odd'],
+			margin: ['responsive', 'last']
+		}
 	},
 	plugins: [
 		// Add support for utility-based theming
@@ -77,7 +82,7 @@ module.exports = {
 	],
 	theme: {
 		screens: {
-			'xs': '440px',
+			'xs': '370px', // iPhone X/11/12 and larger
 			'sm': '660px',
 			'md': '880px',
 			'lg': '1020px'

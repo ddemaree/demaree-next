@@ -1,0 +1,14 @@
+{{ $__substacks := getJSON "https://demaree.substack.com/api/v1/posts?limit=100&offset=0" }}
+{{ $__posts := (where site.RegularPages "Type" "blog") }}
+
+{{ $substacks := slice }}
+
+{{ range $__substacks }}
+  {{ $substacks = $substacks | append (dict "PostType" "substack" "Date" (.post_date | time) "Title" .title "Description" .subtitle "URL" .canonical_url "featured_image" .cover_image "original" . ) }}
+{{ end }}
+
+{{ range $__posts }}
+{{ $substacks = $substacks | append (dict "PostType" "blog" "Date" .Date "Title" .Title "Description" (or (index .Params "description") (index .Params "excerpt") (index .Params "subtitle")) "URL" .RelPermalink "featured_image" (index .Params "featured_image") "original" . ) }}
+{{ end }}
+
+{{ return (sort $substacks "Date" "desc") }}

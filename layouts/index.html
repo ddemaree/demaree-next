@@ -1,32 +1,37 @@
 {{ define "main" }}
-<main aria-role="main">
-  <header class="homepage-header leading-tight gap-x-6 grid dd-layout-cols">
+<main aria-role="main" class="grid dd-grid-cols-2 gap-y-10 grid-flow-row" style="--layout-wide-width: 1100px">
+  <header class="homepage-header leading-tight contents">
     <figure class="overflow-hidden col-span-full bg-red-200 justify-self-center w-48 rounded-full sm:justify-self-stretch sm:rounded-none sm:w-auto sm:col-span-4">
       <picture class="contents">
         <source media="(min-width: 640px)" srcset="//res.cloudinary.com/demaree/image/twitter_name/w_600,ar_1,c_fill/ddemaree.jpg 600w, //res.cloudinary.com/demaree/image/twitter_name/w_1200,ar_1,c_fill/ddemaree.jpg 1200w" />
-        <img src="//res.cloudinary.com/demaree/image/twitter_name/w_600,c_fill/ddemaree.jpg" class="object-fill object-center w-full h-full" />
+        <img src="//res.cloudinary.com/demaree/image/twitter_name/w_600,c_fill/ddemaree.jpg" class="object-fill object-center w-full h-full" width="600" height="600" />
       </picture>
     </figure>
-    <div class="text-center sm:text-left font-roslindale-2 text-2xl py-8 col-start-2 col-span-8 xs:text-3xl sm:py-12 justify-self-center max-w-md md:max-w-lg sm:col-start-5 sm:col-span-7 sm:row-start-1 md:text-4xl" style="font-variation-settings: 'wdth' 96; font-feature-settings: 'ss05' on;">
+    <div class="text-center sm:text-left font-roslindale-2 text-2xl p-8 col-start-2 col-span-8 xs:text-3xl sm:py-12 self-center justify-self-center max-w-md md:max-w-lg sm:col-start-5 sm:col-span-7 sm:row-start-1 md:text-4xl" style="font-variation-settings: 'wdth' 96; font-feature-settings: 'ss05' on;">
       {{.Content}}
     </div>
   </header>
 
-  <div class="grid dd-grid-cols-2 grid-flow-row gap-x-6 my-12">
-    <h2 class="text-center mb-8 uppercase tracking-widest font-sans-display font-bold text-accent text-xl col-start-2 col-span-8">Latest blog posts</h2>
+  <h2 class="text-center uppercase tracking-widest font-sans-display font-bold text-accent text-lg dd-col-wide">Latest writing</h2>
 
-{{ $__substacks := getJSON "https://demaree.substack.com/api/v1/posts?limit=100&offset=0" }}
-{{ $substacks := slice }}
-{{ range $__substacks }}
-  {{ $substacks = $substacks | append (. | merge (dict "Date" (.post_date | time))) }}
-{{ end }}
-{{ $__posts := (where .Site.RegularPages "Type" "blog") }}
-{{ $__all := $__posts | append $substacks }}
-{{ range first 15 (sort $__all "Date" "desc") }}
-<article class="my-8 flex max-w-2xl items-center dd-col-wide ">
+{{- range first 16 (partial "data/home-page-posts.html" .) -}}
+{{- $permalink := .URL -}}
+<article class="flex items-start col-start-2 col-span-8 md:col-start-auto md:odd:col-start-2 md:col-span-4 md:px-8">
+  <div class="flex-1 lg:col-start-2 lg:col-span-6">
+    <a href="{{ .URL }}" class="block">
+      <h2 class="text-inkBold font-semibold text-lg sm:text-xl leading-tight">{{ .Title }}</h2>
+      {{ with .Description }}<div class="text-sm mt-2">{{ . }}</div>{{ end }}
+      <div class="text-inkMedium text-sm mt-2">{{ .Date.Format "Jan 2, 2006" }}</div>
+    </a>
+  </div>
+  {{ if .featured_image }}
+  <a href="{{ .URL }}" class="w-20 xs:w-1/3 h-24 ml-6 overflow-hidden rounded-md lg:col-span-2">
+    <img src="{{ .featured_image }}" class="object-cover object-center h-full w-full" />
+  </a>
+  {{ end }}
   {{ if .Type }}
     {{ $permalink := .RelPermalink }}
-    <div class="flex-1">
+    <div class="flex-1 lg:col-start-5 lg:col-span-6 lg:bg-red-900">
       <a href="{{ $permalink }}" class="block">
         <h2 class="font-semibold text-2xl">{{ .Title }}</h2>
         {{ with .Params.description }}<div>{{ . }}</div>{{ end }}
@@ -34,7 +39,7 @@
       </a>
     </div>
     {{ with .Params.featured_image }}
-    <a href="{{ $permalink }}" class="w-24 md:w-32 h-32 ml-3 overflow-hidden rounded-md">
+    <a href="{{ $permalink }}" class="w-24 md:w-32 h-32 ml-3 overflow-hidden rounded-md lg:col-start-2 lg:col-span-2 lg:order-first">
       {{ if (hasPrefix . "http") }}
       <img width="200" height="200" src="//res.cloudinary.com/demaree/image/fetch/w_100,h_100,c_fill,q_auto/{{ . }}" data-src="//res.cloudinary.com/demaree/image/fetch/w_300,h_300,c_fill,q_auto/{{ . }}" data-srcset="//res.cloudinary.com/demaree/image/fetch/w_300,h_300,c_fill,q_auto/{{ . }} 300w, //res.cloudinary.com/demaree/image/fetch/w_600,h_600,c_fill,q_auto/{{ . }} 600w, //res.cloudinary.com/demaree/image/fetch/w_1200,h_1200,c_fill,q_auto/{{ . }} 1200w" alt="" class="object-center object-cover h-full w-full"/>
       {{ else }}
@@ -43,17 +48,7 @@
     </a>
     {{ end }}
   {{ else }}
-    <div class="flex-1">
-      <a href="{{ .canonical_url }}" class="block">
-        <h2 class="font-semibold text-2xl">{{ .title }}</h2>
-        <div>{{ .subtitle }}</div>
-        <div class="text-inkMedium text-sm">{{ .Date.Format "Jan 2, 2006" }}</div>
-      </a>
-    </div>
-    <a href="{{ .canonical_url }}" class="w-24 md:w-32 h-32 ml-3 overflow-hidden rounded-md">
-      <img src="{{ .cover_image }}" class="object-cover object-center h-full w-full" />
-    </a>  
-    {{ end }}
+  {{ end }}
 </article>
 {{ end }}
   </div>

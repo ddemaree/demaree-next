@@ -20,7 +20,8 @@
 }
 
 .dd-grid-cols-2 {
-  --layout-gutter: calc(50vw - (var(--layout-wide-width) / 2));
+  --layout-gap: 0px;
+  --layout-gutter: calc(50vw - (var(--layout-wide-width) / 2) - var(--layout-gap));
 
   grid-template-columns: [full-start] minmax(theme('spacing.6'), var(--layout-gutter)) [wide-start] 1fr [content-start] repeat(6, 1fr) [content-end] 1fr [wide-end] minmax(theme('spacing.6'), var(--layout-gutter)) [full-end];
   
@@ -223,7 +224,6 @@
 }
 
 .lazy-img-container {
-  background-color: #9999;
   overflow: hidden;
   position: relative;
 
