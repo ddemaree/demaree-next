@@ -3,16 +3,16 @@
   {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 {{ define "main" }}
-<header class="grid dd-layout-cols py-12">
-  <h1 class="text-center col-start-3 col-span-6 font-semibold text-5xl font-roslindale-2 mb-1" style="font-variation-settings: 'wdth' 90; font-feature-settings: 'ss03' on;">{{ .Title }}</h1>
+<header class="grid dd-grid-cols py-12">
+  <h1 class="text-center dd-col-full font-semibold text-5xl font-roslindale-2 mb-1" style="font-variation-settings: 'wdth' 90; font-feature-settings: 'ss03' on;">{{ .Title }}</h1>
 
-  {{ with .Params.excerpt }}<h2 class="text-center col-start-2 col-span-8 text-inkMedium text-xl mb-4">{{ . }}</h2>{{ end }}
+  {{ with .Params.excerpt }}<h2 class="text-center dd-col-full text-inkMedium text-xl mb-4">{{ . }}</h2>{{ end }}
 
-  <div class="post-meta text-inkMedium text-base text-center col-start-2 col-span-8 text-inkMedium">{{ .Date.Format "Jan 2 2006" }} • {{ .ReadingTime }} min read</div>
+  <div class="post-meta text-inkMedium text-base text-center dd-col-full text-inkMedium">{{ .Date.Format "Jan 2 2006" }} • {{ .ReadingTime }} min read</div>
 </header>
 
-<main class="grid dd-layout-cols">
-  <div class="dd-prose dd-layout-cols gap-x-6 grid text-lg font-serif col-span-full text-ink">
+<main class="grid dd-grid-cols">
+  <div class="dd-prose contents text-lg font-serif text-ink">
     {{ .Content }}
   </div>
 
