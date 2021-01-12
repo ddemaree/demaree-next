@@ -8,7 +8,8 @@ module.exports = {
 		layers: ['utilities'],
 		content: [
 			'./**/*.js',
-			"./**/*.html"
+			"./**/*.html",
+			"./**/*.md"
 		]
 	},
 	variants: {
