@@ -23,7 +23,7 @@
   --layout-gap: 0px;
   --layout-gutter: calc(50vw - (var(--layout-wide-width) / 2) - var(--layout-gap));
 
-  grid-template-columns: [full-start wide-start] minmax(theme('spacing.8'), var(--layout-gutter)) [content-start] repeat(6, 1fr) [content-end] minmax(theme('spacing.8'), var(--layout-gutter)) [wide-end full-end];
+  grid-template-columns: [full-start wide-start] minmax(theme('spacing.8'), var(--layout-gutter)) [content-start] repeat(8, 1fr) [content-end] minmax(theme('spacing.8'), var(--layout-gutter)) [wide-end full-end];
 
   @screen sm {
     grid-template-columns: [full-start] minmax(theme('spacing.6'), var(--layout-gutter)) [wide-start] 1fr [content-start] repeat(6, 1fr) [content-end] 1fr [wide-end] minmax(theme('spacing.6'), var(--layout-gutter)) [full-end];
