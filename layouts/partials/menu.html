@@ -1,38 +1,53 @@
 {{- $currentPage := . -}}
-<template id="vue-markup">
-</template>
+<template id="vue-markup"> </template>
 {{- $menuData := slice -}}
 {{ range site.Menus.main }}
 {{ $menuData = $menuData | append (dict "url" .URL "iconClass" .Pre "name" .Name )}}
 {{ end }}
 <script type="text/javascript">
-window.__menus = {{ $menuData | jsonify | safeJS }};
+  window.__menus = {{ $menuData | jsonify | safeJS }};
 </script>
 <div class="contents" id="tha-menu">
   <template>
     <div class="contents">
-      <button class="justify-self-end whitespace-nowrap col-start-5 col-span-2" @click="open = !open">
+      <button
+        class="justify-self-end whitespace-nowrap col-start-5 col-span-2"
+        @click="open = !open"
+      >
         <i class="fas fa-bars"></i>
         <span class="ml-1 font-medium">Menu</span>
       </button>
-      <div v-bind:class="['fixed top-0 bottom-0 right-0 bg-gray-900 w-full sm:w-1/3 overflow-y-auto overflow-x-hidden', {'hidden': !open}]">
-        <div class="h-20 px-6 flex items-center justify-end">
-          <button @click="open = false">
-            <i class="fas fa-times"></i>
-            <span class="ml-1 font-medium">Close Menu</span>
-          </button>
+      <transition name="scrim" :duration="200">
+        <div @click="open = false" v-if="open" class="scrim fancy-blur absolute inset-0 bg-black bg-opacity-80"></div>
+      </transition>
+      <transition name="menu-slide">
+        <div
+          v-if="open"
+          class="fixed top-0 bottom-0 right-0 w-full sm:w-1/3 p-4"
+        >
+          <div class="rounded-xl bg-gray-800 h-full w-full overflow-y-auto overflow-x-hidden">
+            <div class="h-12 px-4 flex items-center justify-end">
+              <button @click="open = false">
+                <i class="fas fa-times"></i>
+                <span class="ml-1 font-medium">Close</span>
+              </button>
+            </div>
+            <ul>
+              <li v-for="menu in menuItems">
+                <a
+                  v-bind:href="menu.url"
+                  class="flex h-16 text-2xl px-6 items-center"
+                >
+                  <span class="w-12 inline-block">
+                    <i v-if="menu.name" v-bind:class="menu.iconClass"></i>
+                  </span>
+                  {{ `{{ menu.name }}` }}
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <ul>
-          <li v-for="menu in menuItems">
-            <a v-bind:href="menu.url" class="flex h-16 text-2xl px-6 items-center">
-              <span class="w-12 inline-block">
-                <i v-if="menu.name" v-bind:class="menu.iconClass"></i>
-              </span>
-              {{ `{{ menu.name }}` }}
-            </a>
-          </li>
-        </ul>
-      </div>
+      </transition>
     </div>
   </template>
 </div>

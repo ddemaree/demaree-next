@@ -1,12 +1,12 @@
 @tailwind base;
 
 :root {
-  --inset: theme('spacing.6');
-  --spacing-regular: theme('spacing.6');
-  --spacing-big: theme('spacing.12');
-  --spacing-verybig: theme('spacing.16'); 
-  --layout-content-width: theme('maxWidth.2xl');
-  --layout-wide-width: theme('maxWidth.4xl');
+  --inset: theme("spacing.6");
+  --spacing-regular: theme("spacing.6");
+  --spacing-big: theme("spacing.12");
+  --spacing-verybig: theme("spacing.16");
+  --layout-content-width: theme("maxWidth.2xl");
+  --layout-wide-width: theme("maxWidth.4xl");
 }
 
 @tailwind components;
@@ -16,19 +16,38 @@
 }
 
 .dd-layout-cols--old {
-  grid-template-columns: calc(50vw - (var(--layout-wide-width) / 2)) repeat(8, 1fr) calc(50vw - (var(--layout-wide-width) / 2));
+  grid-template-columns:
+    calc(50vw - (var(--layout-wide-width) / 2)) repeat(8, 1fr)
+    calc(50vw - (var(--layout-wide-width) / 2));
 }
 
-.dd-grid-cols-2, .dd-grid-cols, .dd-layout-cols {
+.dd-grid-cols-2,
+.dd-grid-cols,
+.dd-layout-cols {
   --layout-gap: 0px;
-  --layout-gutter: calc(50vw - (var(--layout-wide-width) / 2) - var(--layout-gap));
+  --layout-gutter: calc(
+    50vw - (var(--layout-wide-width) / 2) - var(--layout-gap)
+  );
 
-  grid-template-columns: [full-start wide-start] minmax(theme('spacing.8'), var(--layout-gutter)) [content-start] repeat(8, 1fr) [content-end] minmax(theme('spacing.8'), var(--layout-gutter)) [wide-end full-end];
+  grid-template-columns:
+    [full-start wide-start] minmax(theme("spacing.8"), var(--layout-gutter))
+    [content-start] repeat(8, 1fr) [content-end] minmax(
+      theme("spacing.8"),
+      var(--layout-gutter)
+    )
+    [wide-end full-end];
 
   @screen sm {
-    grid-template-columns: [full-start] minmax(theme('spacing.6'), var(--layout-gutter)) [wide-start] 1fr [content-start] repeat(6, 1fr) [content-end] 1fr [wide-end] minmax(theme('spacing.6'), var(--layout-gutter)) [full-end];
+    grid-template-columns:
+      [full-start] minmax(theme("spacing.6"), var(--layout-gutter))
+      [wide-start] 1fr [content-start] repeat(6, 1fr)
+      [content-end] 1fr [wide-end] minmax(
+        theme("spacing.6"),
+        var(--layout-gutter)
+      )
+      [full-end];
   }
-  
+
   .dd-col-full {
     grid-column: full;
   }
@@ -41,8 +60,6 @@
     grid-column: content;
   }
 }
-
-
 
 .fullwidth {
   grid-column: 1 / -1;
@@ -98,7 +115,8 @@
     @apply text-inkBold font-semibold;
   }
 
-  h1, h2 {
+  h1,
+  h2 {
     @apply text-2xl font-medium font-sans mt-12 mb-2;
 
     figure + & {
@@ -110,14 +128,19 @@
     }
   }
 
-  h3, h4, h5, h6 {
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold font-serif mt-2 mb-2;
   }
 
-  > figure, > hr {
+  > figure,
+  > hr {
     @apply mt-6 mb-12;
 
-    + figure, + hr {
+    + figure,
+    + hr {
       @apply mt-0;
     }
   }
@@ -125,7 +148,6 @@
   > .twitter-tweet {
     @apply mt-6 mb-12 mx-auto !important;
   }
-
 
   code {
     @apply text-accent;
@@ -146,11 +168,13 @@
     }
   }
 
-  ul, ol {
+  ul,
+  ol {
     list-style: none;
     counter-reset: my-awesome-counter;
 
-    ul, ol {
+    ul,
+    ol {
       margin-bottom: 0;
       margin-top: 0.6em;
     }
@@ -174,7 +198,7 @@
     &:before {
       padding-top: 4px;
       padding-right: 15px;
-      content: '\2022';
+      content: "\2022";
       margin-top: -0.15em;
     }
   }
@@ -207,19 +231,26 @@
 
     &:before {
       @apply text-inkLight inline-block text-lg;
-      content: '•••';
+      content: "•••";
       letter-spacing: 1em;
     }
 
-    + h1, + h2 {
+    + h1,
+    + h2 {
       @apply mt-0;
     }
   }
 }
 
 @keyframes reveal {
-  0% {transform: scale(1.05); opacity: 0;}
-  100% {transform: scale(1); opacity: 1;}
+  0% {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .lazy-img-container {
@@ -246,11 +277,14 @@
   }
 }
 
-.blocks-gallery-grid, .gallery-grid, .wp-block-gallery > ul {
+.blocks-gallery-grid,
+.gallery-grid,
+.wp-block-gallery > ul {
   display: flex;
   flex-wrap: wrap;
 
-  .blocks-gallery-item, .gallery-item {
+  .blocks-gallery-item,
+  .gallery-item {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -260,7 +294,8 @@
     position: relative;
     width: calc(50% - 1rem);
 
-    &:nth-of-type(2n), &:last-child {
+    &:nth-of-type(2n),
+    &:last-child {
       margin-right: 0;
     }
 
@@ -289,15 +324,37 @@
   }
 
   &.columns-3 {
-    .block-gallery-item, .gallery-item {
+    .block-gallery-item,
+    .gallery-item {
       width: calc(33.3333% - 0.66667rem);
       margin-right: 1rem;
 
-      &:nth-of-type(3n), &:last-child {
+      &:nth-of-type(3n),
+      &:last-child {
         margin-right: 0;
       }
     }
   }
+}
+
+.scrim-enter-active,
+.scrim-leave-active {
+  transition: opacity 0.2s ease-in;
+}
+
+.scrim-enter,
+.scrim-leave-to {
+  opacity: 0;
+}
+
+.menu-slide-enter-active,
+.menu-slide-leave-active {
+  transition: all 0.15s ease-in;
+}
+
+.menu-slide-enter,
+.menu-slide-leave-to {
+  transform: translateX(100%);
 }
 
 @tailwind utilities;
@@ -311,5 +368,5 @@
 }
 
 .fancy-blur {
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(6px);
 }
