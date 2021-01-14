@@ -1,0 +1,9 @@
+{
+  "actions" : {
+    "run" : {
+      "enabled" : true,
+      "script" : "hugo server -D"
+    }
+  },
+  "identifier" : "BDAE02A0-3429-4311-AB3B-B0CAEC524E0E"
+}
