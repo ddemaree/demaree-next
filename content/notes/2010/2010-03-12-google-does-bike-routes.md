@@ -1,5 +1,5 @@
 ---
-date: '2010-03-12T15:59:51.000Z'
+date: "2010-03-12T15:59:51.000Z"
 tumblr_type: text
 tumblr_url: https://ddemaree.tumblr.com/post/443500247/google-does-bike-routes
 aliases:
@@ -7,7 +7,6 @@ aliases:
 slug: google-does-bike-routes
 tags:
   - Google
-  - cycling
 summary: Google Does Bike Routes
 title: Google Does Bike Routes
 ---
@@ -26,5 +25,5 @@ The other death spot was in the Loop at South Water St & Garland Ct., coming fro
 
 Apart from these and a few other quibbles, the bike directions work great, and I'm gonna use the crap out of them from now on.
 
-[bh]:http://bikehugger.com/2010/03/post-3.html
-[nm]:http://mrgan.tumblr.com/post/439212412/whats-next-for-google-maps-now-that-theyve-added
+[bh]: http://bikehugger.com/2010/03/post-3.html
+[nm]: http://mrgan.tumblr.com/post/439212412/whats-next-for-google-maps-now-that-theyve-added

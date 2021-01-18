@@ -1,5 +1,5 @@
 ---
-date: '2010-02-02T00:10:58.000Z'
+date: "2010-02-02T00:10:58.000Z"
 tumblr_type: link
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/365891142/obama-cuts-funding-for-useless-moon-missions
@@ -9,8 +9,7 @@ link_url: >-
   http://www.washingtonpost.com/wp-dyn/content/article/2010/01/31/AR2010013101058.html
 slug: obama-cuts-funding-for-useless-moon-missions
 tags:
-  - Obama
-  - United States of Space!
+  - Barack Obama
 summary: Obama Cuts Funding For Useless Moon Missions
 title: Obama Cuts Funding For Useless Moon Missions
 publisher: washingtonpost.com

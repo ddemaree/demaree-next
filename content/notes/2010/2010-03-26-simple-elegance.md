@@ -1,19 +1,19 @@
 ---
-date: '2010-03-26T12:15:00.000Z'
+date: "2010-03-26T12:15:00.000Z"
 tumblr_type: text
 tumblr_url: https://ddemaree.tumblr.com/post/474647681/simple-elegance
 aliases:
   - /post/474647681/simple-elegance
 slug: simple-elegance
 tags:
-  - foursquare
+  - Foursquare
   - iPhone
-  - WP7S™
+  - Windows Phone
 summary: Simple Elegance.
 title: Simple Elegance.
 ---
 
-TechCrunch says [the upcoming Foursquare app for Windows Phone 7 Series&trade; Ultimate Home Makeover Edition&copy;](http://techcrunch.com/2010/03/25/foursquare-windows-phone/) "destroys" its iPhone counterpart with its "simple elegance." 
+TechCrunch says [the upcoming Foursquare app for Windows Phone 7 Series&trade; Ultimate Home Makeover Edition&copy;](http://techcrunch.com/2010/03/25/foursquare-windows-phone/) "destroys" its iPhone counterpart with its "simple elegance."
 
 I have to admit, the WP7S version _is_ a lot simpler. None of that pesky "information" to clutter the display, just big fonts and a fancy dark color scheme.
 

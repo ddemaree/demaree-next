@@ -5,12 +5,14 @@
 {{- else if lt $wordcount 100 -}}
 {{ $textclass = "text-3xl" }}
 {{- end -}}
-<div class="max-w-2xl">
+<div class="max-w-2xl relative">
+  <i class="fas fa-quote-left text-inkLight text-4xl opacity-75 absolute mt-1"></i>
   {{ with .Params.text }}
-  <blockquote class="dd-prose {{ $textclass }} font-sans mb-4">{{ . | markdownify }}</blockquote>
+  <blockquote class="dd-prose {{ $textclass }} font-sans mb-4 pl-12">{{ . | markdownify }}</blockquote>
   {{ end }}
   {{ with .Params.source }}
-  <div class="dd-prose font-serif max-w-2xl">
+  <hr class="border-accent w-16 ml-12 my-8">
+  <div class="dd-prose font-serif max-w-2xl mt-8 pl-12 relative">
     {{ . | markdownify }}
   </div>
   {{ end }}

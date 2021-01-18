@@ -1,5 +1,5 @@
 ---
-date: '2010-02-16T15:42:54.000Z'
+date: "2010-02-16T15:42:54.000Z"
 tumblr_type: link
 tumblr_url: https://ddemaree.tumblr.com/post/392893870/custom-time-descriptions-in-rails
 aliases:
@@ -8,8 +8,8 @@ link_url: >-
   http://robots.thoughtbot.com/post/392707640/the-more-you-know-custom-time-descriptions
 slug: custom-time-descriptions-in-rails
 tags:
-  - rails
-  - nerdery
+  - Ruby on Rails
+  - Web Development
 summary: Custom time descriptions in Rails
 title: Custom time descriptions in Rails
 publisher: robots.thoughtbot.com

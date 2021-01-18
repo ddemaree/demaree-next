@@ -1,5 +1,5 @@
 ---
-date: '2010-04-28T15:11:37.000Z'
+date: "2010-04-28T15:11:37.000Z"
 tumblr_type: link
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/556047741/apple-announces-wwdc-10-dates-june-711
@@ -9,10 +9,9 @@ link_url: http://www.apple.com/pr/library/2010/04/28wwdc.html
 slug: apple-announces-wwdc-10-dates-june-711
 tags:
   - Apple
-  - WWDC
   - iPhone
-summary: 'Apple Announces WWDC ''10 Dates: June 7–11'
-title: 'Apple Announces WWDC ''10 Dates: June 7–11'
+summary: "Apple Announces WWDC '10 Dates: June 7–11"
+title: "Apple Announces WWDC '10 Dates: June 7–11"
 publisher: apple.com
 ---
 

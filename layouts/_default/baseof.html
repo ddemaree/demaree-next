@@ -31,5 +31,6 @@
     {{ $defines := dict "process.env.NODE_ENV" `"development"` }}
     {{ $js := resources.Get "js/main.js" | js.Build (dict "defines" $defines) }}
     <script async src="{{ $js.Permalink }}"></script>
+    {{ block "footerscripts" . }}{{ end }}
   </body>
 </html>

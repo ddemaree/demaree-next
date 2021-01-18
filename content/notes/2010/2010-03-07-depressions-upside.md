@@ -1,5 +1,5 @@
 ---
-date: '2010-03-07T20:33:27.000Z'
+date: "2010-03-07T20:33:27.000Z"
 tumblr_type: link
 tumblr_url: https://ddemaree.tumblr.com/post/432992958/depressions-upside
 aliases:
@@ -8,14 +8,14 @@ link_url: >-
   http://www.nytimes.com/2010/02/28/magazine/28depression-t.html?em=&pagewanted=print
 slug: depressions-upside
 tags:
-  - psych
+  - Psychology
   - creativity
 summary: Depression's Upside
 title: Depression's Upside
 publisher: nytimes.com
 ---
 
-Sadness, it turns out, may have benefits. A pair of psychologists believes that when we suffer setbacks, ruminating over them actually *helps* us recover and improve by forcing us to study painful situations, and come to logical conclusions about how they came about, and how to fix them.
+Sadness, it turns out, may have benefits. A pair of psychologists believes that when we suffer setbacks, ruminating over them actually _helps_ us recover and improve by forcing us to study painful situations, and come to logical conclusions about how they came about, and how to fix them.
 
 The researchers, Andy Thomson and Paul Andrews, hypothesize that in depressed patients, a part of the brain responsible for attention and problem solving becomes more active. This implies that at least as far as the brain is concerned, figuring out why you hate your job isn't that different from solving a Sudoku puzzle.
 

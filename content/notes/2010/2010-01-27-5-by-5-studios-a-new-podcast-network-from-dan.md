@@ -1,5 +1,5 @@
 ---
-date: '2010-01-27T18:04:51.000Z'
+date: "2010-01-27T18:04:51.000Z"
 tumblr_type: link
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/356412924/5-by-5-studios-a-new-podcast-network-from-dan
@@ -7,8 +7,7 @@ aliases:
   - /post/356412924/5-by-5-studios-a-new-podcast-network-from-dan
 link_url: http://5by5.tv/
 slug: 5-by-5-studios-a-new-podcast-network-from-dan
-tags:
-  - Dan Benjamin
+tags: []
 summary: 5 by 5 Studios, a new podcast network from Dan Benjamin
 title: 5 by 5 Studios, a new podcast network from Dan Benjamin
 publisher: 5by5.tv

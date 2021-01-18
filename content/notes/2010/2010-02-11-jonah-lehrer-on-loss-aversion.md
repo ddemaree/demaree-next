@@ -1,5 +1,5 @@
 ---
-date: '2010-02-11T13:09:52.000Z'
+date: "2010-02-11T13:09:52.000Z"
 tumblr_type: link
 tumblr_url: https://ddemaree.tumblr.com/post/383692388/jonah-lehrer-on-loss-aversion
 aliases:
@@ -8,8 +8,8 @@ link_url: >-
   http://scienceblogs.com/cortex/2010/02/loss_aversion.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+scienceblogs%2FwDAM+%28The+Frontal+Cortex%29
 slug: jonah-lehrer-on-loss-aversion
 tags:
-  - science
-  - brains
+  - Neurology
+  - Psychology
 summary: Jonah Lehrer on Loss Aversion
 source_url: >-
   https://t.umblr.com/redirect?z=http%3A%2F%2Fscienceblogs.com%2Fcortex%2F2010%2F02%2Floss_aversion.php%3Futm_source%3Dfeedburner%26utm_medium%3Dfeed%26utm_campaign%3DFeed%253A%2Bscienceblogs%252FwDAM%2B%2528The%2BFrontal%2BCortex%2529&t=ZjkxNDMwYjQzYmQ5MWU1MjQ2M2U0ZDUzZGQyZTdkN2RhY2Q0YmM1MSwzODM2OTIzODg%3D&b=t%3AZwnU0JNPe2gtl9NEucydUA&p=https%3A%2F%2Fddemaree.tumblr.com%2Fpost%2F383692388%2Fjonah-lehrer-on-loss-aversion&m=1&ts=1610235747

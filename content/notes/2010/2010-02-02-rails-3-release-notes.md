@@ -1,5 +1,5 @@
 ---
-date: '2010-02-03T00:46:00.000Z'
+date: "2010-02-03T00:46:00.000Z"
 tumblr_type: link
 tumblr_url: https://ddemaree.tumblr.com/post/367774705/rails-3-release-notes
 aliases:
@@ -7,9 +7,8 @@ aliases:
 link_url: http://guides.rails.info/3_0_release_notes.html
 slug: rails-3-release-notes
 tags:
-  - Ruby
-  - Rails
-  - nerdery
+  - Ruby on Rails
+  - Web Development
 summary: Rails 3 Release Notes
 title: Rails 3 Release Notes
 publisher: guides.rails.info

@@ -1,5 +1,5 @@
 ---
-date: '2010-02-16T03:25:00.000Z'
+date: "2010-02-16T03:25:00.000Z"
 tumblr_type: link
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/392024813/why-textmate-2-isnt-being-developed-in-the-open
@@ -8,10 +8,7 @@ aliases:
 link_url: http://blog.macromates.com/2010/why-2-0-is-not-developed-in-the-open/
 slug: why-textmate-2-isnt-being-developed-in-the-open
 tags:
-  - TextMate 2
-  - vaporware
-  - Mac
-  - nerdery
+  - TextMate
 summary: Why TextMate 2 Isn't Being Developed in the Open
 title: Why TextMate 2 Isn't Being Developed in the Open
 publisher: blog.macromates.com
@@ -20,9 +17,9 @@ publisher: blog.macromates.com
 If you weren't convinced already that TextMate 2 will never ship, this January 6 blog post from TM creator Allan Odgaard may seal the deal:
 
 > I got a letter asking me why I didn’t use the 1.0 model for developing 2.0, that is, released 1.0 when it reached “usable” and then incrementally improved it. &hellip;
-
+>
 > All in all this has been a giant puzzle with a lot of pieces that needed to fall into place. When I did the last status blog post about “90% done” it was because I felt that the last piece of the puzzle had fallen into place — of course it is never so, but all the big unanswered questions have an answer, that doesn’t mean there isn’t still a lot of stuff to do before it is alpha ready, just that the road toward alpha is no longer filled with huge unknowns.
-
+>
 > I know a lot of you want me to give some estimate about when the first alpha is out, but if you didn’t already read [the software is hard essay](http://gamearchitect.net/Articles/SoftwareIsHard.html) then please go read it now! I can’t give any estimate I am able to fulfill, which makes the entire thing pointless and will just set me up for more negative comments.
 
 I hesitate to say Odgaard has been rewriting TextMate from scratch for the hell of it. But he has rewritten it from scratch—the dreaded Big Rewrite, that (legend has it) never, ever succeeds. According to the post, version 2.0 is already a 25% larger codebase than the current release, and is no closer to release now than it was a year ago.

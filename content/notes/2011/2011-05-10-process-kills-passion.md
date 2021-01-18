@@ -1,5 +1,5 @@
 ---
-date: '2011-05-10T14:47:46.000Z'
+date: "2011-05-10T14:47:46.000Z"
 tumblr_type: link
 tumblr_url: https://ddemaree.tumblr.com/post/5361290185/process-kills-passion
 aliases:
@@ -7,8 +7,8 @@ aliases:
 link_url: http://radar.oreilly.com/2011/05/process-kills-developer-passion.html
 slug: process-kills-passion
 tags:
-  - programming
-  - agile
+  - Programming
+  - Agile
 summary: Process Kills Passion
 title: Process Kills Passion
 publisher: radar.oreilly.com

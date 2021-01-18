@@ -1,5 +1,5 @@
 ---
-date: '2010-02-01T22:37:57.000Z'
+date: "2010-02-01T22:37:57.000Z"
 tumblr_type: link
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/365742673/df-what-if-flash-were-an-open-standard
@@ -10,10 +10,10 @@ slug: df-what-if-flash-were-an-open-standard
 tags:
   - Apple
   - Adobe
-  - Gruber
-  - The Web
-summary: 'DF: What if Flash Were an Open Standard?'
-title: 'DF: What if Flash Were an Open Standard?'
+  - John Gruber
+  - Web Development
+summary: "DF: What if Flash Were an Open Standard?"
+title: "DF: What if Flash Were an Open Standard?"
 publisher: daringfireball.net
 ---
 

@@ -1,5 +1,5 @@
 ---
-date: '2011-05-12T14:40:05.000Z'
+date: "2011-05-12T14:40:05.000Z"
 tumblr_type: text
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/5421411121/filtering-github-email-notifications
@@ -7,17 +7,16 @@ aliases:
   - /post/5421411121/filtering-github-email-notifications
 slug: filtering-github-email-notifications
 tags:
-  - protip
-  - github
-  - gmail
-  - email
+  - "Tips & Tricks"
+  - GitHub
+  - Email
 summary: Filtering GitHub email notifications
 title: Filtering GitHub email notifications
 ---
 
-*Problem:* My GitHub account is associated with one of my personal email addresses, but I use it (_a lot_) for work. A pull request notification on [that JavaScript route mapper I wrote](https://github.com/ddemaree/bjorn) isn't that important, but an issue or pull request on the Typekit web app or one of our gems is fairly important. Those emails need to end up in my work e-mail box — that's the context I want them in, so I can be more free to ignore whatever is going on outside of work when I'm working.
+_Problem:_ My GitHub account is associated with one of my personal email addresses, but I use it (_a lot_) for work. A pull request notification on [that JavaScript route mapper I wrote](https://github.com/ddemaree/bjorn) isn't that important, but an issue or pull request on the Typekit web app or one of our gems is fairly important. Those emails need to end up in my work e-mail box — that's the context I want them in, so I can be more free to ignore whatever is going on outside of work when I'm working.
 
-37signals solves this problem in Basecamp by letting you select a particular email address to use for each account you have access to. GitHub doesn't offer much control over email notifications yet, unfortunately, but they *do* include some very useful headers in their emails that make effective filtering way easier:
+37signals solves this problem in Basecamp by letting you select a particular email address to use for each account you have access to. GitHub doesn't offer much control over email notifications yet, unfortunately, but they _do_ include some very useful headers in their emails that make effective filtering way easier:
 
     List-Archive: https://github.com/typekit/webfontloader
     List-Id: <webfontloader.typekit.github.com>

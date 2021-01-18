@@ -1,14 +1,15 @@
 ---
-date: '2010-01-16T15:57:00.000Z'
+draft: true
+date: "2010-01-16T15:57:00.000Z"
 tumblr_type: text
 tumblr_url: https://ddemaree.tumblr.com/post/337554241/rails-model-names
 aliases:
   - /post/337554241/rails-model-names
 slug: rails-model-names
 tags:
-  - nerd alert
-  - rails
-  - mongomapper
+  - Web Development
+  - Ruby on Rails
+  - MongoDB
 summary: Pleased to Meet You, Won't You Guess My Name?
 title: Pleased to Meet You, Won't You Guess My Name?
 ---
@@ -67,14 +68,14 @@ end</code></pre>
 
 To explain a bit what I'm doing here:
 
-* I'm hard-coding the singular, plural and collection forms, which are primarily used in routing, so Rails's URL helpers will always point back to `Ando::ItemsController` even if the object in question is a subclass.
+- I'm hard-coding the singular, plural and collection forms, which are primarily used in routing, so Rails's URL helpers will always point back to `Ando::ItemsController` even if the object in question is a subclass.
 
-* I'm leaving the `@element` alone; it'll have been pre-populated with the name of the current subclass. For example, in a subclass called `Ando::Photo`, the collection will be `items` but the element will be `photo`.
+- I'm leaving the `@element` alone; it'll have been pre-populated with the name of the current subclass. For example, in a subclass called `Ando::Photo`, the collection will be `items` but the element will be `photo`.
 
-* Which leads me to the partial_path: because collection has been hard-coded but element has not, the partial path for my `Ando::Photo` subclass will be `ando/items/photo`, not `ando/items/item` or `ando/photos/photo`.
+- Which leads me to the partial_path: because collection has been hard-coded but element has not, the partial path for my `Ando::Photo` subclass will be `ando/items/photo`, not `ando/items/item` or `ando/photos/photo`.
 
 Hopefully you can imagine how this would be useful on a project where there are ten or more subclasses of the same model.
 
 Curiously, I didn't know this module even existed until I went looking at how Rails knew how to map MongoMapper documents this week. The original implementation of the record identifier in Rails 2.0 was a lot less flexible, and there's been so little discussion of ever needing to override this behavior that I assumed it hadn't been touched since then.
 
-[asmn]:http://github.com/rails/rails/blob/2-3-stable/activesupport/lib/active_support/core_ext/module/model_naming.rb
+[asmn]: http://github.com/rails/rails/blob/2-3-stable/activesupport/lib/active_support/core_ext/module/model_naming.rb

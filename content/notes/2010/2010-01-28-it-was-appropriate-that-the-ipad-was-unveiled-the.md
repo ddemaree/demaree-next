@@ -1,5 +1,5 @@
 ---
-date: '2010-01-28T16:13:51.000Z'
+date: "2010-01-28T16:13:51.000Z"
 tumblr_type: quote
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/358055354/it-was-appropriate-that-the-ipad-was-unveiled-the
@@ -7,7 +7,7 @@ aliases:
   - /post/358055354/it-was-appropriate-that-the-ipad-was-unveiled-the
 slug: it-was-appropriate-that-the-ipad-was-unveiled-the
 tags:
-  - Obama
+  - Barack Obama
   - iPad
 summary: >-
   It was appropriate that the iPad was unveiled the same day President Obama
@@ -20,4 +20,3 @@ source: >-
   John Dickerson, [discussing Obama's SOTU
   speech](http://www.slate.com/id/2242787/?from=rss) for _Slate_
 ---
-

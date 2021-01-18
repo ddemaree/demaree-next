@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="max-w-3xl mx-auto px-8">
+  
+  <h1 class="text-2xl text-center my-8"><i class="fal fa-tag mr-2"></i> All posts tagged with <b>{{ .Title }}</b></h1>
+  <div class="text-center">
+    <a href="/tags">
+      <i class="fal fa-arrow-left"></i>
+      View all tags
+    </a>
+  </div>
+  
+  {{ range .Pages }}
+    {{ .Render "li" }}
+  {{ end }}
+
+</div>
+{{ end }}

@@ -1,5 +1,5 @@
 ---
-date: '2010-03-12T01:38:00.000Z'
+date: "2010-03-12T01:38:00.000Z"
 tumblr_type: link
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/442289433/ipad-pre-orders-start-exactly-12-hours-from-now
@@ -10,13 +10,12 @@ link_url: >-
 slug: ipad-pre-orders-start-exactly-12-hours-from-now
 tags:
   - iPad
-  - Do Want
 summary: iPad Pre-Orders Start Exactly 12 Hours From Now
 title: iPad Pre-Orders Start Exactly 12 Hours From Now
 publisher: loopinsight.com
 ---
 
-Well, maybe not *now*. But pre-orders begin tomorrow at 5:30 am PST, and it was _exactly_ 5:30 pm PST when I started typing this.
+Well, maybe not _now_. But pre-orders begin tomorrow at 5:30 am PST, and it was _exactly_ 5:30 pm PST when I started typing this.
 
 Anyway—Jim Dalrymple reports what you may already know if you signed up for Apple's iPad e-mail list:
 

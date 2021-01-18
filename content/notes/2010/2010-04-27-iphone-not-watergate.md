@@ -1,5 +1,5 @@
 ---
-date: '2010-04-28T00:35:00.000Z'
+date: "2010-04-28T00:35:00.000Z"
 tumblr_type: text
 tumblr_url: https://ddemaree.tumblr.com/post/554602053/iphone-not-watergate
 aliases:
@@ -8,15 +8,14 @@ slug: iphone-not-watergate
 tags:
   - iPhone
   - Apple
-  - Gizmodo
-  - IANAL
 summary: No, Actually, It's Not Like That At All
 title: No, Actually, It's Not Like That At All
+private: true
 ---
 
 Last night I had the following brief Twitter exchange with a fellow about the whole Gizmodo-stolen iPhone affair:
 
-> **ddemaree:** @esoneill @chartier Property != information. If the seller had sold them *photos* of the stolen iPhone, they might've been in the clear.
+> **ddemaree:** @esoneill @chartier Property != information. If the seller had sold them _photos_ of the stolen iPhone, they might've been in the clear.
 
 > **esoneill:** @ddemaree @chartier But, arguably, all property contains information of some kind. The Watergate tapes were property as well.
 
@@ -26,7 +25,7 @@ Last night I had the following brief Twitter exchange with a fellow about the wh
 
 Yeah, what if?
 
-All of you listen to me very carefully: _There are no meaningful similarities between  Gizmodo's alleged involvement in the iPhone theft and Watergate_, and it worries me that some of you seem to think that there is.
+All of you listen to me very carefully: _There are no meaningful similarities between Gizmodo's alleged involvement in the iPhone theft and Watergate_, and it worries me that some of you seem to think that there is.
 
 Which is why, if you'll indulge me, we're going back to school for the next however-long-it-takes-you-to-read-this.
 

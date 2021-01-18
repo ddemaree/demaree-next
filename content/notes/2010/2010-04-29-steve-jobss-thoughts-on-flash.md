@@ -1,5 +1,5 @@
 ---
-date: '2010-04-29T15:40:05.000Z'
+date: "2010-04-29T15:40:05.000Z"
 tumblr_type: link
 tumblr_url: https://ddemaree.tumblr.com/post/558624678/steve-jobss-thoughts-on-flash
 aliases:
@@ -11,12 +11,13 @@ tags:
   - Adobe
   - iPhone
   - Flash
+  - Web Development
 summary: Steve Jobs's "Thoughts on Flash"
 title: Steve Jobs's "Thoughts on Flash"
 publisher: apple.com
 ---
 
-The boss speaks:
+Jobs writes:
 
 > Our motivation is simple – we want to provide the most advanced and innovative platform to our developers, and we want them to stand directly on the shoulders of this platform and create the best apps the world has ever seen. We want to continually enhance the platform so developers can create even more amazing, powerful, fun and useful applications. Everyone wins – we sell more devices because we have the best apps, developers reach a wider and wider audience and customer base, and users are continually delighted by the best and broadest selection of apps on any platform.
 

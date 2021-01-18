@@ -1,5 +1,5 @@
 ---
-date: '2010-07-29T13:00:44.000Z'
+date: "2010-07-29T13:00:44.000Z"
 tumblr_type: link
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/875114357/neven-mrgan-compares-imac-hp-dells-websites
@@ -9,7 +9,7 @@ link_url: http://mrgan.tumblr.com/post/867437854/fish-in-a-barrel
 slug: neven-mrgan-compares-imac-hp-dells-websites
 tags:
   - Apple
-  - design
+  - Design
 summary: Neven Mrgan Compares iMac, HP & Dell's Websites
 title: Neven Mrgan Compares iMac, HP & Dell's Websites
 publisher: mrgan.tumblr.com

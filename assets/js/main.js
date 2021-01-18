@@ -1,6 +1,8 @@
-// import "alpinejs"
-
 import Vue from "vue/dist/vue.esm";
+import chroma from "chroma-js";
+
+window.chroma = chroma;
+window.Vue = Vue;
 
 function getScrollbarWidth() {
   return window.innerWidth - document.documentElement.clientWidth;

@@ -1,5 +1,5 @@
 ---
-date: '2010-02-16T19:03:51.000Z'
+date: "2010-02-16T19:03:51.000Z"
 tumblr_type: link
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/393149744/google-admits-buzz-wasnt-user-tested-prior-to
@@ -8,7 +8,6 @@ aliases:
 link_url: http://news.bbc.co.uk/2/hi/technology/8517613.stm
 slug: google-admits-buzz-wasnt-user-tested-prior-to
 tags:
-  - Google Buzz
   - Google
 summary: Google Admits Buzz Wasn’t User Tested Prior To Launch
 title: Google Admits Buzz Wasn’t User Tested Prior To Launch

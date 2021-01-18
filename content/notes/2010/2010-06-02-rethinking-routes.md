@@ -1,5 +1,5 @@
 ---
-date: '2010-06-02T19:52:00.000Z'
+date: "2010-06-02T19:52:00.000Z"
 tumblr_type: link
 tumblr_url: https://ddemaree.tumblr.com/post/657471104/rethinking-routes
 aliases:
@@ -7,9 +7,8 @@ aliases:
 link_url: http://blog.peepcode.com/tutorials/2010/rethinking-rails-3-routes
 slug: rethinking-routes
 tags:
-  - Rails
-  - Sinatra
-  - Ruby
+  - Ruby on Rails
+  - Web Development
 summary: Rethinking Routes
 title: Rethinking Routes
 publisher: blog.peepcode.com
@@ -23,7 +22,7 @@ I don't know if I agree with his proposed solutions, but Geoffrey's right that t
 
 Rails core committer Carl Lerche's started experimenting with an interesting approach—combining Sinatra-style URL handlers with Rails-style controllers—in his [astaire](http://github.com/carllerche/astaire) plugin for Rails 3.
 
-*Update:* Oh snap it's on. [DHH responds to Geoffrey's post on Hacker News](http://news.ycombinator.com/item?id=1398903):
+_Update:_ Oh snap it's on. [DHH responds to Geoffrey's post on Hacker News](http://news.ycombinator.com/item?id=1398903):
 
 > What an awesome way to advocate for code change. Very pretty. Unfortunately, I also think it's faulty. First, it doesn't actually advocate anything concrete. There's some hand-waving to Sinatra and other Rails features, but nothing concrete. If you're going to make such a pretty proposal, it should come with a call to specific action that people can get behind.
 

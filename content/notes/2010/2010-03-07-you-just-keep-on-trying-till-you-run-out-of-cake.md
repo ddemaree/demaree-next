@@ -1,5 +1,6 @@
 ---
-date: '2010-03-07T23:36:01.000Z'
+draft: true
+date: "2010-03-07T23:36:01.000Z"
 tumblr_type: link
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/433336989/you-just-keep-on-trying-till-you-run-out-of-cake
@@ -8,9 +9,7 @@ aliases:
 link_url: http://portalwiki.net/index.php/GameInformer_Portal_Exclusive
 slug: you-just-keep-on-trying-till-you-run-out-of-cake
 tags:
-  - Portal
-  - Valve
-  - gaming
+  - Video Games
 summary: You Just Keep On Trying Till You Run Out Of Cake
 title: You Just Keep On Trying Till You Run Out Of Cake
 publisher: portalwiki.net
@@ -24,4 +23,4 @@ Of course, "Mac support" can mean a lot of things. EA has been selling "Mac-comp
 
 But Valve is a company known for making quality products. Emulated Windows games are adequate at best, and I just don't see Valve shipping something that's just adequate.
 
-[gz]:http://gizmodo.com/5484987/valves-mac-teasers-just-made-me-change-my-pants
+[gz]: http://gizmodo.com/5484987/valves-mac-teasers-just-made-me-change-my-pants

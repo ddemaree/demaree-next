@@ -1,0 +1,10 @@
+<article class="my-16">
+  <header class="mb-2">
+    <a href="{{ .RelPermalink }}" class="text-accent">
+      <i class="fal fa-sticky-note mr-2"></i> 
+      {{ .Date.Format "Mon, Jan 2, 2006" }}
+    </a>
+  </header>
+  {{- $type := index .Params "tumblr_type" -}}
+  {{ .Render (printf "li-%s" $type) }}
+</article>

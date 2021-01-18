@@ -1,5 +1,5 @@
 ---
-date: '2010-02-01T17:29:51.000Z'
+date: "2010-02-01T17:29:51.000Z"
 tumblr_type: link
 tumblr_url: https://ddemaree.tumblr.com/post/365347496/all-about-epub
 aliases:
@@ -8,8 +8,7 @@ link_url: >-
   http://www.tuaw.com/2010/01/31/all-about-epub-the-ebook-standard-for-apples-ibookstore/
 slug: all-about-epub
 tags:
-  - E-publishing
-  - The Tablet
+  - iPad
   - Amazon
   - Apple
   - Kindle

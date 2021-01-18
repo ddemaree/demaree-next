@@ -1,5 +1,5 @@
 ---
-date: '2010-02-11T13:54:58.000Z'
+date: "2010-02-11T13:54:58.000Z"
 tumblr_type: link
 tumblr_url: https://ddemaree.tumblr.com/post/383742369/yehuda-katz-reflects-on-rails-3
 aliases:
@@ -7,8 +7,8 @@ aliases:
 link_url: http://www.engineyard.com/blog/2010/rails-3-beta-is-out-a-retrospective/
 slug: yehuda-katz-reflects-on-rails-3
 tags:
-  - nerdery
-  - Rails 3
+  - Web Development
+  - Ruby on Rails
 summary: Yehuda Katz Reflects on Rails 3
 source_url: >-
   https://t.umblr.com/redirect?z=http%3A%2F%2Fwww.engineyard.com%2Fblog%2F2010%2Frails-3-beta-is-out-a-retrospective%2F&t=YTQzNWZlNmIzNzNhNDBjZjJmNTBjOWE2Mjg3Mjc4NjgwMzg3OWRlMSwzODM3NDIzNjk%3D&b=t%3AZwnU0JNPe2gtl9NEucydUA&p=https%3A%2F%2Fddemaree.tumblr.com%2Fpost%2F383742369%2Fyehuda-katz-reflects-on-rails-3&m=1&ts=1610235747

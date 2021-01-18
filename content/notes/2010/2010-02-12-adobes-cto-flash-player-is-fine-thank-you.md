@@ -1,5 +1,5 @@
 ---
-date: '2010-02-12T15:04:00.000Z'
+date: "2010-02-12T15:04:00.000Z"
 tumblr_type: link
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/385567789/adobes-cto-flash-player-is-fine-thank-you
@@ -12,9 +12,9 @@ tags:
   - Adobe
   - Apple
   - Flash
-  - the web
-summary: 'Adobe’s CTO: Flash Player is Fine, Thank You, We’re Fixing It Anyway'
-title: 'Adobe’s CTO: Flash Player is Fine, Thank You, We’re Fixing It Anyway'
+  - Web Development
+summary: "Adobe’s CTO: Flash Player is Fine, Thank You, We’re Fixing It Anyway"
+title: "Adobe’s CTO: Flash Player is Fine, Thank You, We’re Fixing It Anyway"
 publisher: blogs.adobe.com
 ---
 

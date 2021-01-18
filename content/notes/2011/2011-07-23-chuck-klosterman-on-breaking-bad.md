@@ -1,5 +1,5 @@
 ---
-date: '2011-07-23T15:00:06.000Z'
+date: "2011-07-23T15:00:06.000Z"
 tumblr_type: link
 tumblr_url: https://ddemaree.tumblr.com/post/7971289005/chuck-klosterman-on-breaking-bad
 aliases:
@@ -8,10 +8,7 @@ link_url: http://www.grantland.com/story/_/id/6763000/bad-decisions
 slug: chuck-klosterman-on-breaking-bad
 tags:
   - TV
-  - Mad Men
-  - Breaking Bad
-  - The Sopranos
-  - The Wire
+  - Culture
 summary: Chuck Klosterman on "Breaking Bad"
 title: Chuck Klosterman on "Breaking Bad"
 publisher: grantland.com

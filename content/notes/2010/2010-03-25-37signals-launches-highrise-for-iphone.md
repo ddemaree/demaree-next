@@ -1,5 +1,5 @@
 ---
-date: '2010-03-25T15:27:00.000Z'
+date: "2010-03-25T15:27:00.000Z"
 tumblr_type: link
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/472665973/37signals-launches-highrise-for-iphone
@@ -8,10 +8,8 @@ aliases:
 link_url: http://37signals.com/svn/posts/2234-launch-highrise-for-iphone
 slug: 37signals-launches-highrise-for-iphone
 tags:
-  - 37signals
-  - iPhone
+  - Basecamp
   - Highrise
-  - Things
 summary: 37signals Launches Highrise for iPhone
 title: 37signals Launches Highrise for iPhone
 publisher: 37signals.com

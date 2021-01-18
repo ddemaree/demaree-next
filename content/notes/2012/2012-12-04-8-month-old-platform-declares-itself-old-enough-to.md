@@ -1,5 +1,5 @@
 ---
-date: '2012-12-04T14:41:10.000Z'
+date: "2012-12-04T14:41:10.000Z"
 tumblr_type: link
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/37187701590/8-month-old-platform-declares-itself-old-enough-to
@@ -10,11 +10,6 @@ link_url: >-
 slug: 8-month-old-platform-declares-itself-old-enough-to
 tags:
   - RubyMotion
-  - conferences
-  - snark
-  - Cocoa
-  - iOS
-  - Ruby
 summary: 8-Month-Old Platform Declares Itself Old Enough To Have A Conference
 title: 8-Month-Old Platform Declares Itself Old Enough To Have A Conference
 publisher: blog.rubymotion.com
@@ -30,4 +25,4 @@ publisher: blog.rubymotion.com
 <p>The danger of any new abstract language is in sacrificing shared understanding and clarity for what's essentially slang. Except that if I go around calling things "totally tubular", I'm fairly likely to be understood through context clues, so the danger is not that I'll be misunderstood but that I'll date myself or look like an idiot. In code, using inappropriate DSL "slang" runs the risk of making your code opaque or hard to understand by someone who isn't familiar with the DSL. It also adds a dependency on whatever external library implements the DSL, which seems like a high cost just to avoid typing <code>UILabel.alloc.initWithFrame(CGRectMake)</code> a few times, or to keep some nibs or Core Data models around.</p>&#13;
 <p>The bottom line point is not that RubyMotion, or its community of DSL-loving Rubyists, or its first conference are evil or doing it wrong, but that I think they may be letting their enthusiasm for Ruby's simplicity and dynamism blind them to some of the really wonderful, pragmatic qualities of the Foundation and Cocoa frameworks — in short, that this community is primed to see "verbose" and think "bad" when it ain't necessarily so — and my worry is that a RubyMotion conference will reinforce some of that without necessarily reconciling the tension and disruption RubyMotion brings to the table.</p>&#13;
 <p>But then again, I may not know what the fuck I'm talking about. In either case this conference ought to start some very interesting conversations, making it one to watch.</p>&#13;
-<p>Speaking of being a RubyMotion curmudgeon: <a href="http://www.meetup.com/ChicagoRuby/events/81615162/">I'm speaking at ChicagoRuby's downtown meetup on Tuesday, January 8 on <em>this very topic</em></a>.</p> 
+<p>Speaking of being a RubyMotion curmudgeon: <a href="http://www.meetup.com/ChicagoRuby/events/81615162/">I'm speaking at ChicagoRuby's downtown meetup on Tuesday, January 8 on <em>this very topic</em></a>.</p>

@@ -1,5 +1,5 @@
 ---
-date: '2010-01-27T15:36:50.000Z'
+date: "2010-01-27T15:36:50.000Z"
 tumblr_type: link
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/356250402/ferran-adri%C3%A0-is-closing-el-bulli-for-two-years-to
@@ -8,8 +8,9 @@ aliases:
 link_url: http://www.nytimes.com/2010/01/27/dining/27adria.html?partner=rss&emc=rss
 slug: ferran-adrià-is-closing-el-bulli-for-two-years-to
 tags:
-  - food
-  - Ferran Adrià
+  - Food
+  - Culture
+  - Restaurants
 summary: Ferran Adrià is closing El Bulli for two years to tinker
 title: Ferran Adrià is closing El Bulli for two years to tinker
 publisher: nytimes.com

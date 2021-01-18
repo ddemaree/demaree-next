@@ -1,5 +1,5 @@
 ---
-date: '2010-09-22T17:41:00.000Z'
+date: "2010-09-22T17:41:00.000Z"
 tumblr_type: link
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/1167963605/sass-grows-up-getting-its-own-projectgemrepo
@@ -8,9 +8,7 @@ aliases:
 link_url: http://nex-3.com/posts/103-haml-and-sass-are-split
 slug: sass-grows-up-getting-its-own-projectgemrepo
 tags:
-  - nerd alert
-  - Ruby
-  - Haml
+  - Web Development
   - Sass
 summary: Sass Grows Up, Getting Its Own Project/Gem/Repo
 title: Sass Grows Up, Getting Its Own Project/Gem/Repo

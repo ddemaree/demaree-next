@@ -1,5 +1,5 @@
 ---
-date: '2010-03-12T14:59:50.000Z'
+date: "2010-03-12T14:59:50.000Z"
 tumblr_type: link
 tumblr_url: https://ddemaree.tumblr.com/post/443416984/t26-fonts-now-on-typekit
 aliases:
@@ -8,10 +8,10 @@ link_url: >-
   http://blog.typekit.com/2010/03/11/classic-and-contemporary-fonts-from-p22-t-26-and-others/
 slug: t26-fonts-now-on-typekit
 tags:
-  - TypeKit
-  - T26
-summary: T26 Fonts Now on TypeKit
-title: T26 Fonts Now on TypeKit
+  - Typekit
+  - Fonts
+summary: T26 Fonts Now on Typekit
+title: T26 Fonts Now on Typekit
 publisher: blog.typekit.com
 ---
 

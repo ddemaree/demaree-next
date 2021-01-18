@@ -1,12 +1,13 @@
 ---
-date: '2011-06-05T17:00:06.000Z'
+date: "2011-06-05T17:00:06.000Z"
 tumblr_type: link
 tumblr_url: https://ddemaree.tumblr.com/post/6216967489/on-grouponzi
 aliases:
   - /post/6216967489/on-grouponzi
 link_url: http://parislemon.com/post/6187955938
 slug: on-grouponzi
-tags: []
+tags:
+  - Groupon
 summary: On Grouponzi
 title: On Grouponzi
 publisher: parislemon.com
