@@ -2,7 +2,6 @@
 title: Just Add Code
 slug: simpler-web-hacking
 date: 2021-01-18T13:29:54-05:00
-draft: true
 excerpt: Recapturing the magic of early web development with modern tools
 description: Recapturing the magic of early web development with modern tools
 tags:
