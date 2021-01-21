@@ -18,7 +18,7 @@
     <script src="https://cdn.usefathom.com/script.js" data-site="TOFIAIKB" data-included-domains="demaree.me" defer></script>
   </head>
   <body class="bg-surface text-ink dark:dd-inkMedium-gray-400 dark:dd-ink-gray-300 dark:dd-inkLight-gray-700 dark:dd-surface-black dark:dd-inkBold-white dark:dd-accent-red-400">
-    {{ partial "header.html" . }}
+    {{ block "header" . }}{{ partial "header.html" . }}{{ end }}
 
     {{ block "main" . }}{{ end }}
 

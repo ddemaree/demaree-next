@@ -1,6 +1,13 @@
 {{ $img := .Page.Resources.GetMatch .Destination }}
+
+{{ if $img }}
 {{ $imgLite := $img.Resize "100x" | images.Filter (images.GaussianBlur 6) }}
 
 <figure>
   <img src="{{ $img.Permalink }}" />
 </figure>
+{{ else }}
+<figure>
+  <img src="{{ .Destination }}" />
+</figure>
+{{ end }}

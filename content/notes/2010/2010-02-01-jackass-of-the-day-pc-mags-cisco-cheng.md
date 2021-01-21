@@ -1,5 +1,5 @@
 ---
-date: '2010-02-01T20:15:53.000Z'
+date: "2010-02-01T20:15:53.000Z"
 tumblr_type: link
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/365540492/jackass-of-the-day-pc-mags-cisco-cheng
@@ -9,9 +9,8 @@ link_url: http://www.pcmag.com/article2/0,2817,2358590,00.asp
 slug: jackass-of-the-day-pc-mags-cisco-cheng
 tags:
   - iPad
-  - Jackassery
-summary: 'Jackass of the Day: PC Mag''s Cisco Cheng'
-title: 'Jackass of the Day: PC Mag''s Cisco Cheng'
+summary: "Jackass of the Day: PC Mag's Cisco Cheng"
+title: "Jackass of the Day: PC Mag's Cisco Cheng"
 publisher: pcmag.com
 ---
 

@@ -1,5 +1,5 @@
 ---
-date: '2010-02-18T14:34:49.000Z'
+date: "2010-02-18T14:34:49.000Z"
 tumblr_type: link
 tumblr_url: https://ddemaree.tumblr.com/post/396645581/food-sell-by-dates-are-meaningless
 aliases:
@@ -7,7 +7,7 @@ aliases:
 link_url: http://www.slate.com/id/2244249/
 slug: food-sell-by-dates-are-meaningless
 tags:
-  - food
+  - Food
 summary: Food Sell-By Dates are Meaningless
 title: Food Sell-By Dates are Meaningless
 publisher: slate.com

@@ -1,12 +1,16 @@
 ---
-date: '2015-06-03T00:16:00.000Z'
+date: "2015-06-03T00:16:00.000Z"
 tumblr_type: quote
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/120568272584/we-believe-the-customer-should-be-in-control-of
 aliases:
   - /post/120568272584/we-believe-the-customer-should-be-in-control-of
 slug: we-believe-the-customer-should-be-in-control-of
-tags: []
+tags:
+  - Privacy
+  - Apple
+  - Google
+  - Tech
 summary: >-
   We believe the customer should be in control of their own information. You
   might like these so-called free services, but we...
@@ -32,4 +36,3 @@ source: >-
   computing more personal. Apple is doing it by putting a device on our wrists,
   Google is doing it by teaching computers to know us better.</p>
 ---
-

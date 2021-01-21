@@ -1,16 +1,16 @@
 ---
-date: '2010-01-26T17:48:51.000Z'
+date: "2010-01-26T17:48:51.000Z"
 tumblr_type: link
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/354621229/dustin-curtis-has-pictures-of-the-tablet
 aliases:
   - /post/354621229/dustin-curtis-has-pictures-of-the-tablet
 link_url: http://blog.dustincurtis.com/photos-of-the-apple-tablet
+link_dead_on: 2021-01-17
 slug: dustin-curtis-has-pictures-of-the-tablet
 tags:
-  - The Tablet
-summary: Dustin Curtis has pictures of The Tablet.
-title: Dustin Curtis has pictures of The Tablet.
+  - iPad
+title: Dustin Curtis has pictures of The Tablet
 publisher: blog.dustincurtis.com
 ---
 

@@ -9,7 +9,7 @@ link_url: >-
 slug: depressions-upside
 tags:
   - Psychology
-  - creativity
+  - Ideas
 summary: Depression's Upside
 title: Depression's Upside
 publisher: nytimes.com

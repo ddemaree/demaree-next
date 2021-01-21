@@ -9,10 +9,12 @@ link_url: >-
   http://blog.rubymotion.com/post/37183308463/announcing-inspect-2013-the-rubymotion-conference
 slug: 8-month-old-platform-declares-itself-old-enough-to
 tags:
-  - RubyMotion
+  - Ruby
+  - iOS
 summary: 8-Month-Old Platform Declares Itself Old Enough To Have A Conference
 title: 8-Month-Old Platform Declares Itself Old Enough To Have A Conference
 publisher: blog.rubymotion.com
+private: true
 ---
 
 <p><a class="tumblr_blog" href="http://blog.rubymotion.com/post/37183308463/announcing-inspect-2013-the-rubymotion-conference">rubymotion</a>:</p>&#13;

@@ -1,6 +1,7 @@
 ---
 title: Testing Page
 url: /__style-guide
+layout: testing
 ---
 
 In 1945 New Mexico, [the first atomic bomb is detonated](https://en.wikipedia.org/wiki/Trinity_(nuclear_test)):

@@ -8,7 +8,6 @@ slug: aplibrary
 tags:
   - Photography
   - Apple
-  - Lightroom
 title: "iPhoto & Aperture Now Use The Same Data Format"
 ---
 

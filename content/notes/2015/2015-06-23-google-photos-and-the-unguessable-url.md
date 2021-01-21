@@ -1,5 +1,5 @@
 ---
-date: '2015-06-23T15:34:47.000Z'
+date: "2015-06-23T15:34:47.000Z"
 tumblr_type: link
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/122257310299/google-photos-and-the-unguessable-url
@@ -8,7 +8,10 @@ aliases:
 link_url: >-
   http://www.theverge.com/2015/6/23/8830977/google-photos-security-public-url-privacy-protected
 slug: google-photos-and-the-unguessable-url
-tags: []
+tags:
+  - UX
+  - Google
+  - Privacy
 summary: Google Photos and the unguessable URL
 title: Google Photos and the unguessable URL
 link_author: russell.brandom

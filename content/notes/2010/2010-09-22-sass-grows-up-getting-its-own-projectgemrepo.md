@@ -10,6 +10,7 @@ slug: sass-grows-up-getting-its-own-projectgemrepo
 tags:
   - Web Development
   - Sass
+  - CSS
 summary: Sass Grows Up, Getting Its Own Project/Gem/Repo
 title: Sass Grows Up, Getting Its Own Project/Gem/Repo
 publisher: nex-3.com

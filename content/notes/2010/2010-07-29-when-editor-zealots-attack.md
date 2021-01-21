@@ -1,5 +1,5 @@
 ---
-date: '2010-07-29T16:06:00.000Z'
+date: "2010-07-29T16:06:00.000Z"
 tumblr_type: link
 tumblr_url: https://ddemaree.tumblr.com/post/875623274/when-editor-zealots-attack
 aliases:
@@ -8,8 +8,9 @@ link_url: >-
   http://yehudakatz.com/2010/07/29/everyone-who-tried-to-convince-me-to-use-vim-was-wrong/
 slug: when-editor-zealots-attack
 tags:
-  - nerdery
+  - Coding
   - Vim
+  - TextMate
 summary: When Editor Zealots Attack
 title: When Editor Zealots Attack
 publisher: yehudakatz.com
@@ -21,7 +22,7 @@ Yehuda Katz has switched to Vim in spite of all the people recommending he switc
 
 > Despite what I considered a relatively reasonable request, my challenge was met with disdain and even anger by most of the people I talked to. “If you feel that way, Vim probably isn’t for you.” “You’re learning a new EDITOR for God’s sakes. Of COURSE there’s going to be a learning curve.”
 
-I recently switched from TextMate to MacVim after months of pressure from my officemate Alec, who's more or less the kind of Vim zealot Yehuda's talking about. Explaining Vim to a non-Vimmer is like trying to give street directions to someone who doesn't understand the English words for "left", "right" or "street." What finally made Vim work for me was [Peepcode's excellent "Smash into Vim" screencasts](https://peepcode.com/products/smash-into-vim-i) (targeted at experienced developers coming from a less Vimmy editing environment), with some helpful, patient advice from another Vim-using officemate. 
+I recently switched from TextMate to MacVim after months of pressure from my officemate Alec, who's the kind of Vim zealot Yehuda's talking about. Explaining Vim to a non-Vimmer is like trying to give street directions to someone who doesn't understand the English words for "left", "right" or "street." What finally made Vim work for me was [Peepcode's excellent "Smash into Vim" screencasts](https://peepcode.com/products/smash-into-vim-i) (targeted at experienced developers coming from a less Vimmy editing environment), with some helpful, patient advice from another Vim-using officemate.
 
 What I really want to know is: if TextMate has stagnated, why has no one else stepped up with a new Mac editor for programmers? Maybe because the niche TextMate has filled (and continues to fill for most people) is actually way smaller than we think it is. Cocoa developers don't need a new editor (they have Xcode), Java or Flex developers tend to use Eclipse-based IDEs, and web designers/PHP developers have plenty of options (from Dreamweaver to Coda or Espresso). And Vim and TextMate are tough acts to follow; a developer working on a new programming editor for Mac OS X will feel pressure to improve on either or both of them, which is a pretty big challenge. (To wit: TextMate 2, by all accounts, was intended to be a huge leap beyond the original TextMate, and it may never be done enough to ship.)
 

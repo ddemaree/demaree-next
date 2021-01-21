@@ -9,14 +9,12 @@ link_url: http://37signals.com/svn/posts/2234-launch-highrise-for-iphone
 slug: 37signals-launches-highrise-for-iphone
 tags:
   - Basecamp
-  - Highrise
+  - iOS
+  - iPhone
+  - Good Tools
 summary: 37signals Launches Highrise for iPhone
 title: 37signals Launches Highrise for iPhone
 publisher: 37signals.com
 ---
 
-I've only used the app for 5 minutes, and it's obvious how much thought they put into the design. The feature set and presentation are exactly right; when I say they left room for improvement, I mean they did a great job and left me wanting more.
-
-And it's worth mentioning that now that it's on the iPhone, Highrise might be my new favorite task manager. It has email reminders, and since the to-dos live in the cloud they're available immediately across all my devices.
-
-Despite a certain amount of _Rework_/Jason Fried fatigue lately, I still think 37signals are the best there is at what they do.
+I've only used the app for a few minutes, but it's obvious how much thought they put into the design. The feature set and presentation are exactly right. And it's worth mentioning that now that it's on the iPhone, Highrise might be my new favorite task manager. It has email reminders, and since the to-dos live in the cloud they're available immediately across all my devices.

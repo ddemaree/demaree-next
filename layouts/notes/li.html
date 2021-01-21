@@ -7,4 +7,16 @@
   </header>
   {{- $type := index .Params "tumblr_type" -}}
   {{ .Render (printf "li-%s" $type) }}
+  
+  <div class="flex mt-6">
+    <b class="mr-2">Tags:</b>
+    <ul class="contents">
+      {{ range (.GetTerms "tags") }}
+        <li class="mr-2 last:mr-0"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+     </ul>
+  </div>
+  {{ if eq .Hugo.Environment "development" }}
+  <div class="text-sm mt-2"><code>{{ .File.Path }}</code></div>
+  {{ end }}
 </article>

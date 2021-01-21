@@ -1,11 +1,14 @@
 ---
-date: '2015-05-30T15:10:05.000Z'
+date: "2015-05-30T15:10:05.000Z"
 tumblr_type: text
 tumblr_url: https://ddemaree.tumblr.com/post/120270578434/google-photos-first-impressions
 aliases:
   - /post/120270578434/google-photos-first-impressions
 slug: google-photos-first-impressions
-tags: []
+tags:
+  - Google
+  - Google Photos
+  - Tech
 summary: Google Photos first impressions
 title: Google Photos first impressions
 ---

@@ -1,26 +1,25 @@
 ---
-date: '2010-03-16T16:35:25.000Z'
+date: "2010-03-16T16:35:25.000Z"
 tumblr_type: text
 tumblr_url: https://ddemaree.tumblr.com/post/452469789/no-more-computers
 aliases:
   - /post/452469789/no-more-computers
 slug: no-more-computers
 tags:
-  - nerdery
+  - Tech
   - iPad
   - iPhone
-summary: No more computers.
-title: No more computers.
+title: No more computers
 ---
 
-Most people wouldn't even think of file management as a _feature_ of traditional computers; files are just always _there_, like grass or rocks, part of the landscape. 
+Most people wouldn't even think of file management as a _feature_ of traditional computers; files are just always _there_, like grass or rocks, part of the landscape.
 
 It's not just that filesystems are ubiquitous. From a technical standpoint, especially in Unix-like systems like OS X, the filesystem really _is_ the computer, or at least a user or developer's first, best way to interact with the system. And for ordinary folks, their whole mental model for distinguishing computers from other kinds of gadgets (like game consoles or phones) revolves around hierarchical file systems.
 
 Which isn't to say people really understand filesystems, [as Rob Foster pointed out on his blog recently][nd]:
 
 > These days, tech support calls involve questions of how to do stuff these folks like to do. Because they can now actually use their computers instead of simply restarting them, I’m able to better see how they use them. And the one commonality I’ve seen is that no one knows how to use the file system.
-
+>
 > Unfortunately for the average person, the file system is so complex that everything outside of the desktop and the documents folder appears to be a vast labyrinth which most likely hides booby traps and minotaurs.
 
 I've had to deal with friends-and-family support calls too, and there's only one thing in Foster's post I disagree with: a lot of the friends I've had to help _also_ don't understand the desktop or documents folders. One very bright person I know saved _everything_ to her desktop because that was the only place she knew she could find it, except that after a while she had so many files she couldn't really find anything there either. So she started keeping windows open for weeks. When she needed a file, she skipped the desktop and went looking for its minimized window in the Dock.
@@ -57,4 +56,4 @@ The iPhone is just a phone and the iPod touch is just a music player, but despit
 
 [^1]: Technically, it was Palm's archrivals Handspring who made the first Treo smartphone. Palm chose to acquire Handspring (who were founded by the inventors of the original PalmPilot) and take over the Treo brand rather than develop their own competing product.
 
-[nd]:http://nimbledesign.com/post/441423115/the-path-of-most-resistance
+[nd]: http://nimbledesign.com/post/441423115/the-path-of-most-resistance

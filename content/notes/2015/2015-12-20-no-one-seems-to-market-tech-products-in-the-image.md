@@ -1,12 +1,14 @@
 ---
-date: '2015-12-20T13:35:17.000Z'
+date: "2015-12-20T13:35:17.000Z"
 tumblr_type: quote
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/135568995519/no-one-seems-to-market-tech-products-in-the-image
 aliases:
   - /post/135568995519/no-one-seems-to-market-tech-products-in-the-image
 slug: no-one-seems-to-market-tech-products-in-the-image
-tags: []
+tags:
+  - Ideas
+  - Tech
 summary: >-
   No one seems to market tech products in the image of the most famous virtual
   assistant in film history. Hal from “2001: A Space...
@@ -39,4 +41,3 @@ source: >-
   [Joanne McNeil, in the
   NYT](http://mobile.nytimes.com/2015/12/20/opinion/sunday/why-do-i-have-to-call-this-app-julie.html)
 ---
-

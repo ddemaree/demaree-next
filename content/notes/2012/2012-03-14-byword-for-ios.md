@@ -1,12 +1,14 @@
 ---
-date: '2012-03-14T16:40:06.000Z'
+date: "2012-03-14T16:40:06.000Z"
 tumblr_type: link
 tumblr_url: https://ddemaree.tumblr.com/post/19293952848/byword-for-ios
 aliases:
   - /post/19293952848/byword-for-ios
 link_url: http://bywordapp.com/
 slug: byword-for-ios
-tags: []
+tags:
+  - iPhone
+  - Good Tools
 summary: Byword for iOS
 title: Byword for iOS
 publisher: bywordapp.com

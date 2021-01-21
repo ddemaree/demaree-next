@@ -1,12 +1,15 @@
 ---
-date: '2015-05-30T20:54:00.000Z'
+date: "2015-05-30T20:54:00.000Z"
 tumblr_type: text
 tumblr_url: >-
   https://ddemaree.tumblr.com/post/120293927899/some-google-photos-search-queries-that-are
 aliases:
   - /post/120293927899/some-google-photos-search-queries-that-are
 slug: some-google-photos-search-queries-that-are
-tags: []
+tags:
+  - Google
+  - Google Photos
+  - Tech
 summary: Some Google Photos search queries that are basically black magic
 title: Some Google Photos search queries that are basically black magic
 ---

@@ -1,5 +1,5 @@
 ---
-date: '2012-03-24T16:22:57.000Z'
+date: "2012-03-24T16:22:57.000Z"
 tumblr_type: link
 tumblr_url: https://ddemaree.tumblr.com/post/19838910522/humans-playing-humans-on-mad-men
 aliases:
@@ -7,9 +7,9 @@ aliases:
 link_url: http://www.themorningnews.org/article/humans-playing-humans
 slug: humans-playing-humans-on-mad-men
 tags:
-  - Mad Men
-  - tv
-  - psychology
+  - Culture
+  - TV
+  - Psychology
 summary: Humans Playing Humans on "Mad Men"
 title: Humans Playing Humans on "Mad Men"
 publisher: themorningnews.org
