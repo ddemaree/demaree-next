@@ -7,9 +7,9 @@ module.exports = {
 	purge: {
 		layers: ['utilities'],
 		content: [
-			'./**/*.js',
-			"./**/*.html",
-			"./**/*.md"
+			'./src/**/*.js',
+			"./src/**/*.html",
+			"./src/**/*.md"
 		]
 	},
 	variants: {
