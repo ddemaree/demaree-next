@@ -1,9 +1,8 @@
 require("dotenv").config()
-const htmlmin = require("html-minifier")
 
-const path = require('path')
 const fs = require('fs')
-const { get } = require("https")
+const path = require('path')
+const htmlmin = require("html-minifier")
 const { DateTime } = require("luxon")
 
 module.exports = function(eleventyConfig) {
@@ -44,7 +43,22 @@ module.exports = function(eleventyConfig) {
       return b.date - a.date
     })
 
-    return homePosts
+    return homePosts.slice(0, 16)
+  })
+
+  eleventyConfig.addFilter("formatDate", value => {
+    let dt
+    
+    if(value.setZone !== undefined) {
+      dt = value
+    } else if (typeof value === "string") {
+      dt = DateTime.fromISO(value)
+    } else {
+      dt = DateTime.fromISO(value.toISOString())
+    }
+
+    dt.setZone("America/New_York")
+    return dt.toLocaleString(DateTime.DATE_MED)
   })
 
   eleventyConfig.addFilter("classnames", value => require('classnames')(value) )

@@ -22,8 +22,16 @@ title: Home Page
   {% for post in collections.homePagePosts %}
   <article class="flex items-start col-start-2 col-span-8 md:col-start-auto md:odd:col-start-2 md:col-span-4 md:px-8">
     <div class="flex-1 lg:col-start-2 lg:col-span-6">
-      {{ post.url }}
-      {{ post.title }}
+      <a href="{{ post.url }}" class="block">
+        <h2 class="text-inkBold font-semibold text-lg sm:text-xl leading-tight">{{ post.title }}</h2>
+        {% if post.description %}
+        <div class="text-sm mt-2">{{ post.description }}</div>
+        {% endif %}
+        <div class="text-inkMedium text-sm mt-2">
+          {{ post.date | formatDate }}
+        </div>
+        
+      </a>
     </div>
   </article>
   {% endfor %}
