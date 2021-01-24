@@ -8,6 +8,8 @@
 [build.environment]
   NODE_ENV = "production"
   HUGO_ENV = "production"
+  ELEVENTY_ENV = "production"
+  ELEVENTY_PRODUCTION = "true"
   NODE_VERSION = "12"
   HUGO_VERSION = "0.80.0"
   HUGO_ENABLEGITINFO = "true"
