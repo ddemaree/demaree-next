@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<header class="grid dd-grid-cols py-12">
+  <h1 class="text-center dd-col-full font-semibold text-5xl font-roslindale-2 mb-1" style="font-variation-settings: 'wdth' 90; font-feature-settings: 'ss03' on;">{{ title }}</h1>
+
+  {% if description %}<h2 class="text-center dd-col-full text-inkMedium text-xl mb-4">{{ description }}</h2>{% endif %}
+
+  <div class="post-meta text-inkMedium text-base text-center dd-col-full text-inkMedium">{{ date | formatDate }} • {{ content | readingTime }} read</div>
+</header>
+<main class="grid dd-grid-cols">
+  <div class="dd-prose contents text-lg font-serif text-ink">
+    {{ content | safe }}
+  </div>
+</main>

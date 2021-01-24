@@ -6,6 +6,8 @@ const htmlmin = require("html-minifier")
 const { DateTime } = require("luxon")
 const { URL } = require('url')
 const { compact, includes } = require("lodash")
+const readingTime = require('eleventy-plugin-reading-time');
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 function makeCloudinaryURL(src, targetWidth, targetHeight, otherTransforms) {
   let cyMethod = 'upload'
@@ -76,6 +78,9 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addWatchTarget("./src/_assets/");
 
+  eleventyConfig.addPlugin(readingTime);
+  eleventyConfig.addPlugin(syntaxHighlight);
+
   eleventyConfig.addCollection("homePagePosts", async function(collections) {
     let homePosts = []
     const getSubstacks = require('./src/_data/substackPosts')
@@ -136,6 +141,12 @@ module.exports = function(eleventyConfig) {
     const manifestData = fs.readFileSync(manifestPath)
     manifest = JSON.parse(manifestData)
   }
+
+  eleventyConfig.addShortcode("cy_font", assetPath => {
+    const assetURL = `https://res.cloudinary.com/demaree/raw/upload/s3/fonts/${assetPath}/index.css`
+
+    return `<link rel="stylesheet" href="${assetURL}" type="text/css" />`;
+  })
 
   eleventyConfig.addShortcode("asset", function(assetName) {
     if(process.env.NODE_ENV === 'production' && manifest[assetName]) {
