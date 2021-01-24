@@ -74,7 +74,6 @@ function makeImageURL(origSrc, targetWidth, targetHeight, otherTransforms) {
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true)
-  eleventyConfig.addPassthroughCopy({"static/fonts": "fonts" })
 
   eleventyConfig.addWatchTarget("./src/_assets/");
 
