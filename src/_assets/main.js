@@ -1,6 +1,5 @@
 import Vue from "vue/dist/vue.esm";
-// import chroma from "chroma-js";
-// window.chroma = chroma;
+import Menu from './js/menu.vue'
 
 window.Vue = Vue;
 
@@ -9,11 +8,8 @@ function getScrollbarWidth() {
 }
 
 const scrollWidth = getScrollbarWidth();
-console.log("Scroll width is ", scrollWidth);
 
 function setBodyScroll(isScrollable = true) {
-  console.log("Scroll width is ", scrollWidth);
-
   if (isScrollable) {
     document.body.style.paddingRight = "0px";
     document.body.classList.remove("overflow-hidden");
@@ -25,6 +21,8 @@ function setBodyScroll(isScrollable = true) {
 
 const menuVm = new Vue({
   el: "#tha-menu",
+  template: '<Menu />',
+  components: { Menu },
   data: {
     open: false,
     menuItems: window.__menus || [],

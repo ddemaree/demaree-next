@@ -2,6 +2,7 @@ const path   = require('path');
 const globby = require('globby');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const dev = process.env.NODE_ENV !== 'production';
 const mode = dev ? "development" : "production";
@@ -23,12 +24,16 @@ module.exports = {
     return entries
   },
   output: {
-    filename: dev ? '[name]' : '[name].[chunkhash].js',
+    filename: dev ? '[name].js' : '[name].[chunkhash].js',
     path: path.resolve(__dirname, '_site', 'assets'),
     publicPath: '/assets/'
   },
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
       {
         test: /\.css$/,
         use: [
@@ -43,6 +48,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new VueLoaderPlugin(),
     new WebpackManifestPlugin(),
     new MiniCssExtractPlugin({
       filename: dev ? '[name].css' : '[name].[chunkhash].css'

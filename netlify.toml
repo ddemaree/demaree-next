@@ -2,8 +2,8 @@
   ID = "demaree-next"
 
 [build]
-  command = "hugo --gc --minify"
-  publish = "public"
+  command = "npm run build"
+  publish = "_site"
 
 [build.environment]
   NODE_ENV = "production"
@@ -13,7 +13,7 @@
   HUGO_ENABLEGITINFO = "true"
 
 [context.deploy-preview]
-  command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+  command = "npm run build"
 
 [context.branch-deploy]
-  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+  command = "npm run build"
