@@ -1,5 +1,8 @@
+import { Cloudinary } from "cloudinary-core";
 import Vue from "vue/dist/vue.esm";
 import Menu from './js/menu.vue'
+
+import cloudinary from 'cloudinary-core'
 
 window.Vue = Vue;
 
@@ -113,5 +116,8 @@ img.forEach((img) => {
 
   observer.observe(img);
 });
+
+window.cl = cloudinary.Cloudinary.new({cloud_name: "demaree"})
+cl.responsive()
 
 document.body.classList.add("js-active");

@@ -4,85 +4,28 @@ const fs = require('fs')
 const path = require('path')
 const htmlmin = require("html-minifier")
 const { DateTime } = require("luxon")
-const { URL } = require('url')
-const { compact, includes } = require("lodash")
+const { compact } = require("lodash")
+const classnames = require('classnames')
+const cloudinary = require('cloudinary')
+const _ = require('lodash')
+const axios = require('axios')
+
 const readingTime = require('eleventy-plugin-reading-time');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
-function makeCloudinaryURL(src, targetWidth, targetHeight, otherTransforms) {
-  let cyMethod = 'upload'
-  let cyPath = src
-
-  let cyParams = compact([
-    'c_fill',
-    (targetWidth && `w_${targetWidth}`),
-    (targetHeight && `h_${targetHeight}`),
-    otherTransforms
-  ]).join(',')
-
-  if (src.match(/^https?\:/) || src.match(/^\/\//)) {
-    cyMethod = 'fetch'
-
-    // Handle edge case where very large Unsplash images may be larger than CY's maximum upload size
-    if(src.match(/images\.unsplash/) && !src.match(/w\=/)) {
-      src = src + '?w=2000'
-    }
-    
-    cyPath = encodeURIComponent(src)
-  }
-
-  return `//res.cloudinary.com/demaree/image/${cyMethod}${cyParams && `/${cyParams}`}/${cyPath}` 
-}
-
-function makePreviewImageUrl(origSrc, width, height) {
-  if(origSrc.match(/images\.unsplash/)) {
-    return `${origSrc}?w=${width / 10}&h=${height / 10}&blur=10`
-  } else {
-    return makeCloudinaryURL(origSrc, (width / 10), (height / 10), 'e_blur:200')
-  }
-}
-
-function makeImageURL(origSrc, targetWidth, targetHeight, otherTransforms) {
-  let src = origSrc.slice()
-  let url = null;
-
-  try {
-    url = new URL(src)
-  } catch(err) {
-    // URL parsing failed so it's probably a local URL
-  }
-
-  if(src.match(/images\.unsplash\.com/)) {
-    // Use Unsplash's image API, let them pay for bandwidth
-
-    let usQuery = compact([
-      (targetWidth && `w=${targetWidth}`),
-      (targetHeight && `h=${targetHeight}`)
-    ]).join('&')
-
-    return src.replace(/[hw]=\d+/,"") + '?' + usQuery
-  } else if(src.match(/source\.unsplash\.com/)) {
-    return src.replace(/\/$/) + '/' + [targetWidth, targetHeight].join('x')
-  } else if(url && includes(['placehold.it', 'cdn.substack.com'], url.host)) {
-    
-  } else {
-    return makeCloudinaryURL(src, targetWidth, targetHeight, otherTransforms)
-  } 
-
-  return src
-}
+const getImageTag = require('./src/_includes/js/imageTag')
+const getSubstacks = require('./src/_includes/js/getSubstacks')
+const imageTag = require("./src/_includes/js/imageTag")
+const getDimensions = require('./src/_includes/js/dimensions')
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true)
-
   eleventyConfig.addWatchTarget("./src/_assets/");
-
   eleventyConfig.addPlugin(readingTime);
   eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.addCollection("homePagePosts", async function(collections) {
     let homePosts = []
-    const getSubstacks = require('./src/_data/substackPosts')
     const substacks = await getSubstacks()
     substacks.forEach(post => {
       homePosts.push({
@@ -130,7 +73,7 @@ module.exports = function(eleventyConfig) {
     return dt.toLocaleString(DateTime.DATE_MED)
   })
 
-  eleventyConfig.addFilter("classnames", value => require('classnames')(value) )
+  eleventyConfig.addFilter("classnames", value => classnames(value) )
 
   const manifestPath = path.join(__dirname, '_site/assets/manifest.json')
   const manifestPresent = fs.existsSync(manifestPath)
@@ -140,6 +83,70 @@ module.exports = function(eleventyConfig) {
     const manifestData = fs.readFileSync(manifestPath)
     manifest = JSON.parse(manifestData)
   }
+
+  eleventyConfig.addShortcode("cy_image", async function(assetName, opts) {
+    const resource = await cloudinary.v2.api.resource(assetName)
+    const { height, width } = resource
+    const aspectRatio = width / height
+
+    opts = _.defaults(opts, {
+      maxWidth: 2000,
+      style: 'normal'
+    })
+
+    const maxSizes = {'normal': 700, 'wide': 1080, 'full': 2048}
+    const allSizes = [276,552,640,728,816,904,992,1080,1350,1620,1890,2048]
+    const maxSize = maxSizes[opts.style]
+    const imageSizes = allSizes.filter(s => (s <= maxSize))
+
+    const srcsetUrls = imageSizes.map(s => {
+      const url = cloudinary.url(assetName, {format: 'jpg', width: (s * 2)})
+      return `${url} ${s}w`
+    })
+
+    const baseUrl = cloudinary.url(assetName, {format: 'jpg', width: (maxSize * 2)})
+
+    const previewUrl = cloudinary.url(assetName, {format: 'jpg', width: (maxSize / 2), effect: "blur:20"})
+
+    const imgAttrs = {
+      src: previewUrl,
+      ['data-src']: baseUrl,
+      ['data-srcset']: srcsetUrls.join(', '),
+      alt: opts.alt,
+      class: classnames('cloudinary-image w-full', opts.class),
+      width,
+      height
+    }
+
+    const attrString = _.reduce(imgAttrs, (attrList, value, key) => {
+      console.log(key, value)
+      if(value) attrList.push(`${key}="${value}"`)
+      return attrList
+    }, []).join(" ")
+    
+    // return `<img class="lazy-img-preview" ${attrString} />`;
+    // return cloudinary.image(assetName, {dpr: "auto", responsive: true, width: "auto", crop: "scale", responsive_placeholder: "blank"})
+    return `<figure class="lazy-img-container relative" style="--aspect-ratio: ${aspectRatio};"><img class="lazy-img-preview" ${attrString} /></figure>`
+  })
+
+  eleventyConfig.addShortcode("twitter", async function(tweetId) {
+    const tweetOembed = await axios.get("https://api.twitter.com/1/statuses/oembed.json", { params: { id: tweetId, dnt: true }}).then(r => r.data)
+
+    const { html } = tweetOembed
+
+    return `<figure class="dd-embed dd-embed-tweet">${html}</figure>`
+  })
+
+  eleventyConfig.addShortcode("insta", async function(id) {
+    const access_token = "168636849931146|be6d5aa05878fe740bc69fd9cb159c12"
+    const url = `https://instagram.com/p/${id}`
+    const instaEmbed = await axios.get("https://graph.facebook.com/v9.0/instagram_oembed/", {params: { url, access_token }}).then(r => r.data)
+
+    const { thumbnail_url } = instaEmbed
+
+    return `<blockquote class="instagram-media w-full" data-instgrm-captioned data-instgrm-permalink="${url}" data-instgrm-version="13"><noscript><img src="${thumbnail_url}" /></noscript></blockquote>
+    <script async src="//platform.instagram.com/en_US/embeds.js"></script>`;
+  })
 
   eleventyConfig.addShortcode("cy_font", assetPath => {
     const assetURL = `https://res.cloudinary.com/demaree/raw/upload/s3/fonts/${assetPath}/index.css`
@@ -156,35 +163,44 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addNunjucksShortcode("image_tag", function(args) {
-    const sizes = [300, 600, 900, 1200, 1600, 2000]
-    let { src, dimensions } = args
-    let baseSrc, srcset;
+    return getImageTag(args)
+  })
 
-    dimensions = dimensions || "x"
-    const [width, height] = dimensions.split("x").map(n => (n ? parseInt(n): null))
-    const aspectRatio = (width/height)
+  eleventyConfig.addShortcode("image", (src, dimensions, opts) => {
+    opts = opts || {}
+    dimensions = dimensions || ""
 
-    baseSrc = makeImageURL(src, width, height)
-    srcset = compact(sizes.map(size => {
-      if(size > (width * 1.5)) {
-        return null
-      }
-      
-      const sizeHeight = size / aspectRatio
-      const sizedUrl = makeImageURL(src, size, sizeHeight)
-      return `${sizedUrl} ${size}w`
-    })).join(', ')
+    if(typeof dimensions === "string") {
+      dimensions = dimensions.split("x")
+    }
 
-    const previewSrc = makePreviewImageUrl(src, width, height)
-    
-    const classAttr = args.class ? `class="${args.class}" ` : ""
-    return `<img data-orig-src="${src}" src="${previewSrc}" data-src="${baseSrc}" data-srcset="${srcset}" ${classAttr}/>`
+
+  })
+
+  // Get the first `n` elements of a collection.
+  // Credit: github.com/tatianamac/tm11ty
+  eleventyConfig.addFilter("head", (array, n) => {
+    if( n < 0 ) {
+      return array.slice(n);
+    }
+
+    return array.slice(0, n);
+  });
+
+  eleventyConfig.addPairedShortcode("gallery", function(content) {
+    return `<ul class="bg-red-500">${content}</ul>`
+  })
+
+  eleventyConfig.addShortcode("gallery_img", function(src, dimensions) {
+    const { aspectRatio } = getDimensions(dimensions)
+    const tag = imageTag({src, dimensions})
+    return `<li class="gallery-item" style="--gallery-flex: ${aspectRatio}"><figure>${tag}</figure></li>`;
   })
 
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
       if (
         process.env.ELEVENTY_PRODUCTION &&
-        outputPath &&
+        outputPah &&
         outputPath.endsWith(".html")
       ) {
         let minified = htmlmin.minify(content, {
@@ -198,6 +214,13 @@ module.exports = function(eleventyConfig) {
       return content
     })
 
+  let markdownLib = require("markdown-it")({
+      html: true,
+    })
+    .use(require("markdown-it-attrs"))
+
+  eleventyConfig.setLibrary("md", markdownLib)
+
   return {
     dir: {
       input: "src",
@@ -206,5 +229,6 @@ module.exports = function(eleventyConfig) {
       layouts: "_layouts",
       data: "_data",
     },
+    // markdownTemplateEngine: "njk"
   }
 }
