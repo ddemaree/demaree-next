@@ -16,9 +16,9 @@ aliases:
 - /p/no-more-masters
 ---
 
-{{< cloudinary-img src="Unsplash-river-img.jpg" width=1200 height=600 alt="A mighty river" style="full" transforms="ar_2" >}}
+{{< page-img src="photo-unsplash-river.jpg" block-width="full" >}}
 Photo by <a href="https://unsplash.com/@jack_anstey">Jack Anstey</a> on <a href="https://unsplash.com/s/photos/river">Unsplash</a>
-{{</ cloudinary-img >}}
+{{< /page-img >}}
 
 In my book [Git for Humans](https://abookapart.com/products/git-for-humans), published in 2016, I made a lot of references to `master` — naturally, as it's been the default branch name in Git for a long time. Like many people, I simply accepted that `master` meant "master copy" and didn't look at it too closely.
 

@@ -35,8 +35,6 @@ Adapted from some notes I sent to [Tim Brown](https://medium.com/u/451a777d0bab)
 
 How would you explain your work — and the context around it — to someone who knows way less than you do. The story is key.
 
-{{< page-img src="spikes.jpg" >}}
-
 {{ cloudinary-img src="bitsandletters-assets/IMG_1505.jpg" dimensions="1636x2048" class="rounded" />}}
 <figure class="wp-block-gallery dd-gallery wide-width">
 {{< gallery cols=3 width="wide" >}}
