@@ -61,11 +61,13 @@
   }
 }
 
-.fullwidth {
+.fullwidth,
+.dd-block-full {
   grid-column: 1 / -1;
 }
 
-.wide-width {
+.wide-width,
+.dd-block-wide {
   grid-column: wide;
 }
 
@@ -92,7 +94,7 @@
 }
 
 .dd-prose {
-  > :not(.fullwidth):not(.wide-width) {
+  > :not(.fullwidth):not(.wide-width):not(.dd-block-wide):not(.dd-block-full) {
     @apply content-width;
   }
 

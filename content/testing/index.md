@@ -4,6 +4,8 @@ url: /__style-guide
 layout: testing
 ---
 
+{{< cloudinary-img src="bitsandletters-assets/L2090117.jpg" width=1200 height=745 caption="Tourists watching a street artist in one of Melbourne's famous laneways" style="wide" />}}
+
 In 1945 New Mexico, [the first atomic bomb is detonated](https://en.wikipedia.org/wiki/Trinity_(nuclear_test)):
 
 * Around and inside a _building_ labelled "**convenience store**" which appears burnt out, a procession of circulating woodsmen takes place.
@@ -19,7 +21,7 @@ In an imposing windowless building atop a staggering craggy outcrop amidst an en
 **Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.** Vestibulum tortor quam,  feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero  sit amet quam egestas semper. Aenean ultricies mi vitae est.
 
 <figure>
-  {{< better-cloudinary src="tiny-mandolin-production/aaron-burson-YihQdPSK9jI-unsplash.jpg" dimensions="2000x1333" >}}
+  {{ cloudinary-img src="tiny-mandolin-production/aaron-burson-YihQdPSK9jI-unsplash.jpg" dimensions="2000x1333" />}}
   <figcaption>New York, New York, a helluva town</figcaption>
 </figure>
 
@@ -35,16 +37,10 @@ How would you explain your work — and the context around it — to som
 
 {{< page-img src="spikes.jpg" >}}
 
-{{< better-cloudinary src="bitsandletters-assets/IMG_1505.jpg" dimensions="1636x2048" class="rounded" >}}
-
-{{< better-cloudinary src="https://images.unsplash.com/photo-1571920447147-df75053b9f87" dimensions="1228x921" >}}
-
-
+{{ cloudinary-img src="bitsandletters-assets/IMG_1505.jpg" dimensions="1636x2048" class="rounded" />}}
 <figure class="wp-block-gallery dd-gallery wide-width">
 {{< gallery cols=3 width="wide" >}}
-  {{< better-cloudinary src="bitsandletters-assets/IMG_1505.jpg" dimensions="1636x2048" >}}
-  {{< better-cloudinary src="https://images.unsplash.com/photo-1571920447147-df75053b9f87" dimensions="1228x921" >}}
-  {{< better-cloudinary src="https://bitsandletters.club/wp-content/uploads/2020/01/DSC00397.jpg" dimensions="2048x1698" >}}
+  {{ cloudinary-img src="bitsandletters-assets/IMG_1505.jpg" dimensions="1636x2048" />}}
 {{< /gallery >}}
 </figure>
 

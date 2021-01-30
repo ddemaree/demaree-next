@@ -1,4 +1,4 @@
 {{- $fontSets := (slice "soehne" "soehne-breit" "ivar-text" "roslindale") -}}
-{{ range $fontSets }}
+{{- range $fontSets -}}
 <link data-dd-fontset="{{ . }}" rel="stylesheet" href="https://cdn.demaree.net/fonts/{{ . }}/index.css" type="text/css" />
-{{ end }}
+{{- end -}}

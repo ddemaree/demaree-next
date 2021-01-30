@@ -13,7 +13,7 @@ featured_image: "https://images.unsplash.com/photo-1544967082-d9d25d867d66"
 ---
 
 <figure class="wide-width">
-{{< better-cloudinary src="https://images.unsplash.com/photo-1544967082-d9d25d867d66%3Fw=3000" dimensions="6016x4016" >}}
+{{ cloudinary-img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66%3Fw=3000" dimensions="6016x4016" />}}
 </figure>
 
 I dunno about you, but I’ve been missing the old days when we could try out some new web technique or think through some code by just opening up an editor, making a fresh `index.html`, and getting to work.

@@ -16,13 +16,9 @@ aliases:
 - /p/no-more-masters
 ---
 
->
-<figure class="fullwidth">
-  {{< better-cloudinary src="Unsplash-river-img.jpg" dimensions="1200x600" alt="A mighty river" transforms="ar_2" >}}
-  <figcaption>
-    Photo by <a href="https://unsplash.com/@jack_anstey">Jack Anstey</a> on <a href="https://unsplash.com/s/photos/river">Unsplash</a>
-  </figcaption>
-</figure>
+{{< cloudinary-img src="Unsplash-river-img.jpg" width=1200 height=600 alt="A mighty river" style="full" transforms="ar_2" >}}
+Photo by <a href="https://unsplash.com/@jack_anstey">Jack Anstey</a> on <a href="https://unsplash.com/s/photos/river">Unsplash</a>
+{{</ cloudinary-img >}}
 
 In my book [Git for Humans](https://abookapart.com/products/git-for-humans), published in 2016, I made a lot of references to `master` — naturally, as it's been the default branch name in Git for a long time. Like many people, I simply accepted that `master` meant "master copy" and didn't look at it too closely.
 
@@ -90,7 +86,7 @@ Next, let's tell your tools that there's a new primary branch in town.
 
 Open your repo page on GitHub while signed in, and click on the Settings tab, then click Branches in the left-hand navigation. Once you're there, on the right-hand side you'll see a drop-down that lets you change the name of your default branch.
 
-{{< better-cloudinary src="image2.png" alt="GitHub repo settings page, showing default branch option" dimensions="1200x863" >}}
+{{ cloudinary-img ="image2.png" alt="GitHub repo settings page, showing default branch option" dimensions="1200x863" >} />}}
 
 Once this is set, new pull requests will automatically be set up to merge into `main`, and `git clone`s from GitHub will also check out `main` by default.
 
@@ -98,7 +94,9 @@ Once this is set, new pull requests will automatically be set up to merge into `
 
 If you (like me) use Netlify to host your websites and JAMstack apps, and use their GitHub integration to automatically publish changes after you push them, you'll need to go into your Netlify site settings to select a new production branch. This is under _Build & deploy > Deploy contexts_.
 
-{{< better-cloudinary src="image1.png" alt="Netlify Build & Deploy settings page showing default production branch setting" dimensions="1200x756" >}}
+{{ cloudinary-img mage1.png" alt="Netlify Build & Deploy settings page showing default production branch setting" dimensions="1200x756" >}}
+
+ />}}
 
 ### What about other integrations?
 
@@ -193,7 +191,9 @@ git push -f origin master
 
 Ahhhhhhhhh, so nice to have that done. Here's the deprecation message as shown on one of my GitHub repos:
 
-{{< better-cloudinary src="image5.png" alt="Screenshot of master branch deprecation message on GitHub web interface" dimensions="1200x786" >}}
+{{ cloudinary-img e5.png" alt="Screenshot of master branch deprecation message on GitHub web interface" dimensions="1200x786" >}}
+
+Bec />}}
 
 Because the server's `master` now points to this orphaned commit, Git will raise an error whenever you or someone on your team tries to pull from it:
 

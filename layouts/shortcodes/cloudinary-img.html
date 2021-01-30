@@ -9,9 +9,10 @@
 
 {{- $format := printf "//res.cloudinary.com/demaree%%s/%s/%%s" (delimit $transforms ",") -}}
 {{- $srcsetFormat := add $format " %sw" -}}
-{{- $alt := .Get "alt" -}}
+{{- $alt := or (.Get "alt") (.Get "caption") "Image for post" -}}
 {{- $class := .Get "class" -}}
 {{- $dimensions := .Get "dimensions" -}}
+{{- $style := (.Get "style") -}}
 {{- $attrs := dict -}}
 {{- $attrsString := slice -}}
 
@@ -49,6 +50,11 @@
 {{- if .Get "dimensions" -}}
 {{- $dimensions = partial "utils/dimensions.html" $dimensions -}}
 {{- $attrs = merge $attrs (dict "height" $dimensions.height "width" $dimensions.width "data-ratio" $dimensions.ratio "data-padding" $dimensions.padding) -}}
+{{- else if or (.Get "width") (.Get "height") -}}
+{{ $width := .Get "width" }}
+{{ $height := .Get "height" }}
+{{ $ratio  := div (float $height) (float $width) }}
+{{ $padding := mul $ratio 100 }}
 {{- end -}}
 
 {{- range $attrName, $attrVal := $attrs -}}
@@ -64,5 +70,9 @@
   </li>
   {{- end -}}
 {{- else -}}
-<img {{ delimit $attrsString " " | safeHTMLAttr  }} />
+  {{ $style := (.Get "style" | default "") }}
+  {{ if (or $style .Inner) }}<figure class="dd-block-img dd-block-{{ $style }}">{{ end }}
+  <img {{ delimit $attrsString " " | safeHTMLAttr  }} />
+  {{ with (or .Inner (.Get "caption")) }}<figcaption>{{ . }}</figcaption>{{ end }}
+  {{ if (or $style .Inner) }}</figure>{{ end }}
 {{- end -}}
