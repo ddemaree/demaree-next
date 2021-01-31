@@ -5,18 +5,13 @@ date: 2020-07-08T13:00:00-04:00
 slug: no-more-git-masters
 excerpt: "It's time to change your Git repo's default branch."
 description: "Why and how to change your Git repo's default branch."
-permalink: "/no-more-git-masters/"
-featuredImage: images/image3.jpg
-featured_image: https://images.unsplash.com/photo-1519852476561-ec618b0183ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2676&q=80
-socialImageUrl: https://res.cloudinary.com/demaree/image/upload/c_thumb,w_600,g_face/demaree-dot-me/blog-images/2020-07-02-no-more-masters/Unsplash-river-img.jpg
-cloudinary_base: demaree-dot-me/blog-images/2020-07-02-no-more-masters/
 aliases:
 - /no-more-masters
 - /no-more-git-masters
 - /p/no-more-masters
 ---
 
-{{< page-img src="photo-unsplash-river.jpg" block-width="full" >}}
+{{< page-img src="cover-unsplash-river.jpg" block-width="full" >}}
 Photo by <a href="https://unsplash.com/@jack_anstey">Jack Anstey</a> on <a href="https://unsplash.com/s/photos/river">Unsplash</a>
 {{< /page-img >}}
 
@@ -86,7 +81,7 @@ Next, let's tell your tools that there's a new primary branch in town.
 
 Open your repo page on GitHub while signed in, and click on the Settings tab, then click Branches in the left-hand navigation. Once you're there, on the right-hand side you'll see a drop-down that lets you change the name of your default branch.
 
-{{ cloudinary-img ="image2.png" alt="GitHub repo settings page, showing default branch option" dimensions="1200x863" >} />}}
+{{< page-img src="screenshot-github-default-branch.png" alt="GitHub repo settings page, showing default branch option" />}}
 
 Once this is set, new pull requests will automatically be set up to merge into `main`, and `git clone`s from GitHub will also check out `main` by default.
 
@@ -94,9 +89,8 @@ Once this is set, new pull requests will automatically be set up to merge into `
 
 If you (like me) use Netlify to host your websites and JAMstack apps, and use their GitHub integration to automatically publish changes after you push them, you'll need to go into your Netlify site settings to select a new production branch. This is under _Build & deploy > Deploy contexts_.
 
-{{ cloudinary-img mage1.png" alt="Netlify Build & Deploy settings page showing default production branch setting" dimensions="1200x756" >}}
+{{< page-img src="screenshot-netlify.png" alt="Netlify Build & Deploy settings page showing default production branch setting" />}}
 
- />}}
 
 ### What about other integrations?
 
@@ -191,9 +185,8 @@ git push -f origin master
 
 Ahhhhhhhhh, so nice to have that done. Here's the deprecation message as shown on one of my GitHub repos:
 
-{{ cloudinary-img e5.png" alt="Screenshot of master branch deprecation message on GitHub web interface" dimensions="1200x786" >}}
+{{< page-img src="screenshot-github-readme.png" alt="Screenshot of master branch deprecation message on GitHub web interface" />}}
 
-Bec />}}
 
 Because the server's `master` now points to this orphaned commit, Git will raise an error whenever you or someone on your team tries to pull from it:
 

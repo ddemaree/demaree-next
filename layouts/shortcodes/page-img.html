@@ -1,11 +1,10 @@
 {{ $src := .Get "src" }}
-
 {{ if $origImg := .Page.Resources.GetMatch $src }}
 
 {{- $img := $origImg.Resize "1800x" -}}
 {{- $previewImg := $img.Resize "100x q50" -}}
 <figure class="dd-block-image{{ if (in (slice "wide" "full") (.Get "block-width")) }} dd-block-{{ .Get "block-width" }}{{ end }}">
-  <img alt="Image for post" src="{{ $previewImg.Permalink }}" data-src="{{ $img.Permalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" />
+  <img alt="{{ .Get "alt" | default "Image for post" }}" src="{{ $previewImg.Permalink }}" data-src="{{ $img.Permalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" />
   {{ with (or .Inner (.Get "caption")) }}<figcaption>{{ . }}</figcaption>{{ end }}
 </figure>
 {{ end }}
