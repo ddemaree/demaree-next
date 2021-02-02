@@ -9,7 +9,7 @@ tags:
   - Fonts
 ---
 
-![](cover-why-fonts-matter.jpg)
+{{< page-img src="cover-why-fonts-matter.jpg" block-width="full" />}}
 
 Self-hosting web fonts can be easy; just add the font files somewhere in your site’s directory structure and reference them from your CSS. But if your site’s source code is stored in a GitHub repo, and you want your code to be public (or just forget to make it private), you may accidentally be violating the fonts’ license terms! [Roel Nieskens called GitHub “the web’s largest font piracy site”](https://pixelambacht.nl/2017/github-font-piracy/) due to web developers storing font files in publicly-viewable repos:
 
