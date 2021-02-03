@@ -1,3 +1,5 @@
+@import "assets/css/syntax-dracula.css";
+
 @tailwind base;
 
 :root {
@@ -154,13 +156,32 @@
   }
 
   code {
-    @apply text-accent;
     font-size: 90%;
   }
 
-  > pre {
-    @apply mt-2 mb-8 w-full;
-    overflow-x: scroll;
+  *:not(.chroma) > code {
+    @apply text-accent;
+  }
+
+  > .highlight,
+  > pre,
+  > .highlight pre {
+    @apply w-full max-w-full rounded-lg mt-2 mb-8;
+
+    :first-child {
+      margin-top: 0;
+    }
+
+    :last-child {
+      margin-bottom: 0;
+    }
+
+    code {
+      @apply block px-6 py-3;
+      overflow-x: scroll;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
   }
 
   figcaption {
@@ -238,6 +259,11 @@
       @apply mt-0;
     }
   }
+}
+
+.chroma .hl {
+  background-color: #ffffff1a;
+  border-radius: 4px;
 }
 
 @keyframes reveal {

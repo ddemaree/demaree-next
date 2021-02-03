@@ -14,8 +14,25 @@ cloudinaryBase = "res.cloudinary.com/demaree/image"
 posts = "/p/:title"
 blog = "/p/:slug"
 
+[markup]
+[markup.highlight]
+anchorLineNos = false
+codeFences = true
+guessSyntax = false
+hl_Lines = ""
+lineAnchors = ""
+lineNoStart = 1
+lineNos = false
+lineNumbersInTable = true
+noClasses = false
+style = "monokai"
+tabWidth = 2
+
 [markup.goldmark.renderer]
 unsafe = true
+
+[markup.goldmark.parser]
+attribute = true
 
 [menu]
 [[menu.social]]
