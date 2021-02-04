@@ -1,7 +1,7 @@
 ---
 title: Where The Web Fonts Go
-description: Get those fonts out of Git
-excerpt: Get those fonts out of Git
+description: Some simple best practices for self-hosting web fonts in the cloud
+subtitle: Get those fonts out of Git
 date: 2021-02-02
 tags:
   - Git
