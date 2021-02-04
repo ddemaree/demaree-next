@@ -8,7 +8,19 @@
 {{ end }}
 
 {{ range $__posts }}
-{{ $substacks = $substacks | append (dict "PostType" "blog" "Date" .Date "Title" .Title "Description" (or (index .Params "description") (index .Params "excerpt") (index .Params "subtitle")) "URL" .RelPermalink "featured_image" (index .Params "featured_image") "original" . ) }}
+{{- $images := .Page.Resources.ByType "image" -}}
+{{- $featured := $images.GetMatch "*feature*" -}}
+{{- $featuredURL := "" -}}
+{{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+
+{{ if $featured }}
+{{ $thumb := $featured.Fill "600x600" }}
+{{ $featuredURL = $thumb.Permalink }}
+{{ else if (index .Params "featured_image") }}
+{{ $featuredURL = (index .Params "featured_image") }}
+{{ end }}
+
+{{ $substacks = $substacks | append (dict "PostType" "blog" "Date" .Date "Title" .Title "Description" (or (index .Params "description") (index .Params "excerpt") (index .Params "subtitle")) "URL" .RelPermalink "featured_image" $featuredURL "original" . ) }}
 {{ end }}
 
 {{ return (sort $substacks "Date" "desc") }}

@@ -1,6 +1,6 @@
 ---
-title: Just Add Code
-slug: simpler-web-hacking
+title: Simpler Web Hacking with Parcel
+slug: simpler-web-hacking-with-parcel
 date: 2021-01-18T13:29:54-05:00
 excerpt: Recapturing the magic of early web development with modern tools
 description: Recapturing the magic of early web development with modern tools
@@ -10,10 +10,12 @@ tags:
   - React
   - Coding
 featured_image: "https://images.unsplash.com/photo-1544967082-d9d25d867d66"
+aliases:
+  - /p/simpler-web-hacking
 ---
 
 <figure class="wide-width">
-{{< better-cloudinary src="https://images.unsplash.com/photo-1544967082-d9d25d867d66%3Fw=3000" dimensions="6016x4016" >}}
+{{< cloudinary-img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66%3Fw=3000" dimensions="6016x4016" />}}
 </figure>
 
 I dunno about you, but I’ve been missing the old days when we could try out some new web technique or think through some code by just opening up an editor, making a fresh `index.html`, and getting to work.
@@ -40,7 +42,7 @@ But what’s _really_ great about Parcel is that it’s a Webpack-like tool that
 
 Take an HTML document like this:
 
-```html
+```html {hl_lines=[5,10]}
 <!-- index.html -->
 <html>
   <head>
@@ -67,7 +69,7 @@ Reading your HTML, Parcel will see that it depends on two other assets — `styl
 
 What’s more, these don’t have to be plain CSS or JS files. If you want to use (say) Sass and TypeScript, you could do this and it will Just Work:
 
-```html
+```html {hl_lines=[5,10]}
 <!-- index.html -->
 <html>
   <head>

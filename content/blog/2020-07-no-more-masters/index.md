@@ -5,24 +5,15 @@ date: 2020-07-08T13:00:00-04:00
 slug: no-more-git-masters
 excerpt: "It's time to change your Git repo's default branch."
 description: "Why and how to change your Git repo's default branch."
-permalink: "/no-more-git-masters/"
-featuredImage: images/image3.jpg
-featured_image: https://images.unsplash.com/photo-1519852476561-ec618b0183ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2676&q=80
-socialImageUrl: https://res.cloudinary.com/demaree/image/upload/c_thumb,w_600,g_face/demaree-dot-me/blog-images/2020-07-02-no-more-masters/Unsplash-river-img.jpg
-cloudinary_base: demaree-dot-me/blog-images/2020-07-02-no-more-masters/
 aliases:
 - /no-more-masters
 - /no-more-git-masters
 - /p/no-more-masters
 ---
 
->
-<figure class="fullwidth">
-  {{< better-cloudinary src="Unsplash-river-img.jpg" dimensions="1200x600" alt="A mighty river" transforms="ar_2" >}}
-  <figcaption>
-    Photo by <a href="https://unsplash.com/@jack_anstey">Jack Anstey</a> on <a href="https://unsplash.com/s/photos/river">Unsplash</a>
-  </figcaption>
-</figure>
+{{< page-img src="cover-unsplash-river.jpg" block-width="full" >}}
+Photo by <a href="https://unsplash.com/@jack_anstey">Jack Anstey</a> on <a href="https://unsplash.com/s/photos/river">Unsplash</a>
+{{< /page-img >}}
 
 In my book [Git for Humans](https://abookapart.com/products/git-for-humans), published in 2016, I made a lot of references to `master` — naturally, as it's been the default branch name in Git for a long time. Like many people, I simply accepted that `master` meant "master copy" and didn't look at it too closely.
 
@@ -48,7 +39,7 @@ One of the great things about Git is that it doesn't really require your main br
 
 When you start a new repo, Git is hard-coded to set the first branch's name to `master`. But that branch doesn't technically exist until you make your first commit. So here's what you do to set your preferred name on a brand-new repo:
 
-```
+```bash
 git init # if you hadn't done this yet
 git checkout -b main
 ```
@@ -63,14 +54,14 @@ In other words, you can't actually rename a branch in Git, because renaming woul
 
 Here we'll replace a `master` branch with a new one called `main`, pointing to the current head commit:
 
-```
+```bash
 git checkout master # if you're not already there
 git checkout -b main
 ```
 
 Alternatively, you can use `git branch` to ask Git to create a new branch pointing at the same commit `master` is on:
 
-```
+```bash
 git branch main master
 ```
 
@@ -78,7 +69,7 @@ Whichever way you do it, your `master` branch will be left intact, you'll have a
 
 To make this new main branch available to your collaborators, push it to GitHub:
 
-```
+```bash
 git push -u origin main
 ```
 
@@ -90,7 +81,7 @@ Next, let's tell your tools that there's a new primary branch in town.
 
 Open your repo page on GitHub while signed in, and click on the Settings tab, then click Branches in the left-hand navigation. Once you're there, on the right-hand side you'll see a drop-down that lets you change the name of your default branch.
 
-{{< better-cloudinary src="image2.png" alt="GitHub repo settings page, showing default branch option" dimensions="1200x863" >}}
+{{< page-img src="screenshot-github-default-branch.png" alt="GitHub repo settings page, showing default branch option" />}}
 
 Once this is set, new pull requests will automatically be set up to merge into `main`, and `git clone`s from GitHub will also check out `main` by default.
 
@@ -98,7 +89,8 @@ Once this is set, new pull requests will automatically be set up to merge into `
 
 If you (like me) use Netlify to host your websites and JAMstack apps, and use their GitHub integration to automatically publish changes after you push them, you'll need to go into your Netlify site settings to select a new production branch. This is under _Build & deploy > Deploy contexts_.
 
-{{< better-cloudinary src="image1.png" alt="Netlify Build & Deploy settings page showing default production branch setting" dimensions="1200x756" >}}
+{{< page-img src="screenshot-netlify.png" alt="Netlify Build & Deploy settings page showing default production branch setting" />}}
+
 
 ### What about other integrations?
 
@@ -122,7 +114,7 @@ So you may want to replace your old `master` with an "orphan" branch, which (as 
 
 We’ll name this new orphan branch `no-masters`. To start, we call on `git checkout --orphan`, which asks Git to start a new branch but intentionally forget anything about your former head commit. This is similar to if you were starting over with a brand-new repo.
 
-```
+```bash
 git checkout --orphan no-masters
 ```
 
@@ -130,19 +122,19 @@ You'll end up with a branch that contains all the files and folders from your pr
 
 Next, we'll remove all the content from this branch. Using `git rm` (as opposed to regular 'ol `rm`) will only delete files and folders that are checked into Git, leaving behind ignored content.
 
-```
+```bash
 git rm -fr .
 ```
 
 Depending on your tech stack, this may leave behind some stuff that had previously been hidden by `.gitignore`, all of which will now show up when you run `git status`. So we'll restore the old `gitignore` file from `main` to make sure these files are not committed or deleted:
 
-```
+```bash
 git checkout main .gitignore
 ```
 
 Finally, let's leave a note explaining why this branch is empty. We'll add and commit a `README.md` Markdown file with the following text:
 
-```
+```markdown
 # This branch is deprecated
 
 This project's primary branch is now called `main`.
@@ -152,7 +144,7 @@ You should `git checkout main` and `git pull origin main` from now on.
 
 Then commit these changes:
 
-```
+```bash
 git add .gitignore README.md
 # … output deleted …
 git commit -m "Deprecation message for `master` branch"
@@ -160,48 +152,49 @@ git commit -m "Deprecation message for `master` branch"
 
 Because this is an orphaned branch, if you run `git log` you'll only see this commit, none of the history before it:
 
-```
+```bash
 git log --oneline
-> cd2b2c2 (HEAD -> no-masters) Deprecation message for `master` branch
+#> cd2b2c2 (HEAD -> no-masters) Deprecation message for `master` branch
 ```
 
 OK, now for the scary part — replacing `master` with this content. Which means deleting your old `master` branch:
 
-```
+```bash
 git branch -D master
 ```
 
 This will delete `master` locally, allowing you to create a new `master` branch that points to this new, empty-except-for-deprecation-message commit.
 
-```
+```bash
 git branch master no-masters
 ```
 
 If you were to then `git checkout master`, you'll see the deprecation message.
 
-```
+```bash
 git checkout master
 git log --oneline
-> cd2b2c2 (HEAD -> master) Deprecation message for `master` branch
+#> cd2b2c2 (HEAD -> master) Deprecation message for `master` branch
 ```
 
 Whew. Okay. One last step: pushing this `master` branch to GitHub. Because this is a new, orphaned branch, you will need to force-push. This may (hell, probably will) break any integrations you have hooked up to `master`, so you may want to wait until your team and infrastructure are fully migrated over to `main` until you do this.
 
-```
+```bash
 git push -f origin master
 ```
 
 Ahhhhhhhhh, so nice to have that done. Here's the deprecation message as shown on one of my GitHub repos:
 
-{{< better-cloudinary src="image5.png" alt="Screenshot of master branch deprecation message on GitHub web interface" dimensions="1200x786" >}}
+{{< page-img src="screenshot-github-readme.png" alt="Screenshot of master branch deprecation message on GitHub web interface" />}}
+
 
 Because the server's `master` now points to this orphaned commit, Git will raise an error whenever you or someone on your team tries to pull from it:
 
-```
+```bash
 git pull origin master
-From <your-repo-url-here>
- * branch            master     -> FETCH_HEAD
-fatal: refusing to merge unrelated histories
+# From <your-repo-url-here>
+#  * branch            master     -> FETCH_HEAD
+# fatal: refusing to merge unrelated histories
 ```
 
 If only it was this easy to break free from history in real life.
