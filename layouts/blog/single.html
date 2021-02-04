@@ -3,10 +3,10 @@
   {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 {{ define "main" }}
-<header class="grid dd-grid-cols py-12">
-  <h1 class="text-center dd-col-full font-semibold text-5xl font-roslindale-2 mb-1" style="font-variation-settings: 'wdth' 90; font-feature-settings: 'ss03' on;">{{ .Title }}</h1>
+<header class="dd-blog-header grid dd-grid-cols py-12 px-8">
+  <h1 data-content="{{ .Title }}" class="dd-blog-title dd-col-full mb-3 deorphan">{{ .Title }}</h1>
 
-  {{ with .Params.excerpt }}<h2 class="text-center dd-col-full text-inkMedium text-xl mb-4">{{ . }}</h2>{{ end }}
+  {{ with .Params.excerpt }}<h2 class="text-center dd-col-full text-inkMedium text-lg sm:text-xl leading-snug sm:leading-snug mb-4">{{ . }}</h2>{{ end }}
 
   <div class="post-meta text-inkMedium text-base text-center dd-col-full text-inkMedium">{{ .Date.Format "Jan 2 2006" }} • {{ .ReadingTime }} min read</div>
 </header>

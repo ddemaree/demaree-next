@@ -100,17 +100,51 @@ img.forEach((img) => {
   if (!wrapper) {
     wrapper = document.createElement("div");
     wrapper.classList.add("lazy-img-container");
-
-    // if(img.dataset.padding) {
-    //   wrapper.style.paddingTop = `${padding}%`
-    //   img.classList.add('absolute')
-    // }
-
     img.parentNode.insertBefore(wrapper, img);
     wrapper.appendChild(img);
   }
 
   observer.observe(img);
+});
+
+const deorphans = document.querySelectorAll(".deorphan");
+deorphans.forEach((elem) => {
+  let titleContent;
+  if (elem.dataset.content) {
+    titleContent = elem.dataset.content;
+  } else {
+    titleContent = elem.innerText;
+  }
+  console.log(titleContent);
+
+  // let fakeElem = document.cloneNode
+
+  let fakeElem = document.createElement("div");
+  fakeElem.setAttribute("class", elem.attributes["class"].textContent);
+  fakeElem.style.position = "fixed";
+  fakeElem.style.left = "-9999px";
+  fakeElem.style.top = "0px";
+  fakeElem.style.width = "max-content";
+  document.body.appendChild(fakeElem);
+  console.log(fakeElem);
+
+  let words = titleContent.split(" ");
+  let wordTags = words.map((w, x) => {
+    var wordElem = document.createElement("span");
+    wordElem.classList.add("word");
+    wordElem.innerHTML = w;
+    if (x > 0) fakeElem.appendChild(document.createTextNode(" "));
+    fakeElem.appendChild(wordElem);
+    console.log(x, wordElem.offsetWidth);
+  });
+
+  console.log(elem.offsetWidth, fakeElem.offsetWidth);
+
+  // const elemText = elem.innerText;
+  // const words = elemText.split(" ");
+  // const newString = words.slice(0, -2).join(" ");
+  // const secondString = words.slice(-2).join("&nbsp;");
+  // elem.innerHTML = newString + " " + secondString;
 });
 
 document.body.classList.add("js-active");
