@@ -178,6 +178,10 @@
     @apply text-accent;
   }
 
+  a code {
+    text-decoration: underline;
+  }
+
   > .highlight {
     grid-column: wide;
 
