@@ -41,7 +41,7 @@ I keep all my fonts in the same directory of the same Spaces bucket, which I man
 
 ![My web fonts in their directory on my Spaces-powered CDN](screenshot-transmit-webfonts.png)
 
-Each subdirectory is named after the fonts’ CSS `font-family` name, so that my “API” for using the fonts is consistent. To enable the Söhne fonts, I add a link to `cdn.demaree.net/fonts/soehne/index.css`, and then I can use `font-family: soehne, …` in my CSS. Nice and simple.
+Each subdirectory is named after the fonts’ CSS `font-family` name, so that my “API” for using the fonts is consistent. To enable the Söhne fonts, I add a link to `fonts/soehne/index.css`, and then I can use `font-family: soehne, …` in my CSS. Nice and simple.
 
 Because these directory names and URLs follow a nice, regular structure, I can lightly automate adding these links in my Hugo templates, providing a list of family slugs that are turned into `<link>` tags. These are hard-coded, but could just as easily be set as front matter data on a page or post.
 
