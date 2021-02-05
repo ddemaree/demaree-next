@@ -1,8 +1,11 @@
-
-{{ define "title" }}
+{{- define "title" }}
   {{ .Title }} &ndash; {{ .Site.Title }}
-{{ end }}
-{{ define "main" }}
+{{ end -}}
+{{- define "head" }}
+<meta name="twitter:label1" value="Reading time" />
+<meta name="twitter:label2" value="{{ .ReadingTime}} min read" />
+{{ end -}}
+{{- define "main" }}
 <header class="dd-blog-header grid dd-grid-cols py-12 px-8">
   <h1 data-content="{{ .Title }}" class="dd-blog-title dd-col-full mb-3 deorphan">{{ .Title }}</h1>
 
