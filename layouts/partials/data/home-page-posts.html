@@ -15,7 +15,7 @@
 
 {{ if $featured }}
 {{ $thumb := $featured.Fill "600x600" }}
-{{ $featuredURL = $thumb.Permalink }}
+{{ $featuredURL = $thumb.RelPermalink }}
 {{ else if (index .Params "featured_image") }}
 {{ $featuredURL = (index .Params "featured_image") }}
 {{ end }}
