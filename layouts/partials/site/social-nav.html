@@ -1,0 +1,27 @@
+<ul class="flex items-center justify-center sm:justify-start text-2xl">
+  {{ with .Site.Social.twitter }}<li class="mr-4">
+    <a title="@{{ . }} on Twitter" href="https://twitter.com/{{ . }}">
+      <i class="fab fa-twitter"></i>
+      <span class="sr-only">Twitter</span>
+    </a>
+  </li>
+  {{ end }}
+  {{ with .Site.Social.instagram }}<li class="mr-4">
+    <a title="@{{ . }} on Instagram" href="https://instagram.com/{{ . }}">
+      <i class="fab fa-instagram"></i>
+      <span class="sr-only">Instagram</span>
+    </a>
+  </li>{{ end }}
+  {{ with .Site.Social.github }}<li class="mr-4">
+    <a title="@{{ . }} on GitHub" href="https://github.com/{{ . }}">
+      <i class="fab fa-github"></i>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>{{ end }}
+  {{ with .Site.Social.linkedin }}<li class="">
+    <a title="@{{ . }} on LinkedIn" href="https://linkedin.com/in/{{ . }}">
+      <i class="fab fa-linkedin"></i>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  </li>{{ end }}
+</ul>
