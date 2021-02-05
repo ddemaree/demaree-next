@@ -9,7 +9,8 @@
 {{- $featured := $images.GetMatch "*feature*" -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
 {{- with $featured -}}
-<meta property="og:image" content="{{ $featured.Permalink }}"/>
+{{- $featuredThumb := $featured.Fit "1200x1200" -}}
+<meta property="og:image" content="{{ $featuredThumb.Permalink }}"/>
 {{ else -}}
 {{- with $.Site.Params.images -}}
 <meta property="og:image" content="{{ index . 0 | absURL }}"/>
