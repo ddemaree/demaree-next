@@ -4,6 +4,9 @@
 {{- define "head" }}
 <meta name="twitter:label1" value="Reading time" />
 <meta name="twitter:label2" value="{{ .ReadingTime}} min read" />
+{{ with $cssString := .Params.custom_css }}
+<style type="text/css">{{ $cssString | safeCSS }}</style>
+{{ end }}
 {{ end -}}
 {{- define "main" }}
 <header class="dd-blog-header grid dd-grid-cols py-12 px-8">

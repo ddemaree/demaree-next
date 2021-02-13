@@ -4,7 +4,10 @@
 {{ $imgLite := $img.Resize "100x" | images.Filter (images.GaussianBlur 6) }}
 
 <figure>
-  <img src="{{ $img.Permalink }}" />
+  <img src="{{ $imgLite.Permalink }}" data-src="{{ $img.Permalink }}" alt="{{ .Text }}" />
+  {{ with (or .Title .Text)}}
+  <figcaption>{{ . }}</figcaption>
+  {{ end }}
 </figure>
 {{ else }}
 <figure>
