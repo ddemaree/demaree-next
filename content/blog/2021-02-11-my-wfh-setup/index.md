@@ -9,7 +9,7 @@ font_sets:
 custom_css: |
   @import url("https://use.typekit.net/uzl7zpg.css");
 
-  .dd-page {
+  :root {
     --color-background: #0D202E;
     --color-ink: rgba(255,255,255,0.78);
     --color-ink-medium: rgba(255,255,255,0.64);
@@ -37,7 +37,7 @@ custom_css: |
   }
   @media (prefers-color-scheme: light) {
     .dd-page {
-      --color-background: #99C2C2;
+      --color-background: #F0FCFF;
       --color-ink: #000000e3;
       --color-ink-medium: #0009;
       --color-ink-strong: #000;
@@ -47,11 +47,11 @@ custom_css: |
   }
 ---
 
-![My home-office desk, February 2021](photo-wfh-2021.jpeg)
+![My home-office desk, February 2021](cover-photo-wfh-2021.jpeg)
 
 _[record scratch]_ Yep, this is <del>me</del> my desk. Perhaps you’re wondering how I got here.
 
-Like everyone, I’ve been working from home for nearly a full year due to the COVID–19 pandemic. This past year hasn’t been my first go-around working remotely — I did it for the first six of my seven years working on Typekit, and before that as a freelance web developer in the ‘00s. Really, over my career, I’ve spent more time working from home than from offices. When COVID happened, and we all found ourselves having to set up _ad hoc_ workspaces for what we hoped would be weeks, feared would be months, and will turn out to have been a year plus, I was in a better position than most.
+Like everyone, I’ve been working from home for nearly a full year due to the COVID-19 pandemic. This past year hasn’t been my first go-around working remotely — I did it for the first six of my seven years working on Typekit, and before that as a freelance web developer in the ‘00s. Really, over my career, I’ve spent more time working from home than from offices. When COVID happened, and we all found ourselves having to set up _ad hoc_ workspaces for what we hoped would be weeks, feared would be months, and will turn out to have been a year plus, I was in a better position than most.
 
 I love gadgets, and I’m a perfectionist. I’ve tinkered with my desk setup regularly for years, and it’s not like I’ve had opportunities to do much else these days besides taking Google Meet calls and tinkering with stuff. I’ve replaced or tweaked almost everything on the desk since last March. Honestly, life would be easier (and cheaper!) if I could just buy some equipment and be satisfied with it, but that's not how my brain works.
 
@@ -77,9 +77,9 @@ I am a stickler for only having to plug one wire into my laptop. Two wires are a
 
 But USB-C, it should be said, is a hot, fiery mess. Even power delivery — USB-C’s most straightforward job — is problematic: different devices need different wattages, and when given the wrong wattage will charge slowly or not charge at all. And of course, none of this is labeled, so you just have to know that (for example) [Apple’s newest iPhone cables will charge at full speed at 20W, but not 19W](https://daringfireball.net/linked/2020/10/27/magsafe-20w-charger).
 
-![This cursed image should not have to exist](https://cdn.vox-cdn.com/thumbor/QF94Gj6pfpd-OAfKV6rXnwto2a0=/0x0:768x426/1720x0/filters:focal(0x0:768x426):format(webp):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/20073197/intel_thunderbolt_4_cable_support_768x768.jpg)
+![This cursed image should not have to exist](http://res.cloudinary.com/demaree/image/fetch/w_600/https://cdn.vox-cdn.com/uploads/chorus_asset/file/20073197/intel_thunderbolt_4_cable_support_768x768.jpg)
 
-Thunderbolt devices conform to higher, more consistent specs than generic USB-C ones, so my Thunderbolt dock’s performance has generally been more consistent and less flaky. Of course, the trade-off is that I had to buy an extra $200-300 device rather than use the free USB-C hub built into my display. Also, many Thunderbolt cables are annoyingly short, so I upgraded to [Apple’s Thunderbolt Pro Cable](https://www.theverge.com/2020/7/27/21339861/apple-thunderbolt-3-pro-cable-specs-price-available) — the longest high-performance cable on the market — which was another $130.
+Thunderbolt devices conform to higher, more consistent specs than generic USB-C ones, so my Thunderbolt dock’s performance has generally been more consistent and less flaky. Of course, the trade-off is that I had to buy an extra $200–300 device rather than use the free USB-C hub built into my display. Also, many Thunderbolt cables are annoyingly short, so I upgraded to [Apple’s Thunderbolt Pro Cable](https://www.theverge.com/2020/7/27/21339861/apple-thunderbolt-3-pro-cable-specs-price-available) — the longest high-performance cable on the market — which was another $130.
 
 All that’s to say: USB-C is an annoying garbage fire that you can mostly fix by throwing money at it. I hope some company is working on bringing lower-cost Thunderbolt 4 gear to market because this is untenable.
 
