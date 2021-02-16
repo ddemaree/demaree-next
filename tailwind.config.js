@@ -70,13 +70,22 @@ module.exports = {
 			addUtilities(inkUtils, ['dark', 'hover'])
 
 			addBase({
-				'body': {
+				':root': {
+					'background-color': 'var(--color-background)',
 					'--color-ink': theme('colors.gray.800'),
 					'--color-ink-strong': theme('colors.black'),
 					'--color-ink-medium': theme('colors.gray.500'),
 					'--color-ink-light': theme('colors.gray.100'),
-					'--color-surface': theme('colors.white'),
-					'--color-accent': theme('colors.red.600')
+					'--color-background': theme('colors.white'),
+					'--color-accent': theme('colors.red.600'),
+					'@media (prefers-color-scheme: dark)': {
+						'--color-ink': theme('colors.gray.300'),
+						'--color-ink-strong': theme('colors.white'),
+						'--color-ink-medium': theme('colors.gray.400'),
+						'--color-ink-light': theme('colors.gray.700'),
+						'--color-background': theme('colors.black'),
+						'--color-accent': theme('colors.red.400'),
+					}
 				}
 			})
 		})

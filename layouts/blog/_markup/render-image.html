@@ -3,11 +3,14 @@
 {{ if $img }}
 {{ $imgLite := $img.Resize "100x" | images.Filter (images.GaussianBlur 6) }}
 
-<figure>
-  <img src="{{ $img.Permalink }}" />
+<figure class="dd-block-image">
+  <img src="{{ $imgLite.Permalink }}" data-src="{{ $img.Permalink }}" alt="{{ .Text }}" width="{{ $img.Width }}" height="{{ $img.Height }}" />
+  {{ with (or .Title .Text)}}
+  <figcaption>{{ . }}</figcaption>
+  {{ end }}
 </figure>
 {{ else }}
-<figure>
+<figure class="dd-block-image">
   <img src="{{ .Destination }}" />
 </figure>
 {{ end }}

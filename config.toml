@@ -1,11 +1,20 @@
 baseURL = "//demaree.me/"
 languageCode = "en-us"
 title = "David Demaree"
+description = "Writing, photos, and nonsense from a NYC-based tech person"
 
 # Disable Hugo's built-in Alias feature, to utilize Netlify Redirects instead:
 disableAliases = true
 
-# sectionPagesMenu = "main"
+[taxonomies]
+series = "series"
+tag = "tags"
+
+[social]
+twitter = "ddemaree"
+instagram = "ddemaree"
+github = "ddemaree"
+linkedin = "ddemaree"
 
 [params]
 cloudinaryBase = "res.cloudinary.com/demaree/image"
