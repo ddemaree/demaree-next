@@ -15,7 +15,7 @@
 
   {{ with (or .Params.subtitle .Params.excerpt .Params.description) }}<h2 class="text-center dd-col-full text-inkMedium text-lg sm:text-xl leading-snug sm:leading-snug mb-4">{{ . }}</h2>{{ end }}
 
-  <div class="post-meta text-inkMedium text-base text-center dd-col-full text-inkMedium">{{ .Date.Format "Jan 2 2006" }} • {{ .ReadingTime }} min read</div>
+  <div class="post-meta text-inkMedium text-base text-center dd-col-full text-inkMedium">{{ .Date.Format "Jan 2 2006" }}</div>
 </header>
 
 <main class="grid dd-grid-cols">
