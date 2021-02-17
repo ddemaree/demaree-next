@@ -25,13 +25,19 @@ module.exports = {
     //     path: `${__dirname}/src/assets/images`,
     //   },
     // },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `blogPosts`,
-    //     path: `${__dirname}/content/blog`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content`,
+      },
+    },
+    {
+      resolve: `gatsby-source-custom-api`,
+      options: {
+        url: "https://demaree.substack.com/api/v1/posts",
+        rootKey: "apiSubstackPosts"
+      }
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -49,7 +55,7 @@ module.exports = {
         ]
       }
     },
-    // `gatsby-transformer-sharp`,
-    // `gatsby-plugin-sharp`
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`
   ],
 }
