@@ -34,18 +34,29 @@ exports.createPages = async ({ graphql, actions: { createPage} }) => {
   const result = await graphql(
     `
     query CreatePagesQuery {
-      blogPosts: allFile(filter: {relativePath: {glob: "blog/**/*.md"}}) {
+      blogPosts: allFile(filter: {relativePath: {glob: "blog/**/*.{md,mdx}"}}) {
         edges {
+          previous {
+            relativePath
+          }
+          next {
+            relativePath
+          }
           node {
             id
             relativePath
             name
-            doc: childMarkdownRemark {
+            mdxDoc: childMdx {
               frontmatter {
                 slug
                 title
               }
-              html
+            }
+            remarkDoc: childMarkdownRemark {
+              frontmatter {
+                slug
+                title
+              }
             }
           }
         }
@@ -54,24 +65,36 @@ exports.createPages = async ({ graphql, actions: { createPage} }) => {
   `
   )
 
-  const blogPosts = result.data.blogPosts.edges.map(e => e.node)
+  const blogPostEdges = result.data.blogPosts.edges
 
-  blogPosts.forEach((post, index) => {
+  blogPostEdges.forEach((edge, index) => {
+    const post = edge.node
+    const previousPost = edge.previous
+    const nextPost = edge.next
     let slug;
     
     if(post.name.match(/^\_/)) return;
-    console.log(post.relativePath)
 
-    if(post.doc) {
-      slug = post.doc.frontmatter.slug
+    if(post.remarkDoc) {
+      slug = post.remarkDoc.frontmatter.slug;
+    } else if(post.mdxDoc) {
+      slug = post.mdxDoc.frontmatter.slug;
     } else {
-      slug = post.name
+      slug = post.name;
     }
 
+    const pagePath = `/p/${slug}`;
+    console.log(post.relativePath, pagePath, post.name)
+
     createPage({
-      path: `/p/${slug}`,
+      path: pagePath,
       component: path.resolve('src/templates/single-post.js'),
-      context: post
+      context: {
+        slug,
+        filePath: post.relativePath,
+        previousFilePath: (previousPost && previousPost.relativePath),
+        nextFilePath: (nextPost && nextPost.relativePath)
+      }
     })
   })
 }

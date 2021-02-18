@@ -16,6 +16,7 @@ module.exports = {
     buildUrl: (siteURL || "")
   },
   plugins: [
+    `gatsby-remark-images`,
     'gatsby-plugin-postcss',
     `gatsby-plugin-react-helmet`,
     // {
@@ -30,6 +31,20 @@ module.exports = {
       options: {
         path: `${__dirname}/content`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [".mdx"],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          }
+        ]
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,

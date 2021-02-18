@@ -17,7 +17,16 @@ query($id: String) {
   file(id: {eq: $id}) {
     name
     relativePath
-    doc: childMarkdownRemark {
+    mdxDoc: childMdx {
+      html
+      frontmatter {
+        title
+        date
+        subtitle
+        description
+      }
+    }
+    remarkDoc: childMarkdownRemark {
       html
       frontmatter {
         title

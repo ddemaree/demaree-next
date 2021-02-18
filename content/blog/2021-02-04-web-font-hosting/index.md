@@ -1,4 +1,5 @@
 ---
+slug: where-the-web-fonts-go
 title: Where The Web Fonts Go
 description: Some simple best practices for self-hosting web fonts in the cloud
 subtitle: Get those fonts out of Git
