@@ -30,13 +30,11 @@ exports.sourceNodes = async ({
   });
 }
 
-exports.createPages = async (graphql, actions) => {
-  const { createPage } = actions
-
-  const data = await graphql(
+exports.createPages = async ({ graphql, actions: { createPage} }) => {
+  const result = await graphql(
     `
     query CreatePagesQuery {
-      blogPosts: allFile(filter: {relativePath: {glob: "blog/*"}}) {
+      blogPosts: allFile(filter: {relativePath: {glob: "blog/**/*.md"}}) {
         edges {
           node {
             id
@@ -56,12 +54,19 @@ exports.createPages = async (graphql, actions) => {
   `
   )
 
-  console.log(data)
-
-  const blogPosts = data.blogPosts.edges.map(e => e.node)
+  const blogPosts = result.data.blogPosts.edges.map(e => e.node)
 
   blogPosts.forEach((post, index) => {
-    const { slug } = post.doc.frontmatter
+    let slug;
+    
+    if(post.name.match(/^\_/)) return;
+    console.log(post.relativePath)
+
+    if(post.doc) {
+      slug = post.doc.frontmatter.slug
+    } else {
+      slug = post.name
+    }
 
     createPage({
       path: `/p/${slug}`,

@@ -32,13 +32,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-custom-api`,
-      options: {
-        url: "https://demaree.substack.com/api/v1/posts",
-        rootKey: "apiSubstackPosts"
-      }
-    },
-    {
       resolve: `gatsby-transformer-remark`,
       options: {
         "excerpt_separator": `<!-- end -->`,
