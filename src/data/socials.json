@@ -1,0 +1,22 @@
+[
+  {
+    "service": "Twitter",
+    "handle": "ddemaree",
+    "url": "https://twitter.com/ddemaree"
+  },
+  {
+    "service": "Instagram",
+    "handle": "ddemaree",
+    "url": "https://instagram.com/ddemaree"
+  },
+  {
+    "service": "Github",
+    "handle": "ddemaree",
+    "url": "https://github.com/ddemaree"
+  },
+  {
+    "service": "LinkedIn",
+    "handle": "ddemaree",
+    "url": "https://linkedin.com/in/ddemaree"
+  }
+]

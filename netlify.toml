@@ -2,7 +2,7 @@
   ID = "demaree-next"
 
 [build]
-  command = "hugo --gc --minify"
+  command = "yarn build"
   publish = "public"
 
 [build.environment]

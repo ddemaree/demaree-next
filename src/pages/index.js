@@ -1,8 +1,10 @@
-import { graphql } from 'gatsby'
 import React from 'react'
-import Layout from '../components/Layout'
+import { graphql } from 'gatsby'
 import { DateTime } from 'luxon'
 import cn from 'classnames'
+import Layout from '../components/Layout'
+import Socials from '../components/Socials'
+import _ from 'lodash'
 
 const PostFeaturedImage = ({ src, className }) => {
   console.log(src)
@@ -27,7 +29,7 @@ const PostFeaturedImage = ({ src, className }) => {
   return null
 }
 
-const BlogPostWrapper = ({ children, title, href, description, date, featuredImage }) => {
+const BlogPostCard = ({ children, title, href, description, date, featuredImage }) => {
   const dateTime = DateTime.fromISO(date).setZone("America/New_York")
   const formattedDate = dateTime.toFormat("MMM dd, yyyy")
 
@@ -55,14 +57,14 @@ function HomePage({ data }) {
     
     return [
       frontmatter.date,
-      <BlogPostWrapper 
+      <BlogPostCard 
         key={edge.relativePath}
         title={frontmatter.title}
         description={frontmatter.description || frontmatter.excerpt}
         date={frontmatter.date}
         featuredImage={frontmatter.featured_image || frontmatter.featured_image_url}
         href={`/p/${frontmatter.slug}`}>
-      </BlogPostWrapper>
+      </BlogPostCard>
     ]
   })
 
@@ -71,7 +73,7 @@ function HomePage({ data }) {
 
     return [
       date,
-      <BlogPostWrapper
+      <BlogPostCard
         key={url}
         title={title}
         description={subtitle}
@@ -81,10 +83,10 @@ function HomePage({ data }) {
     ]
   })
 
-  const allPosts = [...blogPosts, ...substackPosts].sort((a, b) => {
+  const allPosts = _.take([...blogPosts, ...substackPosts].sort((a, b) => {
     const [timeA, timeB] = [a[0], b[0]].map(t => Date.parse(t).toFixed())
     return timeB - timeA
-  }).map(i => i[1])
+  }).map(i => i[1]), 16)
 
   return <Layout>
     <main className="dd-homepage md:mt-12 grid dd-grid-cols-2 gap-y-10 md:gap-y-16 grid-flow-row" style={{'--layout-wide-width': '1100px'}}>
@@ -97,6 +99,9 @@ function HomePage({ data }) {
         </figure>
         <div className="text-center sm:text-left sm:py-12 self-center justify-self-center max-w-md md:max-w-lg sm:col-start-5 sm:col-span-7 sm:row-start-1 p-8 col-span-full">
           <p className="font-roslindale-2 text-2xl xs:text-3xl md:text-4xl" style={{'font-variation-settings': `'wdth' 96`, 'font-feature-settings': `'ss05' on`}}><b className="text-inkBold font-medium">Hi, I'm David Demaree</b>,<br className="none sm:block" /> a writer, web designer, photographer, &amp; tech product manager</p>
+          <div class="mt-6 text-inkBold">
+            <Socials />
+          </div>
         </div>
       </header>
 
