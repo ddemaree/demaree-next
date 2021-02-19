@@ -9,7 +9,7 @@ tags:
   - JavaScript
   - React
   - Coding
-featured_image: "https://images.unsplash.com/photo-1544967082-d9d25d867d66"
+featured_image_url: "https://images.unsplash.com/photo-1544967082-d9d25d867d66"
 aliases:
   - /p/simpler-web-hacking
 ---

@@ -5,6 +5,7 @@ description: Some simple best practices for self-hosting web fonts in the cloud
 subtitle: Get those fonts out of Git
 date: 2021-02-04
 series: ["Nice Web Tools"]
+featured_image: cover-why-fonts-matter.jpg
 tags:
   - Git
   - Web Development

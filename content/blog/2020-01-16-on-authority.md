@@ -4,7 +4,7 @@ title: On "authority"
 date: 2020-01-16
 collection: Product
 excerpt: Some thoughts about a long-standing cliche about product leadership.
-featured_image: https://images.unsplash.com/photo-1425421669292-0c3da3b8f529?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format
+featured_image_url: https://images.unsplash.com/photo-1425421669292-0c3da3b8f529?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format
 ---
 
 One of the long-standing cliches about product leadership — and all leadership, really — is that PMs must exercise <strong><em>“influence without authority”</em></strong>. That is: we are expected to guide teams toward successful outcomes, but are almost never empowered to make those outcomes happen using the tools and kinds of authority invested in managers, e.g. “do this or you’re fired” or “do this and you’ll get promoted.”

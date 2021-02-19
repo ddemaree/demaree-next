@@ -19,6 +19,7 @@ exports.sourceNodes = async ({
       date: post_date,
       url: post.canonical_url,
       id: post.uuid,
+      featured_image_url: post.cover_image,
       parent: null,
       children: [],
       internal: {
@@ -28,6 +29,25 @@ exports.sourceNodes = async ({
     })
     
   });
+}
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+    }
+    type Mdx implements Node {
+      frontmatter: Frontmatter
+    }
+    type Frontmatter {
+      tags: [String!]
+      date: Date @dateformat
+      featured_image: File @fileByRelativePath
+      featured_image_url: String
+    }
+  `
+  createTypes(typeDefs)
 }
 
 exports.createPages = async ({ graphql, actions: { createPage} }) => {

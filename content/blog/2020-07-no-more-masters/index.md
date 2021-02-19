@@ -5,6 +5,7 @@ date: 2020-07-08T13:00:00-04:00
 slug: no-more-git-masters
 excerpt: "It's time to change your Git repo's default branch."
 description: "Why and how to change your Git repo's default branch."
+featured_image: cover-unsplash-river.jpg
 aliases:
 - /no-more-masters
 - /no-more-git-masters
