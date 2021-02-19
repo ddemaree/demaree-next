@@ -104,7 +104,6 @@ exports.createPages = async ({ graphql, actions: { createPage} }) => {
     }
 
     const pagePath = `/p/${slug}`;
-    console.log(post.relativePath, pagePath, post.name)
 
     createPage({
       path: pagePath,

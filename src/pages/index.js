@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { DateTime } from 'luxon'
 import cn from 'classnames'
 import Layout from '../components/Layout'
@@ -33,17 +33,23 @@ const BlogPostCard = ({ children, title, href, description, date, featuredImage 
   const dateTime = DateTime.fromISO(date).setZone("America/New_York")
   const formattedDate = dateTime.toFormat("MMM dd, yyyy")
 
+  const isInternal = /^\/(?!\/)/.test(href)
+
+  const LinkTag = ({ className, children }) => (isInternal 
+    ? <Link to={href} className={className}>{children}</Link>
+    : <a target="_blank" href={href} className={className}>{children}</a>)
+
   return <article className="flex items-start col-start-2 col-span-8 md:col-start-auto md:odd:col-start-2 md:col-span-4 md:px-8">
     <div className="flex-1 lg:col-start-2 lg:col-span-6">
-      <a href={href} className="block">
+      <LinkTag className="block">
         <h2 className="deorphan text-inkBold font-semibold text-lg sm:text-xl leading-tight sm:leading-tight">{title}</h2>
         {description && <div className="text-sm mt-2">{description}</div>}
         <div className="text-inkMedium text-sm mt-2">{formattedDate}</div>
-      </a>
+      </LinkTag>
     </div>
-    {featuredImage && <a href={href} className="w-20 xs:w-1/3 h-24 ml-6 overflow-hidden rounded-md lg:col-span-2">
+    {featuredImage && <LinkTag className="w-20 xs:w-1/3 h-24 ml-6 overflow-hidden rounded-md lg:col-span-2">
         <PostFeaturedImage src={featuredImage} />
-      </a>}
+      </LinkTag>}
     {children}
   </article>
 }
