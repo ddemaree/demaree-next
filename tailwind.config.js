@@ -9,7 +9,8 @@ module.exports = {
 		content: [
 			'./**/*.js',
 			"./**/*.html",
-			"./**/*.md"
+			"./**/*.md",
+			"./**/*.mdx"
 		]
 	},
 	variants: {
