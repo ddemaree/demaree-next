@@ -19,13 +19,6 @@ module.exports = {
     `gatsby-remark-images`,
     'gatsby-plugin-postcss',
     `gatsby-plugin-react-helmet`,
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `images`,
-    //     path: `${__dirname}/src/assets/images`,
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -46,7 +39,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 900,
+              disableBgImageOnAlpha: true,
+              showCaptions: ['title']
             },
           }
         ]
@@ -63,7 +58,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800
+              maxWidth: 900,
+              disableBgImageOnAlpha: true,
+              showCaptions: ['title']
             }
           }
         ]

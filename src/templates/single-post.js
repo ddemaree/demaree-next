@@ -4,11 +4,12 @@ import { Helmet } from 'react-helmet'
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from '../components/Layout'
 
-function SinglePost({ data, ...props }) {
-  const doc = data.file.mdxDoc || data.file.remarkDoc || {}
+function SinglePost({ data: { file }, ...props }) {
+  const { mdxDoc, remarkDoc } = file
+  const doc = mdxDoc || remarkDoc || {}
   const { frontmatter: { title, subtitle, excerpt, description, date } } = doc
-  console.log(data, props, doc)
   const subtitleText = subtitle || excerpt || description
+  console.log(doc, props)
 
   return <Layout>
     <Helmet>
@@ -20,7 +21,7 @@ function SinglePost({ data, ...props }) {
     </header>
     <main className="grid dd-grid-cols">
       <div className="dd-prose contents text-lg font-serif text-ink">
-        {data.file.mdxDoc && <MDXRenderer>{data.file.mdxDoc.body}</MDXRenderer>}
+        {mdxDoc && <MDXRenderer>{mdxDoc.body}</MDXRenderer>}
       </div>
     </main>
   </Layout>
