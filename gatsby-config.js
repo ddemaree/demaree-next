@@ -36,14 +36,14 @@ module.exports = {
       options: {
         extensions: [".mdx"],
         gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 900,
-              disableBgImageOnAlpha: true,
-              showCaptions: ['title']
-            },
-          }
+          // {
+          //   resolve: `gatsby-remark-images`,
+          //   options: {
+          //     maxWidth: 900,
+          //     disableBgImageOnAlpha: true,
+          //     showCaptions: ['title']
+          //   },
+          // }
         ]
       }
     },

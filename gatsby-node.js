@@ -65,6 +65,7 @@ exports.createPages = async ({ graphql, actions: { createPage} }) => {
           node {
             id
             relativePath
+            relativeDirectory
             name
             mdxDoc: childMdx {
               frontmatter {
@@ -111,6 +112,7 @@ exports.createPages = async ({ graphql, actions: { createPage} }) => {
       context: {
         slug,
         filePath: post.relativePath,
+        fileDirectory: post.relativeDirectory,
         previousFilePath: (previousPost && previousPost.relativePath),
         nextFilePath: (nextPost && nextPost.relativePath)
       }
