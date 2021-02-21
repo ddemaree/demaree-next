@@ -41,7 +41,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       frontmatter: Frontmatter
     }
     type Frontmatter {
-      tags: [String!]
       date: Date @dateformat
       featured_image: File @fileByRelativePath
       featured_image_url: String

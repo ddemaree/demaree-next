@@ -1,10 +1,32 @@
 import { graphql } from "gatsby";
 
+export const BlogPostFragment = graphql`
+  fragment BlogPostFields on File {
+    name
+    relativePath
+    mdxDoc: childMdx {
+      body
+      frontmatter {
+        ...BlogPostMetaFields
+        custom_css
+        font_sets
+      }
+    }
+    remarkDoc: childMarkdownRemark {
+      html
+      frontmatter {
+        ...BlogPostMetaFields
+        custom_css
+        font_sets
+      }
+    }
+  }
+`
+
 export const FrontmatterFragment = graphql`
-  fragment BlogPostFields on Frontmatter {
+  fragment BlogPostMetaFields on Frontmatter {
     title
     date
-    tags
     slug
     description
     excerpt
