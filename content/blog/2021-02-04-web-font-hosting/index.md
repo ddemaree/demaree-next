@@ -36,17 +36,17 @@ Another drawback to S3, less important for small projects but still worth thinki
 
 So,  for the fonts on this site, I decided to use [DigitalOcean Spaces](https://www.digitalocean.com/products/spaces/), an “object” (aka file) storage service that’s patterned after S3, and compatible with S3’s API so that apps like Transmit will work with it. It’s a lot simpler, both in the product itself (nice web UI, easy-to-understand settings) and in its pricing model (a flat $5/month fee), and it has a built-in CDN that can integrate with DigitalOcean’s DNS servers to effortlessly configure custom domains and SSL certificates.
 
-![DigitalOcean's control panel makes it easy to set up and configure Spaces, including custom domains, SSL, and CORS rules](screenshot-do-panel.png)
+![DigitalOcean's control panel makes it easy to set up and configure Spaces, including custom domains, SSL, and CORS rules](screenshot-do-panel.jpg)
 
 I keep all my fonts in the same directory of the same Spaces bucket, which I manage using Transmit:
 
-![My web fonts in their directory on my Spaces-powered CDN](screenshot-transmit-webfonts.png)
+![My web fonts in their directory on my Spaces-powered CDN](screenshot-transmit-webfonts.jpg)
 
 Each subdirectory is named after the fonts’ CSS `font-family` name, so that my “API” for using the fonts is consistent. To enable the Söhne fonts, I add a link to `fonts/soehne/index.css`, and then I can use `font-family: soehne, …` in my CSS. Nice and simple.
 
 Because these directory names and URLs follow a nice, regular structure, I can lightly automate adding these links in my Hugo templates, providing a list of family slugs that are turned into `<link>` tags. These are hard-coded, but could just as easily be set as front matter data on a page or post.
 
-![CDN-hosted web fonts, integrated into my site's Hugo templates](screenshot-webfont-code-nova.png)
+![CDN-hosted web fonts, integrated into my site's Hugo templates](screenshot-webfont-code-nova.jpg)
 
 Now that these fonts are up in The Cloud, I can easily reference them in test pages and experiments without having to copy them over from another project. And because my fonts are out of my Git repo, [I can finally re-open my site’s source code](https://github.com/ddemaree/demaree-next).
 
