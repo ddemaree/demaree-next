@@ -34,9 +34,6 @@ exports.sourceNodes = async ({
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
-    type MarkdownRemark implements Node {
-      frontmatter: Frontmatter
-    }
     type Mdx implements Node {
       frontmatter: Frontmatter
     }
@@ -67,12 +64,6 @@ exports.createPages = async ({ graphql, actions: { createPage} }) => {
             relativeDirectory
             name
             mdxDoc: childMdx {
-              frontmatter {
-                slug
-                title
-              }
-            }
-            remarkDoc: childMarkdownRemark {
               frontmatter {
                 slug
                 title

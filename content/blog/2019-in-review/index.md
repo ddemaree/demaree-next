@@ -6,7 +6,7 @@ title: 2019 in review
 
 For whatever reason, while I've not hesitated to write tech/business think pieces or IT tutorials on my personal blog all these years, I've never written a simple year (or decade) in review post.
 
-{{< cloudinary-img src="IMG_3257-2_vpsqb4.jpg" dimensions="1200x900" alt="David Demaree holding up a Disney World &quot;2019&quot; pin featuring Stitch" style="wide" wrapper=false />}}
+{/* {{< cloudinary-img src="IMG_3257-2_vpsqb4.jpg" dimensions="1200x900" alt="David Demaree holding up a Disney World &quot;2019&quot; pin featuring Stitch" style="wide" wrapper=false />}} */}
 
 ## Work
 
@@ -16,7 +16,7 @@ We did launch Material's <a href="https://material.io/design/color/dark-theme.ht
 
 <a href="https://twitter.com/search?q=from%3Addemaree%20OKRs">I spent a lot of time this year on OKRs</a> — Google, generally, is all-in on OKRs — and strategy. Now that the holidays are over, I'm hoping to publish <a href="https://twitter.com/ddemaree/status/1201315956393422848?s=20">my long-threatened OKRs post</a> soon.
 
-{{< twitter 1113600114071941121 >}}
+{/* {{< twitter 1113600114071941121 >}} */}
 
 I don't really hate them, but let's just say they have never once been as simple, lightweight, and outcome-oriented as authors like John Doerr and Christina Wodtke claim they are. But I think the time spent on getting our 2020 priorities right will pay off — we'll see how I feel about them at this time next year.
 
@@ -24,15 +24,15 @@ I don't really hate them, but let's just say they have never once been as simple
 
 When I'm at parties here in the New Jersey suburbs, I like to blow people's minds by telling them Google owns/occupies multiple city blocks of Manhattan office space—and yet we have so many Googlers that we've had to move some of us into temporary spaces while new spaces are being finished and others are being renovated. Mid-year my team was relocated from the main Google building on 8th Avenue to a temporary WeWork space 2 blocks away:
 
-{{< insta B490OQppPzI >}}
+{/* {{< insta B490OQppPzI >}} */}
 
 So there's no longer a cafeteria mere steps from my desk, but Google and our site leads have tried to keep things cozy regardless:
 
-{{< insta B6WkF25JAP4 >}}
+{/* {{< insta B6WkF25JAP4 >}} */}
 
 Fortunately, I also still have access to <em>these views</em> at the main building:
 
-{{< insta B5jGaM6JNl0 >}}
+{/* {{< insta B5jGaM6JNl0 >}} */}
 
 Last Spring I started teaching an orientation class for new Googlers ("Nooglers") about inclusive product design, covering general topics (a11y, i18n, business arguments for inclusion) and how they're especially important at a company of Google's global scale. I also had some opportunities to do 1-1 mentoring with some more junior PMs from inside and outside Google. Teaching and mentoring new and junior folks has been one of the most rewarding parts of my job and I'm looking forward to doing it more next year.
 
@@ -42,9 +42,9 @@ Late in the year, I discovered that one of our many office perks is on-site, sub
 
 The highlight of the year, both speaking- and travel-wise, was giving the opening keynote at <a href="https://webdirections.org/product19/">Web Directions Product</a> in Melbourne. (Someday I'll finally share an article/post version of that talk. 😅) This was my first full conference talk, and first international trip, since my daughter was born. It went over pretty well:
 
-{{< twitter 1156717897525280768 >}}
-{{< twitter 1156728592111267840 >}}
-{{< twitter 1156717865480802305 >}}
+{/* {{< twitter 1156717897525280768 >}} */}
+{/* {{< twitter 1156728592111267840 >}} */}
+{/* {{< twitter 1156717865480802305 >}} */}
 
 I also presented two short "box talks," one on using design systems and one on typography, as part of Material Design's presence at Google I/O in May. And in October I dusted off the design systems one, about applying Material Design to products, at <a href="https://design.google/library/span2019/">Google Design's SPAN conference</a> in Brooklyn.
 
@@ -60,15 +60,15 @@ Apart from inter-office travel for Google, this year I visited 6 cities: Melbour
 
 Melbourne was far too short of a trip; it came right after my daughter's 5th birthday, and we had a new puppy in the house, so I chose to only spend 3 days in the city (plus almost four full days of travel). In addition to the conference itself, which was wonderful, I went on a walking tour of hidden laneway bars, saw the requisite sights like Flinders Street Station, and enjoyed good company and hospitality from fellow product/design folks.
 
-{{< cloudinary-img src="bitsandletters-assets/L2090110.jpg" width=1200 height=960 caption="Flinders Street Station, Melbourne" style="wide" />}}
+{/* {{< cloudinary-img src="bitsandletters-assets/L2090110.jpg" width=1200 height=960 caption="Flinders Street Station, Melbourne" style="wide" />}} */}
 
-{{< cloudinary-img src="bitsandletters-assets/L2090117.jpg" width=1200 height=745 caption="Tourists watching a street artist in one of Melbourne's famous laneways" style="wide" />}}
+{/* {{< cloudinary-img src="bitsandletters-assets/L2090117.jpg" width=1200 height=745 caption="Tourists watching a street artist in one of Melbourne's famous laneways" style="wide" />}} */}
 
 <figure class="wp-block-gallery columns-3 is-cropped wide-width"><ul class="blocks-gallery-grid flex flex-wrap"><li class="blocks-gallery-item w-1/3"><figure><img src="https://bitsandletters.club/wp-content/uploads/2020/01/L2090133-1024x1024.jpg" alt="" data-id="59" data-link="https://bitsandletters.club/?attachment_id=59" class="wp-image-59"/></figure></li><li class="blocks-gallery-item w-1/3"><figure><img src="https://bitsandletters.club/wp-content/uploads/2020/01/L2090144-1024x683.jpg" alt="" data-id="60" data-link="https://bitsandletters.club/?attachment_id=60" class="wp-image-60"/></figure></li><li class="blocks-gallery-item"><figure><img src="https://bitsandletters.club/wp-content/uploads/2020/01/L2090127-1024x819.jpg" alt="" data-id="62" data-link="https://bitsandletters.club/?attachment_id=62" class="wp-image-62"/></figure></li><li class="blocks-gallery-item"><figure><img src="https://bitsandletters.club/wp-content/uploads/2020/01/L2090164-1024x732.jpg" alt="" data-id="61" data-link="https://bitsandletters.club/?attachment_id=61" class="wp-image-61"/></figure></li><li class="blocks-gallery-item"><figure><img src="https://bitsandletters.club/wp-content/uploads/2020/01/IMG_1581-819x1024.jpg" alt="" data-id="63" data-full-url="https://bitsandletters.club/wp-content/uploads/2020/01/IMG_1581.jpg" data-link="https://bitsandletters.club/?attachment_id=63" class="wp-image-63"/></figure></li></ul><figcaption class="blocks-gallery-caption">Shots from my walking tour of hidden cocktail bars</figcaption></figure>
 
 I stayed at a beautiful little apartment-style hotel called <a href="http://unitedplaces.com.au/">United Places</a> in the South Yarra neighborhood, a bit of a hike from the conference venue and CBD. But it was a lovely hike, and I came home after my talk to this lovely note and treat:
 
-{{< insta B01j7LvJ9dS >}}
+{/* {{< insta B01j7LvJ9dS >}} */}
 
 ### Disney
 
@@ -96,9 +96,9 @@ At least for the first few weeks, raising a puppy was about as hard as taking ca
 
 My other family members had a good year too. My daughter June turned 5 and started kindergarten, and my wife Jody turned 40 and made us all awesome Infinity Stones-themed sweaters:
 
-{{< insta B0ouYROpc-T >}}
-{{< insta B3slox5ANbU >}}
-{{< insta B2h4r58gHU2 >}}
+{/* {{< insta B0ouYROpc-T >}} */}
+{/* {{< insta B3slox5ANbU >}} */}
+{/* {{< insta B2h4r58gHU2 >}} */}
 
 <hr class="wp-block-separator"/>
 

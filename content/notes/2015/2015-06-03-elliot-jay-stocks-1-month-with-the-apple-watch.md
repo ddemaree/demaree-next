@@ -21,11 +21,11 @@ publisher: elliotjaystocks.com
 
 <blockquote><p>In fact, it occurred to me that I hadn’t been wearing it for the entire day. It was back in my bedroom, still attached to its charger and very much not on my wrist.</p>
 
-<p>This is not an isolated event. This sudden realisation late in the day has happened now a good six or seven times in the month that I’ve owned the Watch. And the prompt for this realisation? I had lifted my wrist to see what time it was.<br></p>
+<p>This is not an isolated event. This sudden realisation late in the day has happened now a good six or seven times in the month that I’ve owned the Watch. And the prompt for this realisation? I had lifted my wrist to see what time it was.<br /></p>
 
 </blockquote><p>And he concludes:</p>
 
-<blockquote><p>I can’t recommend the Apple Watch, because it’s almost useless. Take away my Macs, my iPhone, or even my iPod, and I’d be stuck. Powerless. Lost! But take away my Watch and… I probably won’t even notice. Unless, of course, I need to tell the time.<br></p>
+<blockquote><p>I can’t recommend the Apple Watch, because it’s almost useless. Take away my Macs, my iPhone, or even my iPod, and I’d be stuck. Powerless. Lost! But take away my Watch and… I probably won’t even notice. Unless, of course, I need to tell the time.<br /></p>
 
 </blockquote><p>I’m still excited to get a Watch (though haven’t ordered one yet, because we’re buying a house, and want to make sure we won’t need that $700 for other things), but I may have really low expectations for it. It’s a really beautiful watch that does some other stuff, and I think that may be enough for me.</p>
 

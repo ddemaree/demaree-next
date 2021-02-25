@@ -133,7 +133,7 @@ export const query = graphql`
         }
       }
     }
-    blogPosts: allFile(sort: {order: DESC, fields: childMarkdownRemark___frontmatter___date}, filter: {name: {ne: "_index"}, relativePath: {glob: "blog/**/*.{md,mdx}"}}) {
+    blogPosts: allFile(sort: {order: DESC, fields: childMdx___frontmatter___date}, filter: {name: {ne: "_index"}, relativePath: {glob: "blog/**/*.{md,mdx}"}}) {
       edges {
         node {
           ...BlogPostFields

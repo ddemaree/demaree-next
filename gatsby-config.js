@@ -6,8 +6,6 @@ const siteURL = (process.env.CONTEXT === "production"
   ? process.env.URL
   : process.env.DEPLOY_PRIME_URL) || "localhost:9000";
 
-console.log(`Site URL is ${siteURL}`)
-
 module.exports = {
   siteMetadata: {
     title: `demaree.me`,
@@ -32,42 +30,32 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: `gatsby-source-cloudinary`,
       options: {
-        extensions: [".mdx"],
-        gatsbyRemarkPlugins: [
-          // {
-          //   resolve: `gatsby-remark-images`,
-          //   options: {
-          //     maxWidth: 900,
-          //     disableBgImageOnAlpha: true,
-          //     showCaptions: ['title']
-          //   },
-          // }
-        ]
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: `image`
       }
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        "excerpt_separator": `<!-- end -->`,
-        plugins: [
-          {
-            resolve: `gatsby-remark-embedder`
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 900,
-              disableBgImageOnAlpha: true,
-              showCaptions: ['title']
-            }
-          }
-        ]
+        extensions: [".mdx", ".md"],
       }
     },
+    {
+      resolve: 'gatsby-transformer-cloudinary',
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        // This folder will be created if it doesn’t exist.
+        uploadFolder: 'gats',
+      },
+    },
     `gatsby-transformer-json`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`
+    // `gatsby-transformer-sharp`,
+    // `gatsby-plugin-sharp`
   ],
 }

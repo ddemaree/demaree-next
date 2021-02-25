@@ -12,14 +12,6 @@ export const BlogPostFragment = graphql`
         font_sets
       }
     }
-    remarkDoc: childMarkdownRemark {
-      html
-      frontmatter {
-        ...BlogPostMetaFields
-        custom_css
-        font_sets
-      }
-    }
   }
 `
 
@@ -33,17 +25,7 @@ export const FrontmatterFragment = graphql`
     subtitle
     featured_image_url
     featured_image {
-      image: childImageSharp {
-        original {
-          height
-          width
-        }
-        thumbnail: fluid(maxWidth: 300) {
-          src
-          height: presentationHeight
-          width: presentationWidth
-        }
-      }
+      id
     }
   }
 `

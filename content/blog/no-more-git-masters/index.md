@@ -12,9 +12,9 @@ aliases:
 - /p/no-more-masters
 ---
 
-{{< page-img src="cover-unsplash-river.jpg" block-width="full" >}}
+{/* {{< page-img src="cover-unsplash-river.jpg" block-width="full" >}} */}
 Photo by <a href="https://unsplash.com/@jack_anstey">Jack Anstey</a> on <a href="https://unsplash.com/s/photos/river">Unsplash</a>
-{{< /page-img >}}
+{/* {{< /page-img >}} */}
 
 In my book [Git for Humans](https://abookapart.com/products/git-for-humans), published in 2016, I made a lot of references to `master` — naturally, as it's been the default branch name in Git for a long time. Like many people, I simply accepted that `master` meant "master copy" and didn't look at it too closely.
 
@@ -22,7 +22,7 @@ But now it's 2020, things are changing, and there are other, better names for ou
 
 My work friend Una made the practical argument for renaming (to `main`, which the community seems to have adopted as the new standard):
 
-{{< twitter "1271181775130279936" >}}
+{/* {{< twitter "1271181775130279936" >}} */}
 
 For me, having a master branch is like realizing a cute geometric pattern on some old part of my house is made of swastikas, or that the old statue outside the main library in my hometown is actually [a Confederate monument that had stood there for 115 years](https://www.nytimes.com/2020/06/02/us/george-floyd-birmingham-confederate-statue.html). Removing symbols of racism isn't nearly enough, but that doesn't mean don't remove them.
 
@@ -82,7 +82,7 @@ Next, let's tell your tools that there's a new primary branch in town.
 
 Open your repo page on GitHub while signed in, and click on the Settings tab, then click Branches in the left-hand navigation. Once you're there, on the right-hand side you'll see a drop-down that lets you change the name of your default branch.
 
-{{< page-img src="screenshot-github-default-branch.png" alt="GitHub repo settings page, showing default branch option" />}}
+{/* {{< page-img src="screenshot-github-default-branch.png" alt="GitHub repo settings page, showing default branch option" />}} */}
 
 Once this is set, new pull requests will automatically be set up to merge into `main`, and `git clone`s from GitHub will also check out `main` by default.
 
@@ -90,7 +90,7 @@ Once this is set, new pull requests will automatically be set up to merge into `
 
 If you (like me) use Netlify to host your websites and JAMstack apps, and use their GitHub integration to automatically publish changes after you push them, you'll need to go into your Netlify site settings to select a new production branch. This is under _Build & deploy > Deploy contexts_.
 
-{{< page-img src="screenshot-netlify.png" alt="Netlify Build & Deploy settings page showing default production branch setting" />}}
+{/* {{< page-img src="screenshot-netlify.png" alt="Netlify Build & Deploy settings page showing default production branch setting" />}} */}
 
 
 ### What about other integrations?
@@ -101,7 +101,7 @@ The `master` branch is a load-bearing element. Many systems and workflows depend
 
 What you want to avoid is a situation like the one in this tweet by Bryan Liles:
 
-{{< twitter 1278343673672011776 >}}
+{/* {{< twitter 1278343673672011776 >}} */}
 
 Moving _to_ `main` signals that we want to be inclusive. It's meant as a welcome mat for underrepresented folks who may collaborate with us, now or in the future. But moving _away from_ `master` breaks things *now*. Adopting a new branch name really is a cosmetic change, and though I think it's ultimately the right thing to do, as long as you ultimately will do it, it's OK to take your time and get it right.
 
@@ -186,7 +186,7 @@ git push -f origin master
 
 Ahhhhhhhhh, so nice to have that done. Here's the deprecation message as shown on one of my GitHub repos:
 
-{{< page-img src="screenshot-github-readme.png" alt="Screenshot of master branch deprecation message on GitHub web interface" />}}
+{/* {{< page-img src="screenshot-github-readme.png" alt="Screenshot of master branch deprecation message on GitHub web interface" />}} */}
 
 
 Because the server's `master` now points to this orphaned commit, Git will raise an error whenever you or someone on your team tries to pull from it:

@@ -104,11 +104,6 @@ query($filePath: String, $fileDirectory: String, $previousFilePath: String) {
     nodes {
       basename: base
       publicURL
-      data: childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
     }
   }
 }
