@@ -14,19 +14,32 @@ module.exports = {
     buildUrl: (siteURL || "")
   },
   plugins: [
-    `gatsby-remark-images`,
-    'gatsby-plugin-postcss',
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content`,
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/data`,
+        path: `${__dirname}/content/notes`,
+        name: `notes`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets`,
+        name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/data`,
+        name: `data`, 
       },
     },
     {
@@ -38,6 +51,9 @@ module.exports = {
         resourceType: `image`
       }
     },
+    `gatsby-remark-images`,
+    'gatsby-plugin-postcss',
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -55,7 +71,5 @@ module.exports = {
       },
     },
     `gatsby-transformer-json`,
-    // `gatsby-transformer-sharp`,
-    // `gatsby-plugin-sharp`
   ],
 }
