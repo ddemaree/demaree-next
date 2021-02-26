@@ -6,16 +6,22 @@ tumblr_url: >-
 aliases:
   - /post/116687505629/quick-impressions-of-three-new-apple-products
 slug: quick-impressions-of-three-new-apple-products
-tags: []
+tags: ["Apple", "Apple Watch", "MacBook Pro"]
 summary: Quick impressions of three new Apple products
 title: Quick impressions of three new Apple products
 ---
 
-On Wednesday I went to the SoHo Apple Store in NYC for an Apple Watch try-on appointment. I signed up two days in advance, but showed up fifteen minutes early to find the try-on area almost empty—I got to start looking at Watches right away. Let me say upfront: the try-on service at the SoHo store was excellent.</p><p>I tried on five Watches. The 38mm and 42mm Milanese loop both felt great; the 38mm was a <i>teeny</i>&nbsp;bit more awkward to put on, but looked and felt good once it was on. I expected the 42mm to look huge, but it really didn’t.</p><p>Here’s my hairy wrist modeling the 42mm Milanese loop; in the background you can see the 38mm model next to the similarly-sized, Dieter Rams-designed&nbsp;Braun wristwatch I normally wear:
+On Wednesday I went to the SoHo Apple Store in NYC for an Apple Watch try-on appointment. I signed up two days in advance, but showed up fifteen minutes early to find the try-on area almost empty—I got to start looking at Watches right away. Let me say upfront: the try-on service at the SoHo store was excellent.
+
+I tried on five Watches. The 38mm and 42mm Milanese loop both felt great; the 38mm was a _teeny_ bit more awkward to put on, but looked and felt good once it was on. I expected the 42mm to look huge, but it really didn’t.
+
+Here’s my hairy wrist modeling the 42mm Milanese loop; in the background you can see the 38mm model next to the similarly-sized, Dieter Rams-designed Braun wristwatch I normally wear:
 
 <figure data-orig-width="2448" data-orig-height="2448" class="tmblr-full"><img src="https://41.media.tumblr.com/2fcea71bc3a7ef6ba7a0495768e892b4/tumblr_inline_nmz7fsYO6Q1qaztlp_540.jpg" alt="image" data-orig-width="2448" data-orig-height="2448" /></figure>
 
-Here’s a closer look at the Milanese models, next to my Braun:</p><figure data-orig-width="2344" data-orig-height="1674" class="tmblr-full"><img src="https://40.media.tumblr.com/b784783ef3d503c6603cb7f94c6a90c2/tumblr_inline_nmz7olvTCy1qaztlp_540.jpg" alt="image" data-orig-width="2344" data-orig-height="1674" /></figure>
+Here’s a closer look at the Milanese models, next to my Braun:
+
+<figure data-orig-width="2344" data-orig-height="1674" class="tmblr-full"><img src="https://40.media.tumblr.com/b784783ef3d503c6603cb7f94c6a90c2/tumblr_inline_nmz7olvTCy1qaztlp_540.jpg" alt="image" data-orig-width="2344" data-orig-height="1674" /></figure>
 
 My second favorite was (surprisingly, to me) one of the Sport models. The Sport Band feels lovely, for a rubber band. The pin-and-tuck closure is hard to grok at first, but makes perfect sense once you figure it out. The Space Gray looks great, though still not as lovely as the stainless steel.
 
@@ -43,8 +49,8 @@ Naturally, this was a demo unit on a table, so the one-port thing didn’t get t
 
 ----
 
-The laptop I <i>did</i>&nbsp;buy—well, that I had work buy, not at this Apple Store visit but over a week ago, via a byzantine corporate procurement system—is the new 13-inch MacBook Pro with Force Touch trackpad.
+The laptop I _did_ buy — well, that I had work buy, not at this Apple Store visit but over a week ago, via a byzantine corporate procurement system — is the new 13-inch MacBook Pro with Force Touch trackpad.
 
-My 13-inch MacBook Pro replaces one of the first-gen, 15-inch retina MacBook Pros from 2012. Three years in, it remains the fastest computer I have ever personally used. This 13-inch is a step down in raw speed—its Core i7 chip is clocked higher, but only dual core, whereas my 15-inch is quad-core—but a lot lighter, with much better battery life. I’m finding it a good trade-off.
+My 13-inch MacBook Pro replaces one of the first-gen, 15-inch retina MacBook Pros from 2012. Three years in, it remains the fastest computer I have ever personally used. This 13-inch is a step down in raw speed (its Core i7 chip is clocked higher, but only dual core, whereas my 15-inch is quad-core) but a lot lighter, with much better battery life. I’m finding it a good trade-off.
 
 Force Touch is as amazing on this laptop as on the new MacBook. The actual force click actions are a little gimmicky, but cool. I wouldn’t say Force Touch is a reason to buy this laptop, but it’s nice that it’s here.

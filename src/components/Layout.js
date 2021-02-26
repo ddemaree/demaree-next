@@ -1,18 +1,20 @@
 import React from 'react'
-import cn from 'classnames'
-import { Helmet } from 'react-helmet';
-import '../../assets/css/main-gatsby.css';
 import { Link } from 'gatsby';
+import { Helmet } from 'react-helmet';
+import cn from 'classnames'
+
+import '../css/main-gatsby.css';
 
 function Layout({ pageClasses, children }) {
   return <>
     <Helmet 
+      htmlAttributes={{className: "bg-surface"}}
       titleTemplate="%s — David Demaree" 
       defaultTitle="David Demaree">
       {["soehne", "soehne-breit", "ivar-text", "roslindale"].map(set => <link key={set} data-dd-fontset={set} rel="stylesheet" href={`https://cdn.demaree.net/fonts/${set}/index.css`} type="text/css" />)} 
       <script src="https://kit.fontawesome.com/f0afb61fe2.js" crossorigin="anonymous"></script>
     </Helmet>
-    <div className={cn("dd-page text-ink flex flex-col min-h-screen", pageClasses)}>
+    <div className={cn("dd-page bg-surface text-ink flex flex-col min-h-screen", pageClasses)}>
       <header className="site-header grid grid-cols-6 px-4 xs:px-6 items-center h-20">
         <Link to="/" className="justify-self-start whitespace-nowrap">
           <i className="fas fa-home"></i>
