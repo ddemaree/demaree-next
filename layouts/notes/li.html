@@ -16,7 +16,7 @@
       {{ end }}
      </ul>
   </div>
-  {{ if eq .Hugo.Environment "development" }}
+  {{ if eq hugo.Environment "development" }}
   <div class="text-sm mt-2"><code>{{ .File.Path }}</code></div>
   {{ end }}
 </article>
