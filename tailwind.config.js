@@ -72,7 +72,6 @@ module.exports = {
 
 			addBase({
 				':root': {
-					'background-color': 'var(--color-background)',
 					'--color-ink': theme('colors.gray.800'),
 					'--color-ink-strong': theme('colors.black'),
 					'--color-ink-medium': theme('colors.gray.500'),

@@ -6,8 +6,6 @@ const siteURL = (process.env.CONTEXT === "production"
   ? process.env.URL
   : process.env.DEPLOY_PRIME_URL) || "localhost:9000";
 
-console.log(`Site URL is ${siteURL}`)
-
 module.exports = {
   siteMetadata: {
     title: `demaree.me`,
@@ -16,58 +14,62 @@ module.exports = {
     buildUrl: (siteURL || "")
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/notes`,
+        name: `notes`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets`,
+        name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/data`,
+        name: `data`, 
+      },
+    },
+    {
+      resolve: `gatsby-source-cloudinary`,
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: `image`
+      }
+    },
     `gatsby-remark-images`,
     'gatsby-plugin-postcss',
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/data`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [".mdx"],
-        gatsbyRemarkPlugins: [
-          // {
-          //   resolve: `gatsby-remark-images`,
-          //   options: {
-          //     maxWidth: 900,
-          //     disableBgImageOnAlpha: true,
-          //     showCaptions: ['title']
-          //   },
-          // }
-        ]
+        extensions: [".mdx", ".md"],
       }
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-cloudinary',
       options: {
-        "excerpt_separator": `<!-- end -->`,
-        plugins: [
-          {
-            resolve: `gatsby-remark-embedder`
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 900,
-              disableBgImageOnAlpha: true,
-              showCaptions: ['title']
-            }
-          }
-        ]
-      }
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        // This folder will be created if it doesn’t exist.
+        uploadFolder: 'gats',
+      },
     },
     `gatsby-transformer-json`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`
   ],
 }

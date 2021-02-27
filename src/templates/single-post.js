@@ -5,18 +5,15 @@ import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import GatsbyImg from 'gatsby-image'
 import Layout from '../components/Layout'
-import _ from 'lodash'
 import _c from 'classnames'
 import { DateTime } from 'luxon'
 
-function SinglePost({ data: { file, images } }) {
-  const { mdxDoc, remarkDoc } = file
-  const doc = mdxDoc || remarkDoc || {}
-  const { frontmatter: { title, subtitle, excerpt, description, date, custom_css, font_sets } } = doc
+function SinglePost({ data: { post, file, images } }) {
+  const { frontmatter: { title, subtitle, excerpt, description, date, custom_css, font_sets } } = post
   const subtitleText = subtitle || excerpt || description
   
-  const pageImages = _.keyBy(images.nodes, 'basename')
-  console.log(pageImages)
+  // const pageImages = _.keyBy(images.nodes, 'basename')
+  const pageImages = {}
 
   function Figure({ wide, full, caption, children, className }) {
     const classNames = _c([
@@ -80,10 +77,9 @@ function SinglePost({ data: { file, images } }) {
         <div class="post-meta text-base text-center dd-col-full text-inkMedium"><time dateTime={date}>{DateTime.fromISO(date).toFormat("DDD") }</time></div>
       </header>
       <main className="grid dd-grid-cols">
-        {mdxDoc && <div className="dd-prose contents text-lg font-serif text-ink">
-          <MDXRenderer>{mdxDoc.body}</MDXRenderer>
-        </div>}
-        {remarkDoc && <div className="dd-prose contents text-lg font-serif text-ink" dangerouslySetInnerHTML={{__html: remarkDoc.html}} />}
+        <div className="dd-prose contents text-lg font-serif text-ink">
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </div>
       </main>
 
     </MDXProvider>
@@ -93,22 +89,13 @@ function SinglePost({ data: { file, images } }) {
 export default SinglePost
 
 export const query = graphql`
-query($filePath: String, $fileDirectory: String, $previousFilePath: String) {
-  previousPost: file(relativePath: {eq: $previousFilePath}) {
-    ...BlogPostFields
-  }
-  file(relativePath: {eq: $filePath}) {
-    ...BlogPostFields
-  }
-  images: allFile(filter: {relativeDirectory: {eq: $fileDirectory}, internal: {mediaType: {glob: "image/*"}}}) {
-    nodes {
-      basename: base
-      publicURL
-      data: childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
+query($postId: String) {
+  post: mdx(id: {eq: $postId}) {
+    body
+    frontmatter {
+      ...BlogPostMetaFields
+      custom_css
+      font_sets
     }
   }
 }

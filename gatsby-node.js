@@ -1,5 +1,7 @@
 const axios = require('axios')
 const path = require('path')
+const _ = require('lodash')
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.sourceNodes = async ({
   actions: { createNode },
@@ -31,12 +33,33 @@ exports.sourceNodes = async ({
   });
 }
 
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `Mdx`) {
+    const value = createFilePath({ node, getNode })
+    const slugPath = value.replace(/^(\/\d{4})*\/(\d{4}\-\d{2}-\d{2}\-)*/, '').replace(/\/$/, '')
+    
+    const relativePath = node.fileAbsolutePath.replace(__dirname + '/content/', '')
+    const [section] = relativePath.split("/", 1)
+
+    createNodeField({
+      name: `slug`,
+      node,
+      value: (slugPath || value),
+    })
+
+    createNodeField({
+      name: `section`,
+      node,
+      value: section
+    })
+  }
+}
+
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
-    type MarkdownRemark implements Node {
-      frontmatter: Frontmatter
-    }
     type Mdx implements Node {
       frontmatter: Frontmatter
     }
@@ -50,71 +73,82 @@ exports.createSchemaCustomization = ({ actions }) => {
 }
 
 exports.createPages = async ({ graphql, actions: { createPage} }) => {
-  const result = await graphql(
-    `
+  const result = await graphql(`
     query CreatePagesQuery {
-      blogPosts: allFile(filter: {relativePath: {glob: "blog/**/*.{md,mdx}"}}) {
+      tagsGroup: allMdx(limit: 2000, filter: {}) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
+      blogPosts: allMdx(filter: { fields: { section: {eq: "blog"}} }) {
         edges {
           previous {
-            relativePath
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
           }
           next {
-            relativePath
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
           }
           node {
             id
-            relativePath
-            relativeDirectory
-            name
-            mdxDoc: childMdx {
-              frontmatter {
-                slug
-                title
-              }
+            fields {
+              slug
             }
-            remarkDoc: childMarkdownRemark {
-              frontmatter {
-                slug
-                title
-              }
+            frontmatter {
+              title
             }
           }
         }
       }
     }
-  `
-  )
+  `);
+
+
+  const postTemplate = path.resolve('src/templates/single-post.js')
+  const tagTemplate = path.resolve('src/templates/tags-page.js')
 
   const blogPostEdges = result.data.blogPosts.edges
-
-  blogPostEdges.forEach((edge, index) => {
-    const post = edge.node
+  blogPostEdges.forEach(edge => {
     const previousPost = edge.previous
     const nextPost = edge.next
-    let slug;
-    
-    if(post.name.match(/^\_/)) return;
-
-    if(post.remarkDoc) {
-      slug = post.remarkDoc.frontmatter.slug;
-    } else if(post.mdxDoc) {
-      slug = post.mdxDoc.frontmatter.slug;
-    } else {
-      slug = post.name;
-    }
-
-    const pagePath = `/p/${slug}`;
+    const post = edge.node
+    const postSlug = post.fields.slug
 
     createPage({
-      path: pagePath,
-      component: path.resolve('src/templates/single-post.js'),
+      path: `/p/${postSlug}`,
+      component: postTemplate,
       context: {
-        slug,
-        filePath: post.relativePath,
-        fileDirectory: post.relativeDirectory,
-        previousFilePath: (previousPost && previousPost.relativePath),
-        nextFilePath: (nextPost && nextPost.relativePath)
+        postId: (post && post.id),
+        previousId: (previousPost && previousPost.id),
+        nextId: (nextPost && nextPost.id),
+        post,
+        previousPost,
+        nextPost
       }
+    })
+  })
+
+  const tags = result.data.tagsGroup.group
+  // Make tag pages
+  tags.forEach(tag => {
+    const tagSlug = _.kebabCase(_.lowerCase(tag.fieldValue))
+    createPage({
+      path: `/tags/${tagSlug}/`,
+      component: tagTemplate,
+      context: {
+        tag: tag.fieldValue,
+      },
     })
   })
 }
