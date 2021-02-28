@@ -7,6 +7,10 @@ tags: ["Writing"]
 featured_image_unsplash_id: pVsi_lmyvL8
 ---
 
+Why not Medium? My simplest answer is that I don’t get to code anything on Medium, and it makes me anxious not to have something to code. But I’m anxious either way, and there’s a distinction between “get to code” and “have to code”
+
+---
+
 They say the hardest problems in computer science are cache expiration and naming things. That's bullshit — the hardest problem in computer science is coding around indecision. For chaos. There's a reason why engineers keep coming back to strongly typed languages and compilers that yell at you for making mistakes.
 
 At Google, where I work, one of the qualities we look for in new hires is something we call "Thrives in Ambiguity." Ambiguity won't kill you, but it will make every problem more complex as the error bars around your solutions grow larger. Me, I tend to think Thriving in Ambiguity is a 
