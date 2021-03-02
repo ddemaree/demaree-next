@@ -3,6 +3,6 @@
 {{- $classes = $classes | append (add "columns-" (string (.Get "cols"))) -}}
 {{- end -}}
 
-<ul class="{{ delimit $classes " " | safeHTMLAttr }}">
+<ul class="{{ delimit $classes " " | safeHTMLAttr }} flex flex-row">
   {{ .Inner }}
 </ul>

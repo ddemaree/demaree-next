@@ -95,17 +95,15 @@
   }
 
   .dd-prose {
-    /* > :not(.fullwidth):not(.wide-width):not(.dd-block-wide):not(.dd-block-full) {
-      @apply content-width;
-    } */
-
     > * {
       grid-column: content;
     }
+
     > .wide-width,
     > .dd-block-wide {
       grid-column: wide;
     }
+
     > .full-width,
     .fullwidth,
     > .dd-block-full {
@@ -242,8 +240,8 @@
       }
     }
 
-    ul,
-    ol {
+    ul:not(.gallery-grid),
+    ol:not(.gallery-grid) {
       list-style: none;
       counter-reset: my-awesome-counter;
 
@@ -267,7 +265,7 @@
       }
     }
 
-    ul > li {
+    ul:not(.gallery-grid) > li {
       &:before {
         padding-top: 4px;
         padding-right: 15px;

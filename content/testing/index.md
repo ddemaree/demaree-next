@@ -4,7 +4,9 @@ url: /__style-guide
 layout: testing
 ---
 
-{{< cloudinary-img src="bitsandletters-assets/L2090117.jpg" width=1200 height=745 caption="Tourists watching a street artist in one of Melbourne's famous laneways" style="wide" />}}
+{{< cloudinary-img src="bitsandletters-assets/L2090117" class="dd-block-wide">}}
+Tourists watching a street artist in one of Melbourne's famous laneways
+{{</ cloudinary-img >}}
 
 In 1945 New Mexico, [the first atomic bomb is detonated](https://en.wikipedia.org/wiki/Trinity_(nuclear_test)):
 
@@ -18,12 +20,14 @@ Red and gold imagery follows like burning embers, a fireworks radiation of atomi
 
 In an imposing windowless building atop a staggering craggy outcrop amidst an endless purple sea, Señorita Dido sits next to a imposing metallic bell shaped form/machine, listening to the music of a phonograph.
 
+![test picture](./spikes.jpeg)
+{.my-photo.dd-block-img.dd-block-wide}
+
 **Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.** Vestibulum tortor quam,  feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero  sit amet quam egestas semper. Aenean ultricies mi vitae est.
 
-<figure>
-  {{ cloudinary-img src="tiny-mandolin-production/aaron-burson-YihQdPSK9jI-unsplash.jpg" dimensions="2000x1333" />}}
-  <figcaption>New York, New York, a helluva town</figcaption>
-</figure>
+{{< cloudinary-img src="tiny-mandolin-production/aaron-burson-YihQdPSK9jI-unsplash" class="dd-block-wide" >}}
+New York, New York, a helluva town
+{{</ cloudinary-img >}}
 
 ----
 
@@ -35,11 +39,16 @@ Adapted from some notes I sent to [Tim Brown](https://medium.com/u/451a777d0bab)
 
 How would you explain your work — and the context around it — to someone who knows way less than you do. The story is key.
 
-{{ cloudinary-img src="bitsandletters-assets/IMG_1505.jpg" dimensions="1636x2048" class="rounded" />}}
-<figure class="wp-block-gallery dd-gallery wide-width">
+<figure class="wp-block-gallery dd-block-gallery dd-block-wide">
 {{< gallery cols=3 width="wide" >}}
-  {{ cloudinary-img src="bitsandletters-assets/IMG_1505.jpg" dimensions="1636x2048" />}}
+  {{< cloudinary-img src="bitsandletters-assets/IMG_1505" />}}
+  {{< cloudinary-img src="gats/2021-wfh-desk-setup/photo-wfh-keyboard-mouse" />}}
+{{< /gallery >}}
+{{< gallery cols=3 width="wide" >}}
+  {{< cloudinary-img src="bitsandletters-assets/8e663344-d644-4ea0-9d7a-90a300a77fb7" />}}
+  {{< cloudinary-img src="bitsandletters-assets/DSC00397" />}}
 {{< /gallery >}}
 </figure>
 
-<figure class="wp-block-gallery columns-3 is-cropped wide-width"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img src="https://bitsandletters.club/wp-content/uploads/2020/01/2e824696-5ab4-4098-97d7-bc8a68471509-683x1024.jpg" alt="" data-id="43" data-full-url="https://bitsandletters.club/wp-content/uploads/2020/01/2e824696-5ab4-4098-97d7-bc8a68471509.jpg" data-link="https://bitsandletters.club/?attachment_id=43" class="wp-image-43"/></figure></li><li class="blocks-gallery-item"><figure><img src="https://bitsandletters.club/wp-content/uploads/2020/01/8c34b923-3825-4cf4-ae87-4c72623b26af-683x1024.jpg" alt="" data-id="44" data-full-url="https://bitsandletters.club/wp-content/uploads/2020/01/8c34b923-3825-4cf4-ae87-4c72623b26af.jpg" data-link="https://bitsandletters.club/?attachment_id=44" class="wp-image-44"/></figure></li><li class="blocks-gallery-item"><figure><img src="https://bitsandletters.club/wp-content/uploads/2020/01/8e663344-d644-4ea0-9d7a-90a300a77fb7-1024x925.jpg" alt="" data-id="45" data-full-url="https://bitsandletters.club/wp-content/uploads/2020/01/8e663344-d644-4ea0-9d7a-90a300a77fb7.jpg" data-link="https://bitsandletters.club/?attachment_id=45" class="wp-image-45"/></figure></li><li class="blocks-gallery-item"><figure><img src="https://bitsandletters.club/wp-content/uploads/2020/01/DSC00215-1024x765.jpg" alt="" data-id="46" data-full-url="https://bitsandletters.club/wp-content/uploads/2020/01/DSC00215.jpg" data-link="https://bitsandletters.club/?attachment_id=46" class="wp-image-46"/></figure></li><li class="blocks-gallery-item"><figure><img src="https://bitsandletters.club/wp-content/uploads/2020/01/DSC00397-1024x849.jpg" alt="" data-id="47" data-full-url="https://bitsandletters.club/wp-content/uploads/2020/01/DSC00397.jpg" data-link="https://bitsandletters.club/?attachment_id=47" class="wp-image-47"/></figure></li></ul></figure>
+---
+
