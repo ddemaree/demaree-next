@@ -11,16 +11,62 @@ draft: true
 What even is blogging? What exactly am I doing here? [Where the hell is this thing taking me?](https://www.todayintabs.com/p/eeby-deeby)
 {.dd-paragraph-lede}
 
-(TKTK why is this on my mind, what is the thing I am pointing at -- blogging is alive but in a weird form)
+Blogging is a hobby I can't let go of, something I always feel I should be doing more, right up there with reading more books and working out. I started my first blog in college, which is kind of saying that I — a forty year old with a big-tech job and a few decades' worth of additional life experience and interests — spend a non-trivial amount of time trying to live up to something I was doing before I knew the difference between bourbon and brandy.
 
-Robin Rendle posted last year that [blogging is pointing at things and falling in love](https://buttondown.email/robinrendle/archive/connections/), a thought [Austin Kleon echoed and built on last week](https://austinkleon.com/2021/02/16/pointing-at-things/).
+In the '00s we didn't have tiny, eternally online computers in all of our pockets yet; I remember jotting down a post on my Movable Type install from a computer kiosk next to the campus snack bar, most likely about Apple products (still an obsession) or movies (not so much).
+
+I even still have a copy of the database from that old Movable Type site, which I kept up from 2002–2008. I re-read a lot of those old posts recently; they're a snapshot of me figuring out my relationship with the world, during a time when I was incredibly lonely and lacked any good models for how to make sense of things.
+
+A lot of the posts were basically me writing to myself about myself, processing whatever was on my mind, but without the self-awareness to know that that's what journaling is for. At that time a lot of blogs were — at least apparently — people figuring things out in public, so it felt like I was in good company.
+
+These days, writing online has (obviously) evolved from a weird, niche thing a few nerds were doing to the primary way ideas are captured and shared. It's still one of the most fundamental online activities, but the role of personal websites has been almost erased in favor of platforms. And though individual voices are more valued than ever, there's an expectation that writing should be a functional, commercial activity — not diarists so much as essayists or journalists, not a hobby but a side hustle.
+
+Robin Rendle — who I'd describe in the best way as a hobbyist blogger — defined blogging last year as ["pointing at things and falling in love"](https://buttondown.email/robinrendle/archive/connections/), a thought [Austin Kleon echoed and built on in a post last week](https://austinkleon.com/2021/02/16/pointing-at-things/). Kleon wrote:
 
 > [Hedda Sterne](https://austinkleon.com/2020/02/11/the-work-and-wisdom-of-hedda-sterne/), in an interview with [_Art in America_](https://www.artnews.com/art-in-america/features/hedda-sterne-62887/), said she thought art was about, saying, “Hey, look!” … Sterne emphasized that she pointed away from herself. To [_Bomb_](https://bombmagazine.org/articles/hedda-sterne/) magazine: “I see myself as a well-working lens, a perceiver of something that exists independently of me: don’t look at me, look at what I’ve found.”
-
-Or, as Kleon writes:
-
-> Point at things, say, “whoa,” and elaborate.
+> 
+> **Point at things, say, “whoa,” and elaborate.**
 {.dd-quote-big}
+
+In describing blogging this way (and aligning it with art-making), Rendle and Kleon give a vision for writing online that's independent, enthusiastic, and personal, like the O.G. blogs that started it all.
+
+That vision is really appealing, but I worry that it runs counter to where we're at and where we're headed, as embodied by platforms like Substack (and to a lesser extent Medium) which aim to support all kinds of commercial, monetizeable writing at scale.
+
+In an article for _The New Yorker_ published last December, Anna Weiner [wrote](https://www.newyorker.com/magazine/2021/01/04/is-substack-the-media-future-we-want):
+
+> Depending on which source you consult, Substack might be “reinventing publishing,” “pioneering a new ‘business model for culture,’ ” or “attempting to build an alternative media economy that gives journalists autonomy.” It is “writers firing their old business model” or “a better future for news.”
+> 
+> Substack’s C.E.O., Chris Best, has said that the company’s intention is “to make it so that you could type into this box, and if the things you type are good, you’re going to get rich.”
+
+"Publishing", "news", "business model", "alternative media economy", "get rich" — it's a (probably inevitable) side effect of the web growing up that what used to be randoms bullshitting on their little personal sites has been fully integrated into (or, in some ways, has taken over) the professional media sphere, which puts an aspiring blogger or diarist in the awkward position of asking where they fit in this media landscape.
+
+One can imagine old-guard bloggers dodging this question by denying its premise. The existence of paid Substacks written by famous journalists does not necessarily devalue an individual designer or developer's personal blog, and in fact personal thoughts from folks who make things might be what someone wants to read? Maybe pointing at things and falling in love is enough?
+
+What scares me — and leads me to question my ideas, which leads me to feeling blocked — is that pointing and loving may _not_ be enough. One of the newsletters Weiner mentioned in the _New Yorker_, Ariel Norling's [I Know A Spot](https://iknowaspot.substack.com), started out (AFAIK) 100% in the pointing-at-things mode, where Norling would find architecturally interesting Zillow listings and write about them. Now, in addition to being name-checked in _The New Yorker_, she's been interviewed on the _Today_ show as part of a piece about millennials' Zillow-surfing habits. One product designer's fun internet hobby has become a minor media property, an example of a Substack that's hit it big.
+
+Is this what everyone writing online is supposed to want? How are we — how am I — supposed to feel if whatever we're putting out there isn't taking off like that? Perhaps my get-off-my-lawn reaction to all this is jealousy: maybe I _would_ like for my blog posts about my desk or web font loading to somehow lead to something, and the fact that they haven't yet makes me question the whole endeavor.
+
+For several months last year I published a free Substack newsletter, which I keep meaning to bring back but keep walking away from. 
+
+
+
+
+
+
+Anyway, what I really love about Rendle, Kleon, et al's pointing-at-things metaphor is that it works as a framework for understanding what constitutes good writing, which you can apply to your own work without needing years of therapy. *What am I pointing at? What am I saying about it—'whoa', 'what the fuck?', or a Nelson Muntz-ish 'ha ha!'*
+
+
+
+
+
+(It's not even true that these two visions need to conflict with each other: one of the Substack newsletters I happily pay for is Rusty Foster's [Today in Tabs](https://todayintabs.com), which consists of Rusty pointing at a lot of different things and saying "whoa" or, more often, "what the fuck?")
+
+
+
+
+
+I find it awfully hard to feel comfortable in an internet landscape where the conversation about Writing Online has shifted to be so much about monetizing and building a business. It makes some sense that we ended up here — producing content that people love takes time and effort, and one side effect of the internet maturing is that people expect a lot more from their online writers than they used to. The bar has been raised, and I am not someone who is very comfortable living way below a bar if I can see it up there taunting me.
+
 
 The blogs I like best, many of which have managed to keep going for years and years, seem to have no shortage of things they want to point to, and plenty of energy with which to say "whoa" and elaborate. The ultimate example is, of course, [Kottke.org](http://kottke.org), where Jason has been highlighting a lot of interesting things for more than 20 years. The aforementioned [Robin Rendle](http://robinrendle.com) does a good job of this, as does my friend Jim Ray on his blog [Flicker Fusion](http://flickerfusion.com/).
 
