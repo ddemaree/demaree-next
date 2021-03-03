@@ -88,15 +88,6 @@ Monetization, or the passive expectation that writers need to monetize, has made
 Substack dude "box, if it's good you make money"
 
 
-## On Being A Poor Craftsman
-
-Back in 2018, I wrote a post titled [Blogging is a Pain in the Ass](/p/blogging-is-a-pain-in-the-ass):
-
-> A project of mine to start a “simple” WordPress blog is now on what feels like its ninth or tenth week of total [bikeshedding](https://en.wiktionary.org/wiki/bikeshedding)
->
-> If you’re like me, and you want your site’s design and typography to be unique and perfect, you have to design a theme, and make some very low-stakes, distraction-prone decisions about the kind of blog you want and how that should be reflected in its design.
-
-Everything that was on my mind then is still on my mind today, except that I've switched from bikeshedding WordPress to bikeshedding on [the so-called JAMstack](https://jamstack.org).
 
 Why not Medium? My simplest answer is that I don’t get to code anything on Medium, and it makes me anxious not to have something to code. But I’m anxious either way, and there’s a distinction between “get to code” and “have to code”
 
