@@ -1,0 +1,43 @@
+{{- $publicID := .Get "src" -}}
+{{- $width := (.Get "width" | default 900) -}}
+{{- $unsplashData := getJSON (printf "https://sun-regular-manuscript.glitch.me/images/unsplash/%s?width=%d&t=%d" $publicID $width now.Unix ) -}}
+
+{{- with .Parent -}}
+  {{- if eq .Name "gallery" -}}
+  <li class="dd-gallery-item gallery-item" style="--flex-aspect: {{ $unsplashData.aspectRatio }}; flex: var(--flex-aspect);">
+    <figure class="overflow-hidden lazy-img-container">
+      {{ $unsplashData.html | safeHTML }}
+    </figure>
+  </li>
+  {{- end -}}
+{{- else -}}
+<figure class="dd-block-media dd-block-img dd-block-unsplash{{ with .Get "class" }} {{ . }}{{ end }}" style="--flex-aspect: {{ $unsplashData.aspectRatio }};">
+  <div class="mx-auto relative" style="max-width: min({{ $unsplashData.displayWidth }}px, 100%);">
+    <div class="bg-gray-800 la-z-wrap" style="padding-bottom: {{ div 100 (float $unsplashData.aspectRatio) }}%;">
+      <div class="absolute overflow-hidden inset-0 w-full la-z-pw">
+        <img
+          class="la-z-img"
+          src="{{ $unsplashData.base64 | safeURL }}"
+          data-src="{{ $unsplashData.src }}"
+          data-srcset="{{ $unsplashData.srcSet }}"
+          alt="{{ $unsplashData.alt_description | default `Image for post` }}"
+          width="{{ $unsplashData.displayWidth }}"
+          height="{{ $unsplashData.displayHeight }}"
+          style="filter: blur(20px); transform: scale(1.1)"
+          />
+      </div>
+      <img
+        style="transition: opacity 400ms ease 0ms"
+        class="la-z-full absolute top-0 left-0 opacity-0 invisible"
+        alt="{{ $unsplashData.alt_description | default `Image for post` }}"
+        width="{{ $unsplashData.displayWidth }}"
+        height="{{ $unsplashData.displayHeight }}"
+      />
+    </div>
+  </div>
+  {{ with $caption := (or .Inner (.Get "caption") $unsplashData.caption)}}
+  <figcaption>{{ $caption | safeHTML }}</figcaption>
+  {{ end }}
+</figure>
+{{ $unsplashData.noScriptImageTag | safeHTML }}
+{{- end -}}

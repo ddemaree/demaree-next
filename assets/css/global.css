@@ -325,17 +325,22 @@
     }
   }
 
-  .dd-block-image {
-    display: flex;
+  .dd-block-image,
+  .dd-block-img {
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   .lazy-img-container {
     overflow: hidden;
     position: relative;
-    width: max-content;
+    /* width: max-content; */
     max-width: 100%;
 
     > img {
@@ -343,6 +348,7 @@
       left: 0;
       /* position: absolute; */
       top: 0;
+      right: 0;
       /* width: 100%; */
     }
 

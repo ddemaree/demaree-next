@@ -86,7 +86,31 @@ let observer = new IntersectionObserver((entries, self) => {
   });
 }, config);
 
-const img = document.querySelectorAll("[data-src]");
+const laZImg = document.querySelectorAll(".la-z-img")
+laZImg.forEach((img) => {
+  const { src, srcset } = img.dataset
+  const wrapper = img.closest('.la-z-wrap')
+  const fullImg = wrapper.querySelector('.la-z-full') || document.createElement('img')
+
+  const laZLoad = (e) => {
+    fullImg.src = src
+    fullImg.srcset = srcset
+    wrapper.appendChild(fullImg).addEventListener('animationend', e => {
+      img.classList.add('invisible')
+    })
+  }
+
+  fullImg.onload = (e) => {
+    fullImg.classList.add('opacity-100')
+    fullImg.classList.remove('opacity-0', 'invisible')
+  }
+
+  img.addEventListener('click', e => {
+    laZLoad(e)
+  })
+})
+
+const img = document.querySelectorAll("[data-dsrc]");
 img.forEach((img) => {
   img.classList.add("lazy-img-preview");
   let padding;
