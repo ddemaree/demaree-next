@@ -17,7 +17,11 @@ Last night I spent a few hours writing what could fairly be called a "poorly inf
 * But blogging is hard and there's no money in it, so Substack is eating the world
 * Clearly, it is Substack's fault that my blog has limited readership, and not my inconsistent posting schedule and tendency to navel-gaze.
 
-Ignoring that last one for a moment -- don't worry, we'll come back to talking about me very soon -- there has likely never been a better time to be an independent writer, online or off. Publishing online is practically free, and people's thirst for interesting things to read is insatiable. Substack, like Medium before it, has become associated with a certain kind of posting; I had never realized how many different kinds of "media newsletters" there could be before I was subscribed to four or five of them. But the service is free, easy to use, and as good a place to put one's words as any, which all seems like a net positive.
+Ignoring that last one for a moment -- don't worry, we'll come back to talking about me very soon -- there has likely never been a better time to be an independent writer, online or off. Publishing online is practically free, and people's thirst for interesting things to read is insatiable.
+
+Substack, like Medium before it, has become associated with a certain kind of posting; I had never realized how many different kinds of "media newsletters" there could be before I was subscribed to four or five of them.                          
+
+On the other hand, Substack's service is free, easy to use, and has seemed like as good a place to put one's words as any. Even if Substack isn't appealing — perhaps because [they're funding horrible people](https://twitter.com/fka_tabs/status/1367245338071900160?s=20) to write on their platform — there's Medium, or WordPress.com. Tumblr is still kicking around 
 
 But _what words_ should go there, or for that matter, here?
 
