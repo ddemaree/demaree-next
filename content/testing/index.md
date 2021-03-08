@@ -35,11 +35,9 @@ In an imposing windowless building atop a staggering craggy outcrop amidst an en
 
 {{< img unsplash="XXs0zyG9Crk" width=540 />}}
 
-{{< img cloudinary="tiny-mandolin-production/aaron-burson-YihQdPSK9jI-unsplash" class="dd-block-wide" />}}
-
-{{< cloudinary-img src="tiny-mandolin-production/aaron-burson-YihQdPSK9jI-unsplash" class="dd-block-wide" >}}
+{{< img cloudinary="tiny-mandolin-production/aaron-burson-YihQdPSK9jI-unsplash" class="dd-block-wide" >}}
 New York, New York, a helluva town
-{{</ cloudinary-img >}}
+{{</ img >}}
 
 ----
 
