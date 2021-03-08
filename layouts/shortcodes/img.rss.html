@@ -4,7 +4,7 @@
 
 {{- if $imgData.data -}}
 {{- $d := $imgData.data -}}
-<figure class="dd-block-media dd-block-img dd-block-{{ $imgData.imgSource }}{{ with $wrapperClass }} {{ . }}{{ end }}">
+<figure class="rss-only dd-block-media dd-block-img dd-block-{{ $imgData.imgSource }}{{ with $wrapperClass }} {{ . }}{{ end }}">
   <img
     class="la-z_vue-img"
     src="{{ $d.base64 | safeURL }}"
