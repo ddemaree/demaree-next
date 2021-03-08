@@ -1,0 +1,17 @@
+{{- $publicID := .Get "src" -}}
+{{- $width := (.Get "width" | default 900) -}}
+{{- $unsplashData := getJSON (printf "https://sun-regular-manuscript.glitch.me/images/unsplash/%s?width=%d" $publicID $width ) -}}
+{{- if .Inner -}}
+{{- .Scratch.Set "caption" .Inner -}}
+{{- else -}}
+{{- .Scratch.Set "caption" $unsplashData.caption -}}
+{{- end -}}
+<figure>
+  <img
+    src="{{ $unsplashData.src }}"
+    width="{{ $unsplashData.displayWidth }}"
+    height="{{ $unsplashData.displayHeight }}"
+    alt="{{ $unsplashData.alt_description | default `Image for post` }}"
+    />
+  {{ partial "figcaption.html" . }}
+</figure>

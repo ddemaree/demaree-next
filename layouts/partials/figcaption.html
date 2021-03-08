@@ -1,0 +1,3 @@
+{{ with (or (.Get "caption") (.Scratch.Get "caption") (.Scratch.Get "Inner"))}}
+<figcaption>{{ . | safeHTML }}</figcaption>
+{{ end }}

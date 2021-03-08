@@ -20,24 +20,27 @@ function setBodyScroll(isScrollable = true) {
   }
 }
 
-const menuVm = new Vue({
-  el: "#tha-menu",
-  data: {
-    open: false,
-    menuItems: window.__menus || [],
-  },
-  created() {
-    if (this.open) {
-      setBodyScroll(false);
-    } else {
-      setBodyScroll(true);
-    }
-  },
-});
 
-menuVm.$watch("open", (newVal) => {
-  setBodyScroll(!newVal);
-});
+// const menuVm = new Vue({
+//   el: "#tha-menu",
+//   data: {
+//     open: false,
+//     menuItems: window.__menus || [],
+//   },
+//   created() {
+//     if (this.open) {
+//       setBodyScroll(false);
+//     } else {
+//       setBodyScroll(true);
+//     }
+//   },
+// });
+
+// menuVm.$watch("open", (newVal) => {
+//   setBodyScroll(!newVal);
+// });
+
+const lazyloadEvent = new Event('lazyload');
 
 const config = {
   rootMargin: "0px 0px 0px 0px",
@@ -81,44 +84,76 @@ function loadImage(img) {
 let observer = new IntersectionObserver((entries, self) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      loadImage(entry.target);
+      entry.target.dispatchEvent(lazyloadEvent)
     }
   });
 }, config);
 
-const laZImg = document.querySelectorAll(".la-z-img")
-laZImg.forEach((img) => {
-  const { src, srcset } = img.dataset
-  const wrapper = img.closest('.la-z-wrap')
-  const fullImg = wrapper.querySelector('.la-z-full') || document.createElement('img')
+document.querySelectorAll('.la-z_vue-img').forEach(elem => {
+  let attrs = {}
+  let attrNames = ['width', 'height', 'alt', 'title']
+  attrNames.reduce(function(attrs, thisName) {
+    attrs[thisName] = elem.getAttribute(thisName)
+    return attrs
+  }, attrs)  
 
-  const laZLoad = (e) => {
-    fullImg.src = src
-    fullImg.srcset = srcset
-    wrapper.appendChild(fullImg).addEventListener('animationend', e => {
-      img.classList.add('invisible')
-    })
+  const data = {
+    loaded: false,
+    visible: false,
+    previewSrc: elem.getAttribute('src'),
+    ...attrs,
+    ...elem.dataset
   }
 
-  fullImg.onload = (e) => {
-    fullImg.classList.add('opacity-100')
-    fullImg.classList.remove('opacity-0', 'invisible')
-  }
-
-  img.addEventListener('click', e => {
-    laZLoad(e)
+  return new Vue({
+    el: elem,
+    template: '#la-z-vue-tpl',
+    data,
+    mounted: function() {
+      const vue = this
+      this.$el.addEventListener('lazyload', function(e){
+        vue.visible = true
+      })
+      observer.observe(this.$el)
+    }
   })
+
 })
 
-const img = document.querySelectorAll("[data-dsrc]");
+
+const laZLoad = imgElem => {
+  const imgBlock = imgElem.closest('.la-z')
+
+  if(!imgBlock) return null;
+
+  const fullImg = imgBlock.querySelector('.la-z_full') || document.createElement('img');
+  fullImg.classList.add('la-z_full');
+
+  fullImg.onload = (e) => {
+    fullImg.classList.add('la-z_loaded')
+  }
+
+  const { src, srcset, sizes } = imgElem.dataset
+  fullImg.src = src
+  fullImg.srcset = srcset
+  if(sizes) fullImg.sizes = sizes
+
+  imgBlock.appendChild(fullImg)
+  fullImg.addEventListener('animationend', e => {
+    img.classList.add('invisible')
+  })
+}
+
+document.querySelectorAll(".la-z_img").forEach(img => {
+  img.addEventListener('lazyload', function(e) {
+    laZLoad(this)
+  })
+  observer.observe(img)
+})
+
+const img = document.querySelectorAll(".old-lazyload");
 img.forEach((img) => {
   img.classList.add("lazy-img-preview");
-  let padding;
-
-  if (img.dataset.padding) {
-    padding = img.dataset.padding;
-    console.log("img has padding data attr", padding);
-  }
 
   let wrapper = img.closest(".lazy-img-container");
   if (!wrapper) {
@@ -131,44 +166,32 @@ img.forEach((img) => {
   observer.observe(img);
 });
 
-const deorphans = document.querySelectorAll(".deorphan");
-deorphans.forEach((elem) => {
-  let titleContent;
-  if (elem.dataset.content) {
-    titleContent = elem.dataset.content;
-  } else {
-    titleContent = elem.innerText;
-  }
-  console.log(titleContent);
+// const deorphans = document.querySelectorAll(".deorphan");
+// deorphans.forEach((elem) => {
+//   let titleContent;
+//   if (elem.dataset.content) {
+//     titleContent = elem.dataset.content;
+//   } else {
+//     titleContent = elem.innerText;
+//   }
 
-  // let fakeElem = document.cloneNode
+//   let fakeElem = document.createElement("div");
+//   fakeElem.setAttribute("class", elem.attributes["class"].textContent);
+//   fakeElem.style.position = "fixed";
+//   fakeElem.style.left = "-9999px";
+//   fakeElem.style.top = "0px";
+//   fakeElem.style.width = "max-content";
+//   document.body.appendChild(fakeElem);
 
-  let fakeElem = document.createElement("div");
-  fakeElem.setAttribute("class", elem.attributes["class"].textContent);
-  fakeElem.style.position = "fixed";
-  fakeElem.style.left = "-9999px";
-  fakeElem.style.top = "0px";
-  fakeElem.style.width = "max-content";
-  document.body.appendChild(fakeElem);
-  console.log(fakeElem);
-
-  let words = titleContent.split(" ");
-  let wordTags = words.map((w, x) => {
-    var wordElem = document.createElement("span");
-    wordElem.classList.add("word");
-    wordElem.innerHTML = w;
-    if (x > 0) fakeElem.appendChild(document.createTextNode(" "));
-    fakeElem.appendChild(wordElem);
-    console.log(x, wordElem.offsetWidth);
-  });
-
-  console.log(elem.offsetWidth, fakeElem.offsetWidth);
-
-  // const elemText = elem.innerText;
-  // const words = elemText.split(" ");
-  // const newString = words.slice(0, -2).join(" ");
-  // const secondString = words.slice(-2).join("&nbsp;");
-  // elem.innerHTML = newString + " " + secondString;
-});
+//   let words = titleContent.split(" ");
+//   let wordTags = words.map((w, x) => {
+//     var wordElem = document.createElement("span");
+//     wordElem.classList.add("word");
+//     wordElem.innerHTML = w;
+//     if (x > 0) fakeElem.appendChild(document.createTextNode(" "));
+//     fakeElem.appendChild(wordElem);
+//     console.log(x, wordElem.offsetWidth);
+//   });
+// });
 
 document.body.classList.add("js-active");

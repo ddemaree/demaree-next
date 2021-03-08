@@ -1,12 +1,14 @@
 ---
 title: Lazier-Loading Images
 tags: ["Web Development"]
-date: 2020-03-05
+date: 2021-03-05
 ---
 
 {{< unsplash src="XXs0zyG9Crk" width=540 />}}
 
 I'm old enough to remember when the `<img>` tag was such a new addition to HTML that browsers were actively touting support for it. Can you imagine the web without pictures?
+
+{{< cloudinary-img src="IMG_3257-2_vpsqb4" width=500 alt="David Demaree holding up a Disney World &quot;2019&quot; pin featuring Stitch" class="dd-block-wide" />}}
 
 but ever since then loading images on a web page has been pretty easy — just put the image file on a web server, ideally optimized in some way, then reference it in a tag. 
 

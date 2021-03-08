@@ -1,5 +1,6 @@
 {{- $publicID := .Get "src" -}}
-{{- $cloudinaryData := getJSON (printf "https://sun-regular-manuscript.glitch.me/images/cloudinary/%s" $publicID ) -}}
+{{- $width := (.Get "width" | default 900) -}}
+{{- $cloudinaryData := getJSON (printf "https://sun-regular-manuscript.glitch.me/images/cloudinary/%s?width=%d" $publicID $width ) -}}
 
 {{- with .Parent -}}
   {{- if eq .Name "gallery" -}}
@@ -11,7 +12,17 @@
   {{- end -}}
 {{- else -}}
 <figure class="dd-block-img dd-block-cloudinary{{ with .Get "class" }} {{ . }}{{ end }}">
-  {{ $cloudinaryData.html | safeHTML }}
+  <!-- {{ $cloudinaryData.html | safeHTML }} -->
+
+  <img
+    class="la-z_vue-img"
+    src="{{ $cloudinaryData.base64 | safeURL }}"
+    data-src="{{ $cloudinaryData.src }}"
+    data-srcset="{{ $cloudinaryData.srcSet }}"
+    width="{{ $cloudinaryData.displayWidth }}"
+    height="{{ $cloudinaryData.displayHeight }}"
+    alt="{{ $cloudinaryData.alt_description | default `Image for post` }}"
+    />
   {{ with $caption := (or .Inner (.Get "caption"))}}
   <figcaption>{{ $caption }}</figcaption>
   {{ end }}

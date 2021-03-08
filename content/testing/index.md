@@ -25,6 +25,18 @@ In an imposing windowless building atop a staggering craggy outcrop amidst an en
 
 **Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.** Vestibulum tortor quam,  feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero  sit amet quam egestas semper. Aenean ultricies mi vitae est.
 
+---
+
+# Image blocks
+
+{{< img src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/20073197/intel_thunderbolt_4_cable_support_768x768.jpg" width=768 height=426 />}}
+
+{{< img src="spikes.jpeg" />}}
+
+{{< img unsplash="XXs0zyG9Crk" width=540 />}}
+
+{{< img cloudinary="tiny-mandolin-production/aaron-burson-YihQdPSK9jI-unsplash" class="dd-block-wide" />}}
+
 {{< cloudinary-img src="tiny-mandolin-production/aaron-burson-YihQdPSK9jI-unsplash" class="dd-block-wide" >}}
 New York, New York, a helluva town
 {{</ cloudinary-img >}}

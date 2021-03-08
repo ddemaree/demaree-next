@@ -1,0 +1,19 @@
+{{- $imgData := (partial "data/img-data.html" .) -}}
+{{- $wrapperClass := .Get "class" -}}
+{{- with .Inner }}{{- .Scratch.Set "Inner" . -}}{{ end -}}
+
+{{- if $imgData.data -}}
+{{- $d := $imgData.data -}}
+<figure class="dd-block-media dd-block-img dd-block-{{ $imgData.imgSource }}{{ with $wrapperClass }} {{ . }}{{ end }}">
+  <img
+    class="la-z_vue-img"
+    src="{{ $d.base64 | safeURL }}"
+    data-src="{{ $d.src }}"
+    data-srcset="{{ $d.srcSet }}"
+    width="{{ $d.displayWidth }}"
+    height="{{ $d.displayHeight }}"
+    alt="{{ $d.alt_description | default `Image for post` }}"
+    />
+  {{ partial "figcaption.html" . }}
+</figure>
+{{ end }}

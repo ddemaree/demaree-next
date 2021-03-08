@@ -1,0 +1,26 @@
+.la-z {
+  position: relative;
+}
+
+.la-z_pw {
+  overflow: hidden;
+}
+
+.la-z_pw > img {
+  filter: blur(20px);
+  transform: scale(1.1);
+}
+
+.la-z_full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 400ms ease 0ms;
+}
+
+.la-z_full.la-z_loaded {
+  opacity: 1;
+  visibility: visible;
+}

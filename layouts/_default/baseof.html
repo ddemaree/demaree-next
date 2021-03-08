@@ -33,6 +33,26 @@
     
     </div>
 
+    <template id="la-z-vue-tpl">
+      <div class="la-z-vue relative mx-auto" :style="{maxWidth: `min(${width}px, 100%)`}">
+        <div class="la-z_pw">
+          <img 
+            :src="previewSrc"
+            :height="height"
+            :width="width"
+            :class="['la-z_img']" />
+        </div>
+        <transition name="reveal">
+          <img
+            v-if="visible"
+            v-on:load="loaded = true" 
+            :class="['absolute top-0 left-0 opacity-0 transition-opacity duration-300', {'opacity-100': loaded}]"
+            :height="height"
+            :width="width"
+            :src="src"  />
+        </transition>
+      </div>
+    </template>
     {{ $defines := dict "process.env.NODE_ENV" `"development"` }}
     {{ $js := resources.Get "js/main.js" | js.Build (dict "defines" $defines) }}
     <script async src="{{ $js.RelPermalink }}"></script>

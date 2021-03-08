@@ -1,0 +1,51 @@
+{{- $scratch := newScratch -}}
+{{- $width := (.Get "width" | default 900) -}}
+{{- $height := .Get "height" -}}
+{{- $scratch.Set "displayWidth" $width -}}
+
+{{- if (.Get "cloudinary") -}}
+  {{- $scratch.Set "imgSource" "cloudinary" -}}
+  {{- $scratch.Set "data" (getJSON (printf "https://sun-regular-manuscript.glitch.me/images/cloudinary/%s?width=%d" (.Get "cloudinary") $width )) -}}
+
+{{- else if (.Get "unsplash") -}}
+  {{- $scratch.Set "imgSource" "unsplash" -}}
+  {{- $scratch.Set "data" (getJSON (printf "https://sun-regular-manuscript.glitch.me/images/unsplash/%s?width=%d" (.Get "unsplash") $width )) -}}
+
+{{- else if (.Get "src") -}}
+
+  {{ $src := .Get "src" }}
+  {{ if $origImg := .Page.Resources.GetMatch $src }}
+    <!-- Hugo page resource -->
+    {{ $img := $origImg }}
+
+    {{ if (gt $img.Width $width) }}
+      {{- $img = $origImg.Resize (printf "%dx" $width) -}}
+    {{ end }}
+
+    {{- $previewImg := $img.Resize "30x q50" -}}
+    {{- $scratch.Set "imgSource" "local" -}}
+    {{- $scratch.Set "data" (dict
+      "base64" $previewImg.Permalink
+      "src" $img.Permalink
+      "displayWidth" $img.Width
+      "displayHeight" $img.Height
+    ) -}}
+
+  {{ else if or (hasPrefix $src "http://") (hasPrefix $src "https://") (hasPrefix $src "//")}}
+    <!-- Remote URL -->
+    {{- $scratch.Set "imgSource" "remote" -}}
+    {{- $fmt := "https://res.cloudinary.com/demaree/image/fetch/w_%d/%s" -}}
+    {{- $scratch.Set "data" (dict
+      "base64" (printf $fmt 30 $src)
+      "src" (printf $fmt $width $src) 
+      "displayWidth" $width
+      "displayHeight" $height
+    ) -}}
+
+
+{{ else }}
+<!-- Not remote but not a page resource? -->
+{{ end }}
+
+{{- end -}}
+{{ return $scratch.Values }}
