@@ -34,14 +34,7 @@
   {{ else if or (hasPrefix $src "http://") (hasPrefix $src "https://") (hasPrefix $src "//")}}
     <!-- Remote URL -->
     {{- $scratch.Set "imgSource" "remote" -}}
-    {{- $fmt := "https://res.cloudinary.com/demaree/image/fetch/w_%d/%s" -}}
-    {{- $scratch.Set "data" (dict
-      "base64" (printf $fmt 30 $src)
-      "src" (printf $fmt $width $src) 
-      "displayWidth" $width
-      "displayHeight" $height
-    ) -}}
-
+    {{- $scratch.Set "data" (getJSON (printf "https://sun-regular-manuscript.glitch.me/images/fetch?url=%s&width=%d" $src $width )) -}}
 
 {{ else }}
 <!-- Not remote but not a page resource? -->
