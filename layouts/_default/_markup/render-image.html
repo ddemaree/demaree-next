@@ -1,0 +1,9 @@
+{{- $img := .Page.Resources.GetMatch .Destination -}}
+{{- if $img -}}
+{{- if (gt $img.Width 1200) -}}
+{{- $img = $img.Resize "1200x" -}}
+{{- end -}}
+<img src="{{ $img.Permalink }}" alt="{{ .Text }}" width="{{ $img.Width }}" height="{{ $img.Height }}"{{ with (or .Title .Text)}} title="{{ . }}"{{ end }} />
+{{- else -}}
+<img src="{{ .Destination }}"{{ with .Text }} alt="{{ . }}"{{ end}}{{ with (or .Title .Text)}} title="{{ . }}"{{ end }} />
+{{- end -}}

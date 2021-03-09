@@ -7,7 +7,7 @@
 <figure class="dd-block-media dd-block-img dd-block-{{ $imgData.imgSource }}{{ with $wrapperClass }} {{ . }}{{ end }}">
   <img
     class="la-z_vue-img"
-    src="{{ $d.base64 | safeURL }}"
+    src="{{ $d.src | safeURL }}"
     data-src="{{ $d.src }}"
     data-srcset="{{ $d.srcSet }}"
     width="{{ $d.displayWidth }}"

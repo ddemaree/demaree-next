@@ -1,9 +1,0 @@
-RSS FEED IMAGE
-
-{{- $img := .Page.Resources.GetMatch .Destination -}}
-{{- if $img -}}
-{{- $imgLite := $img.Resize "30x" -}}
-<img src="{{ $imgLite.Permalink }}" data-src="{{ $img.Permalink }}" alt="{{ .Text }}" width="{{ $img.Width }}" height="{{ $img.Height }}"{{ with (or .Title .Text)}} title="{{ . }}"{{ end }} />
-{{- else -}}
-<img src="{{ .Destination }}"{{ with .Text }} alt="{{ . }}"{{ end}}{{ with (or .Title .Text)}} title="{{ . }}"{{ end }} />
-{{- end -}}
