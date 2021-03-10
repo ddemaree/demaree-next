@@ -1,7 +1,13 @@
-{{- $imgData := (partial "data/img-data.html" .) -}}
+{{- $imgData := (partial "data/img-data.html" (dict
+  "Width" (.Get "width")
+  "Height" (.Get "height")
+  "CloudinaryID" (.Get "cloudinary")
+  "UnsplashID" (.Get "unsplash")
+  "Src" (.Get "src")
+  "Page" .Page
+)) -}}
 {{- $wrapperClass := .Get "class" -}}
 {{- with .Inner }}{{- $.Scratch.Set "Inner" . -}}{{ end -}}
-
 {{- if $imgData.data -}}
 {{- $d := $imgData.data -}}
 <figure>

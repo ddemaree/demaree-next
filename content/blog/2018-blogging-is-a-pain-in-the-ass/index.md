@@ -6,9 +6,9 @@ date: 2018-09-07
 tags: ["Writing", "Web Development"]
 ---
 
-{{< page-img src="cover-strangling-goose.jpg" block-width="full" >}}
+{{< img src="cover-strangling-goose.jpg" class="dd-block-full" >}}
 From left: me, my blog (Photo: <a href="https://www.flickr.com/photos/fotoblitzcolor/5426388127">Eric Felton via Flickr</a>)
-{{< /page-img >}}
+{{< /img >}}
 
 A project of mine to start a “simple” WordPress blog is now on what feels like its ninth or tenth week of total [bikeshedding](https://en.wiktionary.org/wiki/bikeshedding).
 

@@ -1,20 +1,23 @@
 {{- $scratch := newScratch -}}
-{{- $width := (.Get "width" | default 900) -}}
-{{- $height := .Get "height" -}}
+{{- $width := (.Width | default 900) -}}
+{{- $height := .Height -}}
 {{- $scratch.Set "displayWidth" $width -}}
 
-{{- if (.Get "cloudinary") -}}
+{{ $CloudinaryID := .CloudinaryID }}
+{{ $UnsplashID := .UnsplashID }}
+{{ $Src := .Src }}
+
+{{- if $CloudinaryID -}}
   {{- $scratch.Set "imgSource" "cloudinary" -}}
-  {{- $scratch.Set "data" (getJSON (printf "https://sun-regular-manuscript.glitch.me/images/cloudinary/%s?width=%d" (.Get "cloudinary") $width )) -}}
+  {{- $scratch.Set "data" (getJSON (printf "https://sun-regular-manuscript.glitch.me/images/cloudinary/%s?width=%d" $CloudinaryID $width )) -}}
 
-{{- else if (.Get "unsplash") -}}
+{{- else if $UnsplashID -}}
   {{- $scratch.Set "imgSource" "unsplash" -}}
-  {{- $scratch.Set "data" (getJSON (printf "https://sun-regular-manuscript.glitch.me/images/unsplash/%s?width=%d" (.Get "unsplash") $width )) -}}
+  {{- $scratch.Set "data" (getJSON (printf "https://sun-regular-manuscript.glitch.me/images/unsplash/%s?width=%d" $UnsplashID $width )) -}}
 
-{{- else if (.Get "src") -}}
+{{- else if $Src -}}
 
-  {{ $src := .Get "src" }}
-  {{ if $origImg := .Page.Resources.GetMatch $src }}
+  {{ if $origImg := .Page.Resources.GetMatch $Src }}
     <!-- Hugo page resource -->
     {{ $img := $origImg }}
 
@@ -29,12 +32,13 @@
       "src" $img.Permalink
       "displayWidth" $img.Width
       "displayHeight" $img.Height
+      "aspectRatio" (div (float $img.Width) (float $img.Height))
     ) -}}
 
-  {{ else if or (hasPrefix $src "http://") (hasPrefix $src "https://") (hasPrefix $src "//")}}
+  {{ else if or (hasPrefix $Src "http://") (hasPrefix $Src "https://") (hasPrefix $Src "//")}}
     <!-- Remote URL -->
     {{- $scratch.Set "imgSource" "remote" -}}
-    {{- $scratch.Set "data" (getJSON (printf "https://sun-regular-manuscript.glitch.me/images/fetch?url=%s&width=%d" $src $width )) -}}
+    {{- $scratch.Set "data" (getJSON (printf "https://sun-regular-manuscript.glitch.me/images/fetch?url=%s&width=%d" $Src $width )) -}}
 
 {{ else }}
 <!-- Not remote but not a page resource? -->

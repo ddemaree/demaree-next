@@ -1,6 +1,6 @@
 ---
-title: Simpler Web Hacking with Parcel
-slug: simpler-web-hacking-with-parcel
+title: Parcel Post
+slug: parcel-post
 date: 2021-01-18T13:29:54-05:00
 excerpt: Recapturing the magic of early web development with modern tools
 description: Recapturing the magic of early web development with modern tools
@@ -12,11 +12,10 @@ tags:
 featured_image: "https://images.unsplash.com/photo-1544967082-d9d25d867d66"
 aliases:
   - /p/simpler-web-hacking
+  - /p/simpler-web-hacking-with-parcel
 ---
 
-<figure class="wide-width">
-{{< cloudinary-img-OLD src="https://images.unsplash.com/photo-1544967082-d9d25d867d66%3Fw=3000" dimensions="6016x4016" />}}
-</figure>
+{{< img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66%3Fw=3000" class="dd-block-wide"  />}}
 
 I dunno about you, but I’ve been missing the old days when we could try out some new web technique or think through some code by just opening up an editor, making a fresh `index.html`, and getting to work.
 

@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import Vue from "vue/dist/vue.esm";
 window.Vue = Vue;
 
@@ -165,6 +166,33 @@ img.forEach((img) => {
 
   observer.observe(img);
 });
+
+document.querySelectorAll('.dd-block-gallery-NEW').forEach(galleryBlock => {
+  const images = galleryBlock.querySelectorAll('img, .gallery-img')
+  const imageData = []
+  images.forEach(img => {
+    imageData.push({
+      elem: img,
+      data: img.dataset,
+      src: img.src,
+      srcset: img.srcset
+    })
+  })
+  console.log({images, imageData})
+
+  new Vue({
+    el: galleryBlock,
+    template: '#gallery-tpl',
+    data: {
+      images: imageData
+    },
+    computed: {
+      imageRows: function() {
+        return _.chunk(this.images, 2)
+      }
+    }
+  })
+})
 
 // const deorphans = document.querySelectorAll(".deorphan");
 // deorphans.forEach((elem) => {

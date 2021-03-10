@@ -17,7 +17,7 @@ module.exports = {
 			gridColumn: ['responsive', 'even', 'odd'],
 			gridColumnStart: ['responsive', 'even', 'odd'],
 			gridColumnEnd: ['responsive', 'even', 'odd'],
-			margin: ['responsive', 'last']
+			margin: ['responsive', 'last', 'first']
 		}
 	},
 	plugins: [

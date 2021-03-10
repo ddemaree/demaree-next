@@ -1,0 +1,164 @@
+@layer components {
+
+  .dd-blog-title {
+    @apply text-center font-roslindale-2 text-5xl;
+    text-align: center;
+    font-weight: 520;
+    font-variation-settings: "wdth" 84;
+    font-feature-settings: "ss03" on;
+
+    @screen sm {
+      font-variation-settings: "wdth" 90;
+    }
+  }
+
+  .dd-prose {
+    > * {
+      grid-column: content;
+    }
+
+    > :first-child {
+      @apply mt-0;
+    }
+
+    > :last-child {
+      @apply mb-0;
+    }
+
+    > * {
+      @apply mb-6;
+    }
+
+    a {
+      @apply text-inkBold;
+      text-decoration: underline;
+    }
+
+    strong {
+      @apply text-inkBold font-semibold;
+    }
+
+    h1,
+    h2 {
+      @apply text-2xl font-medium font-sans mt-12 mb-4;
+
+      figure + & {
+        @apply mt-0;
+      }
+
+      pre + & {
+        @apply mt-6;
+      }
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply font-bold font-serif mt-2 mb-4;
+    }
+
+    > figure,
+    > hr {
+      
+      &.dd-block-wide,
+      &.wide-width {
+        @apply mt-6 mb-12;
+      }
+
+      + figure,
+      + hr {
+        @apply mt-0;
+      }
+    }
+
+    h2 + figure, h3 + figure {
+      @apply mt-3;
+    }
+
+    code {
+      @apply text-accent;
+      font-size: 90%;
+    }
+
+    a code {
+      text-decoration: underline;
+    }
+
+    figcaption {
+      @apply pt-4 px-8 text-inkMedium font-sans text-base max-w-2xl mx-auto;
+      text-align: center;
+      > * {
+        color: inherit;
+      }
+    }
+
+    ul:not('class^=dd-block-'), ol:not('class^=dd-block-') {
+      list-style: none;
+      counter-reset: my-awesome-counter;
+
+      ul,
+      ol {
+        margin-bottom: 0;
+        margin-top: 0.6em;
+      }
+
+      & > li {
+        @apply mb-3 ml-8;
+
+        &:before {
+          display: inline-block;
+          width: 3em;
+          margin-left: -3em;
+          box-sizing: border-box;
+          text-align: right;
+          position: absolute;
+        }
+      }
+    }
+
+    ul:not('class^=dd-block-') > li {
+      &:before {
+        padding-top: 4px;
+        padding-right: 15px;
+        content: "\2022";
+        margin-top: -0.15em;
+      }
+    }
+
+    ol > li {
+      counter-increment: my-awesome-counter;
+
+      &:before {
+        content: counter(my-awesome-counter) ".";
+        font-weight: bold;
+        padding-right: 0.5em;
+      }
+    }
+
+    > blockquote {
+      @apply px-6 text-inkMedium;
+      box-shadow: inset 4px 0 0 0 var(--color-ink-light, currentColor);
+
+      > * {
+        @apply min-w-full mb-8;
+
+        &:last-child {
+          @apply mb-0;
+        }
+      }
+    }
+
+    > hr {
+      &:not(.reset) {
+        @apply dots-divider;
+      }
+
+      + h1,
+      + h2 {
+        @apply mt-0;
+      }
+    }
+  }
+
+}

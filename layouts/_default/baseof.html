@@ -53,6 +53,15 @@
         </transition>
       </div>
     </template>
+    <template id="gallery-tpl">
+      <figure class="dd-block-gallery-NEW flex flex-col">
+        <ul v-for="row in imageRows" class="flex mt-4 first:mt-4">
+          <li v-for="image in row" class="bg-red-500 ml-4 first:ml-0" :style="{flex: image.data.aspectRatio}">
+            <img :src="image.src" />
+          </li>
+        </ul>
+      </figure>
+    </template>
     {{ $defines := dict "process.env.NODE_ENV" `"development"` }}
     {{ $js := resources.Get "js/main.js" | js.Build (dict "defines" $defines) }}
     <script async src="{{ $js.RelPermalink }}"></script>
