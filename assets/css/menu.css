@@ -1,0 +1,20 @@
+
+.scrim-enter-active,
+.scrim-leave-active {
+  transition: opacity 0.2s ease-in;
+}
+
+.scrim-enter,
+.scrim-leave-to {
+  opacity: 0;
+}
+
+.menu-slide-enter-active,
+.menu-slide-leave-active {
+  transition: all 0.15s ease-in;
+}
+
+.menu-slide-enter,
+.menu-slide-leave-to {
+  transform: translateX(100%);
+}

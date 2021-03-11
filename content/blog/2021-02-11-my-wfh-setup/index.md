@@ -47,7 +47,7 @@ custom_css: |
   }
 ---
 
-![My home-office desk, February 2021](cover-photo-wfh-2021.jpeg#wide "{'json': 'hello'}")
+![My home-office desk, February 2021](cover-photo-wfh-2021.jpeg)
 
 _[record scratch]_ Yep, this is <del>me</del> my desk. Perhaps you’re wondering how I got here.
 
@@ -77,7 +77,7 @@ I am a stickler for only having to plug one wire into my laptop. Two wires are a
 
 But USB-C, it should be said, is a hot, fiery mess. Even power delivery — USB-C’s most straightforward job — is problematic: different devices need different wattages, and when given the wrong wattage will charge slowly or not charge at all. And of course, none of this is labeled, so you just have to know that (for example) [Apple’s newest iPhone cables will charge at full speed at 20W, but not 19W](https://daringfireball.net/linked/2020/10/27/magsafe-20w-charger).
 
-![This cursed image should not have to exist](http://res.cloudinary.com/demaree/image/fetch/w_600/https://cdn.vox-cdn.com/uploads/chorus_asset/file/20073197/intel_thunderbolt_4_cable_support_768x768.jpg)
+![This cursed image should not have to exist](https://res.cloudinary.com/demaree/image/fetch/w_600/https://cdn.vox-cdn.com/uploads/chorus_asset/file/20073197/intel_thunderbolt_4_cable_support_768x768.jpg)
 
 Thunderbolt devices conform to higher, more consistent specs than generic USB-C ones, so my Thunderbolt dock’s performance has generally been more consistent and less flaky. Of course, the trade-off is that I had to buy an extra $200–300 device rather than use the free USB-C hub built into my display. Also, many Thunderbolt cables are annoyingly short, so I upgraded to [Apple’s Thunderbolt Pro Cable](https://www.theverge.com/2020/7/27/21339861/apple-thunderbolt-3-pro-cable-specs-price-available) — the longest high-performance cable on the market — which was another $130.
 
@@ -88,7 +88,7 @@ BTW, also pictured above is [Google’s Nest Hub Max](https://store.google.com/u
 
 ## Video Conferencing
 
-![elgato Key Light, Logitech Streamcam, Sony RX100 VA](photo-wfh-cameras.jpeg)
+![elgato Key Light, Logitech Streamcam, Sony RX100 VA](photo-wfh-cameras.jpg)
 
 Maybe I’m weird, but I’ve largely ignored the whole Twitch thing. Perhaps it’s part of my particular introversion, but I’m just not as into watching people’s random talking-head videos as other folks seem to be. I hadn’t really been exposed to all the ridiculous gear folks use to capture video of themselves sitting at their desks, ideally surrounded by colored accent lights. But then I read [Michael Lopp’s essay about his video conferencing setup](https://randsinrepose.com/archives/good-meetings-are-jazz/), where he writes:
 

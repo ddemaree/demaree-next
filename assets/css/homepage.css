@@ -1,0 +1,11 @@
+@layer components {
+
+  .homepage-header {
+    align-items: center;
+
+    strong {
+      @apply text-inkBold font-semibold;
+    }
+  }
+
+}

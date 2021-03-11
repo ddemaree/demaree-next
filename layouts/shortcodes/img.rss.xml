@@ -8,15 +8,11 @@
 )) -}}
 {{- $wrapperClass := .Get "class" -}}
 {{- with .Inner }}{{- $.Scratch.Set "Inner" . -}}{{ end -}}
-
 {{- if $imgData.data -}}
 {{- $d := $imgData.data -}}
-<figure class="dd-block-media dd-block-img dd-block-{{ $imgData.imgSource }}{{ with $wrapperClass }} {{ . }}{{ end }}">
+<figure>
   <img
-    class="la-z_vue-img"
-    src="{{ $d.src | safeURL }}"
-    data-src="{{ $d.src }}"
-    data-srcset="{{ $d.srcSet }}"
+    src="{{ $d.src }}"
     width="{{ $d.displayWidth }}"
     height="{{ $d.displayHeight }}"
     alt="{{ $d.alt_description | default `Image for post` }}"

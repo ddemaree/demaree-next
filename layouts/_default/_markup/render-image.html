@@ -1,0 +1,29 @@
+{{- $imgData := (partial "data/img-data.html" (dict
+  "Src" .Destination
+  "Page" .Page
+)) -}}
+
+{{- if $imgData.data -}}
+<!-- render-image w data -->
+{{ $d := $imgData.data }}
+<img data-fetched
+  src="{{ $d.src }}"
+  {{- with $d.srcset }}srcset="{{ . }}"{{ end -}}
+  {{- with .Text }}alt="{{ . }}"{{ end -}}
+  {{- with .Title }}title="{{ . }}"{{ end -}}
+  {{- with $d.displayWidth }}width="{{ . }}"{{ end -}}
+  {{- with $d.displayHeight }}height="{{ . }}"{{ end -}}
+  {{- with $d.aspectRatio }}data-aspect-ratio="{{ . }}"{{ end }}
+  />
+{{- else -}}
+<!-- render-image wo data -->
+{{- $img := .Page.Resources.GetMatch .Destination -}}
+{{- if $img -}}
+{{- if (gt $img.Width 1200) -}}
+{{- $img = $img.Resize "1200x" -}}
+{{- end -}}
+<img src="{{ $img.Permalink }}" alt="{{ .Text }}" width="{{ $img.Width }}" height="{{ $img.Height }}"{{ with (or .Title .Text)}} title="{{ . }}"{{ end }} />
+{{- else -}}
+<img src="{{ .Destination }}"{{ with .Text }} alt="{{ . }}"{{ end}}{{ with (or .Title .Text)}} title="{{ . }}"{{ end }} />
+{{- end -}}
+{{ end }}
