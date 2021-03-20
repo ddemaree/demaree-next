@@ -45,7 +45,7 @@
 
 {{- $previewSrc := printf $format $method "200" $path -}}
 {{- $defaultSrc := printf $format $method "720" $path -}}
-{{- $attrs = merge $attrs (dict "src" $previewSrc "data-src" $defaultSrc) -}}
+{{- $attrs = merge $attrs (dict "src" $defaultSrc "data-psrc" $previewSrc ) -}}
 
 {{- if .Get "dimensions" -}}
 {{- $dimensions = partial "utils/dimensions.html" $dimensions -}}

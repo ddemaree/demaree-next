@@ -117,8 +117,6 @@ deorphans.forEach((elem) => {
   }
   console.log(titleContent);
 
-  // let fakeElem = document.cloneNode
-
   let fakeElem = document.createElement("div");
   fakeElem.setAttribute("class", elem.attributes["class"].textContent);
   fakeElem.style.position = "fixed";
