@@ -15,7 +15,7 @@ aliases:
 ---
 
 <figure class="wide-width">
-{{< cloudinary-img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66%3Fw=3000" dimensions="6016x4016" />}}
+<img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=1800&h=1200" width="900" height="600" />
 </figure>
 
 I dunno about you, but I’ve been missing the old days when we could try out some new web technique or think through some code by just opening up an editor, making a fresh `index.html`, and getting to work.

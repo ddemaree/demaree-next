@@ -3,9 +3,6 @@
 {{- $pathPrefix := (.Page.Params.cloudinary_base | default "") -}}
 
 {{- $transforms := (slice "w_%s" "c_lfill")  -}}
-{{- with .Get "transforms" -}}
-{{- $transforms = $transforms | append (slice .) -}}
-{{- end -}}
 
 {{- $format := printf "//res.cloudinary.com/demaree%%s/%s/%%s" (delimit $transforms ",") -}}
 {{- $srcsetFormat := add $format " %sw" -}}
