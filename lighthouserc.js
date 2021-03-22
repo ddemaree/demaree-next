@@ -7,11 +7,14 @@ module.exports = {
     //     "http://localhost/p/2020-in-review/index.html"
     //   ],
     // },
+    collect: {
+      url: ["http://localhost/index.html"]
+    },
     upload: {
       target: 'temporary-public-storage',
     },
     assert: {
-      "preset": "lighthouse:recommended",
+      "preset": "lighthouse:no-pwa",
     }
   },
 };
