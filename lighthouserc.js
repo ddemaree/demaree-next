@@ -7,9 +7,6 @@ module.exports = {
     //     "http://localhost/p/2020-in-review/index.html"
     //   ],
     // },
-    collect: {
-      url: ["http://localhost:1313/index.html"]
-    },
     upload: {
       target: 'temporary-public-storage',
     },
