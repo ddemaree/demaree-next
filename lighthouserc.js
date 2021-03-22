@@ -8,7 +8,7 @@ module.exports = {
     //   ],
     // },
     collect: {
-      url: ["http://localhost/index.html"]
+      url: ["http://localhost:1313/index.html"]
     },
     upload: {
       target: 'temporary-public-storage',
