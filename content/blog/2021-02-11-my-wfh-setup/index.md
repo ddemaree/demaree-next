@@ -4,9 +4,9 @@ subtitle: More than you ever wanted to know about my WFH setup.
 description: More than you ever wanted to know about my WFH setup.
 date: 2021-02-12
 slug: 2021-wfh-desk-setup
-font_sets:
+fonter_sets:
   - futura-now-var
-custom_css: |
+customer_css: |
   @import url("https://use.typekit.net/uzl7zpg.css");
 
   :root {

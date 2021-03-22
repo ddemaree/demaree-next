@@ -95,10 +95,6 @@
   }
 
   .dd-prose {
-    /* > :not(.fullwidth):not(.wide-width):not(.dd-block-wide):not(.dd-block-full) {
-      @apply content-width;
-    } */
-
     > * {
       grid-column: content;
     }
@@ -155,9 +151,11 @@
 
     > figure,
     > hr {
+      @apply mt-2 mb-8;
       
       &.dd-block-wide,
-      &.wide-width {
+      &.wide-width,
+      &.gallery-grid {
         @apply mt-6 mb-12;
       }
 
@@ -225,13 +223,6 @@
       :last-child {
         margin-bottom: 0;
       }
-
-      /* code {
-        @apply block px-6 py-3;
-        overflow-x: scroll;
-        line-height: 1.6;
-        font-size: 1rem;
-      } */
     }
 
     figcaption {
@@ -327,7 +318,8 @@
     }
   }
 
-  .dd-block-image {
+  .dd-block-image,
+  .img-block {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -454,6 +446,33 @@
 
   .dd-heading-1 {
     @apply font-roslindale-2;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: theme('spacing.6');
+
+    &.cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    figcaption {
+      grid-column: 1 / -1;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .span-2 {
+      grid-column-end: span 2;
+    }
   }
 }
 

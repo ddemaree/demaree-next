@@ -1,11 +1,9 @@
 {{ $img := .Page.Resources.GetMatch .Destination }}
 
 {{ if $img }}
-{{ $imgLite := $img.Resize "100x" | images.Filter (images.GaussianBlur 6) }}
-
 <figure class="dd-block-image">
-  <img src="{{ $imgLite.Permalink }}" data-src="{{ $img.Permalink }}" alt="{{ .Text }}" width="{{ $img.Width }}" height="{{ $img.Height }}" />
-  {{ with (or .Title .Text)}}
+  <img src="{{ $img.Permalink }}" alt="{{ .Text }}" width="{{ $img.Width }}" height="{{ $img.Height }}" />
+  {{ with .Title }}
   <figcaption>{{ . }}</figcaption>
   {{ end }}
 </figure>

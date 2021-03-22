@@ -14,7 +14,7 @@ aliases:
   - /p/simpler-web-hacking
 ---
 
-<figure class="wide-width">
+<figure class="wide-width dd-block-image">
 <img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=1800&h=1200" width="900" height="600" />
 </figure>
 
