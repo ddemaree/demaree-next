@@ -34,11 +34,11 @@ sections:
   label: Pages
   create: all
   match: "*"
-upload_dir: static/uploads
-public_path: "/uploads"
-front_matter_path: ''
-use_front_matter_path: false
-file_template: ":filename:"
+upload_dir: demaree-dot-me/images
+public_path: https://res.cloudinary.com/demaree/image/upload/demaree-dot-me/images
+front_matter_path: https://res.cloudinary.com/demaree/image/upload/w_400
+use_front_matter_path: true
+file_template: ":year:/:month:/:filename:"
 build:
   preview_env:
   - HUGO_ENV=staging
