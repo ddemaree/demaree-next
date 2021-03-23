@@ -16,6 +16,9 @@ jobs:
           hugo-version: '0.82.0'
           extended: true
       - name: npm install, build
+        env:
+          NODE_ENV: production
+          HUGO_ENV: production
         run: |
           yarn install
           hugo --minify
