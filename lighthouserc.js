@@ -4,7 +4,7 @@ module.exports = {
       maxAutodiscoverUrls: 2,
       settings: {
         throttling: { 
-          cpuSlowdownMultiplier: 2,
+          cpuSlowdownMultiplier: 1,
         }
       }
     },
