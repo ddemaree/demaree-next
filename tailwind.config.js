@@ -97,16 +97,15 @@ module.exports = {
 			'md': '880px',
 			'lg': '1020px'
 		},
-		extend: {
-			fontFamily: {
-				sans: ['soehne-web', ...defaultTheme.fontFamily.sans],
-				'sans-display': ['soehne-breit-web', 'soehne-web', ...defaultTheme.fontFamily.sans],
-				serif: ['ivar-text', ...defaultTheme.fontFamily.serif],
-				'serif-display': ['FreightDisplayPro', 'ivar-text', ...defaultTheme.fontFamily.serif],
-				'roslindale': ['Roslindale Variable', 'ivar-text', ...defaultTheme.fontFamily.serif],
-				'roslindale-2': ['"Roslindale Variable 2"', 'ivar-text', ...defaultTheme.fontFamily.serif],
-				mono: ['JetBrains Mono', 'Source Code Pro', ...defaultTheme.fontFamily.mono]
-			},
-		},
+		// extend: {
+		// 	fontFamily: {
+		// 		sans: ['soehne-web', ...defaultTheme.fontFamily.sans],
+		// 		'sans-display': ['soehne-breit-web', 'soehne-web', ...defaultTheme.fontFamily.sans],
+		// 		serif: ['ivar-text', ...defaultTheme.fontFamily.serif],
+		// 		'roslindale': ['Roslindale Variable', 'ivar-text', ...defaultTheme.fontFamily.serif],
+		// 		'roslindale-2': ['"Roslindale Variable 2"', 'ivar-text', ...defaultTheme.fontFamily.serif],
+		// 		mono: ['JetBrains Mono', 'Source Code Pro', ...defaultTheme.fontFamily.mono]
+		// 	},
+		// },
 	},
 };
