@@ -14,7 +14,7 @@
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
 
 {{ if $featured }}
-{{ $thumb := $featured.Fill "600x600" }}
+{{ $thumb := $featured.Fill "320x192" }}
 {{ $featuredURL = $thumb.RelPermalink }}
 {{ else if (index .Params "featured_image") }}
 {{ $featuredURL = (index .Params "featured_image") }}

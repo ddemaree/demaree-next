@@ -4,9 +4,9 @@
 
 {{- $transforms := (slice "w_%s" "c_lfill")  -}}
 
-{{- $format := printf "//res.cloudinary.com/demaree%%s/%s/%%s" (delimit $transforms ",") -}}
+{{- $format := printf "https://res.cloudinary.com/demaree%%s/%s/%%s" (delimit $transforms ",") -}}
 {{- $srcsetFormat := add $format " %sw" -}}
-{{- $alt := or (.Get "alt") (.Get "caption") "Image for post" -}}
+{{- $alt := or (.Get "alt") (.Get "caption") "Image for page" -}}
 {{- $class := .Get "class" -}}
 {{- $dimensions := .Get "dimensions" -}}
 {{- $style := (.Get "style") -}}
