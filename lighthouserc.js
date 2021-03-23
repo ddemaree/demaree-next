@@ -9,8 +9,13 @@ module.exports = {
         }
       }
     },
+    assert: {
+      preset: 'lighthouse:no-pwa'
+    },
     upload: {
-      target: 'temporary-public-storage',
+      target: 'lhci',
+      token: 'f458bf9b-d83a-4efb-befa-17e1dbfa1f74',
+      serverBaseUrl: 'https://good-glamorous-saturday.glitch.me/'
     },
   },
 };
