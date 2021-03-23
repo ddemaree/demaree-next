@@ -9,8 +9,6 @@
 
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}"/>
 
-    <link rel="preconnect" href="https://cdn.demaree.net" />
-    <link rel="preconnect" href="https://kit.fontawesome.com" />
     <link rel="preconnect" href="https://res.cloudinary.com" />
 
     {{ partial "head/opengraph.html" . }}
