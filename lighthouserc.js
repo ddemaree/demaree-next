@@ -1,9 +1,11 @@
 module.exports = {
   ci: {
     collect: {
-      maxAutodiscoverUrls: 8,
+      maxAutodiscoverUrls: 2,
       settings: {
-        "throttling.cpuSlowdownMultiplier": 2,
+        throttling: { 
+          cpuSlowdownMultiplier: 2,
+        }
       }
     },
     upload: {
