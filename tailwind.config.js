@@ -99,12 +99,12 @@ module.exports = {
 		},
 		extend: {
 			fontFamily: {
-				// sans: ['soehne-web', ...defaultTheme.fontFamily.sans],
-				'sans-display': [...defaultTheme.fontFamily.sans],
-				// serif: ['ivar-text', ...defaultTheme.fontFamily.serif],
-				'roslindale': [...defaultTheme.fontFamily.serif],
-				'roslindale-2': [...defaultTheme.fontFamily.serif],
-				// mono: ['JetBrains Mono', 'Source Code Pro', ...defaultTheme.fontFamily.mono]
+				sans: ['soehne-web', ...defaultTheme.fontFamily.sans],
+				'sans-display': ['soehne-breit-web', 'soehne-web', ...defaultTheme.fontFamily.sans],
+				serif: ['ivar-text', ...defaultTheme.fontFamily.serif],
+				'roslindale': ['Roslindale Variable', 'ivar-text', ...defaultTheme.fontFamily.serif],
+				'roslindale-2': ['"Roslindale Variable 2"', 'ivar-text', ...defaultTheme.fontFamily.serif],
+				mono: ['JetBrains Mono', 'Source Code Pro', ...defaultTheme.fontFamily.mono]
 			},
 		},
 	},
