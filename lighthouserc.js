@@ -3,8 +3,9 @@ module.exports = {
     collect: {
       maxAutodiscoverUrls: 2,
       settings: {
+        preset: "desktop",
         throttling: { 
-          cpuSlowdownMultiplier: 1,
+          cpuSlowdownMultiplier: 0,
         }
       }
     },
