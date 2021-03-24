@@ -1,6 +1,21 @@
 {{ define "main" }}
 <main class="md:mt-12 grid dd-grid-cols-2 gap-y-10 md:gap-y-16 grid-flow-row" style="--layout-wide-width: 1100px">
-  <header class="homepage-header leading-tight col-span-full flex flex-col sm:contents">
+  <header class="col-span-full flex flex-col items-center text-center">
+    <figure class="w-48 h-48">
+      <picture>
+        {{/*  <source>  */}}
+        <img src="https://res.cloudinary.com/demaree/image/upload/v1608507912/demaree-dot-me/images/david-avatar-2020.jpg" alt="">
+      </picture>
+    </figure>
+    <div class="max-w-xl">
+      {{ .Content }}
+    </div>
+    <div>
+      {{ partial "site/social-nav.html" . }}
+    </div>
+  </header>
+
+  {{/*  <header class="homepage-header leading-tight col-span-full flex flex-col sm:contents">
     <figure class="mt-10 sm:mt-0 overflow-hidden col-span-full bg-red-200 justify-self-center w-48 rounded-full sm:justify-self-stretch sm:rounded-none sm:w-auto sm:col-span-4">
       <picture class="contents">
         <source media="(min-width: 640px)" srcset="https://res.cloudinary.com/demaree/image/twitter_name/w_600,ar_1,c_fill/ddemaree.jpg 600w, //res.cloudinary.com/demaree/image/twitter_name/w_1200,ar_1,c_fill/ddemaree.jpg 1200w" />
@@ -15,7 +30,7 @@
         {{ partial "site/social-nav.html" . }}
       </div>
     </div>
-  </header>
+  </header>  */}}
 
   <h2 class="text-center uppercase tracking-widest font-sans-display font-bold text-accent text-lg dd-col-wide">Latest writing</h2>
 
