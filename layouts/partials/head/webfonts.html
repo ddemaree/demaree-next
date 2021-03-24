@@ -1,4 +1,4 @@
-<link rel="preconnect" href="https://cdn.demaree.net/" />
+<link rel="preconnect" href="https://cdn.demaree.net/" crossorigin />
 {{- $fontSets := (slice "soehne" "soehne-breit" "ivar-text" "roslindale") -}}
 {{ if .Page.Params.font_sets }}
 {{ $fontSets = $fontSets | append .Page.Params.font_sets }}
