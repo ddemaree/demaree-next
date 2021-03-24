@@ -4,6 +4,11 @@
 {{- define "head" }}
 <meta name="twitter:label1" value="Reading time" />
 <meta name="twitter:label2" value="{{ .ReadingTime}} min read" />
+
+{{ $style := resources.Get "css/prose.css" | resources.PostCSS | minify | fingerprint }}
+<style type="text/css">
+{{ $style.Content | safeCSS }}
+</style>
 {{ with $cssString := .Params.custom_css }}
 <style type="text/css">{{ $cssString | safeCSS }}</style>
 {{ end }}

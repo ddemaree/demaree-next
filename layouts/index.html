@@ -1,43 +1,25 @@
 {{ define "main" }}
-<main class="md:mt-12 grid dd-grid-cols-2 gap-y-10 md:gap-y-16 grid-flow-row" style="--layout-wide-width: 1100px">
+<main class="md:mt-12 grid dd-grid-cols gap-y-10 md:gap-y-12 grid-flow-row">
   <header class="col-span-full flex flex-col items-center text-center">
-    <figure class="w-48 h-48">
+    <figure class="w-48 h-48 overflow-hidden rounded-full">
       <picture>
-        {{/*  <source>  */}}
-        <img src="https://res.cloudinary.com/demaree/image/upload/v1608507912/demaree-dot-me/images/david-avatar-2020.jpg" alt="">
+        <img src="https://res.cloudinary.com/demaree/image/upload/w_384,h_384/v1608507912/demaree-dot-me/images/david-avatar-2020.jpg" width="384" height="384" alt="David Demaree" />
       </picture>
     </figure>
-    <div class="max-w-xl">
+    <div class="max-w-xl my-8">
       {{ .Content }}
     </div>
-    <div>
+    <div class="text-inkBold">
       {{ partial "site/social-nav.html" . }}
     </div>
   </header>
 
-  {{/*  <header class="homepage-header leading-tight col-span-full flex flex-col sm:contents">
-    <figure class="mt-10 sm:mt-0 overflow-hidden col-span-full bg-red-200 justify-self-center w-48 rounded-full sm:justify-self-stretch sm:rounded-none sm:w-auto sm:col-span-4">
-      <picture class="contents">
-        <source media="(min-width: 640px)" srcset="https://res.cloudinary.com/demaree/image/twitter_name/w_600,ar_1,c_fill/ddemaree.jpg 600w, //res.cloudinary.com/demaree/image/twitter_name/w_1200,ar_1,c_fill/ddemaree.jpg 1200w" />
-        <img src="https://res.cloudinary.com/demaree/image/twitter_name/w_600,c_fill/ddemaree.jpg" alt="David Demaree, who made this site" class="object-fill object-center w-full h-full" width="600" height="600" />
-      </picture>
-    </figure>
-    <div class="text-center sm:text-left sm:py-12 self-center justify-self-center max-w-md md:max-w-lg sm:col-start-5 sm:col-span-7 sm:row-start-1 p-8 col-span-full">
-      <div>  
-      {{.Content}}
-      </div>
-      <div class="mt-6 text-inkBold">
-        {{ partial "site/social-nav.html" . }}
-      </div>
-    </div>
-  </header>  */}}
+  <h2 class="text-center uppercase tracking-widest font-semibold text-inkBold text-xl dd-col-wide mt-8">Latest writing</h2>
 
-  <h2 class="text-center uppercase tracking-widest font-sans-display font-bold text-accent text-lg dd-col-wide">Latest writing</h2>
-
-  {{- range first 16 (partial "data/home-page-posts.html" .) -}}
+  {{- range first 8 (partial "data/home-page-posts.html" .) -}}
   {{- $permalink := .URL -}}
-  <article class="flex items-start col-start-2 col-span-8 md:col-start-auto md:odd:col-start-2 md:col-span-4 md:px-8">
-    <div class="flex-1 lg:col-start-2 lg:col-span-6">
+  <article class="flex items-center dd-col-wide md:dd-col-content">
+    <div class="flex-1">
       <a href="{{ .URL }}" class="block">
         <h2 class="deorphan text-inkBold font-semibold text-lg sm:text-xl leading-tight sm:leading-tight">{{ .Title }}</h2>
         {{ with .Description }}<div class="text-sm mt-2">{{ . }}</div>{{ end }}
@@ -46,7 +28,7 @@
     </div>
     {{ if .featured_image }}
     {{ $featuredImageUrl := urls.Parse .featured_image }}
-    <a href="{{ .URL }}" class="w-20 xs:w-1/3 h-24 ml-6 overflow-hidden rounded-md lg:col-span-2">
+    <a href="{{ .URL }}" class="w-24 sm:w-32 h-24 ml-8 overflow-hidden rounded-md">
       {{ if $featuredImageUrl.Scheme }}
         {{ if eq $featuredImageUrl.Host "images.unsplash.com" }}
         <img src="https://res.cloudinary.com/demaree/image/fetch/w_320,h_192,c_fill/{{ .featured_image }}%3Fw=320" width="160" height="96" alt="Featured image for post" class="object-cover object-center h-full w-full" />
