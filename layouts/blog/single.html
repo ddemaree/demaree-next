@@ -2,6 +2,13 @@
   {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end -}}
 {{- define "head" }}
+
+{{ with .FirstSection }}
+  {{ with .OutputFormats.Get "rss" }}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end }}
+{{ end }}
+
 <meta name="twitter:label1" value="Reading time" />
 <meta name="twitter:label2" value="{{ .ReadingTime}} min read" />
 
@@ -14,13 +21,15 @@
 {{ end }}
 {{ end -}}
 {{- define "main" }}
+
+
 <!-- blog/single - main -->
 <header class="dd-blog-header grid dd-grid-cols py-12 px-8">
   <h1 data-content="{{ .Title }}" class="dd-blog-title dd-col-full mb-3 deorphan text-inkBold">{{ .Title }}</h1>
 
   {{ with (or .Params.subtitle .Params.excerpt .Params.description) }}<h2 class="text-center dd-col-full text-inkMedium text-lg sm:text-xl leading-snug sm:leading-snug mb-4">{{ . }}</h2>{{ end }}
 
-  <div class="post-meta text-inkMedium text-base text-center dd-col-full text-inkMedium">{{ .Date.Format "Jan 2 2006" }}</div>
+  <div class="post-meta text-base text-center dd-col-full text-inkMedium">{{ .Date.Format "Jan 2 2006" }}</div>
 </header>
 
 <main class="grid dd-grid-cols">

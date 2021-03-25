@@ -1,0 +1,29 @@
+{{ $alt := .PlainText | safeHTML }}
+{{ $caption := "" }}
+{{ with .Title }}
+  {{ $caption = . | safeHTML }}
+{{ end }}
+{{ $img := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
+<figure class="dd-block-image">
+  {{ if $img }}
+  {{ $smImg := $img.Resize "480x" }}
+  {{ $mdImg := $img.Resize "960x" }}
+  {{ $lgImg := $img.Resize "1920x" }}
+  <img 
+    src="{{ $lgImg.RelPermalink }}"
+    srcset="{{ $smImg.RelPermalink }} 480w, {{ $mdImg.RelPermalink }} 960w, {{ $lgImg.RelPermalink }} 1920w"
+    sizes="(max-width: 600px) 480px, 100vw"
+    width="{{ $lgImg.Width }}"
+    height="{{ $lgImg.Height }}"
+    alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+    />
+  {{ else }}
+  <img 
+    src="{{ .Destination }}"
+    alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+    />
+  {{ end }}
+  {{ with $caption }}
+    <figcaption>{{ . | markdownify }}</figcaption>
+  {{ end }}
+</figure>

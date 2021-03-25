@@ -1,8 +1,0 @@
-{{- $classes := (slice "gallery-grid") -}}
-{{- if (.Get "cols") -}}
-{{- $classes = $classes | append (add "columns-" (string (.Get "cols"))) -}}
-{{- end -}}
-
-<ul class="{{ delimit $classes " " | safeHTMLAttr }}">
-  {{ .Inner }}
-</ul>

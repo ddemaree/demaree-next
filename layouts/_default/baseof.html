@@ -20,6 +20,9 @@
     {{ $style.Content | safeCSS }}
     </style>
     <script src="https://cdn.usefathom.com/script.js" data-site="TOFIAIKB" data-included-domains="demaree.me" defer></script>
+    {{ range .AlternativeOutputFormats -}}
+      {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
     {{ block "head" . }}{{ end }}
   </head>
   <body class="{{ with .Params.body_class }} {{ . }}{{ end }}">
