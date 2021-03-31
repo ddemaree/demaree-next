@@ -1,0 +1,70 @@
+@font-face {
+  src: url('IvarText-Bold.woff2') format("woff2"),
+    url('IvarText-Bold.woff') format("woff");
+  font-family: 'ivar-text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('IvarText-BoldItalic.woff2') format("woff2"),
+    url('IvarText-BoldItalic.woff') format("woff");
+  font-family: 'ivar-text';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('IvarText-Italic.woff2') format("woff2"),
+    url('IvarText-Italic.woff') format("woff");
+  font-family: 'ivar-text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('IvarText-Medium.woff2') format("woff2"),
+    url('IvarText-Medium.woff') format("woff");
+  font-family: 'ivar-text';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('IvarText-MediumItalic.woff2') format("woff2"),
+    url('IvarText-MediumItalic.woff') format("woff");
+  font-family: 'ivar-text';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('IvarText-Regular.woff2') format("woff2"),
+    url('IvarText-Regular.woff') format("woff");
+  font-family: 'ivar-text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  src: url('IvarText-SemiBold.woff2') format("woff2"),
+    url('IvarText-SemiBold.woff') format("woff");
+  font-family: 'ivar-text';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  src: url('IvarText-SemiBoldItalic.woff2') format("woff2"),
+    url('IvarText-SemiBoldItalic.woff') format("woff");
+  font-family: 'ivar-text';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+}
+

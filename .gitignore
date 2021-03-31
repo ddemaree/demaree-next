@@ -1,7 +1,8 @@
 .DS_Store
 node_modules
 resources
-public
 
 # Local Netlify folder
 .netlify
+
+.next
