@@ -10,12 +10,32 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@apollo/client": "^3.3.13",
+    "@ddemaree/dynamic-ink": "^0.1.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@tailwindcss/typography": "^0.4.0",
+    "@tryghost/content-api": "^1.5.1",
     "autoprefixer": "^10.1.0",
+    "cloudinary-react": "^1.7.0",
+    "fathom-client": "^3.0.0",
+    "graphql": "^15.5.0",
+    "luxon": "^1.26.0",
+    "next": "^10.1.2",
     "postcss": "^8.2.2",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.0",
     "postcss-url": "^10.1.1",
-    "tailwindcss": "^2.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "tailwindcss": "^2.0.4",
     "vue": "^2.6.12"
+  },
+  "devDependencies": {
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3"
   }
 }
