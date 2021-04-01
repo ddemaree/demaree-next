@@ -7,12 +7,15 @@
   }
   .has-extra-large-font-size {
     @apply text-4xl;
-    line-height: 3rem;
+    line-height: 2.625rem; /* Roughly 1.3em @ 2.25rem */
   }
   .wp-social-link {
     a {
       color: inherit !important;
     }
+  }
+  .wp-block-spacer + * {
+    margin-top: 0;
   }
   .wp-block-separator {
     @apply my-16;
