@@ -5,20 +5,26 @@ import c from 'classnames'
 import { formatDate } from "../../lib/utils/date"
 import Layout from "../../components/Layout"
 import PostContent from "../../components/PostContent"
+import apolloClient from '../../lib/data/apollo-client'
+import gql from 'graphql-tag'
 
 function PostMeta({ date, readingTime, className }) {
   return <div className={c(className, 'flex')}>
     <time dateTime={date}>{formatDate(date)}</time>
-    <span className="mx-2">•</span>
-    <span className="reading-time">{readingTime} min read</span>
+    {readingTime && <>
+      <span className="mx-2">•</span>
+      <span className="reading-time">{readingTime} min read</span>
+    </>}
   </div>
 }
 
 function PostDetailPage({ post }) {
+  if(!post) return <div>No post</div>
+
   const postDescription = post.excerpt || "A blog post by David Demaree"
 
   return <Layout pageTitle={post.title} pageDescription={post.excerpt}>
-    <Helmet>
+    {/* <Helmet>
       <title>{post.title}</title>
       <meta property="og:title" content={post.og_title || post.title} />
       <meta name="twitter:title" content={post.twitter_title || post.title} />
@@ -34,23 +40,36 @@ function PostDetailPage({ post }) {
       <meta property="article:published_time" value={post.published_at} />
       <meta name="twitter:label1" value="Reading time" />
       <meta name="twitter:label2" value={`${post.reading_time} min read`} />
-    </Helmet>
-    <article className="py-12">
-      <header className="dd-w-inset mx-auto max-w-2xl mb-16">
-        <h1 className="text-4xl font-semibold leading-snug text-inkBold">{post.title}</h1>
-        {post.excerpt && <h2 className="text-inkMedium text-2xl leading-snug">{post.excerpt}</h2>}
+    </Helmet> */}
+    <article className="py-12 grid dd-grid-cols">
+      <header className="dd-w-inset mx-auto max-w-2xl mb-16 grid-col-content">
+        <h1 className="text-4xl font-semibold leading-snug text-ink-bold">{post.title}</h1>
+        {post.excerpt && <h2 className="text-ink-medium text-2xl leading-snug">{post.excerpt}</h2>}
         <PostMeta 
           className="text-inkMedium my-4"
-          date={post.published_at}
-          readingTime={post.reading_time} />
+          date={post.date} />
       </header>
-      <PostContent html={post.html} />
+      <PostContent html={post.content} />
     </article>
   </Layout>
 }
 
 export async function getStaticProps({ params }) {
-  const post = await getSinglePost(params.slug)
+  const query = gql`
+  query SinglePostQuery($slug: ID!) {
+    post(id: $slug, idType: SLUG) {
+      title
+      content
+      date: dateGmt
+      excerpt: unencodedExcerpt
+    }
+  }
+  `
+
+  const { data: { post } } = await apolloClient.query({
+    query,
+    variables: { slug: params.slug }
+  })
 
   return {
     props: {
@@ -60,8 +79,20 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  // const posts = await getPosts()
-  const paths = []; //posts.map(({ slug }) => ({ params: { slug } }))
+  const { data } = await apolloClient.query({
+    query: gql`
+      query PathsQuery {
+        posts {
+          nodes {
+            slug
+            databaseId
+          }
+        }
+      }
+    `
+  })
+
+  const paths = data.posts.nodes.map(({ slug, databaseId }) => ({ params: { slug, databaseId } }))
   return { 
     paths,
     fallback: false

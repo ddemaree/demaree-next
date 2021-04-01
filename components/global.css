@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+
+@layer components {
+  .has-large-font-size {
+    @apply text-2xl;
+  }
+  .has-extra-large-font-size {
+    @apply text-4xl;
+    line-height: 3rem;
+  }
+  .wp-social-link {
+    a {
+      color: inherit !important;
+    }
+  }
+  .wp-block-separator {
+    @apply my-16;
+  }
+  .wp-block-media-text {
+    gap: 2rem;
+
+    .wp-block-media-text__content {
+      @apply px-6;
+
+      & > * {
+        @apply my-6;
+
+        &:first-child {
+          @apply mt-0;
+        }
+        &:last-child {
+          @apply mb-0;
+        }
+      }
+    }
+  }
+}
+
+@tailwind utilities;

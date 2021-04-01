@@ -1,9 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router'
 import { Helmet } from 'react-helmet'
+import { CloudinaryContext } from "cloudinary-react";
 import * as Fathom from 'fathom-client'
 
-// import '../_assets/styles/global.css';
+import { library, dom } from '@fortawesome/fontawesome-svg-core'
+import { faAngleRight, faArrowRight, faCocktail, faCoffee } from '@fortawesome/free-solid-svg-icons'
+library.add(faArrowRight, faAngleRight, faCoffee, faCocktail)
+
+import '../components/global.css';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -39,6 +44,10 @@ function MyApp({ Component, pageProps }) {
     return () => { darkModeQuery.removeEventListener('change', onDarkModeChange) }
   }, [])
 
+  useEffect(() => {
+    dom.watch()
+  }, [])
+
   const defaultTitle = "David Demaree‘s site" 
   const defaultDescription = "A good man, and thorough. NYC-based tech person, writer, coder, photographer, et al." 
 
@@ -48,7 +57,8 @@ function MyApp({ Component, pageProps }) {
       defaultTitle={defaultTitle}
       titleTemplate={`%s • ${defaultTitle}`}
     >
-      <body className="dark:dd-inkMedium-gray-400 dark:dd-ink-gray-300 dark:dd-inkLight-gray-700 dark:dd-surface-black dark:dd-inkBold-white dark:dd-accent-red-400" />
+      {/* <body /> */}
+
       <meta property="og:title" content={defaultTitle} />
       <meta property="og:site_name" content={defaultTitle} />
       <meta name="twitter:site" content="@ddemaree" />
@@ -60,15 +70,21 @@ function MyApp({ Component, pageProps }) {
       <meta name="description" content={defaultDescription} />
       <meta property="og:description" content={defaultDescription} />
       <meta name="twitter:description" content={defaultDescription} />
+      {darkMode && <meta name="twitter:widgets:theme" content="dark" />}
 
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link href="//fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&family=JetBrains+Mono:wght@300..700&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet" />
-      <link href="/fonts/soehne/index.css" rel="stylesheet" />
-      <link href="/fonts/soehne-breit/index.css" rel="stylesheet" />
-      <link href="/fonts/ivar-text/index.css" rel="stylesheet" />
-      {darkMode && <meta name="twitter:widgets:theme" content="dark" />}
+
+      <link rel="preconnect" href="https://cdn.demaree.net" />
+      {['soehne', 'soehne-breit', 'ivar-text'].map(key => <link href={`https://cdn.demaree.net/fonts/${key}/index.css`} rel="stylesheet" key={key} />)}
+
+      <link rel='dns-prefetch' href='//c0.wp.com' />
+      <link rel='stylesheet' id='wp-block-library-css'  href='https://c0.wp.com/c/5.7/wp-includes/css/dist/block-library/style.min.css' media='all' />
+
     </Helmet>
-    <Component {...pageProps} />
+    <CloudinaryContext cloudName="demaree" secure="true">
+      <Component {...pageProps} />
+    </CloudinaryContext>
   </>
 }
 

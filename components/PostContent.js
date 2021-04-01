@@ -110,7 +110,7 @@ function PostContent({ html }) {
     if(window.instgrm) window.instgrm.Embeds.process();
   })
 
-  return <div ref={containerRef} className="dd-prose" dangerouslySetInnerHTML={{__html: cleanHtml}} />
+  return <div ref={containerRef} className="prose contents" dangerouslySetInnerHTML={{__html: cleanHtml}} />
 }
 
 export default PostContent
