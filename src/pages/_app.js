@@ -76,7 +76,7 @@ function MyApp({ Component, pageProps }) {
       <link href="//fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&family=JetBrains+Mono:wght@300..700&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet" />
 
       <link rel="preconnect" href="https://cdn.demaree.net" />
-      {['soehne', 'soehne-breit', 'ivar-text'].map(key => <link href={`https://cdn.demaree.net/fonts/${key}/index.css`} rel="stylesheet" key={key} />)}
+      {['soehne', 'soehne-breit', 'soehne-mono', 'ivar-text'].map(key => <link href={`https://cdn.demaree.net/fonts/${key}/index.css`} rel="stylesheet" key={key} />)}
 
       <link rel='dns-prefetch' href='//c0.wp.com' />
       <link rel='stylesheet' id='wp-block-library-css'  href='https://c0.wp.com/c/5.7/wp-includes/css/dist/block-library/style.min.css' media='all' />

@@ -1,8 +1,13 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-
+import fetch from 'cross-fetch';
+import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
 const apolloClient = new ApolloClient({
-  uri: "https://demaree.space/graphql",
+  link: new HttpLink({ uri: "https://demaree.space/graphql", fetch }),
   cache: new InMemoryCache(),
 });
+
+// const apolloClient = new ApolloClient({
+//   uri: "https://demaree.space/graphql",
+//   cache: new InMemoryCache(),
+// });
 
 export default apolloClient;

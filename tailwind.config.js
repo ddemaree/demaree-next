@@ -50,6 +50,7 @@ module.exports = {
         sans: ["soehne-web", ...fontFamily.sans],
         ['sans-wide']: ["soehne-breit-web", "soehne-web", ...fontFamily.sans],
         serif: ["ivar-text", ...fontFamily.serif],
+        mono: ["soehne-mono-web", ...fontFamily.mono]
       }
     },
     typography: {

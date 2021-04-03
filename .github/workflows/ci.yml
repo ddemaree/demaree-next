@@ -10,18 +10,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 15.x
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: '0.82.0'
-          extended: true
       - name: npm install, build
         env:
           NODE_ENV: production
           HUGO_ENV: production
         run: |
           yarn install
-          hugo --minify
+          yarn build
       - name: run Lighthouse CI
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

@@ -1,7 +1,7 @@
 import Layout from '../components/Layout';
 import PostContent from '../components/PostContent';
-// import { includes } from 'lodash';
-// import { getPages, getSinglePage } from '../lib/data/ghostApi';
+import apolloClient from '../lib/data/apollo-client'
+import gql from 'graphql-tag'
 
 function Page({ page }) {
   const { title, html } = page
@@ -16,27 +16,49 @@ function Page({ page }) {
 
 export default Page
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params: { pageSlug } }) {
+  const { data: { page } } = await apolloClient.query({
+    query: gql`
+      query PageQuery($pageSlug: ID!) {
+        page(id: $pageSlug, idType: URI) {
+          title
+          content
+        }
+      }
+    `,
+    variables: {
+      pageSlug
+    }
+  })
+  
   // const page = await getSinglePage(params.pageSlug)
   return {
     props: {
       page: {
-        title: "A page",
-        html: "<p>Some html</p>"
+        ...page,
+        html: page.content
       }
     }
   }
 }
 
 export async function getStaticPaths() {
-  // const pages = await getPages()
-  // const visiblePages = pages.filter(p => {
-  //   const tagNames = p.tags.map(t => t.name)
-  //   const pageIsHidden = includes(tagNames, '#hidden')
-  //   return !pageIsHidden
-  // })
+  const { data } = await apolloClient.query({
+    query: gql`
+      query PagePathsQuery {
+        pages {
+          nodes {
+            slug
+            databaseId
+          }
+        }
+      }
+    `
+  }) 
 
-  const paths = []; // pages.map(page => ({params: { pageSlug: page.slug }}))
+  const pageNodes = data.pages.nodes
+
+  const paths = pageNodes.map(({ slug, databaseId }) => ({params: { pageSlug: slug, databaseId }}))
 
   return {
     paths,

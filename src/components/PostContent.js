@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react"
+import { useRouter } from "next/router"
 
 function PostContent({ html }) {
   const containerRef = useRef(null)
+  const router = useRouter()
   // console.log(html)
 
   // Strip any embed JS tags
@@ -11,6 +13,27 @@ function PostContent({ html }) {
   const hasTweets = cleanHtml.match('twitter-tweet')
   const hasGrams  = cleanHtml.match('instagram-media')
   
+  // Make local links behave as next/links
+  useEffect(() => {
+    const container = containerRef.current
+    
+    const siteUrlHref = location.href
+    const siteUrl = new URL(siteUrlHref)
+    const siteUrlPrefix = `${siteUrl.protocol}//${siteUrl.host}`
+
+    container.querySelectorAll('a[href]').forEach(link => {
+      const linkHref = link.href
+      const linkWithoutPrefix = linkHref.replace(siteUrlPrefix, "")
+      if(linkWithoutPrefix.match(/^\//)) {
+        link.addEventListener('click', e => {
+          console.log({siteUrlHref, siteUrlPrefix, link, linkHref})
+          e.preventDefault()
+          router.push(linkWithoutPrefix)
+        })
+      }
+    })
+  })
+
   // Fix image aspect ratios in gallery cards
   useEffect(() => {
     const container = containerRef.current
