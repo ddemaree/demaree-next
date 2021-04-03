@@ -8,7 +8,7 @@
 [build.environment]
   NODE_ENV = "production"
   HUGO_ENV = "production"
-  NODE_VERSION = "12"
+  NODE_VERSION = "15"
   HUGO_VERSION = "0.80.0"
   HUGO_ENABLEGITINFO = "true"
 
