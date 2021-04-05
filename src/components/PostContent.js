@@ -1,38 +1,39 @@
-import { useEffect, useRef } from "react"
-import { useRouter } from "next/router"
+import React, { useEffect, useRef } from "react"
+import { Helmet } from "react-helmet"
+// import { useRouter } from "next/router"
 
 function PostContent({ html }) {
   const containerRef = useRef(null)
-  const router = useRouter()
+  // const router = useRouter()
   // console.log(html)
 
   // Strip any embed JS tags
-  const cleanHtml = html.replace(/\<script .*\>\<\/script\>/g, '')
+  const cleanHtml = html.replace(/<script .*><\/script>/g, '')
 
   // Detect embeds
   const hasTweets = cleanHtml.match('twitter-tweet')
-  const hasGrams  = cleanHtml.match('instagram-media')
+  // const hasGrams  = cleanHtml.match('instagram-media')
   
-  // Make local links behave as next/links
-  useEffect(() => {
-    const container = containerRef.current
+  // // Make local links behave as next/links
+  // useEffect(() => {
+  //   const container = containerRef.current
     
-    const siteUrlHref = location.href
-    const siteUrl = new URL(siteUrlHref)
-    const siteUrlPrefix = `${siteUrl.protocol}//${siteUrl.host}`
+  //   const siteUrlHref = location.href
+  //   const siteUrl = new URL(siteUrlHref)
+  //   const siteUrlPrefix = `${siteUrl.protocol}//${siteUrl.host}`
 
-    container.querySelectorAll('a[href]').forEach(link => {
-      const linkHref = link.href
-      const linkWithoutPrefix = linkHref.replace(siteUrlPrefix, "")
-      if(linkWithoutPrefix.match(/^\//)) {
-        link.addEventListener('click', e => {
-          console.log({siteUrlHref, siteUrlPrefix, link, linkHref})
-          e.preventDefault()
-          router.push(linkWithoutPrefix)
-        })
-      }
-    })
-  })
+  //   container.querySelectorAll('a[href]').forEach(link => {
+  //     const linkHref = link.href
+  //     const linkWithoutPrefix = linkHref.replace(siteUrlPrefix, "")
+  //     if(linkWithoutPrefix.match(/^\//)) {
+  //       link.addEventListener('click', e => {
+  //         console.log({siteUrlHref, siteUrlPrefix, link, linkHref})
+  //         e.preventDefault()
+  //         router.push(linkWithoutPrefix)
+  //       })
+  //     }
+  //   })
+  // })
 
   // Fix image aspect ratios in gallery cards
   useEffect(() => {
@@ -133,7 +134,17 @@ function PostContent({ html }) {
     if(window.instgrm) window.instgrm.Embeds.process();
   })
 
-  return <div ref={containerRef} className="prose contents" dangerouslySetInnerHTML={{__html: cleanHtml}} />
+  return <>
+    <Helmet>
+      <link rel='dns-prefetch' href='//c0.wp.com' />
+      <link rel='stylesheet' id='wp-block-library-css'  href='https://c0.wp.com/c/5.7/wp-includes/css/dist/block-library/style.min.css' media='all' />
+    </Helmet>
+
+    <div
+      ref={containerRef}
+      className="prose contents"
+      dangerouslySetInnerHTML={{__html: cleanHtml}} />
+  </>
 }
 
 export default PostContent

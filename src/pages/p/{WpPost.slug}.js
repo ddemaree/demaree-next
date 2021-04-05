@@ -1,12 +1,14 @@
-import { Helmet } from 'react-helmet'
+import React from 'react'
+import { graphql } from 'gatsby'
 import c from 'classnames'
-
-// import { getPosts, getSinglePost } from "../../lib/data/ghostApi"
 import { formatDate } from "../../lib/utils/date"
 import Layout from "../../components/Layout"
 import PostContent from "../../components/PostContent"
-import apolloClient from '../../lib/data/apollo-client'
-import gql from 'graphql-tag'
+
+// import { Helmet } from 'react-helmet'
+// import { getPosts, getSinglePost } from "../../lib/data/ghostApi"
+// import apolloClient from '../../lib/data/apollo-client'
+// import gql from 'graphql-tag'
 
 function PostMeta({ date, readingTime, className }) {
   return <div className={c(className, 'flex')}>
@@ -18,7 +20,7 @@ function PostMeta({ date, readingTime, className }) {
   </div>
 }
 
-function PostDetailPage({ post }) {
+function PostDetailPage({ data: { post } }) {
   if(!post) return <div>No post</div>
 
   const postDescription = post.excerpt || "A blog post by David Demaree"
@@ -54,49 +56,60 @@ function PostDetailPage({ post }) {
   </Layout>
 }
 
-export async function getStaticProps({ params }) {
-  const query = gql`
-  query SinglePostQuery($slug: ID!) {
-    post(id: $slug, idType: SLUG) {
+export default PostDetailPage
+
+export const PostQuery = graphql`
+  query PostQuery($slug: String) {
+    post: wpPost(slug: {eq: $slug}) {
       title
       content
-      date: dateGmt
       excerpt: unencodedExcerpt
+      date: dateGmt
     }
   }
-  `
+`
 
-  const { data: { post } } = await apolloClient.query({
-    query,
-    variables: { slug: params.slug }
-  })
+// export async function getStaticProps({ params }) {
+//   const query = gql`
+//   query SinglePostQuery($slug: ID!) {
+//     post(id: $slug, idType: SLUG) {
+//       title
+//       content
+//       date: dateGmt
+//       excerpt: unencodedExcerpt
+//     }
+//   }
+//   `
 
-  return {
-    props: {
-      post
-    }
-  }
-}
+//   const { data: { post } } = await apolloClient.query({
+//     query,
+//     variables: { slug: params.slug }
+//   })
 
-export async function getStaticPaths() {
-  const { data } = await apolloClient.query({
-    query: gql`
-      query PathsQuery {
-        posts {
-          nodes {
-            slug
-            databaseId
-          }
-        }
-      }
-    `
-  })
+//   return {
+//     props: {
+//       post
+//     }
+//   }
+// }
 
-  const paths = data.posts.nodes.map(({ slug, databaseId }) => ({ params: { slug, databaseId } }))
-  return { 
-    paths,
-    fallback: false
-  }
-}
+// export async function getStaticPaths() {
+//   const { data } = await apolloClient.query({
+//     query: gql`
+//       query PathsQuery {
+//         posts {
+//           nodes {
+//             slug
+//             databaseId
+//           }
+//         }
+//       }
+//     `
+//   })
 
-export default PostDetailPage
+//   const paths = data.posts.nodes.map(({ slug, databaseId }) => ({ params: { slug, databaseId } }))
+//   return { 
+//     paths,
+//     fallback: false
+//   }
+// }

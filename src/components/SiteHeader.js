@@ -1,6 +1,8 @@
-import Link from "next/link";
+import React from 'react'
+import { Link } from 'gatsby';
 import c from 'classnames';
 import DDIcon from './DDIcon';
+// import Link from "next/link";
 
 function NavItem({ active, href, label }) {
   const wrapperClasses = c([
@@ -19,10 +21,11 @@ function NavItem({ active, href, label }) {
 }
 
 export default function SiteHeader({ activeNav }) {
-  return <header className="px-8 py-6 flex justify-between">
+  return <header className="dd-site-header px-6 py-6 mb-8 h-14 flex justify-between items-center">
     <Link href="/">
-      <a>
+      <a className="text-ink-bold text-4xl">
         <DDIcon />
+        <span className="sr-only">David Demaree</span>
       </a>
     </Link>
     <nav>

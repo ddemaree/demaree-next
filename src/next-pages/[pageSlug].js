@@ -3,13 +3,11 @@ import PostContent from '../components/PostContent';
 import apolloClient from '../lib/data/apollo-client'
 import gql from 'graphql-tag'
 
-function Page({ page }) {
-  const { title, html } = page
-
+function Page({ page: { title, content } }) {
   return <Layout>
     <div className="py-8">
-      <h1 className="max-w-2xl mx-auto px-8 font-sans-display pb-16 text-center text-4xl text-inkBold">{title}</h1>
-      <PostContent html={page.html} />
+      <h1 className="max-w-2xl mx-auto px-6 font-semibold pb-16 text-center text-4xl text-ink-bold">{title}</h1>
+      <PostContent html={content} />
     </div>
   </Layout>
 }
@@ -31,14 +29,8 @@ export async function getStaticProps({ params: { pageSlug } }) {
     }
   })
   
-  // const page = await getSinglePage(params.pageSlug)
   return {
-    props: {
-      page: {
-        ...page,
-        html: page.content
-      }
-    }
+    props: { page }
   }
 }
 

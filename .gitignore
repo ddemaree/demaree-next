@@ -3,6 +3,9 @@ node_modules
 resources
 .next
 out
+.cache
+.env
+public
 
 # Local Netlify folder
 .netlify

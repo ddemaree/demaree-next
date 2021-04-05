@@ -8,13 +8,29 @@ module.exports = {
   purge: {
     layers: ["utilities"],
     content: [
-			"./**/*.js",
-			"./**/*.html",
-			"./**/*.md",
-			"./**/*.mdx"
+			"./src/**/*.{js,jsx,ts,tsx,vue}",
+			"./src/**/*.mdx",
+			"./public/**/*.html"
 		],
   },
+  variants: {
+    margin: ['responsive', 'first', 'last']
+  },
   theme: {
+    screens: {
+      'sm': '600px',
+      // => @media (min-width: 640px) { ... }
+      'mobile': { max: '600px'},
+
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1280px',
+      // => @media (min-width: 1280px) { ... }
+    },
     extend: {
       themeColors: {
         background: {
@@ -62,10 +78,13 @@ module.exports = {
             gridColumn: 'content',
             marginBottom: theme.spacing['6']
           },
-          '> :first-child': {
+          'p, blockquote, ul, li, figure, > *': {
+            marginBottom: theme.spacing['6']
+          },
+          ':first-child': {
             marginTop: 0
           },
-          '> :last-child': {
+          ':last-child': {
             marginBottom: 0
           },
           '.alignwide': {
@@ -106,14 +125,14 @@ module.exports = {
       coolGray: colors.warmGray,
       white: colors.white,
       black: colors.black,
-      blye: colors.cyan,
+      blue: colors.cyan,
       current: 'currentColor',
       transparent: 'transparent'
     }
   },
   plugins: [
 		plugin(({ addComponents, theme }) => {
-			const gutterCol = `minmax(${theme("spacing.6")}, var(--layout-gutter))`;
+			const gutterCol = `minmax(${theme("spacing.8")}, var(--layout-gutter))`;
 
 			addComponents({
 				'.dd-grid-cols': {

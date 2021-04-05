@@ -1,7 +1,8 @@
 import c from 'classnames'
-import Link from 'next/link'
-import { formatDate } from '../lib/utils/date'
-import OptimizedImage from './Image'
+import { Link } from 'gatsby'
+// import Link from 'next/link'
+// import { formatDate } from '../lib/utils/date'
+// import OptimizedImage from './Image'
 
 function BlogPostCard({ title, link, pubDate, readingTime, excerpt, className, featuredImage }) {
   const linkIsRemote = link.match(/^https?/)
