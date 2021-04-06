@@ -9,7 +9,6 @@
 
     .dd-homepage-hero {
       @apply bg-blue-300 dark:bg-gray-900 pt-24 pb-16 mt-0;
-      min-height: 70vh;
     }
   }
 

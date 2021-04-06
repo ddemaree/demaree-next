@@ -21,7 +21,7 @@ function NavItem({ active, href, label }) {
 }
 
 export default function SiteHeader({ activeNav }) {
-  return <header className="dd-site-header px-6 py-6 mb-8 h-14 flex justify-between items-center">
+  return <header className="dd-site-header px-6 py-6 mb-8 h-16 flex justify-between items-center">
     <Link href="/">
       <a className="text-ink-bold text-4xl">
         <DDIcon />
