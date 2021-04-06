@@ -20,7 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "@apollo/client": "^3.3.13",
-    "@ddemaree/dynamic-ink": "^0.1.0",
+    "@ddemaree/dynamic-ink": "^0.1.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
