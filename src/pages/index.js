@@ -59,37 +59,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-// export async function getStaticProps(context) {
-//   const { data } = await apolloClient.query({
-//     query: gql`
-//       query AllWpPosts {
-//         shortBio: fragment(id: "short-bio", idType: SLUG) {
-//           content
-//         }
-//         wpPosts: posts(first: 7) {
-//           nodes {
-//             title
-//             databaseId
-//             slug
-//             date: dateGmt
-//             excerpt: unencodedExcerpt
-//           }
-//         }
-//       }
-//     `
-//   })
-
-//   const { wpPosts, shortBio } = data
-//   const shortBioContent = shortBio.content.replace(/https?:\/\/demaree\.space/, "")
-
-//   return {
-//     props: {
-//       posts: [],
-//       wpPosts: wpPosts.nodes,
-//       shortBio: { content: shortBioContent },
-//       recentSubstacks: [],
-//       latestSubstack: null
-//     }
-//   }
-// }

@@ -17,3 +17,6 @@
 
 [context.branch-deploy]
   command = "yarn build"
+
+[dev]
+  framework = "gatsby"
