@@ -17,3 +17,8 @@
 
 [context.branch-deploy]
   command = "yarn run build:preview"
+
+[dev]
+  command = "yarn start"
+  targetPort = 3000
+  framework = "#custom"
