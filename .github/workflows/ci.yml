@@ -21,7 +21,7 @@ jobs:
           HUGO_ENV: production
         run: |
           yarn install
-          hugo --minify
+          yarn build
       - name: run Lighthouse CI
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
