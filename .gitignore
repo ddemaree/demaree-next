@@ -7,3 +7,6 @@ site/data/webpack.json
 
 # Local Netlify folder
 .netlify
+
+# Local .env file
+.env
