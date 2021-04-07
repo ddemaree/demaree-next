@@ -15,9 +15,14 @@
     {{ partial "head/twitter_card.html" . }}
     {{ partial "head/webfonts.html" . }}
     <script async src="https://kit.fontawesome.com/f0afb61fe2.js" crossorigin="anonymous"></script>
-    {{ $style := resources.Get "css/main.css" | resources.PostCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" type="text/css" />
     <script src="https://cdn.usefathom.com/script.js" data-site="TOFIAIKB" data-included-domains="demaree.me" defer></script>
+
+    <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
+    {{ $stylesheet := .Site.Data.webpack.main }}
+    {{ with $stylesheet.css }}
+      <link href="{{ relURL . }}" rel="stylesheet">
+    {{ end }}
+  
     {{ block "head" . }}{{ end }}
   </head>
   <body class="{{ with .Params.body_class }} {{ . }}{{ end }}">
@@ -35,8 +40,9 @@
     
     </div>
 
-    {{ $defines := dict "process.env.NODE_ENV" `"production"` }}
-    {{ $js := resources.Get "js/main.js" | js.Build (dict "defines" $defines) }}
-    <script async src="{{ $js.RelPermalink }}"></script>
+  {{ $script := .Site.Data.webpack.main }}
+  {{ with $script.js }}
+    <script src="{{ relURL . }}"></script>
+  {{ end }}
   </body>
 </html>

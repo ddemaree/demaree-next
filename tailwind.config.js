@@ -48,15 +48,15 @@ module.exports = {
         accent: colors.red[500],
         '@dark': {
           background: {
-            DEFAULT: colors.black,
+            DEFAULT: colors.trueGray[900],
             bold: colors.black
           },
           ink: {
             bold: colors.white,
-            DEFAULT: colors.warmGray[300],
-            medium: colors.warmGray[500],
-            light: colors.warmGray[700],
-            xlight: colors.warmGray[900]
+            DEFAULT: colors.trueGray[300],
+            medium: colors.trueGray[500],
+            light: colors.trueGray[700],
+            xlight: colors.trueGray[900]
           },
           accent: colors.red[300],
         }

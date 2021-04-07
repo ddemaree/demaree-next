@@ -1,0 +1,7 @@
+@import "./syntax-dracula.css";
+@import "./tailwind-base.css";
+@import "./global.css";
+
+body {
+  --hello: 0px;
+}
