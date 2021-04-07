@@ -26,6 +26,7 @@
     {{ block "head" . }}{{ end }}
   </head>
   <body class="{{ with .Params.body_class }} {{ . }}{{ end }}">
+{{ $.Site.BaseURL }}
     <div class="bg-background text-ink dd-page">
     {{ block "header" . }}{{ partial "site/header.html" . }}{{ end }}
 
