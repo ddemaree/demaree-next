@@ -6,7 +6,7 @@
 {{ $textclass = "text-3xl" }}
 {{- end -}}
 <div class="max-w-2xl relative">
-  <i class="fas fa-quote-left text-inkLight text-4xl opacity-75 absolute mt-1"></i>
+  <i class="fas fa-quote-left text-ink-light text-4xl opacity-75 absolute mt-1"></i>
   {{ with .Params.text }}
   <blockquote class="dd-prose {{ $textclass }} font-sans mb-4 pl-12">{{ . | markdownify }}</blockquote>
   {{ end }}

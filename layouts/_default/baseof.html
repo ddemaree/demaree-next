@@ -21,13 +21,13 @@
     {{ block "head" . }}{{ end }}
   </head>
   <body class="{{ with .Params.body_class }} {{ . }}{{ end }}">
-    <div class="bg-surface text-ink dd-page">
+    <div class="bg-background text-ink dd-page">
     {{ block "header" . }}{{ partial "site/header.html" . }}{{ end }}
 
     {{ block "main" . }}{{ end }}
 
     {{ block "footer" . }}
-    <footer class="pt-8 text-center pb-16 text-inkMedium">
+    <footer class="pt-8 text-center pb-16 text-ink-medium">
       <p class="text-lg font-serif mb-1">&ldquo;Have courage, and be kind.&rdquo;</p>
       <p>&copy;2021— David Demaree</p>
     </footer>

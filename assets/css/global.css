@@ -80,12 +80,12 @@
     align-items: center;
 
     strong {
-      @apply text-inkBold font-semibold;
+      @apply text-ink-bold font-semibold;
     }
   }
 
   .dots-divider {
-    @apply h-8 flex items-center justify-center border-0 text-inkLight;
+    @apply h-8 flex items-center justify-center border-0 text-ink-light;
 
     &:before {
       @apply inline-block text-lg;
@@ -121,12 +121,12 @@
     }
 
     a {
-      @apply text-inkBold;
+      @apply text-ink-bold;
       text-decoration: underline;
     }
 
     strong {
-      @apply text-inkBold font-semibold;
+      @apply text-ink-bold font-semibold;
     }
 
     h1,
@@ -226,7 +226,7 @@
     }
 
     figcaption {
-      @apply pt-4 px-8 text-inkMedium font-sans text-base max-w-2xl mx-auto;
+      @apply pt-4 px-8 text-ink-medium font-sans text-base max-w-2xl mx-auto;
       text-align: center;
       > * {
         color: inherit;
@@ -278,7 +278,7 @@
     }
 
     > blockquote {
-      @apply px-6 text-inkMedium;
+      @apply px-6 text-ink-medium;
       box-shadow: inset 4px 0 0 0 var(--color-ink-light, currentColor);
 
       > * {

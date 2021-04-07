@@ -11,22 +11,22 @@
       <div>  
       {{.Content}}
       </div>
-      <div class="mt-6 text-inkBold">
+      <div class="mt-6 text-ink-bold">
         {{ partial "site/social-nav.html" . }}
       </div>
     </div>
   </header>
 
-  <h2 class="text-center uppercase tracking-widest font-sans-display font-bold text-accent text-lg dd-col-wide">Latest writing</h2>
+  <h2 class="text-center uppercase tracking-widest font-sans-wide font-bold text-accent text-lg dd-col-wide">Latest writing</h2>
 
   {{- range first 16 (partial "data/home-page-posts.html" .) -}}
   {{- $permalink := .URL -}}
   <article class="flex items-start col-start-2 col-span-8 md:col-start-auto md:odd:col-start-2 md:col-span-4 md:px-8">
     <div class="flex-1 lg:col-start-2 lg:col-span-6">
       <a href="{{ .URL }}" class="block">
-        <h2 class="deorphan text-inkBold font-semibold text-lg sm:text-xl leading-tight sm:leading-tight">{{ .Title }}</h2>
+        <h2 class="deorphan text-ink-bold font-semibold text-lg sm:text-xl leading-tight sm:leading-tight">{{ .Title }}</h2>
         {{ with .Description }}<div class="text-sm mt-2">{{ . }}</div>{{ end }}
-        <div class="text-inkMedium text-sm mt-2">{{ .Date.Format "Jan 2, 2006" }}</div>
+        <div class="text-ink-medium text-sm mt-2">{{ .Date.Format "Jan 2, 2006" }}</div>
       </a>
     </div>
     {{ if .featured_image }}
