@@ -19,7 +19,7 @@
   command = "yarn run build:preview"
 
 [dev]
-  command = "yarn start"
+  command = "yarn preview"
   targetPort = 3000
   framework = "#custom"
   autoLaunch = false
