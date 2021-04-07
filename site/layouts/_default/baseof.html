@@ -17,7 +17,8 @@
     <script async src="https://kit.fontawesome.com/f0afb61fe2.js" crossorigin="anonymous"></script>
     <script src="https://cdn.usefathom.com/script.js" data-site="TOFIAIKB" data-included-domains="demaree.me" defer></script>
 
-    <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
+    <base id="dd-site-info" data-context="{{ getenv "CONTEXT" }}" href="{{ $.Site.BaseURL }}">
+
     {{ $stylesheet := .Site.Data.webpack.main }}
     {{ with $stylesheet.css }}
       <link href="{{ relURL . }}" rel="stylesheet">
@@ -27,6 +28,9 @@
   </head>
   <body class="{{ with .Params.body_class }} {{ . }}{{ end }}">
 {{ $.Site.BaseURL }}
+{{ getenv "CONTEXT" }}
+{{ getenv "URL" }}
+{{ getenv "DEPLOY_URL" }}
     <div class="bg-background text-ink dd-page">
     {{ block "header" . }}{{ partial "site/header.html" . }}{{ end }}
 
