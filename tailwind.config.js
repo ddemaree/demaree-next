@@ -66,6 +66,8 @@ module.exports = {
       white: colors.white,
       black: colors.black,
       blue: colors.cyan,
+      yellow: colors.amber,
+      purple: colors.purple,
       current: 'currentColor',
       transparent: 'transparent'
     },
@@ -94,7 +96,7 @@ module.exports = {
           light: colors.trueGray[700],
           xlight: colors.trueGray[900]
         },
-        accent: colors.red[300],
+        accent: colors.red[400],
       }
     },
     typography: {

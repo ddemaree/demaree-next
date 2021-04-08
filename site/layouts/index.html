@@ -1,26 +1,30 @@
 {{ define "main" }}
-<main class="md:mt-12 grid dd-grid-cols grid-flow-row">
-  <div class="homepage-header grid-col-wide mb-8">
-    {{.Content}}
+<main class="w-full">
+  <div class="homepage-bg flex justify-center items-center bg-blue-200 dark:bg-blue-900 min-h-[80vh] sm:min-h-[70vh] md:min-h-[60vh]">
+    <div class="homepage-header m-8 w-full min-w-0 max-w-3xl">
+      {{.Content}}
+    </div>
   </div>
 
-  <h2 class="px-6 grid-col-wide sm:grid-col-content font-bold text-accent text-2xl dd-col-wide">Latest writing</h2>
 
-  <div class="grid-col-wide px-6 sm:px-0 sm:grid-col-content divide-y-2 divide-solid divide-gray-300">
+
+
+  <div class="latest-posts">
+    <h2 class="font-bold text-accent text-2xl">Latest from my blog</h2>
     {{- range first 5 (where site.RegularPages "Type" "blog") -}}
     {{- $images := .Page.Resources.ByType "image" -}}
     {{- $featuredImg := $images.GetMatch "{*cover*,*feature*}" -}}
     {{- $featuredImgUrl := (index .Params "featured_image") -}}
-    <article class="flex items-center py-3">
+    <article class="flex items-center">
       <div class="flex-1">
         <a href="{{ .URL }}" class="block">
           <h2 class="deorphan text-ink-bold font-semibold text-lg sm:text-xl leading-tight sm:leading-tight">{{ .Title }}</h2>
           {{ with .Description }}<div class="text-sm mt-2">{{ . }}</div>{{ end }}
-          <div class="text-ink-medium text-sm mt-2">{{ .Date.Format "Jan 2, 2006" }}</div>
+          <div class="text-ink-medium uppercase font-mono text-sm mt-2">{{ .Date.Format "Jan 2, 2006" }}</div>
         </a>
       </div> 
       {{- if (or $featuredImg $featuredImgUrl) -}}
-      <a href="{{ .URL }}" class="w-24 h-24 ml-6 overflow-hidden rounded-md lg:col-span-2">
+      <a href="{{ .URL }}" class="w-24 sm:w-36 md:w-48 h-24 ml-6 overflow-hidden rounded-md">
         {{ if $featuredImg }}
         {{ $thumb := $featuredImg.Fill "320x320" }}
         {{ $thumbURL := $thumb.RelPermalink }}
@@ -33,6 +37,8 @@
       {{- end -}}
     </article>
     {{ end }}
+
+    <p><a href="/blog">Read more in the archives <i class="fas fa-arrow-right"></i></a></p>
   </div>
 
 </main>

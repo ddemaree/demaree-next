@@ -1,6 +1,6 @@
 <template>
 <div class="dd-menu justify-self-end">
-  <button type="button" :click="open = !open">
+  <button type="button" @click="open = !open">
     <i class="fas fa-bars"></i>
     <span class="ml-1">Menu {{ open }}</span>
   </button>

@@ -10,16 +10,72 @@
 
 @layer components {
 
+  .latest-posts {
+    @apply grid gap-6 p-8;
+    grid-template-columns: 100%;
+    grid-auto-flow: row;
+    align-items: center;
+    justify-items: center;
+
+    > * {
+      @apply w-full max-w-3xl;
+      grid-column: 1;
+    }
+
+    article + article {
+      @apply pt-6;
+      border-top: 1px solid var(--color-ink-light);
+    }
+  }
+
+  .homepage-bg {
+    background-image: url(./noisy-gradient-light.jpg), linear-gradient(114deg, theme('colors.red.300'), theme('colors.red.100'));
+    background-image: linear-gradient(154deg, theme('colors.purple.300'), theme('colors.red.300'), theme('colors.yellow.200'));
+    background-size: 100% 100%;
+    position: relative;
+    color: theme('colors.red.800');
+
+    &:before {
+      @apply absolute block top-0 right-0 left-0 h-2;
+      content: '';
+      background-image: linear-gradient(to right, theme('colors.purple.500'), theme('colors.red.500'), theme('colors.yellow.500'));
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-image: url(./noisy-gradient-dark.jpg); 
+      background-image: linear-gradient(154deg, theme('colors.purple.700'), theme('colors.red.800'), theme('colors.yellow.700'));
+      color: theme('colors.red.300');
+
+      &:before {
+        background-image: linear-gradient(to right, theme('colors.purple.500'), theme('colors.red.600'), theme('colors.yellow.500'));
+      }
+    }
+  }
+
   .homepage-header {
-    @apply grid grid-cols-1;
+    @apply grid grid-cols-1 gap-6;
+    z-index: 42;
+
+    strong {
+      @apply text-ink-bold font-semibold;
+    }
 
     @screen sm {
-      grid-template-columns: 30% 1fr;
+      grid-template-columns: minmax(100px, 220px) minmax(340px, 1fr);
     }
   }
 
   .homepage-photo {
-    @apply w-48 rounded-lg overflow-hidden;
+    @apply w-36 h-36 sm:w-full sm:h-full rounded-lg overflow-hidden bg-gray-500;
+    max-width: 210px;
+
+    p {
+      display: contents;
+    }
+
+    img {
+      @apply w-full h-full object-cover;
+    }
   }
 
   .homepage-bio {
@@ -28,22 +84,28 @@
     > *:not(:last-child) {
       @apply mb-3;
     }
+
+    a {
+      @apply text-ink-bold;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+  }
+
+  .homepage-lede {
+    @apply text-2xl md:text-3xl;
   }
 
   .homepage-socials {
     @apply text-2xl flex gap-4;
+
+    a {
+      @apply text-ink-bold;
+    }
   }
 
   .dd-icon {
     height: 1em;
-  }
-
-  .homepage-header {
-    align-items: center;
-
-    strong {
-      @apply text-ink-bold font-semibold;
-    }
   }
 
   .dots-divider {
