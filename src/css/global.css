@@ -10,70 +10,32 @@
 
 @layer components {
 
-  .dd-icon {
-    height: 1em;
-  }
-
-  .dd-layout-cols--old {
-    grid-template-columns:
-      calc(50vw - (var(--layout-wide-width) / 2)) repeat(8, 1fr)
-      calc(50vw - (var(--layout-wide-width) / 2));
-  }
-
-  .dd-grid-cols-2,
-  .dd-grid-cols,
-  .dd-layout-cols {
-    --layout-gap: 0px;
-    --layout-gutter: calc(
-      50vw - (var(--layout-wide-width) / 2) - var(--layout-gap)
-    );
-
-    grid-template-columns:
-      [full-start wide-start] minmax(theme("spacing.8"), var(--layout-gutter))
-      [content-start] repeat(8, 1fr) [content-end] minmax(
-        theme("spacing.8"),
-        var(--layout-gutter)
-      )
-      [wide-end full-end];
+  .homepage-header {
+    @apply grid grid-cols-1;
 
     @screen sm {
-      grid-template-columns:
-        [full-start] minmax(theme("spacing.6"), var(--layout-gutter))
-        [wide-start] 1fr [content-start] repeat(6, 1fr)
-        [content-end] 1fr [wide-end] minmax(
-          theme("spacing.6"),
-          var(--layout-gutter)
-        )
-        [full-end];
-    }
-
-    .dd-col-full {
-      grid-column: full;
-    }
-
-    .dd-col-wide {
-      grid-column: wide;
-    }
-
-    .dd-col-content {
-      grid-column: content;
+      grid-template-columns: 30% 1fr;
     }
   }
 
-  .fullwidth,
-  .full-width,
-  .dd-block-full {
-    grid-column: 1 / -1;
+  .homepage-photo {
+    @apply w-48 rounded-lg overflow-hidden;
   }
 
-  .wide-width,
-  .dd-block-wide {
-    grid-column: wide;
+  .homepage-bio {
+    @apply max-w-xl;
+
+    > *:not(:last-child) {
+      @apply mb-3;
+    }
   }
 
-  .content-width,
-  .dd-block-content {
-    grid-column: content;
+  .homepage-socials {
+    @apply text-2xl flex gap-4;
+  }
+
+  .dd-icon {
+    height: 1em;
   }
 
   .homepage-header {

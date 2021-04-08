@@ -46,7 +46,6 @@ customer_css: |
     }
   }
 ---
-
 ![My home-office desk, February 2021](cover-photo-wfh-2021.jpeg)
 
 _[record scratch]_ Yep, this is <del>me</del> my desk. Perhaps you’re wondering how I got here.

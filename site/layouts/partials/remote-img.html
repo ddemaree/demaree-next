@@ -1,0 +1,13 @@
+{{/* partial "remote-img.html" (dict "URL" $url "maxWidth" 300 "maxHeight" 300 "alt" "An image" ) */}}
+{{- $imgUrl := .URL -}}
+{{- $urlObj := urls.Parse .URL -}}
+{{- $maxWidth := int (.maxWidth | default 600) -}}
+
+{{- if (eq $urlObj.Host "images.unsplash.com") -}}
+{{- $imgUrl = printf "%s?w=%d" $imgUrl $maxWidth -}}
+{{- else if (eq $urlObj.Host "res.cloudinary.com") -}}
+{{- else -}}
+{{- $imgUrl = printf "https://res.cloudinary.com/demaree/image/fetch/w_%d/%s" $maxWidth $imgUrl -}}
+{{- end -}}
+
+{{ return $imgUrl }}
