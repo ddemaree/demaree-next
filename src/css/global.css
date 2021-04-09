@@ -10,82 +10,103 @@
 
 @layer components {
 
+  .latest-posts {
+    @apply grid gap-6 p-8;
+    grid-template-columns: 100%;
+    grid-auto-flow: row;
+    align-items: center;
+    justify-items: center;
+
+    > * {
+      @apply w-full max-w-3xl;
+      grid-column: 1;
+    }
+
+    article + article {
+      @apply pt-6;
+      border-top: 1px solid var(--color-ink-light);
+    }
+  }
+
+  .homepage-bg {
+    @apply text-a11y-gray-70 dark:text-a11y-gray-20;
+    background-image: linear-gradient(to bottom right, theme('colors.a11y.blue.20'), theme('colors.a11y.red.20'));
+    background-size: 100% 100%;
+    position: relative;
+
+    &:before {
+      @apply absolute block top-0 right-0 left-0 h-2;
+      content: '';
+      background-image: linear-gradient(to right, theme('colors.purple.500'), theme('colors.red.500'), theme('colors.yellow.500'));
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-image: linear-gradient(to bottom right, theme('colors.a11y.blue.80'), theme('colors.a11y.red.80'));
+
+      &:before {
+        background-image: linear-gradient(to right, theme('colors.purple.500'), theme('colors.red.600'), theme('colors.yellow.500'));
+      }
+    }
+  }
+
+  .homepage-header {
+    @apply grid grid-cols-1 gap-6 items-center;
+    z-index: 42;
+
+    strong {
+      @apply text-ink-bold font-semibold;
+    }
+
+    @screen sm {
+      grid-template-columns: minmax(100px, 220px) minmax(340px, 1fr);
+    }
+  }
+
+  .homepage-photo {
+    @apply w-36 h-36 sm:w-full sm:h-full rounded-lg overflow-hidden bg-gray-500;
+    max-width: 210px;
+
+    p {
+      display: contents;
+    }
+
+    img {
+      @apply w-full h-full object-cover;
+    }
+  }
+
+  .homepage-bio {
+    @apply max-w-xl;
+
+    > *:not(:last-child) {
+      @apply mb-3;
+    }
+
+    a {
+      @apply text-ink-bold;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+  }
+
+  .homepage-lede {
+    @apply text-2xl md:text-3xl;
+  }
+
+  .homepage-socials {
+    @apply text-2xl mt-6 flex gap-4;
+
+    a {
+      @apply text-ink-bold;
+    }
+  }
+
   .dd-icon {
     height: 1em;
   }
 
-  .dd-layout-cols--old {
-    grid-template-columns:
-      calc(50vw - (var(--layout-wide-width) / 2)) repeat(8, 1fr)
-      calc(50vw - (var(--layout-wide-width) / 2));
-  }
-
-  .dd-grid-cols-2,
-  .dd-grid-cols,
-  .dd-layout-cols {
-    --layout-gap: 0px;
-    --layout-gutter: calc(
-      50vw - (var(--layout-wide-width) / 2) - var(--layout-gap)
-    );
-
-    grid-template-columns:
-      [full-start wide-start] minmax(theme("spacing.8"), var(--layout-gutter))
-      [content-start] repeat(8, 1fr) [content-end] minmax(
-        theme("spacing.8"),
-        var(--layout-gutter)
-      )
-      [wide-end full-end];
-
-    @screen sm {
-      grid-template-columns:
-        [full-start] minmax(theme("spacing.6"), var(--layout-gutter))
-        [wide-start] 1fr [content-start] repeat(6, 1fr)
-        [content-end] 1fr [wide-end] minmax(
-          theme("spacing.6"),
-          var(--layout-gutter)
-        )
-        [full-end];
-    }
-
-    .dd-col-full {
-      grid-column: full;
-    }
-
-    .dd-col-wide {
-      grid-column: wide;
-    }
-
-    .dd-col-content {
-      grid-column: content;
-    }
-  }
-
-  .fullwidth,
-  .full-width,
-  .dd-block-full {
-    grid-column: 1 / -1;
-  }
-
-  .wide-width,
-  .dd-block-wide {
-    grid-column: wide;
-  }
-
-  .content-width,
-  .dd-block-content {
-    grid-column: content;
-  }
-
-  .homepage-header {
-    align-items: center;
-
-    strong {
-      @apply text-inkBold font-semibold;
-    }
-  }
-
   .dots-divider {
-    @apply h-8 flex items-center justify-center border-0 text-inkLight;
+    @apply h-8 flex items-center justify-center border-0 text-ink-light;
 
     &:before {
       @apply inline-block text-lg;
@@ -121,12 +142,12 @@
     }
 
     a {
-      @apply text-inkBold;
+      @apply text-ink-bold;
       text-decoration: underline;
     }
 
     strong {
-      @apply text-inkBold font-semibold;
+      @apply text-ink-bold font-semibold;
     }
 
     h1,
@@ -226,7 +247,7 @@
     }
 
     figcaption {
-      @apply pt-4 px-8 text-inkMedium font-sans text-base max-w-2xl mx-auto;
+      @apply pt-4 px-8 text-ink-medium font-sans text-base max-w-2xl mx-auto;
       text-align: center;
       > * {
         color: inherit;
@@ -278,7 +299,7 @@
     }
 
     > blockquote {
-      @apply px-6 text-inkMedium;
+      @apply px-6 text-ink-medium;
       box-shadow: inset 4px 0 0 0 var(--color-ink-light, currentColor);
 
       > * {

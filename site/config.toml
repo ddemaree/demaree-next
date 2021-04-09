@@ -1,4 +1,4 @@
-baseURL = "//demaree.me/"
+baseURL = "https://demaree.me/"
 languageCode = "en-us"
 title = "David Demaree"
 description = "Writing, photos, and nonsense from a NYC-based tech person"
@@ -40,8 +40,9 @@ tabWidth = 2
 [markup.goldmark.renderer]
 unsafe = true
 
-[markup.goldmark.parser]
-attribute = true
+[markup.goldmark.parser.attribute]
+  block = true
+  title = true
 
 [menu]
 [[menu.social]]

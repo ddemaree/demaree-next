@@ -10,16 +10,16 @@
 {{ end -}}
 {{- define "main" }}
 <!-- blog/single - main -->
-<header class="dd-blog-header grid dd-grid-cols py-12 px-8">
-  <h1 data-content="{{ .Title }}" class="dd-blog-title dd-col-full mb-3 deorphan text-inkBold">{{ .Title }}</h1>
+<header class="dd-blog-header grid dd-grid-cols py-12">
+  <h1 data-content="{{ .Title }}" class="grid-col-content font-semibold text-3xl mb-3 deorphan text-ink-bold">{{ .Title }}</h1>
 
-  {{ with (or .Params.subtitle .Params.excerpt .Params.description) }}<h2 class="text-center dd-col-full text-inkMedium text-lg sm:text-xl leading-snug sm:leading-snug mb-4">{{ . }}</h2>{{ end }}
+  {{ with (or .Params.subtitle .Params.excerpt .Params.description) }}<h2 class="grid-col-content text-ink-medium text-lg sm:text-xl leading-snug sm:leading-snug mb-4">{{ . }}</h2>{{ end }}
 
-  <div class="post-meta text-inkMedium text-base text-center dd-col-full text-inkMedium">{{ .Date.Format "Jan 2 2006" }}</div>
+  <div class="post-meta text-ink-medium text-base grid-col-content text-ink-medium font-mono font-medium uppercase">{{ .Date.Format "Jan 2 2006" }}</div>
 </header>
 
 <main class="grid dd-grid-cols">
-  <div class="dd-prose contents text-lg font-serif text-ink">
+  <div class="prose contents text-lg text-ink">
     {{ .Content }}
   </div>
 
@@ -29,7 +29,7 @@
     <a href="{{ .Permalink }}" rel="next" class="flex-1 flex items-center">
       <i class="fas fa-chevron-left text-accent text-3xl mr-3"></i>
       <div class="flex-1">
-        <div class="text-base uppercase tracking-widest text-inkMedium">Next post</div>
+        <div class="text-base uppercase tracking-widest text-ink-medium">Next post</div>
         <div class="text-lg font-semibold">{{ .Title }}</div>
       </div>
     </a>
@@ -37,7 +37,7 @@
     {{ with .PrevInSection }}
     <a href="{{ .Permalink }}" rel="prev" class="flex-1 flex items-center text-right">
       <div class="flex-1">
-        <div class="text-base uppercase tracking-widest text-inkMedium">Previous post</div>
+        <div class="text-base uppercase tracking-widest text-ink-medium">Previous post</div>
         <div class="text-lg font-semibold">{{ .Title }}</div>
       </div>
       <i class="fas fa-chevron-right text-accent text-3xl ml-3"></i>

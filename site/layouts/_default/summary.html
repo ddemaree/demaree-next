@@ -3,7 +3,7 @@
   <a href="{{ $permalink }}">
     <h2 class="text-xl font-semibold">{{ .Title }}</h2>
     {{ with .Params.excerpt }}<div>{{ . }}</div>{{ end }}
-    <div class="post-meta text-inkMedium text-sm">{{ .Date.Format "Jan 2 2006" }} - {{ .ReadingTime }} min read</div>
+    <div class="post-meta text-ink-medium text-sm">{{ .Date.Format "Jan 2 2006" }} - {{ .ReadingTime }} min read</div>
   </a>
 </div>
 {{ with .Params.featured_image }}

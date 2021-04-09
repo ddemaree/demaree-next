@@ -2,18 +2,24 @@
   ID = "demaree-next"
 
 [build]
-  command = "hugo --gc --minify"
-  publish = "public"
+  command = "yarn run build"
+  publish = "dist"
 
 [build.environment]
   NODE_ENV = "production"
   HUGO_ENV = "production"
-  NODE_VERSION = "12"
-  HUGO_VERSION = "0.80.0"
+  NODE_VERSION = "15"
+  HUGO_VERSION = "0.82.0"
   HUGO_ENABLEGITINFO = "true"
 
 [context.deploy-preview]
-  command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+  command = "yarn run build:preview"
 
 [context.branch-deploy]
-  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+  command = "yarn run build:preview"
+
+[dev]
+  command = "yarn preview"
+  targetPort = 3000
+  framework = "#custom"
+  autoLaunch = false

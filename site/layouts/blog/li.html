@@ -11,7 +11,7 @@
     <a href="{{ $permalink }}">
       <h2 class="text-xl md:text-2xl font-semibold">{{ .Title }}</h2>
       {{ with .Params.excerpt }}<div>{{ . }}</div>{{ end }}
-      <div class="post-meta text-inkMedium text-sm">{{ .Date.Format "Jan 2 2006" }} - {{ .ReadingTime }} min read</div>
+      <div class="post-meta text-ink-medium text-sm">{{ .Date.Format "Jan 2 2006" }} - {{ .ReadingTime }} min read</div>
     </a>
   </div>
   {{- if (or $featured .Params.featured_image) }}<a href="{{ $permalink }}" class="w-24 md:w-32 ml-3 overflow-hidden rounded-md">
