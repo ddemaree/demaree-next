@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+
+@layer components {
+  .dd-homepage {
+    .dd-site-header {
+      @apply absolute top-0 left-0 right-0 z-20;
+    }
+
+    .dd-homepage-hero {
+      @apply bg-blue-300 dark:bg-gray-900 pt-24 pb-16 mt-0;
+    }
+  }
+
+  .dd-homepage-cols {
+    grid-template-columns: 100%;
+
+    @screen sm {
+      grid-template-columns: 2fr 6fr;
+    }
+  }
+}
+
+.has-large-font-size {
+  @apply text-2xl;
+}
+
+.has-extra-large-font-size {
+  @apply text-3xl;
+  line-height: 2.375rem; /* Roughly 1.3em @ 2.25rem */
+}
+
+.wp-social-link {
+  a {
+    color: inherit !important;
+  }
+}
+
+.wp-block-separator {
+  @apply my-16;
+}
+
+.wp-block-media-text.dd-homepage-unit {
+  @apply mobile:px-8 sm:gap-8;
+  @apply dd-homepage-cols !important;
+
+  .wp-block-media-text__media {
+    @apply flex items-center justify-center;
+
+    img {
+      @apply mobile:w-48 mobile:h-48 mb-6;
+      max-width: 14rem;
+    }
+  }
+  
+  .wp-block-media-text__content {
+    @apply px-0 max-w-xl;
+  }
+}
+
+@tailwind utilities;
