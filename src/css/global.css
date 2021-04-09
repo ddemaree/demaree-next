@@ -29,11 +29,10 @@
   }
 
   .homepage-bg {
-    background-image: url(./noisy-gradient-light.jpg), linear-gradient(114deg, theme('colors.red.300'), theme('colors.red.100'));
-    background-image: linear-gradient(154deg, theme('colors.purple.300'), theme('colors.red.300'), theme('colors.yellow.200'));
+    @apply text-a11y-gray-70 dark:text-a11y-gray-20;
+    background-image: linear-gradient(to bottom right, theme('colors.a11y.blue.20'), theme('colors.a11y.red.20'));
     background-size: 100% 100%;
     position: relative;
-    color: theme('colors.red.800');
 
     &:before {
       @apply absolute block top-0 right-0 left-0 h-2;
@@ -42,8 +41,7 @@
     }
 
     @media (prefers-color-scheme: dark) {
-      background-image: linear-gradient(154deg, theme('colors.purple.700'), theme('colors.red.800'), theme('colors.yellow.700'));
-      color: theme('colors.red.300');
+      background-image: linear-gradient(to bottom right, theme('colors.a11y.blue.80'), theme('colors.a11y.red.80'));
 
       &:before {
         background-image: linear-gradient(to right, theme('colors.purple.500'), theme('colors.red.600'), theme('colors.yellow.500'));
@@ -52,7 +50,7 @@
   }
 
   .homepage-header {
-    @apply grid grid-cols-1 gap-6;
+    @apply grid grid-cols-1 gap-6 items-center;
     z-index: 42;
 
     strong {
@@ -96,7 +94,7 @@
   }
 
   .homepage-socials {
-    @apply text-2xl flex gap-4;
+    @apply text-2xl mt-6 flex gap-4;
 
     a {
       @apply text-ink-bold;

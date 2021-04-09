@@ -16,10 +16,10 @@ menu:
 
 <div class="homepage-bio">
 
-**Hi, I'm David Demaree**, a writer, web&nbsp;designer, photographer, & tech product&nbsp;manager
+**Hi, I'm David Demaree**, a writer, web&nbsp;designer, photographer, & tech product&nbsp;manager in NYC
 {.homepage-lede}
 
-Since 2020 I've been a PM for [Google&nbsp;Fonts](https://fonts.google.com). Before that I worked on [Material Design](https://material.io), and before that I led product and was an engineer for [Adobe Typekit](https://fonts.adobe.com/). I've been working on the web since 1995 as a designer, programmer, and strategist.
+Since 2020 I've been PM for [Google&nbsp;Fonts](https://fonts.google.com), and just before that I worked on [Material Design](https://material.io). From 2011-2018 I led product and was an engineer for [Adobe Typekit](https://fonts.adobe.com/).
 
 * [<i class="fab fa-twitter"></i> <span class="sr-only">Twitter</span>](http://twitter.com/ddemaree)
 * [<i class="fab fa-instagram"></i> <span class="sr-only">Instagram</span>](https://instagram.com/ddemaree)
