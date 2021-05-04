@@ -1,3 +1,5 @@
+/ https://demaree.space/ 302
+
 # Range through the site's pages and output the links of any aliases set.
 {{- range $p := .Site.Pages -}}
 {{- range .Aliases }}
@@ -5,4 +7,5 @@
 {{- end }}
 {{- end }}
 
-/:slug /p/:slug 302
+/:slug https://demaree.space/:slug 302
+/p/:slug https://demaree.space/:slug 302
