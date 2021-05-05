@@ -1,0 +1,3 @@
+/        https://demaree.space/
+/:slug   https://demaree.space/:slug
+/p/:slug https://demaree.space/:slug
