@@ -5,6 +5,8 @@ slug: where-the-web-fonts-go
 tags:
   - typography
   - Web Development
+subtitle: Get those fonts out of Git
+excerpt: Some simple best practices for self-hosting web fonts in the cloud
 ---
 
 <figure class="wp-block-image alignfull size-large"><img loading="lazy" width="1024" height="684" alt="" class="wp-image-4032" src="cover-why-fonts-matter.jpg" /></figure>

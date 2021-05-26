@@ -4,6 +4,8 @@ date: '2021-05-18T01:49:25'
 slug: geriatric-millennials
 tags:
   - Work
+link_url: >-
+  https://index.medium.com/why-the-hybrid-workforce-of-the-future-depends-on-the-geriatric-millennial-6f9ff4de1d23
 ---
 
 There’s a lot to unpack in [this post by Erica Dhawan](https://index.medium.com/why-the-hybrid-workforce-of-the-future-depends-on-the-geriatric-millennial-6f9ff4de1d23), and it took me a minute to decide which parts to excerpt. This passage, though, captures both her thesis and most of what’s wrong with it:

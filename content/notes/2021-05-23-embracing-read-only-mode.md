@@ -3,6 +3,7 @@ title: Embracing ‘Read-Only’ Mode During Covid
 date: '2021-05-23T00:43:03'
 slug: embracing-read-only-mode
 tags: []
+link_url: https://medium.com/draftwerk/embracing-read-only-mode-ca81a268724e
 ---
 
 My friend Sally Kerrigan wrote this last year, about accepting that a pandemic is not the best time to be creative, and [deciding to intentionally enter a “read-only” mode](https://medium.com/draftwerk/embracing-read-only-mode-ca81a268724e):

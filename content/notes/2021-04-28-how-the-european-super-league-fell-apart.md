@@ -4,6 +4,7 @@ date: '2021-04-28T08:00:00'
 slug: how-the-european-super-league-fell-apart
 tags:
   - business
+link_url: https://www.nytimes.com/2021/04/22/sports/soccer/super-league-soccer.html
 ---
 
 The NYT’s Tariq Panja and Rory Smith give [a behind-the-scenes rundown of what exactly happened with the Super League](https://www.nytimes.com/2021/04/22/sports/soccer/super-league-soccer.html) — both how the plan came together, and how it spectacularly collapsed.

@@ -6,6 +6,7 @@ tags:
   - Apple
   - iMac
   - iPad
+excerpt: If you were hoping for Apple to sell you a $350 keychain, I have good news!
 ---
 
 <p class="has-large-font-size">It’s that time again — Apple has announced products, and now we will talk about the products that were announced!!!

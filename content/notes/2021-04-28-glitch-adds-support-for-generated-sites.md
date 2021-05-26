@@ -7,6 +7,7 @@ tags:
   - JAMstack
   - JavaScript
   - Web Development
+link_url: https://blog.glitch.com/post/remix-a-whole-new-glitch
 ---
 
 I’m a big fan of [Glitch](http://glitch.com) for quickly and easily spinning up a website or little toy app. Right now I have a little API for generating image tags for assets in my Cloudinary account, and a number of Next.js apps for things like generating tonal color palettes or telling me how many days I’ve been in Covid “quarantine.”

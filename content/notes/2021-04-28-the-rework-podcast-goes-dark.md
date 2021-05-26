@@ -5,6 +5,7 @@ slug: the-rework-podcast-goes-dark
 tags:
   - Basecamp
   - Work
+link_url: https://share.transistor.fm/s/aea77cb6
 ---
 
 Sorry, one more Basecamp link: Jason Fried and DHH (and other 37signals/Basecamp folks, allegedly) wrote a book called _[Rework](https://basecamp.com/books/rework)_ about “the better way to work and run your business,” which has [a spinoff podcast](http://rework.fm) covering a mix of Basecamp behind-the-scenes and overall thought leadership, hosted by Wailin Wong and Shaun Hildner. It’s basically a nice business podcast that folks from Basecamp occasionally take over to talk about how great they are.

@@ -7,6 +7,9 @@ tags:
   - Basecamp
   - Culture
   - Work
+excerpt: >-
+  The company that wrote "It Doesn't Have To Be Crazy At Work" responds to
+  craziness at work
 ---
 
 Basecamp (née 37signals) founder/CEO Jason Fried,[ posting on his personal HEY World blog/newsletter yesterday](https://world.hey.com/jason/changes-at-basecamp-7f32afc5), announced some big internal changes for the company. Here’s a summary of his post, lightly edited for brevity:

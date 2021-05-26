@@ -175,12 +175,15 @@ const getPosts = async () => {
       fileBody = fileBody.replaceAll(tag, newTag)
     })
 
-    const frontmatter = yaml.dump({
+    const frontmatter = yaml.dump(_.pickBy({
       title,
       date: dateGmt,
       slug,
-      tags: tags.nodes.map(t => t.name)
-    })
+      tags: tags.nodes.map(t => t.name),
+      link_url: linkUrl,
+      subtitle,
+      excerpt
+    }, (v, k) => !!v))
     
     fs.writeFileSync(filePath, `---\n${frontmatter}---\n${fileBody}`);
     console.log({ title, filePath })

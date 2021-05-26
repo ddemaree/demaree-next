@@ -6,6 +6,7 @@ tags:
   - Basecamp
   - business
   - Work
+link_url: https://www.platformer.news/p/-what-really-happened-at-basecamp
 ---
 
 In response to the Basecamp partners’ “full Coinbase” heel turn that <a href="https://demaree.space/back-to-basic-at-basecamp/" data-type="post" data-id="4264">I wrote about yesterday</a>, Casey Newton spoke with Jason Fried, DHH, and numerous employees and [reported on what’s been going on behind the scenes](https://www.platformer.news/p/-what-really-happened-at-basecamp):

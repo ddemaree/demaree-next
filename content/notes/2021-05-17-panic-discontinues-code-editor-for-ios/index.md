@@ -4,6 +4,7 @@ date: '2021-05-17T13:06:03'
 slug: panic-discontinues-code-editor-for-ios
 tags:
   - iPad
+link_url: https://panic.com/blog/the-future-of-code-editor/
 ---
 
 This is sad — after nine years, [Panic has discontinued Code Editor, the iOS version of their web development app](https://panic.com/blog/the-future-of-code-editor/) combining a text editor, file transfer client, and terminal. They attribute the decision to poor sales — the app wasn’t selling enough copies to fund its continued development, which was also the case for Panic’s now-discontinued [Transmit iOS](https://panic.com/blog/the-future-of-transmit-ios/) and [Status Board](https://panic.com/blog/the-future-of-status-board/) apps.

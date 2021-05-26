@@ -4,6 +4,7 @@ date: '2021-02-12T17:00:00'
 slug: 2021-wfh-desk-setup
 tags:
   - Personal News
+excerpt: More than you ever wanted to know about my WFH setup.
 ---
 
 _[record scratch]_ Yep, this is <del>me</del> my desk. Perhaps you’re wondering how I got here.

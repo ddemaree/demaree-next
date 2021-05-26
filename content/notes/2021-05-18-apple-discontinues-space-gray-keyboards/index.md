@@ -5,6 +5,8 @@ slug: apple-discontinues-space-gray-keyboards
 tags:
   - Apple
   - keyboards
+link_url: >-
+  https://www.theverge.com/2021/5/14/22436719/apple-space-gray-magic-trackpad-keyboard-mouse-discontinued
 ---
 
 <figure class="wp-block-image size-large"><img alt="" src="jbareham_171213_2180_0068.0.jpg" /><figcaption>Photo by James Bareham / The Verge</figcaption></figure>
