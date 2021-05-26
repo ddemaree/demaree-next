@@ -1,5 +1,5 @@
 {
-  "name": "demaree-hugo-assets",
+  "name": "demaree-hugo",
   "version": "1.0.0",
   "description": "JS/CSS for my web site",
   "repository": "https://github.com/ddemaree/demaree-next",
@@ -17,5 +17,16 @@
     "postcss-url": "^10.1.1",
     "tailwindcss": "^2.0.2",
     "vue": "^2.6.12"
+  },
+  "devDependencies": {
+    "@apollo/client": "^3.3.19",
+    "axios": "^0.21.1",
+    "cross-fetch": "^3.1.4",
+    "graphql": "^15.5.0",
+    "html-entities": "^2.3.2",
+    "js-yaml": "^4.1.0",
+    "jsdom": "^16.6.0",
+    "luxon": "^1.27.0",
+    "striptags": "^3.1.1"
   }
 }
