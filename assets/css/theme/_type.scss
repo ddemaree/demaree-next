@@ -1,0 +1,65 @@
+@use './color';
+
+$textSizes: (
+  5xl: (
+    font-size: 3rem,
+    line-height: 1
+  ),
+  4xl: (
+    font-size: 2.25rem,
+    line-height: 2.5rem
+  ),
+  3xl: (
+    font-size: 1.875rem,
+    line-height: 2.25rem 
+  ),
+  2xl: (
+    font-size: 1.5rem,
+    line-height: 2rem 
+  ),
+  xl: (
+    font-size: 1.25rem,
+    line-height: 1.75rem 
+  ),
+  lg: (
+    font-size: 1.125rem,
+    line-height: 1.75rem 
+  ),
+  base: (
+    font-size: 1rem,
+    line-height: 1.5rem
+  ),
+  sm: (
+    font-size: 0.875rem,
+    line-height: 1.25rem
+  ),
+  xs: (
+    font-size: 0.75rem,
+    line-height: 1rem
+  )
+);
+
+@mixin size($scale) {
+  font-size: map-get($textSizes, $scale, font-size);
+  line-height: map-get($textSizes, $scale, line-height);
+}
+
+@mixin bold-text() {
+  color: var(--color-ink-bold, black);
+  font-weight: 600;
+}
+
+@mixin colored-links {
+  a {
+    @include color.text("red", 50);
+    text-decoration: underline;
+    font-weight: 500;
+  }
+}
+
+@mixin style-meta() {
+  @include size(sm);
+  @include color.text("gray", 50);
+  font-weight: 500;
+  line-height: 1.1;
+}

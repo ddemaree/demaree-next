@@ -1,0 +1,41 @@
+@use "../theme/type";
+@use "../theme/color";
+@use "../theme/widths";
+@use "../theme/spacing";
+@use "../theme/layout";
+
+
+@mixin post-card-meta() {
+  @include type.size(sm);
+  @include color.text("gray", 50);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.post-card__header {
+  @include widths.content-width();
+  @include spacing.mx(auto);
+}
+
+.post-card__header__title {
+  @include spacing.mb(4);
+  @include type.size(xl);
+  font-weight: 500;
+}
+
+.post-card__header__title-link {
+  > span {
+    text-decoration: underline;
+  }
+}
+
+.post-card__footer {
+  @include widths.content-width();
+  @include spacing.mx(auto);
+  @include spacing.mt(stack);
+  @include type.style-meta();
+}
+
+.post-meta-footer {
+  @include layout.h-stack(spacing.get(4));
+}

@@ -1,0 +1,50 @@
+@use '../theme/widths';
+@use '../theme/layout';
+@use '../theme/type';
+
+.home-content {
+  @include layout.v-stack();
+  // background-color: mix(pink, white);
+  justify-content: center;
+  min-height: 100vh;
+  padding-bottom: 2rem;
+  padding-top: calc(var(--header-height) + 1.5rem);
+}
+
+.home-content__inner {
+  // --grid-width-content: max(40vw, 860px);
+  --grid-spacing-x: 1.5rem;
+  @include widths.content-width();
+
+  @media (min-width: 400px) {
+    --grid-spacing-x: 2rem;
+  }
+
+  @media (min-width: 600px) {
+    --grid-spacing-x: 3rem;
+  }
+
+  > * + * {
+    margin-top: 2rem;
+  }
+  
+  // --grid-width-content: 1024px;
+  // display: grid;
+  // grid-template-columns: 210px 1fr;
+  // grid-template-rows: repeat(3, minmax(0px, auto));
+  // grid-auto-flow: row;
+
+  // > figure {
+  //   grid-column: 1 / 2;
+  //   grid-row: 1 / span 3;
+  // }
+
+  // > * {
+  //   grid-column: 2 / -1;
+  // }
+
+  // @media (min-width: 968px) {
+  //   @include type.size(5xl);
+  //   line-height: 1.2;
+  // }
+}

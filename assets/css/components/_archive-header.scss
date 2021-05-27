@@ -1,0 +1,22 @@
+@use "../theme/spacing";
+@use "../theme/widths";
+@use "../theme/type";
+
+.archive-header {
+  @include spacing.mx(auto);
+  @include spacing.pt(8);
+  @include widths.content-width();
+  text-align: center;
+}
+
+.archive-header__title {
+  @include type.size(3xl);
+  font-weight: 600;
+}
+
+.archive-header__subtitle {
+}
+
+.archive-header__paginator {
+  @include spacing.mt(3);
+}

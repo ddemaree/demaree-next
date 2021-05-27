@@ -1,0 +1,72 @@
+@use "sass:map";
+@use "sass:meta";
+
+$colors: (
+  "offwhite": #F7F5F0,
+  "red": (
+    10: #fce1e1,
+    20: #fac4c4,
+    30: #f58c8c,
+    40: #f15656,
+    50: #d63d3d,
+    60: #ae3232,
+    70: #802424,
+    80: #5b1a1a,
+    90: #3e1212,
+  ),
+  "gray": (
+    10: #e8e7e6,
+    20: #d3d1cf,
+    30: #ada9a6,
+    40: #908a86,
+    50: #7b7470,
+    60: #645e5a,
+    70: #494542,
+    80: #33302e,
+    90: #22201f,
+  ),
+  "blue": (
+    10: #dbe8fd,
+    20: #bad3fc,
+    30: #7babf9,
+    40: #4789f7,
+    50: #3473d9,
+    60: #2a5db0,
+    70: #1f4481,
+    80: #16305a,
+    90: #0f203d,
+  ),
+);
+
+@function get($key, $keys...) {
+  $-value: map.get($colors, $key, $keys...);
+  @if $-value == null {
+    @debug "Missing color with keys #{$key} #{$keys}";
+  }
+  @return $-value;
+}
+
+@mixin text($key, $keys...) {
+  color: get($key, $keys...);
+}
+
+@mixin background($key, $keys...) {
+  background-color: get($key, $keys...);
+}
+
+@each $rootName, $rootColor in $colors {
+  @if meta.type-of($rootColor == "map") {
+    @each $subName, $subColor in $rootColor {
+      .text-#{$rootName}-#{$subName} {
+        color: $subColor;
+      }
+      .bg-#{$rootName}-#{$subName} {
+        background-color: $subColor;
+      }
+    }
+  } @else {
+    .text-#{$rootName} {
+      color: $rootColor;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@use '../theme/fonts';
+@use '../theme/spacing';
+@use '../theme/widths';
+@use '../theme/type';
+@use '../theme/color';
+@use '../theme/layout';
+
+.big-paginator {
+  @include widths.content-width();
+  @include type.size(xl);
+  @include spacing.mx(auto);
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: spacing.get(4);
+  justify-content: space-between;
+
+  > * {
+    flex: 1 1 0%;
+    width: 100%;
+  }
+
+  a {
+    @include color.text("red", 50);
+    line-height: 1.2;
+  }
+
+  @media (min-width: 520px) {
+    flex-direction: row;
+  }
+}
+
+.big-paginator__next {
+  @media (min-width: 520px) {
+    .icon-btn, &.icon-btn {
+      text-align: right;
+      flex-direction: row-reverse;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.article-card {
+  @include widths.content-width();
+  @include spacing.mx(auto);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (min-width: 600px) {
+    flex-direction: row-reverse;
+  }
+}
+
+.article-card__image {
+  @include spacing.mb(4);
+  width: 100%;
+
+  @media (min-width: 600px) {
+    @include spacing.ml(6);
+    width: max(25%, 180px);
+  }
+
+  > img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.article-card__info {
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+}
+
+.article-card__excerpt {
+  @include color.text("gray", 50);
+}
+
+.article-card__meta {
+  @include spacing.mt(2);
+  @include type.style-meta();
+}

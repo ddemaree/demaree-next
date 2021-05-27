@@ -1,0 +1,70 @@
+
+$spacings: (
+  0:  0px,
+  1:  0.25rem,  
+  2:  0.5rem,
+  3:  0.75rem,  
+  4:  1rem,  
+  6:  1.5rem,
+  8:  2rem,  
+  12: 3rem,
+  16: 4rem,
+  20: 5rem,
+  24: 6rem,
+  stack: var(--stack-spacing, 1.5rem),
+  stack-sm: var(--stack-spacing-sm, 0.75rem),
+  stack-lg: var(--stack-spacing-lg, 3rem),
+  auto: auto,
+);
+
+@function get($key) {
+  @return map-get($spacings, $key);
+}
+
+@mixin px($spacing) {
+  padding-left: get($spacing);
+  padding-right: get($spacing);
+}
+
+@mixin py($spacing) {
+  padding-top: get($spacing);
+  padding-bottom: get($spacing);
+}
+
+@mixin pb($spacing) {
+  padding-bottom: get($spacing);
+}
+
+@mixin pt($spacing) {
+  padding-top: get($spacing);
+}
+
+@mixin mx($spacing) {
+  margin-left: get($spacing);
+  margin-right: get($spacing);
+}
+
+@mixin my($spacing) {
+  margin-top: get($spacing);
+  margin-bottom: get($spacing);
+}
+
+@mixin mt($spacing) {
+  margin-top: get($spacing);
+}
+
+@mixin mb($spacing) {
+  margin-bottom: get($spacing);
+}
+
+@mixin ml($spacing) {
+  margin-left: get($spacing);
+}
+
+@mixin mr($spacing) {
+  margin-left: get($spacing);
+}
+
+@mixin centered() {
+  @include mx(auto);
+}

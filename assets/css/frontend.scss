@@ -1,0 +1,117 @@
+@use 'sass:string';
+@use './inc/webfonts';
+@use './inc/reset';
+@use './theme/fonts';
+@use './theme/spacing';
+@use './theme/widths';
+@use './theme/type';
+@use './theme/color';
+@use './theme/layout';
+@use './theme/a11y';
+
+:root {
+  --grid-width-content: #{widths.get(2xl)};
+  --grid-spacing-x: #{spacing.get(6)};
+  --stack-spacing-sm: #{spacing.get(3)};
+  --stack-spacing: #{spacing.get(6)};
+  --stack-spacing-lg: #{spacing.get(12)};
+  --stack-spacing-xl: #{spacing.get(16)};
+
+  @media (min-width: 540px) {
+    --grid-spacing-x: #{spacing.get(8)};
+  }
+}
+
+body {
+  @include color.background("offwhite");
+  @include color.text("gray", 80);
+}
+
+body {
+  --admin-bar-height: 0px;
+}
+
+body.admin-bar {
+  --admin-bar-height: 46px;
+
+  @media (min-width: 782px) {
+    --admin-bar-height: 32px;
+  }
+}
+
+@import "./components/archive-header";
+@import "./components/article-card";
+@import "./components/big-paginator";
+@import "./components/home-content";
+@import "./components/icon-btn";
+@import "./components/mini-paginator";
+@import "./components/post-card";
+@import "./components/post-tags";
+@import "./components/prose";
+@import "./components/site-footer";
+@import "./components/site-header";
+@import "./components/styled-separator";
+
+.related-posts {
+  @include widths.content-width();
+  @include spacing.mx(auto);
+}
+
+.related-posts__item {
+  @include spacing.mt(3);
+}
+
+.related-posts__title {
+  @include type.size(lg);
+  font-weight: 500;
+  line-height: 1.3;
+
+  span {
+    text-decoration: underline;
+  }
+}
+
+.related-posts__date {
+  @include spacing.mt(1);
+  @include type.size(sm);
+  @include color.text("gray", 50);
+  font-weight: 500;
+}
+
+.related-posts__excerpt {
+  @include spacing.mt(1);
+}
+
+.h-stack {
+  @include layout.h-stack();
+
+  &.h-stack--inline {
+    display: inline-flex;
+  }
+}
+
+.w-content {
+  @include widths.content-width();
+}
+
+.mx-auto {
+  @include spacing.mx(auto);
+}
+
+.styled-separator {
+  @include styled-separator();
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+@each $size, $styles in type.$textSizes {
+  .text-#{$size} {
+    @include type.size($size);
+  }
+}

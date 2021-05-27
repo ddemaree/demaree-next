@@ -1,0 +1,13 @@
+
+@mixin styled-separator {
+  @include widths.content-width();
+  @include spacing.mx(auto);
+  @include spacing.my(12);
+
+  &, & > hr {
+    @include spacing.mx(auto);
+    border-color: black;
+    border-width: 2px;
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,15 @@
+@use '../theme/fonts';
+@use '../theme/spacing';
+@use '../theme/layout';
+
+:where(.icon-btn) {
+  @include fonts.sans();
+  @include layout.h-stack(var(--icon-btn-spacing, 0.25rem));
+  font-weight: 500;
+
+  @each $key, $value in spacing.$spacings {
+    &.spacing-#{$key} {
+      --icon-btn-spacing: #{spacing.get($key)};
+    }
+  }
+}

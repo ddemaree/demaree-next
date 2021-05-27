@@ -1,0 +1,20 @@
+@use '../theme/color';
+@use '../theme/layout';
+
+.mini-paginator {
+  @include layout.h-stack(spacing(4));
+  justify-content: center;
+}
+
+.mini-paginator__arrow {
+  @include color.text("red", 50);
+
+  &.mini-paginator__arrow--disabled {
+    color: transparent;
+  }
+}
+
+.mini-paginator__text {
+  font-weight: 500;
+  @include color.text("gray", 50);
+}

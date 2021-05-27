@@ -1,0 +1,45 @@
+$widths: (
+  iphone-se: 320px,  
+  iphone-12: 375px,
+  ipad-portrait: 768px,
+  ipad-landscape: 1024px,
+  wp-ab-change: 782px,
+  content: #{var(--grid-width-content, 42rem)},
+  content-wide: 56rem,
+
+  // Tailwind width scale
+  2xl: 42rem, // 672px
+  3xl: 48rem, // 768px
+  4xl: 56rem, // 896px
+  5xl: 64rem, // 1024px
+  6xl: 72rem, // 1152px
+  prose: 65ch,
+  min: min-content,
+  max: max-content,
+  full: 100%
+);
+
+@function get($key) {
+  @return map-get($widths, $key);
+}
+
+@mixin width($key) {
+  width: map-get($widths, $key);
+}
+
+@mixin max-width($key) {
+  max-width: map-get($widths, $key);
+}
+
+@mixin max-w-content() {
+  max-width: var(--grid-width-content, 42rem);
+}
+
+@mixin content-width($inset: true) {
+  @include max-w-content();  
+  @if $inset {
+    width: calc(100% - (var(--grid-spacing-x) * 2));
+  } @else {
+    width: 100%; 
+  }
+}

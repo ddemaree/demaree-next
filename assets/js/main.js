@@ -1,5 +1,6 @@
-// import Vue from "vue/dist/vue.esm";
-// window.Vue = Vue;
+import 'alpinejs'
+import 'lazysizes'
+import 'imgix.js'
 
 // function getScrollbarWidth() {
 //   return window.innerWidth - document.documentElement.clientWidth;

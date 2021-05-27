@@ -1,0 +1,43 @@
+@use '../theme/spacing';
+@use '../theme/widths';
+@use '../theme/layout';
+@use '../theme/color';
+
+.post-tags {
+  @include widths.content-width();
+  @include spacing.mt(8);
+  @include spacing.mx(auto);
+  @include layout.h-stack(spacing.get(3));
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: spacing.get(2);
+}
+
+.post-tags__inner {
+  display: contents;
+}
+
+.post-tags__icon {
+  @include color.text('gray', 30);
+}
+
+.post-tags__tag {
+  > a {
+    @include color.background('gray', 10);
+    @include color.text('gray', 60);
+    @include spacing.px(3);
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    height: spacing.get(8);
+    border-radius: 0.25rem;
+    gap: 0.25rem;
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      @include color.background('red', 20);
+      @include color.text('red', 80);
+    }
+  }
+}
