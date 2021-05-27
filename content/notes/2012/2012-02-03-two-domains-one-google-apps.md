@@ -28,19 +28,19 @@ In a minute I'll explain why you might want to do this, but first, here's a guid
 
 2. Click on **Domain Settings**.
 
-    ![](http://media.tumblr.com/tumblr_lytu89JpkB1qaztlp.png)
+    ![](https://media.tumblr.com/tumblr_lytu89JpkB1qaztlp.png)
 
 3. Then click on the tab labeled **Domain names**.
 
-    ![](http://media.tumblr.com/tumblr_lytu7kVvSG1qaztlp.png)
+    ![](https://media.tumblr.com/tumblr_lytu7kVvSG1qaztlp.png)
 
 4. Click on the link labeled **Add a domain or domain alias**.
 
-    ![](http://media.tumblr.com/tumblr_lytu74kYIT1qaztlp.png)
+    ![](https://media.tumblr.com/tumblr_lytu74kYIT1qaztlp.png)
 
 5. Finally, on the next screen, check the second-from-top radio button, labeled **Add another domain**.
 
-    ![](http://media.tumblr.com/tumblr_lytu5zHC9a1qaztlp.png)
+    ![](https://media.tumblr.com/tumblr_lytu5zHC9a1qaztlp.png)
 
 Then you click the button labeled **Continue and verify domain ownership**, which takes you through the same annoying steps you have to follow any time you ask Google to do anything with a domain name that's not `google.com`.
 
@@ -48,7 +48,7 @@ Once you've verified ownership and set up MX records (or had a friendly nerd in 
 
 To add a new mailbox on the new, second domain, go into your *Organization & users* tab and create a new user. You'll now see a handy drop-down menu letting you choose which domain the new user should belong to:
 
-![](http://media.tumblr.com/tumblr_lytu5hBmxz1qaztlp.png)
+![](https://media.tumblr.com/tumblr_lytu5hBmxz1qaztlp.png)
 
 ### Why did I need this?
 

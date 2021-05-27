@@ -10,7 +10,7 @@ summary: Back to the Mac?
 title: Back to the Mac?
 ---
 
-![Twitter for Mac](http://media.tumblr.com/tumblr_lf13d165Tm1qaztlp.png)
+![Twitter for Mac](https://media.tumblr.com/tumblr_lf13d165Tm1qaztlp.png)
 
 Like many folks I was delighted to hear that not only was Twitter for Mac 2.0 (née Tweetie) still alive, and not only was Twitter Inc. finally behind the project (and not just in the sense of letting Loren Brichter work on it in his spare hours), but it was done and due for release as a Mac App Store launch title. It's already my regular desktop Twitter client, replacing Echofon for Mac, which replaced the old Tweetie 1.0.
 

@@ -11,7 +11,7 @@ summary: Focus on my favorite OS X Lion features
 title: Focus on my favorite OS X Lion features
 ---
 
-![](http://media.tumblr.com/tumblr_lorigtFoc11qaztlp.png)
+![](https://media.tumblr.com/tumblr_lorigtFoc11qaztlp.png)
 
 The just-released Mac OS X Lion has a lot of killer features, but so far, for me, the most killer is the ability to easily toggle _any_ app that supports it into a distraction-free, full-screen mode. [Apple's marketing page for the feature talks about it in terms of making apps more immersive and "gorgeous"][fullscreen], and that's certainly one nice aspect. But what I most appreciate about going full-screen is how it helps me keep my work focused.
 

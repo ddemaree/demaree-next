@@ -21,7 +21,7 @@ title: The iPad is smaller than you think.
 
 Speaking of the iPad, after I mentioned to a co-worker yesterday my decision that my next Mac would still be a laptop (even though I _will_ be buying an iPad), and after reading some tweets by iPhone/iPad developers about how they had to re-work some UI concepts because they misjudged the size of the screen, I printed out a scale mockup of an iPad:
 
-![iPad mockup](http://media.tumblr.com/tumblr_ky53gojPrL1qaztlp.jpg)
+![iPad mockup](https://media.tumblr.com/tumblr_ky53gojPrL1qaztlp.jpg)
 
 Pictures do a great job of obscuring just how small this device is going to feel in a person's hands. The screen, in particular, is very small. Not too small. It'll be perfect for reading text or watching movies. I think it'll make a great sketch pad or simple writing tablet. Games are gonna rock on this thing: I can imagine it feeling as light as a Nintendo DS, but with a ten-times-bigger screen.
 

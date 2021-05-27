@@ -23,9 +23,7 @@ _Problem:_ My GitHub account is associated with one of my personal email address
 
 `List-Id` headers are always of the form `reponame.accountname.github.com`. My aforementioned Björn project would be `bjorn.ddemaree.github.com`.
 
-In Gmail you can find (and therefore filter) all emails from a given account by setting up wildcard queries on the `List-Id` header, which Gmail helpfully lets you search on via the `list:` search operator:
-
-<img src="http://cl.ly/6hYl/Screen_shot_2011-05-12_at_6.45.04_AM.png">
+In Gmail you can find (and therefore filter) all emails from a given account by setting up wildcard queries on the `List-Id` header, which Gmail helpfully lets you search on via the `list:` search operator.
 
 Obviously this will work best if all of the repos whose emails you want to filter are owned by a single account, or at least a small, known list of accounts. (In that case you'd change your query to `list:"*.(account1|account2).github.com"`.)
 

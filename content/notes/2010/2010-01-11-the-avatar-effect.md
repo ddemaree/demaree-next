@@ -4,12 +4,12 @@ tumblr_type: link
 tumblr_url: https://ddemaree.tumblr.com/post/329794560/the-avatar-effect
 aliases:
   - /post/329794560/the-avatar-effect
-link_url: http://on.wsj.com/6n382k
+link_url: https://www.wsj.com/articles/SB10001424052748703652104574651764117659286
 slug: the-avatar-effect
 tags: []
 summary: The Avatar Effect
 title: The Avatar Effect
-publisher: on.wsj.com
+publisher: wsj.com
 ---
 
 The WSJ:
