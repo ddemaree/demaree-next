@@ -5,18 +5,19 @@ tumblr_url: https://ddemaree.tumblr.com/post/346417880/apple-sees-new-money-in-o
 aliases:
   - /post/346417880/apple-sees-new-money-in-old-media
 link_url: >-
-  http://www.google.com/url?q=http://online.wsj.com/article/SB10001424052748703405704575015362653644260.html?mod=rss_Technology
+  https://www.wsj.com/articles/SB10001424052748703405704575015362653644260
+link_paywall: true
 slug: apple-sees-new-money-in-old-media
 tags:
-  - Apple
   - iPad
+  - Apple
   - Business
 summary: Apple Sees New Money in Old Media
 title: Apple Sees New Money in Old Media
-publisher: google.com
+publisher: wsj.com
 ---
 
-The WSJ reports on rumors that Apple is working on some content deals for their upcoming tablet device:
+The WSJ reports on [rumors that Apple is working on some content deals for their upcoming tablet device](https://www.wsj.com/articles/SB10001424052748703405704575015362653644260):
 
 > Apple has recently been in discussions with book, magazine and newspaper publishers about how they can work together. The company has talked with New York Times Co., Condé Nast Publications Inc. and HarperCollins Publishers and its owner News Corp., which also owns The Wall Street Journal, over content for the tablet, say people familiar with the talks.
 >

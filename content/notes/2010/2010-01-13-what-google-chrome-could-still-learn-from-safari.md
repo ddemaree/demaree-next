@@ -6,7 +6,10 @@ tumblr_url: >-
 aliases:
   - /post/332373952/what-google-chrome-could-still-learn-from-safari
 slug: what-google-chrome-could-still-learn-from-safari
-tags: []
+tags:
+  - Web Development
+  - Chrome
+  - Safari
 summary: What Google Chrome could still learn from Safari
 title: What Google Chrome could still learn from Safari
 ---

@@ -5,18 +5,19 @@ tumblr_type: text
 tumblr_url: https://ddemaree.tumblr.com/post/337554241/rails-model-names
 aliases:
   - /post/337554241/rails-model-names
-slug: rails-model-names
+slug: 2010/rails-model-names
 tags:
   - Web Development
   - Ruby on Rails
   - MongoDB
 summary: Pleased to Meet You, Won't You Guess My Name?
-title: Pleased to Meet You, Won't You Guess My Name?
+title: How Rails Model Names Work
 ---
 
 While working on a little Rails project this week, I discovered something very interesting (and little-documented) in ActiveSupport: [`Module.model_name`][asmn]. It's a core extension to support Rails's handling of models as RESTful resources, as in the examples below:
 
-<pre><code># BlogPost is a subclass of ActiveRecord::Base
+```ruby
+# BlogPost is a subclass of ActiveRecord::Base
 @blog_post = BlogPost.find(108)
  
 # Same as render "blog_posts/blog_post", :object => @blog_post
@@ -26,18 +27,21 @@ render @blog_post
 url_for @blog_post #=> "/blog_posts/108"
  
 # Lots of Rails's tag/form helpers use this
-dom_id @blog_post #=> "blog_post_108"</code></pre>
+dom_id @blog_post #=> "blog_post_108"
+```
 
 The `model_name` method (which gets inherited by pretty much everything, because it's in the `Module` class) returns a special `ActiveSupport::ModelName` object. `ModelName` is just a subclass of reg'lar old `String`, that gets initialized using the class name, then uses that name to pre-bake certain name components used by the record identifier:
 
-<pre><code>Ando::BlogPost.model_name #=> "blog_post"
+```ruby
+Ando::BlogPost.model_name #=> "blog_post"
  
 # Look at all these useful variations!
 Ando::BlogPost.model_name.singular #=> "ando_blog_post"
 Ando::BlogPost.model_name.plural #=> "ando_blog_posts"
 Ando::BlogPost.model_name.collection #=> "ando/blog_posts"
 Ando::BlogPost.model_name.element #=> "blog_post"
-Ando::BlogPost.model_name.partial_path #=> "blog_posts/blog_post"</code></pre>
+Ando::BlogPost.model_name.partial_path #=> "blog_posts/blog_post"
+```
 
 What's interesting here is that since this one object is responsible for 90% of Rails's resource-mapping magic, this makes it extremely simple to override part or all of that magic. Of course, it's generally a bad idea to override a default (and very widely used) bit of Rails's behavior, which is why it's especially good that this can be done on a class-by-class basis.
 
@@ -45,7 +49,8 @@ Right now I'm working on a little CMS project where I'm using single collection 
 
 So in my base class, I did a little `instance_eval`'ing on the `model_name` object:
 
-<pre><code>class Ando::Item
+``` ruby
+class Ando::Item
   include MongoMapper::Document
   set_collection_name "items"
  
@@ -64,9 +69,10 @@ So in my base class, I did a little `instance_eval`'ing on the `model_name` obje
     model_name
   end
  
-end</code></pre>
+end
+```
 
-To explain a bit what I'm doing here:
+To briefly explain what I'm doing here:
 
 - I'm hard-coding the singular, plural and collection forms, which are primarily used in routing, so Rails's URL helpers will always point back to `Ando::ItemsController` even if the object in question is a subclass.
 

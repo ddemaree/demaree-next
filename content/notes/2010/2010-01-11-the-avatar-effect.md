@@ -6,7 +6,8 @@ aliases:
   - /post/329794560/the-avatar-effect
 link_url: https://www.wsj.com/articles/SB10001424052748703652104574651764117659286
 slug: the-avatar-effect
-tags: []
+tags:
+- China
 summary: The Avatar Effect
 title: The Avatar Effect
 publisher: wsj.com

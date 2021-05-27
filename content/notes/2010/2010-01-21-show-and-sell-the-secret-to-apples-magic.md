@@ -17,7 +17,7 @@ title: "Show and Sell: The Secret to Apple’s Magic"
 publisher: gizmodo.com
 ---
 
-Joel Johnson on how Apple rolls out products:
+Joel Johnson on [how Apple rolls out products](http://gizmodo.com/5451242/show-and-sell-the-secret-to-apples-magic):
 
 > Outwardly Apple's showmanship is competent, workmanlike. Jobs-as-performer wears an understated uniform that does not distract from the act. His humor, when it exists, is subtle. The closest an Apple keynote gets to pomp are pie charts that look like wooden logs.
 >
