@@ -7,12 +7,13 @@ aliases:
 link_url: >-
   http://www.ironammonite.com/2009/12/surviving-cueva-de-los-cristales-giant.html
 slug: surviving-the-giant-crystal-cave
-tags: []
+tags:
+  - Interesting
 summary: Surviving the Giant Crystal Cave
 title: Surviving the Giant Crystal Cave
 publisher: ironammonite.com
 ---
 
-The producer of the BBC2 documentary series "How Earth Made Us" visited Mexico's Cueva de los Cristales, a place he describes as "the deadliest place on earth":
+A producer of the BBC2 documentary series "How Earth Made Us" visited [Mexico's Cueva de los Cristales, a place he describes as "the deadliest place on earth"](http://www.ironammonite.com/2009/12/surviving-cueva-de-los-cristales-giant.html):
 
 > It's 50oC and has a humidity of 100%, less than a hundred people have been inside and it's so deadly that even with respirators and suits of ice you can only survive for 20 minutes before your body starts to fail. It’s the nearest thing to visiting another planet – it’s going deep inside our own.

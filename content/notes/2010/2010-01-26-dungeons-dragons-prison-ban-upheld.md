@@ -6,7 +6,8 @@ aliases:
   - /post/354943169/dungeons-dragons-prison-ban-upheld
 link_url: http://www.nytimes.com/2010/01/27/us/27dungeons.html
 slug: dungeons-dragons-prison-ban-upheld
-tags: []
+tags:
+  - Interesting
 summary: Dungeons & Dragons Prison Ban Upheld
 title: Dungeons & Dragons Prison Ban Upheld
 publisher: nytimes.com

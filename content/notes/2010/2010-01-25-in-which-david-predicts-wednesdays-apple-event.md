@@ -13,10 +13,6 @@ summary: In which David predicts Wednesday's Apple Event.
 title: In which David predicts Wednesday's Apple Event.
 ---
 
-When writing about things I'm passionate about, such as Apple products, I tend to be long-winded in a misguided attempt to demonstrate _just how much I know_ about the subject at hand. This usually results in me spending days crafting a perfect post, which I either publish (and come off looking like a crazy know-it-all) or don't (because it's just _not perfect enough_).
-
-So, knowing this, I'm going to try to keep this predictions post short.
-
 I've been watching Apple for a long time, and feel like I have a handle on what kind of company they are and what they will and won't do. I also have been following Apple rumors for a long time, and while most of what people write about the company is bullshit, there are sometimes _patterns_ of bullshit that, parsed correctly, can point towards the truth.
 
 This should be obvious, but even so it bears repeating: when [the _Wall Street Journal_ acts like a rumored upcoming Apple product is real](http://www.google.com/url?q=http://online.wsj.com/article/SB10001424052748703405704575015362653644260.html?mod=rss_Technology), then it's real. Papers like the _Journal_ don't run stories without confirmation, and the timing of their article stinks of a planned leak by Apple itself.
