@@ -5,23 +5,13 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
-  path: content/blog
-  label: Blog
-  create: all
-  match: "**/*"
-- type: directory
-  path: content/guides
-  label: Guides
+  path: content/articles
+  label: Articles
   create: all
   match: "**/*"
 - type: directory
   path: content/notes
   label: Notes
-  create: all
-  match: "**/*"
-- type: directory
-  path: content/series
-  label: Series
   create: all
   match: "**/*"
 - type: directory

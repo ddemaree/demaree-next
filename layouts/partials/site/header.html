@@ -1,12 +1,29 @@
-<header class="site-header grid grid-cols-6 px-4 xs:px-6 items-center h-20">
-  <a href="/" class="justify-self-start whitespace-nowrap">
-    <i class="fas fa-home"></i>
-    <span class="ml-1 font-medium">Home</span>
+<header class="site-header px-6 h-20 flex items-center gap-8">
+  <a href="/" class="justify-self-start whitespace-nowrap flex items-center gap-2 text-inkBold">
+    <i class="fak fa-dd-logo-square fa-2x"></i>
+    <span class="font-semibold">David Demaree</span>
   </a>
-  <a href="/" class="text-inkBold col-start-3 col-span-2 justify-self-center font-sans-display font-medium uppercase tracking-widest flex items-center">
-    <span class="text-4xl relative z-50">
-      <i class="fak fa-dd-logo-square"></i>
-    </span>
-    <span class="sr-only ml-3">David Demaree</span>
-  </a>
+
+  <span class="mx-8 flex-1"></span>  
+
+  <nav>
+    <ul class="flex gap-4">
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+        {{ $isCurrent := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+        <li>
+          <a href="{{ .URL }}" class="flex items-center gap-2{{ if $isCurrent }} text-inkBold font-semibold{{ else }} text-inkMedium{{ end }}">
+            {{ with .Params.icon }}
+            <i class="fa-fw fa-sm {{ if $isCurrent }}fas{{else}}fal{{ end }} {{ . }}"></i>
+            {{ end }}
+            <span>{{ .Name }}</span>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </nav>
+
+  <div>
+    <button><i class="fas fa-sun"></i></button>
+  </div>
 </header>

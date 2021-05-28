@@ -3,5 +3,7 @@ title: About Me
 menu: 
   main:
     name: About
-    pre: fal fa-heart
+    weight: -10
+    params:
+      icon: fa-heart
 ---

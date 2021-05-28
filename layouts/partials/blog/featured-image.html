@@ -1,0 +1,14 @@
+{{ $ := . }}
+
+{{- $featuredUrl := $.Params.featured_image -}}
+{{- $featured := partial "blog/get-cover-image.html" $ -}}
+
+{{- if $featured -}}
+{{ $featuredUrl = ($featured.Fill "400x400").Permalink }}
+{{- end -}}
+
+{{- if (or $featuredUrl $featured) -}}
+<figure class="blog-post-image">
+  <img src="{{ $featuredUrl }}" width="200" height="200" alt="{{ .Params.featured_alt_text | default `Image for post` }}" />
+</figure>
+{{- end -}}

@@ -98,9 +98,13 @@ module.exports = {
 			'lg': '1020px'
 		},
 		extend: {
+			width: {
+				['full-inset']: `calc(100% - (2 * var(--inset-x, ${defaultTheme.spacing[6]})))`
+			},
 			fontFamily: {
 				sans: ['soehne-web', ...defaultTheme.fontFamily.sans],
 				'sans-display': ['soehne-breit-web', 'soehne-web', ...defaultTheme.fontFamily.sans],
+				'sans-schmal': ['soehne-schmal-web', ...defaultTheme.fontFamily.sans],
 				serif: ['ivar-text', ...defaultTheme.fontFamily.serif],
 				'roslindale': ['Roslindale Variable', 'ivar-text', ...defaultTheme.fontFamily.serif],
 				'roslindale-2': ['"Roslindale Variable 2"', 'ivar-text', ...defaultTheme.fontFamily.serif],

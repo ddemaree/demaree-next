@@ -1,0 +1,20 @@
+{{- $permalink := .Permalink -}}
+{{- $featured := partial "blog/get-cover-image.html" . -}}
+
+<article class="flex items-start">
+  <div class="flex-1 max-w-prose">
+    <a href="{{ $permalink }}">
+      <h2 class="text-xl text-inkBold font-semibold mb-1">{{ .Title }}</h2>
+      {{ with .Params.excerpt }}<div class="mb-2 leading-snug" style="max-width: 48ch">{{ . }}</div>{{ end }}
+      <div class="post-meta text-inkMedium text-sm">
+        {{ .Date.Format "Jan 2 2006" }}
+        <span class="sep">•</span>
+        {{ .ReadingTime }} min read
+      </div>
+    </a>
+  </div>
+  
+  {{- if (or $featured .Params.featured_image) }}<a href="{{ $permalink }}" class="w-24 md:w-32 ml-3 overflow-hidden rounded-md">
+    {{ partial "blog/featured-image.html" . }}
+  </a>{{ end }}
+</article>
