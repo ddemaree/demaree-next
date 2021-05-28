@@ -10,6 +10,22 @@
 
 @layer components {
 
+  .homepage-lede {
+    @apply font-roslindale-2 text-4xl sm:text-5xl md:text-6xl;
+    line-height: 1.25 !important;
+    font-variation-settings: 'wdth' 94;
+
+    a {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+    }
+
+    em, i {
+      font-style: italic;
+      font-variation-settings: 'ital' 0.8;
+    }
+  }
+
   .dd-icon {
     height: 1em;
   }

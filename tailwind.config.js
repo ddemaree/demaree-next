@@ -101,6 +101,9 @@ module.exports = {
 			width: {
 				['full-inset']: `calc(100% - (2 * var(--inset-x, ${defaultTheme.spacing[6]})))`
 			},
+			minHeight: {
+				['screen-inset']: `calc(100vh - var(--header-height, ${defaultTheme.spacing[20]}))`
+			},
 			fontFamily: {
 				sans: ['soehne-web', ...defaultTheme.fontFamily.sans],
 				'sans-display': ['soehne-breit-web', 'soehne-web', ...defaultTheme.fontFamily.sans],

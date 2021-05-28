@@ -1,18 +1,26 @@
 {{ define "main" }}
-<main class="">
-  {{ .Content }}
+<main class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+  <div class="sm:col-span-2 px-6 py-6 sm:py-10 max-w-7xl">
+    {{ .Content }}
+  </div>
+  
+  <hr class="sm:col-span-2 sm:mb-10 border-inkBold border-0 border-t-2 mx-6" />
 
   <div class="space-y-8 w-full-inset mx-auto max-w-2xl">
-    <h2 class="text-center tracking-wide font-sans font-bold text-accent text-3xl dd-col-wide">Latest writing</h2>
+    <h2 class="font-semibold text-accent text-2xl dd-col-wide">Latest article</h2>
 
-    {{- range first 6 (where site.RegularPages "Type" "articles") -}}
+    {{- range first 1 (where site.RegularPages "Type" "articles") -}}
       {{ .Render "li" }}
     {{- end -}}
   </div>
 
   <div class="space-y-8 w-full-inset mx-auto max-w-2xl">
-
-    {{- $__substacks := getJSON "https://demaree.substack.com/api/v1/posts?limit=6&offset=0" -}}
+    <div>
+      <h2 class="font-semibold text-accent text-2xl dd-col-wide">Plague Letters</h2>
+      <p>Starting in May 2020, I occasionally send a newsletter about life during the <abbr>COVID–19</abbr> pandemic, with side trips into video games, U.S. politics, and several cocktail recipes.</p>
+    </div>
+      
+    {{- $__substacks := getJSON "https://demaree.substack.com/api/v1/posts?limit=1&offset=0" -}}
     {{- range $__substacks -}}
     <article>
       <h3>{{ .title }}</h3>
