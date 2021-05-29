@@ -1,5 +1,5 @@
 <header class="site-header p-6 flex flex-wrap items-center gap-x-8 gap-y-4 md:text-lg">
-  <a href="/" class="justify-self-start whitespace-nowrap flex items-center gap-2 text-inkBold">
+  <a href="/" class="justify-self-start whitespace-nowrap flex items-center gap-2 text-ink-bold">
     <i class="fak fa-dd-logo-square fa-2x"></i>
     <span class="font-semibold">David Demaree</span>
   </a>
@@ -12,7 +12,7 @@
       {{ range .Site.Menus.main }}
         {{ $isCurrent := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
         <li>
-          <a href="{{ .URL }}" class="flex items-center gap-2{{ if $isCurrent }} text-inkBold font-semibold{{ else }} text-inkMedium{{ end }}">
+          <a href="{{ .URL }}" class="flex items-center gap-2{{ if $isCurrent }} text-ink-bold font-semibold{{ else }} text-ink-medium{{ end }}">
             {{ with .Params.icon }}
             <i class="fa-fw fa-sm {{ if $isCurrent }}fas{{else}}fal{{ end }} {{ . }}"></i>
             {{ end }}

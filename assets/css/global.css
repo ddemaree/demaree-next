@@ -1,80 +1,38 @@
 
 :root {
-  --inset: theme("spacing.6");
-  --spacing-regular: theme("spacing.6");
-  --spacing-big: theme("spacing.12");
-  --spacing-verybig: theme("spacing.16");
-  --layout-content-width: theme("maxWidth.2xl");
-  --layout-wide-width: theme("maxWidth.4xl");
+  --inset: 1.5rem;
+  --spacing-regular: 1.5rem;
+  --spacing-big: 3rem;
+  --spacing-verybig: 4rem;
+  --layout-content-width: 42rem;
+  --layout-wide-width: 56rem;
 }
+
+.homepage-lede {
+  @apply font-roslindale-2 text-4xl sm:text-5xl md:text-6xl;
+  line-height: 1.25 !important;
+  font-variation-settings: 'wdth' 94;
+
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+
+  em, i {
+    font-style: italic;
+    font-variation-settings: 'ital' 0.8;
+  }
+}
+
+.dd-icon {
+  height: 1em;
+}
+
 
 @layer components {
 
-  .homepage-lede {
-    @apply font-roslindale-2 text-4xl sm:text-5xl md:text-6xl;
-    line-height: 1.25 !important;
-    font-variation-settings: 'wdth' 94;
 
-    a {
-      text-decoration: underline;
-      text-decoration-thickness: 2px;
-    }
 
-    em, i {
-      font-style: italic;
-      font-variation-settings: 'ital' 0.8;
-    }
-  }
-
-  .dd-icon {
-    height: 1em;
-  }
-
-  .dd-layout-cols--old {
-    grid-template-columns:
-      calc(50vw - (var(--layout-wide-width) / 2)) repeat(8, 1fr)
-      calc(50vw - (var(--layout-wide-width) / 2));
-  }
-
-  .dd-grid-cols-2,
-  .dd-grid-cols,
-  .dd-layout-cols {
-    --layout-gap: 0px;
-    --layout-gutter: calc(
-      50vw - (var(--layout-wide-width) / 2) - var(--layout-gap)
-    );
-
-    grid-template-columns:
-      [full-start wide-start] minmax(theme("spacing.8"), var(--layout-gutter))
-      [content-start] repeat(8, 1fr) [content-end] minmax(
-        theme("spacing.8"),
-        var(--layout-gutter)
-      )
-      [wide-end full-end];
-
-    @screen sm {
-      grid-template-columns:
-        [full-start] minmax(theme("spacing.6"), var(--layout-gutter))
-        [wide-start] 1fr [content-start] repeat(6, 1fr)
-        [content-end] 1fr [wide-end] minmax(
-          theme("spacing.6"),
-          var(--layout-gutter)
-        )
-        [full-end];
-    }
-
-    .dd-col-full {
-      grid-column: full;
-    }
-
-    .dd-col-wide {
-      grid-column: wide;
-    }
-
-    .dd-col-content {
-      grid-column: content;
-    }
-  }
 
   .fullwidth,
   .full-width,
@@ -96,7 +54,7 @@
     align-items: center;
 
     strong {
-      @apply text-inkBold font-semibold;
+      @apply text-ink-bold font-semibold;
     }
   }
 
@@ -137,12 +95,12 @@
     }
 
     a {
-      @apply text-inkBold;
+      @apply text-ink-bold;
       text-decoration: underline;
     }
 
     strong {
-      @apply text-inkBold font-semibold;
+      @apply text-ink-bold font-semibold;
     }
 
     h1,
@@ -242,7 +200,7 @@
     }
 
     figcaption {
-      @apply pt-4 px-8 text-inkMedium font-sans text-base max-w-2xl mx-auto;
+      @apply pt-4 px-8 text-ink-medium font-sans text-base max-w-2xl mx-auto;
       text-align: center;
       > * {
         color: inherit;
@@ -294,7 +252,7 @@
     }
 
     > blockquote {
-      @apply px-6 text-inkMedium;
+      @apply px-6 text-ink-medium;
       box-shadow: inset 4px 0 0 0 var(--color-ink-light, currentColor);
 
       > * {

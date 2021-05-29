@@ -1,10 +1,10 @@
 {{ define "main" }}
 {{ $paginator := .Paginate (.Pages.GroupByDate "Jan 2006") }}
 <div class="max-w-3xl mx-auto px-8">
-  <h1 class="text-center text-2xl font-semibold text-inkBold">Notes</h1>
+  <h1 class="text-center text-2xl font-semibold text-ink-bold">Notes</h1>
 
   {{ range $paginator.PageGroups  }}
-  <h2 class="font-roslindale-2 font-semibold text-inkBold text-2xl mt-16 mb-8 first:mt-0">
+  <h2 class="font-roslindale-2 font-semibold text-ink-bold text-2xl mt-16 mb-8 first:mt-0">
     {{ .Key }}
   </h2>
   

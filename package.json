@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@ddemaree/dynamic-ink": "^0.1.1",
     "alpinejs": "^2.8.2",
     "autoprefixer": "^10.1.0",
     "imgix.js": "^3.5.0",
@@ -17,6 +18,7 @@
     "lodash": "^4.17.21",
     "postcss": "^8.2.10",
     "postcss-cli": "^8.3.1",
+    "postcss-custom-media": "^8.0.0",
     "postcss-import": "^14.0.0",
     "postcss-url": "^10.1.1",
     "tailwindcss": "^2.0.2"
