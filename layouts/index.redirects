@@ -1,7 +1,3 @@
-https://demaree.me/p/* https://demaree.space/:splat 302!
-https://demaree.me/*   https://demaree.space/:splat 302!
-https://demaree.me/    https://demaree.space/       302!
-
 # Range through the site's pages and output the links of any aliases set.
 {{- range $p := .Site.Pages -}}
 {{- range .Aliases }}
