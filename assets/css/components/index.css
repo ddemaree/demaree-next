@@ -1,0 +1,20 @@
+@import "./typography.css";
+@import "./media.css";
+
+@layer components {
+
+  .dd-icon {
+    height: 1em;
+  }
+
+  .dots-divider {
+    @apply h-8 flex items-center justify-center text-ink-light;
+    border-width: 0px;
+
+    &:before {
+      @apply inline-block text-lg;
+      content: "•••";
+      letter-spacing: 1em;
+    }
+  }
+}

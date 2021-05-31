@@ -2,12 +2,14 @@
 {{ $accessToken := (getenv "FB_ACCESS_TOKEN") }}
 {{ $instaURL := (printf "https://instagram.com/p/%s" $instaId) }}
 
+<figure class="dd-embed dd-embed-instagram">
 {{ if $accessToken }}
-  {{ $oembedURL := (printf "https://graph.facebook.com/v9.0/instagram_oembed/?url=%s/&hidecaption=0&access_token=%s" $instaURL $accessToken) }}
+  {{ $oembedURL := (printf "https://graph.facebook.com/v9.0/instagram_oembed/?url=%s/&hidecaption=0&access_token=%s&maxwidth=500&fields=thumbnail_url,author_name,provider_name,provider_url" $instaURL $accessToken) }}
   {{ $insta := getJSON $oembedURL }}
-  <blockquote class="instagram-media w-full" data-instgrm-captioned data-instgrm-permalink="{{ $instaURL }}" data-instgrm-version="13"><img src={{ $insta.thumbnail_url }} /></blockquote>
+  <blockquote class="instagram-media w-full" data-instgrm-captioned data-instgrm-permalink="{{ $instaURL }}" data-instgrm-version="13" style="max-width: 500px"><img src={{ $insta.thumbnail_url }} /></blockquote>
   <script async src="//platform.instagram.com/en_US/embeds.js"></script>
 {{ else }}
-  <blockquote class="instagram-media w-full" data-instgrm-captioned data-instgrm-permalink="{{ $instaURL }}" data-instgrm-version="13"></blockquote>
+  <blockquote class="instagram-media w-full" data-instgrm-captioned data-instgrm-permalink="{{ $instaURL }}" data-instgrm-version="13" style="max-width: 500px"></blockquote>
   <script async src="//platform.instagram.com/en_US/embeds.js"></script>
 {{ end }}
+</figure>

@@ -11,40 +11,58 @@
 {{- define "main" }}
 <!-- blog/single - main -->
 <header class="dd-blog-header grid dd-grid-cols py-12 px-8">
-  <h1 data-content="{{ .Title }}" class="dd-blog-title dd-col-full mb-3 deorphan text-ink-bold">{{ .Title }}</h1>
+  <h1 data-content="{{ .Title }}" class="dd-blog-title text-center dd-col-full mb-3 deorphan text-ink-bold">{{ .Title }}</h1>
 
   {{ with (or .Params.subtitle .Params.excerpt .Params.description) }}<h2 class="text-center dd-col-full text-ink-medium text-lg sm:text-xl leading-snug sm:leading-snug mb-4">{{ . }}</h2>{{ end }}
 
-  <div class="post-meta text-ink-medium text-base text-center dd-col-full text-ink-medium">{{ .Date.Format "Jan 2 2006" }}</div>
+  <div class="post-meta text-ink-medium text-base text-center dd-col-full">{{ .Date.Format "Jan 2 2006" }}</div>
 </header>
 
-<main class="grid dd-grid-cols">
-  <div class="dd-prose contents text-lg font-serif text-ink">
+<main class="">
+  <div class="dd-prose">
     {{ .Content }}
-  </div>
 
-  {{ if or .NextInSection .PrevInSection }}
-  <div class="post-navigation py-12 content-width flex">
-    {{ with .NextInSection }}
-    <a href="{{ .Permalink }}" rel="next" class="flex-1 flex items-center">
-      <i class="fas fa-chevron-left text-accent text-3xl mr-3"></i>
-      <div class="flex-1">
-        <div class="text-base uppercase tracking-widest text-ink-medium">Next post</div>
-        <div class="text-lg font-semibold">{{ .Title }}</div>
-      </div>
-    </a>
+    <div class="py-8 flex justify-center items-center h-8  text-ink-light">
+      <i class="fak fa-dd-logo fa-2x"></i>
+    </div>
+
+    {{- $tags := .GetTerms "tags" -}}
+    {{ if $tags }}
+    <ul class="post-tags flex flex-wrap gap-3 list-none font-medium text-sm">
+      {{ range $tags }}
+        <li class="m-0">
+          <a href="{{ .Permalink }}" class="flex items-center gap-1 h-8 px-3 leading-none rounded-md no-underline bg-gray-10 text-gray-60">
+            <i class="fal fa-tag"></i>
+            <span>{{ .LinkTitle }}</span>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
     {{ end }}
-    {{ with .PrevInSection }}
-    <a href="{{ .Permalink }}" rel="prev" class="flex-1 flex items-center text-right">
-      <div class="flex-1">
-        <div class="text-base uppercase tracking-widest text-ink-medium">Previous post</div>
-        <div class="text-lg font-semibold">{{ .Title }}</div>
-      </div>
-      <i class="fas fa-chevron-right text-accent text-3xl ml-3"></i>
-    </a>
+
+    {{ if or .NextInSection .PrevInSection }}
+    <div class="post-navigation py-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {{ with .NextInSection }}
+      <a href="{{ .Permalink }}" rel="next" class="flex items-center no-underline gap-3">
+        <i class="fas fa-chevron-left text-accent text-3xl"></i>
+        <div class="flex-1">
+          <div class="text-base uppercase text-ink-medium">Next post</div>
+          <div class="text-lg font-semibold">{{ .Title }}</div>
+        </div>
+      </a>
+      {{ end }}
+      {{ with .PrevInSection }}
+      <a href="{{ .Permalink }}" rel="prev" class="flex gap-3 items-center flex-row-reverse sm:flex-row sm:text-right no-underline">
+        <div class="flex-1">
+          <div class="text-base uppercase text-ink-medium">Previous post</div>
+          <div class="text-lg font-semibold">{{ .Title }}</div>
+        </div>
+        <i class="fas fa-chevron-right text-accent text-3xl"></i>
+      </a>
+      {{ end }}
+    </div>
     {{ end }}
   </div>
-  {{ end }}
 
 </main>
 <!-- /blog/single - main -->

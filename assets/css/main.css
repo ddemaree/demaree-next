@@ -1,3 +1,6 @@
-@import "assets/css/syntax-dracula.css";
-@import "assets/css/tailwind-base.css";
+@import "assets/css/vendor/syntax-dracula.css";
+@import "assets/css/vendor/tailwind-base.css";
 @import "assets/css/global.css";
+@import "assets/css/pages";
+@import "assets/css/components";
+@import "assets/css/utilities";

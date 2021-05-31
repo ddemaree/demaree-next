@@ -1,8 +1,9 @@
 {{ $img := .Page.Resources.GetMatch .Destination }}
 
 {{ if $img }}
+{{- $imgResized := $img.Resize "1800x" -}}
 <figure class="dd-block-image">
-  <img src="{{ $img.Permalink }}" alt="{{ .Text }}" width="{{ $img.Width }}" height="{{ $img.Height }}" />
+  <img src="{{ $imgResized.Permalink }}" alt="{{ .Text }}" width="{{ $imgResized.Width }}" height="{{ $imgResized.Height }}" />
   {{ with .Title }}
   <figcaption>{{ . }}</figcaption>
   {{ end }}

@@ -1,8 +1,12 @@
 {{ define "main" }}
-<div class="space-y-8 w-full-inset mx-auto max-w-2xl">
-<h1>Posts</h1>
-{{ range .Pages }}
-  {{ .Render "li" }}
-{{ end }}
-</div>
+<main class="space-y-8 w-full-inset mx-auto max-w-2xl">
+
+  <header class="py-4 sm:py-12 text-center">
+    <h1 class="dd-title">Articles</h1>
+  </header>
+
+  {{ range .Pages }}
+    {{ .Render "li" }}
+  {{ end }}
+</main>
 {{ end }}

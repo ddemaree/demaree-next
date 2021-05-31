@@ -6,6 +6,9 @@ languageCode: en-us
 # Disable Hugo's built-in Alias feature, to utilize Netlify Redirects instead:
 disableAliases: true
 
+build:
+  writeStats: true
+
 taxonomies:
   series: "series"
   tag: "tags"
@@ -22,13 +25,27 @@ params:
 permalinks:
   articles: "/p/:slug"
 
+# anchorLineNos = false
+# codeFences = true
+# guessSyntax = false
+# hl_Lines = ""
+# lineAnchors = ""
+# lineNoStart = 1
+# lineNos = false
+# lineNumbersInTable = true
+# noClasses = false
+# style = "monokai"
+# tabWidth = 2
+
 markup:
   highlight:
     anchorLineNos: false
     codeFences: true
     guessSyntax: false
     style: "monokai"
+    noClasses: false
     tabWidth: 2
+    hl_Lines: ""
   goldmark:
     renderer:
       unsafe: true
@@ -39,7 +56,7 @@ markup:
       autoHeadingID: true
       autoHeadingIDType: github
 
-# sectionPagesMenu: "main"
+sectionPagesMenu: "main"
 
 menu:
   main:
@@ -49,6 +66,17 @@ menu:
         icon: 'fa-home'
       url: /
       weight: -100
+    - identifier: "articles"
+      name: Writing
+      url: /articles
+      weight: 100
+      params:
+        icon: fa-feather-alt
+    - identifier: "notes" 
+      name: Notes
+      url: /notes
+      params:
+        icon: fa-comment-alt-lines
   social:
     - identifier: "twitter"
       name: "Twitter"

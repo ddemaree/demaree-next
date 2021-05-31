@@ -1,0 +1,13 @@
+@layer utilities {
+  .min-w-full {
+    min-width: 100%;
+  }
+
+  .js-hidden {
+    display: none;
+
+    .js-active & {
+      display: block;
+    }
+  }
+}

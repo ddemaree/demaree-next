@@ -6,27 +6,35 @@
   
   <hr class="sm:col-span-2 sm:mb-10 border-ink-bold border-0 border-t-2 mx-6" />
 
-  <div class="space-y-8 w-full-inset mx-auto max-w-2xl">
-    <h2 class="font-semibold text-accent text-2xl dd-col-wide">Latest article</h2>
+  <div class="home-cols">
 
-    {{- range first 1 (where site.RegularPages "Type" "articles") -}}
-      {{ .Render "li" }}
-    {{- end -}}
-  </div>
+    <div class="space-y-8 w-full-inset mx-auto max-w-2xl">
+      <h2 class="text-accent dd-heading-alt-2">Latest article</h2>
 
-  <div class="space-y-8 w-full-inset mx-auto max-w-2xl">
-    <div>
-      <h2 class="font-semibold text-accent text-2xl dd-col-wide">Plague Letters</h2>
-      <p>Starting in May 2020, I occasionally send a newsletter about life during the <abbr>COVID–19</abbr> pandemic, with side trips into video games, U.S. politics, and several cocktail recipes.</p>
+      {{- range first 3 (where site.RegularPages "Type" "articles") -}}
+        {{ .Render "li" }}
+      {{- end -}}
+
+      <div>Read more in the archives</div>
     </div>
-      
-    {{- $__substacks := getJSON "https://demaree.substack.com/api/v1/posts?limit=1&offset=0" -}}
-    {{- range $__substacks -}}
-    <article>
-      <h3>{{ .title }}</h3>
-    </article>
-    {{- end -}}
+
+    <div class="space-y-8 w-full-inset mx-auto max-w-2xl">
+      <div>
+        <h2 class="text-accent dd-heading-alt-2 mb-4">Plague Letters</h2>
+        <p class="text-ink-medium">Starting in May 2020, I occasionally send a newsletter about life during the <abbr>COVID–19</abbr> pandemic, with side trips into video games, U.S. politics, and several cocktail recipes.</p>
+      </div>
+        
+      {{- $__substacks := getJSON "https://demaree.substack.com/api/v1/posts?limit=3&offset=0" -}}
+      {{- range $__substacks -}}
+      <article>
+        <h3 class="dd-heading-2">{{ .title }}</h3>
+      </article>
+      {{- end -}}
+    </div>
+
   </div>
+
+  <hr class="sm:col-span-2 sm:mb-10 border-ink-bold border-0 border-t-2 mx-6" />
 
 </main>
 {{ end }}

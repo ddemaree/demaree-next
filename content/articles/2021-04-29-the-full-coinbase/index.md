@@ -4,18 +4,20 @@ date: '2021-04-29T18:26:33'
 slug: the-full-coinbase
 tags:
   - Basecamp
-  - business
+  - Business
   - Coinbase
   - Work
 subtitle: A step-by-step guide to making any workplace crisis about you.
 excerpt: A step-by-step guide to making any workplace crisis about you.
 ---
 
+![Cover image](cover__the-full-coinbase.jpeg)
+
 One is an incident, two is a coincidence, but three makes a pattern. Following on Basecamp’s heel turn this week, now [Patreon CEO Jack Conte has posted a YouTube video](https://www.youtube.com/watch?app=desktop\u0026v=MV-3GgU6rlo\u0026feature=youtu.be) announcing [the layoff of _36 people_ from the company](https://www.protocol.com/bulletins/patreon-lays-off-36-employees), despite things going well financially.
 
-<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<iframe loading="lazy" title="Some tough news to share" width="674" height="379" src="https://www.youtube.com/embed/MV-3GgU6rlo?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div></figure>
+<figure class="wp-block-embed">
+  <iframe loading="lazy" title="Some tough news to share" width="674" height="379" src="https://www.youtube.com/embed/MV-3GgU6rlo?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
 
 _Protocol_ reports that:
 
@@ -50,9 +52,11 @@ Second, <strong>keep all power at the company centralized in one (or few) people
 
 Third, having given these leaders both old-timey-tycoon-like power over a company and its operations and a big social media megaphone, <strong>announce a highly controversial policy or operating change affecting dozens of people in a way that centers the _leaders_ more than any of the affected employees</strong>. This is of course the key one, but to have the forceful stink that makes it a Full Coinbase, you need the first two.
 
-In 2019, when [reports of a toxic work environment at Away led to Steph Korey’s downfall as CEO](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiZq-3zhqTwAhV8FlkFHT3PDHYQFjABegQIAhAD&url=https%3A%2F%2Fwww.theverge.com%2F2019%2F12%2F5%2F20995453%2Faway-luggage-ceo-steph-korey-toxic-work-environment-travel-inclusion&usg=AOvVaw0fQzt62pp0Yei4kjqu8hq_), there were a series of public posts from Korey, first taking responsibility and stepping down, then denying responsibility and coming back. But this was far from a Full Coinbase (or even a partial Coinbase) because:
+In 2019, when [reports of a toxic work environment at Away led to Steph Korey’s downfall as CEO](https://www.theverge.com/2019/12/5/20995453/away-luggage-ceo-steph-korey-toxic-work-environment-travel-inclusion), there were a series of public posts from Korey, first taking responsibility and stepping down, then denying responsibility and coming back. But this was far from a Full Coinbase (or even a partial Coinbase) because:
 
-<ul><li>No one expected Away to behave as if it were a social-impact company — even though their luggage is marketed in an aspirational, Millennial-friendly way, it’s still a consumer product, not a new approach to finance or work</li><li>Reports of toxicity at Away came _before_ any staffing or policy changes were announced publicly, and the dictatorial changes that were eventually made public (such as denying PTO requests from the customer support team) were originally kept private.</li><li>Obviously, while Korey and co-founder Jen Rubio (who has recently, finally, [taken over as the new CEO](https://www.inc.com/tim-crino/jen-rubio-ceo-away-company-culture.html)) enjoyed tremendous power and ownership, _someone_ (e.g. on the board) was in a position to eventually hold the CEO accountable. At the Full Coinbase companies, either all of the senior leaders and board members are on the same page, or no one who disagrees is empowered to do anything about it.</li></ul>
+* No one expected Away to behave as if it were a social-impact company — even though their luggage is marketed in an aspirational, Millennial-friendly way, it’s still a consumer product, not a new approach to finance or work
+* Reports of toxicity at Away came _before_ any staffing or policy changes were announced publicly, and the dictatorial changes that were eventually made public (such as denying PTO requests from the customer support team) were originally kept private.
+* Obviously, while Korey and co-founder Jen Rubio — who has recently, finally, [taken over as the new CEO](https://www.inc.com/tim-crino/jen-rubio-ceo-away-company-culture.html) — enjoyed tremendous power and ownership, _someone_ (e.g. on the board) was in a position to eventually hold the CEO accountable. At the Full Coinbase companies, either all of the senior leaders and board members are on the same page, or no one who disagrees is empowered to do anything about it.
 
 Lastly, to really land a Full Coinbase, you need to <strong>never bluff, and never, ever fold — either stand pat or double down.</strong> Brian Armstrong stood firm; he did some business-press interviews in the first week or so after announcing an end to “politics” at Coinbase, mostly sticking to the story he’d put out in the blog post. Fried and Hansson have doubled or even tripled down — they didn’t originally offer an “agree or leave” severance package to their employees, but they added one after the initial backlash, and subsequently, they’ve given interviews and posted tweets denouncing their critics.
 
@@ -74,9 +78,7 @@ In other words, it’s not that these CEOs have some inside scoop about the futu
 
 Another factor here — and the reason why this is playing out publicly — is that these CEOs are leveraging public opinion, possibly to make themselves feel better about hard choices, but also to kickstart controversy to make unambiguously dickish moves seem, well, more ambiguous. In Conte’s case, he’s getting love from his deeply loyal YouTube fan community:
 
-<figure class="wp-block-embed aligncenter is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
-<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">reading the comments on YouTube vs here, very different<br><br>"OMG, if only everyone was as kind as Jack – thank you for the transparency" <br><br>🧐</p>— _.just_evan (@evan_just_evan) [April 29, 2021](https://twitter.com/evan_just_evan/status/1387629343984295937?ref_src=twsrc%5Etfw)</blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div></figure>
+{{< twitter 1387629343984295937 >}}
 
 In the other cases, it’s a mix of pro-business fellow travelers and longtime allies — [Daring Fireball](http://daringfireball.net)’s John Gruber, who’s known Jason Fried for a long time and been a 37signals/Basecamp proponent almost since the beginning, has posted [multiple](https://daringfireball.net/linked/2021/04/28/twitter-hate-machine) [links](https://daringfireball.net/linked/2021/04/27/ride-out-the-storm) that (vaguely, like subtweets) show support for Fried and dismiss the haters.
 

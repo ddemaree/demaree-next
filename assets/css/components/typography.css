@@ -1,0 +1,217 @@
+@layer components {
+
+  .dd-title,
+  .dd-blog-title {
+    @apply font-roslindale-2 text-4xl sm:text-5xl;
+    font-weight: 520;
+    font-variation-settings: "wdth" 96;
+    font-feature-settings: "ss03" on;
+  }
+
+  .dd-title-2 {
+    @apply font-sans font-light text-4xl sm:text-5xl;
+  }
+
+  .dd-heading-1 {
+    @apply font-semibold text-3xl text-ink-bold;
+  }
+
+  .dd-heading-2 {
+    @apply font-semibold text-2xl text-ink-bold;
+  }
+
+  .dd-heading-3 {
+    @apply font-bold text-xl text-ink-medium;
+  }
+
+  .dd-heading-alt-1 {
+    @apply font-sans-display text-2xl text-ink-bold font-medium;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .dd-heading-alt-2 {
+    @apply font-sans-display text-xl text-ink-bold font-bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .dd-prose {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      @apply text-ink-bold;
+      text-decoration: underline;
+    }
+
+    strong {
+      @apply text-ink-bold font-semibold;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      & + p {
+        @apply mt-2;
+      }
+    }
+
+    h1,
+    h2 {
+      @apply dd-heading-1;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply dd-heading-2;
+    }
+
+    *:not(.chroma) > code {
+      @apply text-accent;
+    }
+
+    a code {
+      text-decoration: underline;
+    }
+  }
+
+  :where(.dd-prose > *) {
+    @apply text-lg;
+  }
+
+  .dd-prose > * {
+    @apply mx-auto text-ink;
+
+    &:not(.alignfull):not(.alignwide):not([class*=max-w]) {
+      @apply w-full-inset max-w-2xl;
+    }
+
+    &.alignwide {
+      @apply max-w-4xl py-8;
+    }
+  }
+
+  .dd-prose > * + * {
+    @apply mt-6;
+  }
+
+  .dd-prose > hr {
+    @apply my-16;
+
+    + * {
+      @apply mt-0;
+    }
+
+    &:not(.reset) {
+      @apply dots-divider;
+    }
+  }
+
+  .dd-prose > blockquote {
+    @apply px-6 text-ink-medium;
+    box-shadow: inset 4px 0 0 0 var(--color-ink-light, currentColor);
+
+    > * {
+      @apply min-w-full mb-8;
+
+      &:last-child {
+        @apply mb-0;
+      }
+    }
+  }
+
+  .dd-prose > figure {
+    @apply py-4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    > figcaption {
+      @apply pt-4 px-8 text-ink-medium font-sans text-base max-w-2xl mx-auto;
+      text-align: center;
+
+      * {
+        color: inherit;
+      }
+    }
+
+    + figure {
+      @apply pt-0;
+    }
+
+    > .twitter-tweet {
+      margin-bottom: 0 !important;
+      margin-top: 0 !important;
+    }
+  }
+
+  .dd-prose > .highlight {
+    grid-column: wide;
+
+    .chroma {
+      overflow-x: scroll;
+    }
+
+    .chroma code {
+      @apply px-8 py-6;
+      display: block;
+      width: max-content;
+    }
+
+    .chroma .hl {
+      background-color: #ffffff1a;
+      border-radius: 4px;
+    }
+
+    @screen sm {
+      grid-column: content;
+
+      .chroma {
+        @apply text-base rounded-lg;
+      }
+
+      .chroma code {
+        @apply px-6;
+      }
+    }
+  }
+
+  .dd-prose > :where(ul, ol) {
+    list-style-position: outside;
+
+    li {
+      @apply ml-10;
+    }
+
+    li + li {
+      @apply mt-3;
+    }
+
+    &:where(ul) {
+      list-style-type: disc;
+    }
+
+    &:where(ol) {
+      list-style-type: decimal;
+    }
+  }
+
+  .dd-prose > .footnotes {
+    @apply text-base mt-16;
+
+    > hr {
+      @apply mb-16;
+      opacity: 0.3;
+    }
+
+    > ol {
+      list-style-type: decimal;
+      list-style-position: outside;
+    }
+
+    li {
+      @apply ml-10;
+    }
+  }
+}

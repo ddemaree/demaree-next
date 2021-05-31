@@ -11,13 +11,11 @@ Sometimes I wonder if I’ve simply forgotten how to blog. Little (shit)posts ab
 
 These posts weren’t _great_, but they were an accurate picture of what I was into at the time, and collectively they’re a chronicle of what and how I thought for almost 15 years. Why did I stop?
 
-<!--more-->
-
 I mean, one reason is this:
 
-<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
-<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">I was just writing part of a blog post about why blogging has gotten so hard in the last 5-6 years<br><br>then I heard shouting from the kitchen and my child ran in like a banshee and would have crushed my laptop by body-slamming into me if I hadn’t tucked it away<br><br>Anyway, that’s why</p>— David Demaree (@ddemaree) [April 11, 2021](https://twitter.com/ddemaree/status/1381249154362531853?ref_src=twsrc%5Etfw)</blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div></figure>
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter">
+{{< twitter 1381249154362531853 >}}
+</figure>
 
 But also, the last few years were very much the social media era. “Social media” is an interesting bit of double-speak, because it turns out what distinguishes social media from older forms of media is not the social-sharing aspect — _actually_ we had social sharing in the early blogging days, it was just smaller and less organized — so much as the _metrics_.
 
@@ -50,7 +48,10 @@ All that to say: I’m writing and posting this using WordPress because I haven�
 
 <h2>Overcoming blogger’s block</h2>
 
-<figure class="wp-block-unsplash-image wp-block-image size-large"><img loading="lazy" alt="Write Ideas book on brown wooden board" class="wp-image-4189" width="1024" height="769" title="" src="photo-1516414447565-b14be0adf13e?ixid=MnwyMTM5OTN8MHwxfGFsbHx8fHx8fHx8fDE2MTgxNjQ4MTk&ixlib=rb-1.2.1&fm=jpg&q=85&fit=crop&w=1024&h=769" /><figcaption>Photo by <a href="https://unsplash.com/@aaronburden" rel="nofollow">Aaron Burden</a> on <a href="https://unsplash.com/?utm_source=davids-blog&utm_medium=referral" rel="nofollow">Unsplash</a> </figcaption></figure>
+<figure class="wp-block-unsplash-image wp-block-image size-large">
+  <img loading="lazy" alt="Write Ideas book on brown wooden board" class="wp-image-4189 lazyload" width="1024" height="769" title="" src="//images.unsplash.com/photo-1516414447565-b14be0adf13e?ixid=MnwyMTM5OTN8MHwxfGFsbHx8fHx8fHx8fDE2MTgxNjQ4MTk&ixlib=rb-1.2.1&fm=jpg&q=85&fit=crop&w=1024&h=769" />
+  <figcaption>Photo by <a href="https://unsplash.com/@aaronburden" rel="nofollow">Aaron Burden</a> on <a href="https://unsplash.com/?utm_source=davids-blog&utm_medium=referral" rel="nofollow">Unsplash</a> </figcaption>
+</figure>
 
 Sara Soueidan wrote ages ago that the way to get out of blogger’s block is to [“just write”](https://www.sarasoueidan.com/desk/just-write/):
 
@@ -82,7 +83,10 @@ At the moment, it seems what matters more is to capture those thoughts before th
 
 <h2>Pointing at things</h2>
 
-<figure class="wp-block-unsplash-image wp-block-image size-large"><img loading="lazy" alt="person using laptop" class="wp-image-4185" width="1024" height="683" title="" src="photo-1516321318423-f06f85e504b3?ixid=MnwyMTM5OTN8MHwxfGFsbHx8fHx8fHx8fDE2MTgxNjQ3Mzg&ixlib=rb-1.2.1&fm=jpg&q=85&fit=crop&w=1024&h=683" /><figcaption>Photo by <a href="https://unsplash.com/@johnschno" rel="nofollow">John Schnobrich</a> on <a href="https://unsplash.com/?utm_source=davids-blog&utm_medium=referral" rel="nofollow">Unsplash</a> </figcaption></figure>
+<figure class="wp-block-unsplash-image wp-block-image size-large">
+  <img loading="lazy" alt="person using laptop" class="wp-image-4185 lazyload" width="1024" height="683" title="" src="//images.unsplash.com/photo-1516321318423-f06f85e504b3?ixid=MnwyMTM5OTN8MHwxfGFsbHx8fHx8fHx8fDE2MTgxNjQ3Mzg&ixlib=rb-1.2.1&fm=jpg&q=85&fit=crop&w=1024&h=683" />
+  <figcaption>Photo by <a href="https://unsplash.com/@johnschno" rel="nofollow">John Schnobrich</a> on <a href="https://unsplash.com/?utm_source=davids-blog&utm_medium=referral" rel="nofollow">Unsplash</a></figcaption>
+</figure>
 
 In his newsletter Robin Rendle described blogging as <a rel="noreferrer noopener" href="https://www.robinrendle.com/notes/pointing-at-things" target="_blank">“pointing at things and falling in love,”</a> a sentiment <a rel="noreferrer noopener" href="https://austinkleon.com/2021/02/16/pointing-at-things/" target="_blank">Austin Kleon recently seconded and annotated</a>.
 

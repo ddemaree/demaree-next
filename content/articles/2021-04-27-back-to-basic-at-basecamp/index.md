@@ -66,9 +66,9 @@ So even if it’s not that surprising to see Jason and DHH pivot their company t
 
 And regarding Jason’s statement that “input came from many sources, disagreements were heard, deliberations were had,” I have to question whether that’s true given that at least one longtime employee tweeted their surprise and disappointment at the news.
 
-<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
-<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">I've worked at Basecamp for a long time because it's a company full of smart and kind people, and together we've always tried to take care and do the right things. I don't agree with the changes announced today, and I'm sad & upset.</p>— Jonas Downey (@jonasdowney) [April 26, 2021](https://twitter.com/jonasdowney/status/1386792772334768130?ref_src=twsrc%5Etfw)</blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div></figure>
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter">
+{{< twitter 1386792772334768130 >}}
+</figure>
 
 Leaving aside the obvious problems with trying to keep “politics” out of work at a moment when social change and turmoil consumes our lives outside of work, every one of these changes is aimed at disempowering all the individuals who work at Basecamp, apart from the two partners, whose power and role has increased. Before yesterday, one could believe that Basecamp was an employees’ paradise, where people had a voice and would be heard. 
 

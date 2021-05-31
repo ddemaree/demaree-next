@@ -4,7 +4,7 @@
 <article class="flex items-start">
   <div class="flex-1 max-w-prose">
     <a href="{{ $permalink }}">
-      <h2 class="text-xl text-ink-bold font-semibold mb-1">{{ .Title }}</h2>
+      <h2 class="dd-heading-2 mb-1">{{ .Title }}</h2>
       {{ with .Params.excerpt }}<div class="mb-2 leading-snug" style="max-width: 48ch">{{ . }}</div>{{ end }}
       <div class="post-meta text-ink-medium text-sm">
         {{ .Date.Format "Jan 2 2006" }}

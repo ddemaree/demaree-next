@@ -15,9 +15,16 @@
     {{ partial "head/twitter_card.html" . }}
     {{ partial "head/webfonts.html" . }}
     <script async src="https://kit.fontawesome.com/f0afb61fe2.js" crossorigin="anonymous"></script>
-    {{/*  {{ $style := resources.Get "css/main.css" | resources.PostCSS | minify | fingerprint }}  */}}
-    {{ $style := resources.Get "css/global.scss" | resources.ToCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" type="text/css" />
+
+    {{/* styles */}}
+    {{ $options := dict "inlineImports" true }}
+    {{ $styles := resources.Get "css/main.css" }}
+    {{ $styles = $styles | resources.PostCSS $options }}
+    {{ if  hugo.IsProduction  }}
+      {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
+    {{ end }}
+
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" type="text/css" />
     <script src="https://cdn.usefathom.com/script.js" data-site="TOFIAIKB" data-included-domains="demaree.me,demaree.space" defer></script>
     {{ block "head" . }}{{ end }}
   </head>
@@ -28,8 +35,8 @@
     {{ block "main" . }}{{ end }}
 
     {{ block "footer" . }}
-    <footer class="pt-8 text-center pb-16 text-ink-medium">
-      <p class="text-lg font-serif mb-1">&ldquo;Have courage, and be kind.&rdquo;</p>
+    <footer class="pt-12 text-center pb-16 text-ink-medium">
+      <p class="text-lg font-roslindale-2 font-medium mb-1">&ldquo;Have courage, and be kind.&rdquo;</p>
       <p>&copy;2021— David Demaree</p>
     </footer>
     {{ end }}
