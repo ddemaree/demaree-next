@@ -28,6 +28,10 @@
       {{- range $__substacks -}}
       <article>
         <h3 class="dd-heading-2">{{ .title }}</h3>
+        {{ .subtitle }}
+        {{ .canonical_url }}
+        {{ .cover_image }}
+        {{ (.post_date | time) }}
       </article>
       {{- end -}}
     </div>
