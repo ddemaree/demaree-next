@@ -6,3 +6,5 @@ public
 # Local Netlify folder
 .netlify
 .env
+
+hugo_stats.json
