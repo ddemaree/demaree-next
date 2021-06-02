@@ -9,7 +9,8 @@ tags:
 excerpt: If you were hoping for Apple to sell you a $350 keychain, I have good news!
 ---
 
-<p class="has-large-font-size">It’s that time again — Apple has announced products, and now we will talk about the products that were announced!!!
+It’s that time again — Apple has announced products, and now we will talk about the products that were announced!!!
+{.has-large-font-size}
 
 I did not watch today’s event live, because I had other things going on: my newly vaccinated in-laws are visiting, I had to pick up lunch carryout, the dog needed walking, and then I had a meeting. I kept one eye on _The Verge_‘s liveblog, and have spent a chunk of the afternoon catching up on everything, so I may have missed some stuff and, if so, will update this post with additions or corrections as needed.
 

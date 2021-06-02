@@ -2,9 +2,6 @@
 {{- if (.Get "cols") -}}
 {{- $classes = $classes | append (add "cols-" (string (.Get "cols"))) -}}
 {{- end -}}
-
-<div class="{{ delimit $classes " " | safeHTMLAttr }}">
-  <ul>
-    {{ .Inner }}
-  </ul>
+<div class="{{ delimit $classes ` ` | safeHTMLAttr }}">
+  {{ .Inner }}
 </div>

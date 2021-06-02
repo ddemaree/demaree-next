@@ -1,5 +1,5 @@
 baseURL: //demaree.me/
-title: David Demaree
+title: David Demaree's web site
 description: Writing, photos, and nonsense from a NYC-based tech person
 languageCode: en-us
 
@@ -8,6 +8,10 @@ disableAliases: true
 
 build:
   writeStats: true
+
+services:
+  RSS:
+    limit: 20
 
 taxonomies:
   series: "series"
@@ -20,22 +24,14 @@ social:
   linkedin: ddemaree
 
 params:
+  imgixBase: https://ddimg.imgix.net/
   cloudinaryBase: res.cloudinary.com/demaree/image
+  mainSections:
+  - articles
+  - notes
 
 permalinks:
   articles: "/p/:slug"
-
-# anchorLineNos = false
-# codeFences = true
-# guessSyntax = false
-# hl_Lines = ""
-# lineAnchors = ""
-# lineNoStart = 1
-# lineNos = false
-# lineNumbersInTable = true
-# noClasses = false
-# style = "monokai"
-# tabWidth = 2
 
 markup:
   highlight:

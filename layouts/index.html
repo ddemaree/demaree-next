@@ -6,7 +6,7 @@
   
   <hr class="sm:col-span-2 sm:mb-10 border-ink-bold border-0 border-t-2 mx-6" />
 
-  <div class="home-cols">
+  <div class="contents">
 
     <div class="space-y-8 w-full-inset mx-auto max-w-2xl">
       <h2 class="text-accent dd-heading-alt-2">Latest article</h2>
@@ -26,12 +26,16 @@
         
       {{- $__substacks := getJSON "https://demaree.substack.com/api/v1/posts?limit=3&offset=0" -}}
       {{- range $__substacks -}}
-      <article>
-        <h3 class="dd-heading-2">{{ .title }}</h3>
-        {{ .subtitle }}
-        {{ .canonical_url }}
-        {{ .cover_image }}
-        {{ (.post_date | time) }}
+      <article class="flex gap-3 items-start">
+        <a href="{{ .canonical_url }}">
+          <h3 class="dd-heading-2">{{ .title }}</h3>
+          <p>{{ .subtitle }}</p>
+          <p class="text-sm text-ink-medium">{{ (.post_date | time).Format "Jan 2 2006" }}</p>
+        </a>
+        
+        <a href="{{ .canonical_url }}">
+          <img src="{{ .cover_image }}" />
+        </a>
       </article>
       {{- end -}}
     </div>

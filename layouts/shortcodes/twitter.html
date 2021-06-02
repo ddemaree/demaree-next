@@ -1,4 +1,4 @@
-{{- $url := printf "https://api.twitter.com/1/statuses/oembed.json?id=%v&dnt=1" (index .Params 0) -}}
+{{- $url := printf "https://api.twitter.com/1/statuses/oembed.json?id=%v&dnt=1&align=center" (index .Params 0) -}}
 {{- $json := getJSON $url -}}
 <figure class="dd-embed dd-embed-twitter">
   {{ $cleanHTML := replaceRE "style=\".+\"" "" $json.html }}

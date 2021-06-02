@@ -1,0 +1,11 @@
+{{- $ixPath := "" }}
+{{- if .IsNamedParams -}}
+{{- $ixPath = .Get "path" -}}
+{{- else -}}
+{{- $ixPath = .Get 0 -}}
+{{- end -}}
+{{- $src := printf "%s%s?w=400" .Site.Params.imgixBase $ixPath -}}
+
+{{- with .Parent}}{{ if eq .Name "gallery" }}<figure class="gallery-img{{ with .Get `col-span` }} span-{{ . }}{{ end }}">{{ end }}{{ end -}}
+<img src="{{ $src }}" loading="lazy" ix-path="{{ $ixPath }}"{{ with .Get `alt` }} alt="{{ . }}"{{ end }}{{ with .Get `width` }} width="{{ . }}"{{ end }}{{ with .Get `height` }} height="{{ . }}"{{ end }} class="lazyload{{ with .Get `class` }} {{ . }}{{ end }}" />
+{{- with .Parent}}{{ if eq .Name "gallery" }}</figure>{{ end }}{{ end }}

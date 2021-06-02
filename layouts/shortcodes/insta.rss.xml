@@ -1,0 +1,16 @@
+{{ $instaId := .Get 0 }}
+{{ $accessToken := (getenv "FB_ACCESS_TOKEN") }}
+{{ $instaURL := (printf "https://instagram.com/p/%s" $instaId) }}
+
+<figure class="dd-embed dd-embed-instagram">
+{{ if $accessToken }}
+  {{ $oembedURL := (printf "https://graph.facebook.com/v9.0/instagram_oembed/?url=%s/&hidecaption=0&omitscript=1&access_token=%s&maxwidth=500&fields=thumbnail_url,author_name,provider_name,provider_url" $instaURL $accessToken) }}
+  {{ $insta := getJSON $oembedURL }}
+  <img src={{ $insta.thumbnail_url }} />
+  <figcaption>
+    <a href="{{ $instaURL }}">Post by {{ $insta.author_name }} on Instagram</a>
+  </figcaption>
+{{ else }}
+  <a href="{{ $instaURL }}">Instagram post</a>
+{{ end }}
+</figure>

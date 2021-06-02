@@ -11,7 +11,7 @@
 {{- define "main" }}
 <!-- blog/single - main -->
 <header class="dd-blog-header grid dd-grid-cols py-12 px-8">
-  <h1 data-content="{{ .Title }}" class="dd-blog-title text-center dd-col-full mb-3 deorphan text-ink-bold">{{ .Title }}</h1>
+  <h1 data-content="{{ .Title }}" class="dd-blog-title text-center dd-col-full mb-3 text-ink-bold">{{ .Title }}</h1>
 
   {{ with (or .Params.subtitle .Params.excerpt .Params.description) }}<h2 class="text-center dd-col-full text-ink-medium text-lg sm:text-xl leading-snug sm:leading-snug mb-4">{{ . }}</h2>{{ end }}
 
