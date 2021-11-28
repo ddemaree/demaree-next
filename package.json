@@ -11,11 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^10.1.0",
-    "postcss": "^8.2.2",
+    "postcss": "^8.4.4",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.0",
     "postcss-url": "^10.1.1",
-    "tailwindcss": "^2.0.2",
+    "tailwindcss": "^2.2.19",
     "vue": "^2.6.12"
   }
 }
